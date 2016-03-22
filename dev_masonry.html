@@ -1,0 +1,150 @@
+<html>
+<head>
+<title>BoomHiFive. Culture, Tech, Trouble</title>
+<link href='https://fonts.googleapis.com/css?family=Arvo:400,700|Droid+Sans:400,700|Droid+Serif:400,700' rel='stylesheet' type='text/css'>
+
+<link rel="stylesheet" href="css/main_masonry.css" media="screen">
+<script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
+<script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
+<script>
+$(document).ready(function(){
+
+  var $grid =  $(".grid").masonry({
+      // options
+      itemSelector: '.grid-item',
+      columnWidth: '.grid-sizer',
+      percentPosition: true,
+      gutter: '.gutter-sizer'
+  });
+
+/*
+  $grid.imagesLoaded().progress( function() {
+    $grid.masonry('layout');
+  });
+*/
+
+  $(".grid-item .item_header").click(function(){
+
+    if($(this).parent().hasClass("maxed")){
+      $(this).parent().removeClass("maxed");
+    }else{
+      $(".maxed").toggleClass("maxed");
+      $(this).parent().addClass("maxed");
+    }
+
+    //$(this).parent().toggleClass("maxed");
+    (function(_this, _grid){
+      _grid.on("layoutComplete", function(){
+        $('html, body').animate({
+          scrollTop: $(_this).offset().top - 20
+        }, 300);   
+        _grid.off("layoutComplete");
+      });
+    })(this, $grid);
+
+    $grid.masonry('layout');
+  });
+
+});
+
+
+</script>
+</head>
+<body>
+<div class="site_container">
+  <div class="grid">
+    <div class="gutter-sizer"></div>
+    <div class="grid-sizer"></div>
+    <div class="grid-item gridheader">
+      <div class="header">
+	<span class="supheader">BoomHiFive</span>
+	<BR>
+	<div class="subheader">
+	  <span class="subheader">Culture, Tech, Trouble</span>
+	</div>
+      </div>
+      <div class="logo">
+	<img class="logo_img" align="right" src="images/logo.png" height="100px" />
+      </div>
+    </div>
+    <div class="grid-item grid6">
+      <div class="item_header">
+	About
+      </div>
+      <div class="item_summary">
+	<img height="175" src="images/square_headshot.jpg" align="left" style="border-radius: 10px; padding-right:10px;"/><p style="padding-right: 10px; margin-top:-10px;"><i>Former Founding and Senior Manager of the MediaLab at the Metropolitan Museum of Art, Don is currently an independent consultant based in Washington DC, and involved in a range of initiatives that connect the vision of the arts to the practical needs of business and social entrepreneurship.</i>
+</p>
+      </div>
+      <div class="item_content">
+
+      </div>
+    </div>
+    <div class="grid-item grid5">      
+      <div class="item_header">
+	Projects
+      </div>
+      <div class="item_summary">
+	Ongoing Work
+      </div>
+    </div>
+    <div class="grid-item grid5">
+      <div class="item_header">
+	Services
+      </div>
+      <div class="item_summary">
+	Here's what I can do for you.
+      </div>
+    </div>
+    <div class="grid-item grid5">
+      <div class="item_header dbl"><span>CV</span>
+      </div>
+      <div class="item_summary">
+
+      </div>
+      <div class="item_content">
+	
+	</div>
+    </div>
+    <div class="grid-item grid6">
+      <div class="item_header">
+	Resources
+      </div>
+      <div class="item_summary">
+	Useful Links and tools
+      </div>
+      <div class="item_content">
+	this is the content
+      </div>
+    </div>
+    <div class="grid-item grid5">
+      <div class="item_header">
+	@donundeen
+      </div>
+      <div class="item_summary">
+	@donundeen on the socials
+      </div>
+      <div class="item_content">
+<a class="twitter-timeline" href="https://twitter.com/donundeen" data-widget-id="712014421258711040">Tweets by @donundeen</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </div>      
+    </div>
+    <div class="grid-item grid5">
+      <div class="item_header">
+	Press
+      </div>
+      <div class="item_summary">
+	Don's work in the the press
+      </div>
+    </div>
+    <div class="grid-item grid6">
+      <div class="item_header">
+	Publications and Presentations
+      </div>
+      <div class="item_summary">
+	Writing and Talking
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
