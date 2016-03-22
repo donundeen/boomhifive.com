@@ -1,6 +1,3 @@
-
-
-
 * {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -9,7 +6,7 @@
 
 body {
     background: red;
-    color: white;
+    color: #FF7A2B;
     font-family: 'Droid Sans', sans-serif;
 }
 
@@ -58,8 +55,7 @@ body {
     width: 100%;
     border-radius: 10px;
     background: white;
-    color: red;
-    border: 1px solid blue;
+    color: #34004E ;
     margin-bottom: 10px;
 }
 
@@ -71,8 +67,6 @@ body {
 .grid5 { width: 30%; }
 .grid6 { width: 60%; }
 .gridheader { height: 100px; width: 91%;}
-
-
 
 .maxed {
     width: 60%;
@@ -123,7 +117,7 @@ body {background : yellow;}
 
 
 .item_header {
-    background: purple;
+    background: #C7C7EE;
     border-top-left-radius: 9px;
     border-top-right-radius: 9px;
     height: 1.2em;
@@ -138,8 +132,9 @@ body {background : yellow;}
 
 .item_summary {
     padding: .2em;
+    position: relative;
+    top: 5px;
 }
-
 
 .item_content{
     padding: .2em;
@@ -151,16 +146,55 @@ body {background : yellow;}
     padding: 0px;
 }
 
+.maxed .item_header.dbl{
+    height: 1.2em;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    padding-left: .4em;
+
+}
+
 .grid-item .item_header.dbl span {
     line-height: 100px;
 }
-.maxed .item_header.dbl{
-    height: 1.2px;
+
+.maxed .item_header.dbl span{
+    line-height: inherit;
+}
+
+
+.grid-item .item_header.qtr {
+    height: 50px;
+    font-size: 55px;
+    padding: 0px;
+    padding-left: 5px;
+}
+
+.maxed .item_header.qtr{
+    height: 1.2em;
     font-size: 1.2em;
+    line-height: 1.2em;
+    padding-left: .4em;
+
+}
+
+.grid-item .item_header.qtr span {
+    line-height: 50px;
+}
+
+.maxed .item_header.qtr span{
+    line-height: inherit;
+}
+
+
+.maxed .item_header span{
+    line-height: inherit;
 }
 
 .grid-item .item_summary{
     display: inline;
+    margin: 5px;
+    margin-top: 10px;
 }
 
 .grid-item .item_content{
@@ -179,4 +213,12 @@ body {background : yellow;}
     overflow: hidden;
     text-overflow: "...";
     height: 150px;
+    font-weight: normal;
+}
+
+.item_content p{
+    margin: 10px;
+    overflow: scroll;
+    text-overflow: scroll;
+height: 500px;
 }
