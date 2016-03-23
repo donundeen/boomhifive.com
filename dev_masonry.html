@@ -1,7 +1,7 @@
 <html>
 <head>
 <title>BoomHiFive. Culture, Tech, Trouble</title>
-<link href='https://fonts.googleapis.com/css?family=Arvo:400,700|Droid+Sans:400,700|Droid+Serif:400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arvo:400,700|Droid+Sans:400,700|Droid+Serif:400,700|Arimo:400,700,700italic,400italic|Montserrat:400,700|Raleway:400,400italic,900|Merriweather:400,900,400italic|Passion+One:400,900|Poiret+One|Candal|Lobster|Josefin+Sans|Quicksand|Orbitron:400,700,900,500' rel='stylesheet' type='text/css'>
 
 <link rel="stylesheet" href="css/main_masonry.css" media="screen">
 <script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
@@ -11,10 +11,12 @@ $(document).ready(function(){
 
   var $grid =  $(".grid").masonry({
       // options
+
       itemSelector: '.grid-item',
       columnWidth: '.grid-sizer',
+      gutter: '.gutter-sizer',
       percentPosition: true,
-      gutter: '.gutter-sizer'
+
   });
 
 /*
@@ -50,11 +52,11 @@ $(document).ready(function(){
 
 </script>
 </head>
-<body>
+<body >
 <div class="site_container">
   <div class="grid">
-    <div class="gutter-sizer"></div>
     <div class="grid-sizer"></div>
+    <div class="gutter-sizer"></div>
     <div class="grid-item gridheader">
       <div class="header">
 	<span class="supheader">BoomHiFive</span>
@@ -72,7 +74,7 @@ $(document).ready(function(){
 	About
       </div>
       <div class="item_summary">
-	<img height="175" src="images/square_headshot.jpg" align="left" style="border-radius: 10px; padding-right:10px;"/><p style="padding-right: 10px; margin-top:-10px;"><i>Former Founding and Senior Manager of the MediaLab at the Metropolitan Museum of Art, Don is currently an independent consultant based in Washington DC, and involved in a range of initiatives that connect the vision of the arts to the practical needs of business and social entrepreneurship.</i>
+	<img height="175" src="images/square_headshot.jpg" align="left" style="border-radius: 10px; padding-right:10px;"/><p style="padding-right: 10px; margin-top:-15px;"><i>Former Founding and Senior Manager of the MediaLab at the Metropolitan Museum of Art, Don is currently an independent consultant based in Washington DC, and involved in a range of initiatives that connect the vision of the arts to the practical needs of business and social entrepreneurship.</i>
 </p>
       </div>
       <div class="item_content">
@@ -101,10 +103,10 @@ Don is currently an independent consultant based in Washington DC, and involved 
       </div>
     </div>
     <div class="grid-item grid5">
-      <div class="item_header dbl"><span>CV</span>
+      <div class="item_header qtr"><span>CV</span>
       </div>
       <div class="item_summary">
-
+	
       </div>
       <div class="item_content">
 	<object data="/images/Don Undeen CV.pdf"

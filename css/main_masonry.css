@@ -5,9 +5,9 @@
 }
 
 body {
-    background: red;
+    background: rgba(170,96,96,0.11);
     color: #FF7A2B;
-    font-family: 'Droid Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .site_container{
@@ -25,8 +25,22 @@ body {
     margin-left: 15px;
 }
 
+.item_header {
+    
+}
+
+.item_summary{
+
+}
+
+.item_content{
+
+}
+
 .supheader {
-    font-size: 2em;
+    font-size: 2.2em;
+    font-family: "Orbitron";
+    padding-top: 3px;
 }
 
 .subheader{
@@ -48,7 +62,7 @@ body {
 
 .grid-sizer,
 
-.gutter-sizer { width: 10px }
+.gutter-sizer { width: 5%; }
 
 .grid-item {
     height: 200px;
@@ -65,8 +79,8 @@ body {
 .grid3 { width: 74%; }
 .grid4 { width: 98%; }
 .grid5 { width: 30%; }
-.grid6 { width: 60%; }
-.gridheader { height: 100px; width: 91%;}
+.grid6 { width: 65%; }
+.gridheader { height: 100px; width: 100%;}
 
 .maxed {
     width: 60%;
@@ -94,6 +108,8 @@ body {background: green;}
 
  
 }
+
+
 @media only screen and ( max-width: 20em ), only screen and (max-device-width: 480px) /* <320px */
 { 
 body {background : yellow;}
@@ -117,13 +133,14 @@ body {background : yellow;}
 
 
 .item_header {
-    background: #C7C7EE;
+    background: white;
     border-top-left-radius: 9px;
     border-top-right-radius: 9px;
     height: 1.2em;
     padding-left: .4em;
     font-weight: normal;
     font-size: 1.2em;
+    padding-top: 3px;
 }
 
 .item_header:hover {
@@ -168,6 +185,7 @@ body {background : yellow;}
     font-size: 55px;
     padding: 0px;
     padding-left: 5px;
+    padding-top: 3px;
 }
 
 .maxed .item_header.qtr{
