@@ -30,11 +30,11 @@ body {
 }
 
 .item_summary{
-
+    font-size: .9em;
 }
 
 .item_content{
-
+    font-size: .9em;
 }
 
 .supheader {
@@ -125,7 +125,6 @@ body {
     font-size: 1.2em;
     line-height: 1.2em;
     padding-left: .4em;
-
 }
 
 .grid-item .item_header.qtr span {
@@ -163,9 +162,22 @@ body {
 .item_content p{
     margin: 10px;
     overflow: scroll;
-    text-overflow: scroll;
-    height: 500px;
+    height: 525px;
+    max-height: 525px;
 }
+
+.item_content{
+    overflow: scroll;
+    position: absolute;
+    height: 525px;
+    max-height: 525px;
+    min-height: 525px;
+    top: 38px;
+}
+
+
+
+
 
 .twitter_logo_img {
 display: block;
@@ -190,9 +202,26 @@ display: block;
 }
 
 .maxed .item_footer {
-    display: block;
+    position: absolute;
+    display: inline;
     text-align: right;
     margin-right: 10px;
+    margin-bottom: 5px;
+    bottom: 5px;
+    right: 5px;
+}
+
+.content_segment {
+    float: left;
+    padding-bottom: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+
+.content_segment img {
+    width: 120px;
+    border-radius: 5px;
 }
 
 @media only screen and ( max-width: 760px ) /* 320 <>640px */
