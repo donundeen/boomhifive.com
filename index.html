@@ -1,12 +1,182 @@
 <html>
 <head>
-<title>BoomHiFive.com</title>
+<title>BoomHiFive. Culture, Tech, Trouble</title>
+<link href='https://fonts.googleapis.com/css?family=Arvo:400,700|Droid+Sans:400,700|Droid+Serif:400,700|Arimo:400,700,700italic,400italic|Montserrat:400,700|Raleway:400,400italic,900|Merriweather:400,900,400italic|Passion+One:400,900|Poiret+One|Candal|Lobster|Josefin+Sans|Quicksand|Orbitron:400,700,900,500' rel='stylesheet' type='text/css'>
+
+<link rel="stylesheet" href="css/main_masonry.css" media="screen">
+<script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
+<script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
+<script>
+$(document).ready(function(){
+
+  var $grid =  $(".grid").masonry({
+      // options
+
+      itemSelector: '.grid-item',
+      columnWidth: 240,
+      gutter: 20
+  });
+
+/*
+  $grid.imagesLoaded().progress( function() {
+    $grid.masonry('layout');
+  });
+*/
+
+  $(".grid-item .item_header").click(function(){
+
+    if($(this).parent().hasClass("maxed")){
+      $(this).parent().removeClass("maxed");
+    }else{
+      $(".maxed").toggleClass("maxed");
+      $(this).parent().addClass("maxed");
+    }
+
+    //$(this).parent().toggleClass("maxed");
+    (function(_this, _grid){
+      _grid.on("layoutComplete", function(){
+        $('html, body').animate({
+          scrollTop: $(_this).offset().top - 20
+        }, 300);   
+        _grid.off("layoutComplete");
+      });
+    })(this, $grid);
+
+    $grid.masonry('layout');
+  });
+
+});
+
+
+</script>
 </head>
-<body>
-welcome to boomhifive
-<br>
-<a href="http://boomhifive.com/facemorpher/facemorpher">facemorpher</a>
-<br>
-stay tuned.
+<body >
+<div class="site_container">
+  <div class="grid">
+    <div class="grid-sizer"></div>
+    <div class="gutter-sizer"></div>
+    <div class="grid-item gridheader">
+      <div class="header">
+    <span class="supheader">BoomHiFive</span>
+    <BR>
+    <div class="subheader">
+      <span class="subheader">Culture, Tech, Trouble</span>
+    </div>
+      </div>
+      <div class="logo">
+    <img class="logo_img" align="right" src="images/logo.png" height="100px" />
+      </div>
+    </div>
+    <div class="grid-item grid6">
+      <div class="item_header">
+    About
+      </div>
+      <div class="item_summary">
+    <img height="175" src="images/square_headshot.jpg" align="left" style="border-radius: 10px; padding-right:10px;"/><p style="padding-right: 10px; margin-top:-15px;"><i>Former Founding and Senior Manager of the MediaLab at the Metropolitan Museum of Art, Don is currently an independent consultant based in Washington DC, and involved in a range of initiatives that connect the vision of the arts to the practical needs of business and social entrepreneurship.</i>
+</p>
+      </div>
+      <div class="item_content">
+<p style="padding-right: 10px; margin-top:-10px;">
+<img height="175" src="images/square_headshot.jpg" align="left" style="border-radius: 10px; padding-right:10px;"/>
+Former Founding and Senior Manager of the <B>MediaLab at the Metropolitan Museum of Art</b>. In 2012 Don was tasked with establishing a space for experimentation at the intersection of art, technology, and the museum experience. By working closely with NYC's creative technology community, the MediaLab developed a worldwide reputation for consistently delivering provocative, exciting, and valuable projects. 
+<BR><BR>
+Don is currently an independent consultant based in Washington DC, and involved in a range of initiatives that connect the vision of the arts to the practical needs of business and social entrepreneurship. A background in hard computer science combined with an enthusiasm for communication and creativity make Don a unique asset to culture/tech organizations. He serves on the board of advisors for New Media consultancy <B>Hyphen Hub</B>, which connects new media artists to the technology industry. He is the chair of the Vatican Art & Technology Council's "Creative Lab" Committee, which is building an innovation space devoted to the message of Pope Francis. As a Visiting Researcher at <b>Georgetown University</b>, Don is studying new business models that leverage open cultural data. He also serves as an expert advisor to the European <B>Erasmus+ funded "Creative Museum"</b> project, which connects museums with maker communities throughout Europe. Through frequent international travel, speaking engagements, and workshops, Don continues to bring together cultural experts and technologists to explore new connections between collections and electrons.
+</p>
+      </div>
+      <div class="item_footer">
+        Contact: boomhifive@gmail.com
+      </div>
+    </div>
+    <!--
+    <div class="grid-item grid5">      
+      <div class="item_header">
+    Projects
+      </div>
+      <div class="item_summary">
+    Ongoing Work
+      </div>
+    </div>
+    <div class="grid-item grid5">
+      <div class="item_header">
+    Services
+      </div>
+      <div class="item_summary">
+    What we can do together!
+      </div>
+    </div>
+-->
+    <div class="grid-item grid5">
+      <div class="item_header qtr"><span>CV</span>
+      </div>
+      <div class="item_summary">
+    
+      </div>
+      <div class="item_content">
+        <object data="images/Don Undeen CV.pdf" class="cv_object"
+            type="application/pdf" 
+            width="99%" 
+            style="border-radius: 10px;">
+          
+          <p>It appears you don't have a PDF plugin for this browser. No biggie... you can <a href="//images/Don Undeen CV.pdf">click here to download the PDF file.</a></p>
+          
+        </object>   
+      </div>
+      <div class="item_footer">
+        Contact: boomhifive@gmail.com
+      </div>
+    </div>
+    <!--
+    <div class="grid-item grid6">
+      <div class="item_header qtr"><span> Resources</span>
+      </div>
+      <div class="item_summary">
+    Useful Links and tools
+      </div>
+      <div class="item_content">
+    this is the content
+      </div>
+    </div>
+-->
+    <div class="grid-item grid5 item_social">
+      <div class="item_header qtr"><span style="font-size: .6em"> @donundeen</span>
+      </div>
+      <div class="item_summary item_social" >
+        <a href="https://twitter.com/donundeen">
+        <img src="images/Twitter_logo_blue.png" width="50%" align="center" class="twitter_logo_img"/></a>
+      </div>
+      <div class="item_content">
+<a class="twitter-timeline" href="https://twitter.com/donundeen" data-widget-id="712014421258711040">Tweets by @donundeen</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </div>      
+    </div>
+
+    <!--
+    <div class="grid-item grid5">
+      <div class="item_header">
+    Press
+      </div>
+      <div class="item_summary">
+    Don's work in the the press
+      </div>
+    </div>
+    <div class="grid-item grid6">
+      <div class="item_header">
+    Publications
+      </div>
+      <div class="item_summary">
+    Writing
+      </div>
+    </div>
+    <div class="grid-item grid6">
+      <div class="item_header">
+    Presentations
+      </div>
+      <div class="item_summary">
+    Talking
+      </div>
+    </div>
+-->
+  </div>
+</div>
 </body>
 </html>

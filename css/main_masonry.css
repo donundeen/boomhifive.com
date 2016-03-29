@@ -167,6 +167,34 @@ body {
     height: 500px;
 }
 
+.twitter_logo_img {
+display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.item_summary.item_social {
+    text-align: center;
+}
+
+.grid_item.item_social {
+    text-align: center;
+}
+
+.cv_object{
+    height:550px;
+}
+
+.item_footer {
+    display: none;
+}
+
+.maxed .item_footer {
+    display: block;
+    text-align: right;
+    margin-right: 10px;
+}
+
 @media only screen and ( max-width: 760px ) /* 320 <>640px */
 {
 /*body {background: green;}*/
