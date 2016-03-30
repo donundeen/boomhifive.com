@@ -31,10 +31,12 @@ body {
 
 .item_summary{
     font-size: .9em;
+    font-family: "quicksand";
 }
 
 .item_content{
     font-size: .9em;
+    font-family: "quicksand";
 }
 
 .supheader {
