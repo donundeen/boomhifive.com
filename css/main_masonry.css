@@ -228,6 +228,11 @@ display: block;
     border-radius: 5px;
 }
 
+.teach *  img {
+    width: 100px;
+    border-radius: 5px;
+}
+
 .content_segment iframe {
     display: inline;
 }
