@@ -336,7 +336,7 @@ class Entity extends gbft{
 							be.event_ID = e.ID
 						$addtl_join
 					WHERE
-						bm.".$this->type."_ID = '$this->id'  AND
+						bm.".$this->type."_ID = '".intval($this->id)."'  AND
 						e.status = '$status'
 						$addtl_where
 					GROUP BY 
@@ -359,7 +359,7 @@ class Entity extends gbft{
 						j.".$join_type."_ID =  e.ID 
 					$addtl_join
 					WHERE
-						j.".$this->type."_ID = '$this->id'  AND
+						j.".$this->type."_ID = '".intval($this->id)."'  AND
 						j.status = '$status'
 						$addtl_where
 					ORDER BY
@@ -396,7 +396,7 @@ class Entity extends gbft{
 								ON
 									be.event_ID = e.ID
 							WHERE
-								bm.".$this->type."_ID = '$this->id'  AND
+								bm.".$this->type."_ID = '".intval($this->id)."'  AND
 								e.ID = '".$info['event_ID']."'
 								e.status = '$status'
 								$addtl_where
