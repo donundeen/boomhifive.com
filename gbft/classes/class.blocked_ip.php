@@ -41,7 +41,7 @@ class blocked_ip extends gbft {
 		$query = "INSERT IGNORE INTO
 					blocked_ip
 				SET
-					ip_address = '".mysql_real_escape_string($ip_address)."'";
+					ip_address = '".mysql_real_escape_string($ip_address, $this->conn)."'";
 		$rs = $this->conn->execute($query);
 	}
 	
@@ -49,7 +49,7 @@ class blocked_ip extends gbft {
 		$query = "DELETE FROM
 					blocked_ip 
 				WHERE
-					blocked_ip_id = '".mysql_real_escape_string($blocked_ip_id)."'";
+					blocked_ip_id = '".mysql_real_escape_string($blocked_ip_id, $this->conn)."'";
 		$rs = $this->conn->execute($query);				
 		
 	}
@@ -64,7 +64,7 @@ class blocked_ip extends gbft {
 				FROM
 					blocked_ip
 				WHERE
-					ip_address = '".mysql_real_escape_string($ip_address)."'";
+					ip_address = '".mysql_real_escape_string($ip_address, $this->conn)."'";
 		$rs = $conn->execute($query);
 		if($rs && strlen($rs->fields['blocked_ip_id']) > 0){
 			return true;	
