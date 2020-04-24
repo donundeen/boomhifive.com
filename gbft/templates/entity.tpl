@@ -58,10 +58,10 @@ Current Pending corrections:<BR>
 <div class="article">
 
 <div class="article_header">
-<div class="article_submitter" class="hideable">
+<div class="article_submitter hideable" >
 {$entity->articles[id].submitter_name}
 </div>
-<div class="article_submitter_email" class="hideable">
+<div class="article_submitter_email hideable" >
 {$entity->articles[id].submitter_email}
 </div>
  <div class="article_submit_date">
