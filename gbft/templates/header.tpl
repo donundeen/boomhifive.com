@@ -67,10 +67,10 @@ function hide_alternate_div_content(div_id){
 <link type='network_viz' href='entity_xml.php?type={$entity->type}&id={$entity->id}' />
 {/if}
 
-{include file="google_map_header.tpl"}
+<!--include file="google_map_header.tpl"}-->
 
 </head>
-<body onload="loadMap(); liveSearchInit('band_searchform','entity2_name'); liveSearchInit('venue_searchform','entity2_name'); liveSearchInit('musician_searchform','entity2_name'); liveSearchInit('calendar_new_event_form', new Array('venue_name','band_name1')); {if $entity}
+<body onload="liveSearchInit('band_searchform','entity2_name'); liveSearchInit('venue_searchform','entity2_name'); liveSearchInit('musician_searchform','entity2_name'); liveSearchInit('calendar_new_event_form', new Array('venue_name','band_name1')); {if $entity}
 pageLoaded(); {/if}" onunload="GUnload()">
 
 {if $entity and $BROWSER_IS_IE}
@@ -94,6 +94,7 @@ if(!window.opener){
 <a href="calendar.php">Calendar</a>
 </div>
 <div class="header_paypal">
+	<!--
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 <input type="hidden" name="cmd" value="_xclick">
 <input type="hidden" name="business" value="donundeen@hotmail.com">
@@ -101,7 +102,7 @@ if(!window.opener){
 <input type="image" src="https://www.paypal.com/images/x-click-but04.gif" border
 ="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!"
 >
-</form>
+</form>-->
 </div>
 </div>
 
