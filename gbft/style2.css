@@ -1,0 +1,43 @@
+	
+	
+#header {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;	
+	border:1px solid #555;
+	height: 100px;
+}
+#header_left{
+	width: 15%;
+	margin-left: 0px;
+	margin-right: auto;
+	margin-top: 0px;
+	background: lightgreen;	
+	top: 0px;
+	height: 100%;
+}
+
+#header_center{
+	width: 70%;
+	top: 0px;
+	margin-right: auto;
+	margin-left; auto;
+	margin-top: 0px;
+	margin-bottom: auto;
+	background: skyblue;	
+	height: 100%;
+
+}
+
+
+#header_right{
+	width: 15%;
+	margin-right: 0px;
+	margin-left: auto;
+	margin-top: 0px;
+	margin-bottom; auto;
+	top: 0px;
+	background: plum;	
+	height: 100%;
+	
+}

@@ -1,0 +1,280 @@
+/* Type CSS rules here and they will be applied
+to pages from 'editcss'
+immediately as long as you keep this window open. */
+
+/**** LINK-tag style sheet style.css ****/
+
+body{
+	background: #fdf;
+	font-family: "trebuchet MS";
+	font-size: 10pt;
+}
+
+.everything{
+position: relative;
+
+}
+
+
+.middle {
+z-index: 2;
+position: absolute;
+padding: 10;
+_padding: 5px 230px 10px 230px;
+top: 10px;
+background:#c9c;
+border:1px solid #000;
+voice-family: "\"}\"";
+voice-family: inherit;
+margin-left: 210px;
+_margin-left: auto;
+margin-right: 210px;
+_margin-right: auto;
+font-family: "trebuchet MS";
+}
+
+.leftbar, .rightbar {
+z-index: 4;
+word-wrap:break-word;	
+background: #ea1;
+position: absolute;
+top: 20px; /* height of the header */
+padding: 2px;
+}
+.leftbar {
+left:10px;
+width:200px;
+border:1px solid #000;
+}
+
+.rightbar {
+right:10px;
+width:200px;
+border:1px solid #000;
+}
+	
+	
+.search_results{
+margin-top: 80px;
+
+}	
+	
+	
+.middle_cal {
+position: absolute;
+padding: 5px;
+top: 100px;
+background:#c9c;
+border:1px solid #000;
+voice-family: "\"}\"";
+voice-family: inherit;
+margin-left: 101px;
+margin-right:101px;
+font-family: "trebuchet MS";
+	}	
+	
+
+	
+	
+.header {
+align: center;
+width: 662;
+	margin-top: auto;
+	margin-left: auto;
+	margin-right: auto;	
+}
+.header_left{
+ float: left;
+	width: 80px;
+	margin-left: 0px;
+	margin-right: auto;
+	margin-top: 0px;
+
+}
+
+.header_center{
+	text-align: center;
+	width: 398px;
+	float: left;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+
+}
+
+.header_right{
+	
+	text-align: right;
+	float: left;
+	margin-right: 0px;
+	width: 182px;
+	margin-left: 0px;
+	margin-right: auto;
+	font-size: 8pt;
+
+}
+.header_calendar_link{
+	background:plum;
+}
+.header_paypal{
+	background: lightgreen;
+	width: auto;
+	margin-bottom: 0px;
+	margin-top: auto;
+	margin-right: auto;
+	margin-left: 0px;
+}
+
+.header_title{
+	font-size:16pt;
+	align: center;
+	background: skyblue;
+	margin-top: auto;
+}
+.header_login{
+	background: #aa0;
+}
+
+.header_search{
+	align: center;
+	background: red;
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+.page_title{
+z-index: 100;
+margin-top: 0px;
+
+}
+
+em.a{
+color: orange;
+font-size: 14pt;
+}
+em.b{
+color: green;
+font-size: 18pt;
+}
+em.c{
+color: purple;
+font-size: 24pt;
+}
+
+em.x{
+color: orange;
+font-size: 10pt;
+}
+em.y{
+color: green;
+font-size: 8pt;
+}
+em.x{
+color: purple;
+font-size: 6pt;
+}
+
+
+.articles{ 
+ width: auto;
+}
+
+.articles h1{
+font-size: 16pt;
+font-weight: normal;
+}
+
+
+.article{
+	font-size: 10pt;
+	background-color: #dda;
+	border:1px solid #000;
+}
+.article_header{
+	width: 100%;
+	background-color: #dda;
+	font-size: 10pt;
+}
+.article_submitter{
+	color:  #05f;
+	font-style: italic;
+	float: left;
+	padding: 2px;
+}
+
+.article_submitter_email{
+	color:  #02f;
+	width: auto;
+	float: left;
+	padding: 2px;
+}
+.article_submit_date{
+	float: right;
+	text-align: right;
+	padding: 2px;
+
+}
+.article_content{
+	padding: 3px;
+}
+
+
+.entity_join_list{
+font-size: 10pt;
+}
+
+.entity_join_list_name{
+	font-size: 12pt;
+}
+.file_list_name{
+	font-size: 14pt;
+}
+
+ul{
+margin: 0;
+margin-left: 5px; padding-left: 12px;
+list-style: circle;
+font-size: 10pt;
+}
+
+
+.article_form {
+
+	float: left;
+	font-size: 14pt;
+
+}
+.article_form_header{
+	margin-top: auto;
+
+	float: left	;
+	font-size: 8pt;
+}	
+
+.article_form_name{
+	margin-top: auto;
+
+	float: right;
+	font-size: 8pt;
+}	
+
+.article_form_email{
+margin-top: auto;
+float: right;
+	font-size: 8pt;
+	
+}
+.article_form_text{
+margin-top: auto;
+float: right;
+	font-size: 8pt;
+	
+}
+
+.map{
+	float:bottom;
+	margin-bottom: 0px;
+
+}
