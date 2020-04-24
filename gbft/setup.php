@@ -43,7 +43,7 @@ $all_files = getTemplates($smarty->template_dir, $smarty->template_dir);
 
 $smarty->assign("ALL_TEMPLATES", $all_files);
 
-
+$smarty->debugging = true;
 
 
 $input = new process_input();
