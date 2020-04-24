@@ -7,6 +7,8 @@ include_once('config.php');
 $CITY_NAME = $GLOBALS['city_name'];
 $STATE_NAME = $GLOBALS['state_name'];
 $SHORT_NAME = $GLOBALS['short_name'];
+$PHP_SELF = $_SERVER['PHP_SELF']
+
 if(preg_match('/^www/',$_SERVER['HTTP_HOST'])){
 	$GOOGLE_MAP_API_KEY = $GLOBALS['GOOGLE_MAP_API_KEY_WWW'];
 }else{

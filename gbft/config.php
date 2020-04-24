@@ -6,6 +6,8 @@ $GLOBALS['db_pass'] = 'nOh47Bk$';
 $GLOBALS['city_name'] = 'Gainesville';
 $GLOBALS['state_name'] = 'Florida';
 $GLOBALS['short_name'] = 'GBFT';
+$GLOBALS['GOOGLE_MAP_API_KEY_NO_WWW'] = false;
+$GLOBALS['GOOGLE_MAP_API_KEY_WWW'] = false;
 
 
 ?>
