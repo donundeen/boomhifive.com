@@ -117,7 +117,7 @@ class Entity extends gbft{
 		$id = $this->id;
 		$type = $this->type;
 		if(!in_array($type, $GLOBALS['entity_types'])){echo $type . " isn't valid"; return false;}
-		if(!is_int($id){echo $id." isn't valid"; return false;};
+		if(!is_int($id)){echo $id." isn't valid"; return false;};
 		if(strlen($type) > 0 && strlen($id) > 0){
 			$query = "SELECT
 						* 
@@ -142,7 +142,7 @@ class Entity extends gbft{
 		$id = $this->id;
 		$type = $this->type;
 		if(!in_array($type, $GLOBALS['entity_types'])){echo $type . " isn't valid"; return false;}
-		if(!is_int($id){echo $id." isn't valid"; return false;};
+		if(!is_int($id)){echo $id." isn't valid"; return false;};
 
 		if(strlen($type) > 0 && strlen($id) > 0){
 			$query = "SELECT
@@ -159,7 +159,7 @@ class Entity extends gbft{
 	
 	function get_entity_articles(){
 		if(!in_array($this->type, $GLOBALS['entity_types'])){echo $type . " isn't valid"; return false;}
-		if(!is_int($this->id){echo $id." isn't valid"; return false;};
+		if(!is_int($this->id)){echo $id." isn't valid"; return false;};
 
 		$query = "SELECT
 					*
@@ -217,7 +217,7 @@ class Entity extends gbft{
 	
 	function get_entity_files(){
 		if(!in_array($this->type, $GLOBALS['entity_types'])){echo $type . " isn't valid"; return false;}
-		if(!is_int($this->id){echo $id." isn't valid"; return false;};
+		if(!is_int($this->id)){echo $id." isn't valid"; return false;};
 		$query = "SELECT
 					*
 				FROM
