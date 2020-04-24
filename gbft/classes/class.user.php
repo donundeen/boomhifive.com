@@ -10,15 +10,17 @@ class user extends entity{
 	
 	
 	// STATIC function
-	function get_valid_user($conn, $user_name, $user_pass){
+	public static function get_valid_user($conn, $user_name, $user_pass){
+	//	$conn = gbft::static_get_conn();
+
 		$query = "SELECT
 					ID as x,
 					member.*
 				FROM
 					member
 				WHERE
-					name = '".mysql_escape_string($user_name, $this->conn)."' AND
-					pass = '".mysql_escape_string($user_pass, $this->conn)."'";
+					name = '".mysql_escape_string($user_name, $conn)."' AND
+					pass = '".mysql_escape_string($user_pass, $conn)."'";
 		$rs = $conn->Execute($query);
 		if(!$rs or strlen($rs->fields['name']) == 0){
 			return false;	
