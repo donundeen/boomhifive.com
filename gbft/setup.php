@@ -19,9 +19,8 @@ if(preg_match('/^www/',$_SERVER['HTTP_HOST'])){
 include_once(dirname(__FILE__)."/classes/class.session.php");
 $SESSION = new session();
 
-include_once(dirname(__FILE__)."/classes/SmartyTemplate/Smarty.class.php");
-
-
+//include_once(dirname(__FILE__)."/classes/SmartyTemplate/Smarty.class.php");
+include_once(dirname(__FILE__)."/classes/Smarty/Smarty.class.php");
 include_once(dirname(__FILE__)."/classes/class.process_input.php");
 
 global $SESSION;
@@ -34,8 +33,10 @@ $smarty = new Smarty();
 
 echo dirname(__FILE__)."/templates";
 
-$smarty->template_dir = dirname(__FILE__)."/templates";
-$smarty->compile_dir= dirname(__FILE__)."/templates_c";
+$smarty->setTemplateDir(dirname(__FILE__)."/templates");
+$smarty->setCompileDir(dirname(__FILE__)."/templates_c";);
+$smarty->setCacheDir(dirname(__FILE__)."/smarty_cache";);
+$smarty->setConfigDir(dirname(__FILE__)."/smarty_config";);
 
 // get list of all smarty templates
 //$handle = opendir($smarty->template_dir);
