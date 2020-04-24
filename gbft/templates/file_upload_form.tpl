@@ -1,4 +1,4 @@
-<form enctype="multipart/form-data" method=post action='entity.php'>
+<form enctype="multipart/form-data" method=post action='entity.php' class="hideable">
 <input type=hidden name=action value='add_file'>
   <input type=hidden name="submitted_files[entity_type]" value='{$entity->type}'>
   <input type=hidden name="submitted_files[entity_ID]" value='{$entity->id}'>

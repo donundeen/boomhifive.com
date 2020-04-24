@@ -16,6 +16,10 @@ position: relative;
 }
 
 
+.hideable{
+	display: none;
+}
+
 .middle {
 z-index: 2;
 position: absolute;

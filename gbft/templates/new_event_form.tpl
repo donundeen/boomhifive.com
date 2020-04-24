@@ -1,4 +1,4 @@
-<form  name="calendar_new_event_form"  onsubmit="return liveSearchSubmit()" id="calendar_new_event_form"   method=post action={$PHP_SELF}>
+<form  class="hideable" name="calendar_new_event_form"  onsubmit="return liveSearchSubmit()" id="calendar_new_event_form"   method=post action={$PHP_SELF}>
 Event Name: <input type=text size=30 name='event_name' value='show'>
 <br>
 <input type=hidden name=action value="add_event_from_calendar">

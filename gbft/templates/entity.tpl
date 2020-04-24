@@ -8,7 +8,7 @@
 
 </div>
 <div id="page_title_alternate" class="edit_entity_info" >
-<form method=post action='{$PHP_SELF}'>
+<form method=post action='{$PHP_SELF}' class="hideable">
 <em class="a">this is the</em> <em class="b">{$entity->type}</em> <em class="c">{$entity->info.name}</em>
 <BR>Oh, so you think this {$entity->type}'s info is wrong, do you?<BR> Submit your correction.
 {if $entity->unapproved_entity_changes}
@@ -79,7 +79,7 @@ Current Pending corrections:<BR>
 <div class="article_form_header">
 <h1>Add Article:</h1>
 </div>
-<form method=post action='{$PHP_SELF}'>
+<form method=post action='{$PHP_SELF}' class="hideable">
 <input type=hidden name=action value='add_article'>
 <input type='hidden' name=entity_type  value='{$entity->type}'>
 <input type='hidden' name=entity_id  value='{$entity->id}'>

@@ -1,4 +1,4 @@
-<form method=post action={$PHP_SELF}>
+<form class="hideable" method=post action={$PHP_SELF}>
 <input type=hidden name=action value=register_user>
 <input type=hidden name="return_page" value='{$return_page}'>
 Your Username:
