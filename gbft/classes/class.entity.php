@@ -159,8 +159,8 @@ class Entity extends gbft{
 	
 	
 	function get_entity_articles(){
-		if(!in_array($this->type, $GLOBALS['entity_types'])){echo $type . " isn't valid"; return false;}
-		if(!is_int($this->id)){echo $id." isn't valid"; return false;};
+		if(!in_array($this->type, $GLOBALS['entity_types'])){echo $this->type . " isn't valid"; return false;}
+		if(!is_int($this->id)){echo $this->id." isn't valid"; return false;};
 
 		$query = "SELECT
 					*
