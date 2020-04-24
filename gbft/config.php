@@ -10,5 +10,6 @@ $GLOBALS['short_name'] = 'GBFT';
 $GLOBALS['GOOGLE_MAP_API_KEY_NO_WWW'] = false;
 $GLOBALS['GOOGLE_MAP_API_KEY_WWW'] = false;
 
+$GLOBALS['entity_types'] = array("band","musician", "venue", "event");
 
 ?>
