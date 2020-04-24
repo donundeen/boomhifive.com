@@ -46,11 +46,11 @@ class Search extends gbft{
 					FROM
 						articles a
 						JOIN
-							".mysql_real_escape_string($page_name)." e
+							".mysql_real_escape_string($page_name, $this->conn)." e
 						ON
 							a.entity_id = e.ID
 					WHERE
-						a.entity_type = '".mysql_real_escape_string($page_name)."' AND
+						a.entity_type = '".mysql_real_escape_string($page_name, $this->conn)."' AND
 						$where
 					ORDER BY
 						e.name";
