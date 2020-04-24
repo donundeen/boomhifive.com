@@ -436,7 +436,7 @@ class Entity extends gbft{
 								ON
 									be.event_ID = e.ID
 							WHERE
-								e.ID = '".mysql_real_escape_string($info['event_ID'], $this->conn)."'
+								e.ID = '".$info['event_ID']."'
 							GROUP BY 
 								b.ID
 							ORDER BY
