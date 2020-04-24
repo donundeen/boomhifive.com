@@ -30,6 +30,8 @@ $ERROR_MSGS = array();
 
 $smarty = new Smarty();
 
+echo dirname(__FILE__)."/templates";
+
 $smarty->template_dir = dirname(__FILE__)."/templates";
 $smarty->compile_dir= dirname(__FILE__)."/templates_c";
 
