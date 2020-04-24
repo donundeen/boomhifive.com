@@ -84,7 +84,7 @@ class Entity extends gbft{
 				FROM
 					$type
 				WHERE
-					name LIKE '".mysql_escape_string($name)."'";
+					name LIKE '".mysql_escape_string($name, $conn)."'";
 		$rs = $conn->Execute($query);
 		
 		if($rs && strlen($rs->fields['ID']) > 0){
@@ -120,9 +120,9 @@ class Entity extends gbft{
 			$query = "SELECT
 						* 
 					FROM
-						`".mysql_escape_string($type)."`
+						`".mysql_escape_string($type, $this->conn)."`
 					WHERE
-						ID = '".mysql_escape_string($id)."'";
+						ID = '".mysql_escape_string($id, $this->conn)."'";
 			$rs = $this->conn->Execute($query);
 			if($rs){
 				$this->info = $rs->fields;
@@ -143,9 +143,9 @@ class Entity extends gbft{
 			$query = "SELECT
 						* 
 					FROM
-						`".mysql_escape_string($type)."`
+						`".mysql_escape_string($type, $this->conn)."`
 					WHERE
-						orig_id = '".mysql_escape_string($id)."'";
+						orig_id = '".mysql_escape_string($id, $this->conn)."'";
 			$this->unapproved_entity_changes = $this->conn->GetArray($query);
 		}	
 	}
@@ -158,8 +158,8 @@ class Entity extends gbft{
 				FROM
 					articles
 				WHERE
-					entity_type = '".mysql_escape_string($this->type)."' AND
-					entity_ID = '".mysql_escape_string($this->id)."'  AND
+					entity_type = '".mysql_escape_string($this->type, $this->conn)."' AND
+					entity_ID = '".mysql_escape_string($this->id, $this->conn)."'  AND
 						status != 'change'";
 		$rs = $this->conn->Execute($query);
 		$this->articles  = $rs->GetRows();		
@@ -188,7 +188,7 @@ class Entity extends gbft{
 					FROM 
 						".$type." 
 					WHERE
-		                name LIKE \"".mysql_real_escape_string($name)."\"";
+		                name LIKE \"".mysql_real_escape_string($name, $this->conn)."\"";
 	
 			$rs = $this->conn->execute($query);
 			if($rs && strlen($rs->fields['ID']) > 0){
@@ -211,8 +211,8 @@ class Entity extends gbft{
 				FROM
 					submitted_files
 				WHERE
-					entity_type = '".mysql_escape_string($this->type)."' AND
-					entity_ID = '".mysql_escape_string($this->id)."'  AND
+					entity_type = '".mysql_escape_string($this->type, $this->conn)."' AND
+					entity_ID = '".mysql_escape_string($this->id, $this->conn)."'  AND
 						status = 'approved'";
 		$rs = $this->conn->Execute($query);
 		$this->files  = $rs->GetRows();		
@@ -245,7 +245,7 @@ class Entity extends gbft{
 						FROM
 							$table_name	
 						WHERE
-							orig_id = '".mysql_real_escape_string($id)."'";
+							orig_id = '".mysql_real_escape_string($id, $this->conn)."'";
 				$results = $this->conn->GetArray($query);	
 				if(is_array($results) && count($results) > 0){
 					$this->join_info[$join_type]['approved'][$index]['changes'] = $results;
@@ -383,7 +383,7 @@ class Entity extends gbft{
 									be.event_ID = e.ID
 							WHERE
 								bm.".$this->type."_ID = '$this->id'  AND
-								e.ID = '".mysql_real_escape_string($info['event_ID'])."'
+								e.ID = '".mysql_real_escape_string($info['event_ID'], $this->conn)."'
 								e.status = '$status'
 								$addtl_where
 							GROUP BY 
@@ -419,7 +419,7 @@ class Entity extends gbft{
 								ON
 									be.event_ID = e.ID
 							WHERE
-								e.ID = '".mysql_real_escape_string($info['event_ID'])."'
+								e.ID = '".mysql_real_escape_string($info['event_ID'], $this->conn)."'
 							GROUP BY 
 								b.ID
 							ORDER BY
