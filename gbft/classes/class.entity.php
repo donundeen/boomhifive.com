@@ -472,7 +472,7 @@ class Entity extends gbft{
 	}
 	
 	function get_join_num_articles($join_type){
-		if(!in_array($this->type, $GLOBALS['entity_types'])){echo $type . " isn't valid"; return false;}
+		if(!in_array($this->type, $GLOBALS['entity_types'])){echo __LINE__.$this->type . " isn't valid"; return false;}
 
 		$table_name = $this->get_table_name($this->type, $join_type);	
 		if(!$table_name){
