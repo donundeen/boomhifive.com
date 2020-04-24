@@ -126,9 +126,10 @@ function getTemplates($directory, $initial_dir) {
 
 
 function mysql_real_escape_string($string){
-  return mysqli_real_escape_string($string);
+  global $gbft;
+  return mysqli_real_escape_string($gbft->conn, $string);
 }
 function mysql_escape_string($string){
-  return mysqli_escape_string($string);
+  return mysqli_escape_string($gbft->conn, $string);
 }
 ?>
