@@ -116,13 +116,15 @@ class Entity extends gbft{
 	function get_entity_info(){
 		$id = $this->id;
 		$type = $this->type;
+		if(!in_array($type, $GLOBALS['entity_types'])){echo $type . " isn't valid"; return false;}
+		if(!is_int($id){echo $id." isn't valid"; return false;};
 		if(strlen($type) > 0 && strlen($id) > 0){
 			$query = "SELECT
 						* 
 					FROM
-						`".mysql_escape_string($type, $this->conn)."`
+						`".$type."`
 					WHERE
-						ID = '".mysql_escape_string($id, $this->conn)."'";
+						ID = '".$id."'";
 			$rs = $this->conn->Execute($query);
 			if($rs){
 				$this->info = $rs->fields;
@@ -139,6 +141,9 @@ class Entity extends gbft{
 	function get_unapproved_entity_changes(){
 		$id = $this->id;
 		$type = $this->type;
+		if(!in_array($type, $GLOBALS['entity_types'])){echo $type . " isn't valid"; return false;}
+		if(!is_int($id){echo $id." isn't valid"; return false;};
+
 		if(strlen($type) > 0 && strlen($id) > 0){
 			$query = "SELECT
 						* 
@@ -153,6 +158,9 @@ class Entity extends gbft{
 	
 	
 	function get_entity_articles(){
+		if(!in_array($this->type, $GLOBALS['entity_types'])){echo $type . " isn't valid"; return false;}
+		if(!is_int($this->id){echo $id." isn't valid"; return false;};
+
 		$query = "SELECT
 					*
 				FROM
@@ -208,6 +216,8 @@ class Entity extends gbft{
 	
 	
 	function get_entity_files(){
+		if(!in_array($this->type, $GLOBALS['entity_types'])){echo $type . " isn't valid"; return false;}
+		if(!is_int($this->id){echo $id." isn't valid"; return false;};
 		$query = "SELECT
 					*
 				FROM
@@ -238,6 +248,8 @@ class Entity extends gbft{
 	
 	
 	function get_unapproved_join_changes($join_type){
+		if(!in_array($this->type, $GLOBALS['entity_types'])){echo $type . " isn't valid"; return false;}
+
 		if(is_array($this->join_info[$join_type]['approved'])){
 			foreach($this->join_info[$join_type]['approved'] as $index=>$join){
 				$id = $join['ID'];
@@ -258,6 +270,8 @@ class Entity extends gbft{
 	}
 	
 	function get_join_infos_of_type($join_type, $status = "approved"){
+		if(!in_array($this->type, $GLOBALS['entity_types'])){echo $type . " isn't valid"; return false;}
+
 		$table_name = $this->get_table_name($this->type, $join_type);	
 
 //		$this->conn->debug = true;
@@ -460,6 +474,8 @@ class Entity extends gbft{
 	}
 	
 	function get_join_num_articles($join_type){
+		if(!in_array($this->type, $GLOBALS['entity_types'])){echo $type . " isn't valid"; return false;}
+
 		$table_name = $this->get_table_name($this->type, $join_type);	
 		if(!$table_name){
 			$this->join_num_articles[$join_type] = array();
@@ -488,6 +504,8 @@ class Entity extends gbft{
 
 	
 	function get_join_num_files($join_type){
+		if(!in_array($this->type, $GLOBALS['entity_types'])){echo $type . " isn't valid"; return false;}
+
 		$table_name = $this->get_table_name($this->type, $join_type);	
 		if(!$table_name){
 			$this->join_num_files[$join_type] = array();
