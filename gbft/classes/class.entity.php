@@ -224,8 +224,8 @@ class Entity extends gbft{
 				FROM
 					submitted_files
 				WHERE
-					entity_type = '".mysql_escape_string($this->type, $this->conn)."' AND
-					entity_ID = '".mysql_escape_string($this->id, $this->conn)."'  AND
+					entity_type = '".$this->type."' AND
+					entity_ID = '".$this->id."'  AND
 						status = 'approved'";
 		$rs = $this->conn->Execute($query);
 		$this->files  = $rs->GetRows();		
@@ -400,7 +400,7 @@ class Entity extends gbft{
 									be.event_ID = e.ID
 							WHERE
 								bm.".$this->type."_ID = '$this->id'  AND
-								e.ID = '".mysql_real_escape_string($info['event_ID'], $this->conn)."'
+								e.ID = '".$info['event_ID']."'
 								e.status = '$status'
 								$addtl_where
 							GROUP BY 
