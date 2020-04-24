@@ -20,8 +20,7 @@ class blocked_ip extends gbft {
 		if($action == 'delete_blocked_ip'){
 			$this->delete_blocked_ip($this->vars['blocked_ip_id']);
 		}
-		$this->get_blocked_ips();
-		
+		$this->get_blocked_ips();	
 		
 	}
 	
@@ -57,7 +56,7 @@ class blocked_ip extends gbft {
 	
 	
 	
-	function ip_blocked($ip_address){
+	static function ip_blocked($ip_address){
 		$conn = gbft::static_get_conn();
 		
 		$query = "SELECT 
