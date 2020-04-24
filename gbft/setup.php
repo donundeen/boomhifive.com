@@ -43,7 +43,7 @@ $smarty->setConfigDir(dirname(__FILE__)."/smarty_config");
 
 //$smarty->assign("ALL_TEMPLATES", $all_files);
 
-$smarty->debugging = true;
+$smarty->debugging = false;
 
 
 $input = new process_input();
