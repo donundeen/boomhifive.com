@@ -67,7 +67,8 @@ New Files:
 
 <div class="articles">
 
-<i class="metatext">Hey everyone, remember this? If you played in bands in Gainesville in the 90s->early 00s, you probably knew about the Gainesville Band Family Tree. It went down about 15 years ago, but I found the code, stood it up on a webserver, and have made just enough changes to a) get it to work and b) disable new contributions. Everything else on this site is how it looked in 2005 or so when I took it down. I hope you enjoy cruising it again. Parts are probably broken, email me if you see a bug. -- Don</i> 
+<i class="metatext">[Hey everyone, remember this? If you played in bands in Gainesville in the 90s->early 00s, you probably knew about the Gainesville Band Family Tree. It went down about 15 years ago, but I found the code, stood it up on a webserver, and have made just enough changes to a) get it to work and b) disable new contributions. Everything else on this site is how it looked in 2005 or so when I took it down. I hope you enjoy cruising it again. Parts are probably broken, email me if you see a bug. -- Don]</i>
+<BR><BR>
 
 
 
