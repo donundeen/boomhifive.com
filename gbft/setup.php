@@ -126,7 +126,6 @@ function getTemplates($directory, $initial_dir) {
 
 
 function mysql_real_escape_string($string, $conn){
-  echo $conn;
   return mysqli_real_escape_string($conn, $string);
 }
 function mysql_escape_string($string, $conn){
