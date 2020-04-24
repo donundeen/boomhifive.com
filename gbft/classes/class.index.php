@@ -54,8 +54,6 @@ class Index extends gbft{
 			$rs = $this->conn->execute($query);
 			$this->entity_count[$type] = $rs->fields['total_count'];
 			
-			
-			
 		}
 		
 	}

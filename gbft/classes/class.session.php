@@ -16,9 +16,10 @@ class session extends gbft{
 	
 	function session(){
 		
-		$this->conn->debug = true;
 		
 		$this->get_conn();
+
+		$this->conn->debug = true;
 		session_start();
 		foreach($this->session_vars as $varname){
 			$this->vars[$varname] = $_SESSION[$varname];	
