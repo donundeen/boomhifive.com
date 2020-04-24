@@ -397,7 +397,7 @@ class Entity extends gbft{
 									be.event_ID = e.ID
 							WHERE
 								bm.".$this->type."_ID = '".intval($this->id)."'  AND
-								e.ID = '".$info['event_ID']."'
+								e.ID = '".$info['event_ID']."' AND
 								e.status = '$status'
 								$addtl_where
 							GROUP BY 
