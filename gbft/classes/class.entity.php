@@ -149,7 +149,7 @@ class Entity extends gbft{
 			$query = "SELECT
 						* 
 					FROM
-						`".mysql_escape_string($type, $this->conn)."`
+						`".$type."`
 					WHERE
 						orig_id = '".mysql_escape_string($id, $this->conn)."'";
 			$this->unapproved_entity_changes = $this->conn->GetArray($query);
@@ -260,7 +260,7 @@ class Entity extends gbft{
 						FROM
 							$table_name	
 						WHERE
-							orig_id = '".mysql_real_escape_string($id, $this->conn)."'";
+							orig_id = '".$id."'";
 				$results = $this->conn->GetArray($query);	
 				if(is_array($results) && count($results) > 0){
 					$this->join_info[$join_type]['approved'][$index]['changes'] = $results;
