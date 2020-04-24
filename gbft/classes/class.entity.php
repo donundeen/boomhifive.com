@@ -10,11 +10,11 @@ class Entity extends gbft{
 	var $type = "";
 	var $id = "";
 	
-	var $info = "";
-	var $files = "";
-	var $articles = "";
+	var $info = array();
+	var $files = array();
+	var $articles = array();
 	
-	var $join_info = "";
+	var $join_info = array();
 	var $join_num_articles = "";
 	var $join_num_files = "";
 	
