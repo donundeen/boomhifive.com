@@ -121,7 +121,7 @@ Search: <input type=text size=20 name='search_string' value='{$search_string|esc
 </div>
 
 <div class="header_right">
-<div class="header_login">
+<div class="header_login hideable">
 {if $user->info.name}
 You Are user <a href='entity.php?type=member&id={$user->info.ID}'>{$user->info.name}</a>
 <BR>	
