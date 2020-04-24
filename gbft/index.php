@@ -26,6 +26,7 @@ unset($index->conn);
 $smarty->assign("index",$index);
 $smarty->assign("ERROR_MSGS", $ERROR_MSGS);
 
-$smarty->display("index.tpl");
+//$smarty->display("index.tpl");
+$smarty->display("./classes/SmartyTemplate/debug.tpl");
 
 ?>
