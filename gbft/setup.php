@@ -126,11 +126,11 @@ function getTemplates($directory, $initial_dir) {
 
 
 function mysql_real_escape_string($string){
-  global $conn;
-  return mysqli_real_escape_string($conn, $string);
+  global $SESSION;
+  return mysqli_real_escape_string($SESSION->conn, $string);
 }
 function mysql_escape_string($string){
-  global $conn;
-  return mysqli_escape_string($conn, $string);
+  global $SESSION;
+  return mysqli_escape_string($SESSION->conn, $string);
 }
 ?>
