@@ -164,7 +164,7 @@ class Entity extends gbft{
 		$rs = $this->conn->Execute($query);
 		if($rs){
 			$this->articles  = $rs->GetRows();	
-		}	
+		}		
 	}
 	
 	
