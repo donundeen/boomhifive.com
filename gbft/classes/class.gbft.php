@@ -57,7 +57,7 @@ class gbft {
 	
 	function static_get_conn(){
 		global $DB_DEBUG;
-		$conn = NewADOConnection('mysql');
+		$conn = NewADOConnection('mysqli');
  		$conn->Connect($GLOBALS['db_host'], $GLOBALS['db_user'], 
 $GLOBALS['db_pass'], $GLOBALS['db_name']);
 		$conn->setFetchMode(ADODB_FETCH_ASSOC);
