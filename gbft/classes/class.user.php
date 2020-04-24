@@ -12,7 +12,7 @@ class user extends entity{
 	// STATIC function
 	public static function get_valid_user($conn, $user_name, $user_pass){
 	//	$conn = gbft::static_get_conn();
-
+		$conn->debug = false;
 		$query = "SELECT
 					ID as x,
 					member.*
