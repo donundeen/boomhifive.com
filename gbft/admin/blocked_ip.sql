@@ -1,0 +1,46 @@
+-- MySQL dump 10.9
+--
+-- Host: localhost    Database: gbft
+-- ------------------------------------------------------
+-- Server version	4.1.18-nt
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `blocked_ip`
+--
+
+DROP TABLE IF EXISTS `blocked_ip`;
+CREATE TABLE `blocked_ip` (
+  `blocked_ip_id` int(10) unsigned NOT NULL auto_increment,
+  `ip_address` varchar(15) default NULL,
+  `mtime` timestamp(14),
+  PRIMARY KEY  (`blocked_ip_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `blocked_ip`
+--
+
+
+/*!40000 ALTER TABLE `blocked_ip` DISABLE KEYS */;
+LOCK TABLES `blocked_ip` WRITE;
+INSERT INTO `blocked_ip` VALUES (3,'34.45.45.56',NULL);
+UNLOCK TABLES;
+/*!40000 ALTER TABLE `blocked_ip` ENABLE KEYS */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
