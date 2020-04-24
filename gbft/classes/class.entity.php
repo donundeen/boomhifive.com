@@ -15,8 +15,8 @@ class Entity extends gbft{
 	var $articles = array();
 	
 	var $join_info = array();
-	var $join_num_articles = "";
-	var $join_num_files = "";
+	var $join_num_articles =array();
+	var $join_num_files = array();
 	
 	var $join_types = array();
 	
@@ -140,7 +140,7 @@ class Entity extends gbft{
 	}
 	
 	function get_unapproved_entity_changes(){
-		$id = $this->id;
+		$id = intval($this->id);
 		$type = $this->type;
 		if(!in_array($type, $GLOBALS['entity_types'])){echo $type . " isn't valid"; return false;}
 		if(!is_int($id)){echo $id." isn't valid"; return false;};
@@ -167,8 +167,8 @@ class Entity extends gbft{
 				FROM
 					articles
 				WHERE
-					entity_type = '".mysql_escape_string($this->type, $this->conn)."' AND
-					entity_ID = '".mysql_escape_string($this->id, $this->conn)."'  AND
+					entity_type = '".$this->type."' AND
+					entity_ID = '".intval($this->id)."'  AND
 						status != 'change'";
 		$rs = $this->conn->Execute($query);
 		if($rs){
