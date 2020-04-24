@@ -115,7 +115,7 @@ class Entity extends gbft{
 	
 	function get_entity_info(){
 		global $GLOBALS;
-		$id = $this->id;
+		$id = intval($this->id);
 		$type = $this->type;
 		if(!in_array($type, $GLOBALS['entity_types'])){echo $type . " isn't valid"; return false;}
 		if(!is_int($id)){echo $id." isn't valid"; return false;};
