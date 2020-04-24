@@ -18,7 +18,7 @@ class gbft {
 								"band_member");
 	
 		
-	function get_conn(){
+	public static function get_conn(){
 
 		$this->conn = gbft::static_get_conn();
 		if($_POST['db_debug'] == 'true' or $_GET['db_debug'] == 
