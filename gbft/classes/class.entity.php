@@ -162,7 +162,9 @@ class Entity extends gbft{
 					entity_ID = '".mysql_escape_string($this->id, $this->conn)."'  AND
 						status != 'change'";
 		$rs = $this->conn->Execute($query);
-		$this->articles  = $rs->GetRows();		
+		if($rs){
+			$this->articles  = $rs->GetRows();	
+		}	
 	}
 	
 	
