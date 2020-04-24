@@ -34,9 +34,9 @@ $smarty = new Smarty();
 echo dirname(__FILE__)."/templates";
 
 $smarty->setTemplateDir(dirname(__FILE__)."/templates");
-$smarty->setCompileDir(dirname(__FILE__)."/templates_c";);
-$smarty->setCacheDir(dirname(__FILE__)."/smarty_cache";);
-$smarty->setConfigDir(dirname(__FILE__)."/smarty_config";);
+$smarty->setCompileDir(dirname(__FILE__)."/templates_c");
+$smarty->setCacheDir(dirname(__FILE__)."/smarty_cache");
+$smarty->setConfigDir(dirname(__FILE__)."/smarty_config");
 
 // get list of all smarty templates
 //$handle = opendir($smarty->template_dir);
