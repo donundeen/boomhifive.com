@@ -118,14 +118,13 @@ class Entity extends gbft{
 		$id = intval($this->id);
 		$type = $this->type;
 		if(!in_array($type, $GLOBALS['entity_types'])){echo $type . " isn't valid"; return false;}
-		if(!is_int($id)){echo $id." isn't valid"; return false;};
 		if(strlen($type) > 0 && strlen($id) > 0){
 			$query = "SELECT
 						* 
 					FROM
 						`".$type."`
 					WHERE
-						ID = '".$id."'";
+						ID = '".intval($id)."'";
 			$rs = $this->conn->Execute($query);
 			if($rs){
 				$this->info = $rs->fields;
@@ -143,7 +142,6 @@ class Entity extends gbft{
 		$id = intval($this->id);
 		$type = $this->type;
 		if(!in_array($type, $GLOBALS['entity_types'])){echo $type . " isn't valid"; return false;}
-		if(!is_int($id)){echo $id." isn't valid"; return false;};
 
 		if(strlen($type) > 0 && strlen($id) > 0){
 			$query = "SELECT
@@ -151,7 +149,7 @@ class Entity extends gbft{
 					FROM
 						`".$type."`
 					WHERE
-						orig_id = '".$id."'";
+						orig_id = '".intval($id)."'";
 			$this->unapproved_entity_changes = $this->conn->GetArray($query);
 		}	
 	}
@@ -160,8 +158,7 @@ class Entity extends gbft{
 	
 	function get_entity_articles(){
 		if(!in_array($this->type, $GLOBALS['entity_types'])){echo $this->type . " isn't valid"; return false;}
-		if(!is_int($this->id)){echo $this->id." isn't valid"; return false;};
-
+		
 		$query = "SELECT
 					*
 				FROM
