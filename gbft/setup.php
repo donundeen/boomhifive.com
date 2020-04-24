@@ -40,7 +40,7 @@ $smarty->setConfigDir(dirname(__FILE__)."/smarty_config");
 
 // get list of all smarty templates
 //$handle = opendir($smarty->template_dir);
-$all_files = getTemplates($smarty->template_dir, $smarty->template_dir);
+$all_files = getTemplates($smarty->getTemplateDir(), $smarty->getTemplateDir());
 
 $smarty->assign("ALL_TEMPLATES", $all_files);
 
