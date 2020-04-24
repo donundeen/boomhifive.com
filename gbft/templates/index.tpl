@@ -2,7 +2,7 @@
 
 <br clear="all">
 <div class="page_title" id="page_title">
-<em class="a">this is the</em> <em class="b">{$CITY_NAME}</em> <em class="c">Band Family Tree</em>
+<em class="a">this is the</em> <em class="b">{$CITY_NAME}</em> <em class="c">Band Family Tree</em> <em class="a">[revived]</em>
 </div>
 
 
@@ -66,6 +66,10 @@ New Files:
 <div class="middle">
 
 <div class="articles">
+
+<i class="metatext">Hey everyone, remember this? If you played in bands in Gainesville in the 90s->early 00s, you probably knew about the Gainesville Band Family Tree. It went down about 15 years ago, but I found the code, stood it up on a webserver, and have made just enough changes to a) get it to work and b) disable new contributions. Everything else on this site is how it looked in 2005 or so when I took it down. I hope you enjoy cruising it again. Parts are probably broken, email me if you see a bug. -- Don</i> 
+
+
 
 It is with great excitement and trepidation that I<BR>
 Welcome you to the Latest Version of the {$CITY_NAME} Band Family Tree!

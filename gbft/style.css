@@ -15,6 +15,10 @@ position: relative;
 
 }
 
+.metatext{
+	font-family: serif;
+	color: red;
+}
 
 .hideable{
 	display: none;
