@@ -31,7 +31,6 @@ $ERROR_MSGS = array();
 
 $smarty = new Smarty();
 
-echo dirname(__FILE__)."/templates";
 
 $smarty->setTemplateDir(dirname(__FILE__)."/templates");
 $smarty->setCompileDir(dirname(__FILE__)."/templates_c");
@@ -40,9 +39,9 @@ $smarty->setConfigDir(dirname(__FILE__)."/smarty_config");
 
 // get list of all smarty templates
 //$handle = opendir($smarty->template_dir);
-$all_files = getTemplates($smarty->getTemplateDir(), $smarty->getTemplateDir());
+//$all_files = getTemplates($smarty->getTemplateDir(), $smarty->getTemplateDir());
 
-$smarty->assign("ALL_TEMPLATES", $all_files);
+//$smarty->assign("ALL_TEMPLATES", $all_files);
 
 $smarty->debugging = true;
 
