@@ -1,0 +1,124 @@
+<html>
+<head>
+
+
+<script>
+
+function pageLoaded(){
+	if (window.opener){
+		window.opener.loadXML();
+	}
+}
+
+function urlencode(str) {
+	return escape(str).replace(/[+]/g, '%2B');
+}
+
+String.prototype.urlencode = urlencode;
+
+function openGraphWindow(){
+	var url = urlencode(window.location);
+	var location = "graphpage.html?childtarget="+url;
+	window.location = location;
+}
+</script>
+
+
+<xml id="xmlDoc">
+<allData>
+<nodes>
+<node>
+<g id="node1"  >
+<circle  cx="0" cy="0" r="10" fill="blue" />
+<text x="0" y="0" >node1</text>
+</g>
+</node>
+<node>
+<g id="node2" >
+<circle  cx="0" cy="0" r="10" fill="blue" />
+<text x="0" y="0" >node2</text>
+</g>
+</node>
+<node>
+<g id="node3" >
+<circle  cx="0" cy="0" r="10" fill="blue" />
+<text x="0" y="0" >node3</text>
+</g>
+</node>
+<node>
+<g id="node4" >
+<circle  cx="0" cy="0" r="10" fill="blue" />
+<text x="0" y="0" >node4</text>
+</g>
+</node>
+<node>
+<g id="node5" >
+<circle  cx="0" cy="0" r="10" fill="blue" />
+<text x="0" y="0" >node5</text>
+</g>
+</node>
+<node>
+<g id="node6" >
+<circle  cx="0" cy="0" r="10" fill="blue" />
+<text x="0" y="0" >node6</text>
+</g>
+</node>
+<node>
+<g id="node7" >
+<circle  cx="0" cy="0" r="10" fill="blue" />
+<text x="0" y="0" >node7</text>
+</g>
+</node>
+<node>
+<g id="node8" >
+<circle  cx="0" cy="0" r="10" fill="blue" />
+<text x="0" y="0" >goodbye</text>
+</g>
+</node>
+</nodes>
+<connections>
+<connection >
+<line  id="line1" x1="0" y1="0" x2="0" y2="0" fill="black" node1="node8" node2="node1"/>
+</connection>
+<connection >
+<line  id="line2" x1="0" y1="0" x2="0" y2="0" fill="black" node1="node7" node2="node2"/>
+</connection>
+<connection >
+<line  id="line3" x1="0" y1="0" x2="0" y2="0" fill="black" node1="node6" node2="node1"/>
+</connection>
+<connection >
+<line  id="line4" x1="0" y1="0" x2="0" y2="0" fill="black" node1="node5" node2="node6"/>
+</connection>
+<connection >
+<line  id="line5" x1="0" y1="0" x2="0" y2="0" fill="black" node1="node4" node2="node6"/>
+</connection>
+<connection >
+<line  id="line6" x1="0" y1="0" x2="0" y2="0" fill="black" node1="node1" node2="node6"/>
+</connection>
+<connection >
+<line  id="line7" x1="0" y1="0" x2="0" y2="0" fill="black" node1="node1" node2="node7"/>
+</connection>
+<connection >
+<line  id="line8" x1="0" y1="0" x2="0" y2="0" fill="black" node1="node1" node2="node8"/>
+</connection>
+</connections>
+</allData>
+</xml>
+
+</head>
+
+
+<body onload="pageLoaded()";>
+<script>
+if(!window.opener){
+	document.write("<a href='javascript:openGraphWindow();'>open graphpage</a>");
+}else{
+//	alert("has opener " + window.opener);
+}
+</script>
+
+<a href="datapage2.html">To page 2</a>
+
+
+</body>
+</html>

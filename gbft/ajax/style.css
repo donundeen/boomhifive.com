@@ -1,0 +1,82 @@
+div.divclass
+{
+font-weight: bold;
+background-color: black;
+float: left;
+width: auto;
+}
+
+
+/* LiveSearch */
+
+#livesearch {
+margin: 0px 0px 0px 0px;
+padding:0px;
+width: 140px;
+display: block;
+border:1px solid #99b58d;
+}
+
+
+#livesearch2 {
+margin: 0px 0px 0px 0px;
+padding:0px;
+width: 140px;
+display: block;
+border:1px solid #99b58d;
+}
+
+
+#LSResult {    
+      position: absolute;
+      background-color: #aaa; 
+      min-width: 180px; 
+      margin: 1px 0px 2px 0px;
+      padding: 0px;
+}
+
+#LSResult li {
+    padding-bottom: 2px;
+    padding-top: 2px;
+    line-height:15px;
+    margin-bottom: 0px;
+}
+    
+  
+ul#LSShadow {
+      position: relative;
+      right: 1px;
+      margin: 0px;
+      padding: 0px;
+      background-color: #666; /*shadow color*/
+      color: inherit;
+}
+  
+  
+ 
+#LSResult ul {
+     margin-bottom: 0px;
+     margin-top: 0px;
+     padding-top: 0px;  
+     margin: 0px;
+     padding: 0px;
+}
+
+#LSResult ul li {
+    text-indent: 10px;
+    padding: 0px 0px 3px 0px;
+}
+ 
+.LSRes {
+      position: relative;
+      bottom: 1px;
+      right: 1px;
+      background-color: white;
+      border:  1px solid #AAA;
+    }
+  
+#LSHighlight {
+     
+     color: #564b47;  
+     background-color: #ccc;
+}

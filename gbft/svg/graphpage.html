@@ -1,0 +1,799 @@
+<html>
+<head> 
+<title>svg test</title>
+<script language="JavaScript">
+
+
+////////////////////////////////////////////////
+// SET INTERVAL FIX
+///////////////////////////////////////////////
+// This script can be reused as long as the following 
+// copyright notice is not removed.  
+// SetInterval and ClearInterval Compatibility Script
+// Copyright 1999 InsideDHTML.com, LLC. All rights reserved
+// See www.insideDHTML.com for more information.
+
+var aTracking = new Array();
+
+var version = parseInt(navigator.appVersion);
+var appName = navigator.appName;
+var ns4 = version>=4 && appName=="Netscape";
+function runInterval(sIndex) {
+	if (aTracking[sIndex]) {
+		var args = aTracking[sIndex].arguments
+		// Call function and pass in any extra argument
+		var callargs="aTracking[sIndex].code(";
+		for(i=0;i < args.length;++i) {
+			callargs = callargs + "args["+i+"]";
+			if(i < args.length - 1) callargs += ",";
+		}
+		
+		callargs = callargs + ")";
+		eval(callargs);
+		// Start up timer for next iteration
+		aTracking[sIndex].timerID = setTimeout("runInterval(" + sIndex + ")",aTracking[sIndex].interval)
+	}
+}
+
+function newSetInterval(func,interval) {
+	var fCall = func
+	if (typeof func!="function")
+	var fCall= new Function(func)
+	var nextIdx = aTracking.length
+	aTracking[nextIdx] = new Object
+	aTracking[nextIdx].interval = interval
+	aTracking[nextIdx].code = fCall
+	aTracking[nextIdx].arguments = new Array()
+	for (var i=2;i < arguments.length;i++)
+	aTracking[nextIdx].arguments[aTracking[nextIdx].arguments.length] = arguments[i]
+	aTracking[nextIdx].timerID = setTimeout("runInterval(" + nextIdx + ")",interval)
+	return nextIdx
+}
+
+function newClearInterval(idx) {
+	if (aTracking[idx]) {
+		clearTimeout(aTracking[idx].timerID)
+		aTracking[idx] = null
+	}
+}
+
+if (!ns4) {
+	window.setInterval = newSetInterval
+	window.clearInterval = newClearInterval
+}
+
+
+
+///  END SET INTERVAL FIX
+//////////////////////////////////////////////////////////////////////////
+
+
+
+
+var r1 = 2;
+var r2 = 100;
+var circles = Array(0);
+var numCircles = 50;
+var inited = false;
+
+
+var nodeConns = new Hash(); // holds ids
+var nodeConns_o = new Hash(); // holds objects
+var connNodes = new Hash(); // holds ids
+var connNodes_o = new Hash(); // holds objects
+
+var nodeCoords = new Hash(); // holds array(2)
+var connCoords = new Hash(); // holds array(4)
+
+var nodes_o = new Array(); // keys id to obj
+
+var safety = 0;
+
+var interval = 100;
+
+var COULOMBS_CONSTANT = 8.9875e9;
+
+//var fricCoef = .001;
+var fricCoef = .001;
+fricCoef = 1 - fricCoef;
+
+var framelength = .5;
+
+var elecForceConst = COULOMBS_CONSTANT;
+//var maxElecForceDist = 400;
+var maxElecForceDist = 400;
+var springConstant = .0005;
+//var springConstant = .0009;
+
+//var chargeMultiplier = 0.0010;
+var chargeMultiplier = 0.0010;
+//var massMultiplier = 1;
+var massMultiplier = 1;
+
+var idealSpringLength = 30;
+//var idealSpringLength = 10;
+var maxNodeMovement = 50;
+
+var numFrames = 1;
+
+var maxWidth = 1600;
+var maxHeight = 1200;
+
+
+var maxTravelX = 50;
+var maxTravelY = 50;
+
+
+var childwindow;
+
+var xmlLoaded = false;
+
+var physicsOn = true;
+
+
+var SVGDocument = null;
+var SVGRoot = null;
+
+var TrueCoords = null;
+var GrabPoint = null;
+var BackDrop = null;
+var DragTarget = null;
+var DragTargetId = null;
+
+
+
+function openLink(url){
+	//alert("opening " + url);
+	childwindow.location.href = url;
+}
+	
+
+function urlencode(str) {
+	return escape(str).replace(/[+]/g, '%2B');
+}
+
+String.prototype.urlencode = urlencode;
+
+
+
+function init(evt){
+//	window.alert('initing');
+	if(!inited){
+		
+         SVGDocument = evt.target.ownerDocument;
+         SVGRoot = SVGDocument.documentElement;
+
+         // these svg points hold x and y values...
+         //    very handy, but they do not display on the screen (just so you know)
+         TrueCoords = SVGRoot.createSVGPoint();
+         GrabPoint = SVGRoot.createSVGPoint();
+
+         // this will serve as the canvas over which items are dragged.
+         //    having the drag events occur on the mousemove over a backdrop
+         //    (instead of the dragged element) prevents the dragged element
+         //    from being inadvertantly dropped when the mouse is moved rapidly
+         BackDrop = SVGDocument.getElementById('BackDrop');		
+		
+		
+		//svgdoc = document.sv.getSVGDocument();
+			
+		inited = true;
+		var url = unescape(getQueryVariable("childtarget"));
+		if(!childwindow){	
+			childwindow = window.open(url, "childwindow");
+		}else{
+			childwindow.location.href = url;
+		}
+		
+		
+		setInterval(runPhysics, interval);
+
+	}
+}
+
+
+// supporting drag-and-drop
+function Grab(evt)
+{
+
+ // find out which element we moused down on
+ var targetElement = evt.target;
+ 
+
+ // you cannot drag the background itself, so ignore any attempts to mouse down on it
+ if ( BackDrop != targetElement && targetElement.getAttribute("draggable") == "true" )
+ {
+	
+ 	targetElement = targetElement.parentNode;
+ 	
+ 	//set the item moused down on as the element to be dragged
+    DragTarget = targetElement;
+    DragTargetId = DragTarget.getAttribute("id");
+
+    // move this element to the "top" of the display, so it is (almost)
+    //    always over other elements (exception: in this case, elements that are
+    //    "in the folder" (children of the folder group) with only maintain
+    //    hierarchy within that group
+    DragTarget.parentNode.appendChild( DragTarget );
+
+    // turn off all pointer events to the dragged element, this does 2 things:
+    //    1) allows us to drag text elements without selecting the text
+    //    2) allows us to find out where the dragged element is dropped (see Drop)
+    DragTarget.setAttributeNS(null, 'pointer-events', 'none');
+
+    // we need to find the current position and translation of the grabbed element,
+    //    so that we only apply the differential between the current location
+    //    and the new location
+    var transMatrix = DragTarget.getCTM();
+    GrabPoint.x = TrueCoords.x - Number(transMatrix.e);
+    GrabPoint.y = TrueCoords.y - Number(transMatrix.f);
+
+ }else{
+ 	//db('didnt grab ' + targetElement + ' '  + targetElement.getAttribute("draggable"));
+ 	
+ 	targetElement = null;
+ }
+};
+
+
+function Drag(evt)
+{
+ // account for zooming and panning
+ GetTrueCoords(evt);
+
+ // if we don't currently have an element in tow, don't do anything
+ if (DragTarget)
+ {
+    // account for the offset between the element's origin and the
+    //    exact place we grabbed it... this way, the drag will look more natural
+    var newX = TrueCoords.x - GrabPoint.x;
+    var newY = TrueCoords.y - GrabPoint.y;
+
+    // apply a new tranform translation to the dragged element, to display
+    //    it in its new location
+    
+    
+   // DragTarget.setAttributeNS(null, 'transform', 'translate(' + newX + ',' + newY + ')');
+    moveNodeTo(DragTarget, DragTarget.getAttribute("id"), newX, newY);
+ }
+};
+
+
+function Drop(evt)
+{
+ // if we aren't currently dragging an element, don't do anything
+ if ( DragTarget )
+ {
+    // since the element currently being dragged has its pointer-events turned off,
+    //    we are afforded the opportunity to find out the element it's being dropped on
+    var targetElement = evt.target;
+
+    // turn the pointer-events back on, so we can grab this item later
+    DragTarget.setAttributeNS(null, 'pointer-events', 'all');
+    if ( 'Folder' == targetElement.parentNode.id )
+    {
+       // if the dragged element is dropped on an element that is a child
+       //    of the folder group, it is inserted as a child of that group
+       targetElement.parentNode.appendChild( DragTarget );
+       //alert(DragTarget.id + ' has been dropped into a folder, and has been inserted as a child of the containing group.');
+    }
+    else
+    {
+       // for this example, you cannot drag an item out of the folder once it's in there;
+       //    however, you could just as easily do so here
+       //alert(DragTarget.id + ' has been dropped on top of ' + targetElement.id);
+    }
+
+    // set the global variable to null, so nothing will be dragged until we
+    //    grab the next element
+    DragTarget = null;
+    DragTargetId = null;
+ }
+};
+
+
+function GetTrueCoords(evt)
+{
+ // find the current zoom level and pan setting, and adjust the reported
+ //    mouse position accordingly
+ var newScale = SVGRoot.currentScale;
+ var translation = SVGRoot.currentTranslate;
+ TrueCoords.x = (evt.clientX - translation.x)/newScale;
+ TrueCoords.y = (evt.clientY - translation.y)/newScale;
+};
+
+function getQueryVariable(variable) {
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i=0;i<vars.length;i++) {
+    var pair = vars[i].split("=");
+    if (pair[0] == variable) {
+      return pair[1];
+    }
+  } 
+}
+
+
+function loadXML(){
+	
+	
+//	window.alert('loading XML');
+	if(childwindow){
+		var nodes = childwindow.xmlDoc.getElementsByTagName("node");
+	
+		var id;
+	
+		for(i = 0; i < nodes.length; i++){
+			children = nodes[i].childNodes;
+			group = children[0];
+			id = group.getAttribute("id");
+			
+			if(nodeConns.items[id]){
+	//			alert("node "+ id + " already exists");
+			}else{
+				node = nodeToSvg(group);
+				SVGDocument.documentElement.appendChild(node);
+				initNode(node, id);
+			}
+		}
+	
+		var connections = childwindow.xmlDoc.getElementsByTagName("connection");
+	
+		var conn;
+		var children;
+		var node1_id;
+		var line;
+			
+		for(i = 0; i < connections.length; i++){
+			children = connections[i].childNodes;
+			conn = children[0];
+			id = conn.getAttribute("id");
+	
+			if(!connNodes.items[id]){
+				line = nodeToSvg(conn);
+				SVGDocument.documentElement.appendChild(line);
+				initConn(line, id);
+			}
+		}
+		
+		xmlLoaded = true;
+	}
+	
+}
+
+
+
+function nodeToSvg(node){
+	var i;
+	var attvalue;
+	var data;
+	
+	var name = node.nodeName;
+	if(node.nodeType == 3){
+		var elem = SVGDocument.createTextNode(node.data);
+		return elem;
+	}
+
+	
+	var elem = SVGDocument.createElement(name);
+
+	
+	for(i = 0; i < node.attributes.length; i++){
+		if(name == 'g' && node.attributes[i].nodeName == 'linkref'){
+			elem.setAttribute("onclick", "openLink('"+node.attributes[i].nodeValue +  "');");			
+		}else{
+			elem.setAttribute(node.attributes[i].nodeName, node.attributes[i].nodeValue);
+		}	
+	}
+		
+	var children = node.childNodes;
+	for(i = 0; i < children.length; i++){
+		childelem = nodeToSvg(children[i]);
+		elem.appendChild(childelem);
+	}	
+	
+	return elem;
+}
+
+
+function runPhysics(){
+	
+	if(xmlLoaded && physicsOn){
+	
+		var node_id = "";
+		for(node_id in nodes_o){
+			if(node_id != DragTargetId){
+				doNode(nodes_o[node_id], node_id);		
+			}
+		}
+	}
+}
+
+function doNode(node, node_id){
+	applyTransform(node, node_id);
+}
+
+
+function applyTransform(node, node_id){
+
+	safety++;
+	if(safety > 100){
+	//	alert("exiting");
+//exit();
+	}
+	
+	coords = getNodeNextPos(node_id);
+	
+	if(!coords){
+		return false;
+	}
+	
+	var x = coords[0];
+	var y = coords[1];
+
+	if(!x){
+
+		x = 0;
+	}
+	if(!y ){
+		y = 0;
+	}
+
+	if(x > maxWidth){
+		x = maxWidth;
+	}
+	if(y > maxHeight){
+		y = maxHeight;
+	}
+	if(x < 0){
+		x = 0;
+	}
+	if(y < 0){
+		y = 0;
+	}
+	moveNodeTo(node, node_id, x, y);	
+	return true;
+}
+
+
+
+
+
+
+function initNode(node, node_id){
+
+
+	var x = Math.floor(Math.random() * maxWidth);
+	var y = Math.floor(Math.random() * maxHeight);
+
+	if(!nodeConns.items[node_id]){
+		nodeConns.setItem(node_id, new Hash());
+		nodeCoords.setItem(node_id, new Array(0,0));
+		nodeConns_o.setItem(node_id, new Hash());
+	}
+	
+	nodes_o[node_id] = node;
+
+	
+	moveNodeTo(node, node_id, x, y);
+
+//	setInterval(doNode, interval, node, node_id);
+}
+
+/*
+function addNode(evt){
+	var node = evt.getTarget().getParentNode();
+	initNode(node);
+}
+*/
+
+
+function initConn(conn, conn_id){
+
+	
+	var node1_id = conn.getAttribute("node1");
+	var node1 = nodes_o[node1_id];
+	
+	var node2_id = conn.getAttribute("node2");
+	var node2 = nodes_o[node2_id];
+
+	connCoords.setItem(conn_id, new Array(nodeCoords.items[node1_id][0], nodeCoords.items[node1_id][1], nodeCoords.items[node2_id][0], nodeCoords.items[node2_id][1]));
+	
+	
+
+	nodeConns.items[node1_id].setItem(conn_id, conn_id);
+	nodeConns_o.items[node1_id].setItem(conn_id, conn);
+	nodeConns.items[node2_id].setItem(conn_id, conn_id);
+	nodeConns_o.items[node2_id].setItem(conn_id, conn);
+	
+	connNodes.setItem(conn_id,new Array(node1_id, node2_id));
+	connNodes_o.setItem(conn_id, new Array(node1, node2));
+	
+}
+
+
+function getNodeNextPos(node_id){
+	var force = new Array(0,0);
+	
+	var node_coords = getNodeCoords(node_id);	
+	
+	// get push force.
+	var actingForce = new Array(2);
+	for(node2_id  in nodeConns.items){
+		if(node2_id != node_id){
+			actingForce = getElectricForce(node_id, node2_id, node_coords);
+			force[0] -= actingForce[0];
+			force[1] -= actingForce[1];
+		}
+ 	}
+ 	
+	
+ 	
+	
+ 	
+	// get pull force
+	for(conn_id in nodeConns.items[node_id].items){
+		if(connNodes.items[conn_id]){
+			node2_id = connNodes.items[conn_id][0];
+			if(node2_id == node_id){
+				node2_id = connNodes.items[conn_id][1];
+			}
+			actingForce = getElasticForce(node_id, node2_id, node_coords);
+
+			
+			force[0] += actingForce[0];
+			force[1] += actingForce[1];
+
+		}		
+	}
+
+	
+	force[0] = force[0] * fricCoef;
+	force[1] = force[1] * fricCoef;
+	
+
+	
+	
+	
+	// now add interia (mass is nodeConns[node_id].length
+	var mass = nodeConns.items[node_id].length;
+	
+	if(!mass || mass <= 0){
+		mass = 1;
+	}
+	force[0] = force[0] / mass;
+	force[1] = force[1] / mass;
+	
+	
+	
+	
+	if(Math.abs(force[1]) < 1 && Math.abs(force[0])  < 1){
+		return false;
+	}	
+	
+
+	
+	
+	if(force[0] > maxTravelX){
+		force[0] = maxTravelX;
+	}
+	if(force[1] > maxTravelY){
+		force[1] = maxTravelY;
+	}	
+	
+
+	
+	
+	node_coords[0] += force[0];
+	node_coords[1] += force[1];
+	
+	
+	return node_coords;
+}
+
+
+
+function getElasticForce(node1_id, node2_id, node1_coords){
+
+	var node2_coords = getNodeCoords(node2_id);
+	
+	var distance = nodeDistance(node1_coords, node2_id);
+	
+
+	
+    var disp = distance - idealSpringLength;
+    var dx = node2_coords[0] - node1_coords[0];
+    var dy = node2_coords[1] - node1_coords[1];
+    var forceVector = springConstant * Math.pow(disp, 2.0);
+    
+    if(distance == 0){
+    	distance = .01;
+    }
+    	
+    var forceX = forceVector * dx / distance;
+    var forceY = forceVector * dy / distance;
+    
+	return new Array(forceX, forceY);
+}
+
+function getElectricForce(node1_id, node2_id, node1_coords){
+	var distance = nodeDistance(node1_coords, node2_id);
+	if(distance < .01){
+		distance = .01;	
+	}
+
+	var forceX = 0;
+	var forceY = 0;
+	
+    if (distance < maxElecForceDist) {
+		var node2_coords = getNodeCoords(node2_id);
+
+		var dx = node2_coords[0] - node1_coords[0];
+		var dy = node2_coords[1] - node1_coords[1];
+		var forceVector = elecForceConst * chargeMultiplier * getElecCharge(node1_id) * chargeMultiplier * getElecCharge(node1_id) /  Math.pow(distance, 2.0);
+		
+//		alert("forceVector =  "  + elecForceConst  + " *  " + chargeMultiplier  + " * " + getElecCharge(node1) + " * " + chargeMultiplier +" * " + getElecCharge(node1) + " /   " + Math.pow(distance, 2.0));
+		
+		var forceX = forceVector * dx / distance;
+		var forceY = forceVector * dy / distance;
+
+    }
+	return new Array(forceX, forceY);
+	
+}
+
+
+
+function getElecCharge(node){
+	return 1.0;
+}
+
+function moveNodeTo(node, node_id, x, y){
+
+	
+
+	
+	node.setAttribute("transform", "matrix(1, 0, 0, 1, " + x +  ", " + y +  ")");
+	
+	nodeCoords.items[node_id][0] = x;
+	nodeCoords.items[node_id][1] = y;
+	
+	for (conn_id in nodeConns.items[node_id].items){
+		if(connNodes.hasItem(conn_id)){
+			conn = nodeConns_o.items[node_id].items[conn_id];
+			var node1_id = connNodes.items[conn_id][0];
+			var node2_id = connNodes.items[conn_id][1];
+
+			if(node1_id == node_id){
+				setConnPoint1(conn, conn_id, x, y);
+			}
+			if(node2_id == node_id){
+				setConnPoint2(conn, conn_id, x, y);
+			}
+		}
+	}	
+}
+
+
+function getNodeCoords(node_id){
+/*
+	var ctm = node.getCTM();
+	var x = ctm.e;
+	var y = ctm.f;
+	return new Array(x,y);
+	*/
+	return nodeCoords.items[node_id];
+}
+
+
+function setConnPoint1(conn, conn_id, x , y){
+	connCoords.items[conn_id][0] = x;
+	connCoords.items[conn_id][1] = y;
+	conn.setAttribute("x1", x);
+	conn.setAttribute("y1", y);
+}
+
+
+function setConnPoint2(conn, conn_id, x , y){
+	connCoords.items[conn_id][2] = x;
+	connCoords.items[conn_id][3] = y;
+	conn.setAttribute("x2", x);
+	conn.setAttribute("y2", y);
+}
+
+function connLength(conn_id){
+	return getDistance(connCoords.items[conn_id][0], connCoords.items[conn_id][1], connCoords.items[conn_id][2], connCoords.items[conn_id][3]);
+}
+
+function nodeDistance(node1_coords, node2_id){
+	//coord1 = getNodeCoords(node1);
+	//coord2 = getNodeCoords(node2);
+	return getDistance(node1_coords[0], node1_coords[1], nodeCoords.items[node2_id][0], nodeCoords.items[node2_id][1]); 
+	
+}
+
+function getDistance(x1, y1, x2, y2){
+	return Math.sqrt(Math.pow(x2- x1, 2) + Math.pow(y2 - y1, 2));	
+}
+
+
+
+function db(msg){
+	document.debugForm.output.value += msg +"\n";
+		
+}
+
+function stopit(){
+	physicsOn = !physicsOn;
+}
+
+
+function Hash()
+{
+	this.length = 0;
+	this.items = new Array();
+	for (var i = 0; i < arguments.length; i += 2) {
+		if (typeof(arguments[i + 1]) != 'undefined') {
+			this.items[arguments[i]] = arguments[i + 1];
+			this.length++;
+		}
+	}
+   
+	this.removeItem = function(in_key)
+	{
+		var tmp_value;
+		if (typeof(this.items[in_key]) != 'undefined') {
+			this.length--;
+			var tmp_value = this.items[in_key];
+			delete this.items[in_key];
+		}
+	   
+		return tmp_value;
+	}
+
+	this.getItem = function(in_key) {
+		return this.items[in_key];
+	}
+
+	this.setItem = function(in_key, in_value)
+	{
+		if (typeof(in_value) != 'undefined') {
+			if (typeof(this.items[in_key]) == 'undefined') {
+				this.length++;
+			}
+
+			this.items[in_key] = in_value;
+		}
+	   
+		return in_value;
+	}
+
+	this.hasItem = function(in_key)
+	{
+		return typeof(this.items[in_key]) != 'undefined';
+	}
+}
+
+
+
+
+
+</script>
+
+</head>
+<body >
+
+
+<embed name=sv src=test.svg width=1600 height=1200 ></embed>
+
+<form name=debugForm>
+<textarea name=output rows=10 cols=80></textarea>
+<button onClick="stopit();">stop</button>
+</form>
+<!--
+<form name=f>
+<input type=button value=click onclick="init();">
+</form>
+-->
+</body>
+</html>

@@ -1,0 +1,111 @@
+<html>
+<head>
+<script>
+
+function pageLoaded(){
+	if (window.opener){
+		window.opener.loadXML();
+	}	
+}
+
+function urlencode(str) {
+	return escape(str).replace(/[+]/g, '%2B');
+}
+
+String.prototype.urlencode = urlencode;
+
+function openGraphWindow(){
+	var url = urlencode(window.location);
+	var location = "graphpage.html?childtarget="+url;
+	window.location = location;
+}
+</script>
+
+<xml id="xmlDoc">
+<allData>
+<nodes>
+<node>
+<g id="nodea"  >
+<circle  cx="0" cy="0" r="10" fill="blue" />
+<text x="0" y="0" >node1</text>
+</g>
+</node>
+<node>
+<g id="nodeb" >
+<circle  cx="0" cy="0" r="10" fill="blue" />
+<text x="0" y="0" >node2</text>
+</g>
+</node>
+<node>
+<g id="nodec" >
+<circle  cx="0" cy="0" r="10" fill="blue" />
+<text x="0" y="0" >node3</text>
+</g>
+</node>
+<node>
+<g id="noded" >
+<circle  cx="0" cy="0" r="10" fill="blue" />
+<text x="0" y="0" >node4</text>
+</g>
+</node>
+<node>
+<g id="nodee" >
+<circle  cx="0" cy="0" r="10" fill="blue" />
+<text x="0" y="0" >node5</text>
+</g>
+</node>
+<node>
+<g id="nodef" >
+<circle  cx="0" cy="0" r="10" fill="blue" />
+<text x="0" y="0" >node6</text>
+</g>
+</node>
+<node>
+<g id="nodeg" >
+<circle  cx="0" cy="0" r="10" fill="blue" />
+<text x="0" y="0" >node7</text>
+</g>
+</node>
+<node>
+<g id="nodeh" >
+<circle  cx="0" cy="0" r="10" fill="blue" />
+<text x="0" y="0" >goodbye</text>
+</g>
+</node>
+</nodes>
+<connections>
+<connection >
+<line  id="linea" x1="0" y1="0" x2="0" y2="0" fill="black" node1="nodeh" node2="node1"/>
+</connection>
+<connection >
+<line  id="lineb" x1="0" y1="0" x2="0" y2="0" fill="black" node1="nodeg" node2="node2"/>
+</connection>
+<connection >
+<line  id="linec" x1="0" y1="0" x2="0" y2="0" fill="black" node1="nodef" node2="node3"/>
+</connection>
+<connection >
+<line  id="lined" x1="0" y1="0" x2="0" y2="0" fill="black" node1="nodee" node2="node4"/>
+</connection>
+<connection >
+<line  id="linee" x1="0" y1="0" x2="0" y2="0" fill="black" node1="noded" node2="node5"/>
+</connection>
+<connection >
+<line  id="linef" x1="0" y1="0" x2="0" y2="0" fill="black" node1="nodea" node2="node6"/>
+</connection>
+<connection >
+<line  id="lineg" x1="0" y1="0" x2="0" y2="0" fill="black" node1="nodea" node2="node7"/>
+</connection>
+<connection >
+<line  id="lineh" x1="0" y1="0" x2="0" y2="0" fill="black" node1="nodea" node2="node8"/>
+</connection>
+</connections>
+</allData>
+</xml>
+
+</head>
+<body onload="pageLoaded();">
+
+<a href="datapage1.html">To page 1</a>
+
+</body>
+</html>

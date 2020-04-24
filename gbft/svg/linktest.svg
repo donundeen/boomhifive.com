@@ -1,0 +1,10 @@
+<svg width="6in" height="4in" viewBox="0 0 288 360" xmlns="http://www.w3.org/2000/svg" version="1.1" >
+<!--<SCRIPT LANGUAGE="JavaScript" type="text/javascript" src="physics.js"></SCRIPT>-->
+<g id="node8" >
+<a xlink:href="/entity.php?type=musician&amp;id=377">
+<circle  cx="50" cy="50" r="10" fill="blue" />
+<text x="50" y="50" >goodbye</text>
+</a>
+</g>
+
+</svg>
