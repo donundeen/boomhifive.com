@@ -20,7 +20,7 @@ include_once(dirname(__FILE__)."/classes/class.session.php");
 $SESSION = new session();
 
 //include_once(dirname(__FILE__)."/classes/SmartyTemplate/Smarty.class.php");
-include_once(dirname(__FILE__)."/classes/Smarty/Smarty.class.php");
+include_once(dirname(__FILE__)."/classes/smarty/Smarty.class.php");
 include_once(dirname(__FILE__)."/classes/class.process_input.php");
 
 global $SESSION;
