@@ -151,7 +151,7 @@ class Entity extends gbft{
 					FROM
 						`".$type."`
 					WHERE
-						orig_id = '".mysql_escape_string($id, $this->conn)."'";
+						orig_id = '".$id."'";
 			$this->unapproved_entity_changes = $this->conn->GetArray($query);
 		}	
 	}
