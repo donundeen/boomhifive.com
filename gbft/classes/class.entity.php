@@ -117,7 +117,7 @@ class Entity extends gbft{
 		global $GLOBALS;
 		$id = intval($this->id);
 		$type = $this->type;
-		if(!in_array($type, $GLOBALS['entity_types'])){echo $type . " isn't valid"; return false;}
+		if(!in_array($type, $GLOBALS['entity_types'])){echo __LINE__.$type . " isn't valid"; return false;}
 		if(strlen($type) > 0 && strlen($id) > 0){
 			$query = "SELECT
 						* 
@@ -141,7 +141,7 @@ class Entity extends gbft{
 	function get_unapproved_entity_changes(){
 		$id = intval($this->id);
 		$type = $this->type;
-		if(!in_array($type, $GLOBALS['entity_types'])){echo $type . " isn't valid"; return false;}
+		if(!in_array($type, $GLOBALS['entity_types'])){echo  __LINE__.$type . " isn't valid"; return false;}
 
 		if(strlen($type) > 0 && strlen($id) > 0){
 			$query = "SELECT
@@ -157,7 +157,7 @@ class Entity extends gbft{
 	
 	
 	function get_entity_articles(){
-		if(!in_array($this->type, $GLOBALS['entity_types'])){echo $this->type . " isn't valid"; return false;}
+		if(!in_array($this->type, $GLOBALS['entity_types'])){echo  __LINE__.$this->type . " isn't valid"; return false;}
 		
 		$query = "SELECT
 					*
@@ -214,15 +214,14 @@ class Entity extends gbft{
 	
 	
 	function get_entity_files(){
-		if(!in_array($this->type, $GLOBALS['entity_types'])){echo $type . " isn't valid"; return false;}
-		if(!is_int($this->id)){echo $id." isn't valid"; return false;};
+		if(!in_array($this->type, $GLOBALS['entity_types'])){echo  __LINE__.$type . " isn't valid"; return false;}
 		$query = "SELECT
 					*
 				FROM
 					submitted_files
 				WHERE
 					entity_type = '".$this->type."' AND
-					entity_ID = '".$this->id."'  AND
+					entity_ID = '".intval($this->id)."'  AND
 						status = 'approved'";
 		$rs = $this->conn->Execute($query);
 		$this->files  = $rs->GetRows();		
@@ -246,7 +245,7 @@ class Entity extends gbft{
 	
 	
 	function get_unapproved_join_changes($join_type){
-		if(!in_array($this->type, $GLOBALS['entity_types'])){echo $type . " isn't valid"; return false;}
+		if(!in_array($this->type, $GLOBALS['entity_types'])){echo  __LINE__.$type . " isn't valid"; return false;}
 
 		if(is_array($this->join_info[$join_type]['approved'])){
 			foreach($this->join_info[$join_type]['approved'] as $index=>$join){
@@ -268,7 +267,7 @@ class Entity extends gbft{
 	}
 	
 	function get_join_infos_of_type($join_type, $status = "approved"){
-		if(!in_array($this->type, $GLOBALS['entity_types'])){echo $type . " isn't valid"; return false;}
+		if(!in_array($this->type, $GLOBALS['entity_types'])){echo  __LINE__.$type . " isn't valid"; return false;}
 
 		$table_name = $this->get_table_name($this->type, $join_type);	
 
@@ -502,7 +501,7 @@ class Entity extends gbft{
 
 	
 	function get_join_num_files($join_type){
-		if(!in_array($this->type, $GLOBALS['entity_types'])){echo $type . " isn't valid"; return false;}
+		if(!in_array($this->type, $GLOBALS['entity_types'])){echo  __LINE__.$type . " isn't valid"; return false;}
 
 		$table_name = $this->get_table_name($this->type, $join_type);	
 		if(!$table_name){
