@@ -90,7 +90,7 @@ if(!window.opener){
 <div class="header">
 
 <div class="header_left">
-<div class="header_calendar_link">
+<div class="header_calendar_link hideable">
 <a href="calendar.php">Calendar</a>
 </div>
 <div class="header_paypal">
@@ -127,7 +127,7 @@ You Are user <a href='entity.php?type=member&id={$user->info.ID}'>{$user->info.n
 <BR>	
 <a href="{$PHP_SELF}?type={$entity->type}&id={$entity->id}&action=logout_user">logout</a>
 {else}
-<form method=post action='{$PHP_SELF}'>
+<form method=post action='{$PHP_SELF}' class="hideable">
 <input type=hidden name=action value='login_user'>
 <input type=hidden name=type value='{$entity->type}'>
 <input type=hidden name=id value='{$entity->id}'>
