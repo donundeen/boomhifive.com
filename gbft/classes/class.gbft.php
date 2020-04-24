@@ -18,7 +18,7 @@ class gbft {
 								"band_member");
 	
 		
-	public static function get_conn(){
+	function get_conn(){
 
 		$this->conn = gbft::static_get_conn();
 		if($_POST['db_debug'] == 'true' or $_GET['db_debug'] == 
@@ -55,7 +55,7 @@ class gbft {
 	
 
 	
-	function static_get_conn(){
+	public static function static_get_conn(){
 		global $DB_DEBUG;
 		$conn = NewADOConnection('mysqli');
  		$conn->Connect($GLOBALS['db_host'], $GLOBALS['db_user'], 
