@@ -1,32 +1,34 @@
 <?php
 
-/** 
- * @version V4.63 17 May 2005 (c) 2000-2005 John Lim (jlim@natsoft.com.my). All rights reserved.
- * Released under both BSD license and Lesser GPL library license. 
-  Whenever there is any discrepancy between the two licenses, 
-  the BSD license will take precedence. 
+/**
+ * @version   v5.20.17  31-Mar-2020
+ * @copyright (c) 2000-2013 John Lim (jlim#natsoft.com). All rights reserved.
+ * @copyright (c) 2014      Damien Regad, Mark Newnham and the ADOdb community
+ * Released under both BSD license and Lesser GPL library license.
+  Whenever there is any discrepancy between the two licenses,
+  the BSD license will take precedence.
  */
- 
-/* Documentation on usage is at http://php.weblogs.com/adodb_csv
+
+/* Documentation on usage is at http://adodb.org/dokuwiki/doku.php?id=v5:proxy:proxy_index
  *
  * Legal query string parameters:
- * 
+ *
  * sql = holds sql string
- * nrows = number of rows to return 
+ * nrows = number of rows to return
  * offset = skip offset rows of data
  * fetch = $ADODB_FETCH_MODE
- * 
+ *
  * example:
  *
  * http://localhost/php/server.php?select+*+from+table&nrows=10&offset=2
  */
 
 
-/* 
- * Define the IP address you want to accept requests from 
+/*
+ * Define the IP address you want to accept requests from
  * as a security measure. If blank we accept anyone promisciously!
  */
-$ACCEPTIP = '';
+$ACCEPTIP = '127.0.0.1';
 
 /*
  * Connection parameters
@@ -34,7 +36,7 @@ $ACCEPTIP = '';
 $driver = 'mysql';
 $host = 'localhost'; // DSN for odbc
 $uid = 'root';
-$pwd = '';
+$pwd = 'garbase-it-is';
 $database = 'test';
 
 /*============================ DO NOT MODIFY BELOW HERE =================================*/
@@ -50,14 +52,14 @@ function err($s)
 }
 
 // undo stupid magic quotes
-function undomq(&$m) 
+function undomq(&$m)
 {
 	if (get_magic_quotes_gpc()) {
 		// undo the damage
 		$m = str_replace('\\\\','\\',$m);
 		$m = str_replace('\"','"',$m);
 		$m = str_replace('\\\'','\'',$m);
-		
+
 	}
 	return $m;
 }
@@ -65,34 +67,34 @@ function undomq(&$m)
 ///////////////////////////////////////// DEFINITIONS
 
 
-$remote = $_SERVER["REMOTE_ADDR"]; 
- 
-if (empty($_GET['sql'])) err('No SQL');
+$remote = $_SERVER["REMOTE_ADDR"];
+
 
 if (!empty($ACCEPTIP))
- if ($remote != '127.0.0.1' && $remote != $ACCEPTIP) 
+ if ($remote != '127.0.0.1' && $remote != $ACCEPTIP)
  	err("Unauthorised client: '$remote'");
 
 
-$conn = &ADONewConnection($driver);
+if (empty($_REQUEST['sql'])) err('No SQL');
+
+
+$conn = ADONewConnection($driver);
 
 if (!$conn->Connect($host,$uid,$pwd,$database)) err($conn->ErrorNo(). $sep . $conn->ErrorMsg());
-$sql = undomq($_GET['sql']);
+$sql = undomq($_REQUEST['sql']);
 
-if (isset($_GET['fetch']))
-	$ADODB_FETCH_MODE = $_GET['fetch'];
-	
-if (isset($_GET['nrows'])) {
-	$nrows = $_GET['nrows'];
-	$offset = isset($_GET['offset']) ? $_GET['offset'] : -1;
+if (isset($_REQUEST['fetch']))
+	$ADODB_FETCH_MODE = $_REQUEST['fetch'];
+
+if (isset($_REQUEST['nrows'])) {
+	$nrows = $_REQUEST['nrows'];
+	$offset = isset($_REQUEST['offset']) ? $_REQUEST['offset'] : -1;
 	$rs = $conn->SelectLimit($sql,$nrows,$offset);
-} else 
+} else
 	$rs = $conn->Execute($sql);
-if ($rs){ 
+if ($rs){
 	//$rs->timeToLive = 1;
 	echo _rs2serialize($rs,$conn,$sql);
 	$rs->Close();
 } else
 	err($conn->ErrorNo(). $sep .$conn->ErrorMsg());
-
-?>
