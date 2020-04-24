@@ -44,6 +44,7 @@ $smarty->setConfigDir(dirname(__FILE__)."/smarty_config");
 //$smarty->assign("ALL_TEMPLATES", $all_files);
 
 $smarty->debugging = false;
+$smarty->clearAllCache();
 
 
 $input = new process_input();
