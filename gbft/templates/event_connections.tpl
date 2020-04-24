@@ -4,7 +4,7 @@
 {include file='venue_join_list.tpl'}
 
 {if count($entity->join_info.venue.approved) == 0 and count($entity->join_info.venue.new) == 0}
-<form name="venue_searchform" id="venue_searchform"   onsubmit="return liveSearchSubmit('venue')" method=post action={$PHP_SELF}>
+<form  class="hideable" name="venue_searchform" id="venue_searchform"   onsubmit="return liveSearchSubmit('venue')" method=post action={$PHP_SELF}>
 <input type=hidden name=action value="add_join">
 <input type=hidden name=entity1_type value="{$entity->type}">
 <input type=hidden name=entity1_id value="{$entity->id}">
@@ -21,7 +21,7 @@ Add Venue:
 
 <b class="entity_join_list_name">Featuring the Bands:</b>
 {include file='band_join_list.tpl'}
-<form name="band_searchform" id="band_searchform"   onsubmit="return liveSearchSubmit('band')" method=post action={$PHP_SELF}>
+<form class="hideable"  name="band_searchform" id="band_searchform"   onsubmit="return liveSearchSubmit('band')" method=post action={$PHP_SELF}>
 <input type=hidden name=action value="add_join">
 <input type=hidden name=entity1_type value="{$entity->type}">
 <input type=hidden name=entity1_id value="{$entity->id}">

@@ -1,7 +1,7 @@
 <div class="entity_join_list">
 <b class="entity_join_list_name">Band members:</b>
 {include file='musician_join_list.tpl'}
-<form name="musician_searchform" id="musician_searchform"   onsubmit="return liveSearchSubmit()" method=post action={$PHP_SELF}>
+<form class="hideable" name="musician_searchform" id="musician_searchform"   onsubmit="return liveSearchSubmit()" method=post action={$PHP_SELF}>
 <input type=hidden name=action value="add_join">
 <input type=hidden name=entity1_type value="{$entity->type}">
 <input type=hidden name=entity1_id value="{$entity->id}">
@@ -26,7 +26,7 @@ Instrument (years) :
 
 <b class="entity_join_list_name">Upcoming Events!</b>
 {include file='event_join_list.tpl'}
-<form name="venue_searchform" id="venue_searchform"   onsubmit="return liveSearchSubmit()" method=post action={$PHP_SELF}>
+<form  class="hideable" name="venue_searchform" id="venue_searchform"   onsubmit="return liveSearchSubmit()" method=post action={$PHP_SELF}>
 <input type=hidden name=action value="add_event">
 <input type=hidden name=entity1_type value="{$entity->type}">
 <input type=hidden name=entity1_id value="{$entity->id}">

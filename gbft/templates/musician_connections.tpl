@@ -3,7 +3,7 @@
 {include file='band_join_list.tpl'}
 
 
-<form name="band_searchform" id="band_searchform"   onsubmit="return liveSearchSubmit()" method=post action={$PHP_SELF}>
+<form  class="hideable" name="band_searchform" id="band_searchform"   onsubmit="return liveSearchSubmit()" method=post action={$PHP_SELF}>
 <input type=hidden name=action value="add_join">
 <input type=hidden name=entity1_type value="{$entity->type}">
 <input type=hidden name=entity1_id value="{$entity->id}">
@@ -20,7 +20,7 @@ Instrument (years) :
 <hr>
 <b class="entity_join_list_name">{$entity->info.name} has worked at:</b>
 {include file='venue_join_list.tpl'}
-<form name="venue_searchform" id="venue_searchform"   onsubmit="return liveSearchSubmit()" method=post action={$PHP_SELF}>
+<form  class="hideable"  name="venue_searchform" id="venue_searchform"   onsubmit="return liveSearchSubmit()" method=post action={$PHP_SELF}>
 <input type=hidden name=action value="add_join">
 <input type=hidden name=entity1_type value="{$entity->type}">
 <input type=hidden name=entity1_id value="{$entity->id}">
