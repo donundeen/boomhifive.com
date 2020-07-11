@@ -26,7 +26,7 @@ body {
 }
 
 .item_header {
-    
+
 }
 
 .item_summary{
@@ -266,6 +266,18 @@ display: block;
     font-weight: bold;
 }
 
+.item_header:hover{
+	animation-name: pulse;
+	-webkit-animation-name: pulse;
+
+	animation-duration: 1.5s;
+	-webkit-animation-duration: 1.5s;
+
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+}
+
+
 .item_summary {
     padding: .2em;
     position: relative;
@@ -297,12 +309,12 @@ display: block;
 	z-index: 100;
     }
 
- 
+
 }
 
 
 @media only screen and ( max-width: 20em ), only screen and (max-device-width: 500px) /* <320px */
-{ 
+{
 /*body {background : yellow;}*/
     .gridheader { height: 100px; width: 95%;}
     .grid5 { width: 95% }
@@ -315,7 +327,7 @@ display: block;
     .grid-item .item_summary{
 	display: none;
     }
-    
+
     .grid-item .item_header{
 	font-size: 4em;
 	padding-left: .2em;
@@ -359,7 +371,7 @@ display: block;
 	height: 810px;
 	min-height: 810px;
     }
-    
+
     .subheader {
 	display: none;
     }
@@ -369,6 +381,3 @@ display: block;
     }
 
 }
-
-
- 
