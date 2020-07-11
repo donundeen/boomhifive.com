@@ -1,28 +1,28 @@
 <html>
 <head>
-<title>Don Undeen. Culture, Tech, Makerspaces</title>
-<!-- in case you forget, this site is hosted on hostinger -->
+  <title>Don Undeen. Culture, Tech, Makerspaces</title>
+  <!-- in case you forget, this site is hosted on hostinger -->
   <link href='https://fonts.googleapis.com/css?family=Arvo:400,700|Droid+Sans:400,700|Droid+Serif:400,700|Arimo:400,700,700italic,400italic|Montserrat:400,700|Raleway:400,400italic,900|Merriweather:400,900,400italic|Passion+One:400,900|Poiret+One|Candal|Lobster|Josefin+Sans|Quicksand|Orbitron:400,700,900,500' rel='stylesheet' type='text/css'>
 
-<link rel="stylesheet" href="css/main_masonry.css" media="screen">
-<script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
-<script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
-<script>
-$(document).ready(function(){
+  <link rel="stylesheet" href="css/main_masonry.css" media="screen">
+  <script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
+  <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
+  <script>
+  $(document).ready(function(){
 
-  var $grid =  $(".grid").masonry({
+    var $grid =  $(".grid").masonry({
       // options
 
       itemSelector: '.grid-item',
       columnWidth: 240,
       gutter: 20
-  });
+    });
 
-/*
-  $grid.imagesLoaded().progress( function() {
+    /*
+    $grid.imagesLoaded().progress( function() {
     $grid.masonry('layout');
   });
-*/
+  */
 
   $(".grid-item .item_header").click(function(){
 
@@ -38,7 +38,7 @@ $(document).ready(function(){
       _grid.on("layoutComplete", function(){
         $('html, body').animate({
           scrollTop: $(_this).offset().top - 20
-        }, 300);   
+        }, 300);
         _grid.off("layoutComplete");
       });
     })(this, $grid);
@@ -52,328 +52,288 @@ $(document).ready(function(){
 </script>
 </head>
 <body >
-<div class="site_container">
-  <div class="grid">
-    <div class="grid-sizer"></div>
-    <div class="gutter-sizer"></div>
-    <div class="grid-item gridheader">
-      <div class="header">
-    <span class="supheader">Don Undeen</span>
-    <BR>
-    <div class="subheader">
-      <span class="subheader">Culture, Tech, Makerspaces</span>
-    </div>
-      </div>
-      <div class="logo">
-    <img class="logo_img" align="right" src="images/logo.png" height="100px" />
-      </div>
-    </div>
-    <div class="grid-item grid6">
-      <div class="item_header">
-    About
-      </div>
-      <div class="item_summary">
-    <img height="175" src="images/square_headshot.jpg" align="left" style="border-radius: 10px; padding-right:10px;"/><p style="padding-right: 10px; margin-top: -25px;"><i>Makerspace builder, innovation consultant, new media artist, educator. Manager of the Maker Hub, Georgetown University's makerspace. Former Founding and Senior Manager of the MediaLab at the Metropolitan Museum of Art.</i>
-</p>
-      </div>
-      <div class="item_content">
-<p style="padding-right: 10px; margin-top:-10px;">
-<img height="175" src="images/square_headshot.jpg" align="left" style="border-radius: 10px; padding-right:10px;"/><BR>
-Hi! I get up to all sorts of trouble, but in a nutshell I do creative and help others do creative.
-<BR><BR>
-I'm the Founding Manager of the <b><a href="//library.georgetown.edu/makerhub">Maker Hub at Georgetown University</a></b>.<BR> <BR>
-I was the Founding and Senior Manager of the <B><a href="//www.metmuseum.org/blogs/listing?facettype=tag&facetname=MediaLab">MediaLab at the Metropolitan Museum of Art</a></b>. In 2012 I was tasked with establishing a space for experimentation at the intersection of art, technology, and the museum experience. By working closely with NYC's creative technology community, the MediaLab developed a worldwide reputation for consistently delivering provocative, exciting, and valuable projects. 
-<BR><BR>
-Lessee, what else... I've traveled around the world, consulting with museums, universities, governments, 
-  and religious organizations on how to develop space for creativity and innovation. 
-  I advise entrepreneurs and students on project development. 
-  I serve as technical lead for cultural projects. 
-  I help multimedia artists develop new works. 
-  I create digital art systems and use them to perform my own compositions. 
-  I design and create art objects using digital fabrication and vintage tech.  
-<br><br>
-I like people, experiences, AND things. 
-
-</p>
-  <p>
-    <strong>Here's a better Bio for publication:</strong>
-    <em>Don Undeen (UF Computer Science 2003 ) is the Founding Manager of the Maker Hub at Georgetown University, and Adjunct Professor of creative technology courses in Georgetown’s Communications, Culture, and Technology graduate program. Prior to his work at Georgetown, Don was the founder and Senior Manager of the Media Lab at the Metropolitan Museum of Art, an incubator for experiments at the intersection of art, technology, and the museum experience. A lifelong lover of creative technology and the communities that practice it, Don has consulted with businesses, non-profits, museums, governments, and religious institutions around the world, helping complex organizations develop spaces for innovation. </em>
-  </p>
-      </div>
-      <div class="item_footer">
-        Contact: donundeen@gmail.com
-      </div>
-    </div>
-
-
-    <div class="grid-item grid5 teach">      
-      <div class="item_header qtr">
-    .edu
-      </div>
-      <div class="item_summary">
-      </div>
-      <div class="item_content">
-        <div class="content_segment">
-            <img src="images/Georgetown_university_seal.gif" align="left" style="border-radius: 10px; padding-right:10px;"><b><a href="https://cct.georgetown.edu/pilgrimage-project">Georgetown Old North Pilgrimage Project</a></b> "The Pilgrimage Project" is a multi-disciplinary collaborative ITEL experiment rediscovering the spaces of Georgetown's campus. Our first focus is Old North, Georgetown's oldest standing building.
-        </div>        
-        <div class="content_segment">
-            <img src="images/Georgetown_university_seal.gif" align="left" style="border-radius: 10px; padding-right:10px;"><b><a href="https://gufaculty360.georgetown.edu/s/course-catalog/a1o36000001hYAQAA2/UNXD-456-01?id=00336000014SMN5AAO">UNXD-456 : Maker Hub Extension</a>, <i>Spring 2018. </i>1-Credit course through Georgetown’s Maker Hub in which students actively integrate academic studies with hands-on, project based learning, by developing a physical product, prototype, or creative work utilizing the fabrication equipment in the Maker Hub.</b> 
-        </div>        
-        <div class="content_segment">
-            <img src="images/Georgetown_university_seal.gif" align="left" style="border-radius: 10px; padding-right:10px;"><b><a href="https://gufaculty360.georgetown.edu/s/course-catalog/a1o36000001ywFJAAY/CCTP-702-01?id=00336000014SMN5AAO">CCTP-702 : Creative Web Development</a>, <i>Fall 2018, 2019, 2020.</i></b> 3 Credit, graduate-level course teaching web development skills through art-making and the study of Net Art.
-        </div>  
-       <div class="content_segment">
-            <img src="images/Georgetown_university_seal.gif" align="left" style="border-radius: 10px; padding-right:10px;"><b><a href="https://gufaculty360.georgetown.edu/s/course-catalog/a1o1Q000002dBedQAE/UNXD-368-01?id=00336000014SMN5AAO">UNXD-368 : Makerspaces and Justice</a>, <i>Fall 2019.</i></b> A collaboration between the Center for Social Justice and the Maker Hub, this course integrates design-thinking, experience, and reflection through a community-based making project serving individuals experiencing homelessness in Washington, D.C.
-        </div>   
-       <div class="content_segment">
-            <img src="images/Georgetown_university_seal.gif" align="left" style="border-radius: 10px; padding-right:10px;"><b><a href="https://gufaculty360.georgetown.edu/s/course-catalog/a1o1Q0000026uzgQAA/IDST-220-01?id=00336000014SMN5AAO">IDST-220 : Making Matters</a>, <i>Spring 2020.</i></b>  This 3 credit undergraduate course will provide hands-on, practical learning opportunities through skill-building and volunteer service in the Maker Hub. Additionally, students will reflect in groups and through writing assignments on their experience, considering such questions such as: What makes a makerspace successful? Why do people use them, and what do they get out of it? Who are makerspaces for, and who decides? How can MY actions contribute to the success of a community makerspace?
-        </div>    
-      <div class="content_segment">
-            <img src="images/Georgetown_university_seal.gif" align="left" style="border-radius: 10px; padding-right:10px;"><b><a href="https://gufaculty360.georgetown.edu/s/course-catalog/a1o1Q0000026uzVQAQ/CCTP-531-01?id=00336000014SMN5AAO">CCTP-531 : Designing &amp; Prototyping in a Makerspace</a>, <i>Spring 2020.</i></b>  In this 3 credit graduate course students learn not only the “hard” skills of design and fabrication with a wide range of tools, but also the “soft” skills of empathy, communication, and collaboration necessary for innovation. This course will provide hands-on, practical learning opportunities through skill-building and volunteer service in the Maker Hub.
-        </div>     
-      <div class="content_segment">
-            <img src="images/Georgetown_university_seal.gif" align="left" style="border-radius: 10px; padding-right:10px;"><b><a href="https://gufaculty360.georgetown.edu/s/course-catalog/a1o1Q000002700cQAA/CCTP-505-02?id=00336000014SMN5AAO">CCTP-505 : Intro CCT: Inter Prob &amp; Method</a>, <i>Fall 2020.</i></b> This course introduces students to interdisciplinary studies in the Communication, Culture & Technology program. It is a how-to for developing expertise and contributing to an intellectual community that puts the student in the driver’s seat.
-        </div>                              
-       
-      </div>
-    </div>
-
-    <div class="grid-item grid5">      
-      <div class="item_header qtr">
-    Art
-      </div>
-      <div class="item_summary">
-      </div>
-      <div class="item_content">
-        <div class="content_segment">
-            <a href="https://altheamrao.myportfolio.com/vagina-chorus"><img src="images/vaginachorusCropped.jpg" align="left" style="border-radius: 10px; padding-right:10px;"></a>
-            <b><a href="https://altheamrao.myportfolio.com/vagina-chorus"><i>Vagina Chorus</i></a>, Althea Rao.</b>  A multimedia performance series designed to normalize the conversations around pelvic health and the imperfect female body. I'm the Technical advisor and programmer, developing a musical system that interfaces 16 bluetooth devices with the harmonic and tonal stuctures of the composer. Tech includes: Raspberry Pi, Bluetooth, NodeJS, OSC, Max/MSP, and Midi. 
-        </div>   
-        <div class="content_segment">
-            <a href="https://altheamrao.myportfolio.com/pillar-of-salt"><img src="images/HumanEssenceCropped.png" align="left" style="border-radius: 10px; padding-right:10px;"></a>
-            <b><a href="https://altheamrao.myportfolio.com/pillar-of-salt"><i>Human Essence</i></a>, Althea Rao.</b> An interactive installation consisting of two flat light sculpture panels that interact with the visitors as a set of mirrors, capturing and reflecting human silhouettes in real time. I was the technical lead, responsible for programming and fabrication of the devices. Tech includes: Raspberry Pi, Python, OpenCV, Laser Cutter.
-        </div> 
-        <div class="content_segment">
-            <a href="https://github.com/donundeen/art_image_morpher"><img src="images/GitHub-Mark.png" align="left" style="border-radius: 10px; padding-right:10px;"></a>
-            <b><a href="https://github.com/donundeen/art_image_morpher"><i>Art Image Morpher</i></a>, Don Undeen.</b> A video projection installation in which museum apis are used to harvest images, faces are detected, and images morph from one face to the next. Composed with NodeJS and Meteor. Debuted at London Science Museum's <a href="https://lab.sciencemuseum.org.uk/lets-hack-the-science-museum-together-smhack-86aaf802ab99#.kx9m0igk7">2017 Hackathon.</a>
-        </div> 
-     
-      </div>
-    </div>
-
-    <div class="grid-item grid5">      
-      <div class="item_header qtr">
-    Code
-      </div>
-      <div class="item_summary">
-      </div>
-      <div class="item_content">
-
-        <div class="content_segment">
-            <a href="https://github.com/donundeen/C5"><img src="images/C5.png" align="left" style="border-radius: 10px; padding-right:10px;"></a><b><a href="https://github.com/donundeen/C5">C5</a></b> <i>Creative Coding, Cultural Commons, Community.</i> C5 is a web-based environment for collaborative live coding in interaction with open data and media from cultural institutions. It is designed to make creative remixing of museum APIs fast, fun, and sharable. <i>Beta release coming soon, stay tuned!</i>
+  <div class="site_container">
+    <div class="grid">
+      <div class="grid-sizer"></div>
+      <div class="gutter-sizer"></div>
+      <div class="grid-item gridheader">
+        <div class="header">
+          <span class="supheader">Don Undeen</span>
+          <BR>
+            <div class="subheader">
+              <span class="subheader">Culture, Tech, Makerspaces</span>
+            </div>
+          </div>
+          <div class="logo">
+            <img class="logo_img" align="right" src="images/logo.png" height="100px" />
+          </div>
         </div>
-        <div class="content_segment">
-            <a href="https://github.com/donundeen/"><img src="images/GitHub-Mark.png" align="left" style="border-radius: 10px; padding-right:10px;"></a><b><a href="https://github.com/donundeen/">Me on GitHub  </a></b> <i>Tools, creative projects, APIs, and experiments</i>
-        </div>
-        <div class="content_segment">
-            <a href="https://github.com/donundeen/seeburgjukebox">
-              <img src="images/GitHub-Mark.png" align="left" style="border-radius: 10px; padding-right:10px;">
-            </a><b><a href="https://github.com/donundeen/seeburgjukebox">SeeburgJukeboxReader. </a></b> A system for using a vintage Seeburg Jukebox wall unit to control a Spotify Playlists. Tech includes: Iot, Raspberry Pi, Arduino, NodeJS, Mopidy. 
-        </div>
-        <div class="content_segment">
-            <a href="https://github.com/donundeen/heybox">
-              <img src="images/GitHub-Mark.png" align="left" style="border-radius: 10px; padding-right:10px;">
-            </a><b><a href="https://github.com/donundeen/heybox">Hey Box. </a></b>A pair of arduino boxes, connected via IoT, that tell each other "hey." I made this so my wife and I can stay connected when we're living apart. I love her. Tech includes: Iot, Arduino, adafruit.io. 
-        </div>
-        <div class="content_segment">
-            <a href="https://glitch.com/@donundeen">
-              <img src="images/glitchfish.png" align="left" style="border-radius: 10px; padding-right:10px;">
-            </a><b><a href="https://glitch.com/@donundeen">Me on Glitch </a></b> I use the Glitch platform to teach and practice creative web development. Quality of projects varies.
-        </div>
-        <div class="content_segment wordcloud">
-          <!-- generated with https://www.wordclouds.com/ using wordcloud.txt-->
-          <img src="images/techwordcloud.png" class="wordcloud" >
-        </div>
+        <div class="grid-item grid6">
+          <div class="item_header">
+            About
+          </div>
+          <div class="item_summary">
+            <img height="175" src="images/square_headshot.jpg" align="left" style="border-radius: 10px; padding-right:10px;"/><p style="padding-right: 10px; margin-top: -25px;"><i>Makerspace builder, innovation consultant, new media artist, educator. Manager of the Maker Hub, Georgetown University's makerspace. Former Founding and Senior Manager of the MediaLab at the Metropolitan Museum of Art.</i>
+            </p>
+          </div>
+          <div class="item_content">
+            <p style="padding-right: 10px; margin-top:-10px;">
+              <img height="175" src="images/square_headshot.jpg" align="left" style="border-radius: 10px; padding-right:10px;"/><BR>
+                Hi! I get up to all sorts of trouble, but in a nutshell I do creative and help others do creative.
+                <BR><BR>
+                  I'm the Founding Manager of the <b><a href="//library.georgetown.edu/makerhub">Maker Hub at Georgetown University</a></b>.<BR> <BR>
+                    I was the Founding and Senior Manager of the <B><a href="//www.metmuseum.org/blogs/listing?facettype=tag&facetname=MediaLab">MediaLab at the Metropolitan Museum of Art</a></b>. In 2012 I was tasked with establishing a space for experimentation at the intersection of art, technology, and the museum experience. By working closely with NYC's creative technology community, the MediaLab developed a worldwide reputation for consistently delivering provocative, exciting, and valuable projects.
+                      <BR><BR>
+                        Lessee, what else... I've traveled around the world, consulting with museums, universities, governments,
+                        and religious organizations on how to develop space for creativity and innovation.
+                        I advise entrepreneurs and students on project development.
+                        I serve as technical lead for cultural projects.
+                        I help multimedia artists develop new works.
+                        I create digital art systems and use them to perform my own compositions.
+                        I design and create art objects using digital fabrication and vintage tech.
+                        <br><br>
+                        I like people, experiences, AND things.
+
+                      </p>
+                      <p>
+                        <strong>Here's a better Bio for publication:</strong>
+                        <em>Don Undeen (UF Computer Science 2003 ) is the Founding Manager of the Maker Hub at Georgetown University, and Adjunct Professor of creative technology courses in Georgetown’s Communications, Culture, and Technology graduate program. Prior to his work at Georgetown, Don was the founder and Senior Manager of the Media Lab at the Metropolitan Museum of Art, an incubator for experiments at the intersection of art, technology, and the museum experience. A lifelong lover of creative technology and the communities that practice it, Don has consulted with businesses, non-profits, museums, governments, and religious institutions around the world, helping complex organizations develop spaces for innovation. </em>
+                      </p>
+                    </div>
+                    <div class="item_footer">
+                      Contact: donundeen@gmail.com
+                    </div>
+                  </div>
 
 
+                  <div class="grid-item grid5 teach">
+                    <div class="item_header qtr">
+                      .edu
+                    </div>
+                    <div class="item_summary">
+                    </div>
+                    <div class="item_content">
+                      <em>I serve as adjunct faculty for <a href="https://www.georgetown.edu/">Georgetown University</a>, for both the <a href="https://college.georgetown.edu/">College</a> and the <a href="https://cct.georgetown.edu/">Communications, Culture & Technology</a> program in the Graduate School of Arts and Sciences.</em>
+                      <div class="content_segment">
+                        <img src="images/Georgetown_university_seal.gif" align="left" style="border-radius: 10px; padding-right:10px;"><b><a href="https://cct.georgetown.edu/pilgrimage-project">Georgetown Old North Pilgrimage Project</a></b> "The Pilgrimage Project" is a multi-disciplinary collaborative ITEL experiment rediscovering the spaces of Georgetown's campus. Our first focus is Old North, Georgetown's oldest standing building.
+                      </div>
+                      <div class="content_segment">
+                        <img src="images/Georgetown_university_seal.gif" align="left" style="border-radius: 10px; padding-right:10px;"><b><a href="https://gufaculty360.georgetown.edu/s/course-catalog/a1o36000001hYAQAA2/UNXD-456-01?id=00336000014SMN5AAO">UNXD-456 : Maker Hub Extension</a>, <i>Spring 2018. </i>1-Credit course through Georgetown’s Maker Hub in which students actively integrate academic studies with hands-on, project based learning, by developing a physical product, prototype, or creative work utilizing the fabrication equipment in the Maker Hub.</b>
+                      </div>
+                      <div class="content_segment">
+                        <img src="images/Georgetown_university_seal.gif" align="left" style="border-radius: 10px; padding-right:10px;"><b><a href="https://gufaculty360.georgetown.edu/s/course-catalog/a1o36000001ywFJAAY/CCTP-702-01?id=00336000014SMN5AAO">CCTP-702 : Creative Web Development</a>, <i>Fall 2018, 2019, 2020.</i></b> 3 Credit, graduate-level course teaching web development skills through art-making and the study of Net Art.
+                      </div>
+                      <div class="content_segment">
+                        <img src="images/Georgetown_university_seal.gif" align="left" style="border-radius: 10px; padding-right:10px;"><b><a href="https://gufaculty360.georgetown.edu/s/course-catalog/a1o1Q000002dBedQAE/UNXD-368-01?id=00336000014SMN5AAO">UNXD-368 : Makerspaces and Justice</a>, <i>Fall 2019.</i></b> A collaboration between the Center for Social Justice and the Maker Hub, this course integrates design-thinking, experience, and reflection through a community-based making project serving individuals experiencing homelessness in Washington, D.C.
+                      </div>
+                      <div class="content_segment">
+                        <img src="images/Georgetown_university_seal.gif" align="left" style="border-radius: 10px; padding-right:10px;"><b><a href="https://gufaculty360.georgetown.edu/s/course-catalog/a1o1Q0000026uzgQAA/IDST-220-01?id=00336000014SMN5AAO">IDST-220 : Making Matters</a>, <i>Spring 2020.</i></b>  This 3 credit undergraduate course will provide hands-on, practical learning opportunities through skill-building and volunteer service in the Maker Hub. Additionally, students will reflect in groups and through writing assignments on their experience, considering such questions such as: What makes a makerspace successful? Why do people use them, and what do they get out of it? Who are makerspaces for, and who decides? How can MY actions contribute to the success of a community makerspace?
+                      </div>
+                      <div class="content_segment">
+                        <img src="images/Georgetown_university_seal.gif" align="left" style="border-radius: 10px; padding-right:10px;"><b><a href="https://gufaculty360.georgetown.edu/s/course-catalog/a1o1Q0000026uzVQAQ/CCTP-531-01?id=00336000014SMN5AAO">CCTP-531 : Designing &amp; Prototyping in a Makerspace</a>, <i>Spring 2020.</i></b>  In this 3 credit graduate course students learn not only the “hard” skills of design and fabrication with a wide range of tools, but also the “soft” skills of empathy, communication, and collaboration necessary for innovation. This course will provide hands-on, practical learning opportunities through skill-building and volunteer service in the Maker Hub.
+                      </div>
+                      <div class="content_segment">
+                        <img src="images/Georgetown_university_seal.gif" align="left" style="border-radius: 10px; padding-right:10px;"><b><a href="https://gufaculty360.georgetown.edu/s/course-catalog/a1o1Q000002700cQAA/CCTP-505-02?id=00336000014SMN5AAO">CCTP-505 : Intro CCT: Inter Prob &amp; Method</a>, <i>Fall 2020.</i></b> This course introduces students to interdisciplinary studies in the Communication, Culture & Technology program. It is a how-to for developing expertise and contributing to an intellectual community that puts the student in the driver’s seat.
+                      </div>
+                      <h2>Workshops</h2>
+                      <div class="content_segment">
+                        <em>I'm available to teach hands-on workshops on a wide range of creative technology topics. Previous workshops have included:</em>
+                        <ul>
+                          <li>3D modeling with free tools</li>
+                          <li>Creative Web Development</li>
+                          <li>Adobe Illustrator for the Laser Cutter</li>
+                          <li>Digital Strategy for Startups and Entrepreneurs</li>
+                          <li>Fundamentals of 3D Printing</li>
+                          <li>Arduino</li>
+                          <li>Raspberry Pi</li>
+                          <li>Soldering</li>
+                        </ul>
+                      </div>
 
-      </div>
-    </div>
+                    </div>
+                  </div>
 
-    <div class="grid-item grid5">      
-      <div class="item_header qtr">
-    Groups
-      </div>
-      <div class="item_summary">
-      </div>
-      <div class="item_content">
-        <div class="content_segment">
-            <a href="http://blogs.c-yourmag.net/creative-museum/"><img src="images/CreativeMuseum.png" align="left" style="border-radius: 10px; padding-right:10px;"></a>
-            <b><a href="http://blogs.c-yourmag.net/creative-museum/">Creative Museum</a></b> The Creative Museum Project seeks to explore and inform the connections between our cultural organisations and their communities by capitalising on the emergence of new and democratising digital technologies. I helped to produce a series of "Maker Residencies" at 6 different European partner institutions, through 2017.
-        </div>
-        <div class="content_segment">
-            <a href="http://www.forbes.com/sites/mikeperlis/2015/12/09/the-pope-as-ceo-a-lesson-in-business-from-the-holy-father/#740581652702"></a>
-            <img src="images/vatc_warm.jpg" align="left" style="border-radius: 10px; padding-right:10px;">
-            <b><a href="http://www.forbes.com/sites/mikeperlis/2015/12/09/the-pope-as-ceo-a-lesson-in-business-from-the-holy-father/#740581652702">Vatican Arts and Technology Council</a></b> The VATC is dedicated to exploring ways that Art and Technology can help to promote and enact universal human values to people in need around the world. I served on the Executive Committee as leader of the Labs group and co-author of the strategic framework.
-        </div>
-        <div class="content_segment">
-            <a href="http://hyphenhub.com"><img src="images/hyphenhubhyphen.png" align="left" style="border-radius: 10px; padding-right:10px;"></a>
-              <b><a href="http://hyphenhub.com">Hyphen-Hub</a></b> Hyphen Hub is a New York-based non-profit organization that explores, promotes, and presents radical new visions of the future through the integration of art and emerging technologies. It produces live performances, art salons, and installations. It also serves as a platform for a global community of artists, engineers, designers, performers and tech innovators to connect and collaborate. I served on the Advisory Board, and now particpate as a technology advisor.
-        </div>
-      </div>
-    </div>    
-    <!--
-    <div class="grid-item grid5">
-      <div class="item_header">
-    Services
-      </div>
-      <div class="item_summary">
-    What we can do together!
-      </div>
-      <div class="item_content">
-        </div>
-    </div>
-    -->
-    <div class="grid-item grid5">
-      <div class="item_header qtr"><span>CV</span>
-      </div>
-      <div class="item_summary">
-      </div>
-      <div class="item_content">
-        <object data="images/Don Undeen CV.pdf" class="cv_object"
-            type="application/pdf" 
+                  <div class="grid-item grid5">
+                    <div class="item_header qtr">
+                      Art
+                    </div>
+                    <div class="item_summary">
+                    </div>
+                    <div class="item_content">
+                      <div class="content_segment">
+                        <a href="https://altheamrao.myportfolio.com/vagina-chorus"><img src="images/vaginachorusCropped.jpg" align="left" style="border-radius: 10px; padding-right:10px;"></a>
+                        <b><a href="https://altheamrao.myportfolio.com/vagina-chorus"><i>Vagina Chorus</i></a>, Althea Rao.</b>  A multimedia performance series designed to normalize the conversations around pelvic health and the imperfect female body. I'm the Technical advisor and programmer, developing a musical system that interfaces 16 bluetooth devices with the harmonic and tonal stuctures of the composer. Tech includes: Raspberry Pi, Bluetooth, NodeJS, OSC, Max/MSP, and Midi.
+                      </div>
+                      <div class="content_segment">
+                        <a href="https://altheamrao.myportfolio.com/pillar-of-salt"><img src="images/HumanEssenceCropped.png" align="left" style="border-radius: 10px; padding-right:10px;"></a>
+                        <b><a href="https://altheamrao.myportfolio.com/pillar-of-salt"><i>Human Essence</i></a>, Althea Rao.</b> An interactive installation consisting of two flat light sculpture panels that interact with the visitors as a set of mirrors, capturing and reflecting human silhouettes in real time. I was the technical lead, responsible for programming and fabrication of the devices. Tech includes: Raspberry Pi, Python, OpenCV, Laser Cutter.
+                      </div>
+                      <div class="content_segment">
+                        <a href="https://github.com/donundeen/art_image_morpher"><img src="images/GitHub-Mark.png" align="left" style="border-radius: 10px; padding-right:10px;"></a>
+                        <b><a href="https://github.com/donundeen/art_image_morpher"><i>Art Image Morpher</i></a>, Don Undeen.</b> A video projection installation in which museum apis are used to harvest images, faces are detected, and images morph from one face to the next. Composed with NodeJS and Meteor. Debuted at London Science Museum's <a href="https://lab.sciencemuseum.org.uk/lets-hack-the-science-museum-together-smhack-86aaf802ab99#.kx9m0igk7">2017 Hackathon.</a>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div class="grid-item grid5">
+                    <div class="item_header qtr">
+                      Code
+                    </div>
+                    <div class="item_summary">
+                    </div>
+                    <div class="item_content">
+
+                      <div class="content_segment">
+                        <a href="https://github.com/donundeen/C5"><img src="images/C5.png" align="left" style="border-radius: 10px; padding-right:10px;"></a><b><a href="https://github.com/donundeen/C5">C5</a></b> <i>Creative Coding, Cultural Commons, Community.</i> C5 is a web-based environment for collaborative live coding in interaction with open data and media from cultural institutions. It is designed to make creative remixing of museum APIs fast, fun, and sharable. <i>Beta release coming soon, stay tuned!</i>
+                      </div>
+                      <div class="content_segment">
+                        <a href="https://github.com/donundeen/"><img src="images/GitHub-Mark.png" align="left" style="border-radius: 10px; padding-right:10px;"></a><b><a href="https://github.com/donundeen/">Me on GitHub  </a></b> <i>Tools, creative projects, APIs, and experiments</i>
+                      </div>
+                      <div class="content_segment">
+                        <a href="https://github.com/donundeen/seeburgjukebox">
+                          <img src="images/GitHub-Mark.png" align="left" style="border-radius: 10px; padding-right:10px;">
+                        </a><b><a href="https://github.com/donundeen/seeburgjukebox">SeeburgJukeboxReader. </a></b> A system for using a vintage Seeburg Jukebox wall unit to control a Spotify Playlists. Tech includes: Iot, Raspberry Pi, Arduino, NodeJS, Mopidy.
+                      </div>
+                      <div class="content_segment">
+                        <a href="https://github.com/donundeen/heybox">
+                          <img src="images/GitHub-Mark.png" align="left" style="border-radius: 10px; padding-right:10px;">
+                        </a><b><a href="https://github.com/donundeen/heybox">Hey Box. </a></b>A pair of arduino boxes, connected via IoT, that tell each other "hey." I made this so my wife and I can stay connected when we're living apart. I love her. Tech includes: Iot, Arduino, adafruit.io.
+                      </div>
+                      <div class="content_segment">
+                        <a href="https://glitch.com/@donundeen">
+                          <img src="images/glitchfish.png" align="left" style="border-radius: 10px; padding-right:10px;">
+                        </a><b><a href="https://glitch.com/@donundeen">Me on Glitch </a></b> I use the Glitch platform to teach and practice creative web development. Quality of projects varies.
+                      </div>
+                      <div class="content_segment wordcloud">
+                        <!-- generated with https://www.wordclouds.com/ using wordcloud.txt-->
+                        <img src="images/techwordcloud.png" class="wordcloud" >
+                      </div>
+
+
+
+                    </div>
+                  </div>
+
+                  <div class="grid-item grid5">
+                    <div class="item_header qtr">
+                      Groups
+                    </div>
+                    <div class="item_summary">
+                    </div>
+                    <div class="item_content">
+                      <div class="content_segment">
+                        <a href="http://blogs.c-yourmag.net/creative-museum/"><img src="images/CreativeMuseum.png" align="left" style="border-radius: 10px; padding-right:10px;"></a>
+                        <b><a href="http://blogs.c-yourmag.net/creative-museum/">Creative Museum</a></b> The Creative Museum Project seeks to explore and inform the connections between our cultural organisations and their communities by capitalising on the emergence of new and democratising digital technologies. I helped to produce a series of "Maker Residencies" at 6 different European partner institutions, through 2017.
+                      </div>
+                      <div class="content_segment">
+                        <a href="http://www.forbes.com/sites/mikeperlis/2015/12/09/the-pope-as-ceo-a-lesson-in-business-from-the-holy-father/#740581652702"></a>
+                        <img src="images/vatc_warm.jpg" align="left" style="border-radius: 10px; padding-right:10px;">
+                        <b><a href="http://www.forbes.com/sites/mikeperlis/2015/12/09/the-pope-as-ceo-a-lesson-in-business-from-the-holy-father/#740581652702">Vatican Arts and Technology Council</a></b> The VATC is dedicated to exploring ways that Art and Technology can help to promote and enact universal human values to people in need around the world. I served on the Executive Committee as leader of the Labs group and co-author of the strategic framework.
+                      </div>
+                      <div class="content_segment">
+                        <a href="http://hyphenhub.com"><img src="images/hyphenhubhyphen.png" align="left" style="border-radius: 10px; padding-right:10px;"></a>
+                        <b><a href="http://hyphenhub.com">Hyphen-Hub</a></b> Hyphen Hub is a New York-based non-profit organization that explores, promotes, and presents radical new visions of the future through the integration of art and emerging technologies. It produces live performances, art salons, and installations. It also serves as a platform for a global community of artists, engineers, designers, performers and tech innovators to connect and collaborate. I served on the Advisory Board, and now particpate as a technology advisor.
+                      </div>
+                    </div>
+                  </div>
+                  <!--
+                  <div class="grid-item grid5">
+                  <div class="item_header">
+                  Services
+                </div>
+                <div class="item_summary">
+                What we can do together!
+              </div>
+              <div class="item_content">
+            </div>
+          </div>
+        -->
+        <div class="grid-item grid5">
+          <div class="item_header qtr"><span>CV</span>
+          </div>
+          <div class="item_summary">
+          </div>
+          <div class="item_content">
+            <object data="images/Don Undeen CV.pdf" class="cv_object"
+            type="application/pdf"
             style="border-radius: 10px;">
-          
-          <p>It appears you don't have a PDF plugin for this browser. No biggie... you can <a href="//images/Don Undeen CV.pdf">click here to download the PDF file.</a></p>
-          
-        </object>   
-      </div>
-      <div class="item_footer">
-        Contact: donundeen@gmail.com
-      </div>
-    </div>
-    <!--
-    <div class="grid-item grid6">
-      <div class="item_header qtr"><span> Resources</span>
-      </div>
-      <div class="item_summary">
-    Useful Links, lists, and tools
-      </div>
-      <div class="item_content">
-        <div class="content_segment">
-            <img src="images/donpresenting.png" align="left" style="border-radius: 10px; padding-right:10px;"><b><a href="https://boomhifive.hackpad.com/ep/group/ySyOxSOrjJi">Presentation Notes</a></b><BR>Whenever I do a public talk or teach a class, I put my notes, links, and images here. In this tool, you can also leave your own comments and questions; I'll be sure to follow up.
-        </div>        
-        <div class="content_segment">
-            <img src="images/culturelabs.png" align="left" style="border-radius: 10px; padding-right:10px;"><b><a href="https://boomhifive.hackpad.com/Really-Interesting-Culture-Labs-mamDAMpIzYf">Cultural Labs</a></b><BR> There are lots of approaches to "cultural innovation." This hackpad page is a list and discussion about the merits of various methodologies and contexts.
+
+            <p>It appears you don't have a PDF plugin for this browser. No biggie... you can <a href="//images/Don Undeen CV.pdf">click here to download the PDF file.</a></p>
+
+          </object>
         </div>
-        <div class="content_segment">
-            <img src="images/TinyTeddy.png" align="left" style="border-radius: 10px; padding-right:10px;"><b><a href="https://boomhifive.hackpad.com/Museum-3D-Resources-rxxPMmuZg68">Museum 3D Resources</a></b><BR>Digitized 3D Museum Content, available for download and re-use.
+        <div class="item_footer">
+          Contact: donundeen@gmail.com
         </div>
-        <div class="content_segment">
-            <img src="images/411_money.gif" align="left" style="border-radius: 10px; padding-right:10px;"><b><a href="https://boomhifive.hackpad.com/Grant-Opportunities-n00gvzDzytE">Grant Opportunities</a></b><BR>List of culture/tech/innovation grants. Please contribute!
-        </div>
-        <div class="content_segment">
-            <img src="images/hackpad.png" align="left" style="border-radius: 10px; padding-right:10px;"><b><a href="https://boomhifive.hackpad.com/ep/group/Gremk3bTKds">BoomHiFive Hackpad Topics</a></b><BR>Assorted writing, links, and conversations on a range of topics that matter to the culture/tech/innovation sector. Available on the collaborative documentation and discussion platform Hackpad. Join in!
-        </div>
-        <div class="content_segment">
-            <img src="images/tinkercad.png" align="left" style="border-radius: 10px; padding-right:10px;"><b><a href="https://boomhifive.hackpad.com/collection/CAsI1JqNEuL">Howtos and Tutorials</a></b><BR>Up your skills. Here's the notes from workshops I've run on various digital tools.
-        </div>
-
       </div>
 
-    </div>
--->
 
-    <div class="grid-item grid5 item_social">
-      <div class="item_header qtr"><span style="font-size: .6em"> @donundeen</span>
-      </div>
-      <div class="item_summary item_social" >
-        <a href="https://twitter.com/donundeen">
-        <img src="images/Twitter_logo_blue.png" width="50%" align="center" class="twitter_logo_img"/></a>
-      </div>
-      <div class="item_content">
-<a class="twitter-timeline" href="https://twitter.com/donundeen" data-widget-id="712014421258711040">Tweets by @donundeen</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-      </div>      
-    </div>
-
-    
-    <div class="grid-item grid5 videos">
-      <div class="item_header qtr">
-    Culture
-      </div>
-      <div class="item_summary">
-      </div>
-      <div class="item_content">
-        <div class="content_segment">
-<iframe width="480" height="270" src="https://www.youtube.com/embed/XEUKZ86F9i4" frameborder="0" allowfullscreen></iframe><br>MCN 2013: Ignite MCN at Corona Theater in Montreal. <i>The infamous Ignite Presentation that introduced the world to Digital Humanities Unicorn!</i>
-        </div>
-        <div class="content_segment">
-<iframe width="480" height="270" src="https://www.youtube.com/embed/o1dqXVe2GVo" frameborder="0" allowfullscreen></iframe><br>Met MakerBot Hackathon
-</div>
-
-        <div class="content_segment">
-<iframe width="480" height="270" src="https://www.youtube.com/embed/8IwlIvuhc1Q" frameborder="0" allowfullscreen></iframe>
-<br>The MET's MediaLab. Experiments and Provocations
-        </div>
-        <div class="content_segment">
-<iframe width="480" height="270" src="https://www.youtube.com/embed/WPPQH5YaJYw" frameborder="0" allowfullscreen></iframe><br>Presenting at NYC's Volumetric Society
-        </div>
-
-        <div class="content_segment">
-<iframe width="480" height="270" src="https://www.youtube.com/embed/0S8zyqlSUbU" frameborder="0" allowfullscreen></iframe>
-<br>Art Institute Museum3D Guest Speaker: Don Undeen
-</div>
-
-        <div class="content_segment">
-<iframe width="480" height="270" src="https://www.youtube.com/embed/vUVUhpb-Fdc" frameborder="0" allowfullscreen></iframe><br>
-MCN 2012: Kickstarting Innovation within the Museum
-</div>
-
-        <div class="content_segment">
-<iframe width="480" height="270" src="https://www.youtube.com/embed/LzsNg1avK5c" frameborder="0" allowfullscreen></iframe><br>MCN 2012: What's the Point of a Museum Maker Space
-</div>
-
-
-
-        <div class="content_segment">
-<iframe width="480" height="270" src="https://www.youtube.com/embed/Nn_dC4pbCcg" frameborder="0" allowfullscreen></iframe><br>Let's Hack the Met: Don Undeen at We Are Museums, Vilnius Lithuania
-</div>
-
-
-        <div class="content_segment">
-<iframe width="480" height="270" src="https://www.youtube.com/embed/fijQy6BJqWA" frameborder="0" allowfullscreen></iframe>br>Digital Media Disruption - Media in Non-Profits - 2/13/13, Fordham University
-</div>
-
-      </div>
-    </div>
-    <!--
-    <div class="grid-item grid5">
-      <div class="item_header">
-    Press
-      </div>
-      <div class="item_summary">
-    Don's work in the the press
-      </div>
-    </div>
-    <div class="grid-item grid6">
-      <div class="item_header">
-    Publications
-      </div>
-      <div class="item_summary">
-    Writing
-      </div>
-    </div>
-    <div class="grid-item grid6">
-      <div class="item_header">
-    Presentations
-      </div>
-      <div class="item_summary">
-    Talking
-      </div>
-    </div>
--->
+<div class="grid-item grid5 item_social">
+  <div class="item_header qtr"><span style="font-size: .6em"> @donundeen</span>
   </div>
+  <div class="item_summary item_social" >
+    <a href="https://twitter.com/donundeen">
+      <img src="images/Twitter_logo_blue.png" width="50%" align="center" class="twitter_logo_img"/></a>
+    </div>
+    <div class="item_content">
+      <a class="twitter-timeline" href="https://twitter.com/donundeen" data-widget-id="712014421258711040">Tweets by @donundeen</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </div>
+  </div>
+
+
+  <div class="grid-item grid5 videos">
+    <div class="item_header qtr">
+      Culture
+    </div>
+    <div class="item_summary">
+    </div>
+    <div class="item_content">
+      <div class="content_segment">
+        <iframe width="480" height="270" src="https://www.youtube.com/embed/XEUKZ86F9i4" frameborder="0" allowfullscreen></iframe><br>MCN 2013: Ignite MCN at Corona Theater in Montreal. <i>The infamous Ignite Presentation that introduced the world to Digital Humanities Unicorn!</i>
+      </div>
+      <div class="content_segment">
+        <iframe width="480" height="270" src="https://www.youtube.com/embed/o1dqXVe2GVo" frameborder="0" allowfullscreen></iframe><br>Met MakerBot Hackathon
+      </div>
+
+      <div class="content_segment">
+        <iframe width="480" height="270" src="https://www.youtube.com/embed/8IwlIvuhc1Q" frameborder="0" allowfullscreen></iframe>
+        <br>The MET's MediaLab. Experiments and Provocations
+      </div>
+      <div class="content_segment">
+        <iframe width="480" height="270" src="https://www.youtube.com/embed/WPPQH5YaJYw" frameborder="0" allowfullscreen></iframe><br>Presenting at NYC's Volumetric Society
+      </div>
+
+      <div class="content_segment">
+        <iframe width="480" height="270" src="https://www.youtube.com/embed/0S8zyqlSUbU" frameborder="0" allowfullscreen></iframe>
+        <br>Art Institute Museum3D Guest Speaker: Don Undeen
+      </div>
+
+      <div class="content_segment">
+        <iframe width="480" height="270" src="https://www.youtube.com/embed/vUVUhpb-Fdc" frameborder="0" allowfullscreen></iframe><br>
+        MCN 2012: Kickstarting Innovation within the Museum
+      </div>
+
+      <div class="content_segment">
+        <iframe width="480" height="270" src="https://www.youtube.com/embed/LzsNg1avK5c" frameborder="0" allowfullscreen></iframe><br>MCN 2012: What's the Point of a Museum Maker Space
+      </div>
+
+
+
+      <div class="content_segment">
+        <iframe width="480" height="270" src="https://www.youtube.com/embed/Nn_dC4pbCcg" frameborder="0" allowfullscreen></iframe><br>Let's Hack the Met: Don Undeen at We Are Museums, Vilnius Lithuania
+      </div>
+
+
+      <div class="content_segment">
+        <iframe width="480" height="270" src="https://www.youtube.com/embed/fijQy6BJqWA" frameborder="0" allowfullscreen></iframe><br>Digital Media Disruption - Media in Non-Profits - 2/13/13, Fordham University
+      </div>
+
+    </div>
+  </div>
+
+</div>
 </div>
 </body>
 </html>
