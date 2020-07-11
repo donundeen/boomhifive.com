@@ -15,7 +15,8 @@
 
       itemSelector: '.grid-item',
       columnWidth: 240,
-      gutter: 20
+      gutter: 20,
+      transitionDuration: '1.0s'
     });
 
     /*
@@ -38,7 +39,7 @@
       _grid.on("layoutComplete", function(){
         $('html, body').animate({
           scrollTop: $(_this).offset().top - 20
-        }, 300);
+        }, 1000);
         _grid.off("layoutComplete");
       });
     })(this, $grid);
@@ -113,7 +114,8 @@
                     <div class="item_summary">
                     </div>
                     <div class="item_content">
-                      <em>I serve as adjunct faculty for <a href="https://www.georgetown.edu/">Georgetown University</a>, for both the <a href="https://college.georgetown.edu/">College</a> and the <a href="https://cct.georgetown.edu/">Communications, Culture & Technology</a> program in the Graduate School of Arts and Sciences.</em>
+                      <em>I serve as adjunct faculty for <a href="https://www.georgetown.edu/">Georgetown University</a>, for both <a href="https://college.georgetown.edu/">Georgetown College</a> and the <a href="https://cct.georgetown.edu/">Communications, Culture & Technology</a> program in the Graduate School of Arts and Sciences.</em>
+                      <br/><br/>
                       <div class="content_segment">
                         <img src="images/Georgetown_university_seal.gif" align="left" style="border-radius: 10px; padding-right:10px;"><b><a href="https://cct.georgetown.edu/pilgrimage-project">Georgetown Old North Pilgrimage Project</a></b> "The Pilgrimage Project" is a multi-disciplinary collaborative ITEL experiment rediscovering the spaces of Georgetown's campus. Our first focus is Old North, Georgetown's oldest standing building.
                       </div>
