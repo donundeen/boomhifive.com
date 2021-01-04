@@ -93,6 +93,16 @@ href='mailto:donundeen@yahoo.com'>donundeen@yahoo.com</a></li>
 <li>The <b>HEART</b> of the <b>{$SHORT_NAME}</b> is the <B>ARTICLES</b>, which  anyone can submit (no membership BS required). Articles are any story you can remember about that band, musician, or venue; the more personal, the better. Every band, musician, and venue has their own articles page. You can also upload <B>FILES</b>, like pictures and MP3's, on each article page.
 <li>The real <b>POINT</b> of all this is not to be a weblog, or a band promo site, but rather to write a hypertext webumentary about the {$CITY_NAME} <B>MUSIC SCENE</b>, a story that reads differently for evey person that enters it, a story that we're all contributing to all the time.</li>
 </ul>
+
+
+
+<h2>Cool Data Visualizations!</h2>
+In 2003 I made some force-directed graph visualizations of all the bands and musicians in the GBFT. <br>
+I printed them up at 24"x36" and sold them to Common Grounds for $150 in bar tab.<BR>
+Don't know what happened to them, but here is a <a href="https://undeen.com/gbft/graphs/">folder</a> holding the original (large) files, in jpg, svg, and ai formats.
+<BR><BR>
+Feel free to download, modify, print, and share. I think they look pretty cool.
+
 </div>
 
 
