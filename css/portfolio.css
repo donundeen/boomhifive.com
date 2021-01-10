@@ -12,7 +12,7 @@
 .grid-item .item_header{
 	font-weight: bold;
     color:  white;
-  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-fill-color: #f5eced; /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #34004E;
 
@@ -84,6 +84,19 @@ background-image: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,.75), rg
 }
 
 
+.vaginachorus {
+	background-image: url("../images/portfolio/vchorus_flower.jpeg");
+}
+.vaginachorus.maxed {
+	background-image: none;
+}
+
+.qrcodewatch {
+	background-image: url("../images/portfolio/qrwatchcloseup.png");
+}
+.qrcodewatch.maxed {
+	background-image: none;
+}
 
 .metadata-title{
 	font-weight: bold;

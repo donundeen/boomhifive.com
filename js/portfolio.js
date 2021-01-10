@@ -1,12 +1,34 @@
-
 let slickOptions = {
-variableWidth: false,
-adaptiveHeight:true,
+	variableWidth: false,
+	adaptiveHeight: true,
 
 }
 
 $(document).ready(function() {
 
+
+	var datetime = new Date();
+	var hour = datetime.getHours() + 1;
+	var minutes = datetime.getMinutes();
+	var datestring = hour + ":" + minutes;
+	var qrcode = new QRCode("qrclock", {
+		text: datestring,
+	});
+	function updateQRTime() {
+		var datetime = new Date();
+
+		var hour = datetime.getHours() + 1;
+		var minutes = datetime.getMinutes();
+		var datestring = hour + ":" + minutes + ":" +datetime.getSeconds();
+
+		if(Math.random() > .9){
+			datestring = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+		}
+		console.log(datestring);
+		qrcode.clear();
+		qrcode.makeCode(datestring); // make another code.
+	}
+	setInterval(updateQRTime, 5000);
 
 
 
@@ -15,12 +37,12 @@ $(document).ready(function() {
 		console.log(slick);
 		console.log(event.target);
 	});
-	
+
 	$(".item_slides").on("reInit", function(event, slick) {
 		console.log("slick reInit");
 	});
 
-	$(".item_slides").on("destroy", function(event, slick){
+	$(".item_slides").on("destroy", function(event, slick) {
 		console.log("destroyed");
 	});
 
@@ -73,7 +95,7 @@ $(document).ready(function() {
 
 	$(".grid-item .item_header").click(function() {
 
-	//	$(".slick_initialized").slick("unslick");
+		//	$(".slick_initialized").slick("unslick");
 
 		if (
 			$(this)
@@ -91,7 +113,7 @@ $(document).ready(function() {
 		}
 		//$(this).parent().toggleClass("maxed");
 		(function(_this, _grid) {
-			_grid.on("layoutComplete", function(soInstance, laidOutItems ) {
+			_grid.on("layoutComplete", function(soInstance, laidOutItems) {
 
 				jQuery(".fitted").fitText();
 				$("html, body").animate({
@@ -110,7 +132,6 @@ $(document).ready(function() {
 		$grid.masonry("layout");
 
 	});
-
 
 
 

@@ -21,6 +21,7 @@
   integrity="sha512-e2WVdoOGqKU97DHH6tYamn+eAwLDpyHKqPy4uSv0aGlwDXZKGwyS27sfiIUT8gpZ88/Lr4UZpbRt93QkGRgpug=="
   crossorigin="anonymous"
   ></script>
+  <script src="js/qrcode.min.js" ></script>
   <script src="js/portfolio.js" defer></script>
 
 </head>
@@ -565,32 +566,73 @@
         <div class="item_summary"></div>
         <div class="item_slides ">
 
-          <div class="item_slide"><img src="images/portfolio/maker_hub_1.jpg" alt="">
-
-            <span class="caption"></span>
+          <div class="item_slide"><img src="images/portfolio/vchorusdevice.jpg" alt="Perifit pelvic floor trainer, proof-of-concept performance">
+            <span class="caption">Perifit pelvic floor trainer, proof-of-concept performance</span>
           </div>
-          <div class="item_slide"><img src="images/portfolio/maker_hub2.jpg" alt="">
-            <span class="caption"></span>
+          <div class="item_slide"><img src="images/portfolio/vchorusdiagram.png" alt="Vagina Chorus system diagram">
+
+            <span class="caption">Vagina Chorus system diagram</span>
+          </div>
+          <div class="item_slide"><img src="images/portfolio/vchorusmax.png" alt="Vagina Chorus Max patch, in performance mode">
+            <span class="caption">Vagina Chorus Max patch, in performance mode</span>
+          </div>
+          <div class="item_slide">
+            <div class="videoWrapper">
+              <iframe src="https://player.vimeo.com/video/370591493" width="640" height="361" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+            <span class="caption"><a href="https://vimeo.com/370591493">Vagina Chorus Demo</a> from <a href="https://vimeo.com/user22950326">Mengxi Rao</a> on <a href="https://vimeo.com">Vimeo</a>.</span>
           </div>
         </div>      
         <div class="item_content">
           <div class="metadata">
-            <span class="metadata-title">Date: </span><span class="metadata-value"></span>
-            <span class="metadata-title">Medium: </span><span class="metadata-value"></span>
-            <span class="metadata-title">Dimensions: </span><span class="metadata-value"></span>
-            <span class="metadata-title">Website: </span><span class="metadata-value"><a href="https://library.georgetown.edu/makerhub" target="_blank">https://library.georgetown.edu/makerhub</a></span>
+            <span class="metadata-title">Date: </span><span class="metadata-value">First prototype completed 2019</span>
+            <span class="metadata-title">Artist: </span><span class="metadata-value"><a href="https://altheamrao.myportfolio.com/projects" target="_blank">Althea Rao</a></span>
+            <span class="metadata-title">Medium: </span><span class="metadata-value">Perifit pelvic floor trainer, Raspberry Pi computer, Mac Laptop, custom WiFi router.</span>
+            <span class="metadata-title">Software: </span><span class="metadata-value"> Nodejs, Max/MSP, Ableton Live,  Linux configuration</span>
+            <span class="metadata-title">Project Website: </span><span class="metadata-value"><a href=" https://altheamrao.myportfolio.com/vagina-chorus" target="_blank"> https://altheamrao.myportfolio.com/vagina-chorus</a></span>
+            <span class="metadata-title">GitHub Repository: </span><span class="metadata-value"><a href=" https://github.com/donundeen/vchorus" target="_blank">https://github.com/donundeen/vchorus</a></span>
+            <span class="metadata-title">Video Demo: </span><span class="metadata-value"><a href="  https://vimeo.com/370591493" target="_blank"> https://vimeo.com/370591493</a></span>
 
           </div>
-          <div class="demonstrates"><strong>This project demonstrates</strong> </div>
+          <div class="demonstrates"><strong>This project demonstrates</strong> my abilities at
+            <ul>
+              <li>Developing systems that integrate with the human body. Via smoothing and dynamic scaling algorithms, this system adapts to diverse bodies, allowing them to control musical systems in harmony with one another.</li>
+              <li>
+              Developing complex systems that employ multiple communication protocols over heterogeneous devices, while still being robust enough to run smoothly at boot. </li>
+              <li>Collaborating closely with artists to develop technical systems that realize their vision.</li>
+            </ul>
+          </div>
           <div class="item_description">
-            <p class="design_question"></p>
+            <p class="design_question">In the U.S., an estimated 45 percent of people who have vaginas experience symptoms of urinary incontinence. The project aims to increase pelvic health literacy, aiming to lift the shame and negativity attached to pelvic health, sexual wellness and aging.</p>
             <p>
+              “A recipient of the 2020 MAP Fund, Vagina Chorus is a social-distancing friendly live performance, combining wearable technology, theater, physical therapy-inspired choreography and vaginally produced music to create an immersive audio-visual experience. Exposing the most intimate secrets of our bodies and destigmatizing historical taboos, the project will create an affirming context in today’s world for vaginas to morph into new myths for positive reinterpretations, foregrounding womxn and their vaginas as the narrators of their own representations.  The project is scheduled to premiere in 2021, with presenting partners in Connecticut, Pennsylvania, Virginia, New York and Alabama.” - Althea Rao, Artist, Vagina Chorus
+            </p>
+            <p>
+              I serve as the technical advisor and developer for this project. My role is to develop the system whereby the Perifit pelvic floor trainer controls musical gestures over a harmonic structure that can be modified by the artist or other collaborating musicians. 
+            </p>
 
-            </p>   
+            <h3>This system consists of</h3>
+            <ul>
+              <li>Multiple Perifit pelvic floor trainer devices, communicating via Bluetooth Low Energy Protocol</li>
+              <li>Raspberry Pi: Accepts communication from Perfit devices, attaches information to identify individual devices, and passes OSC data along to laptop via a customized WiFi router to laptop. The Raspberry Pi is configured to auto-start all software at boot.</li>
+              <li>Customized Router: The use of a customized dedicated router ensures that the system is entirely self-contained and not dependent on installation location network.</li>
+              <li>Laptop Running Max 8 and Ableton Live Suite.  The Max Patch accepts OSC data from multiple devices, applying smoothing and scaling algorithms, then mapping the data over a customizable set of “scenes” that define harmonic and rhythmic structure. This data is converted to MIDI notes that are sent to Ableton Live. Ableton Live settings and tones are controlled by the artist or collaborating musicians</li>
+            </ul>
+            <p>The short video below demonstrates how the system creates sound from interation with the device</p>
+            <div class="videoWrapper">
+              <iframe src="https://player.vimeo.com/video/370591493" width="640" height="361" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+            <span class="caption"><a href="https://vimeo.com/370591493">Vagina Chorus Demo</a> from <a href="https://vimeo.com/user22950326">Mengxi Rao</a> on <a href="https://vimeo.com">Vimeo</a>.</span>
           </div>
         </div>
       </div>
       <!-- END vagina chorus -->
+
+
+
+
+
+
 
 
 
@@ -606,28 +648,42 @@
         <div class="item_summary"></div>
         <div class="item_slides ">
 
-          <div class="item_slide"><img src="images/portfolio/maker_hub_1.jpg" alt="">
+          <div class="item_slide"><img src="images/portfolio/qrwatch1.jpg" alt="Step 1: Lift Watch to activate display, open QR code reader on phone.">
 
-            <span class="caption"></span>
+            <span class="caption"><strong>Step 1:</strong> Lift Watch to activate display, open QR code reader on phone.
+            </span>
           </div>
-          <div class="item_slide"><img src="images/portfolio/maker_hub2.jpg" alt="">
-            <span class="caption"></span>
+          <div class="item_slide"><img src="images/portfolio/qrwatch2.jpg" alt="Step 2: Read watch face with your phone's QR Code app">
+            <span class="caption"><strong>Step 2:</strong> Read watch face with your phone's QR Code app</span>
+          </div>
+          <div class="item_slide"><img src="images/portfolio/qrwatch3.jpg" alt="Step 3: Access time. Convert 24 hour format to 12 hour in your head">
+            <span class="caption"><strong>Step 3:</strong> Access time. Convert 24 hour format to 12 hour in your head</span>
           </div>
         </div>      
         <div class="item_content">
           <div class="metadata">
-            <span class="metadata-title">Date: </span><span class="metadata-value"></span>
-            <span class="metadata-title">Medium: </span><span class="metadata-value"></span>
-            <span class="metadata-title">Dimensions: </span><span class="metadata-value"></span>
-            <span class="metadata-title">Website: </span><span class="metadata-value"><a href="https://library.georgetown.edu/makerhub" target="_blank">https://library.georgetown.edu/makerhub</a></span>
-
+            <span class="metadata-title">Date Completed: </span><span class="metadata-value">2015</span>
+            <span class="metadata-title">Medium: </span><span class="metadata-value">Moto360 smartwatch</span>
+            <span class="metadata-title">Dimensions: </span><span class="metadata-value">Watch: (1.81 x 1.81 x 0.45 in). Display: 1.56 in</span>
           </div>
-          <div class="demonstrates"><strong>This project demonstrates</strong> </div>
+          <div class="demonstrates"><strong>This project demonstrates</strong>  my enthusiasm for ridiculous tech projects that encourage critical thinking about our interdependence with technology.
+          </div>
           <div class="item_description">
-            <p class="design_question"></p>
+            <p class="design_question qrclock" id="qrclock"></p>
+            <p>
+              Inspired by the QR Code Clock (https://www.youtube.com/watch?v=DLVAhHYnrbo), but poking fun at the excitement over smart watches, the QR Code Watch Face is a critique wrapped in a simple joke. 
+            </p>
             <p>
 
-            </p>   
+              Installed as a custom watch face on the Moto360 smartwatch, the QR code changes every minute. When the user wants to know the time, they take their smart phone out of their pocket, open up their QR code reading app (in 2015 this was not built-in to the camera), point it at the watch, capture the image, and view the translated QR Code as the time on the phone.  
+            </p>
+            <p>
+              With this project, I wanted to create something that 1) makes you laugh, but 2)also surfaces and questions the multiple layers of technological mediation that we allow into our lives, perhaps unnecessarily. What convenience do we gain? What power do we relinquish? 
+            </p>
+            <p>
+              QR Code Watch Face was installed on one friend’s watch, and sadly the code has been lost. Ironically, my friend stopped using this device when the Moto360 support was discontinued. Another example of the complexities of technological interdependencies.
+            </p>
+
           </div>
         </div>
       </div>
