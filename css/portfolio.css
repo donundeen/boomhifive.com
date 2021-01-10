@@ -45,10 +45,41 @@ background-image: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,.75), rg
 	background-image: none;
 }
 
+/* replace this */
+.makerhubapp {
+	background-image: url("../images/portfolio/app_menu.png");
+}
+.makerhubapp.maxed {
+	background-image: none;
+}
+
+
+.lcdscreens {
+	background-image: url("../images/portfolio/screenstatswho.jpg");
+}
+.lcdscreens.maxed {
+	background-image: none;
+}
+
+.jukebox {
+	background-image: url("../images/portfolio/jukebox.png");
+}
+.jukebox.maxed {
+	background-image: none;
+}
+
 .slideprojector {
 	background-image: url("../images/portfolio/projectorimage.jpg");
 }
 .slideprojector.maxed {
+	background-image: none;
+}
+
+
+.micromuseum {
+	background-image: url("../images/portfolio/micromuseum.jpg");
+}
+.micromuseum.maxed {
 	background-image: none;
 }
 
