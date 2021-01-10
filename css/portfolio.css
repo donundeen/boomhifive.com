@@ -15,6 +15,9 @@
   -webkit-text-fill-color: white; /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #34004E;
+
+background-image: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,.75), rgba(255,255,255,0));
+
 }
 
 .item_header:hover {
@@ -23,7 +26,7 @@
 
 .item_header{
 	position: relative;
-	height: auto;
+	height: auto;	
 }
 
 .slidelamp{
