@@ -273,18 +273,6 @@ display: block;
 }
 
 
-/*
-.item_header:hover{
-	animation-name: pulse;
-	-webkit-animation-name: pulse;
-
-	animation-duration: 3.5s;
-	-webkit-animation-duration: 3.5s;
-
-	animation-iteration-count: infinite;
-	-webkit-animation-iteration-count: infinite;
-}
-*/
 
 .item_summary {
     padding: .2em;
