@@ -1,0 +1,129 @@
+
+.item_header{
+}
+
+.grid-item{
+	background-size: 100%;
+	background-color: white;
+	background-repeat: no-repeat;
+	background-blend-mode: luminosity;
+}
+
+.grid-item .item_header{
+	font-weight: bold;
+    color:  white;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #34004E;
+}
+
+.item_header:hover {
+    font-weight: normal;
+}
+
+.item_header{
+	position: relative;
+	height: auto;
+}
+
+.slidelamp{
+	background-image: url("../images/portfolio/lamp.png");
+}
+
+.slidelamp.maxed {
+	background-image: none;
+}
+
+.metadata-title{
+	font-weight: bold;
+}
+
+.metadata-value{
+	font-style: italic;
+}
+
+.metadata{
+	padding-bottom: 1em;
+}
+
+.item_content{
+	height: auto;
+	margin-top: 30px;
+}
+
+.demonstrates{
+	font-weight: bold;
+	font-style: italic;
+}
+
+/*
+.item_slides{
+	display: none;
+}
+*/
+
+.item_slides{
+	display: none;
+}
+
+.maxed .item_slides {
+	display: block;
+	width: 80%;
+	margin: auto;
+	
+
+}
+.item_slide {
+}
+
+.item_slide img{
+	margin: auto;
+	width: 100%;
+}
+
+
+.slick-next:before, .slick-prev:before {
+    font-family: slick;
+    font-size: 20px;
+    line-height: 1;
+    opacity: .75;
+    color: #e61040;
+}
+
+
+.item_nav{
+	display: none;
+	height: auto;
+}
+
+.maxed .item_nav{
+	display: none;
+	height: auto;
+    position: relative;
+
+}
+.nextlink{
+    display: none;
+}
+
+.prevlink{
+    display:  none;
+}
+
+.maxed .nextlink{
+    display: block;
+
+    position: absolute;
+    right: 10px;
+    
+}
+
+.maxed .prevlink{
+    display: block;
+    
+   position: absolute;
+   
+   left: 10px;
+
+}
+

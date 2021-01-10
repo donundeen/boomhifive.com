@@ -1,307 +1,325 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Don Undeen. Culture, Tech, Makerspaces</title>
-    <!-- in case you forget, this site is hosted on hostinger -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Arvo:400,700|Droid+Sans:400,700|Droid+Serif:400,700|Arimo:400,700,700italic,400italic|Montserrat:400,700|Raleway:400,400italic,900|Merriweather:400,900,400italic|Passion+One:400,900|Poiret+One|Candal|Lobster|Josefin+Sans|Quicksand|Orbitron:400,700,900,500"
-      rel="stylesheet"
-      type="text/css"
-    />
+<head>
+  <title>Don Undeen. Culture, Tech, Makerspaces</title>
+  <!-- in case you forget, this site is hosted on hostinger -->
+  <link
+  href="https://fonts.googleapis.com/css?family=Arvo:400,700|Droid+Sans:400,700|Droid+Serif:400,700|Arimo:400,700,700italic,400italic|Montserrat:400,700|Raleway:400,400italic,900|Merriweather:400,900,400italic|Passion+One:400,900|Poiret+One|Candal|Lobster|Josefin+Sans|Quicksand|Orbitron:400,700,900,500"
+  rel="stylesheet"
+  type="text/css"
+  />
+  <!-- CAROUSEL Add the slick-theme.css if you want default styling -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" /><!--CAROUSEL  Add the slick-theme.css if you want default styling -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" />  <link rel="stylesheet" href="css/animation.css" media="screen" />
+  <link rel="stylesheet" href="css/main_masonry.css" media="screen" />
+  <link rel="stylesheet" href="css/portfolio.css" media="screen" />
+  <script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
+  <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
+  <script
+  src="https://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.min.js"
+  integrity="sha512-e2WVdoOGqKU97DHH6tYamn+eAwLDpyHKqPy4uSv0aGlwDXZKGwyS27sfiIUT8gpZ88/Lr4UZpbRt93QkGRgpug=="
+  crossorigin="anonymous"
+  ></script>
+  <script src="js/portfolio.js" defer></script>
 
-    <link rel="stylesheet" href="css/animation.css" media="screen" />
-    <link rel="stylesheet" href="css/main_masonry.css" media="screen" />
-    <script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
-    <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.min.js"
-      integrity="sha512-e2WVdoOGqKU97DHH6tYamn+eAwLDpyHKqPy4uSv0aGlwDXZKGwyS27sfiIUT8gpZ88/Lr4UZpbRt93QkGRgpug=="
-      crossorigin="anonymous"
-    ></script>
+</head>
+<body>
+  <div class="site_container">
+    <div class="grid">
+      <div class="grid-sizer"></div>
+      <div class="gutter-sizer"></div>
 
-    <script>
-      $(document).ready(function() {
-        //jQuery(".fitted").fitText();
-
-        var $grid = $(".grid").masonry({
-          // options
-
-          itemSelector: ".grid-item",
-          columnWidth: 240,
-          gutter: 20,
-          transitionDuration: "1.0s"
-        });
-
-        jQuery(".fitted").fitText();
-
-        /*
-    $grid.imagesLoaded().progress( function() {
-    $grid.masonry('layout');
-  });
-  */
-
-        $(".grid-item .item_header").click(function() {
-          if (
-            $(this)
-              .parent()
-              .hasClass("maxed")
-          ) {
-            $(this)
-              .parent()
-              .removeClass("maxed");
-          } else {
-            $(".maxed").toggleClass("maxed");
-            $(this)
-              .parent()
-              .addClass("maxed");
-          }
-
-          //$(this).parent().toggleClass("maxed");
-          (function(_this, _grid) {
-            _grid.on("layoutComplete", function() {
-              $("html, body").animate(
-                {
-                  scrollTop: $(_this).offset().top - 20
-                },
-                1000
-              );
-              _grid.off("layoutComplete");
-            });
-          })(this, $grid);
-
-          $grid.masonry("layout");
-        });
-      });
-    </script>
-  </head>
-  <body>
-    <div class="site_container">
-      <div class="grid">
-        <div class="grid-sizer"></div>
-        <div class="gutter-sizer"></div>
-
-        <div class="grid-item gridheader">
-          <div class="header">
-            <span class="supheader">Don Undeen</span>
-            <br />
-            <div class="subheader">
-              <span class="subheader">Culture, Tech, Makerspaces</span>
-            </div>
-          </div>
-          <div class="logo">
-            <img
-              class="logo_img"
-              align="right"
-              src="images/logo.png"
-              height="100px"
-            />
+      <div class="grid-item gridheader">
+        <div class="header">
+          <span class="supheader">Don Undeen</span>
+          <br />
+          <div class="subheader">
+            <span class="subheader">Culture, Tech, Makerspaces</span>
           </div>
         </div>
-        <div class="grid-item grid6">
-          <div class="item_header">
-            About
-          </div>
-          <div class="item_summary">
+        <div class="logo">
+          <img
+          class="logo_img"
+          align="right"
+          src="images/logo.png"
+          height="100px"
+          />
+        </div>
+      </div>
+      <div class="grid-item grid6 about">
+        <div class="item_header">
+          About
+        </div>
+        <div class="item_summary">
+          <img
+          height="175"
+          src="images/square_headshot.jpg"
+          align="left"
+          style="border-radius: 10px; padding-right:10px;"
+          />
+          <p style="padding-right: 10px; margin-top: -25px;">
+            <i
+            >Makerspace builder, innovation consultant, new media artist,
+            educator. Manager of the Maker Hub, Georgetown University's
+            makerspace. Former Founding and Senior Manager of the MediaLab
+            at the Metropolitan Museum of Art.</i
+            >
+          </p>
+        </div>
+        <div class="item_content">
+          <p style="padding-right: 10px; margin-top:-10px;">
             <img
-              height="175"
-              src="images/square_headshot.jpg"
-              align="left"
-              style="border-radius: 10px; padding-right:10px;"
-            />
-            <p style="padding-right: 10px; margin-top: -25px;">
-              <i
-                >Makerspace builder, innovation consultant, new media artist,
-                educator. Manager of the Maker Hub, Georgetown University's
-                makerspace. Former Founding and Senior Manager of the MediaLab
-                at the Metropolitan Museum of Art.</i
-              >
-            </p>
+            height="175"
+            src="images/square_headshot.jpg"
+            align="left"
+            style="border-radius: 10px; padding-right:10px;"
+            /><br />
+            Hi! I get up to all sorts of trouble, but in a nutshell I do
+            creative and help others do creative.
+            <br /><br />
+            I'm the Founding Manager of the
+            <b
+            ><a href="//library.georgetown.edu/makerhub"
+            >Maker Hub at Georgetown University</a
+            ></b
+            >.<br />
+            <br />
+            I was the Founding and Senior Manager of the
+            <b
+            ><a
+            href="//www.metmuseum.org/blogs/listing?facettype=tag&facetname=MediaLab"
+            >MediaLab at the Metropolitan Museum of Art</a
+            ></b
+            >. In 2012 I was tasked with establishing a space for
+            experimentation at the intersection of art, technology, and the
+            museum experience. By working closely with NYC's creative
+            technology community, the MediaLab developed a worldwide
+            reputation for consistently delivering provocative, exciting, and
+            valuable projects. <br /><br />
+            Lessee, what else... I've traveled around the world, consulting
+            with museums, universities, governments, and religious
+            organizations on how to develop space for creativity and
+            innovation. I advise entrepreneurs and students on project
+            development. I serve as technical lead for cultural projects. I
+            help multimedia artists develop new works. I create digital art
+            systems and use them to perform my own compositions. I design and
+            create art objects using digital fabrication and vintage tech.
+            <br /><br />
+            I like people, experiences, AND things.
+          </p>
+          <p>
+            <strong>Here's a better Bio for publication:</strong>
+            <em
+            >Don Undeen (UF Computer Science 2003 ) is the Founding Manager
+            of the Maker Hub at Georgetown University, and Adjunct Professor
+            of creative technology courses in Georgetown’s Communications,
+            Culture, and Technology graduate program. Prior to his work at
+            Georgetown, Don was the founder and Senior Manager of the Media
+            Lab at the Metropolitan Museum of Art, an incubator for
+            experiments at the intersection of art, technology, and the
+            museum experience. A lifelong lover of creative technology and
+            the communities that practice it, Don has consulted with
+            businesses, non-profits, museums, governments, and religious
+            institutions around the world, helping complex organizations
+            develop spaces for innovation.
+          </em>
+        </p>
+        <br>
+        <br>
+        <div class="item_footer">
+          Contact: donundeen@gmail.com
+        </div>
+      </div>
+
+    </div>
+    <div class="grid-item grid6 teach  in-sequence">
+      <div class="item_header qtr fitted ">
+        Georgetown University Maker Hub
+      </div>
+      <div class="item_summary">summary</div>
+      <div class="item_content">
+        description here
+        <div class="content_segment">
+          images and content
+        </div>
+        <div class="content_segment">
+          images and content
+        </div>
+
+      </div>
+      <div class="prevlink">prev</div>
+      <div class="nextlink">next</div>
+
+    </div>
+    <div class="grid-item grid5 teach  in-sequence">
+      <div class="item_header qtr fitted">
+        35mm Slide Projector
+      </div>
+      <div class="item_summary">brief teaser here</div>
+      <div class="item_content">
+        description here
+        <div class="content_segment">
+          images and content
+        </div>
+        <div class="content_segment">
+          images and content
+        </div>
+      </div>
+      <div class="prevlink">prev</div>
+      <div class="nextlink">next</div>
+    </div>
+    <div class="grid-item grid5 teach  in-sequence">
+      <div class="item_header fitted qtr">
+        35mm Slide Micro-Museum
+      </div>
+      <div class="item_summary">brief teaser here</div>
+      <div class="item_content">
+        description here
+        <div class="content_segment">
+          images and content
+        </div>
+        <div class="content_segment">
+          images and content
+        </div>
+      </div>
+      <div class="prevlink">prev</div>
+      <div class="nextlink">next</div>
+    </div>
+
+    <div class="grid-item grid5 teach in-sequence">
+      <div class="item_header  fitted ">
+        Vagina Chorus
+      </div>
+      <div class="item_summary">brief teaser here</div>
+      <div class="item_content">
+        description here
+        <div class="content_segment">
+          images and content
+        </div>
+        <div class="content_segment">
+          images and content
+        </div>
+
+      </div>
+      <div class="prevlink">prev</div>
+      <div class="nextlink">next</div>
+    </div>
+    <div class="grid-item grid5 teach in-sequence">
+      <div class="item_header qtr fitted">
+        QR Code Watch Face
+      </div>
+       <div class="item_slides qr">
+
+          <div class="item_slide"><img src="images/portfolio/lamp.png" alt="35mm Art Slide Lamp: Frida Kahlo"></div>
+          <div class="item_slide"><img src="images/portfolio/lamp_open.jpg" alt="35mm Art Slide Lamp: Showing internal components and rotating latch mechanism.
+            "></div>
+            <div class="item_slide"><img src="images/portfolio/lampdesign.png" alt="Laser Cutter Design Files for 35mm Art Slide Lamp"></div>
+
+          </div>      
+      <div class="item_summary"></div>
+      <div class="item_content">
+        description here
+        <div class="content_segment">
+          images and content
+        </div>
+        <div class="content_segment">
+          images and content
+        </div>
+
+      </div>
+      <div class="prevlink">prev</div>
+      <div class="nextlink">next</div>
+    </div>
+    <div class="grid-item grid5 slidelamp in-sequence">
+      <div class="item_header qtr  fitted">
+        35mm Art Slide Lamps
+      </div>
+      <div class="item_nav">
+        <div class="prevlink">prev</div>
+        <div class="nextlink">next</div>            
+      </div>
+
+
+       <div class="item_slides lamps">
+
+          <div class="item_slide"><img src="images/portfolio/lamp.png" alt="35mm Art Slide Lamp: Frida Kahlo"></div>
+          <div class="item_slide"><img src="images/portfolio/lamp_open.jpg" alt="35mm Art Slide Lamp: Showing internal components and rotating latch mechanism.
+            "></div>
+            <div class="item_slide"><img src="images/portfolio/lampdesign.png" alt="Laser Cutter Design Files for 35mm Art Slide Lamp"></div>
+
           </div>
-          <div class="item_content">
-            <p style="padding-right: 10px; margin-top:-10px;">
-              <img
-                height="175"
-                src="images/square_headshot.jpg"
-                align="left"
-                style="border-radius: 10px; padding-right:10px;"
-              /><br />
-              Hi! I get up to all sorts of trouble, but in a nutshell I do
-              creative and help others do creative.
-              <br /><br />
-              I'm the Founding Manager of the
-              <b
-                ><a href="//library.georgetown.edu/makerhub"
-                  >Maker Hub at Georgetown University</a
-                ></b
-              >.<br />
-              <br />
-              I was the Founding and Senior Manager of the
-              <b
-                ><a
-                  href="//www.metmuseum.org/blogs/listing?facettype=tag&facetname=MediaLab"
-                  >MediaLab at the Metropolitan Museum of Art</a
-                ></b
-              >. In 2012 I was tasked with establishing a space for
-              experimentation at the intersection of art, technology, and the
-              museum experience. By working closely with NYC's creative
-              technology community, the MediaLab developed a worldwide
-              reputation for consistently delivering provocative, exciting, and
-              valuable projects. <br /><br />
-              Lessee, what else... I've traveled around the world, consulting
-              with museums, universities, governments, and religious
-              organizations on how to develop space for creativity and
-              innovation. I advise entrepreneurs and students on project
-              development. I serve as technical lead for cultural projects. I
-              help multimedia artists develop new works. I create digital art
-              systems and use them to perform my own compositions. I design and
-              create art objects using digital fabrication and vintage tech.
-              <br /><br />
-              I like people, experiences, AND things.
+
+      <div class="item_summary"></div>
+      <div class="item_content">
+
+          <div class="metadata">
+            <span class="metadata-title">Completion Date:</span><span class="metadata-value"> 2020</span><BR/>
+            <span class="metadata-title">Medium:</span><span class="metadata-value"> 35mm fine art slides, medium density fibreboard, lamp cord, LED bulb, socket</span><BR/>
+            <span class="metadata-title">Dimensions:</span><span class="metadata-value"> 4.8 x 5.5 x 6.5 in</span><BR/>
+            <span class="metadata-title">Design File:</span><span class="metadata-value"> http://bit.ly/37Xlo37 </span><BR/>
+            <span class="metadata-title">Etsy Store:</span><span class="metadata-value"> https://www.etsy.com/shop/BoomHiFive</span><BR/>
+          </div>
+          <div class="demonstrates">This project demonstrates my enthusiasm for vintage media and my ability to design objects that are beautiful, salable, and easy to assemble.</div>
+          <div class="item_description">
+
+            <p>
+              In 2019 the Maker Hub received a donation of 150,000 fine art slides from Georgetown’s Art & Art History Department, which would otherwise have been discarded. These slides are available to Maker Hub users as a consumable resource. I’ve developed a variety of projects using these slides, including window displays, lampshades, portable projectors, and earrings. 
             </p>
             <p>
-              <strong>Here's a better Bio for publication:</strong>
-              <em
-                >Don Undeen (UF Computer Science 2003 ) is the Founding Manager
-                of the Maker Hub at Georgetown University, and Adjunct Professor
-                of creative technology courses in Georgetown’s Communications,
-                Culture, and Technology graduate program. Prior to his work at
-                Georgetown, Don was the founder and Senior Manager of the Media
-                Lab at the Metropolitan Museum of Art, an incubator for
-                experiments at the intersection of art, technology, and the
-                museum experience. A lifelong lover of creative technology and
-                the communities that practice it, Don has consulted with
-                businesses, non-profits, museums, governments, and religious
-                institutions around the world, helping complex organizations
-                develop spaces for innovation.
-              </em>
+              My most successful project has been the laser-cut 35mm Art Slide Lamp, a hexagonal arrangement of 12 slides assembled around a low-wattage led bulb. 
             </p>
-          </div>
-          <div class="item_footer">
-            Contact: donundeen@gmail.com
+            <p>
+              The structure is produced on the laser cutter from .25” Medium Density Fiberboard, and can be completely assembled without glue, in about 20 minutes. 
+            </p>
+            <p>
+              I’ve sold several of these, and have an Etsy shop (https://www.etsy.com/shop/BoomHiFive). I typically curate collections of slides based on my experience at the Metropolitan Museum of Art, but also build custom lamps on request.
+            </p>
           </div>
         </div>
 
-        <div class="grid-item grid5 teach">
-          <div class="item_header qtr fitted">
-            35mm Slide Projector
-          </div>
-          <div class="item_summary">brief teaser here</div>
-          <div class="item_content">
-            description here
-            <div class="content_segment">
-              images and content
-            </div>
-            <div class="content_segment">
-              images and content
-            </div>
-          </div>
-        </div>
-        <div class="grid-item grid5 teach ">
-          <div class="item_header fitted qtr">
-            35mm Slide Micro-Museum
-          </div>
-          <div class="item_summary">brief teaser here</div>
-          <div class="item_content">
-            description here
-            <div class="content_segment">
-              images and content
-            </div>
-            <div class="content_segment">
-              images and content
-            </div>
-          </div>
-        </div>
-        <div class="grid-item grid6 teach ">
-          <div class="item_header qtr fitted ">
-            Georgetown University Maker Hub
-          </div>
-          <div class="item_summary"></div>
-          <div class="item_content">
-            description here
-            <div class="content_segment">
-              images and content
-            </div>
-            <div class="content_segment">
-              images and content
-            </div>
-          </div>
-        </div>
-        <div class="grid-item grid5 teach">
-          <div class="item_header  fitted ">
-            Vagina Chorus
-          </div>
-          <div class="item_summary">brief teaser here</div>
-          <div class="item_content">
-            description here
-            <div class="content_segment">
-              images and content
-            </div>
-            <div class="content_segment">
-              images and content
-            </div>
-          </div>
-        </div>
-        <div class="grid-item grid5 teach">
-          <div class="item_header qtr fitted">
-            QR Code Watch Face
-          </div>
-          <div class="item_summary"></div>
-          <div class="item_content">
-            description here
-            <div class="content_segment">
-              images and content
-            </div>
-            <div class="content_segment">
-              images and content
-            </div>
-          </div>
-        </div>
-        <div class="grid-item grid5 teach">
-          <div class="item_header qtr  fitted">
-            35mm Art Slide Lamps
-          </div>
-          <div class="item_summary">brief teaser here</div>
-          <div class="item_content">
-            description here
-            <div class="content_segment">
-              images and content
-            </div>
-            <div class="content_segment">
-              images and content
-            </div>
-          </div>
-        </div>
-        <div class="grid-item grid5 teach">
-          <div class="item_header qtr  fitted">
-            35mm Slide Construction Kit
-          </div>
-          <div class="item_summary">brief teaser here</div>
-          <div class="item_content">
-            description here
-            <div class="content_segment">
-              images and content
-            </div>
-            <div class="content_segment">
-              images and content
-            </div>
-          </div>
-        </div>    
-        <div class="grid-item grid5 teach">
-          <div class="item_header qtr  fitted">
-Interchangeable LEGO Art Parts
-          </div>
-          <div class="item_summary">brief teaser here</div>
-          <div class="item_content">
-            description here
-            <div class="content_segment">
-              images and content
-            </div>
-            <div class="content_segment">
-              images and content
-            </div>
-          </div>
-        </div>            
       </div>
+      <div class="grid-item grid5 teach in-sequence">
+        <div class="item_header qtr  fitted">
+          35mm Slide Construction Kit
+        </div>
+        <div class="item_summary">brief teaser here</div>
+        <div class="item_content">
+          description here
+          <div class="content_segment">
+            images and content
+          </div>
+          <div class="content_segment">
+            images and content
+          </div>
+
+        </div>
+        <div class="prevlink">prev</div>
+        <div class="nextlink">next</div>
+      </div>    
+      <div class="grid-item grid5 teach in-sequence">
+        <div class="item_header qtr  fitted">
+          Interchangeable LEGO Art Parts
+        </div>
+        <div class="item_summary">brief teaser here</div>
+        <div class="item_content">
+          description here
+          <div class="content_segment">
+            images and content
+          </div>
+          <div class="content_segment">
+            images and content
+          </div>
+
+        </div>
+        <div class="prevlink">prev</div>
+        <div class="nextlink">next</div>
+      </div>            
     </div>
-  </body>
+  </div>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous"></script>
+</body>
 </html>

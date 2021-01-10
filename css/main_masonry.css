@@ -73,6 +73,7 @@ body {
     background: white;
     color: #34004E ;
     margin-bottom: 10px;
+    overflow: scroll;
 }
 
 
@@ -115,7 +116,8 @@ body {
 
 
 .grid-item .item_header.qtr {
-    height: 50px;
+/*    height: 50px;*/
+height: auto;
     font-size: 55px;
     padding: 0px;
     padding-left: 5px;
@@ -123,7 +125,8 @@ body {
 }
 
 .maxed .item_header.qtr{
-    height: 1.2em;
+/*    height: 1.2em;*/
+height: auto;
     font-size: 1.2em;
     line-height: 1.2em;
     padding-left: .4em;
@@ -164,17 +167,20 @@ body {
 .item_content p{
     margin: 10px;
     overflow: scroll;
+    /*
     height: 525px;
-    max-height: 525px;
+    max-height: 525px;*/
 }
 
 .item_content{
     overflow: scroll;
     position: absolute;
+    /*
     height: 525px;
     max-height: 525px;
     min-height: 525px;
-    top: 38px;
+    */
+/*    top: 38px;*/
 }
 
 
@@ -252,7 +258,7 @@ display: block;
 
 
 .item_header {
-    background: white;
+/*    background: white;*/
     border-top-left-radius: 9px;
     border-top-right-radius: 9px;
     height: 1.2em;
@@ -266,17 +272,19 @@ display: block;
     font-weight: bold;
 }
 
+
+/*
 .item_header:hover{
 	animation-name: pulse;
 	-webkit-animation-name: pulse;
 
-	animation-duration: 1.5s;
-	-webkit-animation-duration: 1.5s;
+	animation-duration: 3.5s;
+	-webkit-animation-duration: 3.5s;
 
 	animation-iteration-count: infinite;
 	-webkit-animation-iteration-count: infinite;
 }
-
+*/
 
 .item_summary {
     padding: .2em;
@@ -286,6 +294,7 @@ display: block;
 
 .item_content{
     padding: .2em;
+/*    position: relative;*/
 }
 
 .item_summary p{
@@ -297,19 +306,15 @@ display: block;
 
 
 
-
 @media only screen and ( max-width: 760px ) /* 320 <>640px */
 {
 /*body {background: green;}*/
     .gridheader { height: 100px; width: 500px;}
-
     .maxed {
 	width: 500px;
 	height: 600px;
 	z-index: 100;
     }
-
-
 }
 
 
@@ -341,7 +346,9 @@ display: block;
     }
     .grid-item .item_header.qtr{
 	font-size: 4em;
-	height: 1.2em;
+
+/*	height: 1.2em;*/
+height: auto;
 	line-height: 1.2em;
 	padding-left: .2em;
 	padding-top: 15px;
