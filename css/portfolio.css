@@ -33,6 +33,10 @@ background-image: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,.75), rg
 	background-image: url("../images/portfolio/lamp.png");
 }
 
+.makerhub {
+	background-image: url("../images/portfolio/donsmilinglaser.jpg");
+}
+
 .slidelamp.maxed {
 	background-image: none;
 }
