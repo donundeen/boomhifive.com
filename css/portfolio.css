@@ -20,6 +20,8 @@ background-image: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,.75), rg
 
 }
 
+
+
 .item_header:hover {
     font-weight: normal;
 }
@@ -32,14 +34,25 @@ background-image: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,.75), rg
 .slidelamp{
 	background-image: url("../images/portfolio/lamp.png");
 }
+.slidelamp.maxed {
+	background-image: none;
+}
 
 .makerhub {
 	background-image: url("../images/portfolio/donsmilinglaser.jpg");
 }
-
-.slidelamp.maxed {
+.makerhub.maxed {
 	background-image: none;
 }
+
+.slideprojector {
+	background-image: url("../images/portfolio/projectorimage.jpg");
+}
+.slideprojector.maxed {
+	background-image: none;
+}
+
+
 
 .metadata-title{
 	font-weight: bold;
