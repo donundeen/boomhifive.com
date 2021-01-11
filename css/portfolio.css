@@ -219,7 +219,10 @@ background-position-y: bottom;
 }
 
 
-
+.logo{
+	text-align: right;
+	padding-top: 1em;
+}
 
 .item_nav {
 	font-weight: bold;
