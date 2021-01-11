@@ -4,6 +4,10 @@
   <title>Don Undeen, Portfolio of Works</title>
   <!-- in case you forget, this site is hosted on hostinger -->
   <meta charset="UTF-8">
+  <!-- prevent caching-->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />  
   <link
   href="https://fonts.googleapis.com/css?family=Arvo:400,700|Droid+Sans:400,700|Droid+Serif:400,700|Arimo:400,700,700italic,400italic|Montserrat:400,700|Raleway:400,400italic,900|Merriweather:400,900,400italic|Passion+One:400,900|Poiret+One|Candal|Lobster|Josefin+Sans|Quicksand|Orbitron:400,700,900,500"
   rel="stylesheet"
@@ -13,8 +17,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" /><!--CAROUSEL  Add the slick-theme.css if you want default styling -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" />  <link rel="stylesheet" href="css/animation.css" media="screen" />
 
-  <link rel="stylesheet" href="css/main.css" media="screen" />
-  <link rel="stylesheet" href="css/portfolio.css" media="screen" />
+  <link rel="stylesheet" href="css/main.css?v=2" media="screen" />
+  <link rel="stylesheet" href="css/portfolio.css?v=2" media="screen" />
 
 
   <script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
@@ -45,758 +49,762 @@
           </div>
         </div>
         <div class="logo">
-donundeen@gmail.com</br>
-347.414.3658<br>
-<a href="https://undeen.com">undeen.com</a>
+        donundeen@gmail.com</br>
+        347.414.3658<br>
+        <a href="https://undeen.com">undeen.com</a>
+      </div>
+    </div>
+    <!-- Page Intro-->
+    <div class="grid-item grid6 about">
+      <div class="item_header fitted">
+        Table of Contents
+      </div>
+      <div class="item_summary">
+        
+          Prefer a straight forward tour through my portfolio?<br/> 
+          <a href="DonUndeenPortfolio.pdf" target="_new">Here's the PDF version</a>.<BR><BR>
+         Otherwise, navigate at will OR move sequentially through the items, which are numbered in the bottom right corner. 
+        
+      </div>
+      <div class="item_content">
+        <h3>Welcome to My Portfolio!</h3>
+        <p>
+          Hi there! My name is Don Undeen, and this is my portfolio.
+        </p>
+        <p>
+          On this page you'll find a handful of works I've designed and built that I think give an indication of the kind of designer I am; someone who cares a lot about making the most of materials and tools at hand, and building environments and platforms that help bring out the creativity in others, with a bit of humour thrown into the mix. 
+        </p>
+        <p>
+          To learn more about any project click the title of the box. If the box doesn't expand, it means something when wrong, and you should probably just download the <a href="DonUndeenPortfolio.pdf" target="_new">PDF version of this portfolio</a>.
+        </p>
+        <h2>Table of Contents</h2>
+        Click any of the links below to automatically open that project.
+        <ul class="tableofcontents">
+          <li><a href="#" onclick="javascript:open_project('.openmakerhub'); return false"><span class="indexnumber">1</span>The Maker Hub:</a> Designing and building makerspaces and their communities. 
+            <li><a  href="#"  onclick="javascript:open_project('.openmakerhubapp');"><span class="indexnumber">2</span>The Maker Hub Volunteer App</a></li>
+            <li><a   href="#"  onclick="javascript:open_project('.openlcdscreens');"><span class="indexnumber">3</span>The Maker Hub Recycled LCD Screen Display System</a></li>
+            <li><a   href="#"  onclick="javascript:open_project('.openjukebox');"><span class="indexnumber">4</span>The Maker Hub Jukebox</a></li>
+          </li>
+          <li><a   href="#"  onclick="javascript:open_project('.openvaginachorus');"><span class="indexnumber">5</span>Vagina Chorus: Providing technical support and collaboration with multi-media artists</a></li>
+          <li><a  href="#"   onclick="javascript:open_project('.openqrcodewatch');"><span class="indexnumber">6</span>QR Code Watch Face: Tell the time with QR Codes.</a></li>
+          <li><a  href="#"   onclick="javascript:open_project('.openlego');"><span class="indexnumber">7</span>Interchangable LEGO Art Parts: Integrate cultural content into your LEGO play.</a></li>
+        </ul>
+        <strong>35mm Fine Art Slide Projects:</strong>
+        <ul class="tableofcontents">
+          <li><a   href="#"  onclick="javascript:open_project('.openslidelamp');"><span class="indexnumber">8</span>35mm Art Slide Lamp:</a> A series of Lamps made from 35mm Art Slides</li>
+          <li><a   href="#"  onclick="javascript:open_project('.openslideprojector');"><span class="indexnumber">9</span>35mm Slide Projector: </a>A small short-throw slide projector for creative lighting.</li>
+          <li><a   href="#"  onclick="javascript:open_project('.openmicromuseum');"><span class="indexnumber">10</span>35mm Micro Museum:</a> A desktop slide lightbox you can plug into your laptop.</li>    
+          <li ><a href="#"  onclick="javascript:open_project('.openconstructionkit');"><span class="indexnumber">11</span>35mm Slide Construction Kit:</a> A simple kit for making unique structures from 35mm slides.</li>    
+        </ul>
+        <BR>
+        <BR>
+
+
+      </div>
+    </div>
+    <!-- END PAGE intro -->
+
+
+
+
+    <!-- QR Code Watch -->
+    <div class="grid-item grid5 teach qrcodewatch in-sequence">
+      <div class="item_header qtr fitted openqrcodewatch">
+        QR Code Watch Face
+      </div>
+      <div class="item_nav">
+        <div class="prevlink">&lt;</div>
+        <div class="indexnumber">6</div>
+        <div class="nextlink">&gt;</div>            
+      </div>      
+      <div class="item_summary"></div>
+      <div class="item_slides ">
+
+        <div class="item_slide"><img src="images/portfolio/qrwatch1.jpg" alt="Step 1: Lift Watch to activate display, open QR code reader on phone.">
+
+          <span class="caption"><strong>Step 1:</strong> Lift Watch to activate display, open QR code reader on phone.
+          </span>
+        </div>
+        <div class="item_slide"><img src="images/portfolio/qrwatch2.jpg" alt="Step 2: Read watch face with your phone's QR Code app">
+          <span class="caption"><strong>Step 2:</strong> Read watch face with your phone's QR Code app</span>
+        </div>
+        <div class="item_slide"><img src="images/portfolio/qrwatch3.jpg" alt="Step 3: Access time. Convert 24 hour format to 12 hour in your head">
+          <span class="caption"><strong>Step 3:</strong> Access time. Convert 24 hour format to 12 hour in your head</span>
+        </div>
+      </div>      
+      <div class="item_content">
+        <div class="metadata">
+          <span class="metadata-title">Date Completed: </span><span class="metadata-value">2015</span><br>
+          <span class="metadata-title">Medium: </span><span class="metadata-value">Moto360 smartwatch</span><br>
+          <span class="metadata-title">Dimensions: </span><span class="metadata-value">Watch: (1.81 x 1.81 x 0.45 in). Display: 1.56 in</span>
+        </div>
+        <div class="demonstrates"><strong>This project demonstrates</strong>  my enthusiasm for ridiculous tech projects that encourage critical thinking about our interdependence with technology.
+        </div>
+        <div class="item_description">
+          <p class="design_question qrclock" id="qrclock"></p>
+          <p>
+            Inspired by the QR Code Clock (https://www.youtube.com/watch?v=DLVAhHYnrbo), but poking fun at the excitement over smart watches, the QR Code Watch Face is a critique wrapped in a simple joke. 
+          </p>
+          <p>
+
+            Installed as a custom watch face on the Moto360 smartwatch, the QR code changes every minute. When the user wants to know the time, they take their smart phone out of their pocket, open up their QR code reading app (in 2015 this was not built-in to the camera), point it at the watch, capture the image, and view the translated QR Code as the time on the phone.  
+          </p>
+          <p>
+            With this project, I wanted to create something that 1) makes you laugh, but 2)also surfaces and questions the multiple layers of technological mediation that we allow into our lives, perhaps unnecessarily. What convenience do we gain? What power do we relinquish? 
+          </p>
+          <p>
+            QR Code Watch Face was installed on one friend’s watch, and sadly the code has been lost. Ironically, my friend stopped using this device when the Moto360 support was discontinued. Another example of the complexities of technological interdependencies.
+          </p>
+
         </div>
       </div>
-      <!-- Page Intro-->
-      <div class="grid-item grid6 about">
-        <div class="item_header fitted">
-          Table of Contents
+    </div>
+    <!-- end QR Code Watch-->
+
+
+
+
+
+    <!-- Maker Hub-->
+    <div class="grid-item makerhub grid6 teach  in-sequence">
+      <div class="item_header qtr fitted openmakerhub" id="openmakerhub">
+        Georgetown University Maker Hub
+      </div>
+      <div class="item_nav">
+        <div class="prevlink">&lt;</div>
+        <div class="indexnumber">1</div>
+        <div class="nextlink">&gt;</div>            
+      </div>   
+      <div class="item_slides ">
+
+        <div class="item_slide"><img src="images/portfolio/maker_hub_1.jpg" alt="The Maker Hub during open hours, highlighting central table.">
+
+          <span class="caption">The Maker Hub during open hours, highlighting central table</span>
         </div>
-        <div class="item_summary">
-          <i fitted>This page too weird? <a href="DonUndeenPortfolio.pdf" target="_new">Here's the PDF version.</a></i>
+        <div class="item_slide"><img src="images/portfolio/maker_hub2.jpg" alt="Maker Hub central table, facing entrance.
+          ">
+          <span class="caption">Maker Hub central table, facing entrance
+          </span>
         </div>
-        <div class="item_content">
-          <h3>Welcome to My Portfolio!</h3>
+        <div class="item_slide"><img src="images/portfolio/idea_lounge.jpg" alt="The Maker Hub Idea Lounge, with LEGO table and ideation games, is designed to encourage communication and collaboration.">
+          <span class="caption">The <em>Maker Hub Idea Lounge</em>, with LEGO table and ideation games, is designed to encourage communication and collaboration.</span>            
+        </div>
+
+        <div class="item_slide">
+
+          <div class="videoWrapper">
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/K66YPaBxIn0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <span class="caption">This <a href="https://www.youtube.com/watch?v=K66YPaBxIn0" target="_blank">10-minute video</a> of the Maker Hub provides an overview of the space, its tools, and our approach to empowering first-time makers to turn their ideas into reality.</span>
+        </div>
+
+      </div>         
+      <div class="item_content">
+        <div class="metadata">
+          <span class="metadata-title">Date: </span><span class="metadata-value">Established August 2016</span><br>
+          <span class="metadata-title">Medium: </span><span class="metadata-value">Built Environment</span><br>
+          <span class="metadata-title">Dimensions: </span><span class="metadata-value">1500 square feet</span><br>
+          <span class="metadata-title">Website: </span><span class="metadata-value"><a href="https://library.georgetown.edu/makerhub" target="_blank">https://library.georgetown.edu/makerhub</a></span>
+
+        </div>
+        <div class="demonstrates"><strong>This project demonstrates</strong> my approach to human-centered design: finding the right questions, listening actively, investing stakeholders, and focusing on the best next step. It demonstrates my ability to consider the entire experience of a space, and make informed decisions to improve that experience.</div>
+        <div class="item_description">
+          <p class="design_question">“How do we promote a ‘Maker Mindset’ in a University without an engineering, architecture, design, or education program?”</p>
           <p>
-            Hi there! My name is Don Undeen, and this is my portfolio.
+            The Maker Hub is Georgetown University’s only makerspace open to all students, staff and faculty, in the University’s main library. Visitor projects may be course-related, entrepreneurial, or purely personal, and almost all supplies are free. 
           </p>
           <p>
-            On this page you'll find a handful of works I've designed and built that I think give an indication of the kind of designer I am; someone who cares a lot about making the most of materials and tools at hand, and building environments and platforms that help bring out the creativity in others, with a bit of humour thrown into the mix. 
+            I was hired in August of 2016 to turn an empty room with a couple 3d printers into a functioning makerspace. I approached this as a human-centered design problem, focusing first on the experience we wanted our visitors to have. 
           </p>
           <p>
-            To learn more about any project click the title of the box. If the box doesn't expand, it means something when wrong, and you should probably just download the <a href="DonUndeenPortfolio.pdf" target="_new">PDF version of this portfolio</a>.
+
+            The Georgetown community is primarily liberal arts focused, with a strong social justice component, and a large business school. Therefore we don’t have a large base of highly technical students to draw from.
           </p>
-          <h2>Table of Contents</h2>
-          Click any of the links below to automatically open that project.
-          <ul class="tableofcontents">
-            <li><a href="#" onclick="javascript:open_project('.openmakerhub'); return false"><span class="indexnumber">1</span>The Maker Hub:</a> Designing and building makerspaces and their communities. 
-              <li><a  href="#"  onclick="javascript:open_project('.openmakerhubapp');"><span class="indexnumber">2</span>The Maker Hub Volunteer App</a></li>
-              <li><a   href="#"  onclick="javascript:open_project('.openlcdscreens');"><span class="indexnumber">3</span>The Maker Hub Recycled LCD Screen Display System</a></li>
-              <li><a   href="#"  onclick="javascript:open_project('.openjukebox');"><span class="indexnumber">4</span>The Maker Hub Jukebox</a></li>
-            </li>
-            <li><a   href="#"  onclick="javascript:open_project('.openvaginachorus');"><span class="indexnumber">5</span>Vagina Chorus: Providing technical support and collaboration with multi-media artists</a></li>
-            <li><a  href="#"   onclick="javascript:open_project('.openqrcodewatch');"><span class="indexnumber">6</span>QR Code Watch Face: Tell the time with QR Codes.</a></li>
-            <li><a  href="#"   onclick="javascript:open_project('.openlego');"><span class="indexnumber">7</span>Interchangable LEGO Art Parts: Integrate cultural content into your LEGO play.</a></li>
+          <p>
+
+            Through stakeholder meetings, leadership strategy sessions, and observation of interaction in the space, we identified some guiding principles:
+          </p>
+          <ul>
+            <li>Create an environment that people WANT to be in</li>
+            <li>Low barrier to entry for non-technical and poorly resourced users</li>
+            <li>Everyone deserves to feel welcome and wanted, from their first visit</li>
+            <li>Create memories and capture stories</li>
+            <li>Shorten the design-build-test-repeat iteration cycle</li>
+            <li>The people that use the space are invested in its future</li>
           </ul>
-          <strong>35mm Fine Art Slide Projects:</strong>
-          <ul class="tableofcontents">
-                <li><a   href="#"  onclick="javascript:open_project('.openslidelamp');"><span class="indexnumber">8</span>35mm Art Slide Lamp:</a> A series of Lamps made from 35mm Art Slides</li>
-                <li><a   href="#"  onclick="javascript:open_project('.openslideprojector');"><span class="indexnumber">9</span>35mm Slide Projector: </a>A small short-throw slide projector for creative lighting.</li>
-                <li><a   href="#"  onclick="javascript:open_project('.openmicromuseum');"><span class="indexnumber">10</span>35mm Micro Museum:</a> A desktop slide lightbox you can plug into your laptop.</li>    
-                <li ><a href="#"  onclick="javascript:open_project('.openconstructionkit');"><span class="indexnumber">11</span>35mm Slide Construction Kit:</a> A simple kit for making unique structures from 35mm slides.</li>    
-              </ul>
-          <BR>
-          <BR>
+
+          <p>
+            These principles guided our decisions about tool selection, the built environment, policies, staffing, and programming.
+          </p>
+          <h3>Tool Selection</h3>
+          <p>
 
 
-        </div>
-      </div>
-      <!-- END PAGE intro -->
+            We purchased fabrication systems that are easy to learn, inexpensive to repair, and have a low cost for consumables. This lowers the barrier to entry, shortens iteration cycles, and increases the number of successes visitors have during their first visit.
+          </p>
+          <h3>The Built Environment</h3>
 
 
 
 
-      <!-- QR Code Watch -->
-      <div class="grid-item grid5 teach qrcodewatch in-sequence">
-        <div class="item_header qtr fitted openqrcodewatch">
-          QR Code Watch Face
-        </div>
-        <div class="item_nav">
-          <div class="prevlink">&lt;</div>
-          <div class="indexnumber">6</div>
-          <div class="nextlink">&gt;</div>            
-        </div>      
-        <div class="item_summary"></div>
-        <div class="item_slides ">
+          <p class="design_question">“How do we design a room that encourages curiosity and community?”</p>
+          <p>
+            The Maker Hub was designed to maximize available work surfaces in a small footprint,  while permitting multiple interaction types. To achieve this, we built disciplinary workstations (3D, Sewing, Woodshop, etc) around the perimeter of the space, with a long central table in the middle).  This allowed both for isolation and concentration in workstations, and socialization and cross-disciplinary work in the middle. Friends and memories are made in our central table when students share their work.
+          </p>
+          <p>
 
-          <div class="item_slide"><img src="images/portfolio/qrwatch1.jpg" alt="Step 1: Lift Watch to activate display, open QR code reader on phone.">
-
-            <span class="caption"><strong>Step 1:</strong> Lift Watch to activate display, open QR code reader on phone.
-            </span>
-          </div>
-          <div class="item_slide"><img src="images/portfolio/qrwatch2.jpg" alt="Step 2: Read watch face with your phone's QR Code app">
-            <span class="caption"><strong>Step 2:</strong> Read watch face with your phone's QR Code app</span>
-          </div>
-          <div class="item_slide"><img src="images/portfolio/qrwatch3.jpg" alt="Step 3: Access time. Convert 24 hour format to 12 hour in your head">
-            <span class="caption"><strong>Step 3:</strong> Access time. Convert 24 hour format to 12 hour in your head</span>
-          </div>
-        </div>      
-        <div class="item_content">
-          <div class="metadata">
-            <span class="metadata-title">Date Completed: </span><span class="metadata-value">2015</span><br>
-            <span class="metadata-title">Medium: </span><span class="metadata-value">Moto360 smartwatch</span><br>
-            <span class="metadata-title">Dimensions: </span><span class="metadata-value">Watch: (1.81 x 1.81 x 0.45 in). Display: 1.56 in</span>
-          </div>
-          <div class="demonstrates"><strong>This project demonstrates</strong>  my enthusiasm for ridiculous tech projects that encourage critical thinking about our interdependence with technology.
-          </div>
-          <div class="item_description">
-            <p class="design_question qrclock" id="qrclock"></p>
-            <p>
-              Inspired by the QR Code Clock (https://www.youtube.com/watch?v=DLVAhHYnrbo), but poking fun at the excitement over smart watches, the QR Code Watch Face is a critique wrapped in a simple joke. 
-            </p>
-            <p>
-
-              Installed as a custom watch face on the Moto360 smartwatch, the QR code changes every minute. When the user wants to know the time, they take their smart phone out of their pocket, open up their QR code reading app (in 2015 this was not built-in to the camera), point it at the watch, capture the image, and view the translated QR Code as the time on the phone.  
-            </p>
-            <p>
-              With this project, I wanted to create something that 1) makes you laugh, but 2)also surfaces and questions the multiple layers of technological mediation that we allow into our lives, perhaps unnecessarily. What convenience do we gain? What power do we relinquish? 
-            </p>
-            <p>
-              QR Code Watch Face was installed on one friend’s watch, and sadly the code has been lost. Ironically, my friend stopped using this device when the Moto360 support was discontinued. Another example of the complexities of technological interdependencies.
-            </p>
-
-          </div>
-        </div>
-      </div>
-      <!-- end QR Code Watch-->
+            We built an entry station with a custom ID card reader at the front door, on a long thin table that clearly delineated the “welcome zone,” where volunteers would greet visitors and establish the ground rules for use of the space. This ensures that every visitor who walks in the door is made to feel like they belong. 
+          </p>
+          <h3>Staffing</h3>
+          <p>
 
 
-
-
-
-      <!-- Maker Hub-->
-      <div class="grid-item makerhub grid6 teach  in-sequence">
-        <div class="item_header qtr fitted openmakerhub" id="openmakerhub">
-          Georgetown University Maker Hub
-        </div>
-        <div class="item_nav">
-          <div class="prevlink">&lt;</div>
-          <div class="indexnumber">1</div>
-          <div class="nextlink">&gt;</div>            
-        </div>   
-        <div class="item_slides ">
-
-          <div class="item_slide"><img src="images/portfolio/maker_hub_1.jpg" alt="The Maker Hub during open hours, highlighting central table.">
-
-            <span class="caption">The Maker Hub during open hours, highlighting central table</span>
-          </div>
-          <div class="item_slide"><img src="images/portfolio/maker_hub2.jpg" alt="Maker Hub central table, facing entrance.
-            ">
-            <span class="caption">Maker Hub central table, facing entrance
-            </span>
-          </div>
-          <div class="item_slide"><img src="images/portfolio/idea_lounge.jpg" alt="The Maker Hub Idea Lounge, with LEGO table and ideation games, is designed to encourage communication and collaboration.">
-            <span class="caption">The <em>Maker Hub Idea Lounge</em>, with LEGO table and ideation games, is designed to encourage communication and collaboration.</span>            
-          </div>
-
-          <div class="item_slide">
-
+            We established a volunteer program whereby students serve one 2-hour shift per week, and in return get expanded access to the space. Volunteers additionally receive special training on the tools, and participate in monthly all-staff meetings to generate new ideas for the space based on our experiences with our visitors. This volunteer community of 30-50 students per semester provides continual reinforcement of community values, a broad knowledge base of experience and skills to support sophisticated projects, and a network of advocates throughout the university. This supports our principles of lowering the barrier to entry, creating a welcoming environment, and building a community that is invested in the future of the Maker Hub.
+          </p>
+          <h3>Programming</h3>
+          <p>
+            To lower the barrier to entry and shorten the iteration cycle, we focused less on one-off workshops, and more on maximizing the one-on-one, drop-in learning experience between our visitors and our volunteers. Through the volunteer training program we ensure that there is usually someone on hand to help with any tool in the space. Visitors can drop in and immediately get help with a project. This is more scalable than scheduling a wide range of workshops. We did discover that there is an audience segment that is uncomfortable with this model, and we designed introductory workshops specifically to attract this group.
+          </p>
+          <h3>TLDR: Watch this video</h3>
+          <p>
+            This <a href="https://www.youtube.com/watch?v=K66YPaBxIn0" target="_blank">10-minute video</a> of the Maker Hub provides an overview of the space, its tools, and our approach to empowering first-time makers to turn their ideas into reality.
             <div class="videoWrapper">
-
               <iframe width="560" height="315" src="https://www.youtube.com/embed/K66YPaBxIn0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <span class="caption">This <a href="https://www.youtube.com/watch?v=K66YPaBxIn0" target="_blank">10-minute video</a> of the Maker Hub provides an overview of the space, its tools, and our approach to empowering first-time makers to turn their ideas into reality.</span>
-          </div>
-
-        </div>         
-        <div class="item_content">
-          <div class="metadata">
-            <span class="metadata-title">Date: </span><span class="metadata-value">Established August 2016</span><br>
-            <span class="metadata-title">Medium: </span><span class="metadata-value">Built Environment</span><br>
-            <span class="metadata-title">Dimensions: </span><span class="metadata-value">1500 square feet</span><br>
-            <span class="metadata-title">Website: </span><span class="metadata-value"><a href="https://library.georgetown.edu/makerhub" target="_blank">https://library.georgetown.edu/makerhub</a></span>
-
-          </div>
-          <div class="demonstrates"><strong>This project demonstrates</strong> my approach to human-centered design: finding the right questions, listening actively, investing stakeholders, and focusing on the best next step. It demonstrates my ability to consider the entire experience of a space, and make informed decisions to improve that experience.</div>
-          <div class="item_description">
-            <p class="design_question">“How do we promote a ‘Maker Mindset’ in a University without an engineering, architecture, design, or education program?”</p>
-            <p>
-              The Maker Hub is Georgetown University’s only makerspace open to all students, staff and faculty, in the University’s main library. Visitor projects may be course-related, entrepreneurial, or purely personal, and almost all supplies are free. 
-            </p>
-            <p>
-              I was hired in August of 2016 to turn an empty room with a couple 3d printers into a functioning makerspace. I approached this as a human-centered design problem, focusing first on the experience we wanted our visitors to have. 
-            </p>
-            <p>
-
-              The Georgetown community is primarily liberal arts focused, with a strong social justice component, and a large business school. Therefore we don’t have a large base of highly technical students to draw from.
-            </p>
-            <p>
-
-              Through stakeholder meetings, leadership strategy sessions, and observation of interaction in the space, we identified some guiding principles:
-            </p>
-            <ul>
-              <li>Create an environment that people WANT to be in</li>
-              <li>Low barrier to entry for non-technical and poorly resourced users</li>
-              <li>Everyone deserves to feel welcome and wanted, from their first visit</li>
-              <li>Create memories and capture stories</li>
-              <li>Shorten the design-build-test-repeat iteration cycle</li>
-              <li>The people that use the space are invested in its future</li>
-            </ul>
-
-            <p>
-              These principles guided our decisions about tool selection, the built environment, policies, staffing, and programming.
-            </p>
-            <h3>Tool Selection</h3>
-            <p>
-
-
-              We purchased fabrication systems that are easy to learn, inexpensive to repair, and have a low cost for consumables. This lowers the barrier to entry, shortens iteration cycles, and increases the number of successes visitors have during their first visit.
-            </p>
-            <h3>The Built Environment</h3>
-
-
-
-
-            <p class="design_question">“How do we design a room that encourages curiosity and community?”</p>
-            <p>
-              The Maker Hub was designed to maximize available work surfaces in a small footprint,  while permitting multiple interaction types. To achieve this, we built disciplinary workstations (3D, Sewing, Woodshop, etc) around the perimeter of the space, with a long central table in the middle).  This allowed both for isolation and concentration in workstations, and socialization and cross-disciplinary work in the middle. Friends and memories are made in our central table when students share their work.
-            </p>
-            <p>
-
-              We built an entry station with a custom ID card reader at the front door, on a long thin table that clearly delineated the “welcome zone,” where volunteers would greet visitors and establish the ground rules for use of the space. This ensures that every visitor who walks in the door is made to feel like they belong. 
-            </p>
-            <h3>Staffing</h3>
-            <p>
-
-
-              We established a volunteer program whereby students serve one 2-hour shift per week, and in return get expanded access to the space. Volunteers additionally receive special training on the tools, and participate in monthly all-staff meetings to generate new ideas for the space based on our experiences with our visitors. This volunteer community of 30-50 students per semester provides continual reinforcement of community values, a broad knowledge base of experience and skills to support sophisticated projects, and a network of advocates throughout the university. This supports our principles of lowering the barrier to entry, creating a welcoming environment, and building a community that is invested in the future of the Maker Hub.
-            </p>
-            <h3>Programming</h3>
-            <p>
-              To lower the barrier to entry and shorten the iteration cycle, we focused less on one-off workshops, and more on maximizing the one-on-one, drop-in learning experience between our visitors and our volunteers. Through the volunteer training program we ensure that there is usually someone on hand to help with any tool in the space. Visitors can drop in and immediately get help with a project. This is more scalable than scheduling a wide range of workshops. We did discover that there is an audience segment that is uncomfortable with this model, and we designed introductory workshops specifically to attract this group.
-            </p>
-            <h3>TLDR: Watch this video</h3>
-            <p>
-              This <a href="https://www.youtube.com/watch?v=K66YPaBxIn0" target="_blank">10-minute video</a> of the Maker Hub provides an overview of the space, its tools, and our approach to empowering first-time makers to turn their ideas into reality.
-              <div class="videoWrapper">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/K66YPaBxIn0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </div>
-              <Br/>
-              <br/> 
-            </p>
-          </div>
+            <Br/>
+            <br/> 
+          </p>
         </div>
       </div>
-      <!-- END Maker Hub-->
-
-
-
-
-
-
-
-      <!-- Maker Hub App -->
-      <div class="grid-item grid5 teach makerhubapp in-sequence">
-        <div class="item_header qtr fitted openmakerhubapp" id="openmakerhubapp">
-          Maker Hub Volunteer App
-        </div>
-        <div class="item_nav">
-          <div class="prevlink">&lt;</div>
-          <div class="indexnumber">2</div>
-          <div class="nextlink">&gt;</div>             
-        </div>      
-        <div class="item_summary"></div>
-        <div class="item_slides ">
-
-          <div class="item_slide"><img src="images/portfolio/app_main.png" alt="Maker Hub Mobile Volunteer App Screenshot: Visitor Selection Screen">
-            <span class="caption">Maker Hub Mobile Volunteer App Screenshot: Visitor Selection Screen</span>
-          </div>
-          <div class="item_slide"><img src="images/portfolio/app_menu.png" alt="Maker Hub Mobile Volunteer App Screenshot: Main Menu">
-            <span class="caption">Maker Hub Mobile Volunteer App Screenshot: Main Menu</span>
-          </div>
-        </div>      
-        <div class="item_content">
-          <div class="metadata">
-            <span class="metadata-title">Completion Date: </span><span class="metadata-value">2020</span><br>
-            <span class="metadata-title">Medium: </span><span class="metadata-value">Mobile-optimized web application, developed on Google Apps Script, integrated with Google Sheet, Google Calendar, and Trello.</span><br>
-            <span class="metadata-title">GitHub Repo: </span><br>
-            <span class="metadata-value"><a href="https://github.com/GeorgetownMakerHubOrg/MakerHubAppMVP1" target="_blank">https://github.com/GeorgetownMakerHubOrg/MakerHubAppMVP1</a></span><br>
-
-          </div>
-          <div class="demonstrates"><strong>This project demonstrates</strong> my ability to develop software that focuses on improving experiences for specific user groups.</div>
-          <div class="item_description">
-            <p class="design_question">“How do we improve the experience for volunteers helping visitors?”</p>
-            <p>
-              This app was designed through a series of facilitated volunteer brainstorming sessions, asking the question “How do we improve the experience for volunteers helping visitors?”  We identified our main pain point, which was the fact that with a large number of low-hour volunteers and many new volunteers each semester, it’s hard to maintain awareness of who is available to help with a tool or skill.  This leads to awkwardness between volunteers when they encounter a situation they don’t know how to handle. 
-            </p>
-            <p>
-
-              The resulting app is designed to be used by Maker Hub volunteers as they support visitors in the space, during their shift. Some of the features include:
-            </p>
-            <ul>
-              <li>Tracking new volunteer skills, identifying paths for skill improvement</li>
-              <li>“Find a Maker” - identify schedules for volunteers with specific skills</li>
-              <li>New visitor orientation scripts</li>
-              <li>Making equipment reservations</li>
-              <li>Requesting equipment purchases, repairs</li>
-              <li>Integration with our Trello task system</li>
-            </ul>
-
-            
-          </div>
-        </div>
-      </div>
-      <!-- end Maker Hub App-->
-
-
-
-
-
-      <!-- Maker Hub Recycled LCD Display System -->
-      <div class="grid-item grid5 teach lcdscreens in-sequence">
-        <div class="item_header qtr fitted openlcdscreens" id="openlcdscreens">
-          Maker Hub Recycled LCD Display System
-        </div>
-        <div class="item_nav">
-          <div class="prevlink">&lt;</div>
-          <div class="indexnumber">3</div>
-          <div class="nextlink">&gt;</div>             
-        </div>      
-        <div class="item_summary"></div>
-        <div class="item_slides ">
-
-          <div class="item_slide"><img src="images/portfolio/screenstatswho.jpg" alt="Recycled LCD Display System, with Maker Hub Stats (left) and “Who’s on Shift?” (right) apps ">
-
-            <span class="caption">Recycled LCD Display System, with Maker Hub Stats (left) and “Who’s on Shift?” (right) apps </span>
-          </div>
-          <div class="item_slide"><img src="images/portfolio/screensreservationswelcome.jpg" alt="Recycled LCD Display System, with Maker Hub Welcome (left) and Reservation Calendar (Google Calendar embed, right) apps 
-            ">
-            <span class="caption">Recycled LCD Display System, with Maker Hub Welcome (left) and Reservation Calendar (Google Calendar embed, right) apps 
-            </span>
-          </div>
-        </div>      
-        <div class="item_content">
-          <div class="metadata">
-            <span class="metadata-title">Date: </span><span class="metadata-value"></span><br>
-            <span class="metadata-title">Medium: </span><span class="metadata-value"></span><br>
-            <span class="metadata-title">Dimensions: </span><span class="metadata-value"></span><br>
-            <span class="metadata-title">Website: </span><span class="metadata-value"><a href="https://library.georgetown.edu/makerhub" target="_blank">https://library.georgetown.edu/makerhub</a></span>
-
-          </div>
-          <div class="demonstrates"><strong>This project demonstrates</strong>  my enthusiasm for recycling discarded technology, and my ability to build flexible, robust systems. 
-          </div>
-          <div class="item_description">
-            <p class="design_question">What are we going to do with all these screens I found in the dumpster?</p>
-            <p>
-              LCD monitors are discarded by the hundreds or thousands when organizations upgrade their computers. We retrieve old monitors from campus dumpsters, remove their plastic housing, and create laser-cut housings for them with modular mounting components. These screens can then be hung on walls, mounted on railings, or stacked in arrays. Each screen has a Raspberry Pi computer in a 3D printed case attached to the back. The Pi’s are typically configured with Chilipie-Kiosk (https://github.com/futurice/chilipie-kiosk), a full-screen kiosk display app. 
-            </p>
-            <p>
-              The apps running on these screens are typically built in Google Apps Script, and leverage Google Slides, Calendar, and Sheets
-            </p>
-            <p>
-            In the Maker Hub, these screens have been used for:</p>
-            <ul>
-              <li><b>Reservation Calendar Display:</b> Google calendar data reformatted for improved readability.</li>
-              <li><b>Maker Hub Stats Dashboard:</b> Information on total, unique, and first-time visitors, over multiple time frames.</li>
-              <li><b>Who’s On Shift:</b> A listing of staff currently on shift, their picture, and their skills.</li>
-              <li><b>Events Slideshow:</b> A Google Slides display of upcoming events, auto-generated from our Google Calendar. </li>
-            </ul>
-
-          </div>
-        </div>
-      </div>
-      <!-- end Maker Hub Recycled LCD Display System-->
-
-
-
-
-
-
-      <!-- Maker Hub Jukebox -->
-      <div class="grid-item grid5 teach jukebox in-sequence">
-        <div class="item_header qtr fitted openjukebox" id="openjukebox">
-          Maker Hub Jukebox
-        </div>
-        <div class="item_nav">
-          <div class="prevlink">&lt;</div>
-          <div class="indexnumber">4</div>
-          <div class="nextlink">&gt;</div>             
-        </div>      
-        <div class="item_summary"></div>
-        <div class="item_slides ">
-
-          <div class="item_slide"><img src="images/portfolio/jukebox.png" alt="Right: Maker Hub Jukebox in situ. Left: Electronics are housed in 3D printed jukebox">
-
-            <span class="caption">Right: Maker Hub Jukebox in situ. Left: Electronics are housed in 3D printed jukebox</span>
-          </div>
-          <div class="item_slide"><img src="images/portfolio/jukebox3d.png" alt="3D model of Arduino housing, shaped like  a Jukebox">
-            <span class="caption">3D model of Arduino housing, shaped like  a Jukebox. <em><strong>NOTE:</strong> the Jukebox model itself is not my design. The modifications to houses the internal electronics are my own work.</em>
-            </span>
-          </div>
-        </div>      
-        <div class="item_content">
-          <div class="metadata">
-            <span class="metadata-title">Completion Date: </span><span class="metadata-value">2018</span><br>
-            <span class="metadata-title">Medium: </span><span class="metadata-value">Vintage Seeburg Wall-O-Matic jukebox controller, Arduino, custom electronic circuit, xBee Shield, 3D printed jukebox, HiFiBerry Raspberry Pi DAC </span><br>
-            <span class="metadata-title">Dimensions: </span><span class="metadata-value">13”x12”x6”</span><br>
-            <span class="metadata-title">GitHub Repository: </span><span class="metadata-value"><a href="https://github.com/donundeen/seeburgjukebox" target="_blank">https://github.com/donundeen/seeburgjukebox</a></span>
-
-          </div>
-          <div class="demonstrates"><strong>This project demonstrates</strong> my enthusiasm for integrating vintage tech with modern tech, and developing tools that invite participation.</div>
-          <div class="item_description">
-            <p>
-              The Maker Hub Jukebox is a system for playing music in the Maker Hub. The heart of the system is a mid-century Seeburg 100 Wall-o-Matic jukebox controller, like you might find on your table in a 50’s diner. When a keycode is entered on the jukebox, the output signal from the unit is intercepted by an arduino circuit, which translates the electrical pulses back into the letter/number combination originally entered. This code is then transmitted wirelessly via XBee radio to a Raspberry Pi running the Mopidy music server application. My custom software maps the keycode to a Spotify playlist and instructs mopidy to stream that playlist.
-            </p>
-            <p>
-              Maker Hub visitors are encouraged to create their own playlists and add them to the system. We’ve found this to be a great way to help students feel like they belong in their Maker Hub.
-            </p>
-            <p>
-              We also have a special playlist just for closing time, which is just different versions of Semisonic's "Closing Time." We've found this to be a great way to encourage folks to move out the door :).
-
-            </p>   
-          </div>
-        </div>
-      </div>
-      <!-- end Maker Hub Jukebox-->
-
-
-
-
-
-      <!-- vagina chorus -->
-      <div class="grid-item grid6 teach vaginachorus in-sequence">
-        <div class="item_header qtr fitted openvaginachorus" >
-          Vagina Chorus
-        </div>
-        <div class="item_nav">
-          <div class="prevlink">&lt;</div>
-          <div class="indexnumber">5</div>
-          <div class="nextlink">&gt;</div>          
-        </div>      
-        <div class="item_summary"></div>
-        <div class="item_slides ">
-
-          <div class="item_slide"><img src="images/portfolio/vchorusdevice.jpg" alt="Perifit pelvic floor trainer, proof-of-concept performance">
-            <span class="caption">Perifit pelvic floor trainer, proof-of-concept performance</span>
-          </div>
-          <div class="item_slide"><img src="images/portfolio/vchorusdiagram.png" alt="Vagina Chorus system diagram">
-
-            <span class="caption">Vagina Chorus system diagram</span>
-          </div>
-          <div class="item_slide"><img src="images/portfolio/vchorusmax.png" alt="Vagina Chorus Max patch, in performance mode">
-            <span class="caption">Vagina Chorus Max patch, in performance mode</span>
-          </div>
-          <div class="item_slide">
-            <div class="videoWrapper">
-              <iframe src="https://player.vimeo.com/video/370591493" width="640" height="361" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-            </div>
-            <span class="caption"><a href="https://vimeo.com/370591493">Vagina Chorus Demo</a> from <a href="https://vimeo.com/user22950326">Mengxi Rao</a> on <a href="https://vimeo.com">Vimeo</a>.</span>
-          </div>
-        </div>      
-        <div class="item_content">
-          <div class="metadata">
-            <span class="metadata-title">Date: </span><span class="metadata-value">First prototype completed 2019</span><br>
-            <span class="metadata-title">Artist: </span><span class="metadata-value"><a href="https://altheamrao.myportfolio.com/projects" target="_blank">Althea Rao</a></span><br>
-            <span class="metadata-title">Medium: </span><span class="metadata-value">Perifit pelvic floor trainer, Raspberry Pi computer, Mac Laptop, custom WiFi router.</span><br>
-            <span class="metadata-title">Software: </span><span class="metadata-value"> Nodejs, Max/MSP, Ableton Live,  Linux configuration</span><br>
-            <span class="metadata-title">Project Website: </span><span class="metadata-value"><a href=" https://altheamrao.myportfolio.com/vagina-chorus" target="_blank"> https://altheamrao.myportfolio.com/vagina-chorus</a></span><br>
-            <span class="metadata-title">GitHub Repository: </span><span class="metadata-value"><a href=" https://github.com/donundeen/vchorus" target="_blank">https://github.com/donundeen/vchorus</a></span><br>
-            <span class="metadata-title">Video Demo: </span><span class="metadata-value"><a href="  https://vimeo.com/370591493" target="_blank"> https://vimeo.com/370591493</a></span>
-
-          </div>
-          <div class="demonstrates"><strong>This project demonstrates</strong> my abilities at
-            <ul>
-              <li>Developing systems that integrate with the human body. Via smoothing and dynamic scaling algorithms, this system adapts to diverse bodies, allowing them to control musical systems in harmony with one another.</li>
-              <li>
-              Developing complex systems that employ multiple communication protocols over heterogeneous devices, while still being robust enough to run smoothly at boot. </li>
-              <li>Collaborating closely with artists to develop technical systems that realize their vision.</li>
-            </ul>
-          </div>
-          <div class="item_description">
-            <p class="design_question">In the U.S., an estimated 45 percent of people who have vaginas experience symptoms of urinary incontinence. The project aims to increase pelvic health literacy, aiming to lift the shame and negativity attached to pelvic health, sexual wellness and aging.</p>
-            <p>
-              “A recipient of the 2020 MAP Fund, Vagina Chorus is a social-distancing friendly live performance, combining wearable technology, theater, physical therapy-inspired choreography and vaginally produced music to create an immersive audio-visual experience. Exposing the most intimate secrets of our bodies and destigmatizing historical taboos, the project will create an affirming context in today’s world for vaginas to morph into new myths for positive reinterpretations, foregrounding womxn and their vaginas as the narrators of their own representations.  The project is scheduled to premiere in 2021, with presenting partners in Connecticut, Pennsylvania, Virginia, New York and Alabama.” - Althea Rao, Artist, Vagina Chorus
-            </p>
-            <p>
-              I serve as the technical advisor and developer for this project. My role is to develop the system whereby the Perifit pelvic floor trainer controls musical gestures over a harmonic structure that can be modified by the artist or other collaborating musicians. 
-            </p>
-
-            <h3>This system consists of</h3>
-            <ul>
-              <li>Multiple Perifit pelvic floor trainer devices, communicating via Bluetooth Low Energy Protocol</li>
-              <li>Raspberry Pi: Accepts communication from Perfit devices, attaches information to identify individual devices, and passes OSC data along to laptop via a customized WiFi router to laptop. The Raspberry Pi is configured to auto-start all software at boot.</li>
-              <li>Customized Router: The use of a customized dedicated router ensures that the system is entirely self-contained and not dependent on installation location network.</li>
-              <li>Laptop Running Max 8 and Ableton Live Suite.  The Max Patch accepts OSC data from multiple devices, applying smoothing and scaling algorithms, then mapping the data over a customizable set of “scenes” that define harmonic and rhythmic structure. This data is converted to MIDI notes that are sent to Ableton Live. Ableton Live settings and tones are controlled by the artist or collaborating musicians</li>
-            </ul>
-            <p>The short video below demonstrates how the system creates sound from interation with the device</p>
-            <div class="videoWrapper">
-              <iframe src="https://player.vimeo.com/video/370591493" width="640" height="361" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-            </div>
-            <span class="caption"><a href="https://vimeo.com/370591493">Vagina Chorus Demo</a> from <a href="https://vimeo.com/user22950326">Mengxi Rao</a> on <a href="https://vimeo.com">Vimeo</a>.</span>
-          </div>
-        </div>
-      </div>
-      <!-- END vagina chorus -->
-
-
-
-
-
-
-
-
-
-      <!-- lego art parts -->
-      <div class="grid-item grid5 teach lego in-sequence">
-        <div class="item_header qtr fitted openlego">
-          Interchangeable LEGO Art Parts
-        </div>
-        <div class="item_nav">
-          <div class="prevlink">&lt;</div>
-          <div class="indexnumber">7</div>
-          <div class="nextlink">&gt;</div>          
-        </div>      
-        <div class="item_summary"></div>
-        <div class="item_slides ">
-
-          <div class="item_slide"><img src="images/portfolio/belvedere.png" alt="Belvedere Torso, Vatican Museum: Art Parts">
-
-            <span class="caption">Belvedere Torso, Vatican Museum: Art Parts. <a href="https://www.tinkercad.com/things/fKt9TgXDlMr" target="_blank">Available on TinkerCAD.</a></span>
-          </div>
-          <div class="item_slide"><img src="images/portfolio/catlego.png" alt="Egyptian Cat, British Museum: Art Parts">
-            <span class="caption">Egyptian Cat, British Museum. <a href="https://www.tinkercad.com/things/8emkDDMKNkV" target="_blank">Available on TinkerCAD.</a></span>
-          </div>
-          <div class="item_slide"><img src="images/portfolio/legohole.png" alt="Lego Interconnect Hole">
-            <span class="caption">Lego Interconnect Hole. <a href="https://www.tinkercad.com/things/eHfFtOrHKTu" target="_blank">Available on TinkerCAD.</a></span>
-          </div>
-          <div class="item_slide"><img src="images/portfolio/marsyaslion.png" alt="Marsyas Lion, Metropolitan Museum of Art: Art Parts">
-            <span class="caption">Marsyas Lion, Metropolitan Museum of Art: Art Parts.<a href="https://www.tinkercad.com/things/9L7PHpE4Bzd" target="_blank">Available on TinkerCAD.</a> </span>
-          </div>
-          <div class="item_slide"><img src="images/portfolio/samothracelego.png" alt="Winged Victory of Samothrace, Louvre: Art Parts.">
-            <span class="caption">Winged Victory of Samothrace, Louvre: Art Parts. <a href="https://www.tinkercad.com/things/lGXXpeXQpsi" target="_blank">Available on TinkerCAD.</a></span>
-          </div>
-        </div>      
-        <div class="item_content">
-          <div class="metadata">
-            <span class="metadata-title">Date: </span><span class="metadata-value">2013-2017</span><br>
-            <span class="metadata-title">Medium: </span><span class="metadata-value">3D printer filament (PLA and ABS), 3D Resin</span><br>
-            <span class="metadata-title">Dimensions: </span><span class="metadata-value">Sizes range from 1” square to 5” square</span><br>
-            <span class="metadata-title">Website: </span><span class="metadata-value"><a href="https://library.georgetown.edu/makerhub" target="_blank">https://library.georgetown.edu/makerhub</a></span>
-
-          </div>
-          <div class="demonstrates"><strong>This project demonstrates</strong>  my enthusiasm for working with cultural content, and my ability to build creative, accessible objects with simple tools.
-          </div>
-          <div class="item_description">
-            <p class="design_question">How can crowdsourced museum scans become fun and useful through low-cost 3D printing?</p>
-            <p>
-              My Art Parts project was an effort to do something fun with the wealth of 3D scanned museum objects being made available for free on websites like Thingiverse.com and ScanTheWorld. 
-            </p>
-            <p>
-              This trend of crowd-sourced, low-fidelity photogrammetric scans of museum objects was due in some part to the first-ever 3D Scanning and Printing Hackathon, which I produced at the Metropolitan Museum of Art in partnership with MakerBot. I’m therefore interested in demonstrating the educational, artistic, and commercial value of this content.
-            </p>
-            <p>
-              Considering also that the design of basic LEGO pieces is no longer under patent or copyright, it’s possible to freely reuse LEGO components in 3D printed work.
-            </p>
-            <p>
-              LEGO Art Parts consists of 3D scans of museum objects, split into parts and modified with holes that fit the LEGO axle part. The LEGO axle hole is large enough to print successfully on low-cost 3D printers, and the original axle can be purchased in bulk so it doesn’t have to be 3D printed.
-            </p>
-            <p>
-              The result is a set of sculptural parts that can be remixed with each other, or integrated with the rest of your LEGO set.
-            </p>
-            <p>
-              <strong>NOTE: The 3D models of museum objects are not my original work. My original work is the design of the LEGO axle hole, and the modifications to the museum 3D scans to divide them into parts and add the LEGO axle hole.</strong>
-
-
-            </p>   
-          </div>
-        </div>
-      </div>
-      <!-- end LEGO Art Parts-->
-
-
-
-      <!-- slide lamp -->
-      <div class="grid-item grid5 slidelamp in-sequence">
-        <div class="item_header qtr openslidelamp fitted">
-          35mm Art Slide Lamps
-        </div>
-
-        <div class="item_nav">
-          <div class="prevlink">&lt;</div>
-          <div class="indexnumber">8</div>
-          <div class="nextlink">&gt;</div>            
-        </div>
-
-        <div class="item_slides lamps">
-          <div class="item_slide"><img src="images/portfolio/lamp.png" alt="35mm Art Slide Lamp: Frida Kahlo">
-            <span class="caption">35mm Art Slide Lamp: Frida Kahlo</span>
-          </div>
-          <div class="item_slide"><img src="images/portfolio/lamp_open.jpg" alt="35mm Art Slide Lamp: Showing internal components and rotating latch mechanism.">
-            <span class="caption">35mm Art Slide Lamp: Showing internal components and rotating latch mechanism.</span>
-          </div>
-          <div class="item_slide"><img src="images/portfolio/lampdesign.png" alt="Laser Cutter Design Files for 35mm Art Slide Lamp">
-            <span class="caption">Laser Cutter Design Files for 35mm Art Slide Lamp. <a href="//bit.ly/37Xlo37" target="_blank">AI file here.</a></span>
-          </div>
-        </div>
-
-        <div class="item_summary"></div>
-        <div class="item_content">
-
-          <div class="metadata">
-            <span class="metadata-title">Completion Date: </span><span class="metadata-value">2020</span><BR/>
-            <span class="metadata-title">Medium: </span><span class="metadata-value">35mm fine art slides, medium density fibreboard, lamp cord, LED bulb, socket</span><BR/>
-            <span class="metadata-title">Dimensions: </span><span class="metadata-value">4.8 x 5.5 x 6.5 in</span><BR/>
-            <span class="metadata-title">Design File: </span><span class="metadata-value"><a href="http://bit.ly/37Xlo37" target="_blank">http://bit.ly/37Xlo37</a></span><BR/>
-            <span class="metadata-title">Etsy Store:</span><span class="metadata-value"><a href="https://www.etsy.com/shop/BoomHiFive" target="_blank">https://www.etsy.com/shop/BoomHiFive</a></span><BR/>
-          </div>
-          <div class="demonstrates"><strong>This project demonstrates</strong> my enthusiasm for vintage media and my ability to design objects that are beautiful, salable, and easy to assemble.</div>
-          <div class="item_description">
-
-            <p>
-              In 2019 the Maker Hub received a donation of 150,000 fine art slides from Georgetown’s Art & Art History Department, which would otherwise have been discarded. These slides are available to Maker Hub users as a consumable resource. I’ve developed a variety of projects using these slides, including window displays, lampshades, portable projectors, and earrings. 
-            </p>
-            <p>
-              My most successful project has been the laser-cut 35mm Art Slide Lamp, a hexagonal arrangement of 12 slides assembled around a low-wattage led bulb. 
-            </p>
-            <p>
-              The structure is produced on the laser cutter from .25” Medium Density Fiberboard, and can be completely assembled without glue, in about 20 minutes. 
-            </p>
-            <p>
-              I’ve sold several of these, and have an Etsy shop (https://www.etsy.com/shop/BoomHiFive). I typically curate collections of slides based on my experience at the Metropolitan Museum of Art, but also build custom lamps on request.
-            </p>
-          </div>
-        </div>
-      </div>
-      <!-- END slide lamp -->
-
-
-
-
-      <!-- Slide projector -->
-      <div class="grid-item grid5 teach slideprojector in-sequence">
-        <div class="item_header qtr openslideprojector fitted">
-          35mm Art Slide Projector
-        </div>
-        <div class="item_nav">
-          <div class="prevlink">&lt;</div>
-          <div class="indexnumber">9</div>
-          <div class="nextlink">&gt;</div>              
-        </div>      
-        <div class="item_summary"></div>
-        <div class="item_slides ">
-
-          <div class="item_slide"><img src="images/portfolio/projector.jpg" alt="Short-throw slide projector">
-
-            <span class="caption">Short-throw slide projector</span>
-          </div>
-          <div class="item_slide"><img src="images/portfolio/projectorimage.jpg" alt="Projected image of Frank Stella's 'Concentric Square'">
-            <span class="caption">Projected image of Frank Stella’s “Concentric Square”</span>
-          </div>
-        </div>      
-        <div class="item_content">
-          <div class="metadata">
-            <span class="metadata-title">Date: </span><span class="metadata-value">2019</span><br>
-            <span class="metadata-title">Medium: </span><span class="metadata-value">Medium density fiberboard, 35mm art slides, mini floodlight, electrical cord, recycled optical lenses </span><br>
-            <span class="metadata-title">Dimensions: </span><span class="metadata-value">8”x10”x5”</span><br>
-            <span class="metadata-title">Design File: </span><span class="metadata-value"><a href="https://drive.google.com/file/d/1hBrEYlsn8kEQgnZ4AaWXWTQkseixUc_x" target="_blank">Here</a></span><br><br>
-
-          </div>
-          <div class="demonstrates"><strong>This project demonstrates</strong> my interest in upcycling discarded corporate tech to celebrate the value of vintage media.</div>
-          <div class="item_description">
-            <p>
-              This short-throw slide projector is made using lenses recycled from old video projectors, and is ideal for creative mood lighting. The focus and size of the projection can be adjusted with the screws on the side.
-            </p>
-          </div>
-        </div>
-      </div>
-      <!-- END slide projector -->
-
-
-
-      <!-- micromuseum -->
-      <div class="grid-item grid5 teach micromuseum in-sequence">
-        <div class="item_header qtr fitted openmicromuseum">
-          35mm Slide Micro-Museum
-        </div>
-        <div class="item_nav">
-          <div class="prevlink">&lt;</div>
-          <div class="indexnumber">10</div>
-          <div class="nextlink">&gt;</div>             
-        </div>      
-        <div class="item_summary"></div>
-        <div class="item_slides ">
-
-          <div class="item_slide"><img src="images/portfolio/micromuseum.jpg" alt="35mm Slide Micro Museum">
-
-            <span class="caption"></span>
-          </div>
-        </div>      
-        <div class="item_content">
-          <div class="metadata">
-            <span class="metadata-title">Completion Date: </span><span class="metadata-value">2019</span><br>
-            <span class="metadata-title">Medium: </span><span class="metadata-value">Medium density fiberboard, 35mm slides, usb breakout board, flat panel led, resistor</span><br>
-            <span class="metadata-title">Dimensions: </span><span class="metadata-value">2.25"x2.25"x3"</span><br>
-            <span class="metadata-title">AI Design File: </span><span class="metadata-value"><a href="https://drive.google.com/file/d/1DKOeszpV4PA22yilBx9LJY2l00RUcMyQ/view?usp=sharing" target="_blank">Google Drive</a></span>
-
-          </div>
-          <div class="demonstrates"><strong>This project demonstrates</strong> my love for making delightful objects using vintage media, modern fabrication techniques, and electronics.</div>
-          <div class="item_description">
-            <p>
-              The Micro-Museum is a small lightbox for a single 35mm slide, designed to sit on your desk, plugged in to a USB port.
-
-            </p>   
-          </div>
-        </div>
-      </div>
-      <!-- END micromuseum -->
-
-
-
-      <!-- 35mm slide construction kit-->
-      <div class="grid-item grid5 teach constructionkit in-sequence">
-        <div class="item_header qtr fitted openconstructionkit">
-          35mm Slide Construction Kit
-        </div>
-        <div class="item_nav">
-          <div class="prevlink">&lt;</div>
-          <div class="indexnumber">11</div>
-          <div class="nextlink">&gt;</div>           
-        </div>      
-        <div class="item_summary"></div>
-        <div class="item_slides ">
-
-          <div class="item_slide"><img src="images/portfolio/slideconstructionkit.jpg" alt="35mm slide construction kit, with a few assembled structures">
-
-            <span class="caption">35mm slide construction kit, with a few assembled structures.</span>
-          </div>
-          <div class="item_slide"><img src="images/portfolio/slideconnectordesign.png" alt="Design of slide connectors.">
-            <span class="caption">Design of slide connectors. AI file is available <a href="https://drive.google.com/file/d/1zcrzEx_emPLzn8gHuwKmbKoT_XJuCaGd">here.</a></span>
-          </div>
-        </div>      
-        <div class="item_content">
-          <div class="metadata">
-            <span class="metadata-title">Date: </span><span class="metadata-value">2019</span><br>
-            <span class="metadata-title">Medium: </span><span class="metadata-value">Medium density fiberboars, 35mm slides.
-            </span><br>
-            <span class="metadata-title">Dimensions: </span><span class="metadata-value">.75"x.75"x.25"</span><br>
-            <span class="metadata-title">AI Design File: </span><span class="metadata-value"><a href="https://drive.google.com/file/d/1zcrzEx_emPLzn8gHuwKmbKoT_XJuCaGd" target="_blank">Google Drive</a></span>
-
-          </div>
-          <div class="demonstrates"><strong>This project demonstrates</strong> my interest in finding a use for small MDF scraps left over from laser cutter jobs, and my enthusiasm for building simple creative platforms.</div>
-          <div class="item_description">
-            <p>
-              The Slide Construction Kit is a set of small components that can connect slides together in a variety of angles, allowing infinite possibilities for structures and shapes. I built this to make it easy to prototype lamp projects, but it turned out to be a fun activity on its own.
-
-            </p>   
-          </div>
-        </div>
-      </div>
-      <!-- 35mm slide construction kit-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
+    <!-- END Maker Hub-->
+
+
+
+
+
+
+
+    <!-- Maker Hub App -->
+    <div class="grid-item grid5 teach makerhubapp in-sequence">
+      <div class="item_header qtr fitted openmakerhubapp" id="openmakerhubapp">
+        Maker Hub Volunteer App
+      </div>
+      <div class="item_nav">
+        <div class="prevlink">&lt;</div>
+        <div class="indexnumber">2</div>
+        <div class="nextlink">&gt;</div>             
+      </div>      
+      <div class="item_summary"></div>
+      <div class="item_slides ">
+
+        <div class="item_slide"><img src="images/portfolio/app_main.png" alt="Maker Hub Mobile Volunteer App Screenshot: Visitor Selection Screen">
+          <span class="caption">Maker Hub Mobile Volunteer App Screenshot: Visitor Selection Screen</span>
+        </div>
+        <div class="item_slide"><img src="images/portfolio/app_menu.png" alt="Maker Hub Mobile Volunteer App Screenshot: Main Menu">
+          <span class="caption">Maker Hub Mobile Volunteer App Screenshot: Main Menu</span>
+        </div>
+      </div>      
+      <div class="item_content">
+        <div class="metadata">
+          <span class="metadata-title">Completion Date: </span><span class="metadata-value">2020</span><br>
+          <span class="metadata-title">Medium: </span><span class="metadata-value">Mobile-optimized web application, developed on Google Apps Script, integrated with Google Sheet, Google Calendar, and Trello.</span><br>
+          <span class="metadata-title">GitHub Repo: </span><br>
+          <span class="metadata-value"><a href="https://github.com/GeorgetownMakerHubOrg/MakerHubAppMVP1" target="_blank">https://github.com/GeorgetownMakerHubOrg/MakerHubAppMVP1</a></span><br>
+
+        </div>
+        <div class="demonstrates"><strong>This project demonstrates</strong> my ability to develop software that focuses on improving experiences for specific user groups.</div>
+        <div class="item_description">
+          <p class="design_question">“How do we improve the experience for volunteers helping visitors?”</p>
+          <p>
+            This app was designed through a series of facilitated volunteer brainstorming sessions, asking the question “How do we improve the experience for volunteers helping visitors?”  We identified our main pain point, which was the fact that with a large number of low-hour volunteers and many new volunteers each semester, it’s hard to maintain awareness of who is available to help with a tool or skill.  This leads to awkwardness between volunteers when they encounter a situation they don’t know how to handle. 
+          </p>
+          <p>
+
+            The resulting app is designed to be used by Maker Hub volunteers as they support visitors in the space, during their shift. Some of the features include:
+          </p>
+          <ul>
+            <li>Tracking new volunteer skills, identifying paths for skill improvement</li>
+            <li>“Find a Maker” - identify schedules for volunteers with specific skills</li>
+            <li>New visitor orientation scripts</li>
+            <li>Making equipment reservations</li>
+            <li>Requesting equipment purchases, repairs</li>
+            <li>Integration with our Trello task system</li>
+          </ul>
+
+
+        </div>
+      </div>
+    </div>
+    <!-- end Maker Hub App-->
+
+
+
+
+
+    <!-- Maker Hub Recycled LCD Display System -->
+    <div class="grid-item grid5 teach lcdscreens in-sequence">
+      <div class="item_header qtr fitted openlcdscreens" id="openlcdscreens">
+        Maker Hub Recycled LCD Display System
+      </div>
+      <div class="item_nav">
+        <div class="prevlink">&lt;</div>
+        <div class="indexnumber">3</div>
+        <div class="nextlink">&gt;</div>             
+      </div>      
+      <div class="item_summary"></div>
+      <div class="item_slides ">
+
+        <div class="item_slide"><img src="images/portfolio/screenstatswho.jpg" alt="Recycled LCD Display System, with Maker Hub Stats (left) and “Who’s on Shift?” (right) apps ">
+
+          <span class="caption">Recycled LCD Display System, with Maker Hub Stats (left) and “Who’s on Shift?” (right) apps </span>
+        </div>
+        <div class="item_slide"><img src="images/portfolio/screensreservationswelcome.jpg" alt="Recycled LCD Display System, with Maker Hub Welcome (left) and Reservation Calendar (Google Calendar embed, right) apps 
+          ">
+          <span class="caption">Recycled LCD Display System, with Maker Hub Welcome (left) and Reservation Calendar (Google Calendar embed, right) apps 
+          </span>
+        </div>
+      </div>      
+      <div class="item_content">
+        <div class="metadata">
+          <span class="metadata-title">Date: </span><span class="metadata-value"></span><br>
+          <span class="metadata-title">Medium: </span><span class="metadata-value"></span><br>
+          <span class="metadata-title">Dimensions: </span><span class="metadata-value"></span><br>
+          <span class="metadata-title">Website: </span><span class="metadata-value"><a href="https://library.georgetown.edu/makerhub" target="_blank">https://library.georgetown.edu/makerhub</a></span>
+
+        </div>
+        <div class="demonstrates"><strong>This project demonstrates</strong>  my enthusiasm for recycling discarded technology, and my ability to build flexible, robust systems. 
+        </div>
+        <div class="item_description">
+          <p class="design_question">What are we going to do with all these screens I found in the dumpster?</p>
+          <p>
+            LCD monitors are discarded by the hundreds or thousands when organizations upgrade their computers. We retrieve old monitors from campus dumpsters, remove their plastic housing, and create laser-cut housings for them with modular mounting components. These screens can then be hung on walls, mounted on railings, or stacked in arrays. Each screen has a Raspberry Pi computer in a 3D printed case attached to the back. The Pi’s are typically configured with Chilipie-Kiosk (https://github.com/futurice/chilipie-kiosk), a full-screen kiosk display app. 
+          </p>
+          <p>
+            The apps running on these screens are typically built in Google Apps Script, and leverage Google Slides, Calendar, and Sheets
+          </p>
+          <p>
+          In the Maker Hub, these screens have been used for:</p>
+          <ul>
+            <li><b>Reservation Calendar Display:</b> Google calendar data reformatted for improved readability.</li>
+            <li><b>Maker Hub Stats Dashboard:</b> Information on total, unique, and first-time visitors, over multiple time frames.</li>
+            <li><b>Who’s On Shift:</b> A listing of staff currently on shift, their picture, and their skills.</li>
+            <li><b>Events Slideshow:</b> A Google Slides display of upcoming events, auto-generated from our Google Calendar. </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    <!-- end Maker Hub Recycled LCD Display System-->
+
+
+
+
+
+
+    <!-- Maker Hub Jukebox -->
+    <div class="grid-item grid5 teach jukebox in-sequence">
+      <div class="item_header qtr fitted openjukebox" id="openjukebox">
+        Maker Hub Jukebox
+      </div>
+      <div class="item_nav">
+        <div class="prevlink">&lt;</div>
+        <div class="indexnumber">4</div>
+        <div class="nextlink">&gt;</div>             
+      </div>      
+      <div class="item_summary"></div>
+      <div class="item_slides ">
+
+        <div class="item_slide"><img src="images/portfolio/jukebox.png" alt="Right: Maker Hub Jukebox in situ. Left: Electronics are housed in 3D printed jukebox">
+
+          <span class="caption">Right: Maker Hub Jukebox in situ. Left: Electronics are housed in 3D printed jukebox</span>
+        </div>
+        <div class="item_slide"><img src="images/portfolio/jukebox3d.png" alt="3D model of Arduino housing, shaped like  a Jukebox">
+          <span class="caption">3D model of Arduino housing, shaped like  a Jukebox. <em><strong>NOTE:</strong> the Jukebox model itself is not my design. The modifications to houses the internal electronics are my own work.</em>
+          </span>
+        </div>
+      </div>      
+      <div class="item_content">
+        <div class="metadata">
+          <span class="metadata-title">Completion Date: </span><span class="metadata-value">2018</span><br>
+          <span class="metadata-title">Medium: </span><span class="metadata-value">Vintage Seeburg Wall-O-Matic jukebox controller, Arduino, custom electronic circuit, xBee Shield, 3D printed jukebox, HiFiBerry Raspberry Pi DAC </span><br>
+          <span class="metadata-title">Dimensions: </span><span class="metadata-value">13”x12”x6”</span><br>
+          <span class="metadata-title">GitHub Repository: </span><span class="metadata-value"><a href="https://github.com/donundeen/seeburgjukebox" target="_blank">https://github.com/donundeen/seeburgjukebox</a></span>
+
+        </div>
+        <div class="demonstrates"><strong>This project demonstrates</strong> my enthusiasm for integrating vintage tech with modern tech, and developing tools that invite participation.</div>
+        <div class="item_description">
+          <p>
+            The Maker Hub Jukebox is a system for playing music in the Maker Hub. The heart of the system is a mid-century Seeburg 100 Wall-o-Matic jukebox controller, like you might find on your table in a 50’s diner. When a keycode is entered on the jukebox, the output signal from the unit is intercepted by an arduino circuit, which translates the electrical pulses back into the letter/number combination originally entered. This code is then transmitted wirelessly via XBee radio to a Raspberry Pi running the Mopidy music server application. My custom software maps the keycode to a Spotify playlist and instructs mopidy to stream that playlist.
+          </p>
+          <p>
+            Maker Hub visitors are encouraged to create their own playlists and add them to the system. We’ve found this to be a great way to help students feel like they belong in their Maker Hub.
+          </p>
+          <p>
+            We also have a special playlist just for closing time, which is just different versions of Semisonic's "Closing Time." We've found this to be a great way to encourage folks to move out the door :).
+
+          </p>   
+        </div>
+      </div>
+    </div>
+    <!-- end Maker Hub Jukebox-->
+
+
+
+
+
+    <!-- vagina chorus -->
+    <div class="grid-item grid6 teach vaginachorus in-sequence">
+      <div class="item_header qtr fitted openvaginachorus" >
+        Vagina Chorus
+      </div>
+      <div class="item_nav">
+        <div class="prevlink">&lt;</div>
+        <div class="indexnumber">5</div>
+        <div class="nextlink">&gt;</div>          
+      </div>      
+      <div class="item_summary"></div>
+      <div class="item_slides ">
+
+        <div class="item_slide"><img src="images/portfolio/vchorusdevice.jpg" alt="Perifit pelvic floor trainer, proof-of-concept performance">
+          <span class="caption">Perifit pelvic floor trainer, proof-of-concept performance</span>
+        </div>
+        <div class="item_slide"><img src="images/portfolio/vchorusdiagram.png" alt="Vagina Chorus system diagram">
+
+          <span class="caption">Vagina Chorus system diagram</span>
+        </div>
+        <div class="item_slide"><img src="images/portfolio/vchorusmax.png" alt="Vagina Chorus Max patch, in performance mode">
+          <span class="caption">Vagina Chorus Max patch, in performance mode</span>
+        </div>
+        <div class="item_slide">
+          <div class="videoWrapper">
+            <iframe src="https://player.vimeo.com/video/370591493" width="640" height="361" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+          </div>
+          <span class="caption"><a href="https://vimeo.com/370591493">Vagina Chorus Demo</a> from <a href="https://vimeo.com/user22950326">Mengxi Rao</a> on <a href="https://vimeo.com">Vimeo</a>.</span>
+        </div>
+      </div>      
+      <div class="item_content">
+        <div class="metadata">
+          <span class="metadata-title">Date: </span><span class="metadata-value">First prototype completed 2019</span><br>
+          <span class="metadata-title">Artist: </span><span class="metadata-value"><a href="https://altheamrao.myportfolio.com/projects" target="_blank">Althea Rao</a></span><br>
+          <span class="metadata-title">Medium: </span><span class="metadata-value">Perifit pelvic floor trainer, Raspberry Pi computer, Mac Laptop, custom WiFi router.</span><br>
+          <span class="metadata-title">Software: </span><span class="metadata-value"> Nodejs, Max/MSP, Ableton Live,  Linux configuration</span><br>
+          <span class="metadata-title">Project Website: </span><span class="metadata-value"><a href=" https://altheamrao.myportfolio.com/vagina-chorus" target="_blank"> https://altheamrao.myportfolio.com/vagina-chorus</a></span><br>
+          <span class="metadata-title">GitHub Repository: </span><span class="metadata-value"><a href=" https://github.com/donundeen/vchorus" target="_blank">https://github.com/donundeen/vchorus</a></span><br>
+          <span class="metadata-title">Video Demo: </span><span class="metadata-value"><a href="  https://vimeo.com/370591493" target="_blank"> https://vimeo.com/370591493</a></span>
+
+        </div>
+        <div class="demonstrates"><strong>This project demonstrates</strong> my abilities at
+          <ul>
+            <li>Developing systems that integrate with the human body. Via smoothing and dynamic scaling algorithms, this system adapts to diverse bodies, allowing them to control musical systems in harmony with one another.</li>
+            <li>
+            Developing complex systems that employ multiple communication protocols over heterogeneous devices, while still being robust enough to run smoothly at boot. </li>
+            <li>Collaborating closely with artists to develop technical systems that realize their vision.</li>
+          </ul>
+        </div>
+        <div class="item_description">
+          <p class="design_question">In the U.S., an estimated 45 percent of people who have vaginas experience symptoms of urinary incontinence. The project aims to increase pelvic health literacy, aiming to lift the shame and negativity attached to pelvic health, sexual wellness and aging.</p>
+          <p>
+            “A recipient of the 2020 MAP Fund, Vagina Chorus is a social-distancing friendly live performance, combining wearable technology, theater, physical therapy-inspired choreography and vaginally produced music to create an immersive audio-visual experience. Exposing the most intimate secrets of our bodies and destigmatizing historical taboos, the project will create an affirming context in today’s world for vaginas to morph into new myths for positive reinterpretations, foregrounding womxn and their vaginas as the narrators of their own representations.  The project is scheduled to premiere in 2021, with presenting partners in Connecticut, Pennsylvania, Virginia, New York and Alabama.” - Althea Rao, Artist, Vagina Chorus
+          </p>
+          <p>
+            I serve as the technical advisor and developer for this project. My role is to develop the system whereby the Perifit pelvic floor trainer controls musical gestures over a harmonic structure that can be modified by the artist or other collaborating musicians. 
+          </p>
+
+          <h3>This system consists of</h3>
+          <ul>
+            <li>Multiple Perifit pelvic floor trainer devices, communicating via Bluetooth Low Energy Protocol</li>
+            <li>Raspberry Pi: Accepts communication from Perfit devices, attaches information to identify individual devices, and passes OSC data along to laptop via a customized WiFi router to laptop. The Raspberry Pi is configured to auto-start all software at boot.</li>
+            <li>Customized Router: The use of a customized dedicated router ensures that the system is entirely self-contained and not dependent on installation location network.</li>
+            <li>Laptop Running Max 8 and Ableton Live Suite.  The Max Patch accepts OSC data from multiple devices, applying smoothing and scaling algorithms, then mapping the data over a customizable set of “scenes” that define harmonic and rhythmic structure. This data is converted to MIDI notes that are sent to Ableton Live. Ableton Live settings and tones are controlled by the artist or collaborating musicians</li>
+          </ul>
+          <p>The short video below demonstrates how the system creates sound from interation with the device</p>
+          <div class="videoWrapper">
+            <iframe src="https://player.vimeo.com/video/370591493" width="640" height="361" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+          </div>
+          <span class="caption"><a href="https://vimeo.com/370591493">Vagina Chorus Demo</a> from <a href="https://vimeo.com/user22950326">Mengxi Rao</a> on <a href="https://vimeo.com">Vimeo</a>.</span>
+        </div>
+      </div>
+    </div>
+    <!-- END vagina chorus -->
+
+
+
+
+
+
+
+
+
+    <!-- lego art parts -->
+    <div class="grid-item grid5 teach lego in-sequence">
+      <div class="item_header qtr fitted openlego">
+        Interchangeable LEGO Art Parts
+      </div>
+      <div class="item_nav">
+        <div class="prevlink">&lt;</div>
+        <div class="indexnumber">7</div>
+        <div class="nextlink">&gt;</div>          
+      </div>      
+      <div class="item_summary"></div>
+      <div class="item_slides ">
+
+        <div class="item_slide"><img src="images/portfolio/belvedere.png" alt="Belvedere Torso, Vatican Museum: Art Parts">
+
+          <span class="caption">Belvedere Torso, Vatican Museum: Art Parts. <a href="https://www.tinkercad.com/things/fKt9TgXDlMr" target="_blank">Available on TinkerCAD.</a></span>
+        </div>
+        <div class="item_slide"><img src="images/portfolio/catlego.png" alt="Egyptian Cat, British Museum: Art Parts">
+          <span class="caption">Egyptian Cat, British Museum. <a href="https://www.tinkercad.com/things/8emkDDMKNkV" target="_blank">Available on TinkerCAD.</a></span>
+        </div>
+        <div class="item_slide"><img src="images/portfolio/legohole.png" alt="Lego Interconnect Hole">
+          <span class="caption">Lego Interconnect Hole. <a href="https://www.tinkercad.com/things/eHfFtOrHKTu" target="_blank">Available on TinkerCAD.</a></span>
+        </div>
+        <div class="item_slide"><img src="images/portfolio/marsyaslion.png" alt="Marsyas Lion, Metropolitan Museum of Art: Art Parts">
+          <span class="caption">Marsyas Lion, Metropolitan Museum of Art: Art Parts.<a href="https://www.tinkercad.com/things/9L7PHpE4Bzd" target="_blank">Available on TinkerCAD.</a> </span>
+        </div>
+        <div class="item_slide"><img src="images/portfolio/samothracelego.png" alt="Winged Victory of Samothrace, Louvre: Art Parts.">
+          <span class="caption">Winged Victory of Samothrace, Louvre: Art Parts. <a href="https://www.tinkercad.com/things/lGXXpeXQpsi" target="_blank">Available on TinkerCAD.</a></span>
+        </div>
+      </div>      
+      <div class="item_content">
+        <div class="metadata">
+          <span class="metadata-title">Date: </span><span class="metadata-value">2013-2017</span><br>
+          <span class="metadata-title">Medium: </span><span class="metadata-value">3D printer filament (PLA and ABS), 3D Resin</span><br>
+          <span class="metadata-title">Dimensions: </span><span class="metadata-value">Sizes range from 1” square to 5” square</span><br>
+          <span class="metadata-title">Website: </span><span class="metadata-value"><a href="https://library.georgetown.edu/makerhub" target="_blank">https://library.georgetown.edu/makerhub</a></span>
+
+        </div>
+        <div class="demonstrates"><strong>This project demonstrates</strong>  my enthusiasm for working with cultural content, and my ability to build creative, accessible objects with simple tools.
+        </div>
+        <div class="item_description">
+          <p class="design_question">How can crowdsourced museum scans become fun and useful through low-cost 3D printing?</p>
+          <p>
+            My Art Parts project was an effort to do something fun with the wealth of 3D scanned museum objects being made available for free on websites like Thingiverse.com and ScanTheWorld. 
+          </p>
+          <p>
+            This trend of crowd-sourced, low-fidelity photogrammetric scans of museum objects was due in some part to the first-ever 3D Scanning and Printing Hackathon, which I produced at the Metropolitan Museum of Art in partnership with MakerBot. I’m therefore interested in demonstrating the educational, artistic, and commercial value of this content.
+          </p>
+          <p>
+            Considering also that the design of basic LEGO pieces is no longer under patent or copyright, it’s possible to freely reuse LEGO components in 3D printed work.
+          </p>
+          <p>
+            LEGO Art Parts consists of 3D scans of museum objects, split into parts and modified with holes that fit the LEGO axle part. The LEGO axle hole is large enough to print successfully on low-cost 3D printers, and the original axle can be purchased in bulk so it doesn’t have to be 3D printed.
+          </p>
+          <p>
+            The result is a set of sculptural parts that can be remixed with each other, or integrated with the rest of your LEGO set.
+          </p>
+          <p>
+            <strong>NOTE: The 3D models of museum objects are not my original work. My original work is the design of the LEGO axle hole, and the modifications to the museum 3D scans to divide them into parts and add the LEGO axle hole.</strong>
+
+
+          </p>   
+        </div>
+      </div>
+    </div>
+    <!-- end LEGO Art Parts-->
+
+
+
+    <!-- slide lamp -->
+    <div class="grid-item grid5 slidelamp in-sequence">
+      <div class="item_header qtr openslidelamp fitted">
+        35mm Art Slide Lamps
+      </div>
+
+      <div class="item_nav">
+        <div class="prevlink">&lt;</div>
+        <div class="indexnumber">8</div>
+        <div class="nextlink">&gt;</div>            
+      </div>
+
+      <div class="item_slides lamps">
+        <div class="item_slide"><img src="images/portfolio/lamp.png" alt="35mm Art Slide Lamp: Frida Kahlo">
+          <span class="caption">35mm Art Slide Lamp: Frida Kahlo</span>
+        </div>
+        <div class="item_slide"><img src="images/portfolio/lamp_open.jpg" alt="35mm Art Slide Lamp: Showing internal components and rotating latch mechanism.">
+          <span class="caption">35mm Art Slide Lamp: Showing internal components and rotating latch mechanism.</span>
+        </div>
+        <div class="item_slide"><img src="images/portfolio/lampdesign.png" alt="Laser Cutter Design Files for 35mm Art Slide Lamp">
+          <span class="caption">Laser Cutter Design Files for 35mm Art Slide Lamp. <a href="//bit.ly/37Xlo37" target="_blank">AI file here.</a></span>
+        </div>
+      </div>
+
+      <div class="item_summary"></div>
+      <div class="item_content">
+
+        <div class="metadata">
+          <span class="metadata-title">Completion Date: </span><span class="metadata-value">2020</span><BR/>
+          <span class="metadata-title">Medium: </span><span class="metadata-value">35mm fine art slides, medium density fibreboard, lamp cord, LED bulb, socket</span><BR/>
+          <span class="metadata-title">Dimensions: </span><span class="metadata-value">4.8 x 5.5 x 6.5 in</span><BR/>
+          <span class="metadata-title">Design File: </span><span class="metadata-value"><a href="http://bit.ly/37Xlo37" target="_blank">http://bit.ly/37Xlo37</a></span><BR/>
+          <span class="metadata-title">Etsy Store:</span><span class="metadata-value"><a href="https://www.etsy.com/shop/BoomHiFive" target="_blank">https://www.etsy.com/shop/BoomHiFive</a></span><BR/>
+        </div>
+        <div class="demonstrates"><strong>This project demonstrates</strong> my enthusiasm for vintage media and my ability to design objects that are beautiful, salable, and easy to assemble.</div>
+        <div class="item_description">
+
+          <p>
+            In 2019 the Maker Hub received a donation of 150,000 fine art slides from Georgetown’s Art & Art History Department, which would otherwise have been discarded. These slides are available to Maker Hub users as a consumable resource. I’ve developed a variety of projects using these slides, including window displays, lampshades, portable projectors, and earrings. 
+          </p>
+          <p>
+            My most successful project has been the laser-cut 35mm Art Slide Lamp, a hexagonal arrangement of 12 slides assembled around a low-wattage led bulb. 
+          </p>
+          <p>
+            The structure is produced on the laser cutter from .25” Medium Density Fiberboard, and can be completely assembled without glue, in about 20 minutes. 
+          </p>
+          <p>
+            I’ve sold several of these, and have an Etsy shop (https://www.etsy.com/shop/BoomHiFive). I typically curate collections of slides based on my experience at the Metropolitan Museum of Art, but also build custom lamps on request.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- END slide lamp -->
+
+
+
+
+    <!-- Slide projector -->
+    <div class="grid-item grid5 teach slideprojector in-sequence">
+      <div class="item_header qtr openslideprojector fitted">
+        35mm Art Slide Projector
+      </div>
+      <div class="item_nav">
+        <div class="prevlink">&lt;</div>
+        <div class="indexnumber">9</div>
+        <div class="nextlink">&gt;</div>              
+      </div>      
+      <div class="item_summary"></div>
+      <div class="item_slides ">
+
+        <div class="item_slide"><img src="images/portfolio/projector.jpg" alt="Short-throw slide projector">
+
+          <span class="caption">Short-throw slide projector</span>
+        </div>
+        <div class="item_slide"><img src="images/portfolio/projectorimage.jpg" alt="Projected image of Frank Stella's 'Concentric Square'">
+          <span class="caption">Projected image of Frank Stella’s “Concentric Square”</span>
+        </div>
+      </div>      
+      <div class="item_content">
+        <div class="metadata">
+          <span class="metadata-title">Date: </span><span class="metadata-value">2019</span><br>
+          <span class="metadata-title">Medium: </span><span class="metadata-value">Medium density fiberboard, 35mm art slides, mini floodlight, electrical cord, recycled optical lenses </span><br>
+          <span class="metadata-title">Dimensions: </span><span class="metadata-value">8”x10”x5”</span><br>
+          <span class="metadata-title">Design File: </span><span class="metadata-value"><a href="https://drive.google.com/file/d/1hBrEYlsn8kEQgnZ4AaWXWTQkseixUc_x" target="_blank">Here</a></span><br><br>
+
+        </div>
+        <div class="demonstrates"><strong>This project demonstrates</strong> my interest in upcycling discarded corporate tech to celebrate the value of vintage media.</div>
+        <div class="item_description">
+          <p>
+            This short-throw slide projector is made using lenses recycled from old video projectors, and is ideal for creative mood lighting. The focus and size of the projection can be adjusted with the screws on the side.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- END slide projector -->
+
+
+
+    <!-- micromuseum -->
+    <div class="grid-item grid5 teach micromuseum in-sequence">
+      <div class="item_header qtr fitted openmicromuseum">
+        35mm Slide Micro-Museum
+      </div>
+      <div class="item_nav">
+        <div class="prevlink">&lt;</div>
+        <div class="indexnumber">10</div>
+        <div class="nextlink">&gt;</div>             
+      </div>      
+      <div class="item_summary"></div>
+      <div class="item_slides ">
+
+        <div class="item_slide"><img src="images/portfolio/micromuseum.jpg" alt="35mm Slide Micro Museum">
+
+          <span class="caption"></span>
+        </div>
+      </div>      
+      <div class="item_content">
+        <div class="metadata">
+          <span class="metadata-title">Completion Date: </span><span class="metadata-value">2019</span><br>
+          <span class="metadata-title">Medium: </span><span class="metadata-value">Medium density fiberboard, 35mm slides, usb breakout board, flat panel led, resistor</span><br>
+          <span class="metadata-title">Dimensions: </span><span class="metadata-value">2.25"x2.25"x3"</span><br>
+          <span class="metadata-title">AI Design File: </span><span class="metadata-value"><a href="https://drive.google.com/file/d/1DKOeszpV4PA22yilBx9LJY2l00RUcMyQ/view?usp=sharing" target="_blank">Google Drive</a></span>
+
+        </div>
+        <div class="demonstrates"><strong>This project demonstrates</strong> my love for making delightful objects using vintage media, modern fabrication techniques, and electronics.</div>
+        <div class="item_description">
+          <p>
+            The Micro-Museum is a small lightbox for a single 35mm slide, designed to sit on your desk, plugged in to a USB port.
+
+          </p>   
+        </div>
+      </div>
+    </div>
+    <!-- END micromuseum -->
+
+
+
+    <!-- 35mm slide construction kit-->
+    <div class="grid-item grid5 teach constructionkit in-sequence">
+      <div class="item_header qtr fitted openconstructionkit">
+        35mm Slide Construction Kit
+      </div>
+      <div class="item_nav">
+        <div class="prevlink">&lt;</div>
+        <div class="indexnumber">11</div>
+        <div class="nextlink">&gt;</div>           
+      </div>      
+      <div class="item_summary"></div>
+      <div class="item_slides ">
+
+        <div class="item_slide"><img src="images/portfolio/slideconstructionkit.jpg" alt="35mm slide construction kit, with a few assembled structures">
+
+          <span class="caption">35mm slide construction kit, with a few assembled structures.</span>
+        </div>
+        <div class="item_slide"><img src="images/portfolio/slideconnectordesign.png" alt="Design of slide connectors.">
+          <span class="caption">Design of slide connectors. AI file is available <a href="https://drive.google.com/file/d/1zcrzEx_emPLzn8gHuwKmbKoT_XJuCaGd">here.</a></span>
+        </div>
+      </div>      
+      <div class="item_content">
+        <div class="metadata">
+          <span class="metadata-title">Date: </span><span class="metadata-value">2019</span><br>
+          <span class="metadata-title">Medium: </span><span class="metadata-value">Medium density fiberboars, 35mm slides.
+          </span><br>
+          <span class="metadata-title">Dimensions: </span><span class="metadata-value">.75"x.75"x.25"</span><br>
+          <span class="metadata-title">AI Design File: </span><span class="metadata-value"><a href="https://drive.google.com/file/d/1zcrzEx_emPLzn8gHuwKmbKoT_XJuCaGd" target="_blank">Google Drive</a></span>
+
+        </div>
+        <div class="demonstrates"><strong>This project demonstrates</strong> my interest in finding a use for small MDF scraps left over from laser cutter jobs, and my enthusiasm for building simple creative platforms.</div>
+        <div class="item_description">
+          <p>
+            The Slide Construction Kit is a set of small components that can connect slides together in a variety of angles, allowing infinite possibilities for structures and shapes. I built this to make it easy to prototype lamp projects, but it turned out to be a fun activity on its own.
+
+          </p>   
+        </div>
+      </div>
+    </div>
+    <!-- 35mm slide construction kit-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   </div>
 
+</div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous"></script>
 </body>
 </html>
