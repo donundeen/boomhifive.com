@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" />  <link rel="stylesheet" href="css/animation.css" media="screen" />
   <link rel="stylesheet" href="css/main_masonry.css" media="screen" />
   <link rel="stylesheet" href="css/portfolio.css" media="screen" />
+
+
   <script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
   <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
   <script
@@ -38,7 +40,7 @@
           <span class="supheader">Don Undeen</span>
           <br />
           <div class="subheader">
-            <span class="subheader">Culture, Tech, Makerspaces</span>
+            <span class="subheader">Portfolio of Highlight Works</span>
           </div>
         </div>
         <div class="logo">
@@ -52,83 +54,49 @@
       </div>
       <!-- Page Intro-->
       <div class="grid-item grid6 about">
-        <div class="item_header">
-          About
+        <div class="item_header fitted">
+          Table of Contents
         </div>
         <div class="item_summary">
-          <img
-          height="175"
-          src="images/square_headshot.jpg"
-          align="left"
-          style="border-radius: 10px; padding-right:10px;"
-          />
-          <p style="padding-right: 10px; margin-top: -25px;">
-            <i
-            >Makerspace builder, innovation consultant, new media artist,
-            educator. Manager of the Maker Hub, Georgetown University's
-            makerspace. Former Founding and Senior Manager of the MediaLab
-            at the Metropolitan Museum of Art.</i
-            >
-          </p>
+          <i fitted>Click on box titles to open.</i>
         </div>
         <div class="item_content">
-          <p style="padding-right: 10px; margin-top:-10px;">
-            <img
-            height="175"
-            src="images/square_headshot.jpg"
-            align="left"
-            style="border-radius: 10px; padding-right:10px;"
-            /><br />
-            Hi! I get up to all sorts of trouble, but in a nutshell I do
-            creative and help others do creative.
-            <br /><br />
-            I'm the Founding Manager of the
-            <b
-            ><a href="//library.georgetown.edu/makerhub"
-            >Maker Hub at Georgetown University</a
-            ></b>.
-            <br />
-            <br />
-            I was the Founding and Senior Manager of the
-            <b
-            ><a
-            href="//www.metmuseum.org/blogs/listing?facettype=tag&facetname=MediaLab"
-            >MediaLab at the Metropolitan Museum of Art</a
-            ></b
-            >. In 2012 I was tasked with establishing a space for
-            experimentation at the intersection of art, technology, and the
-            museum experience. By working closely with NYC's creative
-            technology community, the MediaLab developed a worldwide
-            reputation for consistently delivering provocative, exciting, and
-            valuable projects. <br /><br />
-            Lessee, what else... I've traveled around the world, consulting
-            with museums, universities, governments, and religious
-            organizations on how to develop space for creativity and
-            innovation. I advise entrepreneurs and students on project
-            development. I serve as technical lead for cultural projects. I
-            help multimedia artists develop new works. I create digital art
-            systems and use them to perform my own compositions. I design and
-            create art objects using digital fabrication and vintage tech.
-            <br /><br />
-            I like people, experiences, AND things.
+          <h3>Welcome to My Portfolio!</h3>
+          <p>
+            Hi there! My name is Don Undeen, and this is my portfolio.
           </p>
           <p>
-            <strong>Here's a better Bio for publication:</strong>
-            Don Undeen (UF Computer Science 2003 ) is the Founding Manager
-            of the Maker Hub at Georgetown University, and Adjunct Professor
-            of creative technology courses in Georgetown’s Communications,
-            Culture, and Technology graduate program. Prior to his work at
-            Georgetown, Don was the founder and Senior Manager of the Media
-            Lab at the Metropolitan Museum of Art, an incubator for
-            experiments at the intersection of art, technology, and the
-            museum experience. A lifelong lover of creative technology and
-            the communities that practice it, Don has consulted with
-            businesses, non-profits, museums, governments, and religious
-            institutions around the world, helping complex organizations
-            develop spaces for innovation.
+            On this page you'll find a handful of works I've designed and built that I think give an indication of the kind of designer I am; someone who cares a lot about making the most of materials and tools at hand, and building environments and platforms that help bring out the creativity in others, with a bit of humour thrown into the mix. 
           </p>
-          <br>
-          <br>
+          <p>
+            To learn more about any project click the title of the box. If the box doesn't expand, it means something when wrong, and you should probably just download the PDF version of this portfolio.
+          </p>
+          <h3>Table of Contents</h3>
+          Click any of the links below to automatically open that project.
+          <ul class="tableofcontents">
+            <li><a href="#" onclick="javascript:open_project('.openmakerhub'); return false">The Maker Hub:</a> Designing and building makerspaces and their communities. Sub-Projects:
+              <ul class="tableofcontents">
+                <li><a  href="#"  onclick="javascript:open_project('.openmakerhubapp');">The Maker Hub Volunteer App</a></li>
+                <li><a   href="#"  onclick="javascript:open_project('.openlcdscreens');">The Maker Hub Recycled LCD Screen Display System</a></li>
+                <li><a   href="#"  onclick="javascript:open_project('.openjukebox');">The Maker Hub Jukebox</a></li>
+              </ul>
+            </li>
+            <li><a   href="#"  onclick="javascript:open_project('.openvaginachorus');">Vagina Chorus: Providing technical support and collaboration with multi-media artists</a></li>
+            <li><a  href="#"   onclick="javascript:open_project('.openqrcodewatch');">QR Code Watch Face: Tell the time with QR Codes.</a></li>
+            <li><a  href="#"   onclick="javascript:open_project('.openlego');">Interchangable LEGO Art Parts: Integrate cultural content into your LEGO play.</a></li>
+            <li><strong>35mm Fine Art Slide Projects:</strong>
+              <ul class="tableofcontents">
+                <li><a   href="#"  onclick="javascript:open_project('.openslidelamp');">35mm Art Slide Lamp:</a> A series of Lamps made from 35mm Art Slides</li>
+                <li><a   href="#"  onclick="javascript:open_project('.openslideprojector');">35mm Slide Projector: </a>A small short-throw slide projector for creative lighting.</li>
+                <li><a   href="#"  onclick="javascript:open_project('.openmicromuseum');">35mm Micro Museum:</a> A desktop slide lightbox you can plug into your laptop.</li>    
+                <li ><a href="#"  onclick="javascript:open_project('.openconstructionkit');">35mm Slide Construction Kit:</a> A simple kit for making unique structures from 35mm slides.</li>    
+              </ul>
+            </li>
+          </ul>
+          <BR>
+          <BR>
+
+
           <div class="item_footer">
             Contact: donundeen@gmail.com
           </div>
@@ -143,7 +111,7 @@
 
       <!-- Maker Hub-->
       <div class="grid-item makerhub grid6 teach  in-sequence">
-        <div class="item_header qtr fitted ">
+        <div class="item_header qtr fitted openmakerhub" id="openmakerhub">
           Georgetown University Maker Hub
         </div>
         <div class="item_nav">
@@ -263,7 +231,7 @@
 
       <!-- Maker Hub App -->
       <div class="grid-item grid5 teach makerhubapp in-sequence">
-        <div class="item_header qtr fitted">
+        <div class="item_header qtr fitted openmakerhubapp" id="openmakerhubapp">
           Maker Hub Volunteer App
         </div>
         <div class="item_nav">
@@ -319,7 +287,7 @@
 
       <!-- Maker Hub Recycled LCD Display System -->
       <div class="grid-item grid5 teach lcdscreens in-sequence">
-        <div class="item_header qtr fitted">
+        <div class="item_header qtr fitted openlcdscreens" id="openlcdscreens">
           Maker Hub Recycled LCD Display System
         </div>
         <div class="item_nav">
@@ -378,7 +346,7 @@
 
       <!-- Maker Hub Jukebox -->
       <div class="grid-item grid5 teach jukebox in-sequence">
-        <div class="item_header qtr fitted">
+        <div class="item_header qtr fitted openjukebox" id="openjukebox">
           Maker Hub Jukebox
         </div>
         <div class="item_nav">
@@ -428,7 +396,7 @@
 
       <!-- vagina chorus -->
       <div class="grid-item grid6 teach vaginachorus in-sequence">
-        <div class="item_header qtr fitted">
+        <div class="item_header qtr fitted openvaginachorus" >
           Vagina Chorus
         </div>
         <div class="item_nav">
@@ -506,7 +474,7 @@
 
       <!-- QR Code Watch -->
       <div class="grid-item grid5 teach qrcodewatch in-sequence">
-        <div class="item_header qtr fitted">
+        <div class="item_header qtr fitted openqrcodewatch">
           QR Code Watch Face
         </div>
         <div class="item_nav">
@@ -563,7 +531,7 @@
 
       <!-- lego art parts -->
       <div class="grid-item grid5 teach lego in-sequence">
-        <div class="item_header qtr fitted">
+        <div class="item_header qtr fitted openlego">
           Interchangeable LEGO Art Parts
         </div>
         <div class="item_nav">
@@ -631,7 +599,7 @@
 
       <!-- slide lamp -->
       <div class="grid-item grid5 slidelamp in-sequence">
-        <div class="item_header qtr  fitted">
+        <div class="item_header qtr openslidelamp fitted">
           35mm Art Slide Lamps
         </div>
 
@@ -687,7 +655,7 @@
 
       <!-- Slide projector -->
       <div class="grid-item grid5 teach slideprojector in-sequence">
-        <div class="item_header qtr fitted">
+        <div class="item_header qtr fitted openslideprojector">
           35mm Slide Projector
         </div>
         <div class="item_nav">
@@ -727,7 +695,7 @@
 
       <!-- micromuseum -->
       <div class="grid-item grid5 teach micromuseum in-sequence">
-        <div class="item_header qtr fitted">
+        <div class="item_header qtr fitted openmicromuseum">
           35mm Slide Micro-Museum
         </div>
         <div class="item_nav">
@@ -765,7 +733,7 @@
 
       <!-- 35mm slide construction kit-->
       <div class="grid-item grid5 teach constructionkit in-sequence">
-        <div class="item_header qtr fitted">
+        <div class="item_header qtr fitted openconstructionkit">
           35mm Slide Construction Kit
         </div>
         <div class="item_nav">
