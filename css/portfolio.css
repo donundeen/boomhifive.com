@@ -222,6 +222,7 @@ background-position-y: bottom;
 .logo{
 	text-align: right;
 	padding-top: 1em;
+	padding-right: .5em;
 }
 
 .item_nav {
