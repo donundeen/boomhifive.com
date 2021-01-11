@@ -4,6 +4,11 @@ let slickOptions = {
 
 }
 
+
+function open_project(selector){
+	$(selector).trigger("click");
+}
+
 $(document).ready(function() {
 
 
@@ -24,7 +29,6 @@ $(document).ready(function() {
 		if(Math.random() > .9){
 			datestring = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 		}
-		console.log(datestring);
 		qrcode.clear();
 		qrcode.makeCode(datestring); // make another code.
 	}
@@ -114,7 +118,6 @@ $(document).ready(function() {
 		//$(this).parent().toggleClass("maxed");
 		(function(_this, _grid) {
 			_grid.on("layoutComplete", function(soInstance, laidOutItems) {
-
 				jQuery(".fitted").fitText();
 				$("html, body").animate({
 						scrollTop: $(_this).offset().top - 20
