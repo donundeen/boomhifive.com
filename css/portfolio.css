@@ -21,6 +21,16 @@ background-image: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,.75), rg
 }
 
 
+.tableofcontents * .indexnumber{
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+.tableofcontents * .indexnumber:after{
+	content: ": ";
+}
+
+
 
 .item_header:hover {
 	  -webkit-text-fill-color: yellow; /* Will override color (regardless of order) */
@@ -31,6 +41,9 @@ background-image: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,.75), rg
 	position: relative;
 	height: auto;	
 }
+
+
+
 
 .slidelamp{
 	background-image: url("../images/portfolio/lamp.png");
@@ -208,17 +221,27 @@ background-position-y: bottom;
 
 
 
-.item_nav{
-	display: none;
-	height: auto;
+.item_nav {
+	font-weight: bold;
+    color:  white;
+  -webkit-text-fill-color: #f5eced; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #34004E;
+      position: absolute;
+    bottom: 5px;
+    right: 5px;
+	font-family: monospace;
+	font-size:2em;
 }
 
-.maxed .item_nav{
+.maxed .item_nav {
 	display: none;
 	height: auto;
     position: relative;
 
 }
+
+
 .nextlink{
     display: none;
 }
