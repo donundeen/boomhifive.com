@@ -23,7 +23,8 @@ background-image: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,.75), rg
 
 
 .item_header:hover {
-    font-weight: normal;
+	  -webkit-text-fill-color: yellow; /* Will override color (regardless of order) */
+
 }
 
 .item_header{
@@ -55,7 +56,7 @@ background-image: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,.75), rg
 
 
 .lcdscreens {
-	background-image: url("../images/portfolio/screenstatswho.jpg");
+	background-image: url("../images/portfolio/screenstatstall.png");
 }
 .lcdscreens.maxed {
 	background-image: none;
@@ -97,6 +98,26 @@ background-image: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,.75), rg
 .qrcodewatch.maxed {
 	background-image: none;
 }
+
+
+.constructionkit {
+	background-image: url("../images/portfolio/slideconnectordesign.png");
+}
+.constructionkit.maxed {
+	background-image: none;
+}
+
+
+
+.lego {
+	background-image: url("../images/portfolio/samothracelego.png");
+background-position-y: bottom;
+}
+.lego.maxed {
+	background-image: none;
+}
+
+
 
 .metadata-title{
 	font-weight: bold;
