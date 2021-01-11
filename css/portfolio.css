@@ -263,9 +263,7 @@ background-position-y: bottom;
 
 .maxed .prevlink{
     display: block;
-    
    position: absolute;
-   
    left: 10px;
 
 }
@@ -282,7 +280,7 @@ background-position-y: bottom;
   left: 0;
   width: 100%;
   height: 100%;
-    border-radius: 10px;
+  border-radius: 10px;
 
 }
 
