@@ -82,7 +82,7 @@ background-image: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,.75), rg
 
 /* replace this */
 .makerhubapp {
-	background-image: url("../images/portfolio/app_menu.png");
+	background-image: url("../images/portfolio/MakerHubAppBackground.png");
 }
 .makerhubapp.maxed {
 	background-image: none;
@@ -90,7 +90,8 @@ background-image: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,.75), rg
 
 
 .lcdscreens {
-	background-image: url("../images/portfolio/screenstatstall.png");
+/*	background-image: url("../images/portfolio/screenstatstall.png");*/
+	background-image: url("../images/portfolio/screenwelcome.png");
 }
 .lcdscreens.maxed {
 	background-image: none;
@@ -135,7 +136,7 @@ background-image: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,.75), rg
 
 
 .constructionkit {
-	background-image: url("../images/portfolio/slideconnectordesign.png");
+	background-image: url("../images/portfolio/slideKitBackground.png");
 }
 .constructionkit.maxed {
 	background-image: none;
@@ -144,8 +145,8 @@ background-image: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,.75), rg
 
 
 .lego {
-	background-image: url("../images/portfolio/samothracelego.png");
-background-position-y: bottom;
+	background-image: url("../images/portfolio/legoBackgroundCropped.png");
+    /*background-position-y: bottom;*/
 }
 .lego.maxed {
 	background-image: none;
@@ -226,12 +227,20 @@ background-position-y: bottom;
 	font-style: italic;
 }
 
+.slick-next, .slick-prev{
+	top: 30px;
+    width: 40px;
+    height: 40px;
+    z-index: 2000;	
+}
+
 .slick-next:before, .slick-prev:before {
     font-family: slick;
-    font-size: 20px;
+    font-size: 40px;
     line-height: 1;
     opacity: .75;
-    color: #e61040;
+/*    color: #e61040;*/
+    color: lime;
 }
 
 .slick-prev:before {
