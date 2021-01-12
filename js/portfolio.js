@@ -40,6 +40,10 @@ $(document).ready(function() {
 		console.log("slick init");
 		console.log(slick);
 		console.log(event.target);
+		/*
+		$(event.target).find(".slick-next").css("top", "50px");
+		$(event.target).find(".slick-prev").css("top", "50px");
+		*/
 	});
 
 	$(".item_slides").on("reInit", function(event, slick) {
@@ -124,9 +128,6 @@ $(document).ready(function() {
 					},
 					1000
 				);
-
-				console.log("layoutcomplete");
-				console.log(_this);
 				$(_this).closest(".grid-item").find(".item_slides").not('.slick-initialized').slick(slickOptions);
 
 				_grid.off("layoutComplete");
