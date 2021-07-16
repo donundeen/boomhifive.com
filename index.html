@@ -30,7 +30,7 @@
 });
 */
 
-      $(".grid-item .item_header").not(".portfolio_header").click(function () {
+      $(".grid-item .item_header").not(".portfolio_header, .kudos_header").click(function () {
         if (
           $(this)
             .parent()
@@ -81,6 +81,25 @@
         });
         return false;
       });
+
+      $(".kudos_header").click(function (evt) {
+        evt.preventDefault = true;
+        $(".kudos_item").css("z-index", 1000);
+        $(".kudos_header").animate({
+          "font-size":"12em",
+          opacity: 0
+        }, 2000);
+        $(".kudos_item").animate({
+          top: "0px",
+          height: "100%",
+          width: "100%"
+        }, 2000, function () {
+          window.location.href = "https://www.kudoboard.com/boards/ygBaKqWX";
+
+
+        });
+        return false;
+      });      
 
     });
 
@@ -379,6 +398,24 @@
       <div class="grid-item grid6 portfolio_item">
         <div class="item_header qtr portfolio_header ">
           Portfolio
+        </div>
+        <div class="item_summary"></div>
+        <div class="item_content">
+          <div class="content_segment">
+
+          </div>
+          <div class="content_segment">
+
+          </div>
+          <div class="content_segment">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-item grid5 kudos_item">
+        <div class="item_header qtr kudos_header ">
+          Kudos
         </div>
         <div class="item_summary"></div>
         <div class="item_content">
