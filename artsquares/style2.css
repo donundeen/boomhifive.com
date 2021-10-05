@@ -1,0 +1,128 @@
+/* CSS files add styling rules to your content */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* use viewport-relative units to cover page fully */
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+.container div {
+  position: absolute;
+  border-radius: 25px;
+
+  width: 50%;
+  height: 20%;
+
+  animation: rotation 20s infinite linear, skewing 15s infinite linear;
+  
+  
+  
+  background: rgba(255,102,0, 0.33);
+  background: -moz-radial-gradient(
+    center,
+    rgba(255,102,0, 0.33) 0%,
+    rgba(255,102,0, 0) 50%
+  );
+  background: -webkit-radial-gradient(
+    center,
+    rgba(255,102,0, 0.33) 0%,
+    rgba(255,102,0, 0) 50%
+  );
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255,102,0, 0.33) 0%,
+    rgba(255,102,0,0) 50%
+  );
+}
+
+#d1 {
+  animation: rotation 30s infinite linear;
+  
+  
+  
+}
+
+#d2 {
+  animation: rotation 31s infinite linear;
+}
+
+#d3 {
+  animation: rotation 32s infinite linear;
+}
+
+#d4 {
+  animation: rotation 33s infinite linear;
+}
+
+#d5 {
+  animation: rotation 34s infinite linear;
+}
+
+#d6 {
+  animation: rotation 35s infinite linear;
+}
+
+#d7 {
+  animation: rotation 36s infinite linear;
+}
+
+
+#d8 {
+  animation: rotation 37s infinite linear;
+}
+
+#d9 {
+  animation: rotation 38s infinite linear;
+}
+
+
+
+#d10 {
+  animation: rotation 39s infinite linear;
+}
+
+
+
+#d11 {
+  animation: rotation 40s infinite linear;
+}
+
+
+
+#d12 {
+  animation: rotation 41s infinite linear;
+}
+
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg) skew(180deg, 180deg);
+  }
+  to {
+    transform: rotate(359deg) skew(0deg, 0deg);
+  }
+}
+
+@keyframes skewing {
+  from{
+    transform: skew(15deg, 15deg);    
+  }
+  to{
+    transform: skew(0deg, 0deg);    
+  }
+}

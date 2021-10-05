@@ -1,0 +1,156 @@
+/* CSS files add styling rules to your content */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* use viewport-relative units to cover page fully */
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+.container div {
+  position: absolute;
+  border-radius: 25px;
+
+  width: 50%;
+  height: 20%;
+
+
+  text-align: center;
+  color: hsl(180, 100%, 50%);
+  font-size: 12em;
+}
+/*
+good ones:
+👄👊
+💀💋
+😬💀
+😱😬
+🚬🚫
+😔😰
+*/
+.container div:nth-child(odd)::after {
+  content: "💀";
+}
+.container div:nth-child(even)::after {
+  content: "😬";
+}
+
+#d1 {
+  animation: rotation 30s infinite linear, opacity 41s alternate infinite linear, redred 32s alternate infinite linear;
+  
+}
+
+#d2 {
+  animation: rotation 31s infinite linear, opacity 40s alternate infinite linear, redred 33s alternate infinite linear;
+}
+
+#d3 {
+  animation: rotation 32s infinite linear, opacity 39s alternate infinite linear, redred 34s alternate infinite linear;
+}
+
+#d4 {
+  animation: rotation 33s infinite linear, opacity 38s alternate infinite linear, redred 35s alternate infinite linear;
+}
+
+#d5 {
+  animation: rotation 34s infinite linear, opacity 37s alternate infinite linear, redred 36s alternate infinite linear;
+
+}
+
+#d6 {
+  animation: rotation 35s infinite linear, opacity 36s alternate infinite linear, redred 37s alternate infinite linear;
+
+}
+
+#d7 {
+  animation: rotation 36s infinite linear, opacity 35s alternate infinite linear, redred 38s alternate infinite linear;
+}
+
+
+#d8 {
+  animation: rotation 37s infinite linear, opacity 34s alternate infinite linear, redred 39s alternate infinite linear;
+}
+
+#d9 {
+  animation: rotation 38s infinite linear, opacity 33s alternate infinite linear, redred 40s alternate infinite linear;
+
+}
+
+
+
+#d10 {
+  animation: rotation 39s infinite linear, opacity 32s alternate infinite linear, redred 41s alternate infinite linear;
+}
+
+
+
+#d11 {
+  animation: rotation 40s infinite linear, opacity 31s alternate infinite linear, redred 42s alternate infinite linear;
+}
+
+
+
+#d12 {
+  animation: rotation 41s infinite linear, opacity 30s alternate infinite linear, redred 43s alternate infinite linear;
+}
+
+
+@keyframes rotation {
+  from {
+/*    z-index: 0;*/
+    -webkit-transform: rotate(0deg) skew(180deg, 180deg);
+    transform: rotate(0deg) skew(180deg, 180deg);
+  }
+  to {
+/*    z-index: 12;*/
+    -webkit-transform: rotate(360deg) skew(0deg, 0deg);
+    transform: rotate(360deg) skew(0deg, 0deg);
+  }
+}
+
+@keyframes skewing {
+  from{
+    -webkit-transform: skew(15deg, 15deg);    
+    transform: skew(15deg, 15deg);    
+  }
+  to{
+    -webkit-transform: skew(0deg, 0deg);    
+    transform: skew(0deg, 0deg);    
+  }
+}
+
+@keyframes opacity{
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+    
+  }
+}
+
+
+@keyframes redred {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(-360deg);
+  }
+}
+
+
