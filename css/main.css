@@ -251,6 +251,10 @@ display: block;
     border-radius: 5px;
 }
 
+.content_segment_emoji {
+    font-size: 2em;
+}
+
 .teach *  img {
     width: 100px;
     border-radius: 5px;
