@@ -10,97 +10,13 @@
     rel="stylesheet" type="text/css" />
 
   <link rel="stylesheet" href="css/animation.css" media="screen" />
-  <link rel="stylesheet" href="css/main.css" media="screen" />
+<!--  <link rel="stylesheet" href="css/main_dev.css" media="screen" /> -->
 
   <script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
   <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
   <script>
     $(document).ready(function () {
-      var $grid = $(".grid").masonry({
-        // options
-
-        itemSelector: ".grid-item",
-        columnWidth: 240,
-        gutter: 20,
-        transitionDuration: "1.0s"
-      });
-
-      /*
-  $grid.imagesLoaded().progress( function() {
-  $grid.masonry('layout');
-});
-*/
-
-      $(".grid-item .item_header").not(".portfolio_header, .kudos_header").click(function () {
-        if (
-          $(this)
-            .parent()
-            .hasClass("maxed")
-        ) {
-          $(this)
-            .parent()
-            .removeClass("maxed");
-        } else {
-          $(".maxed").toggleClass("maxed");
-          $(this)
-            .parent()
-            .addClass("maxed");
-        }
-
-        //$(this).parent().toggleClass("maxed");
-        (function (_this, _grid) {
-          _grid.on("layoutComplete", function () {
-            $("html, body").animate(
-              {
-                scrollTop: $(_this).offset().top - 20
-              },
-              1000
-            );
-            _grid.off("layoutComplete");
-          });
-        })(this, $grid);
-
-        $grid.masonry("layout");
-      });
-
-
-      $(".portfolio_header").click(function (evt) {
-        evt.preventDefault = true;
-        $(".portfolio_item").css("z-index", 1000);
-        $(".portfolio_header").animate({
-          "font-size":"12em",
-          opacity: 0
-        }, 2000);
-        $(".portfolio_item").animate({
-          top: "0px",
-          height: "100%",
-          width: "100%"
-        }, 2000, function () {
-          window.location.href = "portfolio.html";
-
-
-        });
-        return false;
-      });
-
-      $(".kudos_header").click(function (evt) {
-        evt.preventDefault = true;
-        $(".kudos_item").css("z-index", 1000);
-        $(".kudos_header").animate({
-          "font-size":"12em",
-          opacity: 0
-        }, 2000);
-        $(".kudos_item").animate({
-          top: "0px",
-          height: "100%",
-          width: "100%"
-        }, 2000, function () {
-          window.location.href = "https://www.kudoboard.com/boards/ygBaKqWX";
-
-
-        });
-        return false;
-      });      
+     
 
     });
 
@@ -536,32 +452,7 @@ Suck the content (images or text) from one page and swap it into another page. A
         </div>-->
       </div>
 
-      <div class="grid-item grid5 item_social">
-        <div class="item_header qtr">
-          <span style="font-size: .6em"> @donundeen</span>
-        </div>
-        <div class="item_summary item_social">
-          <a href="https://twitter.com/donundeen">
-            <img src="images/Twitter_logo_blue.png" width="50%" align="center" class="twitter_logo_img" /></a>
-        </div>
-        <div class="item_content">
-          <a class="twitter-timeline" href="https://twitter.com/donundeen" data-widget-id="712014421258711040">Tweets by
-            @donundeen</a>
-          <script>
-            !(function (d, s, id) {
-              var js,
-                fjs = d.getElementsByTagName(s)[0],
-                p = /^http:/.test(d.location) ? "http" : "https";
-              if (!d.getElementById(id)) {
-                js = d.createElement(s);
-                js.id = id;
-                js.src = p + "://platform.twitter.com/widgets.js";
-                fjs.parentNode.insertBefore(js, fjs);
-              }
-            })(document, "script", "twitter-wjs");
-          </script>
-        </div>
-      </div>
+
 
       <div class="grid-item grid5 videos">
         <div class="item_header qtr">
