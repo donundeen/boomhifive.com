@@ -73,151 +73,6 @@ body {
     float: right;
 }
 
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-.grid-sizer{},
-
-.gutter-sizer { width: 20px; }
-
-.grid-item {
-    height: 200px;
-    width: 240px;
-    border-radius: 10px;
-    background: white;
-    color: #34004E ;
-    margin-bottom: 10px;
-    overflow: scroll;
-}
-
-
-.grid1 { width: 240px; }
-.grid2 { width: 47%; }
-.grid3 { width: 74%; }
-.grid4 { width: 98%; }
-.grid5 { width: 240px; }
-.grid6 { width: 500px; }
-.gridheader { height: 100px; width: 760px;}
-
-.maxed {
-    width: 500px;
-    height: 600px;
-    z-index: 100;
-}
-
-
-.grid-item .item_header.dbl {
-    height: 100px;
-    font-size: 110px;
-    padding: 0px;
-}
-
-.maxed .item_header.dbl{
-    height: 1.2em;
-    font-size: 1.2em;
-    line-height: 1.2em;
-    padding-left: .4em;
-
-}
-
-.grid-item .item_header.dbl span {
-    line-height: 100px;
-}
-
-.maxed .item_header.dbl span{
-    line-height: inherit;
-}
-
-
-.grid-item .item_header.qtr {
-/*    height: 50px;*/
-height: auto;
-    font-size: 55px;
-    padding: 0px;
-    padding-left: 5px;
-    padding-top: 3px;
-}
-
-.maxed .item_header.qtr{
-/*    height: 1.2em;*/
-height: auto;
-    font-size: 1.2em;
-    line-height: 1.2em;
-    padding-left: .4em;
-}
-
-.grid-item .item_header.qtr span {
-    line-height: 50px;
-}
-
-.maxed .item_header.qtr span{
-    line-height: inherit;
-}
-
-
-.maxed .item_header span{
-    line-height: inherit;
-}
-
-.grid-item .item_summary{
-    display: inline;
-    margin: 5px;
-    margin-top: 10px;
-}
-
-.grid-item .item_content{
-    display: none;
-}
-
-.maxed .item_summary{
-    display: none;
-}
-
-.maxed .item_content{
-    display: inline;
-}
-
-
-.item_content p{
-    margin: 10px;
-    overflow: scroll;
-    /*
-    height: 525px;
-    max-height: 525px;*/
-}
-
-.item_content{
-    overflow: scroll;
-    position: absolute;
-    /*
-    height: 525px;
-    max-height: 525px;
-    min-height: 525px;
-    */
-/*    top: 38px;*/
-}
-
-
-
-
-
-.twitter_logo_img {
-display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.item_summary.item_social {
-    text-align: center;
-}
-
-.grid_item.item_social {
-    text-align: center;
-}
-
 .cv_object{
     height:550px;
     width: 480px;
@@ -227,24 +82,7 @@ display: block;
     display: none;
 }
 
-.maxed .item_footer {
-    position: absolute;
-    display: inline;
-    text-align: right;
-    margin-right: 10px;
-    margin-bottom: 5px;
-    bottom: 5px;
-    right: 5px;
-}
 
-.content_segment {
-    float: left;
-    padding-bottom: 15px;
-    padding-left: 5px;
-    padding-right: 5px;
-    display: block;
-
-}
 
 .content_segment img {
     width: 120px;
@@ -329,82 +167,13 @@ background-image: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,.75), rg
 @media only screen and ( max-width: 760px ) /* 320 <>640px */
 {
 /*body {background: green;}*/
-    .gridheader { height: 100px; width: 500px;}
-    .maxed {
-	width: 500px;
-	height: 600px;
-	z-index: 100;
-    }
+
 }
 
 
 @media only screen and ( max-width: 20em ), only screen and (max-device-width: 500px) /* <320px */
 {
 /*body {background : yellow;}*/
-    .gridheader { height: 100px; width: 95%;}
-    .grid5 { width: 95% }
-    .grid6 {width: 95%}
-
-    .grid-item {
-	font-size: 2em;
-    }
-
-    .grid-item .item_summary{
-	display: none;
-    }
-
-    .grid-item .item_header{
-	font-size: 4em;
-	padding-left: .2em;
-	padding-top: 15px;
-    }
-    .grid-item .item_header.dbl{
-	font-size: 4em;
-	height: 1.2em;
-	line-height: 1.2em;
-	padding-top: 15px;
-    }
-    .grid-item .item_header.qtr{
-	font-size: 4em;
-
-/*	height: 1.2em;*/
-height: auto;
-	line-height: 1.2em;
-	padding-left: .2em;
-	padding-top: 15px;
-    }
-    .grid-item .item_header.qtr span{
-	line-height: inherit;
-    }
-    .maxed {
-	width: 95%;
-	height: 900px;
-	min-height: 900px;
-	z-index: 100;
-    }
-
-    .maxed .item_header {
-	font-size: 2em;
-    }
-    .maxed .item_header span {
-	font-size: inherit ;
-    }
-
-    .maxed .item_content p {
-	height: 810px;
-	min-height: 810px;
-    }
-    .maxed .item_content{
-	height: 810px;
-	min-height: 810px;
-    }
-
-    .subheader {
-	display: none;
-    }
-
-    .item_content {
-	padding-top: 4em;
-    }
+   
 
 }
