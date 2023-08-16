@@ -8,6 +8,16 @@ VERSION 1.2
           box-sizing: border-box;
 }
 
+div {
+  border: 1px solid black
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  gap: 1rem;
+}
+
 
 @media only screen and ( max-width: 760px ) /* 320 <>640px */
 {
