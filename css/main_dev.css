@@ -8,14 +8,35 @@ VERSION 1.2
           box-sizing: border-box;
 }
 
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background: rgba(170,96,96,0.11);
+    color: #FF7A2B;  
+}
+
 div {
   border: 1px solid black
+}
+
+.site_container {
+  height: 100vh;
 }
 
 .body {
   display: grid;
   grid-template-columns: 1fr 5fr;
   gap: 1rem;
+}
+
+.supheader {
+    font-size: 2.2em;
+    font-family: "Orbitron";
+    padding-top: 3px;
+}
+
+.subheader{
+    font-style: italic;
 }
 
 
