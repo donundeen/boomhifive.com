@@ -23,7 +23,7 @@
         $(".rightcontent .grid-item").hide();
         $(".navlist li").click(function(elem, target){
           console.log("clicked");
-          console.log(elem);
+          console.log($(elem.target).data("about"));
           console.log(target);
         });
     });
