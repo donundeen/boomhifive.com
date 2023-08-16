@@ -21,7 +21,11 @@
     $(document).ready(function () {
       console.log("doc ready");
         $(".rightcontent .grid-item").hide();
-
+        $(".navlist li").click(function(elem, target){
+          console.log("clicked");
+          console.log(elem);
+          console.log(target);
+        });
     });
 
   </script>
@@ -39,7 +43,7 @@
       <div class="grid-item body">
         <div class="grid-item leftnav">
           <ul class="navlist">
-            <li>About</li>
+            <li data-content="about">About</li>
             <li>Art/Tech</li>
             <li>CV</li>
             <li>Videos</li>
@@ -51,7 +55,7 @@
           </ul>
         </div>
         <div class="grid-item rightcontent">
-          <div class="grid-item grid6">
+          <div class="grid-item grid6" id="about">
             <div class="item_header">
               About
             </div>
