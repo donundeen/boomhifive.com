@@ -21,6 +21,7 @@
     $(document).ready(function () {
       console.log("doc ready");
         $(".rightcontent .grid-item").hide();
+        $(".itemsummary").hide();
         $(".navlist li").click(function(elem, target){
           console.log("clicked");
           var contentid = $(this).data("content");
@@ -47,14 +48,16 @@
         <div class="grid-item leftnav">
           <ul class="navlist">
             <li data-content="about">About</li>
-            <li>Art/Tech</li>
-            <li>CV</li>
-            <li>Videos</li>
-            <li>Kudos</li>
-            <li>Groups</li>
-            <li>Teaching</li>
-            <li>Resources</li>
-            <li>Strategy</li>
+            <li data-content="arttech">Art/Tech</li>
+            <li data-content="code">Code</li>
+            <li data-content="cv">CV</li>
+            <li data-content="videos">Videos</li>
+            <li data-content="groups">Groups</li>
+            <li data-content="teaching">Teaching</li>
+            <li data-content="portfolio">Portfolio</li>
+            <li data-content="resources">Resources</li>
+            <li data-content="strategy">Strategy</li>
+            <li data-content="kudos">Kudos</li>
           </ul>
         </div>
         <div class="grid-item rightcontent">
@@ -161,7 +164,7 @@
    
           </div>
 
-          <div class="grid-item grid5 teach">
+          <div class="grid-item grid5 teach" id="teaching">
             <div class="item_header qtr">
               .edu
             </div>
@@ -320,7 +323,7 @@
             </div>
           </div>
 
-          <div class="grid-item grid5">
+          <div class="grid-item grid5" id="arttech">
             <div class="item_header qtr">
               Art
             </div>
@@ -455,7 +458,7 @@
             </div>
           </div>
 
-          <div class="grid-item grid5">
+          <div class="grid-item grid5" id="code">
             <div class="item_header qtr">
               Code
             </div>
@@ -538,7 +541,7 @@
             </div>
           </div>
 
-          <div class="grid-item grid6 portfolio_item">
+          <div class="grid-item grid6 portfolio_item" id="portfolio">
             <div class="item_header qtr portfolio_header ">
               Portfolio
             </div>
@@ -574,7 +577,7 @@
             </div>
           </div>
 
-          <div class="grid-item grid5">
+          <div class="grid-item grid5" id="groups">
             <div class="item_header qtr">
               Groups
             </div>
@@ -644,7 +647,7 @@
             </div>
           </div>
 
-          <div class="grid-item grid5">
+          <div class="grid-item grid5" id="cv">
             <div class="item_header qtr"><span>CV</span></div>
             <div class="item_summary"></div>
             <div class="item_content">
@@ -661,8 +664,8 @@
               </object>
             </div>
 
-<!--
-            <div class="grid-item grid5 videos">
+
+            <div class="grid-item grid5 videos" id="videos">
               <div class="item_header qtr">
                 Culture
               </div>
@@ -750,7 +753,7 @@
             
               </div>
           </div>
-            -->
+
           </div>
 
 
