@@ -24,7 +24,7 @@
         $(".navlist li").click(function(elem, target){
           console.log("clicked");
           var contentid = $(this).data("content");
-          contentid = "#".contentid;
+          contentid = "#"+contentid;
           console.log(contentid);
           $(".rightcontent .grid-item").hide();
           $(contentid).show();
