@@ -23,8 +23,11 @@
         $(".rightcontent .grid-item").hide();
         $(".navlist li").click(function(elem, target){
           console.log("clicked");
+          var contentid = $(this).data("content");
           console.log($(this).data("content"));
           console.log(target);
+          $(".rightcontent .grid-item").hide();
+          $("#".contentid).show();
         });
     });
 
