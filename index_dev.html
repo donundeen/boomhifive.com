@@ -19,16 +19,55 @@
       src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
     <script>
     $(document).ready(function () {
+      let first = true;
       console.log("doc ready");
         $(".rightcontent .grid-item").hide();
         $(".itemsummary").hide();
         $(".navlist li").click(function(elem, target){
           console.log("clicked");
+
+          if($(this).hasClass("selected_nav")){
+            return true;
+          };
+
           var contentid = $(this).data("content");
           contentid = "#"+contentid;
           console.log(contentid);
-          $(".rightcontent .grid-item").hide();
-          $(contentid).show();
+
+          $(".unselected_nav").removeClass("unselected_nav");
+          $(".selected_nav").addClass("unselected_nav");
+          $(".selected_nav").removeClass("selected_nav");
+          $(this).addClass("selected_nav");
+ 
+          $(".unselected_item").removeClass("unselected_item");
+          $(".selected_item").addClass("unselected_item");
+          $(".selected_item").removeClass("selected_item");
+          $(contentid).addClass("selected_item");
+
+          let timeouttime = 1000;
+          if(first){
+            first = false;
+            timeouttime = 1;
+          }
+     //     if(!first){
+            first = false;
+            setTimeout(()=>{
+              $(".unselected_item").hide();
+              $(contentid).show();
+            },timeouttime);
+            /*
+          }else{
+            $(contentid).show();
+          }
+          */
+            //$(".unselected_item").hide();
+          //$(contentid).show();
+
+          /*
+          $(".unselected_item").fadeOut(500, function(){
+            $(contentid).fadeIn(500);
+          });
+          */
         });
     });
 
@@ -54,10 +93,10 @@
             <li data-content="videos">Videos</li>
             <li data-content="groups">Groups</li>
             <li data-content="teaching">Teaching</li>
-            <li data-content="portfolio">Portfolio</li>
+            <li data-content="portfolio"><a href="portfolio.html">Portfolio</a></li>
             <li data-content="resources">Resources</li>
             <li data-content="strategy">Strategy</li>
-            <li data-content="kudos">Kudos</li>
+            <li data-content="kudos"><a href="https://www.kudoboard.com/boards/ygBaKqWX">Kudos</a></li>
           </ul>
         </div>
         <div class="grid-item rightcontent">
@@ -667,92 +706,123 @@
 
           <div class="grid-item grid5 videos" id="videos">
               <div class="item_header qtr">
-                Culture
+                Videos
               </div>
               <div class="item_summary"></div>
               <div class="item_content">
-                videos?
+
+
                 <div class="content_segment">
-                  vid1
-                  <iframe width="480" height="270"
-                    src="https://www.youtube.com/embed/XEUKZ86F9i4"
-                    frameborder="0"
-                    allowfullscreen></iframe><br />MCN 2013:
-                  Ignite MCN at Corona Theater in Montreal.
-                  <i>The infamous Ignite Presentation that
-                    introduced the world to
-                    Digital Humanities Unicorn!</i>
-                </div>
-                <div class="content_segment">
-                  <iframe width="480" height="270"
-                    src="https://www.youtube.com/embed/o1dqXVe2GVo"
-                    frameborder="0"
-                    allowfullscreen></iframe><br />Met
-                  MakerBot Hackathon
+                  <div class="youtube-video-container">
+                    <iframe width="480" height="270"
+                      src="https://www.youtube.com/embed/XEUKZ86F9i4"
+                      frameborder="0"
+                      allowfullscreen></iframe>
+                  </div>
+                  <div class="content_caption">
+                    MCN 2013:
+                    Ignite MCN at Corona Theater in Montreal.
+                    <i>The infamous Ignite Presentation that
+                      introduced the world to
+                      Digital Humanities Unicorn!</i>
+                  </div>
                 </div>
 
                 <div class="content_segment">
-                  <iframe width="480" height="270"
+                  <div class="youtube-video-container">
+                    <iframe width="480" height="270"
+                    src="https://www.youtube.com/embed/o1dqXVe2GVo"
+                    frameborder="0"
+                    allowfullscreen></iframe>
+                  </div>
+                  <div class="content_caption">
+                    Met MakerBot Hackathon
+                  </div>
+                </div>
+
+                <div class="content_segment">
+                  <div class="youtube-video-container">
+                    <iframe width="480" height="270"
                     src="https://www.youtube.com/embed/8IwlIvuhc1Q"
                     frameborder="0"
                     allowfullscreen></iframe>
-                  <br />The MET's MediaLab. Experiments and
-                  Provocations
-                </div>
-                <div class="content_segment">
-                  <iframe width="480" height="270"
-                    src="https://www.youtube.com/embed/WPPQH5YaJYw"
-                    frameborder="0"
-                    allowfullscreen></iframe><br />Presenting
-                  at NYC's Volumetric Society
+                  </div>
+                  <div class="content_caption">
+                    The MET's MediaLab. Experiments and Provocations
+                  </div>
                 </div>
 
                 <div class="content_segment">
-                  <iframe width="480" height="270"
+                  <div class="youtube-video-container">
+                    <iframe width="480" height="270"
+                    src="https://www.youtube.com/embed/WPPQH5YaJYw"
+                    frameborder="0"
+                    allowfullscreen></iframe>
+                  </div>
+                  <div class="content_caption">
+                    Presenting at NYC's Volumetric Society
+                  </div>
+                </div>
+
+                <div class="content_segment">
+                  <div class="youtube-video-container">
+                    <iframe width="480" height="270"
                     src="https://www.youtube.com/embed/0S8zyqlSUbU"
                     frameborder="0"
                     allowfullscreen></iframe>
-                  <br />Art Institute Museum3D Guest Speaker:
-                  Don Undeen
+                  </div>
+                  <div class="content_caption">
+                  Art Institute Museum3D Guest Speaker: Don Undeen
+                  </div>
                 </div>
 
                 <div class="content_segment">
+                  <div class="youtube-video-container">
                   <iframe width="480" height="270"
                     src="https://www.youtube.com/embed/vUVUhpb-Fdc"
                     frameborder="0"
-                    allowfullscreen></iframe><br />
-                  MCN 2012: Kickstarting Innovation within the
-                  Museum
+                    allowfullscreen></iframe>
+                  </div>
+                  <div class="content_caption">
+                  MCN 2012: Kickstarting Innovation within the Museum
+                  </div>
                 </div>
 
                 <div class="content_segment">
-                  <iframe width="480" height="270"
+                  <div class="youtube-video-container"> youtube-video-container">
+                    <iframe width="480" height="270"
                     src="https://www.youtube.com/embed/LzsNg1avK5c"
                     frameborder="0"
-                    allowfullscreen></iframe><br />MCN 2012:
+                    allowfullscreen></iframe>
+                  </div>
+                  <div class="content_caption">MCN 2012:
                   What's the Point of a Museum Maker Space
+                  </div>
                 </div>
 
                 <div class="content_segment">
-                  <iframe width="480" height="270"
+                  <div class="youtube-video-container">
+                    <iframe width="480" height="270"
                     src="https://www.youtube.com/embed/Nn_dC4pbCcg"
                     frameborder="0"
-                    allowfullscreen></iframe><br />Let's
-                  Hack the Met: Don Undeen at We Are Museums,
-                  Vilnius
-                  Lithuania
+                    allowfullscreen></iframe>
+                  </div>
+                  <div class="content_caption">
+                      Let's Hack the Met: Don Undeen at We Are Museums, Vilnius Lithuania
+                  </div>
                 </div>
 
                 <div class="content_segment">
-                  <iframe width="480" height="270"
+                  <div class="youtube-video-container">
+                    <iframe width="480" height="270"
                     src="https://www.youtube.com/embed/fijQy6BJqWA"
                     frameborder="0"
-                    allowfullscreen></iframe><br />Digital
-                  Media Disruption - Media in Non-Profits -
-                  2/13/13,
-                  Fordham University
+                    allowfullscreen></iframe>
+                  </div>
+                  <div class="content_caption">
+                      Digital Media Disruption - Media in Non-Profits - 2/13/13, Fordham University
+                  </div>
                 </div>
-            
               </div>
           </div>
 
