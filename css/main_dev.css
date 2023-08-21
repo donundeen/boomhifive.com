@@ -36,9 +36,14 @@ div {
 
 
 .supheader {
-    font-size: 2.2em;
-    font-family: "Orbitron";
+    font-family: 'Montserrat', sans-serif;
     padding-top: 3px;
+    font-weight: bold;
+    color: white;
+    font-size: 3em;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #34004E;
+    -webkit-text-fill-color: #f5eced;
 }
 
 .subheader{
@@ -80,7 +85,7 @@ div {
     -webkit-text-stroke-color: #34004E;
     -webkit-text-fill-color: #f5eced; /* Will override color (regardless of order) */
 
-    background-image: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,.75), rgba(255,255,255,0));
+/*    background-image: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,.75), rgba(255,255,255,0));*/
 }
 
 
