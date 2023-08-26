@@ -1,4 +1,5 @@
 let first = true;
+let defaultcontentid = "about";
 
 function getUrlVars() {
     var vars = {};
@@ -65,8 +66,9 @@ $(document).ready(function () {
     let topic = window.location.hash.replace("#","");
     console.log(topic);
     if(topic){
-        let clicked= 
         showTopic(topic);
+    }else{
+        showTopic(defaultcontentid);
     }
 
     $(".rightcontent .grid-item").hide();
@@ -80,8 +82,6 @@ $(document).ready(function () {
 
         var contentid = $(this).data("content");
         window.location.hash = contentid;
-
         showTopic(contentid);
-
     });
 });
