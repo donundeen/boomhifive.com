@@ -34,7 +34,7 @@ ws.onmessage = function(msg) {
     console.log(JSON.stringify(msg));
 };  
 
-function sendMessage(message){}    
+function sendMessage(message){
     if(wsready){
         ws.send(message);
     }else{
