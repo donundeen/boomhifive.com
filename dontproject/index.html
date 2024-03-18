@@ -32,6 +32,11 @@ ws.onopen = function() {
     wsready = true;
 };
 
+ws.onerror = function(msg){
+    console.log("ws error ");
+    console.log(msg);
+}
+
 ws.onmessage = function(msg) {
     console.log("got message "+ msg);
     console.log(JSON.stringify(msg));
