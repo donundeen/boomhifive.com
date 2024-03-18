@@ -63,6 +63,9 @@
     float:left;
 }
 
+.button1{
+    float:left;
+}
     </style>
 </head>
 <body>
@@ -74,13 +77,13 @@
     allowfullscreen>
 </iframe>
 <div class="buttoncontainer">
-<div ontouchstart="">
+<div class="button1" ontouchstart="">
     <div class="button"  onclick="sendRev();">
       <a href="#">&lt;&lt;BACK&lt;&lt;</a>
     </div>
 </div>
 
-<div ontouchstart="">
+<div  class="button1"  ontouchstart="">
     <div class="button"  onclick="sendFwd();">
       <a href="#">&gt;&gt;FORWARD&gt;&gt;</a>
     </div>
@@ -121,9 +124,11 @@ ws.onmessage = function(msg) {
 
 function sendFwd(){
     sendMessage("fwd");
+    return false;
 }
 function sendRev(){
     sendMessage("rev");
+    return false;
 }
 function sendMessage(message){
     if(wsready){
