@@ -116,9 +116,10 @@ ws.onopen = function() {
     wsready = true;
 };
 
-ws.onerror = function(error, msg){
+ws.onerror = function(error){
     console.log("ws error ");
-    console.log(msg);
+    error.error;
+    console.log(error);
 }
 
 ws.onmessage = function(msg) {
