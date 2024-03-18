@@ -16,10 +16,14 @@
 
 <script>
 
+let host = "10.0.0.21";
+
+/*
 // chnage this depending on location of webserver. Figure out a way to make this more dynamic...
 let host =  window.location.host;
 host = host.replace(/:[0-9]+/,"");
 // remove port
+*/
 console.log(host);
 const ws = new WebSocket('ws://'+host+':4000');
 
