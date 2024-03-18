@@ -4,7 +4,6 @@
     <style>
 
 div{
-    border:1px solid green;
 }
 
 .button{
@@ -117,7 +116,7 @@ ws.onopen = function() {
     wsready = true;
 };
 
-ws.onerror = function(msg){
+ws.onerror = function(error, msg){
     console.log("ws error ");
     console.log(msg);
 }
