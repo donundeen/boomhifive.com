@@ -1,5 +1,5 @@
 <?php
-include_once(dirname(__FILE__)."/adodb/adodb.inc.php");
+include_once(dirname(__FILE__)."/adodb5/adodb.inc.php");
 
 class gbft {
 
