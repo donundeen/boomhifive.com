@@ -30,11 +30,11 @@ class Entity extends gbft{
 
 	
 	function Entity($type = "", $id = ""){
+		print "entity";
 		$this->get_conn();
 		
 		$this->set_type($type);
 		$this->set_id($id);
-		print "entity";
 		print $this->type;
 		print $this->id;
 	//	$this->populate_entity();
