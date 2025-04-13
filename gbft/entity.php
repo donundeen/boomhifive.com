@@ -6,7 +6,7 @@ include_once(dirname(__FILE__)."/classes/class.entity.php");
 $type = $input->vars['type'];
 $id = $input->vars['id'];
 
-
+print "entity.php";
 
 $entity = new Entity($type, $id);
 
