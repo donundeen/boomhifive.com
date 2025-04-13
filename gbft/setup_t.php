@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 
 
 include_once("blocked_ip_check_t.php");
-/*
+
 include_once('config.php');
 
 $CITY_NAME = $GLOBALS['city_name'];
