@@ -30,7 +30,7 @@ class Entity extends gbft{
 
 	
 	function Entity($type = "", $id = ""){
-		print __FILE__.":".__LINE__;
+		print __FILE__.":".__LINE__."<BR>\n";
 		$this->get_conn();
 		
 		$this->set_type($type);
