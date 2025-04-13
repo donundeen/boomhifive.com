@@ -16,7 +16,6 @@ if(is_object($SESSION->user)){
 
 $entity->populate_entity();
 
-print_r($entity);
 
 if($type == 'member' && $entity->info['public_visible'] == 'n'){
 	if(is_object($SESSION->user) && $SESSION->user->info['ID'] == $entity->id){
