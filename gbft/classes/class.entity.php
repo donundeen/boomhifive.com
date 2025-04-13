@@ -84,7 +84,7 @@ class Entity extends gbft{
 				FROM
 					$type
 				WHERE
-					name LIKE '".mysql_escape_string($name, $conn)."'";
+					name LIKE '".$this->conn->qstr($name)."'";
 		$rs = $conn->Execute($query);
 		
 		if($rs && strlen($rs->fields['ID']) > 0){
