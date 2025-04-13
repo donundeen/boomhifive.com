@@ -51,8 +51,8 @@ class blocked_ip extends gbft {
 		$conn = gbft::static_get_conn();
 		$query = "SELECT blocked_ip_id FROM blocked_ip WHERE ip_address = :ip_address";
 		$stmt = $conn->prepare($query);
-		return false;
 		$stmt->execute(['ip_address' => $ip_address]);
+		return false;
 		return $stmt->rowCount() > 0;
 	}
 	
