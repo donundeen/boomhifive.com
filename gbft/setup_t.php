@@ -1,7 +1,6 @@
 <?php
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
-/*
 include_once("blocked_ip_check.php");
 
 include_once('config.php');
@@ -138,4 +137,4 @@ function mysql_real_escape_string($string, $conn){
 function mysql_escape_string($string, $conn){
   return $conn->qstr($string);
 }
-*/
+

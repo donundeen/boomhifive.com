@@ -1,5 +1,5 @@
 <?php
-include_once("setup.php");
+include_once("setup_t.php");
 ?>
 <html>
 <head>
