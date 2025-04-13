@@ -29,7 +29,7 @@ class Entity extends gbft{
 	var $num_thumbnails = 3;
 
 	
-	function Entity($type = "", $id = ""){
+	function __construct($type = "", $id = ""){
 		print __FILE__.":".__LINE__."<BR>\n";
 		$this->get_conn();
 		

@@ -48,7 +48,6 @@ class blocked_ip extends gbft {
 	
 	
 	public static function ip_blocked($ip_address){
-		print __FILE__.":".__LINE__."<BR>\n";
 
 		$conn = gbft::static_get_conn();
 		$query = "SELECT blocked_ip_id FROM blocked_ip WHERE ip_address = '".$conn->qstr($ip_address)."'";
