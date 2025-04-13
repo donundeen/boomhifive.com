@@ -17,13 +17,9 @@ $entity->populate_entity();
 if($type == 'member' && $entity->info['public_visible'] == 'n'){
 	if(is_object($SESSION->user) && $SESSION->user->info['ID'] == $entity->id){
 	}else{
-		// this page shouldn't be visible, so we redirect to the index page, send an error message, or something...
-		
 		echo "This Member's page is private";
 		exit();	
-		
 	}	
-	
 }
 
 

@@ -1,3 +1,6 @@
+<?php
+include_once("setup.php");
+?>
 <html>
 <head>
 <title>Simple Test</title>

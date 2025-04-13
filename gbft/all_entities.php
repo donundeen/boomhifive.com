@@ -26,4 +26,3 @@ $smarty->assign("ERROR_MSGS", $ERROR_MSGS);
 
 $smarty->display("all_entities.tpl");
 
-?>
