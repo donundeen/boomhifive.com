@@ -6,6 +6,10 @@ include_once(dirname(__FILE__)."/classes/class.entity.php");
 $type = $input->vars['type'];
 $id = $input->vars['id'];
 
+
+print $type;
+print $id;
+
 $entity = new Entity($type, $id);
 
 if(is_object($SESSION->user)){
