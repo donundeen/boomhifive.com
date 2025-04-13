@@ -64,10 +64,10 @@ class blocked_ip extends gbft {
 				FROM
 					blocked_ip
 				WHERE
-//					ip_address = '".$conn->mysql_real_escape_string($ip_address)."'";
 					ip_address = '".$ip_address."'";
 		$rs = $conn->execute($query);
 		return false;
+//					ip_address = '".$conn->mysql_real_escape_string($ip_address)."'";
 
 
 		if($rs && strlen($rs->fields['blocked_ip_id']) > 0){
