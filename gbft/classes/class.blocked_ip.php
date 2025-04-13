@@ -26,57 +26,33 @@ class blocked_ip extends gbft {
 	
 	
 	function get_blocked_ips(){
-		
-		$query = "SELECT
-					*
-				FROM
-					blocked_ip
-				ORDER BY
-					ip_address";
-		$this->blocked_ips = $this->conn->GetArray($query);
+		$query = "SELECT * FROM blocked_ip ORDER BY ip_address";
+		$stmt = $this->conn->prepare($query);
+		$stmt->execute();
+		$this->blocked_ips = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 	
 	
 	function insert_blocked_ip($ip_address){
-		$query = "INSERT IGNORE INTO
-					blocked_ip
-				SET
-					ip_address = '".mysql_real_escape_string($ip_address, $this->conn)."'";
-		$rs = $this->conn->execute($query);
+		$query = "INSERT IGNORE INTO blocked_ip SET ip_address = :ip_address";
+		$stmt = $this->conn->prepare($query);
+		$stmt->execute(['ip_address' => $ip_address]);
 	}
 	
 	function delete_blocked_ip($blocked_ip_id){
-		$query = "DELETE FROM
-					blocked_ip 
-				WHERE
-					blocked_ip_id = '".mysql_real_escape_string($blocked_ip_id, $this->conn)."'";
-		$rs = $this->conn->execute($query);				
-		
+		$query = "DELETE FROM blocked_ip WHERE blocked_ip_id = :blocked_ip_id";
+		$stmt = $this->conn->prepare($query);
+		$stmt->execute(['blocked_ip_id' => $blocked_ip_id]);
 	}
 	
 	
 	
 	public static function ip_blocked($ip_address){
 		$conn = gbft::static_get_conn();
-		return false;
-
-		$query = "SELECT 
-					blocked_ip_id
-				FROM
-					blocked_ip
-				WHERE
-					ip_address = '".$ip_address."'";
-		return false;
-
-		$rs = $conn->execute($query);
-//					ip_address = '".$conn->mysql_real_escape_string($ip_address)."'";
-
-
-		if($rs && strlen($rs->fields['blocked_ip_id']) > 0){
-			return true;	
-		}
-		return false;
-		
+		$query = "SELECT blocked_ip_id FROM blocked_ip WHERE ip_address = :ip_address";
+		$stmt = $conn->prepare($query);
+		$stmt->execute(['ip_address' => $ip_address]);
+		return $stmt->rowCount() > 0;
 	}
 	
 	
