@@ -3,9 +3,9 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 
 include_once("blocked_ip_check.php");
-
-include_once('config.php');
 /*
+include_once('config.php');
+
 $CITY_NAME = $GLOBALS['city_name'];
 $STATE_NAME = $GLOBALS['state_name'];
 $SHORT_NAME = $GLOBALS['short_name'];
