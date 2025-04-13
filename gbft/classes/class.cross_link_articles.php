@@ -25,9 +25,9 @@ class cross_link_articles extends gbft{
 	
 	function delete_brackets(){
 		$query = "update articles set text = REPLACE(text, ']]', ''), submit_date = submit_date";
-		$this->conn->execute($query);
+		$this->conn->Execute($query);
 		$query = "update articles set text = REPLACE(text, '[[', ''), submit_date = submit_date";
-		$this->conn->execute($query);
+		$this->conn->Execute($query);
 	}
 	
 	
@@ -44,16 +44,16 @@ class cross_link_articles extends gbft{
 		        $query = "update
 		                    articles
 		                  set
-		                    text = REPLACE(text, '".mysql_real_escape_string($name)."', '[[".mysql_real_escape_string($name)."]]'),
+		                    text = REPLACE(text, '".$this->conn->qstr($name)."', '[[".$this->conn->qstr($name)."]]'),
 		                    submit_date = submit_date
 		                  where
-		                    text like '% ".mysql_real_escape_string($name)." %' or
-		                    text like '% ".mysql_real_escape_string($name)."\'s %' or
-		                    text like '% ".mysql_real_escape_string($name).",%' or
-		                    text like '% ".mysql_real_escape_string($name)."\'s,%' or
-		                    text like '% ".mysql_real_escape_string($name).".%' or
-		                    text like '% ".mysql_real_escape_string($name)."\'s.%'";
-		        $this->conn->execute($query);
+		                    text like '% ".$this->conn->qstr($name)." %' or
+		                    text like '% ".$this->conn->qstr($name)."\'s %' or
+		                    text like '% ".$this->conn->qstr($name).",%' or
+		                    text like '% ".$this->conn->qstr($name)."\'s,%' or
+		                    text like '% ".$this->conn->qstr($name).".%' or
+		                    text like '% ".$this->conn->qstr($name)."\'s.%'";
+		        $this->conn->Execute($query);
 		        echo "<pre>".__LINE__." ".print_r($query, true)."</pre>";
 		    }
 		}

@@ -14,7 +14,7 @@ class session extends gbft{
 	
 	var $ERROR_MSGS = array();
 	
-	function session(){
+	function __construct(){
 		
 		
 		$this->get_conn();

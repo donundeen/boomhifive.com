@@ -22,7 +22,7 @@ class process_input extends gbft{
 	
 	var $new_submitted_file_dir = "./admin/submitted_files";
 	
-	function process_input(){
+	function __construct(){
 		$this->submitter_ip = $_SERVER['REMOTE_ADDR'];
 		
 		$this->get_conn();	
@@ -242,9 +242,9 @@ class process_input extends gbft{
 			$query = "UPDATE
 						member
 					SET
-						public_visible = '".mysql_real_escape_string($public_visible)."'
+						public_visible = '".$this->conn->qstr($public_visible)."'
 					WHERE
-						ID = '".mysql_real_escape_string($member_id)."' ";
+						ID = '".$this->conn->qstr($member_id)."' ";
 			$rs = $this->conn->execute($query);	
 		}else{ }
 	}
@@ -275,9 +275,9 @@ class process_input extends gbft{
 		$query = "INSERT INTO 
 					$table_name
 				SET
-					".$entity1_type."_ID = '".mysql_escape_string($entity1_id)."',
-					".$entity2_type."_ID = '".mysql_escape_string($entity2_id)."',
-					details = '".mysql_escape_string($join_details)."',
+					".$entity1_type."_ID = '".$this->conn->qstr($entity1_id)."',
+					".$entity2_type."_ID = '".$this->conn->qstr($entity2_id)."',
+					details = '".$this->conn->qstr($join_details)."',
 					status = '$status',
 					submitter_ip = '".$this->submitter_ip."' ";
 		$rs = $this->conn->Execute($query);
@@ -297,9 +297,9 @@ class process_input extends gbft{
 			$query = "DELETE FROM
 						$table_name
 					WHERE
-						".mysql_real_escape_string($entity1_type)."_ID = '".mysql_real_escape_string($entity1_id)."' AND
-						".mysql_real_escape_string($entity2_type)."_ID = '".mysql_real_escape_string($entity2_id)."' ";
-			$rs = $this->conn->execute($query);
+						".$this->conn->qstr($entity1_type)."_ID = '".$this->conn->qstr($entity1_id)."' AND
+						".$this->conn->qstr($entity2_type)."_ID = '".$this->conn->qstr($entity2_id)."' ";
+			$rs = $this->conn->Execute($query);
 						
 		}
 		
@@ -325,7 +325,7 @@ class process_input extends gbft{
 				FROM
 					$entity_type
 				WHERE
-					name LIKE '".mysql_escape_string($entity_name)."'
+					name LIKE '".$this->conn->qstr($entity_name)."'
 					$additional_where
 				ORDER BY
 					status
@@ -372,9 +372,9 @@ class process_input extends gbft{
 		$query = "INSERT INTO
 					$entity_type
 				SET
-				 	name = '".mysql_escape_string($entity_name)."',
+				 	name = '".$this->conn->qstr($entity_name)."',
 					status = 'change',
-					orig_id = '".mysql_escape_string($entity_id)."',
+					orig_id = '".$this->conn->qstr($entity_id)."',
 					submitter_ip = '".$this->submitter_ip."'
 					$add_clause";
 		$rs = $this->conn->Execute($query);
@@ -400,13 +400,13 @@ class process_input extends gbft{
 		$query = "INSERT INTO 
 					$table_name
 				SET
-					".$entity1_type."_ID = '".mysql_escape_string($entity1_id)."',
-					".$entity2_type."_ID = '".mysql_escape_string($entity2_id)."',
-					details = '".mysql_escape_string($join_details)."',
+					".$entity1_type."_ID = '".$this->conn->qstr($entity1_id)."',
+					".$entity2_type."_ID = '".$this->conn->qstr($entity2_id)."',
+					details = '".$this->conn->qstr($join_details)."',
 					status = 'change',
-					orig_id  = '".mysql_escape_string($orig_id)."',
+					orig_id  = '".$this->conn->qstr($orig_id)."',
 					submitter_ip = '".$this->submitter_ip."' ";
-		$rs = $this->conn->execute($query);
+		$rs = $this->conn->Execute($query);
 		
 	}
 	
@@ -423,7 +423,7 @@ class process_input extends gbft{
 		$query = "INSERT INTO
 					$entity_type
 				SET
-				 	name = '".mysql_escape_string($entity_name)."',
+				 	name = '".$this->conn->qstr($entity_name)."',
 					status = 'new'
 					$add_clause,
 					submitter_ip = '".$this->submitter_ip."' ";
@@ -446,15 +446,15 @@ class process_input extends gbft{
 		}
 		$add_clause = ",start_date = '".date("Y-m-d", $start_date_ts)."',
 						start_time = '".date("H:i:s", $start_date_ts)."',
-						event_type = '".mysql_real_escape_string($event_type)."'";
+						event_type = '".$this->conn->qstr($event_type)."'";
 		return $add_clause;
 	}
 	
 	function add_entity_member_clause($entity_type, $entity_name){
 		$email = $this->vars['email_address'];
 		$password = $this->vars['password'];
-		$clause = ", email_address = '".mysql_escape_string($email)."',
-					pass = '".mysql_escape_string($password)."' ";
+		$clause = ", email_address = '".$this->conn->qstr($email)."',
+					pass = '".$this->conn->qstr($password)."' ";
 		return $clause;	
 		
 	}
@@ -465,9 +465,9 @@ class process_input extends gbft{
 		$state = $this->vars['state'];
 		
 		
-		$clause = ",address =  '".mysql_escape_string($address)."',
-					city = '".mysql_escape_string($city)."',
-					state = '".mysql_escape_string($state)."'";
+		$clause = ",address =  '".$this->conn->qstr($address)."',
+					city = '".$this->conn->qstr($city)."',
+					state = '".$this->conn->qstr($state)."'";
 		return $clause;
 	}	
 	
@@ -483,7 +483,7 @@ class process_input extends gbft{
 			$ERROR_MSGS[] = "'Password' and 'Confirm Password' must match";		
 			return false;
 		}
-		if(entity::name_exists($this->conn, "member", $name)){
+		if(Entity::name_exists($this->conn, "member", $name)){
 			$ERROR_MSGS[] = "That name, '$name', is already taken";			
 			return false;
 		}
@@ -511,11 +511,11 @@ class process_input extends gbft{
 			$query = "INSERT INTO 
 						articles
 					SET
-						entity_type = '".mysql_escape_string($entity_type)."',
-						entity_ID = '".mysql_escape_string($entity_id)."',
-						text = '".mysql_escape_string($text)."',
-						submitter_name = '".mysql_escape_string($submitter_name)."',
-						submitter_email = '".mysql_escape_string($submitter_email)."',
+						entity_type = '".$this->conn->qstr($entity_type)."',
+						entity_ID = '".$this->conn->qstr($entity_id)."',
+						text = '".$this->conn->qstr($text)."',
+						submitter_name = '".$this->conn->qstr($submitter_name)."',
+						submitter_email = '".$this->conn->qstr($submitter_email)."',
 						status = 'new',
 						submitter_ip = '".$this->submitter_ip."' ";
 			$rs = $this->conn->Execute($query);
@@ -551,7 +551,7 @@ class process_input extends gbft{
 					WHERE
 						member_ID = '$user_id' AND
 						".$entity_type."_ID = '$entity_id'";
-			$rs = $this->conn->execute($query);
+			$rs = $this->conn->Execute($query);
 						
 			
 			$query = "REPLACE INTO
@@ -561,7 +561,7 @@ class process_input extends gbft{
 						".$entity_type."_ID = '$entity_id',
 						subscription_level = '$subscription_level',
 						status = 'approved'";
-			$rs = $this->conn->execute($query);
+			$rs = $this->conn->Execute($query);
 			$SESSION = new session();
 		}
 	}
@@ -590,7 +590,7 @@ class process_input extends gbft{
 					WHERE
 						member_ID = '$user_id' AND
 						".$entity_type."_ID = '$entity_id'";
-			$rs = $this->conn->execute($query);
+			$rs = $this->conn->Execute($query);
 			
 			$SESSION = new session();
 		}
@@ -627,14 +627,14 @@ class process_input extends gbft{
 		$query = "INSERT INTO
 					submitted_files
 				SET
-					filename		 = '".mysql_real_escape_string(basename($_FILES['submitted_files']['name']['userfile']))."',
-					description		 = '".mysql_real_escape_string($this->vars['submitted_files']['description'])."',
-					submitter_name	 = '".mysql_real_escape_string($submitter_name)."',
-					submitter_email	 = '".mysql_real_escape_string($submitter_email)."',
-					entity_type		 = '".mysql_real_escape_string($entity_type)."',
-					entity_ID		 = '".mysql_real_escape_string($entity_id)."',
+					filename		 = '".$this->conn->qstr(basename($_FILES['submitted_files']['name']['userfile']))."',
+					description		 = '".$this->conn->qstr($this->vars['submitted_files']['description'])."',
+					submitter_name	 = '".$this->conn->qstr($submitter_name)."',
+					submitter_email	 = '".$this->conn->qstr($submitter_email)."',
+					entity_type		 = '".$this->conn->qstr($entity_type)."',
+					entity_ID		 = '".$this->conn->qstr($entity_id)."',
 					status			 = 'new'";
-		$rs = $this->conn->execute($query);
+		$rs = $this->conn->Execute($query);
 		
 		$this->conn->debug = false;
 		

@@ -23,7 +23,7 @@ class calendar extends gbft {
 	var $user_band_events = array();
 	var $user_musician_band_events = array();
 	
-	function calendar(){
+	function __construct(){
 		$this->get_conn();	
 	}
 	

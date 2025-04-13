@@ -22,7 +22,7 @@ class admin_process_input extends gbft{
 	
 	var $approved_submitted_file_dir = "../submitted_files";
 		
-	function admin_process_input(){
+	function __construct(){
 		$this->submitter_ip = $_SERVER['REMOTE_ADDR'];
 		
 		$this->get_conn();	

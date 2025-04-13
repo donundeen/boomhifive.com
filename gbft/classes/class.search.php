@@ -21,7 +21,7 @@ class Search extends gbft{
 		$this->search_string = trim($string);
 	}
 	
-	function Search(){
+	function __construct(){
 		
 	}
 	
@@ -46,11 +46,11 @@ class Search extends gbft{
 					FROM
 						articles a
 						JOIN
-							".mysql_real_escape_string($page_name, $this->conn)." e
+							".$this->conn->qstr($page_name)." e
 						ON
 							a.entity_id = e.ID
 					WHERE
-						a.entity_type = '".mysql_real_escape_string($page_name, $this->conn)."' AND
+						a.entity_type = '".$this->conn->qstr($page_name)."' AND
 						$where
 					ORDER BY
 						e.name";

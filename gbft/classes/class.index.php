@@ -77,8 +77,8 @@ class Index extends gbft{
 					FROM
 						$type
 					WHERE
-						ID = '$id'";
-			$rs = $this->conn->execute($query);
+						ID = '$this->conn->qstr($id)'";
+			$rs = $this->conn->Execute($query);
 			if($rs && strlen($rs->fields['name']) > 0){
 				$row['entity_name'] = $rs->fields['name'];
 				$this->new_articles[] = $row;
@@ -125,8 +125,8 @@ class Index extends gbft{
 					FROM
 						$type
 					WHERE
-						ID = '$id'";
-			$rs = $this->conn->execute($query);
+						ID = '$this->conn->qstr($id)'";
+			$rs = $this->conn->Execute($query);
 			if($rs && strlen($rs->fields['name']) > 0){
 				$row['entity_name'] = $rs->fields['name'];
 				$this->new_files[] = $row;

@@ -12,7 +12,7 @@ class all_entities extends gbft{
 	var $entities = array(); // array of all entites of given type
 	
 	
-	function all_entities($type = ""){
+	function __construct($type = ""){
 		$this->get_conn();
 		
 		$this->set_type($type);
