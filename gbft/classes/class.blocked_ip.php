@@ -54,6 +54,7 @@ class blocked_ip extends gbft {
 		$bindVariables = array("ip_address"=>$ip_address);
 		try {	
 			$rs = $conn->execute($query, $bindVariables);
+			print $rs;
 			return $rs->rowCount() > 0;
 		} catch (PDOException $e) {
 			error_log("Error checking blocked IP: " . $e->getMessage());
