@@ -50,11 +50,11 @@ class blocked_ip extends gbft {
 	public static function ip_blocked($ip_address){
 		$conn = gbft::static_get_conn();
 		$query = "SELECT blocked_ip_id FROM blocked_ip WHERE ip_address = :ip_address";
-		$stmt = $conn->prepare($query);
+		$bindVariables = array("ip_address"=>$ip_address);
 		try {	
-			$stmt->execute(['ip_address' => $ip_address]);
+			$rs = $conn->execute($query, $bindVariables);
 			return false;
-			return $stmt->rowCount() > 0;
+			return $rs->rowCount() > 0;
 		} catch (PDOException $e) {
 			error_log("Error checking blocked IP: " . $e->getMessage());
 			return false;
