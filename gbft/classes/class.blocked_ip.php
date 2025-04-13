@@ -58,16 +58,14 @@ class blocked_ip extends gbft {
 	
 	public static function ip_blocked($ip_address){
 		$conn = gbft::static_get_conn();
-		
-		
-
+			
 		$query = "SELECT 
 					blocked_ip_id
 				FROM
 					blocked_ip
 				WHERE
 					ip_address = '".$conn->mysql_real_escape_string($ip_address)."'";
-		$rs = $conn->execute($query);
+	//	$rs = $conn->execute($query);
 		return false;
 
 
