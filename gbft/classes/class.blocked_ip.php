@@ -26,23 +26,23 @@ class blocked_ip extends gbft {
 	
 	
 	function get_blocked_ips(){
+
 		$query = "SELECT * FROM blocked_ip ORDER BY ip_address";
-		$stmt = $this->conn->prepare($query);
-		$stmt->execute();
-		$this->blocked_ips = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		$result = $this->conn->Execute($query);
+		$this->blocked_ips = $result->GetArray();
 	}
 	
 	
 	function insert_blocked_ip($ip_address){
-		$query = "INSERT IGNORE INTO blocked_ip SET ip_address = :ip_address";
-		$stmt = $this->conn->prepare($query);
-		$stmt->execute(['ip_address' => $ip_address]);
+
+		$query = "INSERT IGNORE INTO blocked_ip SET ip_address = '".$this->conn->qstr($ip_address)."'";
+		$this->conn->Execute($query);
 	}
 	
 	function delete_blocked_ip($blocked_ip_id){
-		$query = "DELETE FROM blocked_ip WHERE blocked_ip_id = :blocked_ip_id";
-		$stmt = $this->conn->prepare($query);
-		$stmt->execute(['blocked_ip_id' => $blocked_ip_id]);
+
+		$query = "DELETE FROM blocked_ip WHERE blocked_ip_id = ".$this->conn->qstr($blocked_ip_id);
+		$this->conn->Execute($query);
 	}
 	
 	
