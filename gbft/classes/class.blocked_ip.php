@@ -59,7 +59,6 @@ class blocked_ip extends gbft {
 	public static function ip_blocked($ip_address){
 		$conn = gbft::static_get_conn();
 		
-		return false;
 		
 
 		$query = "SELECT 
@@ -69,6 +68,9 @@ class blocked_ip extends gbft {
 				WHERE
 					ip_address = '".mysql_real_escape_string($ip_address, $conn)."'";
 		$rs = $conn->execute($query);
+		return false;
+
+
 		if($rs && strlen($rs->fields['blocked_ip_id']) > 0){
 			return true;	
 		}
