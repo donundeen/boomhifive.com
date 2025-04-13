@@ -1,4 +1,4 @@
-<?
+<?php
 
 session_start();
 if(!is_array($_SESSION['grid'])){
@@ -20,4 +20,3 @@ echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 echo "\n";
 echo $colors[rand(0,count($colors) - 1 )];
 
-?>

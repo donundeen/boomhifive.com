@@ -1,4 +1,4 @@
-<?
+<?php
 include_once("../config.php");
 
 include_once("../classes/class.session.php");
@@ -29,4 +29,3 @@ $smarty->assign("BROWSER_IS_IE", preg_match("/MSIE/", $_SERVER['HTTP_USER_AGENT'
 
 
 
-?>

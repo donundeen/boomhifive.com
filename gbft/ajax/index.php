@@ -7,7 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="style.css">		
 	</head>
 	<body>
-<?
+<?php
 $rows = 20;
 $cols = 20;
 
@@ -21,7 +21,7 @@ while($x < $rows){
 	$x++;	
 	?>
 <br clear="all"	/>
-	<?
+	<?php
 }
 
 ?>

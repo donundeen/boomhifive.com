@@ -1,4 +1,4 @@
-<?
+<?php
 include_once(dirname(__FILE__)."/class.gbft.php");
 
 class blocked_ip extends gbft {
@@ -84,4 +84,3 @@ class blocked_ip extends gbft {
 }
 
 
-?>

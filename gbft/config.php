@@ -1,4 +1,4 @@
-<?
+<?php
 $GLOBALS['db_host'] = 'localhost';
 $GLOBALS['db_name'] = 'u321362200_gbft';
 $GLOBALS['db_user'] = 'u321362200_gbft';
@@ -12,4 +12,3 @@ $GLOBALS['GOOGLE_MAP_API_KEY_WWW'] = false;
 
 $GLOBALS['entity_types'] = array("band","musician", "venue", "event");
 
-?>

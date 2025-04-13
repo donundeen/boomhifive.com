@@ -1,4 +1,4 @@
-<?
+<?php
 
 
 include_once(dirname(__FILE__)."/class.user.php");
@@ -95,5 +95,3 @@ class session extends gbft{
 	
 }
 
-
-?>

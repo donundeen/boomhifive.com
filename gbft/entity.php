@@ -1,4 +1,4 @@
-<?
+<?php
 include_once("setup.php");
 
 include_once(dirname(__FILE__)."/classes/class.entity.php");
@@ -38,4 +38,3 @@ $smarty->assign("ERROR_MSGS", $ERROR_MSGS);
 
 $smarty->display("entity.tpl");
 
-?>

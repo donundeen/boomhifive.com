@@ -1,4 +1,4 @@
-<?
+<?php
 include_once("setup.php");
 
 
@@ -16,4 +16,3 @@ if($input->results['user_registered'] == true){
 
 $smarty->display("new_user.tpl");
 
-?>

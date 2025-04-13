@@ -1,4 +1,4 @@
-<?
+<?php
 
 class calendar extends gbft {
 
@@ -185,4 +185,3 @@ class calendar extends gbft {
 	
 }
 
-?>

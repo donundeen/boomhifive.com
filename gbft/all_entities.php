@@ -1,4 +1,4 @@
-<?
+<?php
 include_once("setup.php");
 
 include_once(dirname(__FILE__)."/classes/class.all_entities.php");

@@ -1,4 +1,4 @@
-<?
+<?php
 include_once(dirname(__FILE__)."/adodb/adodb.inc.php");
 
 include_once(dirname(__FILE__)."/class.gbft.php");
@@ -643,7 +643,3 @@ class process_input extends gbft{
 	
 	
 }
-
-
-
-?>

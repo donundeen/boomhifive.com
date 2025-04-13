@@ -1,4 +1,4 @@
-<?
+<?php
 include_once(dirname(__FILE__)."/adodb/adodb.inc.php");
 
 class gbft {
@@ -81,4 +81,4 @@ $GLOBALS['db_pass'], $GLOBALS['db_name']);
 	
 }
 
-?>
+

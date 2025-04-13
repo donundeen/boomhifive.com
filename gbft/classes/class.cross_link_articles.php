@@ -1,4 +1,4 @@
-<?
+<?php
 include_once(dirname(__FILE__)."/adodb/adodb.inc.php");
 include_once(dirname(__FILE__)."/class.gbft.php");
 
@@ -61,4 +61,3 @@ class cross_link_articles extends gbft{
 	}
 	
 }
-?>

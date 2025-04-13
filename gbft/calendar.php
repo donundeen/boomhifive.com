@@ -1,4 +1,4 @@
-<?
+<?php
 
 include_once("setup.php");
 include_once("classes/class.calendar.php");
@@ -31,4 +31,3 @@ $smarty->assign("prev_month", $calendar->prev_month);
 $smarty->assign("user_events_only", $SESSION->vars['user_events_only']);
 
 $smarty->display("calendar.tpl");
-?>

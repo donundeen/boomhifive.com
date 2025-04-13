@@ -1,4 +1,4 @@
-<?
+<?php
 header("Content-type: text/xml");
 include_once("setup.php");
 
@@ -44,4 +44,3 @@ $smarty->assign("ERROR_MSGS", $ERROR_MSGS);
 
 $smarty->display("entityxml.tpl");
 
-?>

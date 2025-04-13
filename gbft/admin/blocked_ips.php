@@ -1,4 +1,4 @@
-<?
+<?php
 include_once("setup.php");
 
 
@@ -11,4 +11,3 @@ $smarty = $blocked_ip->process_tpl($smarty);
 
 $smarty->display("blocked_ips.tpl");
 
-?>

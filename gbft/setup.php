@@ -1,4 +1,4 @@
-<?
+<?php
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 
@@ -138,4 +138,4 @@ function mysql_real_escape_string($string, $conn){
 function mysql_escape_string($string, $conn){
   return $conn->qstr($string);
 }
-?>
+

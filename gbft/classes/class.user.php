@@ -1,4 +1,4 @@
-<?
+<?php
 
 include_once(dirname(__FILE__)."/class.entity.php");
 
@@ -272,5 +272,3 @@ class user extends entity{
 		
 	}
 }
-
-?>
