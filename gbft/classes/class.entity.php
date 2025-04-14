@@ -127,7 +127,7 @@ class Entity extends gbft{
 			$query = "SELECT
 						* 
 					FROM
-						`".$this->conn->qstr($type)."`
+						`".$type."`
 					WHERE
 						ID = '".$this->conn->qstr(intval($id))."'";
 			$rs = $this->conn->Execute($query);
