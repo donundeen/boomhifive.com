@@ -22,16 +22,12 @@ class user extends entity{
 					name = '".$conn->qstr($user_name)."' AND
 					pass = '".$conn->qstr($user_pass)."'";
 		$rs = $conn->Execute($query);
-		// check if the user exists and has a name
-		if(!$rs){
-			return false;	
+		if ($rs && !$rs->EOF && isset($rs->fields['name'])) {  // Add proper checks
+			$user = new user("member", $rs->fields['ID']);
+			return $user;
 		}
-		if(strlen($rs->fields['name']) == 0){
-			return false;
-		}
-		$user = new user("member", $rs->fields['ID']);
-		return $user;
-		
+		return false;
+
 	}
 
 	
