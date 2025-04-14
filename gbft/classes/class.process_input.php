@@ -42,43 +42,48 @@ class process_input extends gbft{
 	function go(){
 		$this->set_vars();
 		$this->submitter_ip = $_SERVER['REMOTE_ADDR'];
-		switch ($this->vars['action']){
-			case "add_join":
-				$this->add_join();
-				break;
-			case "add_event":
-				$this->add_event();
-				break;
-			case "add_event_from_calendar":
-				$this->add_event_from_calendar();
-				break;
-			case "edit_entity":
-				$this->edit_entity();
-				break;
-			case "edit_join":
-				$this->edit_join();
-				break;
-			case "add_article":
-				$this->add_article();
-				break;
-			case "add_file":
-				$this->add_file();
-				break;
-			case "register_user":
-				$this->register_user();
-				break;
-			case "subscribe_user":
-				$this->subscribe_user();
-				break;
-			case "unsubscribe_user":
-				$this->unsubscribe_user();
-				break;
-			case "delete_join":
-				$this->delete_join();
-				break;
-			case "set_public_visible":
-				$this->set_public_visible();
-				break;
+		if(isset($this->vars['action'])){
+			switch ($this->vars['action']){
+				case "add_join":
+					$this->add_join();
+					break;
+				case "add_event":
+					$this->add_event();
+					break;
+				case "add_event_from_calendar":
+					$this->add_event_from_calendar();
+					break;
+				case "edit_entity":
+					$this->edit_entity();
+					break;
+				case "edit_join":
+					$this->edit_join();
+					break;
+				case "add_article":
+					$this->add_article();
+					break;
+				case "add_file":
+					$this->add_file();
+					break;
+				case "register_user":
+					$this->register_user();
+					break;
+				case "subscribe_user":
+					$this->subscribe_user();
+					break;
+				case "unsubscribe_user":
+					$this->unsubscribe_user();
+					break;
+				case "delete_join":
+					$this->delete_join();
+					break;
+				case "set_public_visible":
+					$this->set_public_visible();
+					break;
+				default:
+					$this->ERROR_MSGS[] = "Invalid Action";
+					break;
+			}
 		}		
 	}
 
