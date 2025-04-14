@@ -129,7 +129,7 @@ class Entity extends gbft{
 					FROM
 						`".$type."`
 					WHERE
-						ID = '".$this->conn->qstr(intval($id))."'";
+						ID = ".$this->conn->qstr(intval($id))."";
 			$rs = $this->conn->Execute($query);
 			print __FILE__.":".__LINE__."<BR>\n";
 			print_r($query);
