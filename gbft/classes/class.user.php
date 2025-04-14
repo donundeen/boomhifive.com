@@ -26,6 +26,9 @@ class user extends entity{
 		if(!$rs){
 			return false;	
 		}
+		if(strlen($rs->fields['name']) == 0){
+			return false;
+		}
 		$user = new user("member", $rs->fields['ID']);
 		return $user;
 		
