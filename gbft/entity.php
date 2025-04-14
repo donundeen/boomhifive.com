@@ -29,8 +29,10 @@ if($type == 'member' && $entity->info['public_visible'] == 'n'){
 
 //echo "<pre>".print_r($entity, true)."</pre>";
 
-$user_subscription_level = $SESSION->user->join_info[$type]['approved'][$id]['subscription_level'];
-$smarty->assign("user_subscription_level", $user_subscription_level);
+if(is_object($SESSION->user)){
+	$user_subscription_level = $SESSION->user->join_info[$type]['approved'][$id]['subscription_level'];
+	$smarty->assign("user_subscription_level", $user_subscription_level);
+}
 
 unset($entity->conn);
 $smarty->assign("entity",$entity);
