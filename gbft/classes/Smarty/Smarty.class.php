@@ -13,7 +13,6 @@
 // $smarty->testInstall();                                         //
 /////////////////////////////////////////////////////////////////////
 
-//define('__SMARTY_DIR', __DIR__ . '/../src/');
 define('__SMARTY_DIR', __DIR__ . '/src/');
 
 // Global function declarations
