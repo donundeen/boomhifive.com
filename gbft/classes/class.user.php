@@ -22,7 +22,8 @@ class user extends entity{
 					name = '".$conn->qstr($user_name)."' AND
 					pass = '".$conn->qstr($user_pass)."'";
 		$rs = $conn->Execute($query);
-		if(!$rs or ($rs and strlen($rs->fields['name']) == 0)){
+		// check if the user exists and has a name
+		if(!$rs){
 			return false;	
 		}
 		$user = new user("member", $rs->fields['ID']);
