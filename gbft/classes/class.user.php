@@ -22,7 +22,7 @@ class user extends entity{
 					name = '".$conn->qstr($user_name)."' AND
 					pass = '".$conn->qstr($user_pass)."'";
 		$rs = $conn->Execute($query);
-		if(!$rs or strlen($rs->fields['name']) == 0){
+		if(!$rs or ($rs and strlen($rs->fields['name']) == 0)){
 			return false;	
 		}
 		$user = new user("member", $rs->fields['ID']);
