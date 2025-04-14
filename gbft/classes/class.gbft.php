@@ -17,13 +17,15 @@ class gbft {
 								"member_musician", 
 								"band_member");
 	
-	var $conn = false;							
+	// instance of the connection object
+	var $conn = null;							
 		
 	function get_conn(){
 
 		$this->conn = gbft::static_get_conn();
-		if($_POST['db_debug'] == 'true' or $_GET['db_debug'] == 
-'true' or $GLOBALS['db_debug'] == true){
+		if(isset($_POST['db_debug']) and $_POST['db_debug'] == 'true' or 
+			isset($_GET['db_debug']) and $_GET['db_debug'] == 'true' or 
+			isset($GLOBALS['db_debug']) and $GLOBALS['db_debug'] == true){
 			$this->conn->debug=true;
 		}
 		return $this->conn;
