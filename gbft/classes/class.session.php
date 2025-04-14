@@ -22,15 +22,20 @@ class session extends gbft{
 		$this->conn->debug = true;
 		session_start();
 		foreach($this->session_vars as $varname){
-			$this->vars[$varname] = $_SESSION[$varname];	
+			if(isset($_SESSION[$varname])){
+				$this->vars[$varname] = $_SESSION[$varname];	
+			}else{
+				$this->vars[$varname] = "";
+			}
 		}
-		if($_REQUEST['user_events_only'] == 'true'){
+		if(isset($_REQUEST['user_events_only']) and $_REQUEST['user_events_only'] == 'true'){
 			$this->vars['user_events_only'] = $_REQUEST['user_events_only'];
 		}
-		if($_REQUEST['user_events_only'] == 'false'){
+		if(isset($_REQUEST['user_events_only']) and $_REQUEST['user_events_only'] == 'false'){
 			unset($this->vars['user_events_only']);		
 		}
-		if($_GET['action'] == "logout_user" && $_POST['action'] != 'login_user'){
+		if(isset($_GET['action']) and $_GET['action'] == "logout_user" and 
+			isset($_POST['action']) and $_POST['action'] != 'login_user'){
 			$this->logout_user();
 		}else{
 			$this->login_user();
@@ -40,8 +45,6 @@ class session extends gbft{
 	function login_user(){
 		
 		global $ERROR_MSGS;
-		
-		
 		
 		$user_name = $_POST['user_name'];
 		$user_pass = $_POST['user_pass'];
