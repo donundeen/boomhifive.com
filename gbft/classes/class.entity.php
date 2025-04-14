@@ -45,8 +45,6 @@ class Entity extends gbft{
 	
 	function populate_entity(){
 		$this->get_entity_info();
-		print __FILE__.":".__LINE__."<BR>\n";
-		print_r($this->info);
 		if(count($this->info)== 0){
 			echo "i got nothing";
 			return false;
