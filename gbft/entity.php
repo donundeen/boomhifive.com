@@ -6,10 +6,8 @@ include_once(dirname(__FILE__)."/classes/class.entity.php");
 $type = $input->vars['type'];
 $id = $input->vars['id'];
 
-print __FILE__.":".__LINE__."<BR>\n";
 
 $entity = new Entity($type, $id);
-print __FILE__.":".__LINE__."<BR>\n";
 
 if(is_object($SESSION->user)){
 	$entity->set_user($SESSION->user);

@@ -30,13 +30,10 @@ class Entity extends gbft{
 
 	
 	function __construct($type = "", $id = ""){
-		print __FILE__.":".__LINE__."<BR>\n";
 		$this->get_conn();
 		
 		$this->set_type($type);
 		$this->set_id($id);
-		print $this->type;
-		print $this->id;
 	//	$this->populate_entity();
 	}
 
