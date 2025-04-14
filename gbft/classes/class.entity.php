@@ -131,6 +131,9 @@ class Entity extends gbft{
 					WHERE
 						ID = '".$this->conn->qstr(intval($id))."'";
 			$rs = $this->conn->Execute($query);
+			print __FILE__.":".__LINE__."<BR>\n";
+			print_r($query);
+			print_r($rs);
 			if($rs){
 				$this->info = $rs->fields;
 				if($type == 'event'){
