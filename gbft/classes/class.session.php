@@ -45,9 +45,15 @@ class session extends gbft{
 	function login_user(){
 		
 		global $ERROR_MSGS;
+		$user_name = "";
+		$user_pass = "";
+		if(isset($_POST['user_name'])){
+			$user_name = $_POST['user_name'];
+		}
+		if(isset($_POST['user_pass'])){
+			$user_pass = $_POST['user_pass'];
+		}
 		
-		$user_name = $_POST['user_name'];
-		$user_pass = $_POST['user_pass'];
 		if(strlen($user_name) > 0){
 			$user = user::get_valid_user($this->conn, $user_name, $user_pass);
 			if(!$user){
