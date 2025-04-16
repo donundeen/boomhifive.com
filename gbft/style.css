@@ -22,7 +22,7 @@ position: relative;
 
 /* change this to hide the forms?*/
 .hideable{
-	display: block;
+	display: none;
 }
 
 .middle {
