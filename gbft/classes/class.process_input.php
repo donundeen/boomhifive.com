@@ -432,7 +432,7 @@ class process_input extends gbft{
 					status = 'new'
 					$add_clause,
 					submitter_ip = '".$this->submitter_ip."' ";
-		if(count($this->ERROR_MSGS) == 0 ){
+		if($this->ERROR_MSGS and count($this->ERROR_MSGS) == 0 ){
 			$rs = $this->conn->Execute($query);
 			return $this->conn->Insert_ID();
 			
