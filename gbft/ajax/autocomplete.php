@@ -10,7 +10,7 @@
 	
 	You submitted  <?=$_GET['q']?><BR>
 	<form name="searchform" id="searchform"  onsubmit="return liveSearchSubmit()">
-	<input type="text" id="livesearch", name="q"  onkeypress="liveSearchStart()" >
+	<input type="text" class="livesearch", name="q"  onkeypress="liveSearchStart()" >
 	<div id="LSResult" style="display: none;"><div id="LSShadow"></div></div>
 	</form>
 	

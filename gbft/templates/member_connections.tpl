@@ -8,7 +8,7 @@
 <input type=hidden name=type value="{$entity->type}">
 <input type=hidden name=id value="{$entity->id}">
 Add Band:
-<input type=text id="livesearch" name="entity2_name" size=20  onkeypress="liveSearchStart('band_searchform','entity2_name','band','livesearch.php');" >
+<input type=text class="livesearch" name="entity2_name" size=20  onkeypress="liveSearchStart('band_searchform','entity2_name','band','livesearch.php');" >
 <input type=hidden  name=entity2_type value="band">
 <div id="band_searchform_entity2_name_LSResult" style="display: none;"><div id="band_searchform_entity2_name_LSShadow"></div></div>
 
@@ -26,7 +26,7 @@ Add Band:
 <input type=hidden name=id value="{$entity->id}">
 <input type=hidden  name=entity2_type value="musician">
 Add Band Member:
-<input type=text id="livesearch" name="entity2_name" size=20  onkeypress="liveSearchStart('musician_searchform','entity2_name','musician','livesearch.php');" >
+<input type=text class="livesearch" name="entity2_name" size=20  onkeypress="liveSearchStart('musician_searchform','entity2_name','musician','livesearch.php');" >
 <div id="musician_searchform_entity2_name_LSResult" style="display: none;"><div id="musician_searchform_entity2_name_LSShadow"></div></div>
 
 <input type=submit name=submit value=Add>
@@ -42,7 +42,7 @@ Add Band Member:
 <input type=hidden name=type value="{$entity->type}">
 <input type=hidden name=id value="{$entity->id}">
 Add Venue:
-<input type=text id="livesearch" name="entity2_name" size=20  onkeypress="liveSearchStart('venue_searchform','entity2_name','venue','livesearch.php');" >
+<input type=text class="livesearch" name="entity2_name" size=20  onkeypress="liveSearchStart('venue_searchform','entity2_name','venue','livesearch.php');" >
 <input type=hidden  name=entity2_type value="venue">
 <div id="venue_searchform_entity2_name_LSResult" style="display: none;"><div id="venue_searchform_entity2_name_LSShadow"></div></div>
 <input type=submit name=submit value=Add>

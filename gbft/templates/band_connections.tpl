@@ -9,7 +9,7 @@
 <input type=hidden name=id value="{$entity->id}">
 <input type=hidden  name=entity2_type value="musician">
 Add Band Member:
-<input type=text id="livesearch" name="entity2_name" size=20  onkeypress="liveSearchStart('musician_searchform','entity2_name','musician','livesearch.php');" >
+<input type=text class="livesearch" name="entity2_name" size=20  onkeypress="liveSearchStart('musician_searchform','entity2_name','musician','livesearch.php');" >
 <div id="musician_searchform_entity2_name_LSResult" style="display: none;"><div id="musician_searchform_entity2_name_LSShadow"></div></div>
 
 
@@ -52,7 +52,7 @@ This Band starts at:
 {include file="pick_time_element.tpl" element_name="details"}
 <BR>
 At venue:
-<input type=text id="livesearch" name="entity2_name" size=20  onkeypress="liveSearchStart('venue_searchform','entity2_name','venue','livesearch.php');" >
+<input type=text class="livesearch" name="entity2_name" size=20  onkeypress="liveSearchStart('venue_searchform','entity2_name','venue','livesearch.php');" >
 <div id="venue_searchform_entity2_name_LSResult" style="display: none;"><div id="venue_searchform_entity2_name_LSShadow"></div></div>
 
 {if $user_subscription_level eq 'private'}

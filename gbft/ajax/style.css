@@ -9,7 +9,7 @@ width: auto;
 
 /* LiveSearch */
 
-#livesearch {
+.livesearch {
 margin: 0px 0px 0px 0px;
 padding:0px;
 width: 140px;
@@ -18,7 +18,7 @@ border:1px solid #99b58d;
 }
 
 
-#livesearch2 {
+.livesearch2 {
 margin: 0px 0px 0px 0px;
 padding:0px;
 width: 140px;
