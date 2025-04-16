@@ -40,7 +40,7 @@ class process_input extends gbft{
 	}	
 	
 	function go(){
-		print(__FILE__.":".__LINE__);
+		print(__FILE__.":".__LINE__."\n");
 
 		$this->set_vars();
 		print_r($this->vars);
@@ -95,7 +95,7 @@ class process_input extends gbft{
 	
 	
 	function add_join(){
-		print(__FILE__.":".__LINE__);
+		print(__FILE__.":".__LINE__."\n");
 		$entity1_type = trim($this->vars['entity1_type']);	
 		$entity2_type = trim($this->vars['entity2_type']);	
 		$entity1_name = trim($this->vars['entity1_name']);
@@ -113,11 +113,12 @@ class process_input extends gbft{
 			$entity1_id = $this->get_entity_id($entity1_type, $entity1_name);
 		}
 		if(strlen($entity2_id) == 0){
+			print(__FILE__.":".__LINE__."\n");
 			$entity2_id = $this->get_entity_id($entity2_type, $entity2_name);
 		}
 
 		if(!$this->join_exists($entity1_type, $entity2_type, $entity1_id, $entity2_id, $join_details)){
-			print(__FILE__.":".__LINE__);
+			print(__FILE__.":".__LINE__."\n");
 			$this->insert_join($entity1_type, $entity2_type, $entity1_id, $entity2_id, $join_details);
 		}	
 	}
@@ -272,13 +273,13 @@ class process_input extends gbft{
 		}
 		if($entity1_type == 'member' && (!is_object($this->user) or $entity1_id != $this->user->info['ID'])){
 			// only members can edit their own information
-			print(__FILE__.":".__LINE__);
+			print(__FILE__.":".__LINE__."\n");
 			return false;
 		}
 		
 		if($entity2_type == 'member' && (!is_object($this->user) or $entity2_id != $this->user->info['ID'])){
 			// only members can edit their own information
-			print(__FILE__.":".__LINE__);
+			print(__FILE__.":".__LINE__."\n");
 			return false;
 		}
 		
@@ -323,7 +324,10 @@ class process_input extends gbft{
 	
 	
 	function get_entity_id($entity_type, $entity_name){
+		print(__FILE__.":".__LINE__."\n");
 		if(strlen($entity_name) == 0){
+			print(__FILE__.":".__LINE__."\n");
+
 			return false;
 		}
 		$method_name = "get_entity_".$entity_type."_additional_where";
@@ -346,6 +350,7 @@ class process_input extends gbft{
 					status
 				LIMIT
 					1";
+		print(__FILE__.":".__LINE__.$query."\n");
 		$rs = $this->conn->Execute($query);
 		if($rs && strlen($rs->fields['ID']) > 0){
 			return $rs->fields['ID'];
