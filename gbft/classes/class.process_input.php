@@ -116,6 +116,7 @@ class process_input extends gbft{
 		}
 
 		if(!$this->join_exists($entity1_type, $entity2_type, $entity1_id, $entity2_id, $join_details)){
+			print(__FILE__.":".__LINE__);
 			$this->insert_join($entity1_type, $entity2_type, $entity1_id, $entity2_id, $join_details);
 		}	
 	}
@@ -270,11 +271,13 @@ class process_input extends gbft{
 		}
 		if($entity1_type == 'member' && (!is_object($this->user) or $entity1_id != $this->user->info['ID'])){
 			// only members can edit their own information
+			print(__FILE__.":".__LINE__);
 			return false;
 		}
 		
 		if($entity2_type == 'member' && (!is_object($this->user) or $entity2_id != $this->user->info['ID'])){
 			// only members can edit their own information
+			print(__FILE__.":".__LINE__);
 			return false;
 		}
 		
@@ -288,6 +291,9 @@ class process_input extends gbft{
 					details = '".$this->conn->qstr($join_details)."',
 					status = '$status',
 					submitter_ip = '".$this->submitter_ip."' ";
+					print(__FILE__.":".__LINE__.$query);
+
+
 		$rs = $this->conn->Execute($query);
 	}
 	
