@@ -62,7 +62,6 @@ $input->set_vars();
 if($SESSION->user){
 	$input->set_user($SESSION->user);
 }
-print(__FILE__.":".__LINE__);
 
 $input->go();
 
