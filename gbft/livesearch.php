@@ -36,17 +36,17 @@ $query = "SELECT
 		order by
 			name";
 
-print ("query:".$query);
+//print ("query:".$query);
 //$conn->debug=true;
 $rows = $conn->GetArray($query);
 
 ?><div class="LSRes"><?php
 ?><div class="LSRow"><a href="javascript:set_name('<?=$formname?>','<?=$element_name?>','');"><font style="normal" color=black>pick a <?=$type?> or keep typing</font></a></div><?php
-print("rows:".print_r($rows,true));
+//print("rows:".print_r($rows,true));
 if(is_array($rows)){
-	print("row");
+//	print("row");
 	foreach($rows as $row){
-		print_r($row);
+//		print_r($row);
 		$name = $row['name'];
 		?><div class="LSRow"><a href="javascript:set_name('<?=$formname?>','<?=$element_name?>','<?=addslashes($name)?>');"><?=$name?></a></div><?php
 		$i++;
