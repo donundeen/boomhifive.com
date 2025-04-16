@@ -40,14 +40,14 @@ $query = "SELECT
 //$conn->debug=true;
 $rows = $conn->GetArray($query);
 
-?><div class="LSRes"><?
-?><div class="LSRow"><a href="javascript:set_name('<?=$formname?>','<?=$element_name?>','');"><font style="normal" color=black>pick a <?=$type?> or keep typing</font></a></div><?
+?><div class="LSRes"><?php
+?><div class="LSRow"><a href="javascript:set_name('<?=$formname?>','<?=$element_name?>','');"><font style="normal" color=black>pick a <?=$type?> or keep typing</font></a></div><?php
 print("rows:".print_r($rows,true));
 if(is_array($rows)){
 	foreach($rows as $row){
 		print_r($row);
 		$name = $row['name'];
-		?><div class="LSRow"><a href="javascript:set_name('<?=$formname?>','<?=$element_name?>','<?=addslashes($name)?>');"><?=$name?></a></div><?
+		?><div class="LSRow"><a href="javascript:set_name('<?=$formname?>','<?=$element_name?>','<?=addslashes($name)?>');"><?=$name?></a></div><?php
 		$i++;
 	}
 }
