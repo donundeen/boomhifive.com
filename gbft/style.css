@@ -20,8 +20,9 @@ position: relative;
 	color: black;
 }
 
+/* change this to hide the forms?*/
 .hideable{
-	display: none;
+	display: block;
 }
 
 .middle {
