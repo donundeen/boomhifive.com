@@ -36,7 +36,7 @@ $query = "SELECT
 		order by
 			name";
 
-print $query;
+print ("query:".$query);
 //$conn->debug=true;
 $rows = $conn->GetArray($query);
 
