@@ -30,7 +30,7 @@ $query = "SELECT
 			FROM
 		$type
 			WHERE
-			name like '".$conn->qstr($request)."%'
+			name like ".$conn->qstr($request."%")."
 		group by
 			name
 		order by
