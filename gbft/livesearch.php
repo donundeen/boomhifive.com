@@ -30,7 +30,7 @@ $query = "SELECT
 			FROM
 		$type
 			WHERE
-			name like '".mysql_escape_string($request)."%'
+			name like '".$conn->qstr($request)."%'
 		group by
 			name
 		order by
