@@ -42,6 +42,7 @@ $rows = $conn->GetArray($query);
 
 ?><div class="LSRes"><?
 ?><div class="LSRow"><a href="javascript:set_name('<?=$formname?>','<?=$element_name?>','');"><font style="normal" color=black>pick a <?=$type?> or keep typing</font></a></div><?
+print("rows");
 print_r($rows);
 if(is_array($rows)){
 		print_r($row);
