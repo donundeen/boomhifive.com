@@ -43,7 +43,6 @@ class process_input extends gbft{
 		
 
 		$this->set_vars();
-		print_r($this->vars);
 		$this->submitter_ip = $_SERVER['REMOTE_ADDR'];
 		if(isset($this->vars['action'])){
 			switch ($this->vars['action']){
@@ -125,7 +124,6 @@ class process_input extends gbft{
 
 	function add_event(){
 		
-		print_r($this->vars);
 		
 		$this->vars['band_event_details'] = sprintf("%02s",$this->vars['detailstime_hour']).":".sprintf("%02s",$this->vars['detailstime_minute']);
 		
@@ -293,7 +291,6 @@ class process_input extends gbft{
 					details = ".$this->conn->qstr($join_details).",
 					status = '$status',
 					submitter_ip = '".$this->submitter_ip."' ";
-					print(__FILE__.":".__LINE__.$query);
 
 
 		$rs = $this->conn->Execute($query);
@@ -350,7 +347,6 @@ class process_input extends gbft{
 					status
 				LIMIT
 					1";
-		print(__FILE__.":".__LINE__.$query."\n");
 		$rs = $this->conn->Execute($query);
 		if($rs && strlen($rs->fields['ID']) > 0){
 			return $rs->fields['ID'];
