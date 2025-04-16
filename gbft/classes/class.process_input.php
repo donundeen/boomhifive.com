@@ -43,6 +43,7 @@ class process_input extends gbft{
 		print(__FILE__.":".__LINE__);
 
 		$this->set_vars();
+		print_r($this->vars);
 		$this->submitter_ip = $_SERVER['REMOTE_ADDR'];
 		if(isset($this->vars['action'])){
 			switch ($this->vars['action']){
