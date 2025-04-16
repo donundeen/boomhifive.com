@@ -47,12 +47,12 @@ class cross_link_articles extends gbft{
 		                    text = REPLACE(text, '".$this->conn->qstr($name)."', '[[".$this->conn->qstr($name)."]]'),
 		                    submit_date = submit_date
 		                  where
-		                    text like '% ".$this->conn->qstr($name)." %' or
-		                    text like '% ".$this->conn->qstr($name)."\'s %' or
-		                    text like '% ".$this->conn->qstr($name).",%' or
-		                    text like '% ".$this->conn->qstr($name)."\'s,%' or
-		                    text like '% ".$this->conn->qstr($name).".%' or
-		                    text like '% ".$this->conn->qstr($name)."\'s.%'";
+		                    text like ".$this->conn->qstr('% '.$name.' %')." or
+		                    text like ".$this->conn->qstr('% '.$name."\'s %")." or
+		                    text like ".$this->conn->qstr('% '.$name.',%')." or
+		                    text like ".$this->conn->qstr('% '.$name."\'s,%")." or
+		                    text like ".$this->conn->qstr('% '.$name.'.%')." or
+		                    text like ".$this->conn->qstr('% '.$name."\'s.%'");
 		        $this->conn->Execute($query);
 		        echo "<pre>".__LINE__." ".print_r($query, true)."</pre>";
 		    }

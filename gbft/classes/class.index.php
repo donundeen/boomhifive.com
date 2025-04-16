@@ -77,7 +77,7 @@ class Index extends gbft{
 					FROM
 						$type
 					WHERE
-						ID = '$this->conn->qstr($id)'";
+						ID = ".$this->conn->qstr($id);
 			$rs = $this->conn->Execute($query);
 			if($rs && strlen($rs->fields['name']) > 0){
 				$row['entity_name'] = $rs->fields['name'];

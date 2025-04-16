@@ -95,7 +95,7 @@ class user extends entity{
 						bm.band_ID = b.ID
 				WHERE
 					mm.subscription_level = '$level' AND
-					mm.member_ID = '".$this->conn->qstr($this->id)."'
+					mm.member_ID = ".$this->conn->qstr($this->id)."
 					";
 		return $this->conn->GetAssoc($query);		
 	}
@@ -215,7 +215,7 @@ class user extends entity{
 						ev.venue_ID = v.ID
 				WHERE
 					subscription_level = '$level' AND
-					mm.member_ID = '".$this->conn->qstr($this->id)."' 
+					mm.member_ID = ".$this->conn->qstr($this->id)." 
 					$start_where
 					$end_where
 				GROUP BY 
@@ -262,7 +262,7 @@ class user extends entity{
 						ev.event_ID = e.ID
 				WHERE
 					subscription_level = '$level' AND
-					mv.member_ID  = '".$this->conn->qstr($this->id)."' 
+					mv.member_ID  = ".$this->conn->qstr($this->id)." 
 					$start_where
 					$end_where
 				GROUP BY 

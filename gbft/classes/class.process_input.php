@@ -288,9 +288,9 @@ class process_input extends gbft{
 		$query = "INSERT INTO 
 					$table_name
 				SET
-					".$entity1_type."_ID = '".$this->conn->qstr($entity1_id)."',
-					".$entity2_type."_ID = '".$this->conn->qstr($entity2_id)."',
-					details = '".$this->conn->qstr($join_details)."',
+					".$entity1_type."_ID = ".$this->conn->qstr($entity1_id).",
+					".$entity2_type."_ID = ".$this->conn->qstr($entity2_id).",
+					details = ".$this->conn->qstr($join_details).",
 					status = '$status',
 					submitter_ip = '".$this->submitter_ip."' ";
 					print(__FILE__.":".__LINE__.$query);
@@ -313,8 +313,8 @@ class process_input extends gbft{
 			$query = "DELETE FROM
 						$table_name
 					WHERE
-						".$this->conn->qstr($entity1_type)."_ID = '".$this->conn->qstr($entity1_id)."' AND
-						".$this->conn->qstr($entity2_type)."_ID = '".$this->conn->qstr($entity2_id)."' ";
+						".$this->conn->qstr($entity1_type)."_ID = ".$this->conn->qstr($entity1_id)." AND
+						".$this->conn->qstr($entity2_type)."_ID = ".$this->conn->qstr($entity2_id)." ";
 			$rs = $this->conn->Execute($query);
 						
 		}
@@ -344,7 +344,7 @@ class process_input extends gbft{
 				FROM
 					$entity_type
 				WHERE
-					name LIKE '".$this->conn->qstr($entity_name)."'
+					name LIKE ".$this->conn->qstr($entity_name)."
 					$additional_where
 				ORDER BY
 					status
@@ -420,11 +420,11 @@ class process_input extends gbft{
 		$query = "INSERT INTO 
 					$table_name
 				SET
-					".$entity1_type."_ID = '".$this->conn->qstr($entity1_id)."',
-					".$entity2_type."_ID = '".$this->conn->qstr($entity2_id)."',
-					details = '".$this->conn->qstr($join_details)."',
+					".$entity1_type."_ID = ".$this->conn->qstr($entity1_id).",
+					".$entity2_type."_ID = ".$this->conn->qstr($entity2_id).",
+					details = ".$this->conn->qstr($join_details).",
 					status = 'change',
-					orig_id  = '".$this->conn->qstr($orig_id)."',
+					orig_id  = ".$this->conn->qstr($orig_id).",
 					submitter_ip = '".$this->submitter_ip."' ";
 		$rs = $this->conn->Execute($query);
 		
@@ -443,7 +443,7 @@ class process_input extends gbft{
 		$query = "INSERT INTO
 					$entity_type
 				SET
-				 	name = '".$this->conn->qstr($entity_name)."',
+				 	name = ".$this->conn->qstr($entity_name).",
 					status = 'new'
 					$add_clause,
 					submitter_ip = '".$this->submitter_ip."' ";
@@ -466,15 +466,15 @@ class process_input extends gbft{
 		}
 		$add_clause = ",start_date = '".date("Y-m-d", $start_date_ts)."',
 						start_time = '".date("H:i:s", $start_date_ts)."',
-						event_type = '".$this->conn->qstr($event_type)."'";
+						event_type = ".$this->conn->qstr($event_type);
 		return $add_clause;
 	}
 	
 	function add_entity_member_clause($entity_type, $entity_name){
 		$email = $this->vars['email_address'];
 		$password = $this->vars['password'];
-		$clause = ", email_address = '".$this->conn->qstr($email)."',
-					pass = '".$this->conn->qstr($password)."' ";
+		$clause = ", email_address = ".$this->conn->qstr($email).",
+					pass = ".$this->conn->qstr($password)." ";
 		return $clause;	
 		
 	}
@@ -485,9 +485,9 @@ class process_input extends gbft{
 		$state = $this->vars['state'];
 		
 		
-		$clause = ",address =  '".$this->conn->qstr($address)."',
-					city = '".$this->conn->qstr($city)."',
-					state = '".$this->conn->qstr($state)."'";
+		$clause = ",address =  ".$this->conn->qstr($address).",
+					city = ".$this->conn->qstr($city).",
+					state = ".$this->conn->qstr($state);
 		return $clause;
 	}	
 	
@@ -531,11 +531,11 @@ class process_input extends gbft{
 			$query = "INSERT INTO 
 						articles
 					SET
-						entity_type = '".$this->conn->qstr($entity_type)."',
-						entity_ID = '".$this->conn->qstr($entity_id)."',
-						text = '".$this->conn->qstr($text)."',
-						submitter_name = '".$this->conn->qstr($submitter_name)."',
-						submitter_email = '".$this->conn->qstr($submitter_email)."',
+						entity_type = ".$this->conn->qstr($entity_type).",
+						entity_ID = ".$this->conn->qstr($entity_id).",
+						text = ".$this->conn->qstr($text).",
+						submitter_name = ".$this->conn->qstr($submitter_name).",
+						submitter_email = ".$this->conn->qstr($submitter_email).",
 						status = 'new',
 						submitter_ip = '".$this->submitter_ip."' ";
 			$rs = $this->conn->Execute($query);
@@ -647,12 +647,12 @@ class process_input extends gbft{
 		$query = "INSERT INTO
 					submitted_files
 				SET
-					filename		 = '".$this->conn->qstr(basename($_FILES['submitted_files']['name']['userfile']))."',
-					description		 = '".$this->conn->qstr($this->vars['submitted_files']['description'])."',
-					submitter_name	 = '".$this->conn->qstr($submitter_name)."',
-					submitter_email	 = '".$this->conn->qstr($submitter_email)."',
-					entity_type		 = '".$this->conn->qstr($entity_type)."',
-					entity_ID		 = '".$this->conn->qstr($entity_id)."',
+					filename		 = ".$this->conn->qstr(basename($_FILES['submitted_files']['name']['userfile'])).",
+					description		 = ".$this->conn->qstr($this->vars['submitted_files']['description']).",
+					submitter_name	 = ".$this->conn->qstr($submitter_name).",
+					submitter_email	 = ".$this->conn->qstr($submitter_email).",
+					entity_type		 = ".$this->conn->qstr($entity_type).",
+					entity_ID		 = ".$this->conn->qstr($entity_id).",
 					status			 = 'new'";
 		$rs = $this->conn->Execute($query);
 		

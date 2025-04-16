@@ -50,7 +50,7 @@ class Search extends gbft{
 						ON
 							a.entity_id = e.ID
 					WHERE
-						a.entity_type = '".$this->conn->qstr($page_name)."' AND
+						a.entity_type = ".$this->conn->qstr($page_name)." AND
 						$where
 					ORDER BY
 						e.name";

@@ -35,7 +35,7 @@ class blocked_ip extends gbft {
 	
 	function insert_blocked_ip($ip_address){
 
-		$query = "INSERT IGNORE INTO blocked_ip SET ip_address = '".$this->conn->qstr($ip_address)."'";
+		$query = "INSERT IGNORE INTO blocked_ip SET ip_address = ".$this->conn->qstr($ip_address)."";
 		$this->conn->Execute($query);
 	}
 	
@@ -50,7 +50,7 @@ class blocked_ip extends gbft {
 	public static function ip_blocked($ip_address){
 
 		$conn = gbft::static_get_conn();
-		$query = "SELECT blocked_ip_id FROM blocked_ip WHERE ip_address = '".$conn->qstr($ip_address)."'";
+		$query = "SELECT blocked_ip_id FROM blocked_ip WHERE ip_address = ".$conn->qstr($ip_address);
 		try {    
 			$rs = $conn->Execute($query);
 			if($rs && !$rs->EOF) {
