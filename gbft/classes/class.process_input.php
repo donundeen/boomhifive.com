@@ -40,6 +40,8 @@ class process_input extends gbft{
 	}	
 	
 	function go(){
+		print(__FILE__.":".__LINE__);
+
 		$this->set_vars();
 		$this->submitter_ip = $_SERVER['REMOTE_ADDR'];
 		if(isset($this->vars['action'])){
@@ -92,6 +94,7 @@ class process_input extends gbft{
 	
 	
 	function add_join(){
+		print(__FILE__.":".__LINE__);
 		$entity1_type = trim($this->vars['entity1_type']);	
 		$entity2_type = trim($this->vars['entity2_type']);	
 		$entity1_name = trim($this->vars['entity1_name']);
