@@ -42,13 +42,14 @@ $rows = $conn->GetArray($query);
 
 ?><div class="LSRes"><?
 ?><div class="LSRow"><a href="javascript:set_name('<?=$formname?>','<?=$element_name?>','');"><font style="normal" color=black>pick a <?=$type?> or keep typing</font></a></div><?
-print("rows");
-print_r($rows);
+print("rows:".print_r($rows,true));
 if(is_array($rows)){
+	foreach($rows as $row){
 		print_r($row);
 		$name = $row['name'];
 		?><div class="LSRow"><a href="javascript:set_name('<?=$formname?>','<?=$element_name?>','<?=addslashes($name)?>');"><?=$name?></a></div><?
 		$i++;
 	}
 }
-?></div>
+?>
+</div>
