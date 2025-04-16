@@ -44,6 +44,7 @@ $rows = $conn->GetArray($query);
 ?><div class="LSRow"><a href="javascript:set_name('<?=$formname?>','<?=$element_name?>','');"><font style="normal" color=black>pick a <?=$type?> or keep typing</font></a></div><?php
 print("rows:".print_r($rows,true));
 if(is_array($rows)){
+	print("row");
 	foreach($rows as $row){
 		print_r($row);
 		$name = $row['name'];
