@@ -49,7 +49,7 @@ if(is_array($rows)){
 //		print_r($row);
 		$name = $row['name'];
 		?><div class="LSRow"><a href="javascript:set_name('<?=$formname?>','<?=$element_name?>','<?=addslashes($name)?>');"><?=$name?></a></div><?php
-		$i++;
+//		$i++;
 	}
 }
 ?>
