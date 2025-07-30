@@ -231,6 +231,35 @@
             max-width: 90%;
         }
 
+        .learn-more-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .learn-more-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+        }
+
+        .learn-more-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
+            background: linear-gradient(135deg, #3a8bfe 0%, #00d4fe 100%);
+        }
+
+        .learn-more-link:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 10px rgba(79, 172, 254, 0.3);
+        }
+
 
 
         .no-cards {
@@ -303,6 +332,11 @@
             
             .example {
                 font-size: 1em;
+            }
+            
+            .learn-more-link {
+                padding: 8px 16px;
+                font-size: 13px;
             }
         }
     </style>
@@ -386,6 +420,9 @@
                         <div class="example" id="backExample"></div>
                     </div>
                 </div>
+            </div>
+            <div class="learn-more-container">
+                <a href="#" id="learnMoreLink" target="_blank" class="learn-more-link">Learn More</a>
             </div>
         </div>
 
@@ -1916,6 +1953,7 @@
                 this.totalCardsEl = document.getElementById('totalCards');
                 this.remainingCardsEl = document.getElementById('remainingCards');
                 this.correctCardsEl = document.getElementById('correctCards');
+                this.learnMoreLink = document.getElementById('learnMoreLink');
             }
 
             bindEvents() {
@@ -2107,6 +2145,9 @@
                     this.backWord.textContent = frenchWord;
                     this.backExample.textContent = frenchExample;
                 }
+
+                // Update Learn More link
+                this.updateLearnMoreLink(frenchWord);
             }
 
             flipCard() {
@@ -2193,6 +2234,9 @@
                 this.backExample.textContent = '';
                 this.flashcard.classList.remove('flipped');
                 
+                // Hide Learn More link
+                this.hideLearnMoreLink();
+                
                 // Add reset button
                 const resetBtn = document.createElement('button');
                 resetBtn.textContent = 'Start Over';
@@ -2215,12 +2259,31 @@
                 this.frontExample.textContent = message;
                 this.backWord.textContent = '';
                 this.backExample.textContent = '';
+                
+                // Hide Learn More link
+                this.hideLearnMoreLink();
+            }
+
+            updateLearnMoreLink(frenchWord) {
+                if (this.learnMoreLink) {
+                    const searchQuery = encodeURIComponent(`meaning and use of "${frenchWord}" in French`);
+                    this.learnMoreLink.href = `https://www.google.com/search?q=${searchQuery}`;
+                    this.learnMoreLink.style.display = 'inline-block';
+                }
+            }
+
+            hideLearnMoreLink() {
+                if (this.learnMoreLink) {
+                    this.learnMoreLink.style.display = 'none';
+                }
             }
         }
 
         // Initialize the app when the page loads
         document.addEventListener('DOMContentLoaded', () => {
-            new FlashcardApp();
+            const app = new FlashcardApp();
+            // Hide Learn More link initially
+            app.hideLearnMoreLink();
         });
     </script>
 </body>
