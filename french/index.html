@@ -1,0 +1,2227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>French Learning Flashcards</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .controls {
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .control-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .control-group label {
+            font-weight: 600;
+            color: #495057;
+            min-width: 120px;
+        }
+
+        select, button {
+            padding: 10px 15px;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            font-size: 14px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        select:focus, button:focus {
+            outline: none;
+            border-color: #4facfe;
+            box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
+        }
+
+        button:hover {
+            background: #4facfe;
+            color: white;
+            border-color: #4facfe;
+        }
+
+        .stats {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .stat {
+            background: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #4facfe;
+        }
+
+        .stat-label {
+            font-size: 0.8em;
+            color: #6c757d;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .flashcard-container {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+        }
+
+        .card-legend {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 15px 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #e9ecef;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9em;
+            color: #495057;
+        }
+
+        .legend-key {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 4px 8px;
+            font-weight: bold;
+            color: #495057;
+            font-size: 0.8em;
+            min-width: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+
+        .legend-key:hover {
+            background: #e9ecef;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .legend-key:active {
+            transform: translateY(0);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .flashcard {
+            width: 100%;
+            max-width: 600px;
+            height: 350px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .flashcard.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .card-front {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .card-back {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .word {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .example {
+            font-size: 1.2em;
+            line-height: 1.6;
+            opacity: 0.9;
+            max-width: 90%;
+        }
+
+
+
+        .no-cards {
+            text-align: center;
+            padding: 60px 20px;
+            color: #6c757d;
+            font-size: 1.2em;
+        }
+
+        .no-cards h2 {
+            margin-bottom: 20px;
+            color: #495057;
+        }
+
+        .reset-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            margin-left: 10px;
+        }
+
+        .reset-btn:hover {
+            background: #c82333;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .control-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .control-group label {
+                min-width: auto;
+            }
+            
+            .flashcard-container {
+                padding: 20px;
+            }
+            
+            .card-legend {
+                padding: 12px 18px;
+                gap: 15px;
+            }
+            
+            .legend-item {
+                font-size: 0.8em;
+                gap: 6px;
+            }
+            
+            .legend-key {
+                padding: 3px 6px;
+                font-size: 0.7em;
+                min-width: 18px;
+            }
+            
+            .word {
+                font-size: 2em;
+            }
+            
+            .example {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🇫🇷 French Learning Flashcards</h1>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="fileSelect">Select Category:</label>
+                <select id="fileSelect">
+                    <option value="">Choose a category...</option>
+                    <option value="french_nouns_800.json">Nouns (800 words)</option>
+                    <option value="french_adjectives.json">Adjectives</option>
+                    <option value="french_adverbs.json">Adverbs</option>
+                    <option value="french_connecting_words_160.json">Connecting Words (160)</option>
+                    <option value="french_prepositions.json">Prepositions</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="sideSelect">Show First:</label>
+                <select id="sideSelect">
+                    <option value="french">French</option>
+                    <option value="english">English</option>
+                    <option value="random">Random</option>
+                </select>
+                <button id="resetScoreBtn" class="reset-btn">Reset Score</button>
+            </div>
+
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number" id="totalCards">0</div>
+                    <div class="stat-label">Total Cards</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" id="remainingCards">0</div>
+                    <div class="stat-label">Remaining</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" id="correctCards">0</div>
+                    <div class="stat-label">Correct</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard-container">
+            <div class="card-legend">
+                <div class="legend-item">
+                    <span class="legend-key" data-action="previous">←</span>
+                    <span>Previous</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-key" data-action="next">→</span>
+                    <span>Next</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-key" data-action="flip">Space</span>
+                    <span>Flip</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-key" data-action="correct">A</span>
+                    <span>Correct</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-key" data-action="incorrect">X</span>
+                    <span>Incorrect</span>
+                </div>
+            </div>
+            <div id="flashcard" class="flashcard">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="word" id="frontWord">Select a category to start</div>
+                        <div class="example" id="frontExample"></div>
+                    </div>
+                    <div class="card-back">
+                        <div class="word" id="backWord"></div>
+                        <div class="example" id="backExample"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+        // Embedded JSON data for offline use
+        const FRENCH_NOUNS_DATA = [
+        ["temps", "time/weather", "Le temps passe vite.", "Time passes quickly."],
+  ["homme", "man", "Cet homme est médecin.", "This man is a doctor."],
+  ["vie", "life", "La vie est belle.", "Life is beautiful."],
+  ["jour", "day", "Chaque jour compte.", "Each day counts."],
+  ["travail", "work/job", "Son travail est exigeant.", "His job is demanding."],
+  ["appel", "call", "J’ai reçu un appel ce matin.", "I received a call this morning."],
+  ["nuit", "night", "La nuit est calme.", "The night is calm."],
+  ["maison", "house/home", "Sa maison est vieille mais charmante.", "His house is old but charming."],
+  ["pensée", "thought", "Sa pensée était claire.", "His thought was clear."],
+  ["argent", "money", "Il économise de l’argent.", "He is saving money."],
+  ["nom", "name", "Je ne connais pas son nom.", "I don't know his name."],
+  ["père", "father", "Mon père lit le journal.", "My father reads the newspaper."],
+  ["mère", "mother", "Sa mère est aimante.", "His mother is loving."],
+  ["monde", "world", "Le monde change rapidement.", "The world is changing quickly."],
+  ["fils", "son", "Le fils joue dans le jardin.", "The son is playing in the garden."],
+  ["voiture", "car", "Ma voiture est en panne.", "My car is broken down."],
+  ["femme", "woman", "Cette femme est artiste.", "This woman is an artist."],
+  ["ami", "friend", "Mon ami habite à Paris.", "My friend lives in Paris."],
+  ["esprit", "mind/spirit", "Son esprit est libre.", "His mind is free."],
+  ["tête", "head", "Je lui touche la tête.", "I touch his head."],
+  ["main", "hand", "Donne-moi la main.", "Give me your hand."],
+  ["question", "question", "La question est difficile.", "The question is difficult."],
+  ["enfant", "child", "L’enfant sourit.", "The child smiles."],
+  ["ville", "city", "Paris est une grande ville.", "Paris is a big city."],
+  ["ami(e)", "friend", "Elle est mon amie fidèle.", "She is my faithful friend."],
+  ["fille", "girl/daughter", "La fille danse bien.", "The girl dances well."],
+  ["soir", "evening", "Le soir est tranquille.", "The evening is peaceful."],
+  ["été", "summer", "L’été est chaud ici.", "Summer is hot here."],
+  ["année", "year", "Cette année a été difficile.", "This year has been difficult."],
+  ["question", "question", "Elle pose une question pertinente.", "She asks a relevant question."],
+  ["problème", "problem", "Il a un problème complexe.", "He has a complex problem."],
+  ["mot", "word", "Ce mot est difficile à prononcer.", "This word is hard to pronounce."],
+  ["oeil", "eye", "Il a un oeil bleu.", "He has a blue eye."],
+  ["sœur", "sister", "Ma sœur est gentille.", "My sister is kind."],
+  ["pays", "country", "Je visite le pays voisin.", "I am visiting the neighboring country."],
+  ["oeuvre", "work (of art)", "Cette œuvre est remarquable.", "This artwork is remarkable."],
+  ["minute", "minute", "Attends une minute.", "Wait a minute."],
+  ["chien", "dog", "Le chien aboie toute la nuit.", "The dog barks all night."],
+  ["question", "question", "Je réponds à la question.", "I answer the question."],
+  ["faim", "hunger", "La faim me tenaille.", "Hunger is gnawing at me."],
+  ["voix", "voice", "Sa voix est douce.", "Her voice is soft."],
+  ["mains", "hands", "Il lave les mains avant le repas.", "He washes hands before the meal."],
+  ["fois", "time/occasion", "La première fois est mémorable.", "The first time is memorable."],
+  ["lettre", "letter", "J’ai écrit une lettre.", "I wrote a letter."],
+  ["chemin", "path/way", "Le chemin est long.", "The path is long."],
+  ["étude", "study", "L’étude porte sur l’histoire.", "The study is about history."],
+  ["minute", "minute", "Il pense une minute.", "He thinks for a minute."],
+  ["mot", "word", "Chaque mot compte.", "Every word counts."],
+  ["histoire", "story/history", "L’histoire est passionnante.", "History is fascinating."],
+  ["cours", "class/course", "Le cours commence à huit heures.", "The class starts at eight."],
+  ["horloge", "clock", "L’horloge marque midi.", "The clock shows noon."],
+  ["chose", "thing", "C’est une bonne chose.", "That's a good thing."],
+  ["eau", "water", "L’eau est fraîche.", "The water is fresh."],
+  ["corps", "body", "Le corps humain est complexe.", "The human body is complex."],
+  ["ville", "city", "Cette ville est ancienne.", "This city is ancient."],
+  ["mari", "husband", "Son mari est professeur.", "Her husband is a teacher."],
+  ["amour", "love", "L’amour est puissant.", "Love is powerful."],
+  ["travail", "work", "Le travail paye.", "Work pays off."],
+  ["école", "school", "L’école est fermée aujourd’hui.", "The school is closed today."],
+  ["voiture", "car", "Il range sa voiture au garage.", "He parks his car in the garage."],
+  ["société", "society/company", "La société évolue.", "Society evolves."],
+  ["doigt", "finger", "Il salue de son doigt.", "He greets with his finger."],
+  ["cheveux", "hair", "Ses cheveux sont longs.", "Her hair is long."],
+  ["idée", "idea", "J’ai une bonne idée.", "I have a good idea."],
+  ["porte", "door", "La porte est ouverte.", "The door is open."],
+  ["travail", "job", "Son travail est gratifiant.", "His job is rewarding."],
+  ["argent", "money", "Elle dépense beaucoup d’argent.", "She spends a lot of money."],
+  ["bras", "arm", "Il lève les bras.", "He raises his arms."],
+  ["sera", "future", "Le futur est incertain." ,"The future is uncertain."],
+  ["travail", "work", "Le travail de groupe aide.", "Group work helps."],
+  ["oeil", "eye", "Ferme un œil.", "Close one eye."],
+  ["travail", "job", "Un travail difficile arrive.", "A difficult job is coming."],
+  ["projet", "project", "Le projet avance bien.", "The project is progressing well."],
+  ["bureau", "desk/office", "Il travaille dans un bureau.", "He works in an office."],
+  ["plan", "plan", "Le plan est détaillé.", "The plan is detailed."],
+  ["part", "share", "Il a sa part du gâteau.", "He has his share of the cake."],
+  ["rue", "street", "La rue est animée.", "The street is lively."],
+  ["fleur", "flower", "La fleur sent bon.", "The flower smells nice."],
+  ["mur", "wall", "Le mur est peint.", "The wall is painted."],
+  ["situation", "situation", "La situation est grave.", "The situation is serious."],
+  ["texte", "text", "Le texte est long.", "The text is long."],
+  ["voyage", "trip", "Le voyage fut merveilleux.", "The trip was wonderful."],
+  ["façon", "way/manner", "J’aime ta façon de penser.", "I like your way of thinking."],
+  ["gens", "people", "Les gens travaillent dur.", "People work hard."],
+  ["place", "place/square", "La place du village est animée.", "The village square is lively."],
+  ["mec", "guy", "Ce mec est sympa.", "That guy is nice."],
+  ["famille", "family", "Sa famille est unie.", "His family is close-knit."],
+  ["pays", "country", "J’habite un autre pays.", "I live in another country."],
+  ["partie", "part/portion", "J’ai mangé ma partie.", "I ate my portion."],
+  ["problème", "problem", "Il y a un problème urgent.", "There is an urgent problem."],
+  ["mot", "word", "Chaque mot compte.", "Every word counts."],
+  ["oeil", "eye", "Il a un œil bleu.", "He has a blue eye."],
+  ["sœur", "sister", "Ma sœur étudie le droit.", "My sister studies law."],
+  ["œuvre", "work (of art)", "Cette œuvre est remarquable.", "This artwork is remarkable."],
+  ["ami", "friend", "Mon ami habite à Paris.", "My friend lives in Paris."],
+  ["idée", "idea", "J’ai une bonne idée.", "I have a good idea."],
+  ["question", "question", "Elle pose une question pertinente.", "She asks a relevant question."],
+  ["lettre", "letter", "Il a reçu une lettre ieri.", "He received a letter yesterday."],
+  ["voix", "voice", "La voix du chanteur est superbe.", "The singer’s voice is superb."],
+  ["fois", "time/occasion", "La première fois restera mémorable.", "The first time will remain memorable."],
+  ["corps", "body", "Le corps humain est complexe.", "The human body is complex."],
+  ["ville", "city", "Cette ville est ancienne.", "This city is ancient."],
+  ["mains", "hands", "Il lave ses mains avant de manger.", "He washes his hands before eating."],
+  ["cours", "class/course", "Le cours commence à huit heures.", "The course starts at eight o’clock."],
+  ["chose", "thing", "C’est une bonne chose.", "That is a good thing."],
+  ["chemin", "path/way", "Le chemin est long mais joli.", "The path is long but lovely."],
+  ["étude", "study", "L’étude porte sur l’histoire.", "The study focuses on history."],
+  ["histoire", "history/story", "L’histoire est passionnante.", "History is fascinating."],
+  ["porte", "door", "La porte est restée ouverte.", "The door remained open."],
+  ["plan", "plan", "Le plan est détaillé.", "The plan is detailed."],
+  ["projet", "project", "Le projet avance bien.", "The project is progressing well."],
+  ["travail", "work/job", "Mon travail me passionne.", "My work excites me."],
+  ["société", "society/company", "La société change vite.", "Society changes quickly."],
+  ["bureau", "desk/office", "Il travaille dans un bureau calme.", "He works in a quiet office."],
+  ["bras", "arm", "Il lève le bras en classe.", "He raises his arm in class."],
+  ["cheveux", "hair", "Ses cheveux sont blonds.", "Her hair is blonde."],
+  ["ami(e)", "friend", "Elle est une amie fidèle.", "She is a loyal friend."],
+  ["lieu", "place/location", "C’est un lieu historique.", "It is a historic place."],
+  ["esprit", "mind/spirit", "Son esprit est créatif.", "His mind is creative."],
+  ["tête", "head", "Il a mal à la tête.", "He has a headache."],
+  ["père", "father", "Mon père est professeur.", "My father is a teacher."],
+  ["mère", "mother", "Sa mère cuisine bien.", "His mother cooks well."],
+  ["vie", "life", "La vie est pleine de surprises.", "Life is full of surprises."],
+  ["jour", "day", "Chaque jour apporte un défi.", "Each day brings a challenge."],
+  ["nuit", "night", "La nuit était silencieuse.", "The night was silent."],
+  ["appel", "call", "Elle a reçu un appel important.", "She received an important call."],
+  ["homme", "man", "Cet homme est courageux.", "That man is brave."],
+  ["temps", "time/weather", "Le temps change rapidement.", "The weather changes quickly."],
+  ["pensée", "thought", "Sa pensée évolue constamment.", "Her thought constantly evolves."],
+  ["argent", "money", "Il gagne beaucoup d’argent.", "He earns a lot of money."],
+  ["nom", "name", "Je ne me souviens pas de son nom.", "I don’t remember his name."],
+  ["père", "father", "Mon père est professeur de mathématiques.", "My father is a math teacher."],
+  ["mec", "guy", "Ce mec est très drôle.", "That guy is very funny."],
+  ["place", "place/square", "La place centrale est bondée.", "The central square is crowded."],
+  ["famille", "family", "Sa famille vit à la campagne.", "His family lives in the countryside."],
+  ["partie", "part/portion", "Chaque partie du projet est importante.", "Each part of the project is important."],
+  ["problème", "problem", "Nous avons un problème à résoudre.", "We have a problem to solve."],
+  ["mot", "word", "Le mot est inconnu.", "The word is unknown."],
+  ["œil", "eye", "Il a un œil cassé après l’accident.", "He has a broken eye after the accident."],
+  ["sœur", "sister", "Sa sœur habite en ville.", "His sister lives in the city."],
+  ["œuvre", "work (of art)", "Cette œuvre d’art est célèbre.", "This artwork is famous."],
+  ["ami", "friend", "Mon ami m’a aidé hier.", "My friend helped me yesterday."],
+  ["idée", "idea", "Ton idée est excellente.", "Your idea is excellent."],
+  ["question", "question", "Ta question est pertinente.", "Your question is pertinent."],
+  ["lettre", "letter", "J’ai écrit une lettre hier.", "I wrote a letter yesterday."],
+  ["voix", "voice", "Sa voix porte bien dans la salle.", "His voice carries well in the room."],
+  ["fois", "time/occasion", "Cette fois, j’ai gagné.", "This time, I won."],
+  ["corps", "body", "Le corps humain est fascinant.", "The human body is fascinating."],
+  ["ville", "city", "Cette ville attire des touristes.", "This city attracts tourists."],
+  ["mains", "hands", "Il se lave les mains avant de manger.", "He washes his hands before eating."],
+  ["cours", "class/course", "Le cours dure trois heures.", "The class lasts three hours."],
+  ["chose", "thing", "Cette chose vaut cher.", "That thing is expensive."],
+  ["chemin", "path/way", "Le chemin traverse la forêt.", "The path crosses the forest."],
+  ["étude", "study", "L’étude est très complète.", "The study is very thorough."],
+  ["histoire", "story/history", "L’histoire de France est riche.", "French history is rich."],
+  ["porte", "door", "La porte est fermée à clé.", "The door is locked."],
+  ["plan", "plan", "Le plan est ambitieux.", "The plan is ambitious."],
+  ["projet", "project", "Le projet commence demain.", "The project starts tomorrow."],
+  ["travail", "work/job", "Elle trouve son travail stimulant.", "She finds her job stimulating."],
+  ["société", "society/company", "La société évolue constamment.", "Society constantly evolves."],
+  ["bureau", "desk/office", "Il a un bureau spacieux.", "He has a spacious office."],
+  ["bras", "arm", "Il lève les bras pour célébrer.", "He raises his arms to celebrate."],
+  ["cheveux", "hair", "Ses cheveux sont bouclés.", "Her hair is curly."],
+  ["lieu", "place/location", "Ce lieu est magnifique.", "That place is beautiful."],
+  ["esprit", "mind/spirit", "Son esprit est vif.", "His mind is sharp."],
+  ["tête", "head", "Il a mal à la tête aujourd’hui.", "He has a headache today."],
+  ["jour", "day", "Chaque jour est une nouvelle chance.", "Each day is a new chance."],
+  ["nuit", "night", "La nuit tombe tôt en hiver.", "Night falls early in winter."],
+  ["appel", "call", "J’attends un appel important.", "I’m waiting for an important call."],
+  ["homme", "man", "Cet homme est très intelligent.", "That man is very intelligent."],
+  ["temps", "time/weather", "Le temps d’été est parfait.", "The summer weather is perfect."],
+  ["sentiment", "feeling", "Son sentiment de joie était évident.", "His feeling of joy was obvious."],
+  ["fille", "girl/daughter", "La fille joue dans le parc.", "The girl is playing in the park."],
+  ["garçon", "boy", "Le garçon lit un livre.", "The boy is reading a book."],
+  ["cousin", "cousin", "Mon cousin habite à Lyon.", "My cousin lives in Lyon."],
+  ["bébé", "baby", "Le bébé dort paisiblement.", "The baby sleeps peacefully."],
+  ["emploi", "job/employment", "Elle a trouvé un emploi intéressant.", "She found an interesting job."],
+  ["début", "beginning", "Au début, c’était difficile.", "At the beginning, it was difficult."],
+  ["affaire", "matter/business", "C’est une affaire urgente.", "This is an urgent matter."],
+  ["morceau", "piece/bit", "Un morceau de pain suffit.", "A piece of bread is enough."],
+  ["cours", "course/run", "Le cours de math commence à neuf heures.", "The math course starts at nine o'clock."],
+  ["école", "school", "Les enfants vont à l’école.", "The children go to school."],
+  ["chambre", "room", "La chambre est bien rangée.", "The room is tidy."],
+  ["frère", "brother", "Mon frère adore la musique.", "My brother loves music."],
+  ["maman", "mom", "Ma maman cuisine merveilleusement.", "My mom cooks wonderfully."],
+  ["papa", "dad", "Papa lit un conte.", "Dad reads a story."],
+  ["femme", "woman/wife", "La femme parle couramment.", "The woman speaks fluently."],
+  ["esprit", "mind/spirit", "Son esprit est curieux.", "His mind is curious."],
+  ["tête", "head", "Il a mal à la tête.", "He has a headache."],
+  ["maman", "mom", "Voici une photo de ma maman.", "Here is a photo of my mom."],
+  ["esprit", "mind/spirit", "Son esprit est vif.", "His mind is sharp."],
+  ["fils", "son", "Son fils est brillant à l’école.", "His son is bright at school."],
+  ["ami(e)", "friend", "Elle est mon amie fidèle.", "She is my faithful friend."],
+  ["œuvre", "work (of art)", "Cette œuvre est exposée au musée.", "This artwork is displayed in the museum."],
+  ["idée", "idea", "Je partage ton idée.", "I share your idea."],
+  ["sentiment", "feeling", "Un sentiment de paix l'envahit.", "A feeling of peace overwhelmed him."],
+  ["cours", "course/run", "Le cours se termine bientôt.", "The course ends soon."],
+  ["affaire", "matter/business", "L’affaire est classée.", "The matter is closed."],
+  ["garçon", "boy", "Le garçon court vite.", "The boy runs fast."],
+  ["bébé", "baby", "Le bébé sourit.", "The baby smiles."],
+  ["fille", "girl/daughter", "La fille chante bien.", "The girl sings well."],
+  ["emploi", "job/employment", "Son emploi exigeant l’épuise.", "His demanding job exhausts him."],
+  ["début", "beginning", "Au début de l’année, tout change.", "At the beginning of the year, everything changes."],
+  ["frère", "brother", "Mon frère est médecin.", "My brother is a doctor."],
+  ["chambre", "room", "La chambre est trop petite.", "The room is too small."],
+  ["école", "school", "Cette école est réputée.", "This school is well-known."],
+  ["affaire", "matter/business", "L’affaire se complique.", "The matter is getting complicated."],
+  ["morceau", "piece/bit", "Un morceau de gâteau, s’il vous plaît.", "A piece of cake, please."],
+  ["début", "beginning", "Le début du film est lent.", "The beginning of the film is slow."],
+  ["école", "school", "Il quitte l’école tôt.", "He leaves school early."],
+  ["fille", "girl/daughter", "La fille étudie la danse.", "The girl studies dance."],
+  ["garçon", "boy", "Ce garçon est courageux.", "This boy is brave."],
+  ["emploi", "job/employment", "Elle aime son emploi.", "She likes her job."],
+  ["fils", "son", "Le fils est sportif.", "The son is athletic."],
+  ["œuvre", "work (of art)", "L'œuvre est moderne.", "The artwork is modern."],
+  ["tête", "head", "Il baisse la tête.", "He lowers his head."],
+  ["esprit", "mind/spirit", "Son esprit est ouvert.", "His mind is open."],
+  ["maman", "mom", "Ma maman est gentille.", "My mom is kind."],
+  ["papa", "dad", "Papa travaille tard.", "Dad works late."],
+  ["affaire", "matter/business", "Cette affaire est délicate.", "This matter is delicate."],
+  ["an", "year", "year", "Un an passe vite.", "One year passes quickly."],
+  ["main", "hand", "hand", "Je lui donne la main.", "I give him my hand."],
+  ["médecin", "doctor", "doctor", "Le médecin arrive à l’heure.", "The doctor arrives on time."],
+  ["seconde", "second", "second", "Attendez une seconde.", "Wait a second."],
+  ["enfant", "child", "child", "L’enfant rit aux éclats.", "The child laughs out loud."],
+  ["eau", "water", "water", "L’eau est potable ici.", "The water is drinkable here."],
+  ["mort", "death", "death", "Il craint la mort.", "He fears death."],
+  ["choses", "things", "things", "Ces choses sont importantes.", "These things are important."],
+  ["minute", "minute", "minute", "Attends une minute, s’il te plaît.", "Wait a minute, please."],
+  ["partie", "part/portion", "portion", "Ma partie du travail est terminée.", "My part of the work is finished."],
+  ["personne", "person", "person", "Chaque personne compte.", "Every person counts."],
+  ["boisson", "drink/beverage", "drink", "Une boisson fraîche, s’il vous plaît.", "A cold drink, please."],
+  ["changement", "change", "change", "Le changement est inévitable.", "Change is inevitable."],
+  ["coup", "strike/blow", "blow", "Il a reçu un coup violent.", "He received a violent blow."],
+  ["chèque", "check", "check", "J’ai émis un chèque hier.", "I issued a check yesterday."],
+  ["musique", "music", "music", "La musique est relaxante.", "The music is relaxing."],
+  ["intérieur", "interior", "interior", "L’intérieur de la maison est lumineux.", "The interior of the house is bright."],
+  ["sommeil", "sleep", "sleep", "Il manque de sommeil.", "He lacks sleep."],
+  ["mien", "mine", "mine", "Le livre est le mien.", "The book is mine."],
+  ["accord", "agreement/deal", "deal", "Nous avons conclu un accord.", "We reached a deal."],
+  ["point", "point", "point", "Le point est clair.", "The point is clear."],
+  ["cœur", "heart", "heart", "Il parle avec cœur.", "He speaks from the heart."],
+  ["inquiétude", "worry", "worry", "Il ressent une inquiétude profonde.", "He feels deep worry."],
+  ["affaires", "business/matters", "matters", "Les affaires sont en cours.", "The business is underway."],
+  ["montre", "watch", "watch", "Ma montre est en avance.", "My watch is fast."],
+  ["an", "year", "year", "Cette année a été riche.", "This year was rich."],
+  ["main", "hand", "hand", "Il serre la main de tous.", "He shakes everyone's hand."],
+  ["médecin", "doctor", "doctor", "Le médecin examine le patient.", "The doctor examines the patient."],
+  ["seconde", "second", "second", "Une seconde suffit.", "One second is enough."],
+  ["enfant", "child", "child", "L’enfant observe attentivement.", "The child watches carefully."],
+  ["eau", "water", "water", "L’eau coule du robinet.", "Water flows from the tap."],
+  ["mort", "death", "death", "La mort est inévitable.", "Death is inevitable."],
+  ["choses", "things", "things", "Il range ses choses.", "He puts away his things."],
+  ["minute", "minute", "minute", "Je reviens dans une minute.", "I'll be back in a minute."],
+  ["partie", "part/portion", "part", "La partie finale est difficile.", "The final part is difficult."],
+  ["personne", "person", "person", "Personne ne parle.", "No one speaks."],
+  ["boisson", "drink/beverage", "drink", "La boisson est fraîche.", "The drink is cold."],
+  ["changement", "change", "change", "Le changement a surpris tout le monde.", "The change surprised everyone."],
+  ["coup", "strike/blow", "blow", "Un coup de vent souffle fort.", "A gust of wind blows hard."],
+  ["chèque", "check", "check", "Il a encaissé le chèque.", "He cashed the check."],
+  ["musique", "music", "music", "La musique adoucit les mœurs.", "Music soothes the mind."],
+  ["intérieur", "interior", "interior", "L’intérieur est bien décoré.", "The interior is well decorated."],
+  ["sommeil", "sleep", "sleep", "Son manque de sommeil est visible.", "His lack of sleep is evident."],
+  ["mien", "mine", "mine", "Le stylo est le mien.", "The pen is mine."],
+  ["accord", "agreement/deal", "agreement", "Ils ont signé l’accord.", "They signed the agreement."],
+  ["point", "point", "point", "Le point essentiel manque.", "The essential point is missing."],
+  ["cœur", "heart", "heart", "Un cœur brisé guérit lentement.", "A broken heart heals slowly."],
+  ["inquiétude", "worry", "worry", "Mon inquiétude grandit.", "My worry grows."],
+  ["affaires", "business/matters", "business", "C’est une affaire sérieuse.", "This is serious business."],
+  ["montre", "watch", "watch", "Montre-moi ta montre.", "Show me your watch."],
+  ["pensée", "thought", "Une pensée subtile m’a traversé l’esprit.", "A subtle thought crossed my mind."],
+  ["argent", "money", "L'argent manque souvent en début de mois.", "Money is often scarce at the beginning of the month."],
+  ["nom", "name", "Son nom figure à la liste.", "His name is on the list."],
+  ["père", "father", "Le père accompagne son enfant à l’école.", "The father accompanies his child to school."],
+  ["mec", "guy", "Ce mec connaît bien la ville.", "That guy knows the city well."],
+  ["place", "square/place", "La place centrale est belle.", "The main square is beautiful."],
+  ["famille", "family", "La famille se réunit chaque dimanche.", "The family gathers every Sunday."],
+  ["partie", "part/portion", "Une partie du gâteau est partie.", "A portion of the cake is gone."],
+  ["problème", "problem", "Un problème inattendu est survenu.", "An unexpected problem occurred."],
+  ["mot", "word", "Chaque mot compte dans cette lettre.", "Every word matters in this letter."],
+  ["œil", "eye", "Il a un œil vif pour les détails.", "He has an eye for detail."],
+  ["sœur", "sister", "Sa sœur étudie la médecine.", "His sister is studying medicine."],
+  ["œuvre", "work (of art)", "Nous avons visité une œuvre impressionnante.", "We visited an impressive work of art."],
+  ["ami", "friend", "Il parle avec un ami proche.", "He is talking with a close friend."],
+  ["idée", "idea", "Ton idée me plaît beaucoup.", "I like your idea very much."],
+  ["question", "question", "Ta question est pertinente.", "Your question is relevant."],
+  ["lettre", "letter", "J’ai reçu une lettre officielle.", "I received an official letter."],
+  ["voix", "voice", "Sa voix résonne dans la salle.", "Her voice echoes in the room."],
+  ["fois", "time/occasion", "La deuxième fois fut meilleure.", "The second time was better."],
+  ["corps", "body", "Le corps humain mérite du respect.", "The human body deserves respect."],
+  ["ville", "city", "Cette ville regorge de culture.", "This city is full of culture."],
+  ["mains", "hands", "Il lave ses mains avant de manger.", "He washes his hands before eating."],
+  ["cours", "course/class", "Le cours d’histoire commence demain.", "History class starts tomorrow."],
+  ["chose", "thing", "Cette chose me dépasse.", "That thing overwhelms me."],
+  ["chemin", "path/way", "Le chemin vers le sommet est long.", "The way to the summit is long."],
+  ["étude", "study", "L’étude scientifique est sérieuse.", "The scientific study is serious."],
+  ["histoire", "history/story", "L’histoire racontée est émouvante.", "The story told is moving."],
+  ["porte", "door", "La porte s’est refermée soudainement.", "The door closed suddenly."],
+  ["plan", "plan", "Le plan du projet est clair.", "The project plan is clear."],
+  ["projet", "project", "Ce projet aboutira bientôt.", "This project will succeed soon."],
+  ["travail", "work/job", "Son travail l’épanouit.", "Her job fulfills her."],
+  ["société", "society/company", "La société moderne évolue vite.", "Modern society evolves quickly."],
+  ["bureau", "office/desk", "Il passe des heures au bureau.", "He spends hours at the office."],
+  ["bras", "arm", "Il lève le bras pour répondre.", "He raises his arm to respond."],
+  ["cheveux", "hair", "Ses cheveux tombent sur ses épaules.", "Her hair falls on her shoulders."],
+  ["lieu", "place/location", "C’est un lieu plein de charme.", "It is a place full of charm."],
+  ["esprit", "mind/spirit", "L’esprit du groupe est uni.", "The spirit of the group is united."],
+  ["tête", "head", "Il baisse la tête par modestie.", "He lowers his head out of modesty."],
+  ["jour", "day", "Un jour nouveau commence.", "A new day begins."],
+  ["nuit", "night", "La nuit est étoilée.", "The night is starry."],
+  ["appel", "call", "L’appel est tombé pendant le dîner.", "The call came during dinner."],
+  ["homme", "man", "Cet homme inspire confiance.", "That man inspires confidence."],
+  ["temps", "time/weather", "Le temps d’hiver est rude.", "Winter weather is harsh."],
+  ["sentiment", "feeling", "Un sentiment de calme le gagne.", "A feeling of calm overcame him."],
+  ["garçon", "boy", "Le garçon court dans le jardin.", "The boy runs in the garden."],
+  ["cousin", "cousin", "Mon cousin habite ici.", "My cousin lives here."],
+  ["bébé", "baby", "Le bébé gazouille doucement.", "The baby coos softly."]
+];
+
+        const FRENCH_ADJECTIVES_DATA = [
+        ["bon", "good", "C’est un bon film.", "It’s a good movie."],
+  ["mauvais", "bad", "Il a eu un mauvais jour.", "He had a bad day."],
+  ["nouveau", "new", "Voici un nouveau livre.", "Here is a new book."],
+  ["joli", "pretty", "Quelle jolie voiture !", "What a pretty car!"],
+  ["gentil", "nice/kind", "Elle est très gentille.", "She is very kind."],
+  ["grand", "big/tall", "Ils habitent dans une grande maison.", "They live in a big house."],
+  ["petit", "small", "C’est un petit chat.", "That’s a small cat."],
+  ["jeune", "young", "Un jeune homme courageux.", "A brave young man."],
+  ["vieux", "old", "Un vieux bâtiment historique.", "An old historic building."],
+  ["fort", "strong", "Il est vraiment fort.", "He is really strong."],
+  ["faible", "weak", "Le examen a été trop faible.", "The test was too weak."],
+  ["drôle", "funny", "Ton ami est drôle.", "Your friend is funny."],
+  ["léger", "light (weight)", "Une veste légère.", "A light jacket."],
+  ["moche", "ugly", "Ce tableau est moche.", "That painting is ugly."],
+  ["bizarre", "strange", "J’ai eu un sentiment bizarre.", "I had a strange feeling."],
+  ["mignon", "cute", "Le chiot est mignon.", "The puppy is cute."],
+  ["fâché", "angry", "Elle est fâchée contre moi.", "She is angry with me."],
+  ["cher", "expensive/dear", "Ce cadeau est trop cher.", "This gift is too expensive."],
+  ["clair", "clear/light", "La réponse est claire.", "The answer is clear."],
+  ["confortable", "comfortable", "Ce fauteuil est confortable.", "This armchair is comfortable."],
+  ["vide", "empty", "La boîte est vide.", "The box is empty."],
+  ["différent", "different", "C’est une opinion différente.", "That is a different opinion."],
+  ["intéressant", "interesting", "Le film est intéressant.", "The movie is interesting."],
+  ["important", "important", "C’est un point important.", "This is an important point."],
+  ["riche", "rich", "Une personne riche habite ici.", "A rich person lives here."]
+  ["dur", "hard/tough", "Ce travail est dur à réaliser.", "This work is hard to accomplish."],
+  ["drôle", "funny", "Il a raconté une histoire drôle.", "He told a funny story."],
+  ["léger", "light (weight)", "Ce sac est très léger.", "This bag is very light."],
+  ["bizarre", "strange", "Il a une attitude bizarre.", "He has a strange attitude."],
+  ["beau", "beautiful/handsome", "Un beau paysage.", "A beautiful landscape."],
+  ["ancien", "ancient/former", "Une ancienne tradition.", "An ancient tradition."],
+  ["chaud", "hot", "Le café est chaud.", "The coffee is hot."],
+  ["froid", "cold", "L’eau est froide.", "The water is cold."],
+  ["calme", "calm/quiet", "L’endroit est calme.", "The place is calm."],
+  ["plein", "full", "La salle est pleine.", "The room is full."],
+  ["gros", "big/fat", "Un gros gâteau.", "A big cake."],
+  ["haut", "high", "Cet arbre est haut.", "This tree is tall."],
+  ["premier", "first", "Le premier chapitre est long.", "The first chapter is long."],
+  ["propre", "clean/own", "Elle garde sa chambre propre.", "She keeps her room clean."],
+  ["sale", "dirty", "Tes mains sont sales.", "Your hands are dirty."],
+  ["pauvre", "poor", "Une personne pauvre cherche un emploi.", "A poor person is looking for work."],
+  ["vrai", "true/real", "C’est une vraie histoire.", "It’s a true story."],
+  ["coupable", "guilty", "Il se sent coupable.", "He feels guilty."],
+  ["sûr", "safe/sure", "Cet endroit est sûr.", "That place is safe."],
+  ["sympa", "nice", "Elle est sympa avec tout le monde.", "She’s nice to everyone."],
+  ["timide", "shy", "Il est timide en groupe.", "He is shy in groups."],
+  ["impoli", "rude", "Son comportement était impoli.", "His behavior was rude."],
+  ["sincère", "sincere", "Elle paraît sincère.", "She seems sincere."],
+  ["curieux", "curious", "Un enfant curieux pose beaucoup de questions.", "A curious child asks many questions."],
+  ["optimiste", "optimistic", "Il reste optimiste malgré tout.", "He remains optimistic despite everything."],
+  ["difficile", "difficult", "Ce problème est difficile à résoudre.", "This problem is difficult to solve."],
+  ["courageux", "courageous/brave", "Il est très courageux.", "He is very brave."],
+  ["épuisé", "exhausted", "Elle est complètement épuisée.", "She is completely exhausted."],
+  ["fatigué", "tired", "Je suis fatigué ce matin.", "I’m tired this morning."],
+  ["libre", "free (available)", "Je suis libre ce soir.", "I am free tonight."],
+  ["juste", "fair/just", "C’est une décision juste.", "That’s a fair decision."],
+  ["meilleur", "better", "C’est le meilleur choix.", "This is the best choice."],
+  ["navré", "sorry/apologetic", "Je suis navré pour le retard.", "I’m sorry for the delay."],
+  ["pareil", "same", "Il porte la même chemise que moi, pareil!", "He wears the same shirt as me, same!"],
+  ["pressé", "rushed/in a hurry", "Je suis pressé, désolé.", "I’m in a hurry, sorry."],
+  ["ravie", "delighted", "Elle est ravie de te voir.", "She is delighted to see you."],
+  ["tranquille", "calm/quiet", "L’endroit est très tranquille.", "The place is very quiet."],
+  ["prêt", "ready", "Je suis prêt pour le départ.", "I am ready to leave."]
+];
+
+        const FRENCH_ADVERBS_DATA = [
+        ["bien", "well", "Il parle bien français.", "He speaks French well."],
+    ["mal", "badly/poorly", "Elle danse mal.", "She dances poorly."],
+    ["toujours", "always/still", "Je suis toujours occupé.", "I am always busy."],
+    ["souvent", "often", "Nous sortons souvent le soir.", "We often go out in the evening."],
+    ["parfois", "sometimes", "Parfois, je vais au cinéma.", "Sometimes I go to the movie theater."],
+    ["jamais", "never", "Je ne fume jamais.", "I never smoke."],
+    ["tard", "late", "Elle est arrivée tard.", "She arrived late."],
+    ["tôt", "early", "Je me lève tôt le matin.", "I wake up early in the morning."],
+    ["déjà", "already", "Tu as déjà mangé ?", "Have you already eaten?"],
+    ["bientôt", "soon", "Nous partirons bientôt.", "We will leave soon."],
+    ["très", "very", "Il est très intelligent.", "He is very intelligent."],
+    ["peu", "a little/few", "J’ai peu d’argent.", "I have little money."],
+    ["plus", "more/no longer", "Je veux plus de café.", "I want more coffee."],
+    ["trop", "too much/too", "Tu parles trop vite.", "You speak too fast."],
+    ["aussi", "also/too", "Je veux aussi y aller.", "I want to go too."],
+    ["rarement", "rarely", "Il va rarement à la gym.", "He rarely goes to the gym."],
+    ["généralement", "generally", "Elle est généralement ponctuelle.", "She is generally punctual."],
+    ["fréquemment", "frequently", "Il voyage fréquemment.", "He travels frequently."],
+    ["encore", "again/still", "Je vis encore à Montréal.", "I still live in Montreal."],
+    ["peut-être", "maybe", "Peut‑être qu’il viendra.", "Maybe he will come."],
+    ["ensemble", "together", "Nous travaillons ensemble.", "We work together."],
+    ["rapidement", "quickly", "Elle marche rapidement.", "She walks quickly."],
+    ["lentement", "slowly", "Il parle lentement pour apprendre.", "He speaks slowly to learn."],
+    ["probablement", "probably", "Il viendra probablement demain.", "He will probably come tomorrow."],
+    ["activement", "actively", "Elle participe activement au débat.", "She actively participates in the debate."],
+    ["calmement", "calmly", "Elle parle calmement.", "She speaks calmly."],
+    ["doucement", "softly/gently", "Il avance doucement.", "He moves gently."],
+    ["facilement", "easily", "C’est facilement réalisable.", "It’s easily doable."],
+    ["fortement", "strongly", "Il est fortement recommandé de venir.", "It is strongly recommended to come."],
+    ["franchement", "frankly", "Je suis franchement surpris.", "I am frankly surprised."],
+    ["récemment", "recently", "J’ai déménagé récemment.", "I moved recently."],
+    ["seulement", "only", "Je veux seulement te voir.", "I only want to see you."],
+    ["suffisamment", "sufficiently", "Elle est suffisamment préparée.", "She is sufficiently prepared."],
+    ["sûrement", "surely", "Tu réussiras sûrement.", "You will surely succeed."],
+    ["tellement", "so much/so", "Je t’aime tellement.", "I love you so much."],
+    ["absolument", "absolutely", "Je suis absolument d’accord.", "I absolutely agree."],
+    ["énormément", "enormously", "Elle m’aide énormément.", "She helps me enormously."],
+    ["également", "also/equally", "Il participe également au projet.", "He also participates in the project."],
+    ["couramment", "fluently", "Elle parle couramment anglais.", "She speaks English fluently."],
+    ["clairement", "clearly", "Il explique clairement la situation.", "He explains the situation clearly."],
+    ["précisément", "precisely", "C’est précisément ce que je voulais.", "That’s precisely what I wanted."],
+    ["heureusement", "fortunately", "Heureusement, il a trouvé ses clés.", "Fortunately, he found his keys."],
+    ["poliment", "politely", "Merci de répondre poliment.", "Thank you for responding politely."],
+    ["profondément", "deeply", "Elle est profondément touchée.", "She is deeply moved."],
+    ["assurément", "surely/definitely", "Tu réussiras assurément.", "You will definitely succeed."],
+    ["autrement", "differently/otherwise", "Il pense autrement que toi.", "He thinks differently than you."],
+    ["calmement", "calmly", "Elle réagit calmement.", "She reacts calmly."],
+    ["intensément", "intensely", "Elle travaille intensément.", "She works intensely."],
+    ["clairement", "clearly", "Il voit les choses clairement.", "He sees things clearly."],
+    ["profondément", "deeply", "Il est profondément convaincu.", "He is deeply convinced."],
+    ["maintenant", "now", "Nous partons maintenant.", "We are leaving now."],
+    ["hier", "yesterday", "Je l’ai vu hier.", "I saw him yesterday."],
+    ["autrement", "differently/otherwise", "Pense autrement la prochaine fois.", "Think differently next time."],
+    ["certes", "admittedly", "Certes, ce choix était risqué.", "Admittedly, that choice was risky."],
+    ["souvent", "often", "Il sort souvent le soir.", "He often goes out in the evening."],
+    ["généralement", "generally", "Généralement, ça marche bien.", "Generally, it works well."],
+    ["rarement", "rarely", "Elle va rarement au cinéma.", "She rarely goes to the cinema."],
+    ["ici", "here", "Je suis ici aujourd’hui.", "I am here today."],
+    ["partout", "everywhere", "Il y a des fleurs partout.", "There are flowers everywhere."],
+    ["sérieusement", "seriously", "Parle-moi sérieusement.", "Talk to me seriously."],
+    ["exactement", "exactly", "C’est exactement ce dont j’ai besoin.", "It’s exactly what I need."],
+    ["vraiment", "really/truly", "Je suis vraiment content.", "I am really happy."],
+    ["simplement", "simply", "Explique‑le simplement.", "Explain it simply."],
+    ["pendant", "during", "Il dort pendant le film.", "He sleeps during the film."],
+    ["désormais", "from now on", "Désormais, je ferai attention.", "From now on, I’ll be careful."]
+    ];
+
+        const FRENCH_CONNECTING_WORDS_DATA = [
+  [
+    "en dépit de",
+    "despite",
+    "Toutefois, les salaires ont augmenté plus que l’inflation, en dépit de la crise.",
+    "However, wages have risen faster than inflation, despite the crisis."
+  ],
+  [
+    "par conséquent",
+    "therefore",
+    "Il a échoué à l'examen, par conséquent il doit le repasser.",
+    "He failed the exam, therefore he must retake it."
+  ],
+  [
+    "bien que",
+    "although",
+    "Bien qu'il pleuve, nous irons nous promener.",
+    "Although it is raining, we will go for a walk."
+  ],
+  [
+    "car",
+    "because",
+    "Je pars tôt car j’ai un rendez-vous.",
+    "I’m leaving early because I have an appointment."
+  ],
+  [
+    "cependant",
+    "however",
+    "Il a étudié dur, cependant il a échoué.",
+    "He studied hard, however he failed."
+  ],
+  [
+    "et",
+    "and",
+    "Il aime le fromage et le vin.",
+    "He likes cheese and wine."
+  ],
+  [
+    "aussi",
+    "also",
+    "Elle est médecin et aussi écrivaine.",
+    "She is a doctor and also a writer."
+  ],
+  [
+    "de plus",
+    "moreover",
+    "Il est intelligent. De plus, il est travailleur.",
+    "He is smart. Moreover, he is hardworking."
+  ],
+  [
+    "en outre",
+    "in addition",
+    "En outre, nous avons besoin de plus de preuves.",
+    "In addition, we need more evidence."
+  ],
+  [
+    "ainsi que",
+    "as well as",
+    "Il a invité Marie ainsi que Paul.",
+    "He invited Marie as well as Paul."
+  ],
+  [
+    "parce que",
+    "because",
+    "Je suis resté à la maison parce que j'étais malade.",
+    "I stayed home because I was sick."
+  ],
+  [
+    "puisque",
+    "since",
+    "Puisque tu es prêt, partons.",
+    "Since you’re ready, let’s go."
+  ],
+  [
+    "étant donné que",
+    "given that",
+    "Étant donné qu'il pleut, nous annulerons la sortie.",
+    "Given that it's raining, we will cancel the outing."
+  ],
+  [
+    "grâce à",
+    "thanks to",
+    "Grâce à toi, j'ai réussi.",
+    "Thanks to you, I succeeded."
+  ],
+  [
+    "en raison de",
+    "due to",
+    "Le vol a été annulé en raison du mauvais temps.",
+    "The flight was canceled due to bad weather."
+  ],
+  [
+    "mais",
+    "but",
+    "Je voulais venir, mais j'étais trop fatigué.",
+    "I wanted to come, but I was too tired."
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer.",
+    "However, that could change."
+  ],
+  [
+    "néanmoins",
+    "nevertheless",
+    "Il faisait froid, néanmoins ils sont sortis.",
+    "It was cold, nevertheless they went out."
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent.",
+    "He’s not stupid, on the contrary, he’s very smart."
+  ],
+  [
+    "alors que",
+    "while/whereas",
+    "Elle lit un livre alors que son frère regarde la télévision.",
+    "She is reading a book while her brother is watching TV."
+  ],
+  [
+    "néanmoins",
+    "nevertheless",
+    "Il faisait froid, néanmoins ils sont sortis!",
+    "It was cold, nevertheless they went out!"
+  ],
+  [
+    "grâce à",
+    "thanks to",
+    "Grâce à toi, j'ai réussi!",
+    "Thanks to you, I succeeded!"
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent!",
+    "He’s not stupid, on the contrary, he’s very smart!"
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer!",
+    "However, that could change!"
+  ],
+  [
+    "alors que",
+    "while/whereas",
+    "Elle lit un livre alors que son frère regarde la télévision!",
+    "She is reading a book while her brother is watching TV!"
+  ],
+  [
+    "grâce à",
+    "thanks to",
+    "Grâce à toi, j'ai réussi!",
+    "Thanks to you, I succeeded!"
+  ],
+  [
+    "puisque",
+    "since",
+    "Puisque tu es prêt, partons!",
+    "Since you’re ready, let’s go!"
+  ],
+  [
+    "de plus",
+    "moreover",
+    "Il est intelligent! De plus, il est travailleur!",
+    "He is smart! Moreover, he is hardworking!"
+  ],
+  [
+    "en raison de",
+    "due to",
+    "Le vol a été annulé en raison du mauvais temps!",
+    "The flight was canceled due to bad weather!"
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer!",
+    "However, that could change!"
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent!",
+    "He’s not stupid, on the contrary, he’s very smart!"
+  ],
+  [
+    "alors que",
+    "while/whereas",
+    "Elle lit un livre alors que son frère regarde la télévision!",
+    "She is reading a book while her brother is watching TV!"
+  ],
+  [
+    "aussi",
+    "also",
+    "Elle est médecin et aussi écrivaine!",
+    "She is a doctor and also a writer!"
+  ],
+  [
+    "étant donné que",
+    "given that",
+    "Étant donné qu'il pleut, nous annulerons la sortie!",
+    "Given that it's raining, we will cancel the outing!"
+  ],
+  [
+    "ainsi que",
+    "as well as",
+    "Il a invité Marie ainsi que Paul!",
+    "He invited Marie as well as Paul!"
+  ],
+  [
+    "en raison de",
+    "due to",
+    "Le vol a été annulé en raison du mauvais temps!",
+    "The flight was canceled due to bad weather!"
+  ],
+  [
+    "ainsi que",
+    "as well as",
+    "Il a invité Marie ainsi que Paul!",
+    "He invited Marie as well as Paul!"
+  ],
+  [
+    "parce que",
+    "because",
+    "Je suis resté à la maison parce que j'étais malade!",
+    "I stayed home because I was sick!"
+  ],
+  [
+    "mais",
+    "but",
+    "Je voulais venir, mais j'étais trop fatigué!",
+    "I wanted to come, but I was too tired!"
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer!",
+    "However, that could change!"
+  ],
+  [
+    "néanmoins",
+    "nevertheless",
+    "Il faisait froid, néanmoins ils sont sortis!",
+    "It was cold, nevertheless they went out!"
+  ],
+  [
+    "en outre",
+    "in addition",
+    "En outre, nous avons besoin de plus de preuves!",
+    "In addition, we need more evidence!"
+  ],
+  [
+    "puisque",
+    "since",
+    "Puisque tu es prêt, partons!",
+    "Since you’re ready, let’s go!"
+  ],
+  [
+    "grâce à",
+    "thanks to",
+    "Grâce à toi, j'ai réussi!",
+    "Thanks to you, I succeeded!"
+  ],
+  [
+    "ainsi que",
+    "as well as",
+    "Il a invité Marie ainsi que Paul!",
+    "He invited Marie as well as Paul!"
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer!",
+    "However, that could change!"
+  ],
+  [
+    "grâce à",
+    "thanks to",
+    "Grâce à toi, j'ai réussi!",
+    "Thanks to you, I succeeded!"
+  ],
+  [
+    "aussi",
+    "also",
+    "Elle est médecin et aussi écrivaine!",
+    "She is a doctor and also a writer!"
+  ],
+  [
+    "ainsi que",
+    "as well as",
+    "Il a invité Marie ainsi que Paul!",
+    "He invited Marie as well as Paul!"
+  ],
+  [
+    "parce que",
+    "because",
+    "Je suis resté à la maison parce que j'étais malade!",
+    "I stayed home because I was sick!"
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent!",
+    "He’s not stupid, on the contrary, he’s very smart!"
+  ],
+  [
+    "ainsi que",
+    "as well as",
+    "Il a invité Marie ainsi que Paul!",
+    "He invited Marie as well as Paul!"
+  ],
+  [
+    "puisque",
+    "since",
+    "Puisque tu es prêt, partons!",
+    "Since you’re ready, let’s go!"
+  ],
+  [
+    "puisque",
+    "since",
+    "Puisque tu es prêt, partons!",
+    "Since you’re ready, let’s go!"
+  ],
+  [
+    "néanmoins",
+    "nevertheless",
+    "Il faisait froid, néanmoins ils sont sortis!",
+    "It was cold, nevertheless they went out!"
+  ],
+  [
+    "en outre",
+    "in addition",
+    "En outre, nous avons besoin de plus de preuves!",
+    "In addition, we need more evidence!"
+  ],
+  [
+    "alors que",
+    "while/whereas",
+    "Elle lit un livre alors que son frère regarde la télévision!",
+    "She is reading a book while her brother is watching TV!"
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent!",
+    "He’s not stupid, on the contrary, he’s very smart!"
+  ],
+  [
+    "et",
+    "and",
+    "Il aime le fromage et le vin!",
+    "He likes cheese and wine!"
+  ],
+  [
+    "étant donné que",
+    "given that",
+    "Étant donné qu'il pleut, nous annulerons la sortie!",
+    "Given that it's raining, we will cancel the outing!"
+  ],
+  [
+    "de plus",
+    "moreover",
+    "Il est intelligent! De plus, il est travailleur!",
+    "He is smart! Moreover, he is hardworking!"
+  ],
+  [
+    "en raison de",
+    "due to",
+    "Le vol a été annulé en raison du mauvais temps!",
+    "The flight was canceled due to bad weather!"
+  ],
+  [
+    "en outre",
+    "in addition",
+    "En outre, nous avons besoin de plus de preuves!",
+    "In addition, we need more evidence!"
+  ],
+  [
+    "ainsi que",
+    "as well as",
+    "Il a invité Marie ainsi que Paul!",
+    "He invited Marie as well as Paul!"
+  ],
+  [
+    "mais",
+    "but",
+    "Je voulais venir, mais j'étais trop fatigué!",
+    "I wanted to come, but I was too tired!"
+  ],
+  [
+    "de plus",
+    "moreover",
+    "Il est intelligent! De plus, il est travailleur!",
+    "He is smart! Moreover, he is hardworking!"
+  ],
+  [
+    "puisque",
+    "since",
+    "Puisque tu es prêt, partons!",
+    "Since you’re ready, let’s go!"
+  ],
+  [
+    "de plus",
+    "moreover",
+    "Il est intelligent! De plus, il est travailleur!",
+    "He is smart! Moreover, he is hardworking!"
+  ],
+  [
+    "puisque",
+    "since",
+    "Puisque tu es prêt, partons!",
+    "Since you’re ready, let’s go!"
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent!",
+    "He’s not stupid, on the contrary, he’s very smart!"
+  ],
+  [
+    "parce que",
+    "because",
+    "Je suis resté à la maison parce que j'étais malade!",
+    "I stayed home because I was sick!"
+  ],
+  [
+    "puisque",
+    "since",
+    "Puisque tu es prêt, partons!",
+    "Since you’re ready, let’s go!"
+  ],
+  [
+    "mais",
+    "but",
+    "Je voulais venir, mais j'étais trop fatigué!",
+    "I wanted to come, but I was too tired!"
+  ],
+  [
+    "de plus",
+    "moreover",
+    "Il est intelligent! De plus, il est travailleur!",
+    "He is smart! Moreover, he is hardworking!"
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer!",
+    "However, that could change!"
+  ],
+  [
+    "étant donné que",
+    "given that",
+    "Étant donné qu'il pleut, nous annulerons la sortie!",
+    "Given that it's raining, we will cancel the outing!"
+  ],
+  [
+    "parce que",
+    "because",
+    "Je suis resté à la maison parce que j'étais malade!",
+    "I stayed home because I was sick!"
+  ],
+  [
+    "de plus",
+    "moreover",
+    "Il est intelligent! De plus, il est travailleur!",
+    "He is smart! Moreover, he is hardworking!"
+  ],
+  [
+    "mais",
+    "but",
+    "Je voulais venir, mais j'étais trop fatigué!",
+    "I wanted to come, but I was too tired!"
+  ],
+  [
+    "en outre",
+    "in addition",
+    "En outre, nous avons besoin de plus de preuves!",
+    "In addition, we need more evidence!"
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer!",
+    "However, that could change!"
+  ],
+  [
+    "et",
+    "and",
+    "Il aime le fromage et le vin!",
+    "He likes cheese and wine!"
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent!",
+    "He’s not stupid, on the contrary, he’s very smart!"
+  ],
+  [
+    "alors que",
+    "while/whereas",
+    "Elle lit un livre alors que son frère regarde la télévision!",
+    "She is reading a book while her brother is watching TV!"
+  ],
+  [
+    "ainsi que",
+    "as well as",
+    "Il a invité Marie ainsi que Paul!",
+    "He invited Marie as well as Paul!"
+  ],
+  [
+    "en outre",
+    "in addition",
+    "En outre, nous avons besoin de plus de preuves!",
+    "In addition, we need more evidence!"
+  ],
+  [
+    "et",
+    "and",
+    "Il aime le fromage et le vin!",
+    "He likes cheese and wine!"
+  ],
+  [
+    "de plus",
+    "moreover",
+    "Il est intelligent! De plus, il est travailleur!",
+    "He is smart! Moreover, he is hardworking!"
+  ],
+  [
+    "en raison de",
+    "due to",
+    "Le vol a été annulé en raison du mauvais temps!",
+    "The flight was canceled due to bad weather!"
+  ],
+  [
+    "de plus",
+    "moreover",
+    "Il est intelligent! De plus, il est travailleur!",
+    "He is smart! Moreover, he is hardworking!"
+  ],
+  [
+    "ainsi que",
+    "as well as",
+    "Il a invité Marie ainsi que Paul!",
+    "He invited Marie as well as Paul!"
+  ],
+  [
+    "grâce à",
+    "thanks to",
+    "Grâce à toi, j'ai réussi!",
+    "Thanks to you, I succeeded!"
+  ],
+  [
+    "aussi",
+    "also",
+    "Elle est médecin et aussi écrivaine!",
+    "She is a doctor and also a writer!"
+  ],
+  [
+    "étant donné que",
+    "given that",
+    "Étant donné qu'il pleut, nous annulerons la sortie!",
+    "Given that it's raining, we will cancel the outing!"
+  ],
+  [
+    "puisque",
+    "since",
+    "Puisque tu es prêt, partons!",
+    "Since you’re ready, let’s go!"
+  ],
+  [
+    "alors que",
+    "while/whereas",
+    "Elle lit un livre alors que son frère regarde la télévision!",
+    "She is reading a book while her brother is watching TV!"
+  ],
+  [
+    "néanmoins",
+    "nevertheless",
+    "Il faisait froid, néanmoins ils sont sortis!",
+    "It was cold, nevertheless they went out!"
+  ],
+  [
+    "parce que",
+    "because",
+    "Je suis resté à la maison parce que j'étais malade!",
+    "I stayed home because I was sick!"
+  ],
+  [
+    "néanmoins",
+    "nevertheless",
+    "Il faisait froid, néanmoins ils sont sortis!",
+    "It was cold, nevertheless they went out!"
+  ],
+  [
+    "et",
+    "and",
+    "Il aime le fromage et le vin!",
+    "He likes cheese and wine!"
+  ],
+  [
+    "de plus",
+    "moreover",
+    "Il est intelligent! De plus, il est travailleur!",
+    "He is smart! Moreover, he is hardworking!"
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer!",
+    "However, that could change!"
+  ],
+  [
+    "en outre",
+    "in addition",
+    "En outre, nous avons besoin de plus de preuves!",
+    "In addition, we need more evidence!"
+  ],
+  [
+    "aussi",
+    "also",
+    "Elle est médecin et aussi écrivaine!",
+    "She is a doctor and also a writer!"
+  ],
+  [
+    "et",
+    "and",
+    "Il aime le fromage et le vin!",
+    "He likes cheese and wine!"
+  ],
+  [
+    "de plus",
+    "moreover",
+    "Il est intelligent! De plus, il est travailleur!",
+    "He is smart! Moreover, he is hardworking!"
+  ],
+  [
+    "ainsi que",
+    "as well as",
+    "Il a invité Marie ainsi que Paul!",
+    "He invited Marie as well as Paul!"
+  ],
+  [
+    "alors que",
+    "while/whereas",
+    "Elle lit un livre alors que son frère regarde la télévision!",
+    "She is reading a book while her brother is watching TV!"
+  ],
+  [
+    "ainsi que",
+    "as well as",
+    "Il a invité Marie ainsi que Paul!",
+    "He invited Marie as well as Paul!"
+  ],
+  [
+    "néanmoins",
+    "nevertheless",
+    "Il faisait froid, néanmoins ils sont sortis!",
+    "It was cold, nevertheless they went out!"
+  ],
+  [
+    "mais",
+    "but",
+    "Je voulais venir, mais j'étais trop fatigué!",
+    "I wanted to come, but I was too tired!"
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer!",
+    "However, that could change!"
+  ],
+  [
+    "alors que",
+    "while/whereas",
+    "Elle lit un livre alors que son frère regarde la télévision!",
+    "She is reading a book while her brother is watching TV!"
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer!",
+    "However, that could change!"
+  ],
+  [
+    "grâce à",
+    "thanks to",
+    "Grâce à toi, j'ai réussi!",
+    "Thanks to you, I succeeded!"
+  ],
+  [
+    "grâce à",
+    "thanks to",
+    "Grâce à toi, j'ai réussi!",
+    "Thanks to you, I succeeded!"
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent!",
+    "He’s not stupid, on the contrary, he’s very smart!"
+  ],
+  [
+    "puisque",
+    "since",
+    "Puisque tu es prêt, partons!",
+    "Since you’re ready, let’s go!"
+  ],
+  [
+    "aussi",
+    "also",
+    "Elle est médecin et aussi écrivaine!",
+    "She is a doctor and also a writer!"
+  ],
+  [
+    "parce que",
+    "because",
+    "Je suis resté à la maison parce que j'étais malade!",
+    "I stayed home because I was sick!"
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer!",
+    "However, that could change!"
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent!",
+    "He’s not stupid, on the contrary, he’s very smart!"
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer!",
+    "However, that could change!"
+  ],
+  [
+    "ainsi que",
+    "as well as",
+    "Il a invité Marie ainsi que Paul!",
+    "He invited Marie as well as Paul!"
+  ],
+  [
+    "étant donné que",
+    "given that",
+    "Étant donné qu'il pleut, nous annulerons la sortie!",
+    "Given that it's raining, we will cancel the outing!"
+  ],
+  [
+    "aussi",
+    "also",
+    "Elle est médecin et aussi écrivaine!",
+    "She is a doctor and also a writer!"
+  ],
+  [
+    "de plus",
+    "moreover",
+    "Il est intelligent! De plus, il est travailleur!",
+    "He is smart! Moreover, he is hardworking!"
+  ],
+  [
+    "en raison de",
+    "due to",
+    "Le vol a été annulé en raison du mauvais temps!",
+    "The flight was canceled due to bad weather!"
+  ],
+  [
+    "étant donné que",
+    "given that",
+    "Étant donné qu'il pleut, nous annulerons la sortie!",
+    "Given that it's raining, we will cancel the outing!"
+  ],
+  [
+    "mais",
+    "but",
+    "Je voulais venir, mais j'étais trop fatigué!",
+    "I wanted to come, but I was too tired!"
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent!",
+    "He’s not stupid, on the contrary, he’s very smart!"
+  ],
+  [
+    "ainsi que",
+    "as well as",
+    "Il a invité Marie ainsi que Paul!",
+    "He invited Marie as well as Paul!"
+  ],
+  [
+    "en raison de",
+    "due to",
+    "Le vol a été annulé en raison du mauvais temps!",
+    "The flight was canceled due to bad weather!"
+  ],
+  [
+    "et",
+    "and",
+    "Il aime le fromage et le vin!",
+    "He likes cheese and wine!"
+  ],
+  [
+    "et",
+    "and",
+    "Il aime le fromage et le vin!",
+    "He likes cheese and wine!"
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer!",
+    "However, that could change!"
+  ],
+  [
+    "parce que",
+    "because",
+    "Je suis resté à la maison parce que j'étais malade!",
+    "I stayed home because I was sick!"
+  ],
+  [
+    "en outre",
+    "in addition",
+    "En outre, nous avons besoin de plus de preuves!",
+    "In addition, we need more evidence!"
+  ],
+  [
+    "et",
+    "and",
+    "Il aime le fromage et le vin!",
+    "He likes cheese and wine!"
+  ],
+  [
+    "en raison de",
+    "due to",
+    "Le vol a été annulé en raison du mauvais temps!",
+    "The flight was canceled due to bad weather!"
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent!",
+    "He’s not stupid, on the contrary, he’s very smart!"
+  ],
+  [
+    "alors que",
+    "while/whereas",
+    "Elle lit un livre alors que son frère regarde la télévision!",
+    "She is reading a book while her brother is watching TV!"
+  ],
+  [
+    "de plus",
+    "moreover",
+    "Il est intelligent! De plus, il est travailleur!",
+    "He is smart! Moreover, he is hardworking!"
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent!",
+    "He’s not stupid, on the contrary, he’s very smart!"
+  ],
+  [
+    "aussi",
+    "also",
+    "Elle est médecin et aussi écrivaine!",
+    "She is a doctor and also a writer!"
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer!",
+    "However, that could change!"
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer!",
+    "However, that could change!"
+  ],
+  [
+    "aussi",
+    "also",
+    "Elle est médecin et aussi écrivaine!",
+    "She is a doctor and also a writer!"
+  ],
+  [
+    "en outre",
+    "in addition",
+    "En outre, nous avons besoin de plus de preuves!",
+    "In addition, we need more evidence!"
+  ],
+  [
+    "et",
+    "and",
+    "Il aime le fromage et le vin!",
+    "He likes cheese and wine!"
+  ],
+  [
+    "en outre",
+    "in addition",
+    "En outre, nous avons besoin de plus de preuves!",
+    "In addition, we need more evidence!"
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent!",
+    "He’s not stupid, on the contrary, he’s very smart!"
+  ],
+  [
+    "alors que",
+    "while/whereas",
+    "Elle lit un livre alors que son frère regarde la télévision!",
+    "She is reading a book while her brother is watching TV!"
+  ],
+  [
+    "étant donné que",
+    "given that",
+    "Étant donné qu'il pleut, nous annulerons la sortie!",
+    "Given that it's raining, we will cancel the outing!"
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent!",
+    "He’s not stupid, on the contrary, he’s very smart!"
+  ],
+  [
+    "alors que",
+    "while/whereas",
+    "Elle lit un livre alors que son frère regarde la télévision!",
+    "She is reading a book while her brother is watching TV!"
+  ],
+  [
+    "ainsi que",
+    "as well as",
+    "Il a invité Marie ainsi que Paul!",
+    "He invited Marie as well as Paul!"
+  ],
+  [
+    "en outre",
+    "in addition",
+    "En outre, nous avons besoin de plus de preuves!",
+    "In addition, we need more evidence!"
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent!",
+    "He’s not stupid, on the contrary, he’s very smart!"
+  ],
+  [
+    "néanmoins",
+    "nevertheless",
+    "Il faisait froid, néanmoins ils sont sortis!",
+    "It was cold, nevertheless they went out!"
+  ]
+];
+
+        const FRENCH_PREPOSITIONS_DATA = [
+    ["à", "to / at / in (city)", "Je parle à Paul.", "I speak to Paul."],
+    ["de", "from / of / about", "Je viens de Paris.", "I come from Paris."],
+    ["en", "in / by / on", "Je suis en France.", "I am in France."],
+    ["dans", "in / inside", "Le chat est dans la boîte.", "The cat is in the box."],
+    ["sur", "on / upon", "Le livre est sur la table.", "The book is on the table."],
+    ["sous", "under / beneath", "Le chat est sous la table.", "The cat is under the table."],
+    ["devant", "in front of", "Je t’attends devant la porte.", "I’m waiting for you in front of the door."],
+    ["derrière", "behind", "Il se cache derrière la maison.", "He is hiding behind the house."],
+    ["entre", "between / among", "Le café est entre la banque et l'église.", "The café is between the bank and the church."],
+    ["chez", "at (someone’s place)", "Je vais chez mon ami.", "I’m going to my friend’s place."],
+    ["par", "by / through", "Je voyage par le train.", "I travel by train."],
+    ["pour", "for / in order to", "C’est un cadeau pour toi.", "This is a gift for you."],
+    ["avec", "with", "Je travaille avec Julie.", "I work with Julie."],
+    ["sans", "without", "Je ne peux pas vivre sans musique.", "I can't live without music."],
+    ["depuis", "since / for (duration)", "J’habite ici depuis trois ans.", "I’ve lived here for three years."],
+    ["pendant", "during / for (duration)", "Il lit pendant le voyage.", "He reads during the trip."],
+    ["avant", "before", "Je me lave avant de manger.", "I wash before eating."],
+    ["après", "after", "Après le dîner, il regarde la télé.", "After dinner, he watches TV."],
+    ["près de", "near / close to", "La boulangerie est près de la gare.", "The bakery is near the station."],
+    ["loin de", "far from", "Il habite loin de la ville.", "He lives far from the town."],
+    ["en face de", "across from / facing", "La banque est en face de l’école.", "The bank is across from the school."],
+    ["au-dessus de", "above / over", "Le tableau est au‑dessus du canapé.", "The painting is above the sofa."],
+    ["au-dessous de", "below / under", "La cave est au‑dessous de la maison.", "The cellar is below the house."],
+    ["au coin de", "at the corner of", "Le café est au coin de la rue.", "The café is at the corner of the street."],
+    ["quant à", "as for / regarding", "Quant à lui, il préfère rester.", "As for him, he prefers to stay."],
+    ["selon", "according to", "Selon elle, tout va bien.", "According to her, everything is fine."],
+    ["malgré", "despite", "Malgré la pluie, nous sortons.", "Despite the rain, we are going out."],
+    ["à cause de", "because of", "La réunion est annulée à cause du mauvais temps.", "The meeting is canceled because of bad weather."],
+    ["grâce à", "thanks to", "Grâce à toi, j’ai réussi.", "Thanks to you, I succeeded."],
+    ["auprès de", "near / with (person or institution)", "Il a déposé sa demande auprès de la mairie.", "He submitted his application to the town hall."]
+    ["contre", "against", "Il lutte contre l’injustice.", "He fights against injustice."],
+    ["envers", "toward (emotionally)", "Elle est bienveillante envers les autres.", "She is caring toward others."],
+    ["suivant", "according to/following", "Suivant les règles, tout est valide.", "According to the rules, everything is valid."],
+    ["jusque", "until/up to", "Je resterai jusque demain.", "I will stay until tomorrow."],
+    ["hors de", "outside of", "Il vit hors de la ville.", "He lives outside of the city."],
+    ["environ", "about/approximately", "Il y a environ vingt personnes.", "There are about twenty people."],
+    ["au sujet de", "about/on the subject of", "Nous parlons au sujet de ton projet.", "We are talking about your project."],
+    ["à côté de", "next to/beside", "Le café est à côté de la gare.", "The café is next to the station."],
+    ["vers", "toward", "Le train va vers le nord.", "The train is going toward the north."],
+    ["à partir de", "starting from", "À partir de demain, je change de régime.", "Starting from tomorrow, I’m changing diet."],
+    ["au bout de", "at the end of", "Au bout de la rue se trouve une boulangerie.", "At the end of the street lies a bakery."],
+    ["à moins de", "unless", "Je viendrai à moins que tu sois souffrant.", "I will come unless you are unwell."],
+    ["dans le but de", "in order to", "Elle travaille dur dans le but de réussir.", "She works hard in order to succeed."],
+    ["grâce à", "thanks to", "Grâce à son aide, j’ai tout fini.", "Thanks to his help, I finished everything."],
+    ["à la place de", "in place of", "Il est venu à ma place de manière inattendue.", "He came in my place unexpectedly."],
+    ["parmi", "among", "Il est connu parmi les artistes.", "He is known among artists."],
+    ["sauf", "except", "Tout était prêt sauf moi.", "Everything was ready except me."],
+    ["versus", "versus/against (informal)", "Le match France versus Allemagne commence bientôt.", "France versus Germany begins soon."],
+    ["quant à", "as for/regarding", "Quant à moi, je préfère rester.", "As for me, I prefer to stay."],
+    ["selon", "according to", "Selon le journal, il va pleuvoir.", "According to the newspaper, it will rain."],
+    ["à droite de", "to the right of", "Le panneau est à droite de la route.", "The sign is to the right of the road."],
+    ["à gauche de", "to the left of", "Tourne à gauche de l’église.", "Turn to the left of the church."],
+    ["à l’égard de", "regarding/in regard to", "Elle est respectueuse à l’égard des autres.", "She is respectful toward others."],
+    ["à l’extérieur de", "outside of", "Il travaille à l’extérieur de la ville.", "He works outside of the city."],
+    ["à l’intérieur de", "inside of", "Les enfants jouent à l’intérieur de la maison.", "The children play inside the house."],
+    ["à propos de", "regarding/about", "Nous discutons à propos de ton projet.", "We are discussing your project."],
+    ["au contraire de", "unlike/contrary to", "Au contraire de toi, je préfère rester.", "Unlike you, I prefer to stay."],
+    ["au cœur de", "in the heart of", "C’est au cœur de la forêt.", "It’s in the heart of the forest."],
+    ["au sein de", "within/in the midst of", "Au sein de l’équipe, tout le monde collabore.", "Within the team, everyone collaborates."],
+    ["autour de", "around", "Il y a des arbres autour de la maison.", "There are trees around the house."],
+    ["d’après", "according to", "D’après le journal, le train est en retard.", "According to the newspaper, the train is late."],
+    ["de côté de", "sideways/by the side of", "Il a glissé de côté de la route.", "He slipped sideways off the road."],
+    ["en arrière de", "behind", "Le chat est en arrière de la chaise.", "The cat is behind the chair."],
+    ["en bas de", "below/at the bottom of", "Je t’attends en bas de l’immeuble.", "I’m waiting downstairs at the building."],
+    ["en haut de", "at the top of/above", "Le bureau est en haut de l’escalier.", "The office is at the top of the stairs."],
+    ["en dehors de", "outside of", "Il travaille en dehors de l’hôpital.", "He works outside of the hospital."],
+    ["en dessous de", "underneath/lower than", "Le chat dort en dessous de la table.", "The cat sleeps underneath the table."],
+    ["en haut de", "at the top of/above", "Les oiseaux volent en haut de la montagne.", "The birds fly above the mountain."],
+    ["par rapport à", "compared to/with regard to", "Par rapport à hier, il fait plus chaud.", "Compared to yesterday, it's warmer."],
+    ["au niveau de", "at the level of", "Au niveau de l’eau, tout est normal.", "At the water level, everything is normal."],
+    ["au sujet de", "about/on the subject of", "Nous avons parlé au sujet de ton futur.", "We talked about your future."],
+    ["au coin de", "at the corner of", "Le café est au coin de la rue.", "The café is at the corner of the street."],
+    ["au-dessus de", "above/over", "Le tableau est au-dessus du canapé.", "The painting is above the sofa."],
+    ["au-dessous de", "below/under", "La cave est au-dessous de la maison.", "The cellar is under the house."],
+    ["grâce à", "thanks to", "Grâce à son aide, tout est terminé.", "Thanks to his help, everything is done."]
+];
+
+        class FlashcardApp {
+            constructor() {
+                this.cards = [];
+                this.currentCard = null;
+                this.correctCards = new Set();
+                this.remainingCards = [];
+                this.isFlipped = false;
+                this.currentSide = 'french';
+                this.cardHistory = [];
+                this.historyIndex = -1;
+
+                this.initializeElements();
+                this.bindEvents();
+                this.updateStats();
+            }
+
+            initializeElements() {
+                this.fileSelect = document.getElementById('fileSelect');
+                this.sideSelect = document.getElementById('sideSelect');
+                this.flashcard = document.getElementById('flashcard');
+                this.frontWord = document.getElementById('frontWord');
+                this.frontExample = document.getElementById('frontExample');
+                this.backWord = document.getElementById('backWord');
+                this.backExample = document.getElementById('backExample');
+                this.totalCardsEl = document.getElementById('totalCards');
+                this.remainingCardsEl = document.getElementById('remainingCards');
+                this.correctCardsEl = document.getElementById('correctCards');
+            }
+
+            bindEvents() {
+                this.fileSelect.addEventListener('change', () => this.loadCards());
+                this.sideSelect.addEventListener('change', () => this.updateCurrentSide());
+                this.flashcard.addEventListener('click', () => this.flipCard());
+                document.addEventListener('keydown', (e) => this.handleKeyPress(e));
+                document.getElementById('resetScoreBtn').addEventListener('click', () => this.resetScore());
+                
+                // Add click handlers for legend keys
+                document.querySelectorAll('.legend-key').forEach(key => {
+                    key.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const action = key.getAttribute('data-action');
+                        this.handleLegendClick(action);
+                    });
+                });
+                
+                // Save progress when page is about to unload
+                window.addEventListener('beforeunload', () => this.saveProgress());
+            }
+
+            loadCards() {
+                const selectedFile = this.fileSelect.value;
+                if (!selectedFile) return;
+
+                // Get the data from the embedded JSON objects
+                switch(selectedFile) {
+                    case 'french_nouns_800.json':
+                        this.cards = FRENCH_NOUNS_DATA;
+                        break;
+                    case 'french_adjectives.json':
+                        this.cards = FRENCH_ADJECTIVES_DATA;
+                        break;
+                    case 'french_adverbs.json':
+                        this.cards = FRENCH_ADVERBS_DATA;
+                        break;
+                    case 'french_connecting_words_160.json':
+                        this.cards = FRENCH_CONNECTING_WORDS_DATA;
+                        break;
+                    case 'french_prepositions.json':
+                        this.cards = FRENCH_PREPOSITIONS_DATA;
+                        break;
+                    default:
+                        this.showError('Invalid selection. Please try again.');
+                        return;
+                }
+
+                // Load saved progress from localStorage
+                this.loadProgress(selectedFile);
+            }
+
+            updateCurrentSide() {
+                this.currentSide = this.sideSelect.value;
+                if (this.currentCard !== null) {
+                    this.displayCard();
+                }
+                this.saveProgress();
+            }
+
+            showNextCard() {
+                if (this.remainingCards.length === 0) {
+                    this.showCompletionMessage();
+                    return;
+                }
+
+                const randomIndex = Math.floor(Math.random() * this.remainingCards.length);
+                const cardIndex = this.remainingCards[randomIndex];
+                this.currentCard = cardIndex;
+                this.isFlipped = false;
+                this.flashcard.classList.remove('flipped');
+                
+                // Add to history
+                this.cardHistory.push(cardIndex);
+                this.historyIndex = this.cardHistory.length - 1;
+                
+                this.displayCard();
+                this.saveProgress();
+            }
+
+            showPreviousCard() {
+                if (this.historyIndex > 0) {
+                    this.historyIndex--;
+                    this.currentCard = this.cardHistory[this.historyIndex];
+                    this.isFlipped = false;
+                    this.flashcard.classList.remove('flipped');
+                    this.displayCard();
+                    this.saveProgress();
+                }
+            }
+
+            saveProgress() {
+                const selectedFile = this.fileSelect.value;
+                if (!selectedFile) return;
+
+                const progress = {
+                    correctCards: Array.from(this.correctCards),
+                    remainingCards: this.remainingCards,
+                    cardHistory: this.cardHistory,
+                    historyIndex: this.historyIndex,
+                    currentCard: this.currentCard,
+                    currentSide: this.currentSide,
+                    timestamp: Date.now()
+                };
+
+                localStorage.setItem(`flashcard_progress_${selectedFile}`, JSON.stringify(progress));
+            }
+
+            loadProgress(selectedFile) {
+                const savedProgress = localStorage.getItem(`flashcard_progress_${selectedFile}`);
+                
+                if (savedProgress) {
+                    try {
+                        const progress = JSON.parse(savedProgress);
+                        
+                        // Check if the saved data is still valid (same number of cards)
+                        if (progress.remainingCards && progress.remainingCards.length <= this.cards.length) {
+                            this.correctCards = new Set(progress.correctCards || []);
+                            this.remainingCards = progress.remainingCards;
+                            this.cardHistory = progress.cardHistory || [];
+                            this.historyIndex = progress.historyIndex || -1;
+                            this.currentCard = progress.currentCard;
+                            this.currentSide = progress.currentSide || 'french';
+                            
+                            // Update the side selector to match saved preference
+                            this.sideSelect.value = this.currentSide;
+                            
+                            this.updateStats();
+                            
+                            // Show the current card if it exists, otherwise show next
+                            if (this.currentCard !== null && this.currentCard !== undefined) {
+                                this.displayCard();
+                            } else {
+                                this.showNextCard();
+                            }
+                            return;
+                        }
+                    } catch (error) {
+                        console.error('Error loading progress:', error);
+                    }
+                }
+                
+                // If no valid saved progress, start fresh
+                this.correctCards.clear();
+                this.remainingCards = [...Array(this.cards.length).keys()];
+                this.cardHistory = [];
+                this.historyIndex = -1;
+                this.updateStats();
+                this.showNextCard();
+            }
+
+            resetScore() {
+                const selectedFile = this.fileSelect.value;
+                if (!selectedFile) return;
+
+                if (confirm('Are you sure you want to reset your progress for this category? This cannot be undone.')) {
+                    // Clear localStorage for this category
+                    localStorage.removeItem(`flashcard_progress_${selectedFile}`);
+                    
+                    // Reset current session
+                    this.correctCards.clear();
+                    this.remainingCards = [...Array(this.cards.length).keys()];
+                    this.cardHistory = [];
+                    this.historyIndex = -1;
+                    this.currentCard = null;
+                    this.updateStats();
+                    this.showNextCard();
+                }
+            }
+
+            displayCard() {
+                if (this.currentCard === null) return;
+
+                const card = this.cards[this.currentCard];
+                const [frenchWord, englishWord, frenchExample, englishExample] = card;
+
+                // Determine which side to show first
+                let showFrenchFirst = this.currentSide === 'french' || 
+                    (this.currentSide === 'random' && Math.random() < 0.5);
+
+                if (showFrenchFirst) {
+                    this.frontWord.textContent = frenchWord;
+                    this.frontExample.textContent = frenchExample;
+                    this.backWord.textContent = englishWord;
+                    this.backExample.textContent = englishExample;
+                } else {
+                    this.frontWord.textContent = englishWord;
+                    this.frontExample.textContent = englishExample;
+                    this.backWord.textContent = frenchWord;
+                    this.backExample.textContent = frenchExample;
+                }
+            }
+
+            flipCard() {
+                this.isFlipped = !this.isFlipped;
+                this.flashcard.classList.toggle('flipped', this.isFlipped);
+            }
+
+            markAsCorrect() {
+                if (this.currentCard === null) return;
+                
+                this.correctCards.add(this.currentCard);
+                this.remainingCards = this.remainingCards.filter(index => index !== this.currentCard);
+                this.updateStats();
+                this.saveProgress();
+                this.showNextCard();
+            }
+
+            markAsIncorrect() {
+                if (this.currentCard === null) return;
+                
+                // Card stays in remaining cards, just move to next
+                this.updateStats();
+                this.saveProgress();
+                this.showNextCard();
+            }
+
+            handleKeyPress(event) {
+                switch(event.key) {
+                    case 'ArrowLeft':
+                        event.preventDefault();
+                        this.showPreviousCard();
+                        break;
+                    case 'ArrowRight':
+                        event.preventDefault();
+                        this.showNextCard();
+                        break;
+                    case ' ':
+                        event.preventDefault();
+                        this.flipCard();
+                        break;
+                    case 'a':
+                    case 'A':
+                        event.preventDefault();
+                        this.markAsCorrect();
+                        break;
+                    case 'x':
+                    case 'X':
+                        event.preventDefault();
+                        this.markAsIncorrect();
+                        break;
+                }
+            }
+
+            handleLegendClick(action) {
+                switch(action) {
+                    case 'previous':
+                        this.showPreviousCard();
+                        break;
+                    case 'next':
+                        this.showNextCard();
+                        break;
+                    case 'flip':
+                        this.flipCard();
+                        break;
+                    case 'correct':
+                        this.markAsCorrect();
+                        break;
+                    case 'incorrect':
+                        this.markAsIncorrect();
+                        break;
+                }
+            }
+
+            updateStats() {
+                this.totalCardsEl.textContent = this.cards.length;
+                this.remainingCardsEl.textContent = this.remainingCards.length;
+                this.correctCardsEl.textContent = this.correctCards.size;
+            }
+
+            showCompletionMessage() {
+                this.frontWord.textContent = '🎉 Congratulations!';
+                this.frontExample.textContent = `You've completed all ${this.cards.length} cards!`;
+                this.backWord.textContent = '';
+                this.backExample.textContent = '';
+                this.flashcard.classList.remove('flipped');
+                
+                // Add reset button
+                const resetBtn = document.createElement('button');
+                resetBtn.textContent = 'Start Over';
+                resetBtn.className = 'reset-btn';
+                resetBtn.style.marginTop = '20px';
+                resetBtn.onclick = () => {
+                    this.correctCards.clear();
+                    this.remainingCards = [...Array(this.cards.length).keys()];
+                    this.updateStats();
+                    this.showNextCard();
+                    resetBtn.remove();
+                };
+                
+                const cardFront = this.flashcard.querySelector('.card-front');
+                cardFront.appendChild(resetBtn);
+            }
+
+            showError(message) {
+                this.frontWord.textContent = '❌ Error';
+                this.frontExample.textContent = message;
+                this.backWord.textContent = '';
+                this.backExample.textContent = '';
+            }
+        }
+
+        // Initialize the app when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new FlashcardApp();
+        });
+    </script>
+</body>
+</html>
