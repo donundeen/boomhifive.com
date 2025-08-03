@@ -357,6 +357,7 @@
                     <option value="french_adverbs.json">Adverbs</option>
                     <option value="french_connecting_words_160.json">Connecting Words (160)</option>
                     <option value="french_prepositions.json">Prepositions</option>
+                    <option value="french_irregular_verbs.json">Irregular Verbs</option>
                 </select>
             </div>
 
@@ -1926,6 +1927,528 @@
     ["grâce à", "thanks to", "Grâce à son aide, tout est terminé.", "Thanks to his help, everything is done."]
 ];
 
+const FRENCH_IRREGULAR_VERBS_DATA = [
+  [
+    "je suis",
+    "I am",
+    "Je suis prêt.",
+    "I am ready. (Présent)"
+  ],
+  [
+    "tu es",
+    "you are",
+    "Tu es gentil.",
+    "You are kind. (Présent)"
+  ],
+  [
+    "il/elle/on est",
+    "he/she is",
+    "Il est occupé.",
+    "He is busy. (Présent)"
+  ],
+  [
+    "nous sommes",
+    "we are",
+    "Nous sommes en route.",
+    "We are on the way. (Présent)"
+  ],
+  [
+    "vous êtes",
+    "you are",
+    "Vous êtes très aimables.",
+    "You are very kind. (Présent)"
+  ],
+  [
+    "ils/elles sont",
+    "they are",
+    "Ils sont à la maison.",
+    "They are at home. (Présent)"
+  ],
+  [
+    "je étais",
+    "I was",
+    "J'étais fatigué ce matin.",
+    "I was tired this morning. (Imparfait)"
+  ],
+  [
+    "tu étais",
+    "you were",
+    "Tu étais à l'école.",
+    "You were at school. (Imparfait)"
+  ],
+  [
+    "il/elle/on était",
+    "he/she was",
+    "Il était médecin.",
+    "He was a doctor. (Imparfait)"
+  ],
+  [
+    "nous étions",
+    "we were",
+    "Nous étions heureux de vous voir.",
+    "We were happy to see you. (Imparfait)"
+  ],
+  [
+    "vous étiez",
+    "you were",
+    "Vous étiez en vacances.",
+    "You were on vacation. (Imparfait)"
+  ],
+  [
+    "ils/elles étaient",
+    "they were",
+    "Ils étaient en retard.",
+    "They were late. (Imparfait)"
+  ],
+  [
+    "je fus",
+    "I was",
+    "Je fus surpris par cette nouvelle.",
+    "I was surprised by this news. (Passé simple)"
+  ],
+  [
+    "tu fus",
+    "you were",
+    "Tu fus le premier à arriver.",
+    "You were the first to arrive. (Passé simple)"
+  ],
+  [
+    "il/elle/on fut",
+    "he/she was",
+    "Il fut élu président.",
+    "He was elected president. (Passé simple)"
+  ],
+  [
+    "nous fûmes",
+    "we were",
+    "Nous fûmes très heureux de cette décision.",
+    "We were very happy about this decision. (Passé simple)"
+  ],
+  [
+    "vous fûtes",
+    "you were",
+    "Vous fûtes les seuls à comprendre.",
+    "You were the only ones to understand. (Passé simple)"
+  ],
+  [
+    "ils/elles furent",
+    "they were",
+    "Ils furent choisis pour ce projet.",
+    "They were chosen for this project. (Passé simple)"
+  ],
+  [
+    "j'ai été",
+    "I have been",
+    "J'ai été malade la semaine dernière.",
+    "I have been sick last week. (Passé composé)"
+  ],
+  [
+    "tu as été",
+    "you have been",
+    "Tu as été très patient avec moi.",
+    "You have been very patient with me. (Passé composé)"
+  ],
+  [
+    "il/elle/on a été",
+    "he/she has been",
+    "Il a été promu directeur.",
+    "He has been promoted to director. (Passé composé)"
+  ],
+  [
+    "nous avons été",
+    "we have been",
+    "Nous avons été invités à la fête.",
+    "We have been invited to the party. (Passé composé)"
+  ],
+  [
+    "vous avez été",
+    "you have been",
+    "Vous avez été très gentils avec nous.",
+    "You have been very kind to us. (Passé composé)"
+  ],
+  [
+    "ils/elles ont été",
+    "they have been",
+    "Ils ont été sélectionnés pour le concours.",
+    "They have been selected for the competition. (Passé composé)"
+  ],
+  [
+    "je serai",
+    "I will be",
+    "Je serai là demain matin.",
+    "I will be there tomorrow morning. (Futur simple)"
+  ],
+  [
+    "tu seras",
+    "you will be",
+    "Tu seras le prochain président.",
+    "You will be the next president. (Futur simple)"
+  ],
+  [
+    "il/elle/on sera",
+    "he/she will be",
+    "Il sera en retard ce soir.",
+    "He will be late tonight. (Futur simple)"
+  ],
+  [
+    "nous serons",
+    "we will be",
+    "Nous serons prêts pour le voyage.",
+    "We will be ready for the trip. (Futur simple)"
+  ],
+  [
+    "vous serez",
+    "you will be",
+    "Vous serez les bienvenus à notre maison.",
+    "You will be welcome at our house. (Futur simple)"
+  ],
+  [
+    "ils/elles seront",
+    "they will be",
+    "Ils seront contents de vous voir.",
+    "They will be happy to see you. (Futur simple)"
+  ],
+  [
+    "j'avais été",
+    "I had been",
+    "J'avais été malade avant de partir.",
+    "I had been sick before leaving. (Plus-que-parfait)"
+  ],
+  [
+    "tu avais été",
+    "you had been",
+    "Tu avais été prévenu de l'heure.",
+    "You had been warned about the time. (Plus-que-parfait)"
+  ],
+  [
+    "il/elle/on avait été",
+    "he/she had been",
+    "Il avait été nommé directeur avant sa retraite.",
+    "He had been appointed director before his retirement. (Plus-que-parfait)"
+  ],
+  [
+    "nous avions été",
+    "we had been",
+    "Nous avions été informés de la situation.",
+    "We had been informed of the situation. (Plus-que-parfait)"
+  ],
+  [
+    "vous aviez été",
+    "you had been",
+    "Vous aviez été choisis pour cette mission.",
+    "You had been chosen for this mission. (Plus-que-parfait)"
+  ],
+  [
+    "ils/elles avaient été",
+    "they had been",
+    "Ils avaient été avertis du danger.",
+    "They had been warned of the danger. (Plus-que-parfait)"
+  ],
+  [
+    "j'aurais été",
+    "I would have been",
+    "J'aurais été ravi de vous rencontrer.",
+    "I would have been delighted to meet you. (Conditionnel passé)"
+  ],
+  [
+    "tu aurais été",
+    "you would have been",
+    "Tu aurais été fier de ton fils.",
+    "You would have been proud of your son. (Conditionnel passé)"
+  ],
+  [
+    "il/elle/on aurait été",
+    "he/she would have been",
+    "Il aurait été surpris par cette nouvelle.",
+    "He would have been surprised by this news. (Conditionnel passé)"
+  ],
+  [
+    "nous aurions été",
+    "we would have been",
+    "Nous aurions été heureux de vous aider.",
+    "We would have been happy to help you. (Conditionnel passé)"
+  ],
+  [
+    "vous auriez été",
+    "you would have been",
+    "Vous auriez été étonnés par le résultat.",
+    "You would have been amazed by the result. (Conditionnel passé)"
+  ],
+  [
+    "ils/elles auraient été",
+    "they would have been",
+    "Ils auraient été déçus par cette décision.",
+    "They would have been disappointed by this decision. (Conditionnel passé)"
+  ],
+  [
+    "étant",
+    "being",
+    "Étant malade, je ne peux pas sortir.",
+    "Being sick, I cannot go out. (Participe présent)"
+  ],
+
+  [
+    "je ai",
+    "I have",
+    "J'ai un chat noir.",
+    "I have a black cat. (Présent)"
+  ],
+  [
+    "tu as",
+    "you have",
+    "Tu as une belle voiture.",
+    "You have a nice car. (Présent)"
+  ],
+  [
+    "il/elle/on a",
+    "he/she has",
+    "Il a une réunion maintenant.",
+    "He has a meeting now. (Présent)"
+  ],
+  [
+    "nous avons",
+    "we have",
+    "Nous avons deux enfants.",
+    "We have two children. (Présent)"
+  ],
+  [
+    "vous avez",
+    "you have",
+    "Vous avez de la chance.",
+    "You are lucky. (Présent)"
+  ],
+  [
+    "ils/elles ont",
+    "they have",
+    "Ils ont une belle maison.",
+    "They have a beautiful house. (Présent)"
+  ],
+  [
+    "je avais",
+    "I had",
+    "J'avais un chien quand j'étais petit.",
+    "I had a dog when I was little. (Imparfait)"
+  ],
+  [
+    "tu avais",
+    "you had",
+    "Tu avais beaucoup de jouets.",
+    "You had many toys. (Imparfait)"
+  ],
+  [
+    "il/elle/on avait",
+    "he/she had",
+    "Il avait une idée brillante.",
+    "He had a brilliant idea. (Imparfait)"
+  ],
+  [
+    "nous avions",
+    "we had",
+    "Nous avions une grande maison.",
+    "We had a big house. (Imparfait)"
+  ],
+  [
+    "vous aviez",
+    "you had",
+    "Vous aviez raison.",
+    "You were right. (Imparfait)"
+  ],
+  [
+    "ils/elles avaient",
+    "they had",
+    "Ils avaient peur du noir.",
+    "They were afraid of the dark. (Imparfait)"
+  ],
+  [
+    "je eus",
+    "I had",
+    "Je eus l'occasion de le rencontrer.",
+    "I had the opportunity to meet him. (Passé simple)"
+  ],
+  [
+    "tu eus",
+    "you had",
+    "Tu eus raison de partir tôt.",
+    "You had reason to leave early. (Passé simple)"
+  ],
+  [
+    "il/elle/on eut",
+    "he/she had",
+    "Il eut une idée brillante.",
+    "He had a brilliant idea. (Passé simple)"
+  ],
+  [
+    "nous eûmes",
+    "we had",
+    "Nous eûmes beaucoup de chance ce jour-là.",
+    "We had a lot of luck that day. (Passé simple)"
+  ],
+  [
+    "vous eûtes",
+    "you had",
+    "Vous eûtes le courage de dire la vérité.",
+    "You had the courage to tell the truth. (Passé simple)"
+  ],
+  [
+    "ils/elles eurent",
+    "they had",
+    "Ils eurent le temps de se préparer.",
+    "They had time to prepare. (Passé simple)"
+  ],
+  [
+    "j'ai eu",
+    "I have had",
+    "J'ai eu une journée difficile.",
+    "I have had a difficult day. (Passé composé)"
+  ],
+  [
+    "tu as eu",
+    "you have had",
+    "Tu as eu de la chance aujourd'hui.",
+    "You have had luck today. (Passé composé)"
+  ],
+  [
+    "il/elle/on a eu",
+    "he/she has had",
+    "Il a eu une excellente idée.",
+    "He has had an excellent idea. (Passé composé)"
+  ],
+  [
+    "nous avons eu",
+    "we have had",
+    "Nous avons eu une réunion importante.",
+    "We have had an important meeting. (Passé composé)"
+  ],
+  [
+    "vous avez eu",
+    "you have had",
+    "Vous avez eu raison de partir.",
+    "You have had reason to leave. (Passé composé)"
+  ],
+  [
+    "ils/elles ont eu",
+    "they have had",
+    "Ils ont eu beaucoup de succès.",
+    "They have had a lot of success. (Passé composé)"
+  ],
+  [
+    "j'aurai",
+    "I will have",
+    "J'aurai terminé le travail demain.",
+    "I will have finished the work tomorrow. (Futur simple)"
+  ],
+  [
+    "tu auras",
+    "you will have",
+    "Tu auras le temps de réfléchir.",
+    "You will have time to think. (Futur simple)"
+  ],
+  [
+    "il/elle/on aura",
+    "he/she will have",
+    "Il aura une réunion importante.",
+    "He will have an important meeting. (Futur simple)"
+  ],
+  [
+    "nous aurons",
+    "we will have",
+    "Nous aurons fini avant midi.",
+    "We will have finished before noon. (Futur simple)"
+  ],
+  [
+    "vous aurez",
+    "you will have",
+    "Vous aurez besoin de patience.",
+    "You will have need of patience. (Futur simple)"
+  ],
+  [
+    "ils/elles auront",
+    "they will have",
+    "Ils auront terminé le projet.",
+    "They will have finished the project. (Futur simple)"
+  ],
+  [
+    "j'avais eu",
+    "I had had",
+    "J'avais eu cette idée avant.",
+    "I had had this idea before. (Plus-que-parfait)"
+  ],
+  [
+    "tu avais eu",
+    "you had had",
+    "Tu avais eu raison de partir.",
+    "You had had reason to leave. (Plus-que-parfait)"
+  ],
+  [
+    "il/elle/on avait eu",
+    "he/she had had",
+    "Il avait eu cette opportunité.",
+    "He had had this opportunity. (Plus-que-parfait)"
+  ],
+  [
+    "nous avions eu",
+    "we had had",
+    "Nous avions eu cette discussion.",
+    "We had had this discussion. (Plus-que-parfait)"
+  ],
+  [
+    "vous aviez eu",
+    "you had had",
+    "Vous aviez eu cette chance.",
+    "You had had this chance. (Plus-que-parfait)"
+  ],
+  [
+    "ils/elles avaient eu",
+    "they had had",
+    "Ils avaient eu cette idée.",
+    "They had had this idea. (Plus-que-parfait)"
+  ],
+  [
+    "j'aurais eu",
+    "I would have had",
+    "J'aurais eu le temps de le faire.",
+    "I would have had time to do it. (Conditionnel passé)"
+  ],
+  [
+    "tu aurais eu",
+    "you would have had",
+    "Tu aurais eu raison de partir.",
+    "You would have had reason to leave. (Conditionnel passé)"
+  ],
+  [
+    "il/elle/on aurait eu",
+    "he/she would have had",
+    "Il aurait eu une meilleure idée.",
+    "He would have had a better idea. (Conditionnel passé)"
+  ],
+  [
+    "nous aurions eu",
+    "we would have had",
+    "Nous aurions eu plus de temps.",
+    "We would have had more time. (Conditionnel passé)"
+  ],
+  [
+    "vous auriez eu",
+    "you would have had",
+    "Vous auriez eu besoin d'aide.",
+    "You would have had need of help. (Conditionnel passé)"
+  ],
+  [
+    "ils/elles auraient eu",
+    "they would have had",
+    "Ils auraient eu une meilleure chance.",
+    "They would have had a better chance. (Conditionnel passé)"
+  ],
+  [
+    "ayant",
+    "having",
+    "Ayant terminé le travail, je peux partir.",
+    "Having finished the work, I can leave. (Participe présent)"
+  ]
+];
+
+
+
         class FlashcardApp {
             constructor() {
                 this.cards = [];
@@ -1996,6 +2519,9 @@
                         break;
                     case 'french_prepositions.json':
                         this.cards = FRENCH_PREPOSITIONS_DATA;
+                        break;
+                    case 'french_irregular_verbs.json':
+                        this.cards = FRENCH_IRREGULAR_VERBS_DATA;
                         break;
                     default:
                         this.showError('Invalid selection. Please try again.');
