@@ -1,0 +1,962 @@
+[
+  [
+    "en dépit de",
+    "despite",
+    "Toutefois, les salaires ont augmenté plus que l’inflation, en dépit de la crise.",
+    "However, wages have risen faster than inflation, despite the crisis."
+  ],
+  [
+    "par conséquent",
+    "therefore",
+    "Il a échoué à l'examen, par conséquent il doit le repasser.",
+    "He failed the exam, therefore he must retake it."
+  ],
+  [
+    "bien que",
+    "although",
+    "Bien qu'il pleuve, nous irons nous promener.",
+    "Although it is raining, we will go for a walk."
+  ],
+  [
+    "car",
+    "because",
+    "Je pars tôt car j’ai un rendez-vous.",
+    "I’m leaving early because I have an appointment."
+  ],
+  [
+    "cependant",
+    "however",
+    "Il a étudié dur, cependant il a échoué.",
+    "He studied hard, however he failed."
+  ],
+  [
+    "et",
+    "and",
+    "Il aime le fromage et le vin.",
+    "He likes cheese and wine."
+  ],
+  [
+    "aussi",
+    "also",
+    "Elle est médecin et aussi écrivaine.",
+    "She is a doctor and also a writer."
+  ],
+  [
+    "de plus",
+    "moreover",
+    "Il est intelligent. De plus, il est travailleur.",
+    "He is smart. Moreover, he is hardworking."
+  ],
+  [
+    "en outre",
+    "in addition",
+    "En outre, nous avons besoin de plus de preuves.",
+    "In addition, we need more evidence."
+  ],
+  [
+    "ainsi que",
+    "as well as",
+    "Il a invité Marie ainsi que Paul.",
+    "He invited Marie as well as Paul."
+  ],
+  [
+    "parce que",
+    "because",
+    "Je suis resté à la maison parce que j'étais malade.",
+    "I stayed home because I was sick."
+  ],
+  [
+    "puisque",
+    "since",
+    "Puisque tu es prêt, partons.",
+    "Since you’re ready, let’s go."
+  ],
+  [
+    "étant donné que",
+    "given that",
+    "Étant donné qu'il pleut, nous annulerons la sortie.",
+    "Given that it's raining, we will cancel the outing."
+  ],
+  [
+    "grâce à",
+    "thanks to",
+    "Grâce à toi, j'ai réussi.",
+    "Thanks to you, I succeeded."
+  ],
+  [
+    "en raison de",
+    "due to",
+    "Le vol a été annulé en raison du mauvais temps.",
+    "The flight was canceled due to bad weather."
+  ],
+  [
+    "mais",
+    "but",
+    "Je voulais venir, mais j'étais trop fatigué.",
+    "I wanted to come, but I was too tired."
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer.",
+    "However, that could change."
+  ],
+  [
+    "néanmoins",
+    "nevertheless",
+    "Il faisait froid, néanmoins ils sont sortis.",
+    "It was cold, nevertheless they went out."
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent.",
+    "He’s not stupid, on the contrary, he’s very smart."
+  ],
+  [
+    "alors que",
+    "while/whereas",
+    "Elle lit un livre alors que son frère regarde la télévision.",
+    "She is reading a book while her brother is watching TV."
+  ],
+  [
+    "néanmoins",
+    "nevertheless",
+    "Il faisait froid, néanmoins ils sont sortis!",
+    "It was cold, nevertheless they went out!"
+  ],
+  [
+    "grâce à",
+    "thanks to",
+    "Grâce à toi, j'ai réussi!",
+    "Thanks to you, I succeeded!"
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent!",
+    "He’s not stupid, on the contrary, he’s very smart!"
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer!",
+    "However, that could change!"
+  ],
+  [
+    "alors que",
+    "while/whereas",
+    "Elle lit un livre alors que son frère regarde la télévision!",
+    "She is reading a book while her brother is watching TV!"
+  ],
+  [
+    "grâce à",
+    "thanks to",
+    "Grâce à toi, j'ai réussi!",
+    "Thanks to you, I succeeded!"
+  ],
+  [
+    "puisque",
+    "since",
+    "Puisque tu es prêt, partons!",
+    "Since you’re ready, let’s go!"
+  ],
+  [
+    "de plus",
+    "moreover",
+    "Il est intelligent! De plus, il est travailleur!",
+    "He is smart! Moreover, he is hardworking!"
+  ],
+  [
+    "en raison de",
+    "due to",
+    "Le vol a été annulé en raison du mauvais temps!",
+    "The flight was canceled due to bad weather!"
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer!",
+    "However, that could change!"
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent!",
+    "He’s not stupid, on the contrary, he’s very smart!"
+  ],
+  [
+    "alors que",
+    "while/whereas",
+    "Elle lit un livre alors que son frère regarde la télévision!",
+    "She is reading a book while her brother is watching TV!"
+  ],
+  [
+    "aussi",
+    "also",
+    "Elle est médecin et aussi écrivaine!",
+    "She is a doctor and also a writer!"
+  ],
+  [
+    "étant donné que",
+    "given that",
+    "Étant donné qu'il pleut, nous annulerons la sortie!",
+    "Given that it's raining, we will cancel the outing!"
+  ],
+  [
+    "ainsi que",
+    "as well as",
+    "Il a invité Marie ainsi que Paul!",
+    "He invited Marie as well as Paul!"
+  ],
+  [
+    "en raison de",
+    "due to",
+    "Le vol a été annulé en raison du mauvais temps!",
+    "The flight was canceled due to bad weather!"
+  ],
+  [
+    "ainsi que",
+    "as well as",
+    "Il a invité Marie ainsi que Paul!",
+    "He invited Marie as well as Paul!"
+  ],
+  [
+    "parce que",
+    "because",
+    "Je suis resté à la maison parce que j'étais malade!",
+    "I stayed home because I was sick!"
+  ],
+  [
+    "mais",
+    "but",
+    "Je voulais venir, mais j'étais trop fatigué!",
+    "I wanted to come, but I was too tired!"
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer!",
+    "However, that could change!"
+  ],
+  [
+    "néanmoins",
+    "nevertheless",
+    "Il faisait froid, néanmoins ils sont sortis!",
+    "It was cold, nevertheless they went out!"
+  ],
+  [
+    "en outre",
+    "in addition",
+    "En outre, nous avons besoin de plus de preuves!",
+    "In addition, we need more evidence!"
+  ],
+  [
+    "puisque",
+    "since",
+    "Puisque tu es prêt, partons!",
+    "Since you’re ready, let’s go!"
+  ],
+  [
+    "grâce à",
+    "thanks to",
+    "Grâce à toi, j'ai réussi!",
+    "Thanks to you, I succeeded!"
+  ],
+  [
+    "ainsi que",
+    "as well as",
+    "Il a invité Marie ainsi que Paul!",
+    "He invited Marie as well as Paul!"
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer!",
+    "However, that could change!"
+  ],
+  [
+    "grâce à",
+    "thanks to",
+    "Grâce à toi, j'ai réussi!",
+    "Thanks to you, I succeeded!"
+  ],
+  [
+    "aussi",
+    "also",
+    "Elle est médecin et aussi écrivaine!",
+    "She is a doctor and also a writer!"
+  ],
+  [
+    "ainsi que",
+    "as well as",
+    "Il a invité Marie ainsi que Paul!",
+    "He invited Marie as well as Paul!"
+  ],
+  [
+    "parce que",
+    "because",
+    "Je suis resté à la maison parce que j'étais malade!",
+    "I stayed home because I was sick!"
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent!",
+    "He’s not stupid, on the contrary, he’s very smart!"
+  ],
+  [
+    "ainsi que",
+    "as well as",
+    "Il a invité Marie ainsi que Paul!",
+    "He invited Marie as well as Paul!"
+  ],
+  [
+    "puisque",
+    "since",
+    "Puisque tu es prêt, partons!",
+    "Since you’re ready, let’s go!"
+  ],
+  [
+    "puisque",
+    "since",
+    "Puisque tu es prêt, partons!",
+    "Since you’re ready, let’s go!"
+  ],
+  [
+    "néanmoins",
+    "nevertheless",
+    "Il faisait froid, néanmoins ils sont sortis!",
+    "It was cold, nevertheless they went out!"
+  ],
+  [
+    "en outre",
+    "in addition",
+    "En outre, nous avons besoin de plus de preuves!",
+    "In addition, we need more evidence!"
+  ],
+  [
+    "alors que",
+    "while/whereas",
+    "Elle lit un livre alors que son frère regarde la télévision!",
+    "She is reading a book while her brother is watching TV!"
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent!",
+    "He’s not stupid, on the contrary, he’s very smart!"
+  ],
+  [
+    "et",
+    "and",
+    "Il aime le fromage et le vin!",
+    "He likes cheese and wine!"
+  ],
+  [
+    "étant donné que",
+    "given that",
+    "Étant donné qu'il pleut, nous annulerons la sortie!",
+    "Given that it's raining, we will cancel the outing!"
+  ],
+  [
+    "de plus",
+    "moreover",
+    "Il est intelligent! De plus, il est travailleur!",
+    "He is smart! Moreover, he is hardworking!"
+  ],
+  [
+    "en raison de",
+    "due to",
+    "Le vol a été annulé en raison du mauvais temps!",
+    "The flight was canceled due to bad weather!"
+  ],
+  [
+    "en outre",
+    "in addition",
+    "En outre, nous avons besoin de plus de preuves!",
+    "In addition, we need more evidence!"
+  ],
+  [
+    "ainsi que",
+    "as well as",
+    "Il a invité Marie ainsi que Paul!",
+    "He invited Marie as well as Paul!"
+  ],
+  [
+    "mais",
+    "but",
+    "Je voulais venir, mais j'étais trop fatigué!",
+    "I wanted to come, but I was too tired!"
+  ],
+  [
+    "de plus",
+    "moreover",
+    "Il est intelligent! De plus, il est travailleur!",
+    "He is smart! Moreover, he is hardworking!"
+  ],
+  [
+    "puisque",
+    "since",
+    "Puisque tu es prêt, partons!",
+    "Since you’re ready, let’s go!"
+  ],
+  [
+    "de plus",
+    "moreover",
+    "Il est intelligent! De plus, il est travailleur!",
+    "He is smart! Moreover, he is hardworking!"
+  ],
+  [
+    "puisque",
+    "since",
+    "Puisque tu es prêt, partons!",
+    "Since you’re ready, let’s go!"
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent!",
+    "He’s not stupid, on the contrary, he’s very smart!"
+  ],
+  [
+    "parce que",
+    "because",
+    "Je suis resté à la maison parce que j'étais malade!",
+    "I stayed home because I was sick!"
+  ],
+  [
+    "puisque",
+    "since",
+    "Puisque tu es prêt, partons!",
+    "Since you’re ready, let’s go!"
+  ],
+  [
+    "mais",
+    "but",
+    "Je voulais venir, mais j'étais trop fatigué!",
+    "I wanted to come, but I was too tired!"
+  ],
+  [
+    "de plus",
+    "moreover",
+    "Il est intelligent! De plus, il est travailleur!",
+    "He is smart! Moreover, he is hardworking!"
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer!",
+    "However, that could change!"
+  ],
+  [
+    "étant donné que",
+    "given that",
+    "Étant donné qu'il pleut, nous annulerons la sortie!",
+    "Given that it's raining, we will cancel the outing!"
+  ],
+  [
+    "parce que",
+    "because",
+    "Je suis resté à la maison parce que j'étais malade!",
+    "I stayed home because I was sick!"
+  ],
+  [
+    "de plus",
+    "moreover",
+    "Il est intelligent! De plus, il est travailleur!",
+    "He is smart! Moreover, he is hardworking!"
+  ],
+  [
+    "mais",
+    "but",
+    "Je voulais venir, mais j'étais trop fatigué!",
+    "I wanted to come, but I was too tired!"
+  ],
+  [
+    "en outre",
+    "in addition",
+    "En outre, nous avons besoin de plus de preuves!",
+    "In addition, we need more evidence!"
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer!",
+    "However, that could change!"
+  ],
+  [
+    "et",
+    "and",
+    "Il aime le fromage et le vin!",
+    "He likes cheese and wine!"
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent!",
+    "He’s not stupid, on the contrary, he’s very smart!"
+  ],
+  [
+    "alors que",
+    "while/whereas",
+    "Elle lit un livre alors que son frère regarde la télévision!",
+    "She is reading a book while her brother is watching TV!"
+  ],
+  [
+    "ainsi que",
+    "as well as",
+    "Il a invité Marie ainsi que Paul!",
+    "He invited Marie as well as Paul!"
+  ],
+  [
+    "en outre",
+    "in addition",
+    "En outre, nous avons besoin de plus de preuves!",
+    "In addition, we need more evidence!"
+  ],
+  [
+    "et",
+    "and",
+    "Il aime le fromage et le vin!",
+    "He likes cheese and wine!"
+  ],
+  [
+    "de plus",
+    "moreover",
+    "Il est intelligent! De plus, il est travailleur!",
+    "He is smart! Moreover, he is hardworking!"
+  ],
+  [
+    "en raison de",
+    "due to",
+    "Le vol a été annulé en raison du mauvais temps!",
+    "The flight was canceled due to bad weather!"
+  ],
+  [
+    "de plus",
+    "moreover",
+    "Il est intelligent! De plus, il est travailleur!",
+    "He is smart! Moreover, he is hardworking!"
+  ],
+  [
+    "ainsi que",
+    "as well as",
+    "Il a invité Marie ainsi que Paul!",
+    "He invited Marie as well as Paul!"
+  ],
+  [
+    "grâce à",
+    "thanks to",
+    "Grâce à toi, j'ai réussi!",
+    "Thanks to you, I succeeded!"
+  ],
+  [
+    "aussi",
+    "also",
+    "Elle est médecin et aussi écrivaine!",
+    "She is a doctor and also a writer!"
+  ],
+  [
+    "étant donné que",
+    "given that",
+    "Étant donné qu'il pleut, nous annulerons la sortie!",
+    "Given that it's raining, we will cancel the outing!"
+  ],
+  [
+    "puisque",
+    "since",
+    "Puisque tu es prêt, partons!",
+    "Since you’re ready, let’s go!"
+  ],
+  [
+    "alors que",
+    "while/whereas",
+    "Elle lit un livre alors que son frère regarde la télévision!",
+    "She is reading a book while her brother is watching TV!"
+  ],
+  [
+    "néanmoins",
+    "nevertheless",
+    "Il faisait froid, néanmoins ils sont sortis!",
+    "It was cold, nevertheless they went out!"
+  ],
+  [
+    "parce que",
+    "because",
+    "Je suis resté à la maison parce que j'étais malade!",
+    "I stayed home because I was sick!"
+  ],
+  [
+    "néanmoins",
+    "nevertheless",
+    "Il faisait froid, néanmoins ils sont sortis!",
+    "It was cold, nevertheless they went out!"
+  ],
+  [
+    "et",
+    "and",
+    "Il aime le fromage et le vin!",
+    "He likes cheese and wine!"
+  ],
+  [
+    "de plus",
+    "moreover",
+    "Il est intelligent! De plus, il est travailleur!",
+    "He is smart! Moreover, he is hardworking!"
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer!",
+    "However, that could change!"
+  ],
+  [
+    "en outre",
+    "in addition",
+    "En outre, nous avons besoin de plus de preuves!",
+    "In addition, we need more evidence!"
+  ],
+  [
+    "aussi",
+    "also",
+    "Elle est médecin et aussi écrivaine!",
+    "She is a doctor and also a writer!"
+  ],
+  [
+    "et",
+    "and",
+    "Il aime le fromage et le vin!",
+    "He likes cheese and wine!"
+  ],
+  [
+    "de plus",
+    "moreover",
+    "Il est intelligent! De plus, il est travailleur!",
+    "He is smart! Moreover, he is hardworking!"
+  ],
+  [
+    "ainsi que",
+    "as well as",
+    "Il a invité Marie ainsi que Paul!",
+    "He invited Marie as well as Paul!"
+  ],
+  [
+    "alors que",
+    "while/whereas",
+    "Elle lit un livre alors que son frère regarde la télévision!",
+    "She is reading a book while her brother is watching TV!"
+  ],
+  [
+    "ainsi que",
+    "as well as",
+    "Il a invité Marie ainsi que Paul!",
+    "He invited Marie as well as Paul!"
+  ],
+  [
+    "néanmoins",
+    "nevertheless",
+    "Il faisait froid, néanmoins ils sont sortis!",
+    "It was cold, nevertheless they went out!"
+  ],
+  [
+    "mais",
+    "but",
+    "Je voulais venir, mais j'étais trop fatigué!",
+    "I wanted to come, but I was too tired!"
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer!",
+    "However, that could change!"
+  ],
+  [
+    "alors que",
+    "while/whereas",
+    "Elle lit un livre alors que son frère regarde la télévision!",
+    "She is reading a book while her brother is watching TV!"
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer!",
+    "However, that could change!"
+  ],
+  [
+    "grâce à",
+    "thanks to",
+    "Grâce à toi, j'ai réussi!",
+    "Thanks to you, I succeeded!"
+  ],
+  [
+    "grâce à",
+    "thanks to",
+    "Grâce à toi, j'ai réussi!",
+    "Thanks to you, I succeeded!"
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent!",
+    "He’s not stupid, on the contrary, he’s very smart!"
+  ],
+  [
+    "puisque",
+    "since",
+    "Puisque tu es prêt, partons!",
+    "Since you’re ready, let’s go!"
+  ],
+  [
+    "aussi",
+    "also",
+    "Elle est médecin et aussi écrivaine!",
+    "She is a doctor and also a writer!"
+  ],
+  [
+    "parce que",
+    "because",
+    "Je suis resté à la maison parce que j'étais malade!",
+    "I stayed home because I was sick!"
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer!",
+    "However, that could change!"
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent!",
+    "He’s not stupid, on the contrary, he’s very smart!"
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer!",
+    "However, that could change!"
+  ],
+  [
+    "ainsi que",
+    "as well as",
+    "Il a invité Marie ainsi que Paul!",
+    "He invited Marie as well as Paul!"
+  ],
+  [
+    "étant donné que",
+    "given that",
+    "Étant donné qu'il pleut, nous annulerons la sortie!",
+    "Given that it's raining, we will cancel the outing!"
+  ],
+  [
+    "aussi",
+    "also",
+    "Elle est médecin et aussi écrivaine!",
+    "She is a doctor and also a writer!"
+  ],
+  [
+    "de plus",
+    "moreover",
+    "Il est intelligent! De plus, il est travailleur!",
+    "He is smart! Moreover, he is hardworking!"
+  ],
+  [
+    "en raison de",
+    "due to",
+    "Le vol a été annulé en raison du mauvais temps!",
+    "The flight was canceled due to bad weather!"
+  ],
+  [
+    "étant donné que",
+    "given that",
+    "Étant donné qu'il pleut, nous annulerons la sortie!",
+    "Given that it's raining, we will cancel the outing!"
+  ],
+  [
+    "mais",
+    "but",
+    "Je voulais venir, mais j'étais trop fatigué!",
+    "I wanted to come, but I was too tired!"
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent!",
+    "He’s not stupid, on the contrary, he’s very smart!"
+  ],
+  [
+    "ainsi que",
+    "as well as",
+    "Il a invité Marie ainsi que Paul!",
+    "He invited Marie as well as Paul!"
+  ],
+  [
+    "en raison de",
+    "due to",
+    "Le vol a été annulé en raison du mauvais temps!",
+    "The flight was canceled due to bad weather!"
+  ],
+  [
+    "et",
+    "and",
+    "Il aime le fromage et le vin!",
+    "He likes cheese and wine!"
+  ],
+  [
+    "et",
+    "and",
+    "Il aime le fromage et le vin!",
+    "He likes cheese and wine!"
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer!",
+    "However, that could change!"
+  ],
+  [
+    "parce que",
+    "because",
+    "Je suis resté à la maison parce que j'étais malade!",
+    "I stayed home because I was sick!"
+  ],
+  [
+    "en outre",
+    "in addition",
+    "En outre, nous avons besoin de plus de preuves!",
+    "In addition, we need more evidence!"
+  ],
+  [
+    "et",
+    "and",
+    "Il aime le fromage et le vin!",
+    "He likes cheese and wine!"
+  ],
+  [
+    "en raison de",
+    "due to",
+    "Le vol a été annulé en raison du mauvais temps!",
+    "The flight was canceled due to bad weather!"
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent!",
+    "He’s not stupid, on the contrary, he’s very smart!"
+  ],
+  [
+    "alors que",
+    "while/whereas",
+    "Elle lit un livre alors que son frère regarde la télévision!",
+    "She is reading a book while her brother is watching TV!"
+  ],
+  [
+    "de plus",
+    "moreover",
+    "Il est intelligent! De plus, il est travailleur!",
+    "He is smart! Moreover, he is hardworking!"
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent!",
+    "He’s not stupid, on the contrary, he’s very smart!"
+  ],
+  [
+    "aussi",
+    "also",
+    "Elle est médecin et aussi écrivaine!",
+    "She is a doctor and also a writer!"
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer!",
+    "However, that could change!"
+  ],
+  [
+    "toutefois",
+    "however",
+    "Toutefois, cela pourrait changer!",
+    "However, that could change!"
+  ],
+  [
+    "aussi",
+    "also",
+    "Elle est médecin et aussi écrivaine!",
+    "She is a doctor and also a writer!"
+  ],
+  [
+    "en outre",
+    "in addition",
+    "En outre, nous avons besoin de plus de preuves!",
+    "In addition, we need more evidence!"
+  ],
+  [
+    "et",
+    "and",
+    "Il aime le fromage et le vin!",
+    "He likes cheese and wine!"
+  ],
+  [
+    "en outre",
+    "in addition",
+    "En outre, nous avons besoin de plus de preuves!",
+    "In addition, we need more evidence!"
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent!",
+    "He’s not stupid, on the contrary, he’s very smart!"
+  ],
+  [
+    "alors que",
+    "while/whereas",
+    "Elle lit un livre alors que son frère regarde la télévision!",
+    "She is reading a book while her brother is watching TV!"
+  ],
+  [
+    "étant donné que",
+    "given that",
+    "Étant donné qu'il pleut, nous annulerons la sortie!",
+    "Given that it's raining, we will cancel the outing!"
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent!",
+    "He’s not stupid, on the contrary, he’s very smart!"
+  ],
+  [
+    "alors que",
+    "while/whereas",
+    "Elle lit un livre alors que son frère regarde la télévision!",
+    "She is reading a book while her brother is watching TV!"
+  ],
+  [
+    "ainsi que",
+    "as well as",
+    "Il a invité Marie ainsi que Paul!",
+    "He invited Marie as well as Paul!"
+  ],
+  [
+    "en outre",
+    "in addition",
+    "En outre, nous avons besoin de plus de preuves!",
+    "In addition, we need more evidence!"
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Il n’est pas stupide, au contraire, il est très intelligent!",
+    "He’s not stupid, on the contrary, he’s very smart!"
+  ],
+  [
+    "néanmoins",
+    "nevertheless",
+    "Il faisait froid, néanmoins ils sont sortis!",
+    "It was cold, nevertheless they went out!"
+  ]
+]
