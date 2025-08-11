@@ -25,7 +25,7 @@
   ],
   [
     "vous êtes",
-    "you are",
+    "you are (formal)",
     "Vous êtes très aimables.",
     "You are very kind. (Présent)"
   ],
@@ -61,7 +61,7 @@
   ],
   [
     "vous étiez",
-    "you were",
+    "you were (formal)",
     "Vous étiez en vacances.",
     "You were on vacation. (Imparfait)"
   ],
@@ -97,7 +97,7 @@
   ],
   [
     "vous fûtes",
-    "you were",
+    "you were (formal)",
     "Vous fûtes les seuls à comprendre.",
     "You were the only ones to understand. (Passé simple)"
   ],
@@ -133,7 +133,7 @@
   ],
   [
     "vous avez été",
-    "you have been",
+    "you have been (formal)",
     "Vous avez été très gentils avec nous.",
     "You have been very kind to us. (Passé composé)"
   ],
@@ -169,7 +169,7 @@
   ],
   [
     "vous serez",
-    "you will be",
+    "you will be (formal)",
     "Vous serez les bienvenus à notre maison.",
     "You will be welcome at our house. (Futur simple)"
   ],
@@ -205,7 +205,7 @@
   ],
   [
     "vous aviez été",
-    "you had been",
+    "you had been (formal)",
     "Vous aviez été choisis pour cette mission.",
     "You had been chosen for this mission. (Plus-que-parfait)"
   ],
@@ -241,7 +241,7 @@
   ],
   [
     "vous auriez été",
-    "you would have been",
+    "you would have been (formal)",
     "Vous auriez été étonnés par le résultat.",
     "You would have been amazed by the result. (Conditionnel passé)"
   ],
@@ -284,7 +284,7 @@
   ],
   [
     "vous avez",
-    "you have",
+    "you have (formal)",
     "Vous avez de la chance.",
     "You are lucky. (Présent)"
   ],
@@ -320,7 +320,7 @@
   ],
   [
     "vous aviez",
-    "you had",
+    "you had (formal)",
     "Vous aviez raison.",
     "You were right. (Imparfait)"
   ],
@@ -356,7 +356,7 @@
   ],
   [
     "vous eûtes",
-    "you had",
+    "you had (formal)",
     "Vous eûtes le courage de dire la vérité.",
     "You had the courage to tell the truth. (Passé simple)"
   ],
@@ -392,7 +392,7 @@
   ],
   [
     "vous avez eu",
-    "you have had",
+    "you have had (formal)",
     "Vous avez eu raison de partir.",
     "You have had reason to leave. (Passé composé)"
   ],
@@ -428,7 +428,7 @@
   ],
   [
     "vous aurez",
-    "you will have",
+    "you will have (formal)",
     "Vous aurez besoin de patience.",
     "You will have need of patience. (Futur simple)"
   ],
@@ -464,7 +464,7 @@
   ],
   [
     "vous aviez eu",
-    "you had had",
+    "you had had (formal)",
     "Vous aviez eu cette chance.",
     "You had had this chance. (Plus-que-parfait)"
   ],
@@ -500,7 +500,7 @@
   ],
   [
     "vous auriez eu",
-    "you would have had",
+    "you would have had (formal)",
     "Vous auriez eu besoin d'aide.",
     "You would have had need of help. (Conditionnel passé)"
   ],
@@ -542,7 +542,7 @@
   ],
   [
     "vous allez",
-    "you go/you are going",
+    "you go/you are going (formal)",
     "Vous allez en vacances en été.",
     "You go on vacation in summer. (Présent)"
   ],
@@ -578,7 +578,7 @@
   ],
   [
     "vous alliez",
-    "you were going",
+    "you were going (formal)",
     "Vous alliez en ville.",
     "You were going to town. (Imparfait)"
   ],
@@ -614,7 +614,7 @@
   ],
   [
     "vous allâtes",
-    "you went",
+    "you went (formal)",
     "Vous allâtes au théâtre.",
     "You went to the theater. (Passé simple)"
   ],
@@ -650,7 +650,7 @@
   ],
   [
     "vous êtes allé(e)s",
-    "you have gone/you went",
+    "you have gone/you went (formal)",
     "Vous êtes allés en voyage.",
     "You went on a trip. (Passé composé)"
   ],
@@ -686,7 +686,7 @@
   ],
   [
     "vous irez",
-    "you will go",
+    "you will go (formal)",
     "Vous irez au concert.",
     "You will go to the concert. (Futur simple)"
   ],
@@ -722,7 +722,7 @@
   ],
   [
     "vous étiez allé(e)s",
-    "you had gone",
+    "you had gone (formal)",
     "Vous étiez allés en ville avant la pluie.",
     "You had gone to town before the rain. (Plus-que-parfait)"
   ],
@@ -758,7 +758,7 @@
   ],
   [
     "vous seriez allé(e)s",
-    "you would have gone",
+    "you would have gone (formal)",
     "Vous seriez allés en vacances si vous aviez pu.",
     "You would have gone on vacation if you could have. (Conditionnel passé)"
   ],
@@ -800,7 +800,7 @@
   ],
   [
     "vous voyez",
-    "you see/you are seeing",
+    "you see/you are seeing (formal)",
     "Vous voyez le problème maintenant.",
     "You see the problem now. (Présent)"
   ],
@@ -836,7 +836,7 @@
   ],
   [
     "vous voyiez",
-    "you were seeing/you used to see",
+    "you were seeing/you used to see (formal)",
     "Vous voyiez vos enfants tous les jours.",
     "You used to see your children every day. (Imparfait)"
   ],
@@ -872,7 +872,7 @@
   ],
   [
     "vous vîtes",
-    "you saw",
+    "you saw (formal)",
     "Vous vîtes l'exposition au musée.",
     "You saw the exhibition at the museum. (Passé simple)"
   ],
@@ -908,7 +908,7 @@
   ],
   [
     "vous avez vu",
-    "you have seen/you saw",
+    "you have seen/you saw (formal)",
     "Vous avez vu le dernier épisode?",
     "Have you seen the latest episode? (Passé composé)"
   ],
@@ -944,7 +944,7 @@
   ],
   [
     "vous verrez",
-    "you will see",
+    "you will see (formal)",
     "Vous verrez la différence.",
     "You will see the difference. (Futur simple)"
   ],
@@ -980,7 +980,7 @@
   ],
   [
     "vous aviez vu",
-    "you had seen",
+    "you had seen (formal)",
     "Vous aviez vu ce document.",
     "You had seen this document. (Plus-que-parfait)"
   ],
@@ -1016,7 +1016,7 @@
   ],
   [
     "vous auriez vu",
-    "you would have seen",
+    "you would have seen (formal)",
     "Vous auriez vu la différence si vous aviez regardé attentivement.",
     "You would have seen the difference if you had looked carefully. (Conditionnel passé)"
   ],
@@ -1058,7 +1058,7 @@
   ],
   [
     "vous devez",
-    "you must/you have to",
+    "you must/you have to (formal)",
     "Vous devez respecter les règles.",
     "You must respect the rules. (Présent)"
   ],
@@ -1094,7 +1094,7 @@
   ],
   [
     "vous deviez",
-    "you had to/you were supposed to",
+    "you had to/you were supposed to (formal)",
     "Vous deviez appeler votre mère.",
     "You had to call your mother. (Imparfait)"
   ],
@@ -1130,7 +1130,7 @@
   ],
   [
     "vous dûtes",
-    "you had to",
+    "you had to (formal)",
     "Vous dûtes expliquer la situation.",
     "You had to explain the situation. (Passé simple)"
   ],
@@ -1166,7 +1166,7 @@
   ],
   [
     "vous avez dû",
-    "you have had to/you had to",
+    "you have had to/you had to (formal)",
     "Vous avez dû attendre le bus.",
     "You had to wait for the bus. (Passé composé)"
   ],
@@ -1202,7 +1202,7 @@
   ],
   [
     "vous devrez",
-    "you will have to",
+    "you will have to (formal)",
     "Vous devrez présenter vos excuses.",
     "You will have to apologize. (Futur simple)"
   ],
@@ -1238,7 +1238,7 @@
   ],
   [
     "vous aviez dû",
-    "you had had to",
+    "you had had to (formal)",
     "Vous aviez dû faire des concessions.",
     "You had had to make concessions. (Plus-que-parfait)"
   ],
@@ -1274,7 +1274,7 @@
   ],
   [
     "vous auriez dû",
-    "you should have/you would have had to",
+    "you should have/you would have had to (formal)",
     "Vous auriez dû vérifier les informations.",
     "You should have checked the information. (Conditionnel passé)"
   ],
@@ -1316,7 +1316,7 @@
   ],
   [
     "vous voulez",
-    "you want",
+    "you want (formal)",
     "Vous voulez boire un café?",
     "Do you want to drink a coffee? (Présent)"
   ],
@@ -1352,7 +1352,7 @@
   ],
   [
     "vous vouliez",
-    "you wanted/you used to want",
+    "you wanted/you used to want (formal)",
     "Vous vouliez partir en vacances.",
     "You wanted to go on vacation. (Imparfait)"
   ],
@@ -1388,7 +1388,7 @@
   ],
   [
     "vous voulûtes",
-    "you wanted",
+    "you wanted (formal)",
     "Vous voulûtes partir en voyage.",
     "You wanted to go on a trip. (Passé simple)"
   ],
@@ -1424,7 +1424,7 @@
   ],
   [
     "vous avez voulu",
-    "you have wanted/you wanted",
+    "you have wanted/you wanted (formal)",
     "Vous avez voulu voir le spectacle.",
     "You wanted to see the show. (Passé composé)"
   ],
@@ -1460,7 +1460,7 @@
   ],
   [
     "vous voudrez",
-    "you will want",
+    "you will want (formal)",
     "Vous voudrez prendre des vacances.",
     "You will want to take a vacation. (Futur simple)"
   ],
@@ -1496,7 +1496,7 @@
   ],
   [
     "vous aviez voulu",
-    "you had wanted",
+    "you had wanted (formal)",
     "Vous aviez voulu partir en voyage.",
     "You had wanted to go on a trip. (Plus-que-parfait)"
   ],
@@ -1532,7 +1532,7 @@
   ],
   [
     "vous auriez voulu",
-    "you would have wanted/you would like to have",
+    "you would have wanted/you would like to have (formal)",
     "Vous auriez voulu partir en vacances.",
     "You would have liked to go on vacation. (Conditionnel passé)"
   ],
