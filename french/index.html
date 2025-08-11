@@ -358,6 +358,8 @@
                     <option value="french_connecting_words.json">Connecting Words</option>
                     <option value="french_prepositions.json">Prepositions</option>
                     <option value="french_irregular_verbs.json">Irregular Verbs</option>
+                    <option value="french_verbs.json">Verbs</option>
+                    <option value="french_versatile_words.json">Versatile Words</option>
                 </select>
             </div>
 
@@ -437,6 +439,8 @@
       let FRENCH_CONNECTING_WORDS_DATA = [];
       let FRENCH_PREPOSITIONS_DATA = [];
       let FRENCH_IRREGULAR_VERBS_DATA = [];
+      let FRENCH_VERBS_DATA = [];
+      let FRENCH_VERSATILE_WORDS_DATA = [];
       // get from json file
       fetch('french_nouns.json')
         .then(response => response.json())
@@ -472,6 +476,18 @@
         .then(response => response.json())
         .then(data => {
           FRENCH_IRREGULAR_VERBS_DATA = data;
+        });
+
+      fetch('french_verbs.json')
+        .then(response => response.json())
+        .then(data => {
+          FRENCH_VERBS_DATA = data;
+        });
+
+      fetch('french_versatile_words.json')
+        .then(response => response.json())
+        .then(data => {
+          FRENCH_VERSATILE_WORDS_DATA = data;
         });
 
 

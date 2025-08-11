@@ -1,0 +1,638 @@
+[
+  [
+    "je peux",
+    "I can",
+    "Je peux vous aider.",
+    "I can help you. (Présent)"
+  ],
+  [
+    "tu peux",
+    "you can",
+    "Tu peux venir avec nous.",
+    "You can come with us. (Présent)"
+  ],
+  [
+    "il/elle/on peut",
+    "he/she can",
+    "Il peut résoudre ce problème.",
+    "He can solve this problem. (Présent)"
+  ],
+  [
+    "nous pouvons",
+    "we can",
+    "Nous pouvons commencer maintenant.",
+    "We can start now. (Présent)"
+  ],
+  [
+    "vous pouvez",
+    "you can (formal)",
+    "Vous pouvez entrer.",
+    "You can enter. (Présent)"
+  ],
+  [
+    "ils/elles peuvent",
+    "they can",
+    "Ils peuvent arriver demain.",
+    "They can arrive tomorrow. (Présent)"
+  ],
+  [
+    "je pouvais",
+    "I could",
+    "Je pouvais nager quand j'étais jeune.",
+    "I could swim when I was young. (Imparfait)"
+  ],
+  [
+    "tu pouvais",
+    "you could",
+    "Tu pouvais parler français.",
+    "You could speak French. (Imparfait)"
+  ],
+  [
+    "il/elle/on pouvait",
+    "he/she could",
+    "Il pouvait courir très vite.",
+    "He could run very fast. (Imparfait)"
+  ],
+  [
+    "nous pouvions",
+    "we could",
+    "Nous pouvions voir la mer.",
+    "We could see the sea. (Imparfait)"
+  ],
+  [
+    "vous pouviez",
+    "you could (formal)",
+    "Vous pouviez nous rejoindre.",
+    "You could join us. (Imparfait)"
+  ],
+  [
+    "ils/elles pouvaient",
+    "they could",
+    "Ils pouvaient venir plus tôt.",
+    "They could come earlier. (Imparfait)"
+  ],
+  [
+    "j'ai pu",
+    "I have been able to",
+    "J'ai pu finir mon travail.",
+    "I have been able to finish my work. (Passé Composé)"
+  ],
+  [
+    "tu as pu",
+    "you have been able to",
+    "Tu as pu résoudre l'énigme.",
+    "You have been able to solve the riddle. (Passé Composé)"
+  ],
+  [
+    "il/elle/on a pu",
+    "he/she has been able to",
+    "Il a pu arriver à temps.",
+    "He has been able to arrive on time. (Passé Composé)"
+  ],
+  [
+    "nous avons pu",
+    "we have been able to",
+    "Nous avons pu nous rencontrer.",
+    "We have been able to meet. (Passé Composé)"
+  ],
+  [
+    "vous avez pu",
+    "you have been able to (formal)",
+    "Vous avez pu comprendre.",
+    "You have been able to understand. (Passé Composé)"
+  ],
+  [
+    "ils/elles ont pu",
+    "they have been able to",
+    "Ils ont pu terminer le projet.",
+    "They have been able to finish the project. (Passé Composé)"
+  ],
+  [
+    "je pourrai",
+    "I will be able to",
+    "Je pourrai vous aider demain.",
+    "I will be able to help you tomorrow. (Futur Simple)"
+  ],
+  [
+    "tu pourras",
+    "you will be able to",
+    "Tu pourras venir la semaine prochaine.",
+    "You will be able to come next week. (Futur Simple)"
+  ],
+  [
+    "il/elle/on pourra",
+    "he/she will be able to",
+    "Il pourra assister à la réunion.",
+    "He will be able to attend the meeting. (Futur Simple)"
+  ],
+  [
+    "nous pourrons",
+    "we will be able to",
+    "Nous pourrons commencer bientôt.",
+    "We will be able to start soon. (Futur Simple)"
+  ],
+  [
+    "vous pourrez",
+    "you will be able to (formal)",
+    "Vous pourrez nous rejoindre.",
+    "You will be able to join us. (Futur Simple)"
+  ],
+  [
+    "ils/elles pourront",
+    "they will be able to",
+    "Ils pourront arriver à l'heure.",
+    "They will be able to arrive on time. (Futur Simple)"
+  ],
+  [
+    "j'avais pu",
+    "I had been able to",
+    "J'avais pu finir avant la date limite.",
+    "I had been able to finish before the deadline. (Plus-Que-Parfait)"
+  ],
+  [
+    "tu avais pu",
+    "you had been able to",
+    "Tu avais pu résoudre le problème.",
+    "You had been able to solve the problem. (Plus-Que-Parfait)"
+  ],
+  [
+    "il/elle/on avait pu",
+    "he/she had been able to",
+    "Il avait pu arriver à temps.",
+    "He had been able to arrive on time. (Plus-Que-Parfait)"
+  ],
+  [
+    "nous avions pu",
+    "we had been able to",
+    "Nous avions pu nous rencontrer.",
+    "We had been able to meet. (Plus-Que-Parfait)"
+  ],
+  [
+    "vous aviez pu",
+    "you had been able to (formal)",
+    "Vous aviez pu comprendre.",
+    "You had been able to understand. (Plus-Que-Parfait)"
+  ],
+  [
+    "ils/elles avaient pu",
+    "they had been able to",
+    "Ils avaient pu terminer le projet.",
+    "They had been able to finish the project. (Plus-Que-Parfait)"
+  ],
+  [
+    "j'aurai pu",
+    "I will have been able to",
+    "J'aurai pu finir avant la fin du mois.",
+    "I will have been able to finish before the end of the month. (Futur Antérieur)"
+  ],
+  [
+    "tu auras pu",
+    "you will have been able to",
+    "Tu auras pu résoudre le problème.",
+    "You will have been able to solve the problem. (Futur Antérieur)"
+  ],
+  [
+    "il/elle/on aura pu",
+    "he/she will have been able to",
+    "Il aura pu arriver à temps.",
+    "He will have been able to arrive on time. (Futur Antérieur)"
+  ],
+  [
+    "nous aurons pu",
+    "we will have been able to",
+    "Nous aurons pu nous rencontrer.",
+    "We will have been able to meet. (Futur Antérieur)"
+  ],
+  [
+    "vous aurez pu",
+    "you will have been able to (formal)",
+    "Vous aurez pu comprendre.",
+    "You will have been able to understand. (Futur Antérieur)"
+  ],
+  [
+    "ils/elles auront pu",
+    "they will have been able to",
+    "Ils auront pu terminer le projet.",
+    "They will have been able to finish the project. (Futur Antérieur)"
+  ],
+  [
+    "je pourrais",
+    "I could/would be able to",
+    "Je pourrais vous aider si j'avais le temps.",
+    "I could help you if I had time. (Conditionnel Présent)"
+  ],
+  [
+    "tu pourrais",
+    "you could/would be able to",
+    "Tu pourrais venir avec nous.",
+    "You could come with us. (Conditionnel Présent)"
+  ],
+  [
+    "il/elle/on pourrait",
+    "he/she could/would be able to",
+    "Il pourrait résoudre ce problème.",
+    "He could solve this problem. (Conditionnel Présent)"
+  ],
+  [
+    "nous pourrions",
+    "we could/would be able to",
+    "Nous pourrions commencer maintenant.",
+    "We could start now. (Conditionnel Présent)"
+  ],
+  [
+    "vous pourriez",
+    "you could/would be able to (formal)",
+    "Vous pourriez nous rejoindre.",
+    "You could join us. (Conditionnel Présent)"
+  ],
+  [
+    "ils/elles pourraient",
+    "they could/would be able to",
+    "Ils pourraient arriver demain.",
+    "They could arrive tomorrow. (Conditionnel Présent)"
+  ],
+  [
+    "j'aurais pu",
+    "I would have been able to",
+    "J'aurais pu vous aider si j'avais su.",
+    "I would have been able to help you if I had known. (Conditionnel Passé)"
+  ],
+  [
+    "tu aurais pu",
+    "you would have been able to",
+    "Tu aurais pu résoudre le problème.",
+    "You would have been able to solve the problem. (Conditionnel Passé)"
+  ],
+  [
+    "il/elle/on aurait pu",
+    "he/she would have been able to",
+    "Il aurait pu arriver à temps.",
+    "He would have been able to arrive on time. (Conditionnel Passé)"
+  ],
+  [
+    "nous aurions pu",
+    "we would have been able to",
+    "Nous aurions pu nous rencontrer.",
+    "We would have been able to meet. (Conditionnel Passé)"
+  ],
+  [
+    "vous auriez pu",
+    "you would have been able to (formal)",
+    "Vous auriez pu comprendre.",
+    "You would have been able to understand. (Conditionnel Passé)"
+  ],
+  [
+    "ils/elles auraient pu",
+    "they would have been able to",
+    "Ils auraient pu terminer le projet.",
+    "They would have been able to finish the project. (Conditionnel Passé)"
+  ],
+  [
+    "peux",
+    "can (imperative)",
+    "Peux-tu m'aider?",
+    "Can you help me? (L'impératif présent)"
+  ],
+  [
+    "pouvons",
+    "let's be able to (imperative)",
+    "Pouvons-nous commencer?",
+    "Can we start? (L'impératif présent)"
+  ],
+  [
+    "pouvez",
+    "be able to (imperative formal)",
+    "Pouvez-vous nous rejoindre?",
+    "Can you join us? (L'impératif présent)"
+  ],
+  [
+    "pouvant",
+    "being able to",
+    "En pouvant résoudre ce problème, il a gagné notre respect.",
+    "Being able to solve this problem, he earned our respect. (Le participe présent)"
+  ],
+  [
+    "pu",
+    "been able to",
+    "Il a pu finir son travail.",
+    "He has been able to finish his work. (Le participe passé)"
+  ],
+  [
+    "je viens",
+    "I come",
+    "Je viens de Paris.",
+    "I come from Paris. (Présent)"
+  ],
+  [
+    "tu viens",
+    "you come",
+    "Tu viens avec nous?",
+    "Are you coming with us? (Présent)"
+  ],
+  [
+    "il/elle/on vient",
+    "he/she comes",
+    "Il vient de l'école.",
+    "He comes from school. (Présent)"
+  ],
+  [
+    "nous venons",
+    "we come",
+    "Nous venons de la gare.",
+    "We come from the station. (Présent)"
+  ],
+  [
+    "vous venez",
+    "you come (formal)",
+    "Vous venez de loin?",
+    "Do you come from far away? (Présent)"
+  ],
+  [
+    "ils/elles viennent",
+    "they come",
+    "Ils viennent de la campagne.",
+    "They come from the countryside. (Présent)"
+  ],
+  [
+    "je venais",
+    "I was coming",
+    "Je venais de la bibliothèque.",
+    "I was coming from the library. (Imparfait)"
+  ],
+  [
+    "tu venais",
+    "you were coming",
+    "Tu venais de l'école.",
+    "You were coming from school. (Imparfait)"
+  ],
+  [
+    "il/elle/on venait",
+    "he/she was coming",
+    "Il venait de la ville.",
+    "He was coming from the city. (Imparfait)"
+  ],
+  [
+    "nous venions",
+    "we were coming",
+    "Nous venions de la plage.",
+    "We were coming from the beach. (Imparfait)"
+  ],
+  [
+    "vous veniez",
+    "you were coming (formal)",
+    "Vous veniez de la réunion.",
+    "You were coming from the meeting. (Imparfait)"
+  ],
+  [
+    "ils/elles venaient",
+    "they were coming",
+    "Ils venaient de la montagne.",
+    "They were coming from the mountain. (Imparfait)"
+  ],
+  [
+    "je suis venu(e)",
+    "I have come",
+    "Je suis venu pour vous voir.",
+    "I have come to see you. (Passé Composé)"
+  ],
+  [
+    "tu es venu(e)",
+    "you have come",
+    "Tu es venu à l'heure.",
+    "You have come on time. (Passé Composé)"
+  ],
+  [
+    "il/elle/on est venu(e)",
+    "he/she has come",
+    "Il est venu de la campagne.",
+    "He has come from the countryside. (Passé Composé)"
+  ],
+  [
+    "nous sommes venu(e)s",
+    "we have come",
+    "Nous sommes venus de la ville.",
+    "We have come from the city. (Passé Composé)"
+  ],
+  [
+    "vous êtes venu(e)s",
+    "you have come (formal)",
+    "Vous êtes venus de loin.",
+    "You have come from far away. (Passé Composé)"
+  ],
+  [
+    "ils/elles sont venu(e)s",
+    "they have come",
+    "Ils sont venus de l'étranger.",
+    "They have come from abroad. (Passé Composé)"
+  ],
+  [
+    "je viendrai",
+    "I will come",
+    "Je viendrai demain.",
+    "I will come tomorrow. (Futur Simple)"
+  ],
+  [
+    "tu viendras",
+    "you will come",
+    "Tu viendras avec nous.",
+    "You will come with us. (Futur Simple)"
+  ],
+  [
+    "il/elle/on viendra",
+    "he/she will come",
+    "Il viendra à la fête.",
+    "He will come to the party. (Futur Simple)"
+  ],
+  [
+    "nous viendrons",
+    "we will come",
+    "Nous viendrons en voiture.",
+    "We will come by car. (Futur Simple)"
+  ],
+  [
+    "vous viendrez",
+    "you will come (formal)",
+    "Vous viendrez à l'heure.",
+    "You will come on time. (Futur Simple)"
+  ],
+  [
+    "ils/elles viendront",
+    "they will come",
+    "Ils viendront de la campagne.",
+    "They will come from the countryside. (Futur Simple)"
+  ],
+  [
+    "j'étais venu(e)",
+    "I had come",
+    "J'étais venu pour vous aider.",
+    "I had come to help you. (Plus-Que-Parfait)"
+  ],
+  [
+    "tu étais venu(e)",
+    "you had come",
+    "Tu étais venu à l'heure.",
+    "You had come on time. (Plus-Que-Parfait)"
+  ],
+  [
+    "il/elle/on était venu(e)",
+    "he/she had come",
+    "Il était venu de la ville.",
+    "He had come from the city. (Plus-Que-Parfait)"
+  ],
+  [
+    "nous étions venu(e)s",
+    "we had come",
+    "Nous étions venus de la plage.",
+    "We had come from the beach. (Plus-Que-Parfait)"
+  ],
+  [
+    "vous étiez venu(e)s",
+    "you had come (formal)",
+    "Vous étiez venus de la réunion.",
+    "You had come from the meeting. (Plus-Que-Parfait)"
+  ],
+  [
+    "ils/elles étaient venu(e)s",
+    "they had come",
+    "Ils étaient venus de la montagne.",
+    "They had come from the mountain. (Plus-Que-Parfait)"
+  ],
+  [
+    "je serai venu(e)",
+    "I will have come",
+    "Je serai venu avant la fin de la journée.",
+    "I will have come before the end of the day. (Futur Antérieur)"
+  ],
+  [
+    "tu seras venu(e)",
+    "you will have come",
+    "Tu seras venu à l'heure.",
+    "You will have come on time. (Futur Antérieur)"
+  ],
+  [
+    "il/elle/on sera venu(e)",
+    "he/she will have come",
+    "Il sera venu de la campagne.",
+    "He will have come from the countryside. (Futur Antérieur)"
+  ],
+  [
+    "nous serons venu(e)s",
+    "we will have come",
+    "Nous serons venus de la ville.",
+    "We will have come from the city. (Futur Antérieur)"
+  ],
+  [
+    "vous serez venu(e)s",
+    "you will have come (formal)",
+    "Vous serez venus de loin.",
+    "You will have come from far away. (Futur Antérieur)"
+  ],
+  [
+    "ils/elles seront venu(e)s",
+    "they will have come",
+    "Ils seront venus de l'étranger.",
+    "They will have come from abroad. (Futur Antérieur)"
+  ],
+  [
+    "je viendrais",
+    "I would come",
+    "Je viendrais si j'avais le temps.",
+    "I would come if I had time. (Conditionnel Présent)"
+  ],
+  [
+    "tu viendrais",
+    "you would come",
+    "Tu viendrais avec nous.",
+    "You would come with us. (Conditionnel Présent)"
+  ],
+  [
+    "il/elle/on viendrait",
+    "he/she would come",
+    "Il viendrait à la fête.",
+    "He would come to the party. (Conditionnel Présent)"
+  ],
+  [
+    "nous viendrions",
+    "we would come",
+    "Nous viendrions en voiture.",
+    "We would come by car. (Conditionnel Présent)"
+  ],
+  [
+    "vous viendriez",
+    "you would come (formal)",
+    "Vous viendriez à l'heure.",
+    "You would come on time. (Conditionnel Présent)"
+  ],
+  [
+    "ils/elles viendraient",
+    "they would come",
+    "Ils viendraient de la campagne.",
+    "They would come from the countryside. (Conditionnel Présent)"
+  ],
+  [
+    "je serais venu(e)",
+    "I would have come",
+    "Je serais venu si j'avais su.",
+    "I would have come if I had known. (Conditionnel Passé)"
+  ],
+  [
+    "tu serais venu(e)",
+    "you would have come",
+    "Tu serais venu à l'heure.",
+    "You would have come on time. (Conditionnel Passé)"
+  ],
+  [
+    "il/elle/on serait venu(e)",
+    "he/she would have come",
+    "Il serait venu de la ville.",
+    "He would have come from the city. (Conditionnel Passé)"
+  ],
+  [
+    "nous serions venu(e)s",
+    "we would have come",
+    "Nous serions venus de la plage.",
+    "We would have come from the beach. (Conditionnel Passé)"
+  ],
+  [
+    "vous seriez venu(e)s",
+    "you would have come (formal)",
+    "Vous seriez venus de la réunion.",
+    "You would have come from the meeting. (Conditionnel Passé)"
+  ],
+  [
+    "ils/elles seraient venu(e)s",
+    "they would have come",
+    "Ils seraient venus de la montagne.",
+    "They would have come from the mountain. (Conditionnel Passé)"
+  ],
+  [
+    "viens",
+    "come (imperative)",
+    "Viens ici!",
+    "Come here! (L'impératif présent)"
+  ],
+  [
+    "venons",
+    "let's come (imperative)",
+    "Venons avec eux!",
+    "Let's come with them! (L'impératif présent)"
+  ],
+  [
+    "venez",
+    "come (imperative formal)",
+    "Venez avec nous!",
+    "Come with us! (L'impératif présent)"
+  ],
+  [
+    "venant",
+    "coming",
+    "En venant de la ville, j'ai vu beaucoup de monde.",
+    "Coming from the city, I saw many people. (Le participe présent)"
+  ],
+  [
+    "venu(e)",
+    "come",
+    "Il est venu de la campagne.",
+    "He has come from the countryside. (Le participe passé)"
+  ]
+]
