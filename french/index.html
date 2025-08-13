@@ -372,6 +372,7 @@
                     <option value="french_irregular_verbs.json">Irregular Verbs</option>
                     <option value="french_verbs.json">Verbs</option>
                     <option value="french_versatile_words.json">Versatile Words</option>
+                    <option value="the_v_verbs.json">V Verbs (Aller, Vouloir, Voir, Avoir)</option>
                     <option value="tefaq_vocab_final.json">TEFaQ Vocabulary</option>
                 </select>
             </div>
@@ -456,6 +457,7 @@
       let FRENCH_IRREGULAR_VERBS_DATA = [];
       let FRENCH_VERBS_DATA = [];
       let FRENCH_VERSATILE_WORDS_DATA = [];
+      let THE_V_VERBS_DATA = [];
       let TEFAQ_VOCAB_FINAL_DATA = [];
       // get from json file
       fetch('french_nouns.json')
@@ -504,6 +506,12 @@
         .then(response => response.json())
         .then(data => {
           FRENCH_VERSATILE_WORDS_DATA = data;
+        });
+
+      fetch('the_v_verbs.json')
+        .then(response => response.json())
+        .then(data => {
+          THE_V_VERBS_DATA = data;
         });
 
       fetch('tefaq_vocab_final.json')

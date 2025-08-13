@@ -1,0 +1,890 @@
+[
+  [
+    "vais",
+    "I go/I am going",
+    "Je vais au marché tous les samedis.",
+    "I go to the market every Saturday. (Present)"
+  ],
+  [
+    "vas",
+    "You go/You are going (singular, informal)",
+    "Tu vas à l'école en bus.",
+    "You go to school by bus. (Present)"
+  ],
+  [
+    "va",
+    "He/She/It goes/He/She/It is going",
+    "Il va au travail tôt le matin.",
+    "He goes to work early in the morning. (Present)"
+  ],
+  [
+    "allons",
+    "We go/We are going",
+    "Nous allons au cinéma ce soir.",
+    "We are going to the cinema tonight. (Present)"
+  ],
+  [
+    "allez",
+    "You go/You are going (plural or formal)",
+    "Vous allez en vacances en été.",
+    "You are going on vacation in summer. (Present)"
+  ],
+  [
+    "vont",
+    "They go/They are going",
+    "Ils vont au restaurant ensemble.",
+    "They are going to the restaurant together. (Present)"
+  ],
+  [
+    "allais",
+    "I was going/I used to go",
+    "J'allais à l'école à pied quand j'étais jeune.",
+    "I used to go to school on foot when I was young. (Imparfait)"
+  ],
+  [
+    "allais",
+    "You were going/You used to go (singular, informal)",
+    "Tu allais souvent au parc.",
+    "You used to go to the park often. (Imparfait)"
+  ],
+  [
+    "allait",
+    "He/She/It was going/He/She/It used to go",
+    "Il allait au travail en voiture.",
+    "He used to go to work by car. (Imparfait)"
+  ],
+  [
+    "allions",
+    "We were going/We used to go",
+    "Nous allions à la plage chaque été.",
+    "We used to go to the beach every summer. (Imparfait)"
+  ],
+  [
+    "alliez",
+    "You were going/You used to go (plural or formal)",
+    "Vous alliez au théâtre régulièrement.",
+    "You used to go to the theater regularly. (Imparfait)"
+  ],
+  [
+    "allaient",
+    "They were going/They used to go",
+    "Ils allaient au marché le dimanche.",
+    "They used to go to the market on Sundays. (Imparfait)"
+  ],
+  [
+    "suis allé(e)",
+    "I went/I have gone",
+    "Je suis allé au musée hier.",
+    "I went to the museum yesterday. (Passé Composé)"
+  ],
+  [
+    "es allé(e)",
+    "You went/You have gone (singular, informal)",
+    "Tu es allé au supermarché.",
+    "You went to the supermarket. (Passé Composé)"
+  ],
+  [
+    "est allé(e)",
+    "He/She/It went/He/She/It has gone",
+    "Elle est allée à la bibliothèque.",
+    "She went to the library. (Passé Composé)"
+  ],
+  [
+    "sommes allé(e)s",
+    "We went/We have gone",
+    "Nous sommes allés au restaurant.",
+    "We went to the restaurant. (Passé Composé)"
+  ],
+  [
+    "êtes allé(e)s",
+    "You went/You have gone (plural or formal)",
+    "Vous êtes allés au concert.",
+    "You went to the concert. (Passé Composé)"
+  ],
+  [
+    "sont allé(e)s",
+    "They went/They have gone",
+    "Ils sont allés au parc.",
+    "They went to the park. (Passé Composé)"
+  ],
+  [
+    "irai",
+    "I will go",
+    "J'irai à Paris l'année prochaine.",
+    "I will go to Paris next year. (Futur Simple)"
+  ],
+  [
+    "iras",
+    "You will go (singular, informal)",
+    "Tu iras à l'université.",
+    "You will go to university. (Futur Simple)"
+  ],
+  [
+    "ira",
+    "He/She/It will go",
+    "Il ira au travail demain.",
+    "He will go to work tomorrow. (Futur Simple)"
+  ],
+  [
+    "irons",
+    "We will go",
+    "Nous irons en vacances en été.",
+    "We will go on vacation in summer. (Futur Simple)"
+  ],
+  [
+    "irez",
+    "You will go (plural or formal)",
+    "Vous irez au cinéma ce weekend.",
+    "You will go to the cinema this weekend. (Futur Simple)"
+  ],
+  [
+    "iront",
+    "They will go",
+    "Ils iront au restaurant.",
+    "They will go to the restaurant. (Futur Simple)"
+  ],
+  [
+    "étais allé(e)",
+    "I had gone",
+    "J'étais allé au magasin avant de rentrer.",
+    "I had gone to the store before coming home. (Plus-Que-Parfait)"
+  ],
+  [
+    "étais allé(e)",
+    "You had gone (singular, informal)",
+    "Tu étais allé au médecin la semaine dernière.",
+    "You had gone to the doctor last week. (Plus-Que-Parfait)"
+  ],
+  [
+    "était allé(e)",
+    "He/She/It had gone",
+    "Il était allé au travail très tôt.",
+    "He had gone to work very early. (Plus-Que-Parfait)"
+  ],
+  [
+    "étions allé(e)s",
+    "We had gone",
+    "Nous étions allés au musée avant la fermeture.",
+    "We had gone to the museum before closing. (Plus-Que-Parfait)"
+  ],
+  [
+    "étiez allé(e)s",
+    "You had gone (plural or formal)",
+    "Vous étiez allés au concert avant l'orage.",
+    "You had gone to the concert before the storm. (Plus-Que-Parfait)"
+  ],
+  [
+    "étaient allé(e)s",
+    "They had gone",
+    "Ils étaient allés au parc avant la pluie.",
+    "They had gone to the park before the rain. (Plus-Que-Parfait)"
+  ],
+  [
+    "serais allé(e)",
+    "I would have gone",
+    "Je serais allé au cinéma si j'avais eu le temps.",
+    "I would have gone to the cinema if I had had time. (Conditionnel Passé)"
+  ],
+  [
+    "serais allé(e)",
+    "You would have gone (singular, informal)",
+    "Tu serais allé au restaurant si tu avais été libre.",
+    "You would have gone to the restaurant if you had been free. (Conditionnel Passé)"
+  ],
+  [
+    "serait allé(e)",
+    "He/She/It would have gone",
+    "Il serait allé au travail s'il n'avait pas été malade.",
+    "He would have gone to work if he hadn't been sick. (Conditionnel Passé)"
+  ],
+  [
+    "serions allé(e)s",
+    "We would have gone",
+    "Nous serions allés en vacances si nous avions eu l'argent.",
+    "We would have gone on vacation if we had had money. (Conditionnel Passé)"
+  ],
+  [
+    "seriez allé(e)s",
+    "You would have gone (plural or formal)",
+    "Vous seriez allés au concert si vous aviez eu des billets.",
+    "You would have gone to the concert if you had had tickets. (Conditionnel Passé)"
+  ],
+  [
+    "seraient allé(e)s",
+    "They would have gone",
+    "Ils seraient allés au musée s'il avait été ouvert.",
+    "They would have gone to the museum if it had been open. (Conditionnel Passé)"
+  ],
+  [
+    "allant",
+    "Going (Present Participle)",
+    "En allant au travail, j'ai rencontré un ami.",
+    "While going to work, I met a friend. (Le Participe Présent)"
+  ],
+  [
+    "veux",
+    "I want/I am wanting",
+    "Je veux un café, s'il vous plaît.",
+    "I want a coffee, please. (Present)"
+  ],
+  [
+    "veux",
+    "You want/You are wanting (singular, informal)",
+    "Tu veux aller au cinéma ce soir?",
+    "Do you want to go to the cinema tonight? (Present)"
+  ],
+  [
+    "veut",
+    "He/She/It wants/He/She/It is wanting",
+    "Il veut apprendre le français.",
+    "He wants to learn French. (Present)"
+  ],
+  [
+    "voulons",
+    "We want/We are wanting",
+    "Nous voulons visiter Paris.",
+    "We want to visit Paris. (Present)"
+  ],
+  [
+    "voulez",
+    "You want/You are wanting (plural or formal)",
+    "Voulez-vous dîner avec nous?",
+    "Do you want to have dinner with us? (Present)"
+  ],
+  [
+    "veulent",
+    "They want/They are wanting",
+    "Ils veulent partir en vacances.",
+    "They want to go on vacation. (Present)"
+  ],
+  [
+    "voulais",
+    "I wanted/I was wanting",
+    "Je voulais un chien quand j'étais enfant.",
+    "I wanted a dog when I was a child. (Imparfait)"
+  ],
+  [
+    "voulais",
+    "You wanted/You were wanting (singular, informal)",
+    "Tu voulais devenir médecin.",
+    "You wanted to become a doctor. (Imparfait)"
+  ],
+  [
+    "voulait",
+    "He/She/It wanted/He/She/It was wanting",
+    "Elle voulait étudier l'art.",
+    "She wanted to study art. (Imparfait)"
+  ],
+  [
+    "voulions",
+    "We wanted/We were wanting",
+    "Nous voulions acheter une maison.",
+    "We wanted to buy a house. (Imparfait)"
+  ],
+  [
+    "vouliez",
+    "You wanted/You were wanting (plural or formal)",
+    "Vous vouliez apprendre l'italien.",
+    "You wanted to learn Italian. (Imparfait)"
+  ],
+  [
+    "voulaient",
+    "They wanted/They were wanting",
+    "Ils voulaient déménager à Lyon.",
+    "They wanted to move to Lyon. (Imparfait)"
+  ],
+  [
+    "ai voulu",
+    "I wanted/I have wanted",
+    "J'ai voulu partir plus tôt.",
+    "I wanted to leave earlier. (Passé Composé)"
+  ],
+  [
+    "as voulu",
+    "You wanted/You have wanted (singular, informal)",
+    "Tu as voulu rester à la maison.",
+    "You wanted to stay at home. (Passé Composé)"
+  ],
+  [
+    "a voulu",
+    "He/She/It wanted/He/She/It has wanted",
+    "Il a voulu changer de travail.",
+    "He wanted to change jobs. (Passé Composé)"
+  ],
+  [
+    "avons voulu",
+    "We wanted/We have wanted",
+    "Nous avons voulu annuler le voyage.",
+    "We wanted to cancel the trip. (Passé Composé)"
+  ],
+  [
+    "avez voulu",
+    "You wanted/You have wanted (plural or formal)",
+    "Vous avez voulu reporter la réunion.",
+    "You wanted to postpone the meeting. (Passé Composé)"
+  ],
+  [
+    "ont voulu",
+    "They wanted/They have wanted",
+    "Ils ont voulu partir immédiatement.",
+    "They wanted to leave immediately. (Passé Composé)"
+  ],
+  [
+    "voudrai",
+    "I will want",
+    "Je voudrai une voiture électrique.",
+    "I will want an electric car. (Futur Simple)"
+  ],
+  [
+    "voudras",
+    "You will want (singular, informal)",
+    "Tu voudras peut-être changer d'avis.",
+    "You will maybe want to change your mind. (Futur Simple)"
+  ],
+  [
+    "voudra",
+    "He/She/It will want",
+    "Il voudra probablement rester.",
+    "He will probably want to stay. (Futur Simple)"
+  ],
+  [
+    "voudrons",
+    "We will want",
+    "Nous voudrons voyager plus souvent.",
+    "We will want to travel more often. (Futur Simple)"
+  ],
+  [
+    "voudrez",
+    "You will want (plural or formal)",
+    "Vous voudrez peut-être nous rejoindre.",
+    "You will maybe want to join us. (Futur Simple)"
+  ],
+  [
+    "voudront",
+    "They will want",
+    "Ils voudront continuer le projet.",
+    "They will want to continue the project. (Futur Simple)"
+  ],
+  [
+    "avais voulu",
+    "I had wanted",
+    "J'avais voulu partir plus tôt.",
+    "I had wanted to leave earlier. (Plus-Que-Parfait)"
+  ],
+  [
+    "avais voulu",
+    "You had wanted (singular, informal)",
+    "Tu avais voulu rester plus longtemps.",
+    "You had wanted to stay longer. (Plus-Que-Parfait)"
+  ],
+  [
+    "avait voulu",
+    "He/She/It had wanted",
+    "Il avait voulu changer de travail.",
+    "He had wanted to change jobs. (Plus-Que-Parfait)"
+  ],
+  [
+    "avions voulu",
+    "We had wanted",
+    "Nous avions voulu annuler le voyage.",
+    "We had wanted to cancel the trip. (Plus-Que-Parfait)"
+  ],
+  [
+    "aviez voulu",
+    "You had wanted (plural or formal)",
+    "Vous aviez voulu reporter la réunion.",
+    "You had wanted to postpone the meeting. (Plus-Que-Parfait)"
+  ],
+  [
+    "avaient voulu",
+    "They had wanted",
+    "Ils avaient voulu partir immédiatement.",
+    "They had wanted to leave immediately. (Plus-Que-Parfait)"
+  ],
+  [
+    "aurais voulu",
+    "I would have wanted",
+    "J'aurais voulu partir plus tôt.",
+    "I would have wanted to leave earlier. (Conditionnel Passé)"
+  ],
+  [
+    "aurais voulu",
+    "You would have wanted (singular, informal)",
+    "Tu aurais voulu rester plus longtemps.",
+    "You would have wanted to stay longer. (Conditionnel Passé)"
+  ],
+  [
+    "aurait voulu",
+    "He/She/It would have wanted",
+    "Il aurait voulu changer de travail.",
+    "He would have wanted to change jobs. (Conditionnel Passé)"
+  ],
+  [
+    "aurions voulu",
+    "We would have wanted",
+    "Nous aurions voulu annuler le voyage.",
+    "We would have wanted to cancel the trip. (Conditionnel Passé)"
+  ],
+  [
+    "auriez voulu",
+    "You would have wanted (plural or formal)",
+    "Vous auriez voulu reporter la réunion.",
+    "You would have wanted to postpone the meeting. (Conditionnel Passé)"
+  ],
+  [
+    "auraient voulu",
+    "They would have wanted",
+    "Ils auraient voulu partir immédiatement.",
+    "They would have wanted to leave immediately. (Conditionnel Passé)"
+  ],
+  [
+    "voulant",
+    "Wanting (Present Participle)",
+    "En voulant trop bien faire, il a fait des erreurs.",
+    "By wanting to do too well, he made mistakes. (Le Participe Présent)"
+  ],
+  [
+    "vois",
+    "I see/I am seeing",
+    "Je vois un oiseau dans l'arbre.",
+    "I see a bird in the tree. (Present)"
+  ],
+  [
+    "vois",
+    "You see/You are seeing (singular, informal)",
+    "Tu vois ce que je veux dire?",
+    "Do you see what I mean? (Present)"
+  ],
+  [
+    "voit",
+    "He/She/It sees/He/She/It is seeing",
+    "Il voit bien sans ses lunettes.",
+    "He sees well without his glasses. (Present)"
+  ],
+  [
+    "voyons",
+    "We see/We are seeing",
+    "Nous voyons la mer depuis notre fenêtre.",
+    "We see the sea from our window. (Present)"
+  ],
+  [
+    "voyez",
+    "You see/You are seeing (plural or formal)",
+    "Voyez-vous la différence?",
+    "Do you see the difference? (Present)"
+  ],
+  [
+    "voient",
+    "They see/They are seeing",
+    "Ils voient le film à la télévision.",
+    "They see the movie on television. (Present)"
+  ],
+  [
+    "voyais",
+    "I was seeing/I used to see",
+    "Je voyais souvent mes amis le weekend.",
+    "I used to see my friends often on weekends. (Imparfait)"
+  ],
+  [
+    "voyais",
+    "You were seeing/You used to see (singular, informal)",
+    "Tu voyais tes parents chaque semaine.",
+    "You used to see your parents every week. (Imparfait)"
+  ],
+  [
+    "voyait",
+    "He/She/It was seeing/He/She/It used to see",
+    "Elle voyait bien avant l'accident.",
+    "She used to see well before the accident. (Imparfait)"
+  ],
+  [
+    "voyions",
+    "We were seeing/We used to see",
+    "Nous voyions nos cousins chaque été.",
+    "We used to see our cousins every summer. (Imparfait)"
+  ],
+  [
+    "voyiez",
+    "You were seeing/You used to see (plural or formal)",
+    "Vous voyiez vos amis régulièrement.",
+    "You used to see your friends regularly. (Imparfait)"
+  ],
+  [
+    "voyaient",
+    "They were seeing/They used to see",
+    "Ils voyaient le coucher de soleil chaque soir.",
+    "They used to see the sunset every evening. (Imparfait)"
+  ],
+  [
+    "ai vu",
+    "I saw/I have seen",
+    "J'ai vu un film excellent hier.",
+    "I saw an excellent movie yesterday. (Passé Composé)"
+  ],
+  [
+    "as vu",
+    "You saw/You have seen (singular, informal)",
+    "Tu as vu le nouveau restaurant?",
+    "Have you seen the new restaurant? (Passé Composé)"
+  ],
+  [
+    "a vu",
+    "He/She/It saw/He/She/It has seen",
+    "Il a vu sa famille la semaine dernière.",
+    "He saw his family last week. (Passé Composé)"
+  ],
+  [
+    "avons vu",
+    "We saw/We have seen",
+    "Nous avons vu le spectacle hier soir.",
+    "We saw the show last night. (Passé Composé)"
+  ],
+  [
+    "avez vu",
+    "You saw/You have seen (plural or formal)",
+    "Avez-vous vu le nouveau film?",
+    "Have you seen the new movie? (Passé Composé)"
+  ],
+  [
+    "ont vu",
+    "They saw/They have seen",
+    "Ils ont vu le match de football.",
+    "They saw the football match. (Passé Composé)"
+  ],
+  [
+    "verrai",
+    "I will see",
+    "Je verrai mes amis demain.",
+    "I will see my friends tomorrow. (Futur Simple)"
+  ],
+  [
+    "verras",
+    "You will see (singular, informal)",
+    "Tu verras le résultat bientôt.",
+    "You will see the result soon. (Futur Simple)"
+  ],
+  [
+    "verra",
+    "He/She/It will see",
+    "Il verra sa famille à Noël.",
+    "He will see his family at Christmas. (Futur Simple)"
+  ],
+  [
+    "verrons",
+    "We will see",
+    "Nous verrons le film ce weekend.",
+    "We will see the movie this weekend. (Futur Simple)"
+  ],
+  [
+    "verrez",
+    "You will see (plural or formal)",
+    "Vous verrez la différence immédiatement.",
+    "You will see the difference immediately. (Futur Simple)"
+  ],
+  [
+    "verront",
+    "They will see",
+    "Ils verront le spectacle ce soir.",
+    "They will see the show tonight. (Futur Simple)"
+  ],
+  [
+    "avais vu",
+    "I had seen",
+    "J'avais vu ce film avant.",
+    "I had seen this movie before. (Plus-Que-Parfait)"
+  ],
+  [
+    "avais vu",
+    "You had seen (singular, informal)",
+    "Tu avais vu cette exposition.",
+    "You had seen this exhibition. (Plus-Que-Parfait)"
+  ],
+  [
+    "avait vu",
+    "He/She/It had seen",
+    "Il avait vu sa famille récemment.",
+    "He had seen his family recently. (Plus-Que-Parfait)"
+  ],
+  [
+    "avions vu",
+    "We had seen",
+    "Nous avions vu ce spectacle.",
+    "We had seen this show. (Plus-Que-Parfait)"
+  ],
+  [
+    "aviez vu",
+    "You had seen (plural or formal)",
+    "Vous aviez vu ce document.",
+    "You had seen this document. (Plus-Que-Parfait)"
+  ],
+  [
+    "avaient vu",
+    "They had seen",
+    "Ils avaient vu ce film.",
+    "They had seen this movie. (Plus-Que-Parfait)"
+  ],
+  [
+    "aurais vu",
+    "I would have seen",
+    "J'aurais vu le spectacle si j'avais été libre.",
+    "I would have seen the show if I had been free. (Conditionnel Passé)"
+  ],
+  [
+    "aurais vu",
+    "You would have seen (singular, informal)",
+    "Tu aurais vu le film si tu étais venu.",
+    "You would have seen the movie if you had come. (Conditionnel Passé)"
+  ],
+  [
+    "aurait vu",
+    "He/She/It would have seen",
+    "Il aurait vu sa famille s'il avait eu le temps.",
+    "He would have seen his family if he had had time. (Conditionnel Passé)"
+  ],
+  [
+    "aurions vu",
+    "We would have seen",
+    "Nous aurions vu le match si nous avions été là.",
+    "We would have seen the match if we had been there. (Conditionnel Passé)"
+  ],
+  [
+    "auriez vu",
+    "You would have seen (plural or formal)",
+    "Vous auriez vu l'exposition si vous aviez été libre.",
+    "You would have seen the exhibition if you had been free. (Conditionnel Passé)"
+  ],
+  [
+    "auraient vu",
+    "They would have seen",
+    "Ils auraient vu le film s'ils avaient eu des billets.",
+    "They would have seen the movie if they had had tickets. (Conditionnel Passé)"
+  ],
+  [
+    "voyant",
+    "Seeing (Present Participle)",
+    "En voyant l'orage, nous sommes rentrés.",
+    "Seeing the storm, we went home. (Le Participe Présent)"
+  ],
+  [
+    "ai",
+    "I have/I am having",
+    "J'ai une voiture rouge.",
+    "I have a red car. (Present)"
+  ],
+  [
+    "as",
+    "You have/You are having (singular, informal)",
+    "Tu as un chien?",
+    "Do you have a dog? (Present)"
+  ],
+  [
+    "a",
+    "He/She/It has/He/She/It is having",
+    "Il a une maison à la campagne.",
+    "He has a house in the countryside. (Present)"
+  ],
+  [
+    "avons",
+    "We have/We are having",
+    "Nous avons une réunion demain.",
+    "We have a meeting tomorrow. (Present)"
+  ],
+  [
+    "avez",
+    "You have/You are having (plural or formal)",
+    "Avez-vous des questions?",
+    "Do you have any questions? (Present)"
+  ],
+  [
+    "ont",
+    "They have/They are having",
+    "Ils ont une grande famille.",
+    "They have a big family. (Present)"
+  ],
+  [
+    "avais",
+    "I had/I was having",
+    "J'avais un chat quand j'étais enfant.",
+    "I had a cat when I was a child. (Imparfait)"
+  ],
+  [
+    "avais",
+    "You had/You were having (singular, informal)",
+    "Tu avais une bicyclette.",
+    "You had a bicycle. (Imparfait)"
+  ],
+  [
+    "avait",
+    "He/She/It had/He/She/It was having",
+    "Elle avait un jardin magnifique.",
+    "She had a beautiful garden. (Imparfait)"
+  ],
+  [
+    "avions",
+    "We had/We were having",
+    "Nous avions une grande maison.",
+    "We had a big house. (Imparfait)"
+  ],
+  [
+    "aviez",
+    "You had/You were having (plural or formal)",
+    "Vous aviez un restaurant.",
+    "You had a restaurant. (Imparfait)"
+  ],
+  [
+    "avaient",
+    "They had/They were having",
+    "Ils avaient une ferme.",
+    "They had a farm. (Imparfait)"
+  ],
+  [
+    "ai eu",
+    "I had/I have had",
+    "J'ai eu une excellente idée.",
+    "I had an excellent idea. (Passé Composé)"
+  ],
+  [
+    "as eu",
+    "You had/You have had (singular, informal)",
+    "Tu as eu de la chance.",
+    "You had luck. (Passé Composé)"
+  ],
+  [
+    "a eu",
+    "He/She/It had/He/She/It has had",
+    "Il a eu un accident de voiture.",
+    "He had a car accident. (Passé Composé)"
+  ],
+  [
+    "avons eu",
+    "We had/We have had",
+    "Nous avons eu un problème technique.",
+    "We had a technical problem. (Passé Composé)"
+  ],
+  [
+    "avez eu",
+    "You had/You have had (plural or formal)",
+    "Vous avez eu une réunion importante.",
+    "You had an important meeting. (Passé Composé)"
+  ],
+  [
+    "ont eu",
+    "They had/They have had",
+    "Ils ont eu une excellente année.",
+    "They had an excellent year. (Passé Composé)"
+  ],
+  [
+    "aurai",
+    "I will have",
+    "J'aurai une maison dans dix ans.",
+    "I will have a house in ten years. (Futur Simple)"
+  ],
+  [
+    "auras",
+    "You will have (singular, informal)",
+    "Tu auras un diplôme bientôt.",
+    "You will have a diploma soon. (Futur Simple)"
+  ],
+  [
+    "aura",
+    "He/She/It will have",
+    "Il aura une promotion l'année prochaine.",
+    "He will have a promotion next year. (Futur Simple)"
+  ],
+  [
+    "aurons",
+    "We will have",
+    "Nous aurons une grande famille.",
+    "We will have a big family. (Futur Simple)"
+  ],
+  [
+    "aurez",
+    "You will have (plural or formal)",
+    "Vous aurez plus de temps libre.",
+    "You will have more free time. (Futur Simple)"
+  ],
+  [
+    "auront",
+    "They will have",
+    "Ils auront une nouvelle voiture.",
+    "They will have a new car. (Futur Simple)"
+  ],
+  [
+    "avais eu",
+    "I had had",
+    "J'avais eu une idée similaire avant.",
+    "I had had a similar idea before. (Plus-Que-Parfait)"
+  ],
+  [
+    "avais eu",
+    "You had had (singular, informal)",
+    "Tu avais eu cette opportunité.",
+    "You had had this opportunity. (Plus-Que-Parfait)"
+  ],
+  [
+    "avait eu",
+    "He/She/It had had",
+    "Il avait eu un accident similaire.",
+    "He had had a similar accident. (Plus-Que-Parfait)"
+  ],
+  [
+    "avions eu",
+    "We had had",
+    "Nous avions eu ce problème avant.",
+    "We had had this problem before. (Plus-Que-Parfait)"
+  ],
+  [
+    "aviez eu",
+    "You had had (plural or formal)",
+    "Vous aviez eu cette réunion.",
+    "You had had this meeting. (Plus-Que-Parfait)"
+  ],
+  [
+    "avaient eu",
+    "They had had",
+    "Ils avaient eu cette expérience.",
+    "They had had this experience. (Plus-Que-Parfait)"
+  ],
+  [
+    "aurais eu",
+    "I would have had",
+    "J'aurais eu une maison si j'avais eu l'argent.",
+    "I would have had a house if I had had money. (Conditionnel Passé)"
+  ],
+  [
+    "aurais eu",
+    "You would have had (singular, informal)",
+    "Tu aurais eu un diplôme si tu avais étudié.",
+    "You would have had a diploma if you had studied. (Conditionnel Passé)"
+  ],
+  [
+    "aurait eu",
+    "He/She/It would have had",
+    "Il aurait eu une promotion s'il avait travaillé plus.",
+    "He would have had a promotion if he had worked more. (Conditionnel Passé)"
+  ],
+  [
+    "aurions eu",
+    "We would have had",
+    "Nous aurions eu une grande famille si nous avions eu plus d'enfants.",
+    "We would have had a big family if we had had more children. (Conditionnel Passé)"
+  ],
+  [
+    "auriez eu",
+    "You would have had (plural or formal)",
+    "Vous auriez eu plus de temps libre si vous aviez pris votre retraite.",
+    "You would have had more free time if you had retired. (Conditionnel Passé)"
+  ],
+  [
+    "auraient eu",
+    "They would have had",
+    "Ils auraient eu une nouvelle voiture s'ils avaient économisé.",
+    "They would have had a new car if they had saved money. (Conditionnel Passé)"
+  ],
+  [
+    "ayant",
+    "Having (Present Participle)",
+    "Ayant terminé son travail, il est parti.",
+    "Having finished his work, he left. (Le Participe Présent)"
+  ]
+]
