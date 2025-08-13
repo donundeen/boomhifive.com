@@ -231,6 +231,14 @@
             max-width: 90%;
         }
 
+        .grammar-info {
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin-top: 10px;
+            font-style: italic;
+            max-width: 90%;
+        }
+
         .learn-more-container {
             margin-top: 20px;
             text-align: center;
@@ -334,6 +342,10 @@
                 font-size: 1em;
             }
             
+            .grammar-info {
+                font-size: 0.8em;
+            }
+            
             .learn-more-link {
                 padding: 8px 16px;
                 font-size: 13px;
@@ -360,6 +372,7 @@
                     <option value="french_irregular_verbs.json">Irregular Verbs</option>
                     <option value="french_verbs.json">Verbs</option>
                     <option value="french_versatile_words.json">Versatile Words</option>
+                    <option value="tefaq_vocab_final.json">TEFaQ Vocabulary</option>
                 </select>
             </div>
 
@@ -417,10 +430,12 @@
                     <div class="card-front">
                         <div class="word" id="frontWord">Select a category to start</div>
                         <div class="example" id="frontExample"></div>
+                        <div class="grammar-info" id="frontGrammarInfo"></div>
                     </div>
                     <div class="card-back">
                         <div class="word" id="backWord"></div>
                         <div class="example" id="backExample"></div>
+                        <div class="grammar-info" id="backGrammarInfo"></div>
                     </div>
                 </div>
             </div>
@@ -441,6 +456,7 @@
       let FRENCH_IRREGULAR_VERBS_DATA = [];
       let FRENCH_VERBS_DATA = [];
       let FRENCH_VERSATILE_WORDS_DATA = [];
+      let TEFAQ_VOCAB_FINAL_DATA = [];
       // get from json file
       fetch('french_nouns.json')
         .then(response => response.json())
@@ -490,6 +506,12 @@
           FRENCH_VERSATILE_WORDS_DATA = data;
         });
 
+      fetch('tefaq_vocab_final.json')
+        .then(response => response.json())
+        .then(data => {
+          TEFAQ_VOCAB_FINAL_DATA = data;
+        });
+
 
 
 
@@ -515,8 +537,10 @@
                 this.flashcard = document.getElementById('flashcard');
                 this.frontWord = document.getElementById('frontWord');
                 this.frontExample = document.getElementById('frontExample');
+                this.frontGrammarInfo = document.getElementById('frontGrammarInfo');
                 this.backWord = document.getElementById('backWord');
                 this.backExample = document.getElementById('backExample');
+                this.backGrammarInfo = document.getElementById('backGrammarInfo');
                 this.totalCardsEl = document.getElementById('totalCards');
                 this.remainingCardsEl = document.getElementById('remainingCards');
                 this.correctCardsEl = document.getElementById('correctCards');
@@ -688,7 +712,19 @@
                 if (this.currentCard === null) return;
 
                 const card = this.cards[this.currentCard];
-                const [frenchWord, englishWord, frenchExample, englishExample] = card;
+                
+                // Handle both 4-element and 5-element arrays
+                let frenchWord, englishWord, frenchExample, englishExample, grammarInfo;
+                
+                if (card.length === 5) {
+                    [frenchWord, englishWord, frenchExample, englishExample, grammarInfo] = card;
+                } else if (card.length === 4) {
+                    [frenchWord, englishWord, frenchExample, englishExample] = card;
+                    grammarInfo = null;
+                } else {
+                    console.error('Invalid card format:', card);
+                    return;
+                }
 
                 // Determine which side to show first
                 let showFrenchFirst = this.currentSide === 'french' || 
@@ -697,13 +733,17 @@
                 if (showFrenchFirst) {
                     this.frontWord.textContent = frenchWord;
                     this.frontExample.textContent = frenchExample;
+                    this.frontGrammarInfo.textContent = grammarInfo ? `(${grammarInfo})` : '';
                     this.backWord.textContent = englishWord;
                     this.backExample.textContent = englishExample;
+                    this.backGrammarInfo.textContent = grammarInfo ? `(${grammarInfo})` : '';
                 } else {
                     this.frontWord.textContent = englishWord;
                     this.frontExample.textContent = englishExample;
+                    this.frontGrammarInfo.textContent = grammarInfo ? `(${grammarInfo})` : '';
                     this.backWord.textContent = frenchWord;
                     this.backExample.textContent = frenchExample;
+                    this.backGrammarInfo.textContent = grammarInfo ? `(${grammarInfo})` : '';
                 }
 
                 // Update Learn More link
@@ -790,8 +830,10 @@
             showCompletionMessage() {
                 this.frontWord.textContent = '🎉 Congratulations!';
                 this.frontExample.textContent = `You've completed all ${this.cards.length} cards!`;
+                this.frontGrammarInfo.textContent = '';
                 this.backWord.textContent = '';
                 this.backExample.textContent = '';
+                this.backGrammarInfo.textContent = '';
                 this.flashcard.classList.remove('flipped');
                 
                 // Hide Learn More link
@@ -817,8 +859,10 @@
             showError(message) {
                 this.frontWord.textContent = '❌ Error';
                 this.frontExample.textContent = message;
+                this.frontGrammarInfo.textContent = '';
                 this.backWord.textContent = '';
                 this.backExample.textContent = '';
+                this.backGrammarInfo.textContent = '';
                 
                 // Hide Learn More link
                 this.hideLearnMoreLink();

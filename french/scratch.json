@@ -1,177 +1,177 @@
 [
   [
-    "carte SIM",
-    "SIM card",
-    "J'ai besoin d'une nouvelle carte SIM.",
-    "I need a new SIM card.",
-    "noun phrase, feminine"
+    "hors charges",
+    "utilities not included",
+    "Le loyer est hors charges.",
+    "The rent is utilities not included.",
+    "prepositional phrase"
   ],
   [
-    "choix d'acteurs",
-    "casting choice",
-    "Le choix d'acteurs pour ce film est excellent.",
-    "The casting choice for this film is excellent.",
-    "noun phrase, masculine"
-  ],
-  [
-    "distribution des rôles",
-    "casting",
-    "La distribution des rôles a été annoncée.",
-    "The casting has been announced.",
-    "noun phrase, feminine"
-  ],
-  [
-    "catalogue",
-    "catalog",
-    "Le catalogue de l'entreprise est en ligne.",
-    "The company's catalog is online.",
-    "noun, masculine"
-  ],
-  [
-    "caution",
-    "deposit/security deposit",
-    "Il faut payer une caution pour l'appartement.",
-    "You need to pay a security deposit for the apartment.",
-    "noun, feminine"
-  ],
-  [
-    "cave",
-    "basement/cellar",
-    "La cave est pleine de bon vin.",
-    "The cellar is full of good wine.",
-    "noun, feminine"
-  ],
-  [
-    "contrat à durée déterminée",
-    "fixed-term contract",
-    "Il a signé un contrat à durée déterminée.",
-    "He signed a fixed-term contract.",
-    "noun phrase, masculine"
-  ],
-  [
-    "contrat à durée indéterminée",
-    "permanent contract",
-    "Elle a obtenu un contrat à durée indéterminée.",
-    "She got a permanent contract.",
-    "noun phrase, masculine"
-  ],
-  [
-    "célibataire",
-    "single",
-    "Il est célibataire et vit seul.",
-    "He is single and lives alone.",
-    "adjective"
-  ],
-  [
-    "centre commercial",
-    "shopping center",
-    "Le centre commercial est très grand.",
-    "The shopping center is very large.",
-    "noun phrase, masculine"
-  ],
-  [
-    "centre de vacances",
-    "holiday center",
-    "Les enfants partent au centre de vacances.",
-    "The children are going to the holiday center.",
-    "noun phrase, masculine"
-  ],
-  [
-    "centre-ville",
-    "city center",
-    "Le centre-ville est très animé.",
-    "The city center is very lively.",
-    "noun, masculine"
-  ],
-  [
-    "cérémonie",
-    "ceremony",
-    "La cérémonie de mariage était magnifique.",
-    "The wedding ceremony was beautiful.",
-    "noun, feminine"
-  ],
-  [
-    "certifié",
-    "certified",
-    "Ce produit est certifié bio.",
-    "This product is certified organic.",
-    "adjective"
-  ],
-  [
-    "chaise",
-    "chair",
-    "Cette chaise est très confortable.",
-    "This chair is very comfortable.",
-    "noun, feminine"
-  ],
-  [
-    "chalet",
-    "chalet",
-    "Le chalet de montagne est charmant.",
-    "The mountain chalet is charming.",
-    "noun, masculine"
-  ],
-  [
-    "chaleureux",
-    "warm/welcoming",
-    "L'accueil était très chaleureux.",
-    "The welcome was very warm.",
-    "adjective"
-  ],
-  [
-    "chambre",
-    "room",
-    "La chambre est très spacieuse.",
-    "The room is very spacious.",
-    "noun, feminine"
-  ],
-  [
-    "chambre à deux lits séparés",
-    "twin room",
-    "Nous avons réservé une chambre à deux lits séparés.",
-    "We booked a twin room.",
-    "noun phrase, feminine"
-  ],
-  [
-    "chambre d'hôtes",
-    "guest room",
-    "La chambre d'hôtes est très confortable.",
-    "The guest room is very comfortable.",
-    "noun phrase, feminine"
-  ],
-  [
-    "chambre double",
-    "double room",
-    "La chambre double a un grand lit.",
-    "The double room has a large bed.",
-    "noun phrase, feminine"
-  ],
-  [
-    "chambre simple",
-    "single room",
-    "La chambre simple est parfaite pour une personne.",
-    "The single room is perfect for one person.",
-    "noun phrase, feminine"
-  ],
-  [
-    "chant",
-    "singing/song",
-    "Le chant des oiseaux est agréable.",
-    "The birds' singing is pleasant.",
-    "noun, masculine"
-  ],
-  [
-    "charges",
-    "utilities/expenses",
-    "Les charges sont incluses dans le loyer.",
-    "Utilities are included in the rent.",
-    "noun, feminine plural"
-  ],
-  [
-    "charges comprises",
+    "charges incluses",
     "utilities included",
-    "L'appartement est loué charges comprises.",
+    "L'appartement est loué charges incluses.",
     "The apartment is rented with utilities included.",
+    "noun phrase, feminine"
+  ],
+  [
+    "charme",
+    "charm",
+    "Ce village a beaucoup de charme.",
+    "This village has a lot of charm.",
+    "noun, masculine"
+  ],
+  [
+    "chasse au trésor",
+    "treasure hunt",
+    "Les enfants font une chasse au trésor.",
+    "The children are doing a treasure hunt.",
+    "noun phrase, feminine"
+  ],
+  [
+    "chauffage",
+    "heating",
+    "Le chauffage est allumé en hiver.",
+    "The heating is on in winter.",
+    "noun, masculine"
+  ],
+  [
+    "chauffage central",
+    "central heating",
+    "L'appartement a le chauffage central.",
+    "The apartment has central heating.",
+    "noun phrase, masculine"
+  ],
+  [
+    "chauffage et eau chaude",
+    "heating and hot water",
+    "Le chauffage et eau chaude sont inclus.",
+    "Heating and hot water are included.",
+    "noun phrase, masculine"
+  ],
+  [
+    "collectifs",
+    "collective/shared",
+    "Les transports collectifs sont pratiques.",
+    "Public transportation is convenient.",
+    "adjective"
+  ],
+  [
+    "chauffe",
+    "heating",
+    "La chauffe de l'eau prend du temps.",
+    "Water heating takes time.",
+    "noun, feminine"
+  ],
+  [
+    "cheminée",
+    "fireplace",
+    "La cheminée réchauffe la pièce.",
+    "The fireplace heats the room.",
+    "noun, feminine"
+  ],
+  [
+    "cher",
+    "expensive/dear",
+    "Ce restaurant est très cher.",
+    "This restaurant is very expensive.",
+    "adjective"
+  ],
+  [
+    "choix",
+    "choice",
+    "Il y a beaucoup de choix sur le menu.",
+    "There are many choices on the menu.",
+    "noun, masculine"
+  ],
+  [
+    "chômage",
+    "unemployment",
+    "Le taux de chômage a diminué.",
+    "The unemployment rate has decreased.",
+    "noun, masculine"
+  ],
+  [
+    "circuit",
+    "circuit/tour",
+    "Ce circuit touristique est populaire.",
+    "This tourist tour is popular.",
+    "noun, masculine"
+  ],
+  [
+    "clair",
+    "clear/bright",
+    "La réponse est très claire.",
+    "The answer is very clear.",
+    "adjective"
+  ],
+  [
+    "clé",
+    "key",
+    "J'ai perdu mes clés.",
+    "I lost my keys.",
+    "noun, feminine"
+  ],
+  [
+    "client",
+    "client/customer",
+    "Ce client est très satisfait.",
+    "This customer is very satisfied.",
+    "noun, masculine"
+  ],
+  [
+    "clientèle",
+    "clientele/customers",
+    "La clientèle de ce magasin est fidèle.",
+    "This store's clientele is loyal.",
+    "noun, feminine"
+  ],
+  [
+    "climat",
+    "climate",
+    "Le climat de cette région est doux.",
+    "The climate of this region is mild.",
+    "noun, masculine"
+  ],
+  [
+    "climatisation",
+    "air conditioning",
+    "La climatisation est en panne.",
+    "The air conditioning is broken.",
+    "noun, feminine"
+  ],
+  [
+    "climatisé",
+    "air-conditioned",
+    "La voiture est climatisée.",
+    "The car is air-conditioned.",
+    "adjective"
+  ],
+  [
+    "climatiseur",
+    "air conditioner",
+    "Le climatiseur refroidit la pièce.",
+    "The air conditioner cools the room.",
+    "noun, masculine"
+  ],
+  [
+    "association",
+    "association",
+    "Cette association aide les personnes âgées.",
+    "This association helps elderly people.",
+    "noun, feminine"
+  ],
+  [
+    "boisson apéritif",
+    "aperitif drink",
+    "Il a servi une boisson apéritif.",
+    "He served an aperitif drink.",
+    "noun phrase, feminine"
+  ],
+  [
+    "réception autour d'un buffet",
+    "reception with buffet",
+    "La réception autour d'un buffet était élégante.",
+    "The reception with buffet was elegant.",
     "noun phrase, feminine"
   ]
 ]
