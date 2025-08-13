@@ -520,4 +520,709 @@
               "noun, feminine"
             ]
           ]
-          
+          [
+            [
+              "assurance voyage",
+              "travel insurance",
+              "Il faut avoir une assurance voyage.",
+              "You need to have travel insurance.",
+              "noun phrase, feminine"
+            ],
+            [
+              "atelier",
+              "workshop/studio",
+              "L'atelier de l'artiste est très grand.",
+              "The artist's studio is very large.",
+              "noun, masculine"
+            ],
+            [
+              "atterrir",
+              "to land",
+              "L'avion va atterrir dans dix minutes.",
+              "The plane will land in ten minutes.",
+              "verb"
+            ],
+            [
+              "attraction touristique",
+              "tourist attraction",
+              "Cette attraction touristique est très populaire.",
+              "This tourist attraction is very popular.",
+              "noun phrase, feminine"
+            ],
+            [
+              "au cœur de",
+              "in the heart of",
+              "L'hôtel est au cœur de la ville.",
+              "The hotel is in the heart of the city.",
+              "prepositional phrase"
+            ],
+            [
+              "en plein",
+              "in the middle of",
+              "Il est en plein travail.",
+              "He is in the middle of work.",
+              "prepositional phrase"
+            ],
+            [
+              "auberge",
+              "inn",
+              "Cette auberge est très accueillante.",
+              "This inn is very welcoming.",
+              "noun, feminine"
+            ],
+            [
+              "auberge de jeunesse",
+              "youth hostel",
+              "L'auberge de jeunesse est bon marché.",
+              "The youth hostel is cheap.",
+              "noun phrase, feminine"
+            ],
+            [
+              "audition",
+              "audition",
+              "Il a passé une audition pour le rôle.",
+              "He had an audition for the role.",
+              "noun, feminine"
+            ],
+            [
+              "augmenter",
+              "to increase",
+              "Les prix vont augmenter.",
+              "Prices will increase.",
+              "verb"
+            ],
+            [
+              "autocar climatisé",
+              "air-conditioned coach",
+              "L'autocar climatisé est confortable.",
+              "The air-conditioned coach is comfortable.",
+              "noun phrase, masculine"
+            ],
+            [
+              "autochtone",
+              "native/indigenous",
+              "Les habitants autochtones sont accueillants.",
+              "The native inhabitants are welcoming.",
+              "adjective"
+            ],
+            [
+              "printemps",
+              "spring",
+              "Le printemps est ma saison préférée.",
+              "Spring is my favorite season.",
+              "noun, masculine"
+            ],
+            [
+              "été",
+              "summer",
+              "L'été est très chaud cette année.",
+              "Summer is very hot this year.",
+              "noun, masculine"
+            ],
+            [
+              "hiver",
+              "winter",
+              "L'hiver est très froid.",
+              "Winter is very cold.",
+              "noun, masculine"
+            ],
+            [
+              "autour",
+              "around",
+              "Il y a des restaurants autour de la place.",
+              "There are restaurants around the square.",
+              "adverb"
+            ],
+            [
+              "avantage",
+              "advantage",
+              "Ce travail a beaucoup d'avantages.",
+              "This job has many advantages.",
+              "noun, masculine"
+            ],
+            [
+              "avec charges",
+              "with utilities included",
+              "L'appartement est loué avec charges.",
+              "The apartment is rented with utilities included.",
+              "prepositional phrase"
+            ],
+            [
+              "hors charges",
+              "utilities not included",
+              "Le loyer est hors charges.",
+              "The rent is utilities not included.",
+              "prepositional phrase"
+            ],
+            [
+              "avoir le mal de mer",
+              "to have seasickness",
+              "Je souffre du mal de mer.",
+              "I suffer from seasickness.",
+              "verb phrase"
+            ],
+            [
+              "avoir un rhume",
+              "to have a cold",
+              "J'ai un rhume depuis hier.",
+              "I've had a cold since yesterday.",
+              "verb phrase"
+            ],
+            [
+              "être enrhumé",
+              "to have a cold",
+              "Il est enrhumé et ne peut pas sortir.",
+              "He has a cold and can't go out.",
+              "verb phrase"
+            ],
+            [
+              "nounou",
+              "nanny",
+              "La nounou s'occupe des enfants.",
+              "The nanny takes care of the children.",
+              "noun, feminine"
+            ],
+            [
+              "nourrice",
+              "wet nurse/nanny",
+              "La nourrice nourrit le bébé.",
+              "The wet nurse feeds the baby.",
+              "noun, feminine"
+            ]
+            [
+                [
+                  "garde d'enfant à domicile",
+                  "in-home childcare",
+                  "Elle travaille comme garde d'enfant à domicile.",
+                  "She works as an in-home childcare provider.",
+                  "noun phrase, feminine"
+                ],
+                [
+                  "gardien",
+                  "guardian/caretaker",
+                  "Le gardien de l'immeuble est très serviable.",
+                  "The building caretaker is very helpful.",
+                  "noun, masculine"
+                ],
+                [
+                  "baccalauréat",
+                  "high school diploma",
+                  "Il a obtenu son baccalauréat l'année dernière.",
+                  "He obtained his high school diploma last year.",
+                  "noun, masculine"
+                ],
+                [
+                  "bagage",
+                  "luggage",
+                  "Mes bagages sont trop lourds.",
+                  "My luggage is too heavy.",
+                  "noun, masculine"
+                ],
+                [
+                  "baignoire",
+                  "bathtub",
+                  "La baignoire est très confortable.",
+                  "The bathtub is very comfortable.",
+                  "noun, feminine"
+                ],
+                [
+                  "balcon",
+                  "balcony",
+                  "L'appartement a un beau balcon.",
+                  "The apartment has a beautiful balcony.",
+                  "noun, masculine"
+                ],
+                [
+                  "baptême",
+                  "baptism",
+                  "Le baptême de l'enfant aura lieu dimanche.",
+                  "The child's baptism will take place on Sunday.",
+                  "noun, masculine"
+                ],
+                [
+                  "basse consommation",
+                  "low consumption",
+                  "Cette voiture est à basse consommation.",
+                  "This car is low consumption.",
+                  "noun phrase, feminine"
+                ],
+                [
+                  "basse saison",
+                  "low season",
+                  "Les prix sont moins chers en basse saison.",
+                  "Prices are cheaper in low season.",
+                  "noun phrase, feminine"
+                ],
+                [
+                  "bateau",
+                  "boat",
+                  "Le bateau traverse la mer.",
+                  "The boat crosses the sea.",
+                  "noun, masculine"
+                ],
+                [
+                  "bateau de croisière",
+                  "cruise ship",
+                  "Le bateau de croisière est très luxueux.",
+                  "The cruise ship is very luxurious.",
+                  "noun phrase, masculine"
+                ],
+                [
+                  "bénévole",
+                  "volunteer",
+                  "Elle travaille comme bénévole à l'hôpital.",
+                  "She works as a volunteer at the hospital.",
+                  "noun, masculine/feminine"
+                ],
+                [
+                  "bibliothèque",
+                  "library",
+                  "La bibliothèque est ouverte jusqu'à 18h.",
+                  "The library is open until 6pm.",
+                  "noun, feminine"
+                ],
+                [
+                  "bien situé",
+                  "well located",
+                  "L'hôtel est bien situé en centre-ville.",
+                  "The hotel is well located in the city center.",
+                  "adjective phrase"
+                ],
+                [
+                  "bienfait",
+                  "benefit",
+                  "Les bienfaits de l'exercice sont nombreux.",
+                  "The benefits of exercise are numerous.",
+                  "noun, masculine"
+                ],
+                [
+                  "billet",
+                  "ticket",
+                  "J'ai acheté un billet pour le concert.",
+                  "I bought a ticket for the concert.",
+                  "noun, masculine"
+                ],
+                [
+                  "billet d'entrée",
+                  "entrance ticket",
+                  "Le billet d'entrée coûte 15 euros.",
+                  "The entrance ticket costs 15 euros.",
+                  "noun phrase, masculine"
+                ],
+                [
+                  "bio",
+                  "organic",
+                  "Je mange des produits bio.",
+                  "I eat organic products.",
+                  "adjective"
+                ],
+                [
+                  "biologique",
+                  "biological/organic",
+                  "Cette ferme produit des légumes biologiques.",
+                  "This farm produces organic vegetables.",
+                  "adjective"
+                ],
+                [
+                  "bon état",
+                  "good condition",
+                  "La voiture est en bon état.",
+                  "The car is in good condition.",
+                  "noun phrase, masculine"
+                ],
+                [
+                  "refait à neuf",
+                  "completely renovated",
+                  "L'appartement a été refait à neuf.",
+                  "The apartment has been completely renovated.",
+                  "adjective phrase"
+                ],
+                [
+                  "bord de mer",
+                  "seaside",
+                  "L'hôtel est au bord de mer.",
+                  "The hotel is by the seaside.",
+                  "noun phrase, masculine"
+                ],
+                [
+                  "boussole",
+                  "compass",
+                  "La boussole indique le nord.",
+                  "The compass points north.",
+                  "noun, feminine"
+                ],
+                [
+                  "boutique hors taxes",
+                  "duty-free shop",
+                  "La boutique hors taxes a de bons prix.",
+                  "The duty-free shop has good prices.",
+                  "noun phrase, feminine"
+                ],
+                [
+                  "bricolage",
+                  "DIY/do-it-yourself",
+                  "Il aime faire du bricolage le weekend.",
+                  "He likes to do DIY on weekends.",
+                  "noun, masculine"
+                ],
+                [
+                  "brocante",
+                  "flea market",
+                  "La brocante a lieu tous les dimanches.",
+                  "The flea market takes place every Sunday.",
+                  "noun, feminine"
+                ]
+                [
+                    [
+                      "brochure",
+                      "brochure",
+                      "J'ai pris une brochure touristique.",
+                      "I took a tourist brochure.",
+                      "noun, feminine"
+                    ],
+                    [
+                      "bruyant",
+                      "noisy",
+                      "Ce restaurant est très bruyant.",
+                      "This restaurant is very noisy.",
+                      "adjective"
+                    ],
+                    [
+                      "buanderie",
+                      "laundry room",
+                      "La buanderie est au sous-sol.",
+                      "The laundry room is in the basement.",
+                      "noun, feminine"
+                    ],
+                    [
+                      "budget",
+                      "budget",
+                      "Mon budget est limité ce mois-ci.",
+                      "My budget is limited this month.",
+                      "noun, masculine"
+                    ],
+                    [
+                      "buffet",
+                      "buffet",
+                      "Le buffet du petit-déjeuner est excellent.",
+                      "The breakfast buffet is excellent.",
+                      "noun, masculine"
+                    ],
+                    [
+                      "bureau",
+                      "office/desk",
+                      "Mon bureau est au troisième étage.",
+                      "My office is on the third floor.",
+                      "noun, masculine"
+                    ],
+                    [
+                      "bureau d'information",
+                      "information desk",
+                      "Le bureau d'information est à l'entrée.",
+                      "The information desk is at the entrance.",
+                      "noun phrase, masculine"
+                    ],
+                    [
+                      "bureau de renseignement",
+                      "information office",
+                      "Le bureau de renseignement peut vous aider.",
+                      "The information office can help you.",
+                      "noun phrase, masculine"
+                    ],
+                    [
+                      "cadeau",
+                      "gift",
+                      "J'ai reçu un beau cadeau.",
+                      "I received a beautiful gift.",
+                      "noun, masculine"
+                    ],
+                    [
+                      "cadre",
+                      "frame/executive",
+                      "Ce cadre est très professionnel.",
+                      "This executive is very professional.",
+                      "noun, masculine"
+                    ],
+                    [
+                      "calme",
+                      "quiet/calm",
+                      "Cette rue est très calme.",
+                      "This street is very quiet.",
+                      "adjective"
+                    ],
+                    [
+                      "camp",
+                      "camp",
+                      "Les enfants partent en camp cet été.",
+                      "The children are going to camp this summer.",
+                      "noun, masculine"
+                    ],
+                    [
+                      "campagne",
+                      "countryside",
+                      "J'aime la campagne en automne.",
+                      "I like the countryside in autumn.",
+                      "noun, feminine"
+                    ],
+                    [
+                      "camping",
+                      "camping",
+                      "Nous allons faire du camping en montagne.",
+                      "We're going camping in the mountains.",
+                      "noun, masculine"
+                    ],
+                    [
+                      "candidat",
+                      "candidate",
+                      "Il y a plusieurs candidats pour ce poste.",
+                      "There are several candidates for this position.",
+                      "noun, masculine"
+                    ],
+                    [
+                      "candidature",
+                      "application",
+                      "Sa candidature a été acceptée.",
+                      "His application was accepted.",
+                      "noun, feminine"
+                    ],
+                    [
+                      "carrière",
+                      "career",
+                      "Il a une belle carrière devant lui.",
+                      "He has a beautiful career ahead of him.",
+                      "noun, feminine"
+                    ],
+                    [
+                      "carte",
+                      "card/map",
+                      "J'ai besoin d'une carte de la ville.",
+                      "I need a map of the city.",
+                      "noun, feminine"
+                    ],
+                    [
+                      "carte d'embarquement",
+                      "boarding pass",
+                      "N'oubliez pas votre carte d'embarquement.",
+                      "Don't forget your boarding pass.",
+                      "noun phrase, feminine"
+                    ],
+                    [
+                      "carte d'identité",
+                      "identity card",
+                      "Montrez votre carte d'identité.",
+                      "Show your identity card.",
+                      "noun phrase, feminine"
+                    ],
+                    [
+                      "carte de crédit",
+                      "credit card",
+                      "Je paie avec ma carte de crédit.",
+                      "I pay with my credit card.",
+                      "noun phrase, feminine"
+                    ],
+                    [
+                      "carte de membre",
+                      "membership card",
+                      "Votre carte de membre vous donne des avantages.",
+                      "Your membership card gives you benefits.",
+                      "noun phrase, feminine"
+                    ],
+                    [
+                      "carte des itinéraires",
+                      "route map",
+                      "La carte des itinéraires est très détaillée.",
+                      "The route map is very detailed.",
+                      "noun phrase, feminine"
+                    ],
+                    [
+                      "carte du club",
+                      "club card",
+                      "Présentez votre carte du club pour les réductions.",
+                      "Present your club card for discounts.",
+                      "noun phrase, feminine"
+                    ],
+                    [
+                      "carte postale",
+                      "postcard",
+                      "J'ai envoyé une carte postale à mes parents.",
+                      "I sent a postcard to my parents.",
+                      "noun phrase, feminine"
+                    ],
+                    [
+                        [
+                          "carte SIM",
+                          "SIM card",
+                          "J'ai besoin d'une nouvelle carte SIM.",
+                          "I need a new SIM card.",
+                          "noun phrase, feminine"
+                        ],
+                        [
+                          "choix d'acteurs",
+                          "casting choice",
+                          "Le choix d'acteurs pour ce film est excellent.",
+                          "The casting choice for this film is excellent.",
+                          "noun phrase, masculine"
+                        ],
+                        [
+                          "distribution des rôles",
+                          "casting",
+                          "La distribution des rôles a été annoncée.",
+                          "The casting has been announced.",
+                          "noun phrase, feminine"
+                        ],
+                        [
+                          "catalogue",
+                          "catalog",
+                          "Le catalogue de l'entreprise est en ligne.",
+                          "The company's catalog is online.",
+                          "noun, masculine"
+                        ],
+                        [
+                          "caution",
+                          "deposit/security deposit",
+                          "Il faut payer une caution pour l'appartement.",
+                          "You need to pay a security deposit for the apartment.",
+                          "noun, feminine"
+                        ],
+                        [
+                          "cave",
+                          "basement/cellar",
+                          "La cave est pleine de bon vin.",
+                          "The cellar is full of good wine.",
+                          "noun, feminine"
+                        ],
+                        [
+                          "contrat à durée déterminée",
+                          "fixed-term contract",
+                          "Il a signé un contrat à durée déterminée.",
+                          "He signed a fixed-term contract.",
+                          "noun phrase, masculine"
+                        ],
+                        [
+                          "contrat à durée indéterminée",
+                          "permanent contract",
+                          "Elle a obtenu un contrat à durée indéterminée.",
+                          "She got a permanent contract.",
+                          "noun phrase, masculine"
+                        ],
+                        [
+                          "célibataire",
+                          "single",
+                          "Il est célibataire et vit seul.",
+                          "He is single and lives alone.",
+                          "adjective"
+                        ],
+                        [
+                          "centre commercial",
+                          "shopping center",
+                          "Le centre commercial est très grand.",
+                          "The shopping center is very large.",
+                          "noun phrase, masculine"
+                        ],
+                        [
+                          "centre de vacances",
+                          "holiday center",
+                          "Les enfants partent au centre de vacances.",
+                          "The children are going to the holiday center.",
+                          "noun phrase, masculine"
+                        ],
+                        [
+                          "centre-ville",
+                          "city center",
+                          "Le centre-ville est très animé.",
+                          "The city center is very lively.",
+                          "noun, masculine"
+                        ],
+                        [
+                          "cérémonie",
+                          "ceremony",
+                          "La cérémonie de mariage était magnifique.",
+                          "The wedding ceremony was beautiful.",
+                          "noun, feminine"
+                        ],
+                        [
+                          "certifié",
+                          "certified",
+                          "Ce produit est certifié bio.",
+                          "This product is certified organic.",
+                          "adjective"
+                        ],
+                        [
+                          "chaise",
+                          "chair",
+                          "Cette chaise est très confortable.",
+                          "This chair is very comfortable.",
+                          "noun, feminine"
+                        ],
+                        [
+                          "chalet",
+                          "chalet",
+                          "Le chalet de montagne est charmant.",
+                          "The mountain chalet is charming.",
+                          "noun, masculine"
+                        ],
+                        [
+                          "chaleureux",
+                          "warm/welcoming",
+                          "L'accueil était très chaleureux.",
+                          "The welcome was very warm.",
+                          "adjective"
+                        ],
+                        [
+                          "chambre",
+                          "room",
+                          "La chambre est très spacieuse.",
+                          "The room is very spacious.",
+                          "noun, feminine"
+                        ],
+                        [
+                          "chambre à deux lits séparés",
+                          "twin room",
+                          "Nous avons réservé une chambre à deux lits séparés.",
+                          "We booked a twin room.",
+                          "noun phrase, feminine"
+                        ],
+                        [
+                          "chambre d'hôtes",
+                          "guest room",
+                          "La chambre d'hôtes est très confortable.",
+                          "The guest room is very comfortable.",
+                          "noun phrase, feminine"
+                        ],
+                        [
+                          "chambre double",
+                          "double room",
+                          "La chambre double a un grand lit.",
+                          "The double room has a large bed.",
+                          "noun phrase, feminine"
+                        ],
+                        [
+                          "chambre simple",
+                          "single room",
+                          "La chambre simple est parfaite pour une personne.",
+                          "The single room is perfect for one person.",
+                          "noun phrase, feminine"
+                        ],
+                        [
+                          "chant",
+                          "singing/song",
+                          "Le chant des oiseaux est agréable.",
+                          "The birds' singing is pleasant.",
+                          "noun, masculine"
+                        ],
+                        [
+                          "charges",
+                          "utilities/expenses",
+                          "Les charges sont incluses dans le loyer.",
+                          "Utilities are included in the rent.",
+                          "noun, feminine plural"
+                        ],
+                        [
+                          "charges comprises",
+                          "utilities included",
+                          "L'appartement est loué charges comprises.",
+                          "The apartment is rented with utilities included.",
+                          "noun phrase, feminine"
+                        ]
+                      ]
+                  ]        

@@ -1,177 +1,177 @@
 [
   [
-    "annuler",
-    "to cancel",
-    "Je vais annuler mon rendez-vous.",
-    "I'm going to cancel my appointment.",
-    "verb"
-  ],
-  [
-    "annuler une réservation",
-    "to cancel a reservation",
-    "Il faut annuler une réservation.",
-    "We need to cancel a reservation.",
-    "verb phrase"
-  ],
-  [
-    "anonyme",
-    "anonymous",
-    "L'auteur reste anonyme.",
-    "The author remains anonymous.",
-    "adjective"
-  ],
-  [
-    "anti-moustiques",
-    "anti-mosquito",
-    "J'utilise un spray anti-moustiques.",
-    "I use an anti-mosquito spray.",
-    "adjective"
-  ],
-  [
-    "antivol",
-    "anti-theft",
-    "La voiture a un système antivol.",
-    "The car has an anti-theft system.",
-    "noun, masculine"
-  ],
-  [
-    "apéritif",
-    "aperitif",
-    "Nous prenons l'apéritif avant le dîner.",
-    "We have an aperitif before dinner.",
-    "noun, masculine"
-  ],
-  [
-    "appareil photo",
-    "camera",
-    "Mon appareil photo est neuf.",
-    "My camera is new.",
-    "noun phrase, masculine"
-  ],
-  [
-    "appartement",
-    "apartment",
-    "J'habite dans un appartement.",
-    "I live in an apartment.",
-    "noun, masculine"
-  ],
-  [
-    "logement haut de gamme",
-    "high-end accommodation",
-    "Ce logement haut de gamme est très cher.",
-    "This high-end accommodation is very expensive.",
-    "noun phrase, masculine"
-  ],
-  [
-    "apporter",
-    "to bring",
-    "Je vais apporter le dessert.",
-    "I'm going to bring the dessert.",
-    "verb"
-  ],
-  [
-    "apprenti",
-    "apprentice",
-    "Il est apprenti boulanger.",
-    "He is a baker's apprentice.",
-    "noun, masculine"
-  ],
-  [
-    "apprentissage",
-    "apprenticeship/learning",
-    "L'apprentissage du français prend du temps.",
-    "Learning French takes time.",
-    "noun, masculine"
-  ],
-  [
-    "aptitude",
-    "aptitude/ability",
-    "Il a une aptitude pour les langues.",
-    "He has an aptitude for languages.",
-    "noun, feminine"
-  ],
-  [
-    "architecture",
-    "architecture",
-    "L'architecture de ce bâtiment est moderne.",
-    "The architecture of this building is modern.",
-    "noun, feminine"
-  ],
-  [
-    "armoire",
-    "wardrobe/closet",
-    "L'armoire est pleine de vêtements.",
-    "The wardrobe is full of clothes.",
-    "noun, feminine"
-  ],
-  [
-    "arrêts de bus",
-    "bus stops",
-    "Les arrêts de bus sont bien indiqués.",
-    "The bus stops are well marked.",
-    "noun phrase, masculine plural"
-  ],
-  [
-    "arrhes",
-    "deposit",
-    "Il faut payer des arrhes.",
-    "You need to pay a deposit.",
-    "noun, feminine plural"
-  ],
-  [
-    "arriver",
-    "to arrive",
-    "Le train va arriver à l'heure.",
-    "The train will arrive on time.",
-    "verb"
-  ],
-  [
-    "arrondissement",
-    "district",
-    "J'habite dans le 5ème arrondissement.",
-    "I live in the 5th district.",
-    "noun, masculine"
-  ],
-  [
-    "arroser",
-    "to water",
-    "Je vais arroser les plantes.",
-    "I'm going to water the plants.",
-    "verb"
-  ],
-  [
-    "ascenseur",
-    "elevator",
-    "L'ascenseur est en panne.",
-    "The elevator is broken.",
-    "noun, masculine"
-  ],
-  [
-    "assiduité",
-    "diligence/attendance",
-    "Son assiduité au travail est remarquable.",
-    "His diligence at work is remarkable.",
-    "noun, feminine"
-  ],
-  [
-    "assister à une association",
-    "to attend an association",
-    "Il assiste à une association de quartier.",
-    "He attends a neighborhood association.",
-    "verb phrase"
-  ],
-  [
-    "association sportive",
-    "sports association",
-    "Cette association sportive est très active.",
-    "This sports association is very active.",
+    "carte SIM",
+    "SIM card",
+    "J'ai besoin d'une nouvelle carte SIM.",
+    "I need a new SIM card.",
     "noun phrase, feminine"
   ],
   [
-    "assurance",
-    "insurance",
-    "J'ai une assurance pour ma voiture.",
-    "I have insurance for my car.",
+    "choix d'acteurs",
+    "casting choice",
+    "Le choix d'acteurs pour ce film est excellent.",
+    "The casting choice for this film is excellent.",
+    "noun phrase, masculine"
+  ],
+  [
+    "distribution des rôles",
+    "casting",
+    "La distribution des rôles a été annoncée.",
+    "The casting has been announced.",
+    "noun phrase, feminine"
+  ],
+  [
+    "catalogue",
+    "catalog",
+    "Le catalogue de l'entreprise est en ligne.",
+    "The company's catalog is online.",
+    "noun, masculine"
+  ],
+  [
+    "caution",
+    "deposit/security deposit",
+    "Il faut payer une caution pour l'appartement.",
+    "You need to pay a security deposit for the apartment.",
     "noun, feminine"
+  ],
+  [
+    "cave",
+    "basement/cellar",
+    "La cave est pleine de bon vin.",
+    "The cellar is full of good wine.",
+    "noun, feminine"
+  ],
+  [
+    "contrat à durée déterminée",
+    "fixed-term contract",
+    "Il a signé un contrat à durée déterminée.",
+    "He signed a fixed-term contract.",
+    "noun phrase, masculine"
+  ],
+  [
+    "contrat à durée indéterminée",
+    "permanent contract",
+    "Elle a obtenu un contrat à durée indéterminée.",
+    "She got a permanent contract.",
+    "noun phrase, masculine"
+  ],
+  [
+    "célibataire",
+    "single",
+    "Il est célibataire et vit seul.",
+    "He is single and lives alone.",
+    "adjective"
+  ],
+  [
+    "centre commercial",
+    "shopping center",
+    "Le centre commercial est très grand.",
+    "The shopping center is very large.",
+    "noun phrase, masculine"
+  ],
+  [
+    "centre de vacances",
+    "holiday center",
+    "Les enfants partent au centre de vacances.",
+    "The children are going to the holiday center.",
+    "noun phrase, masculine"
+  ],
+  [
+    "centre-ville",
+    "city center",
+    "Le centre-ville est très animé.",
+    "The city center is very lively.",
+    "noun, masculine"
+  ],
+  [
+    "cérémonie",
+    "ceremony",
+    "La cérémonie de mariage était magnifique.",
+    "The wedding ceremony was beautiful.",
+    "noun, feminine"
+  ],
+  [
+    "certifié",
+    "certified",
+    "Ce produit est certifié bio.",
+    "This product is certified organic.",
+    "adjective"
+  ],
+  [
+    "chaise",
+    "chair",
+    "Cette chaise est très confortable.",
+    "This chair is very comfortable.",
+    "noun, feminine"
+  ],
+  [
+    "chalet",
+    "chalet",
+    "Le chalet de montagne est charmant.",
+    "The mountain chalet is charming.",
+    "noun, masculine"
+  ],
+  [
+    "chaleureux",
+    "warm/welcoming",
+    "L'accueil était très chaleureux.",
+    "The welcome was very warm.",
+    "adjective"
+  ],
+  [
+    "chambre",
+    "room",
+    "La chambre est très spacieuse.",
+    "The room is very spacious.",
+    "noun, feminine"
+  ],
+  [
+    "chambre à deux lits séparés",
+    "twin room",
+    "Nous avons réservé une chambre à deux lits séparés.",
+    "We booked a twin room.",
+    "noun phrase, feminine"
+  ],
+  [
+    "chambre d'hôtes",
+    "guest room",
+    "La chambre d'hôtes est très confortable.",
+    "The guest room is very comfortable.",
+    "noun phrase, feminine"
+  ],
+  [
+    "chambre double",
+    "double room",
+    "La chambre double a un grand lit.",
+    "The double room has a large bed.",
+    "noun phrase, feminine"
+  ],
+  [
+    "chambre simple",
+    "single room",
+    "La chambre simple est parfaite pour une personne.",
+    "The single room is perfect for one person.",
+    "noun phrase, feminine"
+  ],
+  [
+    "chant",
+    "singing/song",
+    "Le chant des oiseaux est agréable.",
+    "The birds' singing is pleasant.",
+    "noun, masculine"
+  ],
+  [
+    "charges",
+    "utilities/expenses",
+    "Les charges sont incluses dans le loyer.",
+    "Utilities are included in the rent.",
+    "noun, feminine plural"
+  ],
+  [
+    "charges comprises",
+    "utilities included",
+    "L'appartement est loué charges comprises.",
+    "The apartment is rented with utilities included.",
+    "noun phrase, feminine"
   ]
 ]
