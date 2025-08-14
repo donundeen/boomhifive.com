@@ -298,5 +298,1106 @@
     "sometimes",
     "Parfois, il arrive en retard au travail.",
     "Sometimes, he arrives late to work."
+  ],
+  [
+    "à cause de",
+    "because of",
+    "Je suis en retard à cause de la circulation.",
+    "I am late because of the traffic.",
+    "prepositional phrase"
+  ],
+  [
+    "à ce sujet",
+    "on this subject",
+    "Je voudrais discuter à ce sujet avec vous.",
+    "I would like to discuss this subject with you.",
+    "prepositional phrase"
+  ],
+  [
+    "à ce propos",
+    "on this matter",
+    "À ce propos, j'ai une question importante.",
+    "On this matter, I have an important question.",
+    "prepositional phrase"
+  ],
+  [
+    "à cet égard",
+    "in this regard",
+    "À cet égard, votre proposition est intéressante.",
+    "In this regard, your proposal is interesting.",
+    "prepositional phrase"
+  ],
+  [
+    "à condition que",
+    "on condition that",
+    "Je viendrai à condition que vous soyez là.",
+    "I will come on condition that you are there.",
+    "conjunction"
+  ],
+  [
+    "à force de",
+    "by dint of",
+    "À force de travailler, il a réussi.",
+    "By dint of working, he succeeded.",
+    "prepositional phrase"
+  ],
+  [
+    "à l'avenir",
+    "in the future",
+    "À l'avenir, je serai plus prudent.",
+    "In the future, I will be more careful.",
+    "adverb phrase"
+  ],
+  [
+    "à l'inverse",
+    "conversely",
+    "À l'inverse, cette méthode est plus efficace.",
+    "Conversely, this method is more effective.",
+    "adverb phrase"
+  ],
+  [
+    "à la différence de",
+    "unlike",
+    "À la différence de son frère, il est très calme.",
+    "Unlike his brother, he is very calm.",
+    "prepositional phrase"
+  ],
+  [
+    "à la fin",
+    "at the end",
+    "À la fin du film, tout s'est bien terminé.",
+    "At the end of the movie, everything ended well.",
+    "adverb phrase"
+  ],
+  [
+    "à la fois",
+    "at the same time",
+    "Il est à la fois intelligent et modeste.",
+    "He is both intelligent and modest at the same time.",
+    "adverb phrase"
+  ],
+  [
+    "à la réflexion",
+    "on reflection",
+    "À la réflexion, je pense que c'est une bonne idée.",
+    "On reflection, I think it's a good idea.",
+    "adverb phrase"
+  ],
+  [
+    "à la suite de",
+    "following",
+    "À la suite de cet incident, de nouvelles règles ont été établies.",
+    "Following this incident, new rules were established.",
+    "prepositional phrase"
+  ],
+  [
+    "à moins que",
+    "unless",
+    "Je ne viendrai pas à moins que vous ne m'invitiez.",
+    "I won't come unless you invite me.",
+    "conjunction"
+  ],
+  [
+    "à nouveau",
+    "again",
+    "Il a essayé à nouveau de résoudre le problème.",
+    "He tried again to solve the problem.",
+    "adverb phrase"
+  ],
+  [
+    "à peine ... que",
+    "hardly ... when",
+    "À peine était-il arrivé que le téléphone a sonné.",
+    "Hardly had he arrived when the phone rang.",
+    "conjunction phrase"
+  ],
+  [
+    "à plusieurs reprises",
+    "several times",
+    "Je lui ai expliqué à plusieurs reprises comment faire.",
+    "I explained to him several times how to do it.",
+    "adverb phrase"
+  ],
+  [
+    "à première vue",
+    "at first sight",
+    "À première vue, ce projet semble réalisable.",
+    "At first sight, this project seems feasible.",
+    "adverb phrase"
+  ],
+  [
+    "à propos de",
+    "about",
+    "Je voudrais parler à propos de votre proposition.",
+    "I would like to talk about your proposal.",
+    "prepositional phrase"
+  ],
+  [
+    "à savoir",
+    "namely",
+    "Il y a trois points à considérer, à savoir : le coût, le temps et la qualité.",
+    "There are three points to consider, namely: cost, time and quality.",
+    "adverb phrase"
+  ],
+  [
+    "à vrai dire",
+    "to tell the truth",
+    "À vrai dire, je ne suis pas d'accord avec vous.",
+    "To tell the truth, I don't agree with you.",
+    "adverb phrase"
+  ],
+  [
+    "afin de",
+    "in order to",
+    "Je travaille dur afin de réussir mes examens.",
+    "I work hard in order to pass my exams.",
+    "prepositional phrase"
+  ],
+  [
+    "afin que",
+    "so that",
+    "Je vous explique afin que vous compreniez bien.",
+    "I explain to you so that you understand well.",
+    "conjunction"
+  ],
+  [
+    "ainsi",
+    "thus",
+    "Ainsi, nous pouvons conclure que le projet est viable.",
+    "Thus, we can conclude that the project is viable.",
+    "adverb"
+  ],
+  [
+    "ainsi que",
+    "as well as",
+    "Il parle français ainsi que l'anglais.",
+    "He speaks French as well as English.",
+    "conjunction"
+  ],
+  [
+    "alors",
+    "then",
+    "Alors, que voulez-vous faire ?",
+    "Then, what do you want to do?",
+    "adverb"
+  ],
+  [
+    "alors que",
+    "while",
+    "Il dort alors que nous travaillons.",
+    "He sleeps while we work.",
+    "conjunction"
+  ],
+  [
+    "après quoi",
+    "after which",
+    "Il a fini son travail, après quoi il est parti.",
+    "He finished his work, after which he left.",
+    "adverb phrase"
+  ],
+  [
+    "après tout",
+    "after all",
+    "Après tout, ce n'est pas si grave.",
+    "After all, it's not so serious.",
+    "adverb phrase"
+  ],
+  [
+    "au cas où",
+    "in case",
+    "Prenez un parapluie au cas où il pleuvrait.",
+    "Take an umbrella in case it rains.",
+    "conjunction"
+  ],
+  [
+    "au contraire",
+    "on the contrary",
+    "Au contraire, je pense que c'est une excellente idée.",
+    "On the contrary, I think it's an excellent idea.",
+    "adverb phrase"
+  ],
+  [
+    "au cours de",
+    "during",
+    "Au cours de la réunion, plusieurs points ont été discutés.",
+    "During the meeting, several points were discussed.",
+    "prepositional phrase"
+  ],
+  [
+    "au fond",
+    "basically",
+    "Au fond, nous sommes d'accord sur l'essentiel.",
+    "Basically, we agree on the essentials.",
+    "adverb phrase"
+  ],
+  [
+    "au fur et à mesure que",
+    "as",
+    "Au fur et à mesure que le temps passe, il devient plus sage.",
+    "As time passes, he becomes wiser.",
+    "conjunction phrase"
+  ],
+  [
+    "au lieu de",
+    "instead of",
+    "Au lieu de prendre le bus, je vais à pied.",
+    "Instead of taking the bus, I'm walking.",
+    "prepositional phrase"
+  ],
+  [
+    "au moins",
+    "at least",
+    "Au moins, il a essayé de faire de son mieux.",
+    "At least, he tried to do his best.",
+    "adverb phrase"
+  ],
+  [
+    "au sujet de",
+    "about",
+    "Je voudrais discuter au sujet de votre projet.",
+    "I would like to discuss your project.",
+    "prepositional phrase"
+  ],
+  [
+    "aussi",
+    "also",
+    "Je parle français, et j'étudie aussi l'italien.",
+    "I speak French, and I also study Italian.",
+    "adverb"
+  ],
+  [
+    "également",
+    "also",
+    "Cette solution est également valable.",
+    "This solution is also valid.",
+    "adverb"
+  ],
+  [
+    "aussitôt que",
+    "as soon as",
+    "Aussitôt que j'aurai fini, je vous appellerai.",
+    "As soon as I finish, I will call you.",
+    "conjunction"
+  ],
+  [
+    "autrement dit",
+    "in other words",
+    "Autrement dit, nous devons changer notre approche.",
+    "In other words, we must change our approach.",
+    "adverb phrase"
+  ],
+  [
+    "avant tout",
+    "above all",
+    "Avant tout, il faut penser à la sécurité.",
+    "Above all, we must think about safety.",
+    "adverb phrase"
+  ],
+  [
+    "bien que",
+    "although",
+    "Bien qu'il soit fatigué, il continue à travailler.",
+    "Although he is tired, he continues to work.",
+    "conjunction"
+  ],
+  [
+    "bref",
+    "in short",
+    "Bref, nous devons agir rapidement.",
+    "In short, we must act quickly.",
+    "adverb"
+  ],
+  [
+    "c'est pourquoi",
+    "that's why",
+    "Il pleut beaucoup, c'est pourquoi les rues sont mouillées.",
+    "It's raining a lot, that's why the streets are wet.",
+    "conjunction"
+  ],
+  [
+    "c'est pour cela que",
+    "that's why",
+    "C'est pour cela que je vous ai appelé.",
+    "That's why I called you.",
+    "conjunction phrase"
+  ],
+  [
+    "c'est la raison pour laquelle",
+    "that's the reason why",
+    "C'est la raison pour laquelle je suis parti tôt.",
+    "That's the reason why I left early.",
+    "conjunction phrase"
+  ],
+  [
+    "c'est-à-dire",
+    "that is to say",
+    "Il est polyglotte, c'est-à-dire qu'il parle plusieurs langues.",
+    "He is a polyglot, that is to say he speaks several languages.",
+    "conjunction"
+  ],
+  [
+    "car",
+    "because",
+    "Je ne peux pas venir car j'ai un rendez-vous.",
+    "I cannot come because I have an appointment.",
+    "conjunction"
+  ],
+  [
+    "cependant",
+    "however",
+    "Il est intelligent, cependant il manque d'expérience.",
+    "He is intelligent, however he lacks experience.",
+    "adverb"
+  ],
+  [
+    "certes..., mais",
+    "admittedly..., but",
+    "Certes, il fait des efforts, mais ce n'est pas suffisant.",
+    "Admittedly, he makes efforts, but it's not enough.",
+    "conjunction phrase"
+  ],
+  [
+    "comme si",
+    "as if",
+    "Il agit comme s'il était le patron.",
+    "He acts as if he were the boss.",
+    "conjunction"
+  ],
+  [
+    "comparé à",
+    "compared to",
+    "Comparé à l'année dernière, les résultats sont meilleurs.",
+    "Compared to last year, the results are better.",
+    "prepositional phrase"
+  ],
+  [
+    "concernant",
+    "concerning",
+    "Concernant votre demande, nous l'étudions actuellement.",
+    "Concerning your request, we are currently studying it.",
+    "preposition"
+  ],
+  [
+    "d'abord",
+    "first",
+    "D'abord, nous devons analyser le problème.",
+    "First, we must analyze the problem.",
+    "adverb phrase"
+  ],
+  [
+    "d'ailleurs",
+    "by the way",
+    "D'ailleurs, j'ai une question à vous poser.",
+    "By the way, I have a question to ask you.",
+    "adverb phrase"
+  ],
+  [
+    "dans la mesure où",
+    "insofar as",
+    "Dans la mesure où c'est possible, nous vous aiderons.",
+    "Insofar as it's possible, we will help you.",
+    "conjunction phrase"
+  ],
+  [
+    "d'autant plus que",
+    "all the more so since",
+    "Je suis d'accord, d'autant plus que c'est logique.",
+    "I agree, all the more so since it's logical.",
+    "conjunction phrase"
+  ],
+  [
+    "d'où",
+    "hence",
+    "Il n'a pas étudié, d'où son échec à l'examen.",
+    "He didn't study, hence his failure in the exam.",
+    "adverb"
+  ],
+  [
+    "d'un côté ... d'un autre côté",
+    "on the one hand ... on the other hand",
+    "D'un côté, c'est pratique, d'un autre côté, c'est cher.",
+    "On the one hand, it's practical, on the other hand, it's expensive.",
+    "conjunction phrase"
+  ],
+  [
+    "d'une part ... d'une autre part",
+    "on the one hand ... on the other hand",
+    "D'une part, le projet est intéressant, d'une autre part, il coûte cher.",
+    "On the one hand, the project is interesting, on the other hand, it costs a lot.",
+    "conjunction phrase"
+  ],
+  [
+    "dans ce cas",
+    "in that case",
+    "Dans ce cas, nous devons agir différemment.",
+    "In that case, we must act differently.",
+    "adverb phrase"
+  ],
+  [
+    "dans l'ensemble",
+    "on the whole",
+    "Dans l'ensemble, le film était bon.",
+    "On the whole, the movie was good.",
+    "adverb phrase"
+  ],
+  [
+    "dans l'intention de",
+    "with the intention of",
+    "Il a agi dans l'intention de vous aider.",
+    "He acted with the intention of helping you.",
+    "prepositional phrase"
+  ],
+  [
+    "dans la plupart des cas",
+    "in most cases",
+    "Dans la plupart des cas, cette méthode fonctionne.",
+    "In most cases, this method works.",
+    "adverb phrase"
+  ],
+  [
+    "dans le but de",
+    "with the aim of",
+    "Il travaille dur dans le but de réussir.",
+    "He works hard with the aim of succeeding.",
+    "prepositional phrase"
+  ],
+  [
+    "dans une certaine mesure",
+    "to a certain extent",
+    "Dans une certaine mesure, vous avez raison.",
+    "To a certain extent, you are right.",
+    "adverb phrase"
+  ],
+  [
+    "de cette manière",
+    "in this way",
+    "De cette manière, nous pouvons résoudre le problème.",
+    "In this way, we can solve the problem.",
+    "adverb phrase"
+  ],
+  [
+    "de la même manière",
+    "in the same way",
+    "De la même manière, nous devons procéder.",
+    "In the same way, we must proceed.",
+    "adverb phrase"
+  ],
+  [
+    "de la même façon",
+    "in the same way",
+    "De la même façon, il faut traiter tous les clients.",
+    "In the same way, we must treat all clients.",
+    "adverb phrase"
+  ],
+  [
+    "de manière à ce que",
+    "in such a way that",
+    "Il faut agir de manière à ce que tout le monde soit satisfait.",
+    "We must act in such a way that everyone is satisfied.",
+    "conjunction phrase"
+  ],
+  [
+    "de façon à ce que",
+    "in such a way that",
+    "Organisez la réunion de façon à ce que tout le monde puisse participer.",
+    "Organize the meeting in such a way that everyone can participate.",
+    "conjunction phrase"
+  ],
+  [
+    "de même",
+    "likewise",
+    "Il est poli, et de même, il s'attend à être traité avec politesse.",
+    "He is polite, and likewise, he expects to be treated with politeness.",
+    "adverb"
+  ],
+  [
+    "de même que",
+    "just as",
+    "De même que vous, je pense que c'est important.",
+    "Just as you do, I think it's important.",
+    "conjunction"
+  ],
+  [
+    "de plus",
+    "moreover",
+    "Il est intelligent, et de plus, il travaille dur.",
+    "He is intelligent, and moreover, he works hard.",
+    "adverb phrase"
+  ],
+  [
+    "de surcroît",
+    "in addition",
+    "Il est compétent, et de surcroît, il est très sympathique.",
+    "He is competent, and in addition, he is very friendly.",
+    "adverb phrase"
+  ],
+  [
+    "de toute façon",
+    "anyway",
+    "De toute façon, nous devons prendre une décision.",
+    "Anyway, we must make a decision.",
+    "adverb phrase"
+  ],
+  [
+    "dès loisirs",
+    "as soon as possible",
+    "Dès loisirs, je vous enverrai le document.",
+    "As soon as possible, I will send you the document.",
+    "adverb phrase"
+  ],
+  [
+    "dès que",
+    "as soon as",
+    "Dès que j'aurai fini, je vous appellerai.",
+    "As soon as I finish, I will call you.",
+    "conjunction"
+  ],
+  [
+    "dès que possible",
+    "as soon as possible",
+    "Veuillez répondre dès que possible.",
+    "Please respond as soon as possible.",
+    "adverb phrase"
+  ],
+  [
+    "désormais",
+    "from now on",
+    "Désormais, nous devons être plus vigilants.",
+    "From now on, we must be more vigilant.",
+    "adverb"
+  ],
+  [
+    "deuxièmement",
+    "secondly",
+    "Deuxièmement, nous devons considérer le coût.",
+    "Secondly, we must consider the cost.",
+    "adverb"
+  ],
+  [
+    "donc",
+    "therefore",
+    "Il pleut, donc nous restons à la maison.",
+    "It's raining, therefore we stay at home.",
+    "conjunction"
+  ],
+  [
+    "du à",
+    "due to",
+    "Ce retard est du à la circulation.",
+    "This delay is due to traffic.",
+    "prepositional phrase"
+  ],
+  [
+    "du moins",
+    "at least",
+    "Du moins, c'est ce qu'il m'a dit.",
+    "At least, that's what he told me.",
+    "adverb phrase"
+  ],
+  [
+    "du moment que",
+    "since",
+    "Du moment que vous êtes d'accord, nous pouvons commencer.",
+    "Since you agree, we can start.",
+    "conjunction phrase"
+  ],
+  [
+    "du reste",
+    "besides",
+    "Du reste, ce n'est pas si important.",
+    "Besides, it's not so important.",
+    "adverb phrase"
+  ],
+  [
+    "en aucun cas",
+    "under no circumstances",
+    "En aucun cas, nous ne devons abandonner.",
+    "Under no circumstances should we give up.",
+    "adverb phrase"
+  ],
+  [
+    "en ce qui concerne",
+    "as far as ... is concerned",
+    "En ce qui concerne votre projet, il est très prometteur.",
+    "As far as your project is concerned, it is very promising.",
+    "prepositional phrase"
+  ],
+  [
+    "en conséquence",
+    "consequently",
+    "Il a plu toute la nuit, en conséquence, les routes sont glissantes.",
+    "It rained all night, consequently, the roads are slippery.",
+    "adverb phrase"
+  ],
+  [
+    "en d'autres termes",
+    "in other words",
+    "En d'autres termes, nous devons changer d'approche.",
+    "In other words, we must change our approach.",
+    "adverb phrase"
+  ],
+  [
+    "en définitive",
+    "ultimately",
+    "En définitive, c'est la meilleure solution.",
+    "Ultimately, this is the best solution.",
+    "adverb phrase"
+  ],
+  [
+    "en dépit de",
+    "despite",
+    "En dépit de la pluie, nous sommes partis en randonnée.",
+    "Despite the rain, we went hiking.",
+    "prepositional phrase"
+  ],
+  [
+    "en effet",
+    "indeed",
+    "En effet, cette solution est la plus simple.",
+    "Indeed, this solution is the simplest.",
+    "adverb phrase"
+  ],
+  [
+    "en fait",
+    "in fact",
+    "En fait, je ne suis pas d'accord avec vous.",
+    "In fact, I don't agree with you.",
+    "adverb phrase"
+  ],
+  [
+    "en même temps",
+    "at the same time",
+    "Il travaille et étudie en même temps.",
+    "He works and studies at the same time.",
+    "adverb phrase"
+  ],
+  [
+    "en outre",
+    "moreover",
+    "Il est compétent, et en outre, il a de l'expérience.",
+    "He is competent, and moreover, he has experience.",
+    "adverb phrase"
+  ],
+  [
+    "en premier lieu",
+    "first of all",
+    "En premier lieu, nous devons analyser le problème.",
+    "First of all, we must analyze the problem.",
+    "adverb phrase"
+  ],
+  [
+    "en quelque sorte",
+    "in a way",
+    "En quelque sorte, c'est une bonne nouvelle.",
+    "In a way, it's good news.",
+    "adverb phrase"
+  ],
+  [
+    "en réalité",
+    "in reality",
+    "En réalité, la situation est plus complexe qu'elle n'y paraît.",
+    "In reality, the situation is more complex than it appears.",
+    "adverb phrase"
+  ],
+  [
+    "en résumé",
+    "in summary",
+    "En résumé, nous devons agir rapidement.",
+    "In summary, we must act quickly.",
+    "adverb phrase"
+  ],
+  [
+    "en revanche",
+    "on the other hand",
+    "Il est lent, en revanche, il est très précis.",
+    "He is slow, on the other hand, he is very precise.",
+    "adverb phrase"
+  ],
+  [
+    "en somme",
+    "in short",
+    "En somme, c'est un bon projet.",
+    "In short, it's a good project.",
+    "adverb phrase"
+  ],
+  [
+    "en tant que",
+    "as",
+    "En tant que directeur, je dois prendre cette décision.",
+    "As a director, I must make this decision.",
+    "conjunction phrase"
+  ],
+  [
+    "en tout cas",
+    "in any case",
+    "En tout cas, nous devons essayer.",
+    "In any case, we must try.",
+    "adverb phrase"
+  ],
+  [
+    "en un mot",
+    "in a word",
+    "En un mot, c'est parfait.",
+    "In a word, it's perfect.",
+    "adverb phrase"
+  ],
+  [
+    "enfin",
+    "finally",
+    "Enfin, nous avons trouvé une solution.",
+    "Finally, we found a solution.",
+    "adverb"
+  ],
+  [
+    "ensuite",
+    "then",
+    "D'abord, nous analysons le problème, ensuite nous agissons.",
+    "First, we analyze the problem, then we act.",
+    "adverb"
+  ],
+  [
+    "entre-temps",
+    "meanwhile",
+    "Entre-temps, nous pouvons préparer la suite.",
+    "Meanwhile, we can prepare what comes next.",
+    "adverb"
+  ],
+  [
+    "et ainsi de suite",
+    "and so on",
+    "Il y a plusieurs solutions : la première, la deuxième, et ainsi de suite.",
+    "There are several solutions: the first, the second, and so on.",
+    "adverb phrase"
+  ],
+  [
+    "étant donné que",
+    "given that",
+    "Étant donné que vous êtes d'accord, nous pouvons commencer.",
+    "Given that you agree, we can start.",
+    "conjunction phrase"
+  ],
+  [
+    "évidemment",
+    "obviously",
+    "Évidemment, nous devons respecter les règles.",
+    "Obviously, we must respect the rules.",
+    "adverb"
+  ],
+  [
+    "finalement",
+    "finally",
+    "Finalement, tout s'est bien terminé.",
+    "Finally, everything ended well.",
+    "adverb"
+  ],
+  [
+    "grâce à",
+    "thanks to",
+    "Grâce à votre aide, nous avons réussi.",
+    "Thanks to your help, we succeeded.",
+    "prepositional phrase"
+  ],
+  [
+    "inversement",
+    "conversely",
+    "Inversement, si nous agissons vite, nous gagnerons du temps.",
+    "Conversely, if we act quickly, we will save time.",
+    "adverb"
+  ],
+  [
+    "jusqu'alors",
+    "until then",
+    "Jusqu'alors, tout se passait bien.",
+    "Until then, everything was going well.",
+    "adverb phrase"
+  ],
+  [
+    "justement",
+    "precisely",
+    "Justement, c'est ce que je voulais dire.",
+    "Precisely, that's what I wanted to say.",
+    "adverb"
+  ],
+  [
+    "la plupart du temps",
+    "most of the time",
+    "La plupart du temps, il arrive à l'heure.",
+    "Most of the time, he arrives on time.",
+    "adverb phrase"
+  ],
+  [
+    "mais",
+    "but",
+    "Il est intelligent, mais il manque d'expérience.",
+    "He is intelligent, but he lacks experience.",
+    "conjunction"
+  ],
+  [
+    "mais aussi",
+    "but also",
+    "Il parle français, mais aussi l'anglais et l'italien.",
+    "He speaks French, but also English and Italian.",
+    "conjunction phrase"
+  ],
+  [
+    "malgré",
+    "despite",
+    "Malgré la pluie, nous sommes partis en promenade.",
+    "Despite the rain, we went for a walk.",
+    "preposition"
+  ],
+  [
+    "malgré cela",
+    "despite that",
+    "Il était fatigué, malgré cela, il a continué à travailler.",
+    "He was tired, despite that, he continued to work.",
+    "adverb phrase"
+  ],
+  [
+    "malgré tout",
+    "despite everything",
+    "Malgré tout, nous devons continuer.",
+    "Despite everything, we must continue.",
+    "adverb phrase"
+  ],
+  [
+    "malheureusement",
+    "unfortunately",
+    "Malheureusement, nous ne pouvons pas accepter votre proposition.",
+    "Unfortunately, we cannot accept your proposal.",
+    "adverb"
   ]
+
+  [
+    "même si",
+    "even if",
+    "Même s'il pleut, nous irons au parc.",
+    "Even if it rains, we will go to the park.",
+    "conjunction phrase"
+  ],
+  [
+    "naturellement",
+    "naturally",
+    "Naturellement, nous devons respecter les règles.",
+    "Naturally, we must respect the rules.",
+    "adverb"
+  ],
+  [
+    "néanmoins",
+    "nevertheless",
+    "Il fait froid, néanmoins, nous sortons.",
+    "It's cold, nevertheless, we go out.",
+    "adverb"
+  ],
+  [
+    "non seulement ... mais aussi",
+    "not only ... but also",
+    "Il est non seulement intelligent, mais aussi travailleur.",
+    "He is not only intelligent, but also hardworking.",
+    "conjunction phrase"
+  ],
+  [
+    "parce que",
+    "because",
+    "Je ne peux pas venir parce que j'ai un rendez-vous.",
+    "I cannot come because I have an appointment.",
+    "conjunction"
+  ],
+  [
+    "particulièrement",
+    "particularly",
+    "Cette solution est particulièrement intéressante.",
+    "This solution is particularly interesting.",
+    "adverb"
+  ],
+  [
+    "pendant que",
+    "while",
+    "Pendant que vous travaillez, je prépare le dîner.",
+    "While you work, I prepare dinner.",
+    "conjunction"
+  ],
+  [
+    "plutôt que",
+    "rather than",
+    "Plutôt que de prendre le bus, je vais à pied.",
+    "Rather than taking the bus, I'm walking.",
+    "conjunction phrase"
+  ],
+  [
+    "pour",
+    "for",
+    "Je travaille pour gagner ma vie.",
+    "I work to earn my living.",
+    "preposition"
+  ],
+  [
+    "pour ainsi dire",
+    "so to speak",
+    "Pour ainsi dire, c'est un miracle.",
+    "So to speak, it's a miracle.",
+    "adverb phrase"
+  ],
+  [
+    "pour commencer",
+    "to begin with",
+    "Pour commencer, nous devons analyser la situation.",
+    "To begin with, we must analyze the situation.",
+    "adverb phrase"
+  ],
+  [
+    "pour conclure",
+    "to conclude",
+    "Pour conclure, je dirais que c'est un excellent projet.",
+    "To conclude, I would say that it's an excellent project.",
+    "adverb phrase"
+  ],
+  [
+    "pour terminer",
+    "to finish",
+    "Pour terminer, je vous remercie de votre attention.",
+    "To finish, I thank you for your attention.",
+    "adverb phrase"
+  ],
+  [
+    "quand même",
+    "all the same",
+    "Il pleut, mais nous sortons quand même.",
+    "It's raining, but we go out all the same.",
+    "adverb phrase"
+  ],
+  [
+    "quant à",
+    "as for",
+    "Quant à votre proposition, elle est très intéressante.",
+    "As for your proposal, it's very interesting.",
+    "prepositional phrase"
+  ],
+  [
+    "sauf",
+    "except",
+    "Tout le monde est venu, sauf Pierre.",
+    "Everyone came, except Pierre.",
+    "preposition"
+  ],
+  [
+    "selon",
+    "according to",
+    "Selon le rapport, tout va bien.",
+    "According to the report, everything is fine.",
+    "preposition"
+  ],
+  [
+    "si",
+    "if",
+    "Si vous voulez, nous pouvons commencer maintenant.",
+    "If you want, we can start now.",
+    "conjunction"
+  ],
+  [
+    "si bien que",
+    "so much so that",
+    "Il a beaucoup travaillé, si bien qu'il a réussi.",
+    "He worked a lot, so much so that he succeeded.",
+    "conjunction phrase"
+  ],
+  [
+    "sinon",
+    "otherwise",
+    "Dépêchez-vous, sinon nous allons rater le train.",
+    "Hurry up, otherwise we will miss the train.",
+    "conjunction"
+  ],
+  [
+    "soit dit en passant",
+    "by the way",
+    "Soit dit en passant, avez-vous vu le nouveau film ?",
+    "By the way, have you seen the new movie?",
+    "adverb phrase"
+  ],
+  [
+    "sous prétexte que",
+    "on the pretext that",
+    "Il n'est pas venu sous prétexte qu'il était malade.",
+    "He didn't come on the pretext that he was sick.",
+    "conjunction phrase"
+  ],
+  [
+    "surtout",
+    "especially",
+    "J'aime tous les fruits, surtout les pommes.",
+    "I like all fruits, especially apples.",
+    "adverb"
+  ],
+  [
+    "tandis que",
+    "while",
+    "Il dort tandis que nous travaillons.",
+    "He sleeps while we work.",
+    "conjunction"
+  ],
+  [
+    "tel que",
+    "such as",
+    "Il y a plusieurs options, tel que le train ou l'avion.",
+    "There are several options, such as the train or the plane.",
+    "conjunction phrase"
+  ],
+  [
+    "tellement ... que",
+    "so ... that",
+    "Il est tellement fatigué qu'il s'endort sur place.",
+    "He is so tired that he falls asleep on the spot.",
+    "conjunction phrase"
+  ],
+  [
+    "tout au plus",
+    "at most",
+    "Ce projet coûtera tout au plus 1000 euros.",
+    "This project will cost at most 1000 euros.",
+    "adverb phrase"
+  ],
+  [
+    "tout compte fait",
+    "all things considered",
+    "Tout compte fait, c'est une bonne décision.",
+    "All things considered, it's a good decision.",
+    "adverb phrase"
+  ],
+  [
+    "tout d'abord",
+    "first of all",
+    "Tout d'abord, nous devons analyser le problème.",
+    "First of all, we must analyze the problem.",
+    "adverb phrase"
+  ],
+  [
+    "toutefois",
+    "however",
+    "Il est compétent, toutefois il manque d'expérience.",
+    "He is competent, however he lacks experience.",
+    "adverb"
+  ],
+  [
+    "troisièmement",
+    "thirdly",
+    "Troisièmement, nous devons considérer le budget.",
+    "Thirdly, we must consider the budget.",
+    "adverb"
+  ],
+  [
+    "une fois que",
+    "once",
+    "Une fois que vous aurez fini, nous pourrons commencer.",
+    "Once you finish, we can start.",
+    "conjunction phrase"
+  ],
+  [
+    "vu que",
+    "given that",
+    "Vu que vous êtes d'accord, nous pouvons procéder.",
+    "Given that you agree, we can proceed.",
+    "conjunction phrase"
+  ]  
+
 ]

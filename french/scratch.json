@@ -1,119 +1,56 @@
   [
-    "vignoble",
-    "vineyard",
-    "Ce vignoble produit d'excellents vins.",
-    "This vineyard produces excellent wines.",
-    "noun, masculine"
+    "tellement ... que",
+    "so ... that",
+    "Il est tellement fatigué qu'il s'endort sur place.",
+    "He is so tired that he falls asleep on the spot.",
+    "conjunction phrase"
   ],
   [
-    "villa",
-    "villa",
-    "Cette villa a une vue magnifique sur la mer.",
-    "This villa has a magnificent view of the sea.",
-    "noun, feminine"
+    "tout au plus",
+    "at most",
+    "Ce projet coûtera tout au plus 1000 euros.",
+    "This project will cost at most 1000 euros.",
+    "adverb phrase"
   ],
   [
-    "vin",
-    "wine",
-    "Ce vin rouge est très fruité.",
-    "This red wine is very fruity.",
-    "noun, masculine"
+    "tout compte fait",
+    "all things considered",
+    "Tout compte fait, c'est une bonne décision.",
+    "All things considered, it's a good decision.",
+    "adverb phrase"
   ],
   [
-    "virement bancaire",
-    "bank transfer",
-    "Le virement bancaire sera effectué demain.",
-    "The bank transfer will be made tomorrow.",
-    "noun phrase, masculine"
+    "tout d'abord",
+    "first of all",
+    "Tout d'abord, nous devons analyser le problème.",
+    "First of all, we must analyze the problem.",
+    "adverb phrase"
   ],
   [
-    "visite guidée",
-    "guided tour",
-    "La visite guidée du musée dure deux heures.",
-    "The guided tour of the museum lasts two hours.",
-    "noun phrase, feminine"
+    "toutefois",
+    "however",
+    "Il est compétent, toutefois il manque d'expérience.",
+    "He is competent, however he lacks experience.",
+    "adverb"
   ],
   [
-    "visiter",
-    "to visit",
-    "Nous allons visiter Paris ce weekend.",
-    "We are going to visit Paris this weekend.",
-    "verb"
+    "troisièmement",
+    "thirdly",
+    "Troisièmement, nous devons considérer le budget.",
+    "Thirdly, we must consider the budget.",
+    "adverb"
   ],
   [
-    "voiture",
-    "car",
-    "Ma voiture est en panne.",
-    "My car has broken down.",
-    "noun, feminine"
+    "une fois que",
+    "once",
+    "Une fois que vous aurez fini, nous pourrons commencer.",
+    "Once you finish, we can start.",
+    "conjunction phrase"
   ],
   [
-    "vol",
-    "flight",
-    "Le vol pour Londres part à 14h.",
-    "The flight to London leaves at 2pm.",
-    "noun, masculine"
-  ],
-  [
-    "voyage",
-    "trip",
-    "Ce voyage en Italie était merveilleux.",
-    "This trip to Italy was wonderful.",
-    "noun, masculine"
-  ],
-  [
-    "voyage d'affaires",
-    "business trip",
-    "Il part en voyage d'affaires à New York.",
-    "He is going on a business trip to New York.",
-    "noun phrase, masculine"
-  ],
-  [
-    "voyage d'une journée",
-    "day trip",
-    "Nous faisons un voyage d'une journée à la mer.",
-    "We are taking a day trip to the sea.",
-    "noun phrase, masculine"
-  ],
-  [
-    "voyage organisé",
-    "organized tour",
-    "Ce voyage organisé inclut l'hébergement et les repas.",
-    "This organized tour includes accommodation and meals.",
-    "noun phrase, masculine"
-  ],
-  [
-    "voyager",
-    "to travel",
-    "J'aime voyager et découvrir de nouveaux pays.",
-    "I like to travel and discover new countries.",
-    "verb"
-  ],
-  [
-    "voyager autour du monde",
-    "to travel around the world",
-    "Son rêve est de voyager autour du monde.",
-    "His dream is to travel around the world.",
-    "verb phrase"
-  ],
-  [
-    "voyage de noces",
-    "honeymoon",
-    "Ils partent en voyage de noces aux Maldives.",
-    "They are going on their honeymoon to the Maldives.",
-    "noun phrase, masculine"
-  ],
-  [
-    "voyageur",
-    "traveler",
-    "Ce voyageur a visité plus de 50 pays.",
-    "This traveler has visited more than 50 countries.",
-    "noun, masculine"
-  ],
-  [
-    "arobase",
-    "at symbol",
-    "L'arobase est utilisée dans les adresses email.",
-    "The at symbol is used in email addresses.",
-    "noun, feminine"
+    "vu que",
+    "given that",
+    "Vu que vous êtes d'accord, nous pouvons procéder.",
+    "Given that you agree, we can proceed.",
+    "conjunction phrase"
   ]
