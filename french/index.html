@@ -374,6 +374,7 @@
                     <option value="french_versatile_words.json">Versatile Words</option>
                     <option value="the_v_verbs.json">V Verbs (Aller, Vouloir, Voir, Avoir)</option>
                     <option value="tefaq_vocab_final.json">TEFaQ Vocabulary</option>
+                    <option value="phrases_for_learning.json">Learning Phrases</option>
                 </select>
             </div>
 
@@ -459,6 +460,7 @@
       let FRENCH_VERSATILE_WORDS_DATA = [];
       let THE_V_VERBS_DATA = [];
       let TEFAQ_VOCAB_FINAL_DATA = [];
+      let PHRASES_FOR_LEARNING_DATA = [];
       // get from json file
       fetch('french_nouns.json')
         .then(response => response.json())
@@ -518,6 +520,12 @@
         .then(response => response.json())
         .then(data => {
           TEFAQ_VOCAB_FINAL_DATA = data;
+        });
+
+      fetch('phrases_for_learning.json')
+        .then(response => response.json())
+        .then(data => {
+          PHRASES_FOR_LEARNING_DATA = data;
         });
 
 
@@ -721,13 +729,18 @@
 
                 const card = this.cards[this.currentCard];
                 
-                // Handle both 4-element and 5-element arrays
+                // Handle 2-element, 4-element, and 5-element arrays
                 let frenchWord, englishWord, frenchExample, englishExample, grammarInfo;
                 
                 if (card.length === 5) {
                     [frenchWord, englishWord, frenchExample, englishExample, grammarInfo] = card;
                 } else if (card.length === 4) {
                     [frenchWord, englishWord, frenchExample, englishExample] = card;
+                    grammarInfo = null;
+                } else if (card.length === 2) {
+                    [frenchWord, englishWord] = card;
+                    frenchExample = '';
+                    englishExample = '';
                     grammarInfo = null;
                 } else {
                     console.error('Invalid card format:', card);
