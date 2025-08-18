@@ -36,5 +36,14 @@
   ["N'hésitez pas à m'interrompre si je n'ai pas de sens", "Feel free to interrupt me if I'm not making sense"],
   ["Je devine juste", "I'm just guessing"],
   ["Je ne connais pas ce mot", "I don't know that word"],
-  ["Je ne connais pas le mot pour ___", "I don't know the word for ___"]
+  ["Je ne connais pas le mot pour ___", "I don't know the word for ___"],
+  ["Attendez, quand vous avez dit ___, qu'est-ce que vous vouliez dire ?", "Wait, when you said ___, what did you mean?"],
+  ["Désolé, vous m'avez perdu là", "Sorry, you lost me there."],
+  ["Pouvez-vous revenir à l'endroit où vous avez dit ___ ?", "Can you go back to where you said ___?"],
+  ["Est-ce vraiment correct ?", "Is that really correct?"],
+  ["Pouvons-nous faire une pause un moment ?", "Can we pause for a moment?"],
+  ["J'ai besoin d'une pause pour l'anglais", "I need a time-out for English"],
+  ["C'est stressant pour moi", "This is stressful for me"],
+  ["Je me sens dépassé", "I'm feeling overwhelmed"],
+  ["J'ai besoin de vérifier cela", "I need to check this"]
 ]
