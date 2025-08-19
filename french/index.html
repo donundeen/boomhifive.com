@@ -268,6 +268,40 @@
             box-shadow: 0 2px 10px rgba(79, 172, 254, 0.3);
         }
 
+        .speak-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+            border: none;
+            cursor: pointer;
+            margin-right: 15px;
+        }
+
+        .speak-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+            background: linear-gradient(135deg, #218838 0%, #1ea085 100%);
+        }
+
+        .speak-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 10px rgba(40, 167, 69, 0.3);
+        }
+
+        .speak-btn:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
 
 
         .no-cards {
@@ -426,6 +460,10 @@
                     <span class="legend-key" data-action="incorrect">X</span>
                     <span>Incorrect</span>
                 </div>
+                <div class="legend-item">
+                    <span class="legend-key" data-action="speak">S</span>
+                    <span>Speak</span>
+                </div>
             </div>
             <div id="flashcard" class="flashcard">
                 <div class="card-inner">
@@ -442,6 +480,7 @@
                 </div>
             </div>
             <div class="learn-more-container">
+                <button id="speakBtn" class="speak-btn">🔊 Speak</button>
                 <a href="#" id="learnMoreLink" target="_blank" class="learn-more-link">Learn More</a>
             </div>
         </div>
@@ -561,12 +600,14 @@
                 this.remainingCardsEl = document.getElementById('remainingCards');
                 this.correctCardsEl = document.getElementById('correctCards');
                 this.learnMoreLink = document.getElementById('learnMoreLink');
+                this.speakBtn = document.getElementById('speakBtn');
             }
 
             bindEvents() {
                 this.fileSelect.addEventListener('change', () => this.loadCards());
                 this.sideSelect.addEventListener('change', () => this.updateCurrentSide());
                 this.flashcard.addEventListener('click', () => this.flipCard());
+                this.speakBtn.addEventListener('click', () => this.speakText());
                 document.addEventListener('keydown', (e) => this.handleKeyPress(e));
                 document.getElementById('resetScoreBtn').addEventListener('click', () => this.resetScore());
                 
@@ -819,6 +860,11 @@
                         event.preventDefault();
                         this.markAsIncorrect();
                         break;
+                    case 's':
+                    case 'S':
+                        event.preventDefault();
+                        this.speakText();
+                        break;
                 }
             }
 
@@ -838,6 +884,9 @@
                         break;
                     case 'incorrect':
                         this.markAsIncorrect();
+                        break;
+                    case 'speak':
+                        this.speakText();
                         break;
                 }
             }
@@ -900,6 +949,54 @@
             hideLearnMoreLink() {
                 if (this.learnMoreLink) {
                     this.learnMoreLink.style.display = 'none';
+                }
+            }
+
+            speakText() {
+                if (this.currentCard === null) return;
+
+                const card = this.cards[this.currentCard];
+                let frenchText = '';
+
+                // Get the French text based on card format
+                if (card.length === 5) {
+                    [frenchText] = card;
+                } else if (card.length === 4) {
+                    [frenchText] = card;
+                } else if (card.length === 2) {
+                    [frenchText] = card;
+                }
+
+                if (frenchText && 'speechSynthesis' in window) {
+                    // Cancel any ongoing speech
+                    window.speechSynthesis.cancel();
+
+                    // Create speech utterance
+                    const utterance = new SpeechSynthesisUtterance(frenchText);
+                    utterance.lang = 'fr-FR';
+                    utterance.rate = 0.8; // Slightly slower for better pronunciation
+                    utterance.pitch = 1.0;
+
+                    // Disable the button while speaking
+                    this.speakBtn.disabled = true;
+                    this.speakBtn.textContent = '🔊 Speaking...';
+
+                    // Re-enable the button when speech ends
+                    utterance.onend = () => {
+                        this.speakBtn.disabled = false;
+                        this.speakBtn.textContent = '🔊 Speak';
+                    };
+
+                    utterance.onerror = () => {
+                        this.speakBtn.disabled = false;
+                        this.speakBtn.textContent = '🔊 Speak';
+                    };
+
+                    // Speak the text
+                    window.speechSynthesis.speak(utterance);
+                } else {
+                    // Fallback for browsers without speech synthesis
+                    alert('Speech synthesis is not supported in this browser.');
                 }
             }
         }
