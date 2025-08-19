@@ -960,11 +960,14 @@
 
                 // Get the French text based on card format
                 if (card.length === 5) {
-                    [frenchText] = card;
+                    // [frenchWord, englishWord, frenchExample, englishExample, grammarInfo]
+                    frenchText = card[2] || card[0]; // Use French example if available, otherwise French word
                 } else if (card.length === 4) {
-                    [frenchText] = card;
+                    // [frenchWord, englishWord, frenchExample, englishExample]
+                    frenchText = card[2] || card[0]; // Use French example if available, otherwise French word
                 } else if (card.length === 2) {
-                    [frenchText] = card;
+                    // [frenchPhrase, englishPhrase]
+                    frenchText = card[0]; // Use French phrase
                 }
 
                 if (frenchText && 'speechSynthesis' in window) {
