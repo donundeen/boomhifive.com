@@ -1,0 +1,68 @@
+[
+  ["suis", "am", "Je suis étudiant", "I am a student", "je - Present Indicative"],
+  ["es", "are", "Tu es français", "You are French", "tu - Present Indicative"],
+  ["est", "is", "Il est professeur", "He is a teacher", "il/elle/on - Present Indicative"],
+  ["sommes", "are", "Nous sommes fatigués", "We are tired", "nous - Present Indicative"],
+  ["êtes", "are", "Vous êtes en retard", "You are late", "vous - Present Indicative"],
+  ["sont", "are", "Ils sont contents", "They are happy", "ils/elles - Present Indicative"],
+  
+  ["étais", "was", "Je étais jeune", "I was young", "je - Past Imperfect"],
+  ["étais", "were", "Tu étais malade", "You were sick", "tu - Past Imperfect"],
+  ["était", "was", "Il était riche", "He was rich", "il/elle/on - Past Imperfect"],
+  ["étions", "were", "Nous étions amis", "We were friends", "nous - Past Imperfect"],
+  ["étiez", "were", "Vous étiez occupés", "You were busy", "vous - Past Imperfect"],
+  ["étaient", "were", "Ils étaient tristes", "They were sad", "ils/elles - Past Imperfect"],
+  
+  ["ai été", "have been", "J'ai été malade", "I have been sick", "je - Compound Past Indicative"],
+  ["as été", "have been", "Tu as été absent", "You have been absent", "tu - Compound Past Indicative"],
+  ["a été", "has been", "Il a été surpris", "He has been surprised", "il/elle/on - Compound Past Indicative"],
+  ["avons été", "have been", "Nous avons été contents", "We have been happy", "nous - Compound Past Indicative"],
+  ["avez été", "have been", "Vous avez été patients", "You have been patient", "vous - Compound Past Indicative"],
+  ["ont été", "have been", "Ils ont été déçus", "They have been disappointed", "ils/elles - Compound Past Indicative"],
+  
+  ["serai", "will be", "Je serai là demain", "I will be there tomorrow", "je - Simple Future Indicative"],
+  ["seras", "will be", "Tu seras prêt", "You will be ready", "tu - Simple Future Indicative"],
+  ["sera", "will be", "Il sera en retard", "He will be late", "il/elle/on - Simple Future Indicative"],
+  ["serons", "will be", "Nous serons ensemble", "We will be together", "nous - Simple Future Indicative"],
+  ["serez", "will be", "Vous serez surpris", "You will be surprised", "vous - Simple Future Indicative"],
+  ["seront", "will be", "Ils seront contents", "They will be happy", "ils/elles - Simple Future Indicative"],
+  
+  ["serais", "would be", "Je serais ravi", "I would be delighted", "je - Conditional"],
+  ["serais", "would be", "Tu serais surpris", "You would be surprised", "tu - Conditional"],
+  ["serait", "would be", "Il serait content", "He would be happy", "il/elle/on - Conditional"],
+  ["serions", "would be", "Nous serions fiers", "We would be proud", "nous - Conditional"],
+  ["seriez", "would be", "Vous seriez étonnés", "You would be amazed", "vous - Conditional"],
+  ["seraient", "would be", "Ils seraient ravis", "They would be delighted", "ils/elles - Conditional"],
+  
+  ["sois", "be", "Il faut que je sois là", "I must be there", "je - Subjunctive Present"],
+  ["sois", "be", "Je veux que tu sois heureux", "I want you to be happy", "tu - Subjunctive Present"],
+  ["soit", "be", "Il faut qu'il soit prêt", "He must be ready", "il/elle/on - Subjunctive Present"],
+  ["soyons", "be", "Il faut que nous soyons patients", "We must be patient", "nous - Subjunctive Present"],
+  ["soyez", "be", "Je veux que vous soyez contents", "I want you to be happy", "vous - Subjunctive Present"],
+  ["soient", "be", "Il faut qu'ils soient calmes", "They must be calm", "ils/elles - Subjunctive Present"],
+  
+  ["avais été", "had been", "J'avais été malade", "I had been sick", "je - Past Perfect"],
+  ["avais été", "had been", "Tu avais été absent", "You had been absent", "tu - Past Perfect"],
+  ["avait été", "had been", "Il avait été surpris", "He had been surprised", "il/elle/on - Past Perfect"],
+  ["avions été", "had been", "Nous avions été contents", "We had been happy", "nous - Past Perfect"],
+  ["aviez été", "had been", "Vous aviez été patients", "You had been patient", "vous - Past Perfect"],
+  ["avaient été", "had been", "Ils avaient été déçus", "They had been disappointed", "ils/elles - Past Perfect"],
+  
+  ["aurai été", "will have been", "J'aurai été là", "I will have been there", "je - Future Perfect"],
+  ["auras été", "will have been", "Tu auras été prêt", "You will have been ready", "tu - Future Perfect"],
+  ["aura été", "will have been", "Il aura été surpris", "He will have been surprised", "il/elle/on - Future Perfect"],
+  ["aurons été", "will have been", "Nous aurons été ensemble", "We will have been together", "nous - Future Perfect"],
+  ["aurez été", "will have been", "Vous aurez été contents", "You will have been happy", "vous - Future Perfect"],
+  ["auront été", "will have been", "Ils auront été ravis", "They will have been delighted", "ils/elles - Future Perfect"],
+  
+  ["aurais été", "would have been", "J'aurais été là", "I would have been there", "je - Past Conditional"],
+  ["aurais été", "would have been", "Tu aurais été prêt", "You would have been ready", "tu - Past Conditional"],
+  ["aurait été", "would have been", "Il aurait été surpris", "He would have been surprised", "il/elle/on - Past Conditional"],
+  ["aurions été", "would have been", "Nous aurions été ensemble", "We would have been together", "nous - Past Conditional"],
+  ["auriez été", "would have been", "Vous auriez été contents", "You would have been happy", "vous - Past Conditional"],
+  ["auraient été", "would have been", "Ils auraient été ravis", "They would have been delighted", "ils/elles - Past Conditional"],
+  
+  ["été", "been", "Il a été surpris", "He has been surprised", "Past Participle"],
+  ["étant", "being", "Étant fatigué, il s'est couché", "Being tired, he went to bed", "Present Participle"],
+  ["ayant été", "having been", "Ayant été malade, il est resté au lit", "Having been sick, he stayed in bed", "Perfect Participle"]
+]
