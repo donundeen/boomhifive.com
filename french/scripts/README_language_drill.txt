@@ -19,8 +19,8 @@ How to run:
 1) Download both this README and the script.
 2) Place your JSON file (e.g., phrases_for_learning.json) next to the script.
 3) Run:
-   python3 make_language_drill_audio_mac.py \
-       --json phrases_for_learning.json \
+   python make_language_drill_audio_mac.py \
+       --json ../phrases_for_learning.json \
        --out french_learning_audio.mp3 \
        --fr-voices Amelie Thomas Aurelie \
        --en-voices Samantha Alex Victoria

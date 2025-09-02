@@ -634,5 +634,1337 @@
     "come",
     "Il est venu de la campagne.",
     "He has come from the countryside. (Le participe passé)"
+  ],
+  [
+    "je dois",
+    "I must/have to",
+    "Je dois partir maintenant.",
+    "I must leave now. (Présent)"
+  ],
+  [
+    "tu dois",
+    "you must/have to",
+    "Tu dois faire tes devoirs.",
+    "You must do your homework. (Présent)"
+  ],
+  [
+    "il/elle/on doit",
+    "he/she must/has to",
+    "Il doit arriver à l'heure.",
+    "He must arrive on time. (Présent)"
+  ],
+  [
+    "nous devons",
+    "we must/have to",
+    "Nous devons nous dépêcher.",
+    "We must hurry. (Présent)"
+  ],
+  [
+    "vous devez",
+    "you must/have to (formal)",
+    "Vous devez signer ici.",
+    "You must sign here. (Présent)"
+  ],
+  [
+    "ils/elles doivent",
+    "they must/have to",
+    "Ils doivent partir demain.",
+    "They must leave tomorrow. (Présent)"
+  ],
+  [
+    "je devais",
+    "I had to/was supposed to",
+    "Je devais partir plus tôt.",
+    "I was supposed to leave earlier. (Imparfait)"
+  ],
+  [
+    "tu devais",
+    "you had to/were supposed to",
+    "Tu devais faire tes devoirs.",
+    "You were supposed to do your homework. (Imparfait)"
+  ],
+  [
+    "il/elle/on devait",
+    "he/she had to/was supposed to",
+    "Il devait arriver à l'heure.",
+    "He was supposed to arrive on time. (Imparfait)"
+  ],
+  [
+    "nous devions",
+    "we had to/were supposed to",
+    "Nous devions nous dépêcher.",
+    "We were supposed to hurry. (Imparfait)"
+  ],
+  [
+    "vous deviez",
+    "you had to/were supposed to (formal)",
+    "Vous deviez signer ici.",
+    "You were supposed to sign here. (Imparfait)"
+  ],
+  [
+    "ils/elles devaient",
+    "they had to/were supposed to",
+    "Ils devaient partir demain.",
+    "They were supposed to leave tomorrow. (Imparfait)"
+  ],
+  [
+    "j'ai dû",
+    "I have had to",
+    "J'ai dû partir plus tôt.",
+    "I have had to leave earlier. (Passé Composé)"
+  ],
+  [
+    "tu as dû",
+    "you have had to",
+    "Tu as dû faire tes devoirs.",
+    "You have had to do your homework. (Passé Composé)"
+  ],
+  [
+    "il/elle/on a dû",
+    "he/she has had to",
+    "Il a dû arriver à l'heure.",
+    "He has had to arrive on time. (Passé Composé)"
+  ],
+  [
+    "nous avons dû",
+    "we have had to",
+    "Nous avons dû nous dépêcher.",
+    "We have had to hurry. (Passé Composé)"
+  ],
+  [
+    "vous avez dû",
+    "you have had to (formal)",
+    "Vous avez dû signer ici.",
+    "You have had to sign here. (Passé Composé)"
+  ],
+  [
+    "ils/elles ont dû",
+    "they have had to",
+    "Ils ont dû partir demain.",
+    "They have had to leave tomorrow. (Passé Composé)"
+  ],
+  [
+    "je devrai",
+    "I will have to",
+    "Je devrai partir demain.",
+    "I will have to leave tomorrow. (Futur Simple)"
+  ],
+  [
+    "tu devras",
+    "you will have to",
+    "Tu devras faire tes devoirs.",
+    "You will have to do your homework. (Futur Simple)"
+  ],
+  [
+    "il/elle/on devra",
+    "he/she will have to",
+    "Il devra arriver à l'heure.",
+    "He will have to arrive on time. (Futur Simple)"
+  ],
+  [
+    "nous devrons",
+    "we will have to",
+    "Nous devrons nous dépêcher.",
+    "We will have to hurry. (Futur Simple)"
+  ],
+  [
+    "vous devrez",
+    "you will have to (formal)",
+    "Vous devrez signer ici.",
+    "You will have to sign here. (Futur Simple)"
+  ],
+  [
+    "ils/elles devront",
+    "they will have to",
+    "Ils devront partir demain.",
+    "They will have to leave tomorrow. (Futur Simple)"
+  ],
+  [
+    "j'avais dû",
+    "I had had to",
+    "J'avais dû partir plus tôt.",
+    "I had had to leave earlier. (Plus-Que-Parfait)"
+  ],
+  [
+    "tu avais dû",
+    "you had had to",
+    "Tu avais dû faire tes devoirs.",
+    "You had had to do your homework. (Plus-Que-Parfait)"
+  ],
+  [
+    "il/elle/on avait dû",
+    "he/she had had to",
+    "Il avait dû arriver à l'heure.",
+    "He had had to arrive on time. (Plus-Que-Parfait)"
+  ],
+  [
+    "nous avions dû",
+    "we had had to",
+    "Nous avions dû nous dépêcher.",
+    "We had had to hurry. (Plus-Que-Parfait)"
+  ],
+  [
+    "vous aviez dû",
+    "you had had to (formal)",
+    "Vous aviez dû signer ici.",
+    "You had had to sign here. (Plus-Que-Parfait)"
+  ],
+  [
+    "ils/elles avaient dû",
+    "they had had to",
+    "Ils avaient dû partir demain.",
+    "They had had to leave tomorrow. (Plus-Que-Parfait)"
+  ],
+  [
+    "j'aurais dû",
+    "I should have had to",
+    "J'aurais dû partir plus tôt.",
+    "I should have had to leave earlier. (Conditionnel Passé)"
+  ],
+  [
+    "tu aurais dû",
+    "you should have had to",
+    "Tu aurais dû faire tes devoirs.",
+    "You should have had to do your homework. (Conditionnel Passé)"
+  ],
+  [
+    "il/elle/on aurait dû",
+    "he/she should have had to",
+    "Il aurait dû arriver à l'heure.",
+    "He should have had to arrive on time. (Conditionnel Passé)"
+  ],
+  [
+    "nous aurions dû",
+    "we should have had to",
+    "Nous aurions dû nous dépêcher.",
+    "We should have had to hurry. (Conditionnel Passé)"
+  ],
+  [
+    "vous auriez dû",
+    "you should have had to (formal)",
+    "Vous auriez dû signer ici.",
+    "You should have had to sign here. (Conditionnel Passé)"
+  ],
+  [
+    "ils/elles auraient dû",
+    "they should have had to",
+    "Ils auraient dû partir demain.",
+    "They should have had to leave tomorrow. (Conditionnel Passé)"
+  ],
+  [
+    "devant",
+    "having to",
+    "En devant partir tôt, il a manqué la fête.",
+    "Having to leave early, he missed the party. (Le participe présent)"
+  ],
+  [
+    "je fais",
+    "I do/make",
+    "Je fais mes devoirs.",
+    "I do my homework. (Présent)"
+  ],
+  [
+    "tu fais",
+    "you do/make",
+    "Tu fais la cuisine.",
+    "You do the cooking. (Présent)"
+  ],
+  [
+    "il/elle/on fait",
+    "he/she does/makes",
+    "Il fait ses exercices.",
+    "He does his exercises. (Présent)"
+  ],
+  [
+    "nous faisons",
+    "we do/make",
+    "Nous faisons une promenade.",
+    "We take a walk. (Présent)"
+  ],
+  [
+    "vous faites",
+    "you do/make (formal)",
+    "Vous faites du sport.",
+    "You do sports. (Présent)"
+  ],
+  [
+    "ils/elles font",
+    "they do/make",
+    "Ils font leurs devoirs.",
+    "They do their homework. (Présent)"
+  ],
+  [
+    "je faisais",
+    "I was doing/making",
+    "Je faisais mes devoirs.",
+    "I was doing my homework. (Imparfait)"
+  ],
+  [
+    "tu faisais",
+    "you were doing/making",
+    "Tu faisais la cuisine.",
+    "You were doing the cooking. (Imparfait)"
+  ],
+  [
+    "il/elle/on faisait",
+    "he/she was doing/making",
+    "Il faisait ses exercices.",
+    "He was doing his exercises. (Imparfait)"
+  ],
+  [
+    "nous faisions",
+    "we were doing/making",
+    "Nous faisions une promenade.",
+    "We were taking a walk. (Imparfait)"
+  ],
+  [
+    "vous faisiez",
+    "you were doing/making (formal)",
+    "Vous faisiez du sport.",
+    "You were doing sports. (Imparfait)"
+  ],
+  [
+    "ils/elles faisaient",
+    "they were doing/making",
+    "Ils faisaient leurs devoirs.",
+    "They were doing their homework. (Imparfait)"
+  ],
+  [
+    "j'ai fait",
+    "I have done/made",
+    "J'ai fait mes devoirs.",
+    "I have done my homework. (Passé Composé)"
+  ],
+  [
+    "tu as fait",
+    "you have done/made",
+    "Tu as fait la cuisine.",
+    "You have done the cooking. (Passé Composé)"
+  ],
+  [
+    "il/elle/on a fait",
+    "he/she has done/made",
+    "Il a fait ses exercices.",
+    "He has done his exercises. (Passé Composé)"
+  ],
+  [
+    "nous avons fait",
+    "we have done/made",
+    "Nous avons fait une promenade.",
+    "We have taken a walk. (Passé Composé)"
+  ],
+  [
+    "vous avez fait",
+    "you have done/made (formal)",
+    "Vous avez fait du sport.",
+    "You have done sports. (Passé Composé)"
+  ],
+  [
+    "ils/elles ont fait",
+    "they have done/made",
+    "Ils ont fait leurs devoirs.",
+    "They have done their homework. (Passé Composé)"
+  ],
+  [
+    "je ferai",
+    "I will do/make",
+    "Je ferai mes devoirs.",
+    "I will do my homework. (Futur Simple)"
+  ],
+  [
+    "tu feras",
+    "you will do/make",
+    "Tu feras la cuisine.",
+    "You will do the cooking. (Futur Simple)"
+  ],
+  [
+    "il/elle/on fera",
+    "he/she will do/make",
+    "Il fera ses exercices.",
+    "He will do his exercises. (Futur Simple)"
+  ],
+  [
+    "nous ferons",
+    "we will do/make",
+    "Nous ferons une promenade.",
+    "We will take a walk. (Futur Simple)"
+  ],
+  [
+    "vous ferez",
+    "you will do/make (formal)",
+    "Vous ferez du sport.",
+    "You will do sports. (Futur Simple)"
+  ],
+  [
+    "ils/elles feront",
+    "they will do/make",
+    "Ils feront leurs devoirs.",
+    "They will do their homework. (Futur Simple)"
+  ],
+  [
+    "j'avais fait",
+    "I had done/made",
+    "J'avais fait mes devoirs.",
+    "I had done my homework. (Plus-Que-Parfait)"
+  ],
+  [
+    "tu avais fait",
+    "you had done/made",
+    "Tu avais fait la cuisine.",
+    "You had done the cooking. (Plus-Que-Parfait)"
+  ],
+  [
+    "il/elle/on avait fait",
+    "he/she had done/made",
+    "Il avait fait ses exercices.",
+    "He had done his exercises. (Plus-Que-Parfait)"
+  ],
+  [
+    "nous avions fait",
+    "we had done/made",
+    "Nous avions fait une promenade.",
+    "We had taken a walk. (Plus-Que-Parfait)"
+  ],
+  [
+    "vous aviez fait",
+    "you had done/made (formal)",
+    "Vous aviez fait du sport.",
+    "You had done sports. (Plus-Que-Parfait)"
+  ],
+  [
+    "ils/elles avaient fait",
+    "they had done/made",
+    "Ils avaient fait leurs devoirs.",
+    "They had done their homework. (Plus-Que-Parfait)"
+  ],
+  [
+    "j'aurais fait",
+    "I would have done/made",
+    "J'aurais fait mes devoirs.",
+    "I would have done my homework. (Conditionnel Passé)"
+  ],
+  [
+    "tu aurais fait",
+    "you would have done/made",
+    "Tu aurais fait la cuisine.",
+    "You would have done the cooking. (Conditionnel Passé)"
+  ],
+  [
+    "il/elle/on aurait fait",
+    "he/she would have done/made",
+    "Il aurait fait ses exercices.",
+    "He would have done his exercises. (Conditionnel Passé)"
+  ],
+  [
+    "nous aurions fait",
+    "we would have done/made",
+    "Nous aurions fait une promenade.",
+    "We would have taken a walk. (Conditionnel Passé)"
+  ],
+  [
+    "vous auriez fait",
+    "you would have done/made (formal)",
+    "Vous auriez fait du sport.",
+    "You would have done sports. (Conditionnel Passé)"
+  ],
+  [
+    "ils/elles auraient fait",
+    "they would have done/made",
+    "Ils auraient fait leurs devoirs.",
+    "They would have done their homework. (Conditionnel Passé)"
+  ],
+  [
+    "faisant",
+    "doing/making",
+    "En faisant mes devoirs, j'ai appris beaucoup.",
+    "While doing my homework, I learned a lot. (Le participe présent)"
+  ],
+  [
+    "je prends",
+    "I take",
+    "Je prends le bus.",
+    "I take the bus. (Présent)"
+  ],
+  [
+    "tu prends",
+    "you take",
+    "Tu prends un café.",
+    "You take a coffee. (Présent)"
+  ],
+  [
+    "il/elle/on prend",
+    "he/she takes",
+    "Il prend le train.",
+    "He takes the train. (Présent)"
+  ],
+  [
+    "nous prenons",
+    "we take",
+    "Nous prenons le métro.",
+    "We take the subway. (Présent)"
+  ],
+  [
+    "vous prenez",
+    "you take (formal)",
+    "Vous prenez l'avion.",
+    "You take the plane. (Présent)"
+  ],
+  [
+    "ils/elles prennent",
+    "they take",
+    "Ils prennent le taxi.",
+    "They take the taxi. (Présent)"
+  ],
+  [
+    "je prenais",
+    "I was taking",
+    "Je prenais le bus.",
+    "I was taking the bus. (Imparfait)"
+  ],
+  [
+    "tu prenais",
+    "you were taking",
+    "Tu prenais un café.",
+    "You were taking a coffee. (Imparfait)"
+  ],
+  [
+    "il/elle/on prenait",
+    "he/she was taking",
+    "Il prenait le train.",
+    "He was taking the train. (Imparfait)"
+  ],
+  [
+    "nous prenions",
+    "we were taking",
+    "Nous prenions le métro.",
+    "We were taking the subway. (Imparfait)"
+  ],
+  [
+    "vous preniez",
+    "you were taking (formal)",
+    "Vous preniez l'avion.",
+    "You were taking the plane. (Imparfait)"
+  ],
+  [
+    "ils/elles prenaient",
+    "they were taking",
+    "Ils prenaient le taxi.",
+    "They were taking the taxi. (Imparfait)"
+  ],
+  [
+    "j'ai pris",
+    "I have taken",
+    "J'ai pris le bus.",
+    "I have taken the bus. (Passé Composé)"
+  ],
+  [
+    "tu as pris",
+    "you have taken",
+    "Tu as pris un café.",
+    "You have taken a coffee. (Passé Composé)"
+  ],
+  [
+    "il/elle/on a pris",
+    "he/she has taken",
+    "Il a pris le train.",
+    "He has taken the train. (Passé Composé)"
+  ],
+  [
+    "nous avons pris",
+    "we have taken",
+    "Nous avons pris le métro.",
+    "We have taken the subway. (Passé Composé)"
+  ],
+  [
+    "vous avez pris",
+    "you have taken (formal)",
+    "Vous avez pris l'avion.",
+    "You have taken the plane. (Passé Composé)"
+  ],
+  [
+    "ils/elles ont pris",
+    "they have taken",
+    "Ils ont pris le taxi.",
+    "They have taken the taxi. (Passé Composé)"
+  ],
+  [
+    "je prendrai",
+    "I will take",
+    "Je prendrai le bus.",
+    "I will take the bus. (Futur Simple)"
+  ],
+  [
+    "tu prendras",
+    "you will take",
+    "Tu prendras un café.",
+    "You will take a coffee. (Futur Simple)"
+  ],
+  [
+    "il/elle/on prendra",
+    "he/she will take",
+    "Il prendra le train.",
+    "He will take the train. (Futur Simple)"
+  ],
+  [
+    "nous prendrons",
+    "we will take",
+    "Nous prendrons le métro.",
+    "We will take the subway. (Futur Simple)"
+  ],
+  [
+    "vous prendrez",
+    "you will take (formal)",
+    "Vous prendrez l'avion.",
+    "You will take the plane. (Futur Simple)"
+  ],
+  [
+    "ils/elles prendront",
+    "they will take",
+    "Ils prendront le taxi.",
+    "They will take the taxi. (Futur Simple)"
+  ],
+  [
+    "j'avais pris",
+    "I had taken",
+    "J'avais pris le bus.",
+    "I had taken the bus. (Plus-Que-Parfait)"
+  ],
+  [
+    "tu avais pris",
+    "you had taken",
+    "Tu avais pris un café.",
+    "You had taken a coffee. (Plus-Que-Parfait)"
+  ],
+  [
+    "il/elle/on avait pris",
+    "he/she had taken",
+    "Il avait pris le train.",
+    "He had taken the train. (Plus-Que-Parfait)"
+  ],
+  [
+    "nous avions pris",
+    "we had taken",
+    "Nous avions pris le métro.",
+    "We had taken the subway. (Plus-Que-Parfait)"
+  ],
+  [
+    "vous aviez pris",
+    "you had taken (formal)",
+    "Vous aviez pris l'avion.",
+    "You had taken the plane. (Plus-Que-Parfait)"
+  ],
+  [
+    "ils/elles avaient pris",
+    "they had taken",
+    "Ils avaient pris le taxi.",
+    "They had taken the taxi. (Plus-Que-Parfait)"
+  ],
+  [
+    "j'aurais pris",
+    "I would have taken",
+    "J'aurais pris le bus.",
+    "I would have taken the bus. (Conditionnel Passé)"
+  ],
+  [
+    "tu aurais pris",
+    "you would have taken",
+    "Tu aurais pris un café.",
+    "You would have taken a coffee. (Conditionnel Passé)"
+  ],
+  [
+    "il/elle/on aurait pris",
+    "he/she would have taken",
+    "Il aurait pris le train.",
+    "He would have taken the train. (Conditionnel Passé)"
+  ],
+  [
+    "nous aurions pris",
+    "we would have taken",
+    "Nous aurions pris le métro.",
+    "We would have taken the subway. (Conditionnel Passé)"
+  ],
+  [
+    "vous auriez pris",
+    "you would have taken (formal)",
+    "Vous auriez pris l'avion.",
+    "You would have taken the plane. (Conditionnel Passé)"
+  ],
+  [
+    "ils/elles auraient pris",
+    "they would have taken",
+    "Ils auraient pris le taxi.",
+    "They would have taken the taxi. (Conditionnel Passé)"
+  ],
+  [
+    "prenant",
+    "taking",
+    "En prenant le bus, j'ai économisé de l'argent.",
+    "By taking the bus, I saved money. (Le participe présent)"
+  ],
+  [
+    "je sais",
+    "I know",
+    "Je sais la réponse.",
+    "I know the answer. (Présent)"
+  ],
+  [
+    "tu sais",
+    "you know",
+    "Tu sais nager.",
+    "You know how to swim. (Présent)"
+  ],
+  [
+    "il/elle/on sait",
+    "he/she knows",
+    "Il sait parler français.",
+    "He knows how to speak French. (Présent)"
+  ],
+  [
+    "nous savons",
+    "we know",
+    "Nous savons où aller.",
+    "We know where to go. (Présent)"
+  ],
+  [
+    "vous savez",
+    "you know (formal)",
+    "Vous savez conduire.",
+    "You know how to drive. (Présent)"
+  ],
+  [
+    "ils/elles savent",
+    "they know",
+    "Ils savent cuisiner.",
+    "They know how to cook. (Présent)"
+  ],
+  [
+    "je savais",
+    "I knew",
+    "Je savais la réponse.",
+    "I knew the answer. (Imparfait)"
+  ],
+  [
+    "tu savais",
+    "you knew",
+    "Tu savais nager.",
+    "You knew how to swim. (Imparfait)"
+  ],
+  [
+    "il/elle/on savait",
+    "he/she knew",
+    "Il savait parler français.",
+    "He knew how to speak French. (Imparfait)"
+  ],
+  [
+    "nous savions",
+    "we knew",
+    "Nous savions où aller.",
+    "We knew where to go. (Imparfait)"
+  ],
+  [
+    "vous saviez",
+    "you knew (formal)",
+    "Vous saviez conduire.",
+    "You knew how to drive. (Imparfait)"
+  ],
+  [
+    "ils/elles savaient",
+    "they knew",
+    "Ils savaient cuisiner.",
+    "They knew how to cook. (Imparfait)"
+  ],
+  [
+    "j'ai su",
+    "I have known",
+    "J'ai su la réponse.",
+    "I have known the answer. (Passé Composé)"
+  ],
+  [
+    "tu as su",
+    "you have known",
+    "Tu as su nager.",
+    "You have known how to swim. (Passé Composé)"
+  ],
+  [
+    "il/elle/on a su",
+    "he/she has known",
+    "Il a su parler français.",
+    "He has known how to speak French. (Passé Composé)"
+  ],
+  [
+    "nous avons su",
+    "we have known",
+    "Nous avons su où aller.",
+    "We have known where to go. (Passé Composé)"
+  ],
+  [
+    "vous avez su",
+    "you have known (formal)",
+    "Vous avez su conduire.",
+    "You have known how to drive. (Passé Composé)"
+  ],
+  [
+    "ils/elles ont su",
+    "they have known",
+    "Ils ont su cuisiner.",
+    "They have known how to cook. (Passé Composé)"
+  ],
+  [
+    "je saurai",
+    "I will know",
+    "Je saurai la réponse.",
+    "I will know the answer. (Futur Simple)"
+  ],
+  [
+    "tu sauras",
+    "you will know",
+    "Tu sauras nager.",
+    "You will know how to swim. (Futur Simple)"
+  ],
+  [
+    "il/elle/on saura",
+    "he/she will know",
+    "Il saura parler français.",
+    "He will know how to speak French. (Futur Simple)"
+  ],
+  [
+    "nous saurons",
+    "we will know",
+    "Nous saurons où aller.",
+    "We will know where to go. (Futur Simple)"
+  ],
+  [
+    "vous saurez",
+    "you will know (formal)",
+    "Vous saurez conduire.",
+    "You will know how to drive. (Futur Simple)"
+  ],
+  [
+    "ils/elles sauront",
+    "they will know",
+    "Ils sauront cuisiner.",
+    "They will know how to cook. (Futur Simple)"
+  ],
+  [
+    "j'avais su",
+    "I had known",
+    "J'avais su la réponse.",
+    "I had known the answer. (Plus-Que-Parfait)"
+  ],
+  [
+    "tu avais su",
+    "you had known",
+    "Tu avais su nager.",
+    "You had known how to swim. (Plus-Que-Parfait)"
+  ],
+  [
+    "il/elle/on avait su",
+    "he/she had known",
+    "Il avait su parler français.",
+    "He had known how to speak French. (Plus-Que-Parfait)"
+  ],
+  [
+    "nous avions su",
+    "we had known",
+    "Nous avions su où aller.",
+    "We had known where to go. (Plus-Que-Parfait)"
+  ],
+  [
+    "vous aviez su",
+    "you had known (formal)",
+    "Vous aviez su conduire.",
+    "You had known how to drive. (Plus-Que-Parfait)"
+  ],
+  [
+    "ils/elles avaient su",
+    "they had known",
+    "Ils avaient su cuisiner.",
+    "They had known how to cook. (Plus-Que-Parfait)"
+  ],
+  [
+    "j'aurais su",
+    "I would have known",
+    "J'aurais su la réponse.",
+    "I would have known the answer. (Conditionnel Passé)"
+  ],
+  [
+    "tu aurais su",
+    "you would have known",
+    "Tu aurais su nager.",
+    "You would have known how to swim. (Conditionnel Passé)"
+  ],
+  [
+    "il/elle/on aurait su",
+    "he/she would have known",
+    "Il aurait su parler français.",
+    "He would have known how to speak French. (Conditionnel Passé)"
+  ],
+  [
+    "nous aurions su",
+    "we would have known",
+    "Nous aurions su où aller.",
+    "We would have known where to go. (Conditionnel Passé)"
+  ],
+  [
+    "vous auriez su",
+    "you would have known (formal)",
+    "Vous auriez su conduire.",
+    "You would have known how to drive. (Conditionnel Passé)"
+  ],
+  [
+    "ils/elles auraient su",
+    "they would have known",
+    "Ils auraient su cuisiner.",
+    "They would have known how to cook. (Conditionnel Passé)"
+  ],
+  [
+    "sachant",
+    "knowing",
+    "En sachant la réponse, il a gagné le concours.",
+    "Knowing the answer, he won the contest. (Le participe présent)"
+  ],
+  [
+    "je dis",
+    "I say/tell",
+    "Je dis la vérité.",
+    "I tell the truth. (Présent)"
+  ],
+  [
+    "tu dis",
+    "you say/tell",
+    "Tu dis toujours la vérité.",
+    "You always tell the truth. (Présent)"
+  ],
+  [
+    "il/elle/on dit",
+    "he/she says/tells",
+    "Il dit bonjour.",
+    "He says hello. (Présent)"
+  ],
+  [
+    "nous disons",
+    "we say/tell",
+    "Nous disons la vérité.",
+    "We tell the truth. (Présent)"
+  ],
+  [
+    "vous dites",
+    "you say/tell (formal)",
+    "Vous dites toujours la vérité.",
+    "You always tell the truth. (Présent)"
+  ],
+  [
+    "ils/elles disent",
+    "they say/tell",
+    "Ils disent bonjour.",
+    "They say hello. (Présent)"
+  ],
+  [
+    "je disais",
+    "I was saying/telling",
+    "Je disais la vérité.",
+    "I was telling the truth. (Imparfait)"
+  ],
+  [
+    "tu disais",
+    "you were saying/telling",
+    "Tu disais toujours la vérité.",
+    "You were always telling the truth. (Imparfait)"
+  ],
+  [
+    "il/elle/on disait",
+    "he/she was saying/telling",
+    "Il disait bonjour.",
+    "He was saying hello. (Imparfait)"
+  ],
+  [
+    "nous disions",
+    "we were saying/telling",
+    "Nous disions la vérité.",
+    "We were telling the truth. (Imparfait)"
+  ],
+  [
+    "vous disiez",
+    "you were saying/telling (formal)",
+    "Vous disiez toujours la vérité.",
+    "You were always telling the truth. (Imparfait)"
+  ],
+  [
+    "ils/elles disaient",
+    "they were saying/telling",
+    "Ils disaient bonjour.",
+    "They were saying hello. (Imparfait)"
+  ],
+  [
+    "j'ai dit",
+    "I have said/told",
+    "J'ai dit la vérité.",
+    "I have told the truth. (Passé Composé)"
+  ],
+  [
+    "tu as dit",
+    "you have said/told",
+    "Tu as dit toujours la vérité.",
+    "You have always told the truth. (Passé Composé)"
+  ],
+  [
+    "il/elle/on a dit",
+    "he/she has said/told",
+    "Il a dit bonjour.",
+    "He has said hello. (Passé Composé)"
+  ],
+  [
+    "nous avons dit",
+    "we have said/told",
+    "Nous avons dit la vérité.",
+    "We have told the truth. (Passé Composé)"
+  ],
+  [
+    "vous avez dit",
+    "you have said/told (formal)",
+    "Vous avez dit toujours la vérité.",
+    "You have always told the truth. (Passé Composé)"
+  ],
+  [
+    "ils/elles ont dit",
+    "they have said/told",
+    "Ils ont dit bonjour.",
+    "They have said hello. (Passé Composé)"
+  ],
+  [
+    "je dirai",
+    "I will say/tell",
+    "Je dirai la vérité.",
+    "I will tell the truth. (Futur Simple)"
+  ],
+  [
+    "tu diras",
+    "you will say/tell",
+    "Tu diras toujours la vérité.",
+    "You will always tell the truth. (Futur Simple)"
+  ],
+  [
+    "il/elle/on dira",
+    "he/she will say/tell",
+    "Il dira bonjour.",
+    "He will say hello. (Futur Simple)"
+  ],
+  [
+    "nous dirons",
+    "we will say/tell",
+    "Nous dirons la vérité.",
+    "We will tell the truth. (Futur Simple)"
+  ],
+  [
+    "vous direz",
+    "you will say/tell (formal)",
+    "Vous direz toujours la vérité.",
+    "You will always tell the truth. (Futur Simple)"
+  ],
+  [
+    "ils/elles diront",
+    "they will say/tell",
+    "Ils diront bonjour.",
+    "They will say hello. (Futur Simple)"
+  ],
+  [
+    "j'avais dit",
+    "I had said/told",
+    "J'avais dit la vérité.",
+    "I had told the truth. (Plus-Que-Parfait)"
+  ],
+  [
+    "tu avais dit",
+    "you had said/told",
+    "Tu avais dit toujours la vérité.",
+    "You had always told the truth. (Plus-Que-Parfait)"
+  ],
+  [
+    "il/elle/on avait dit",
+    "he/she had said/told",
+    "Il avait dit bonjour.",
+    "He had said hello. (Plus-Que-Parfait)"
+  ],
+  [
+    "nous avions dit",
+    "we had said/told",
+    "Nous avions dit la vérité.",
+    "We had told the truth. (Plus-Que-Parfait)"
+  ],
+  [
+    "vous aviez dit",
+    "you had said/told (formal)",
+    "Vous aviez dit toujours la vérité.",
+    "You had always told the truth. (Plus-Que-Parfait)"
+  ],
+  [
+    "ils/elles avaient dit",
+    "they had said/told",
+    "Ils avaient dit bonjour.",
+    "They had said hello. (Plus-Que-Parfait)"
+  ],
+  [
+    "j'aurais dit",
+    "I would have said/told",
+    "J'aurais dit la vérité.",
+    "I would have told the truth. (Conditionnel Passé)"
+  ],
+  [
+    "tu aurais dit",
+    "you would have said/told",
+    "Tu aurais dit toujours la vérité.",
+    "You would have always told the truth. (Conditionnel Passé)"
+  ],
+  [
+    "il/elle/on aurait dit",
+    "he/she would have said/told",
+    "Il aurait dit bonjour.",
+    "He would have said hello. (Conditionnel Passé)"
+  ],
+  [
+    "nous aurions dit",
+    "we would have said/told",
+    "Nous aurions dit la vérité.",
+    "We would have told the truth. (Conditionnel Passé)"
+  ],
+  [
+    "vous auriez dit",
+    "you would have said/told (formal)",
+    "Vous auriez dit toujours la vérité.",
+    "You would have always told the truth. (Conditionnel Passé)"
+  ],
+  [
+    "ils/elles auraient dit",
+    "they would have said/told",
+    "Ils auraient dit bonjour.",
+    "They would have said hello. (Conditionnel Passé)"
+  ],
+  [
+    "disant",
+    "saying/telling",
+    "En disant la vérité, il a gagné notre confiance.",
+    "By telling the truth, he gained our trust. (Le participe présent)"
+  ],
+  [
+    "je lis",
+    "I read",
+    "Je lis un livre.",
+    "I read a book. (Présent)"
+  ],
+  [
+    "tu lis",
+    "you read",
+    "Tu lis le journal.",
+    "You read the newspaper. (Présent)"
+  ],
+  [
+    "il/elle/on lit",
+    "he/she reads",
+    "Il lit une revue.",
+    "He reads a magazine. (Présent)"
+  ],
+  [
+    "nous lisons",
+    "we read",
+    "Nous lisons des romans.",
+    "We read novels. (Présent)"
+  ],
+  [
+    "vous lisez",
+    "you read (formal)",
+    "Vous lisez des poèmes.",
+    "You read poems. (Présent)"
+  ],
+  [
+    "ils/elles lisent",
+    "they read",
+    "Ils lisent des journaux.",
+    "They read newspapers. (Présent)"
+  ],
+  [
+    "je lisais",
+    "I was reading",
+    "Je lisais un livre.",
+    "I was reading a book. (Imparfait)"
+  ],
+  [
+    "tu lisais",
+    "you were reading",
+    "Tu lisais le journal.",
+    "You were reading the newspaper. (Imparfait)"
+  ],
+  [
+    "il/elle/on lisait",
+    "he/she was reading",
+    "Il lisait une revue.",
+    "He was reading a magazine. (Imparfait)"
+  ],
+  [
+    "nous lisions",
+    "we were reading",
+    "Nous lisions des romans.",
+    "We were reading novels. (Imparfait)"
+  ],
+  [
+    "vous lisiez",
+    "you were reading (formal)",
+    "Vous lisiez des poèmes.",
+    "You were reading poems. (Imparfait)"
+  ],
+  [
+    "ils/elles lisaient",
+    "they were reading",
+    "Ils lisaient des journaux.",
+    "They were reading newspapers. (Imparfait)"
+  ],
+  [
+    "j'ai lu",
+    "I have read",
+    "J'ai lu un livre.",
+    "I have read a book. (Passé Composé)"
+  ],
+  [
+    "tu as lu",
+    "you have read",
+    "Tu as lu le journal.",
+    "You have read the newspaper. (Passé Composé)"
+  ],
+  [
+    "il/elle/on a lu",
+    "he/she has read",
+    "Il a lu une revue.",
+    "He has read a magazine. (Passé Composé)"
+  ],
+  [
+    "nous avons lu",
+    "we have read",
+    "Nous avons lu des romans.",
+    "We have read novels. (Passé Composé)"
+  ],
+  [
+    "vous avez lu",
+    "you have read (formal)",
+    "Vous avez lu des poèmes.",
+    "You have read poems. (Passé Composé)"
+  ],
+  [
+    "ils/elles ont lu",
+    "they have read",
+    "Ils ont lu des journaux.",
+    "They have read newspapers. (Passé Composé)"
+  ],
+  [
+    "je lirai",
+    "I will read",
+    "Je lirai un livre.",
+    "I will read a book. (Futur Simple)"
+  ],
+  [
+    "tu liras",
+    "you will read",
+    "Tu liras le journal.",
+    "You will read the newspaper. (Futur Simple)"
+  ],
+  [
+    "il/elle/on lira",
+    "he/she will read",
+    "Il lira une revue.",
+    "He will read a magazine. (Futur Simple)"
+  ],
+  [
+    "nous lirons",
+    "we will read",
+    "Nous lirons des romans.",
+    "We will read novels. (Futur Simple)"
+  ],
+  [
+    "vous lirez",
+    "you will read (formal)",
+    "Vous lirez des poèmes.",
+    "You will read poems. (Futur Simple)"
+  ],
+  [
+    "ils/elles liront",
+    "they will read",
+    "Ils liront des journaux.",
+    "They will read newspapers. (Futur Simple)"
+  ],
+  [
+    "j'avais lu",
+    "I had read",
+    "J'avais lu un livre.",
+    "I had read a book. (Plus-Que-Parfait)"
+  ],
+  [
+    "tu avais lu",
+    "you had read",
+    "Tu avais lu le journal.",
+    "You had read the newspaper. (Plus-Que-Parfait)"
+  ],
+  [
+    "il/elle/on avait lu",
+    "he/she had read",
+    "Il avait lu une revue.",
+    "He had read a magazine. (Plus-Que-Parfait)"
+  ],
+  [
+    "nous avions lu",
+    "we had read",
+    "Nous avions lu des romans.",
+    "We had read novels. (Plus-Que-Parfait)"
+  ],
+  [
+    "vous aviez lu",
+    "you had read (formal)",
+    "Vous aviez lu des poèmes.",
+    "You had read poems. (Plus-Que-Parfait)"
+  ],
+  [
+    "ils/elles avaient lu",
+    "they had read",
+    "Ils avaient lu des journaux.",
+    "They had read newspapers. (Plus-Que-Parfait)"
+  ],
+  [
+    "j'aurais lu",
+    "I would have read",
+    "J'aurais lu un livre.",
+    "I would have read a book. (Conditionnel Passé)"
+  ],
+  [
+    "tu aurais lu",
+    "you would have read",
+    "Tu aurais lu le journal.",
+    "You would have read the newspaper. (Conditionnel Passé)"
+  ],
+  [
+    "il/elle/on aurait lu",
+    "he/she would have read",
+    "Il aurait lu une revue.",
+    "He would have read a magazine. (Conditionnel Passé)"
+  ],
+  [
+    "nous aurions lu",
+    "we would have read",
+    "Nous aurions lu des romans.",
+    "We would have read novels. (Conditionnel Passé)"
+  ],
+  [
+    "vous auriez lu",
+    "you would have read (formal)",
+    "Vous auriez lu des poèmes.",
+    "You would have read poems. (Conditionnel Passé)"
+  ],
+  [
+    "ils/elles auraient lu",
+    "they would have read",
+    "Ils auraient lu des journaux.",
+    "They would have read newspapers. (Conditionnel Passé)"
+  ],
+  [
+    "lisant",
+    "reading",
+    "En lisant ce livre, j'ai appris beaucoup.",
+    "While reading this book, I learned a lot. (Le participe présent)"
   ]
 ]

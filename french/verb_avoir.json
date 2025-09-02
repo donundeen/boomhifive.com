@@ -1,0 +1,68 @@
+[
+  ["eu", "had", "J'ai eu une bonne idée", "I had a good idea", "Past Participle"],
+  ["ayant", "having", "Ayant faim, il a mangé rapidement", "Being hungry, he ate quickly", "Present Participle"],
+  ["ayant eu", "having had", "Ayant eu cette expérience, elle sait quoi faire", "Having had this experience, she knows what to do", "Perfect Participle"],
+  
+  ["ai", "have", "J'ai un chat", "I have a cat", "je - Present Indicative"],
+  ["as", "have", "Tu as une voiture", "You have a car", "tu - Present Indicative"],
+  ["a", "has", "Il a un chien", "He has a dog", "il/elle/on - Present Indicative"],
+  ["avons", "have", "Nous avons une maison", "We have a house", "nous - Present Indicative"],
+  ["avez", "have", "Vous avez du temps", "You have time", "vous - Present Indicative"],
+  ["ont", "have", "Ils ont des amis", "They have friends", "ils/elles - Present Indicative"],
+  
+  ["aie", "have", "Il faut que j'aie de l'argent", "I need to have money", "je - Subjunctive Present"],
+  ["aies", "have", "Je veux que tu aies confiance", "I want you to have confidence", "tu - Subjunctive Present"],
+  ["ait", "have", "Il faut qu'il ait de la patience", "He needs to have patience", "il/elle/on - Subjunctive Present"],
+  ["ayons", "have", "Il faut que nous ayons du courage", "We need to have courage", "nous - Subjunctive Present"],
+  ["ayez", "have", "Je veux que vous ayez de la chance", "I want you to have luck", "vous - Subjunctive Present"],
+  ["aient", "have", "Il faut qu'ils aient de l'espoir", "They need to have hope", "ils/elles - Subjunctive Present"],
+  
+  ["aurai", "will have", "J'aurai une nouvelle voiture demain", "I will have a new car tomorrow", "je - Simple Future Indicative"],
+  ["auras", "will have", "Tu auras du succès dans ta carrière", "You will have success in your career", "tu - Simple Future Indicative"],
+  ["aura", "will have", "Il aura une grande maison", "He will have a big house", "il/elle/on - Simple Future Indicative"],
+  ["aurons", "will have", "Nous aurons des vacances en été", "We will have vacation in summer", "nous - Simple Future Indicative"],
+  ["aurez", "will have", "Vous aurez du temps libre bientôt", "You will have free time soon", "vous - Simple Future Indicative"],
+  ["auront", "will have", "Ils auront beaucoup d'argent", "They will have a lot of money", "ils/elles - Simple Future Indicative"],
+  
+  ["aurai eu", "will have had", "D'ici la fin de l'année, j'aurai eu mon diplôme", "By the end of the year, I will have had my diploma", "je - Future Perfect"],
+  ["auras eu", "will have had", "Tu auras eu assez d'expérience pour ce poste", "You will have had enough experience for this position", "tu - Future Perfect"],
+  ["aura eu", "will have had", "Il aura eu le temps de réfléchir", "He will have had time to think", "il/elle/on - Future Perfect"],
+  ["aurons eu", "will have had", "Nous aurons eu l'occasion de voyager", "We will have had the opportunity to travel", "nous - Future Perfect"],
+  ["aurez eu", "will have had", "Vous aurez eu une belle vie", "You will have had a beautiful life", "vous - Future Perfect"],
+  ["auront eu", "will have had", "Ils auront eu une carrière réussie", "They will have had a successful career", "ils/elles - Future Perfect"],
+  
+  ["avais", "had", "J'avais un chat quand j'étais enfant", "I had a cat when I was a child", "je - Past Imperfect"],
+  ["avais", "had", "Tu avais toujours raison", "You were always right", "tu - Past Imperfect"],
+  ["avait", "had", "Il avait beaucoup d'amis à l'école", "He had many friends at school", "il/elle/on - Past Imperfect"],
+  ["avions", "had", "Nous avions une belle maison", "We had a beautiful house", "nous - Past Imperfect"],
+  ["aviez", "had", "Vous aviez l'habitude de venir ici", "You used to come here", "vous - Past Imperfect"],
+  ["avaient", "had", "Ils avaient toujours de bonnes idées", "They always had good ideas", "ils/elles - Past Imperfect"],
+  
+  ["ai eu", "have had", "J'ai eu une excellente journée", "I have had an excellent day", "je - Compound Past Indicative (Passé Composé)"],
+  ["as eu", "have had", "Tu as eu de la chance hier", "You had luck yesterday", "tu - Compound Past Indicative (Passé Composé)"],
+  ["a eu", "has had", "Il a eu un accident de voiture", "He has had a car accident", "il/elle/on - Compound Past Indicative (Passé Composé)"],
+  ["avons eu", "have had", "Nous avons eu une réunion importante", "We have had an important meeting", "nous - Compound Past Indicative (Passé Composé)"],
+  ["avez eu", "have had", "Vous avez eu raison de partir", "You were right to leave", "vous - Compound Past Indicative (Passé Composé)"],
+  ["ont eu", "have had", "Ils ont eu une belle soirée", "They have had a nice evening", "ils/elles - Compound Past Indicative (Passé Composé)"],
+  
+  ["aurais", "would have", "J'aurais une voiture si j'avais de l'argent", "I would have a car if I had money", "je - Conditional"],
+  ["aurais", "would have", "Tu aurais du succès si tu travaillais plus", "You would have success if you worked more", "tu - Conditional"],
+  ["aurait", "would have", "Il aurait une belle maison s'il gagnait plus", "He would have a beautiful house if he earned more", "il/elle/on - Conditional"],
+  ["aurions", "would have", "Nous aurions des vacances si nous avions le temps", "We would have vacation if we had time", "nous - Conditional"],
+  ["auriez", "would have", "Vous auriez une belle vie si vous partiez", "You would have a beautiful life if you left", "vous - Conditional"],
+  ["auraient", "would have", "Ils auraient de l'argent s'ils investissaient", "They would have money if they invested", "ils/elles - Conditional"],
+  
+  ["avais eu", "had had", "J'avais eu une voiture avant de la vendre", "I had had a car before selling it", "je - Past Perfect"],
+  ["avais eu", "had had", "Tu avais eu de la chance avant ce problème", "You had had luck before this problem", "tu - Past Perfect"],
+  ["avait eu", "had had", "Il avait eu une belle carrière avant la crise", "He had had a beautiful career before the crisis", "il/elle/on - Past Perfect"],
+  ["avions eu", "had had", "Nous avions eu une belle maison avant le déménagement", "We had had a beautiful house before moving", "nous - Past Perfect"],
+  ["aviez eu", "had had", "Vous aviez eu une bonne situation avant la récession", "You had had a good situation before the recession", "vous - Past Perfect"],
+  ["avaient eu", "had had", "Ils avaient eu beaucoup d'argent avant la faillite", "They had had a lot of money before the bankruptcy", "ils/elles - Past Perfect"],
+  
+  ["aurais eu", "would have had", "J'aurais eu une belle vie si j'étais né plus tôt", "I would have had a beautiful life if I had been born earlier", "je - Past Conditional"],
+  ["aurais eu", "would have had", "Tu aurais eu du succès si tu avais étudié plus", "You would have had success if you had studied more", "tu - Past Conditional"],
+  ["aurait eu", "would have had", "Il aurait eu une belle carrière s'il avait travaillé plus", "He would have had a beautiful career if he had worked more", "il/elle/on - Past Conditional"],
+  ["aurions eu", "would have had", "Nous aurions eu des vacances si nous avions eu le temps", "We would have had vacation if we had had time", "nous - Past Conditional"],
+  ["auriez eu", "would have had", "Vous auriez eu une belle maison si vous aviez eu l'argent", "You would have had a beautiful house if you had had money", "vous - Past Conditional"],
+  ["auraient eu", "would have had", "Ils auraient eu une belle vie s'ils avaient fait de bons choix", "They would have had a beautiful life if they had made good choices", "ils/elles - Past Conditional"]
+]
