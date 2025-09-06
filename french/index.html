@@ -1024,7 +1024,7 @@
                         // [frenchPhrase, englishPhrase]
                         textToSpeak = card[1]; // Use English phrase
                     }
-                    voice = 'US English Female';
+                    voice = 'UK English Female';
                 }
 
                 // Remove text within parentheses before speaking
@@ -1079,15 +1079,52 @@
                 try {
                     console.log('Calling responsiveVoice.speak with:', textToSpeak, voice);
                     
-                    // Try different voice selection methods
+                    // For English, try using Web Speech API directly as fallback
                     if (language === 'english') {
-                        // Try with a more specific voice selection
-                        responsiveVoice.speak(textToSpeak, 'UK English Female', options);
+                        console.log('Trying Web Speech API directly for English');
+                        this.speakWithWebSpeechAPI(textToSpeak, button, language);
                     } else {
                         responsiveVoice.speak(textToSpeak, voice, options);
                     }
                 } catch (error) {
                     console.error('Error starting ResponsiveVoice:', error);
+                    this.handleResponsiveVoiceError(button, language, error.message);
+                }
+            }
+
+            speakWithWebSpeechAPI(textToSpeak, button, language) {
+                console.log('Using Web Speech API for English:', textToSpeak);
+                
+                // Cancel any existing speech
+                window.speechSynthesis.cancel();
+                
+                // Create utterance
+                const utterance = new SpeechSynthesisUtterance(textToSpeak);
+                utterance.lang = 'en-US';
+                utterance.rate = 0.8;
+                utterance.pitch = 1.0;
+                utterance.volume = 1.0;
+                
+                // Set up event handlers
+                utterance.onstart = () => {
+                    console.log('Web Speech API started for English');
+                };
+                
+                utterance.onend = () => {
+                    console.log('Web Speech API ended for English');
+                    this.handleResponsiveVoiceEnd(button, language);
+                };
+                
+                utterance.onerror = (error) => {
+                    console.error('Web Speech API error for English:', error);
+                    this.handleResponsiveVoiceError(button, language, error.error);
+                };
+                
+                // Speak
+                try {
+                    window.speechSynthesis.speak(utterance);
+                } catch (error) {
+                    console.error('Error with Web Speech API:', error);
                     this.handleResponsiveVoiceError(button, language, error.message);
                 }
             }
