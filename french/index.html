@@ -974,6 +974,22 @@
                 return text.replace(/\([^)]*\)/g, '').trim();
             }
 
+            checkAvailableVoices() {
+                if (typeof responsiveVoice !== 'undefined') {
+                    console.log('Available ResponsiveVoice voices:');
+                    console.log(responsiveVoice.getVoices());
+                    
+                    // Also try to get voices using the standard Web Speech API for comparison
+                    if ('speechSynthesis' in window) {
+                        console.log('Web Speech API voices:');
+                        const voices = window.speechSynthesis.getVoices();
+                        console.log(voices.map(v => ({ name: v.name, lang: v.lang })));
+                    }
+                } else {
+                    console.log('ResponsiveVoice not loaded');
+                }
+            }
+
             speakText(language = 'french') {
                 if (this.currentCard === null) return;
 
@@ -1020,6 +1036,10 @@
                 console.log('Button:', button);
 
                 if (textToSpeak && typeof responsiveVoice !== 'undefined') {
+                    // Check available voices for debugging
+                    if (language === 'english') {
+                        this.checkAvailableVoices();
+                    }
                     this.speakWithResponsiveVoice(textToSpeak, voice, button, language);
                 } else {
                     // Fallback for browsers without ResponsiveVoice
@@ -1133,6 +1153,11 @@
             const app = new FlashcardApp();
             // Hide Learn More link initially
             app.hideLearnMoreLink();
+            
+            // Check available voices after a short delay to ensure ResponsiveVoice is loaded
+            setTimeout(() => {
+                app.checkAvailableVoices();
+            }, 1000);
         });
     </script>
 </body>
