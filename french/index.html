@@ -968,6 +968,12 @@
                 }
             }
 
+            removeParentheses(text) {
+                if (!text) return text;
+                // Remove text within parentheses, including the parentheses themselves
+                return text.replace(/\([^)]*\)/g, '').trim();
+            }
+
             speakText(language = 'french') {
                 if (this.currentCard === null) return;
 
@@ -1004,6 +1010,9 @@
                     }
                     voice = 'US English Female';
                 }
+
+                // Remove text within parentheses before speaking
+                textToSpeak = this.removeParentheses(textToSpeak);
 
                 if (textToSpeak && typeof responsiveVoice !== 'undefined') {
                     this.speakWithResponsiveVoice(textToSpeak, voice, button, language);
