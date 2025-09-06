@@ -587,7 +587,8 @@
                 
                 // Speech synthesis state
                 this.isSpeaking = false;
-                this.speechQueue = [];
+                this.currentUtterance = null;
+                this.speechTimeout = null;
 
                 this.initializeElements();
                 this.bindEvents();
@@ -1072,6 +1073,11 @@
                     utterance.rate = 0.8;
                     utterance.pitch = 1.0;
                     utterance.volume = 1.0;
+                    
+                    // Use local service for better reliability and privacy
+                    if ('localService' in utterance) {
+                        utterance.localService = true;
+                    }
 
                     // Set up timeout
                     const timeout = setTimeout(() => {
