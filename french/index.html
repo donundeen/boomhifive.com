@@ -1078,14 +1078,17 @@
                 // Speak the text
                 try {
                     console.log('Calling responsiveVoice.speak with:', textToSpeak, voice);
+                    responsiveVoice.speak(textToSpeak, voice, options);
                     
                     // For English, try using Web Speech API directly as fallback
+                    /*
                     if (language === 'english') {
                         console.log('Trying Web Speech API directly for English');
                         this.speakWithWebSpeechAPI(textToSpeak, button, language);
                     } else {
                         responsiveVoice.speak(textToSpeak, voice, options);
                     }
+                        */
                 } catch (error) {
                     console.error('Error starting ResponsiveVoice:', error);
                     this.handleResponsiveVoiceError(button, language, error.message);
