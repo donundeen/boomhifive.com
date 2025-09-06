@@ -1077,7 +1077,7 @@
 
                 // Speak the text
                 try {
-                    console.log('Calling responsiveVoice.speak with:', textToSpeak, voice);
+                    console.log('Calling responsiveVoice.speak with:', textToSpeak, voice, options);
                     responsiveVoice.speak(textToSpeak, voice, options);
                     
                     // For English, try using Web Speech API directly as fallback
