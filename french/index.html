@@ -1008,11 +1008,16 @@
                         // [frenchPhrase, englishPhrase]
                         textToSpeak = card[1]; // Use English phrase
                     }
-                    voice = 'US English Female';
+                    voice = 'English Female';
                 }
 
                 // Remove text within parentheses before speaking
                 textToSpeak = this.removeParentheses(textToSpeak);
+
+                // Debug logging
+                console.log(`Speaking ${language}:`, textToSpeak);
+                console.log('Voice:', voice);
+                console.log('Button:', button);
 
                 if (textToSpeak && typeof responsiveVoice !== 'undefined') {
                     this.speakWithResponsiveVoice(textToSpeak, voice, button, language);
@@ -1023,6 +1028,8 @@
             }
 
             speakWithResponsiveVoice(textToSpeak, voice, button, language) {
+                console.log('speakWithResponsiveVoice called with:', { textToSpeak, voice, language });
+                
                 // Disable the button while speaking and show force stop
                 button.disabled = true;
                 button.textContent = '🔊 Speaking...';
@@ -1032,14 +1039,14 @@
                 // Configure ResponsiveVoice options
                 const options = {
                     onstart: () => {
-                        console.log('ResponsiveVoice speech started');
+                        console.log('ResponsiveVoice speech started for', language);
                     },
                     onend: () => {
-                        console.log('ResponsiveVoice speech ended');
+                        console.log('ResponsiveVoice speech ended for', language);
                         this.handleResponsiveVoiceEnd(button, language);
                     },
                     onerror: (error) => {
-                        console.error('ResponsiveVoice error:', error);
+                        console.error('ResponsiveVoice error for', language, ':', error);
                         this.handleResponsiveVoiceError(button, language, error);
                     },
                     rate: 0.8,
@@ -1049,6 +1056,7 @@
 
                 // Speak the text
                 try {
+                    console.log('Calling responsiveVoice.speak with:', textToSpeak, voice);
                     responsiveVoice.speak(textToSpeak, voice, options);
                 } catch (error) {
                     console.error('Error starting ResponsiveVoice:', error);
