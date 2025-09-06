@@ -587,8 +587,7 @@
                 
                 // Speech synthesis state
                 this.isSpeaking = false;
-                this.currentUtterance = null;
-                this.speechTimeout = null;
+                this.speechQueue = [];
 
                 this.initializeElements();
                 this.bindEvents();
