@@ -482,6 +482,7 @@
             <div class="learn-more-container">
                 <button id="speakBtn" class="speak-btn">🔊 Speak French</button>
                 <button id="speakEnglishBtn" class="speak-btn">🔊 Speak English</button>
+                <button id="forceStopBtn" class="speak-btn" style="display: none; background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);">⏹️ Force Stop</button>
                 <button id="hideTextBtn" class="speak-btn">👁️ Hide Text</button>
                 <button id="showTextBtn" class="speak-btn" style="display: none;">👁️ Show Text</button>
                 <a href="#" id="learnMoreLink" target="_blank" class="learn-more-link">Learn More</a>
@@ -583,6 +584,11 @@
                 this.currentSide = 'french';
                 this.cardHistory = [];
                 this.historyIndex = -1;
+                
+                // Speech synthesis state
+                this.isSpeaking = false;
+                this.currentUtterance = null;
+                this.speechTimeout = null;
 
                 this.initializeElements();
                 this.bindEvents();
@@ -605,6 +611,7 @@
                 this.learnMoreLink = document.getElementById('learnMoreLink');
                 this.speakBtn = document.getElementById('speakBtn');
                 this.speakEnglishBtn = document.getElementById('speakEnglishBtn');
+                this.forceStopBtn = document.getElementById('forceStopBtn');
                 this.hideTextBtn = document.getElementById('hideTextBtn');
                 this.showTextBtn = document.getElementById('showTextBtn');
             }
@@ -615,6 +622,7 @@
                 this.flashcard.addEventListener('click', () => this.flipCard());
                 this.speakBtn.addEventListener('click', () => this.speakText('french'));
                 this.speakEnglishBtn.addEventListener('click', () => this.speakText('english'));
+                this.forceStopBtn.addEventListener('click', () => this.forceStopSpeech());
                 this.hideTextBtn.addEventListener('click', () => this.hideText());
                 this.showTextBtn.addEventListener('click', () => this.showText());
                 document.addEventListener('keydown', (e) => this.handleKeyPress(e));
@@ -964,6 +972,12 @@
             speakText(language = 'french') {
                 if (this.currentCard === null) return;
 
+                // Prevent multiple simultaneous speech requests
+                if (this.isSpeaking) {
+                    this.forceStopSpeech();
+                    return;
+                }
+
                 const card = this.cards[this.currentCard];
                 let textToSpeak = '';
                 let lang = '';
@@ -999,36 +1013,107 @@
                 }
 
                 if (textToSpeak && 'speechSynthesis' in window) {
-                    // Cancel any ongoing speech
+                    // Cancel any ongoing speech and wait a moment
                     window.speechSynthesis.cancel();
-
-                    // Create speech utterance
-                    const utterance = new SpeechSynthesisUtterance(textToSpeak);
-                    utterance.lang = lang;
-                    utterance.rate = 0.8; // Slightly slower for better pronunciation
-                    utterance.pitch = 1.0;
-
-                    // Disable the button while speaking
-                    button.disabled = true;
-                    button.textContent = '🔊 Speaking...';
-
-                    // Re-enable the button when speech ends
-                    utterance.onend = () => {
-                        button.disabled = false;
-                        button.textContent = language === 'french' ? '🔊 Speak French' : '🔊 Speak English';
-                    };
-
-                    utterance.onerror = () => {
-                        button.disabled = false;
-                        button.textContent = language === 'french' ? '🔊 Speak French' : '🔊 Speak English';
-                    };
-
-                    // Speak the text
-                    window.speechSynthesis.speak(utterance);
+                    
+                    // Wait for cancellation to complete
+                    setTimeout(() => {
+                        this.startSpeech(textToSpeak, lang, button, language);
+                    }, 100);
                 } else {
                     // Fallback for browsers without speech synthesis
                     alert('Speech synthesis is not supported in this browser.');
                 }
+            }
+
+            startSpeech(textToSpeak, lang, button, language) {
+                // Set speaking state
+                this.isSpeaking = true;
+                this.currentUtterance = null;
+                this.speechTimeout = null;
+
+                // Create speech utterance
+                const utterance = new SpeechSynthesisUtterance(textToSpeak);
+                utterance.lang = lang;
+                utterance.rate = 0.8; // Slightly slower for better pronunciation
+                utterance.pitch = 1.0;
+
+                // Store reference for force stop
+                this.currentUtterance = utterance;
+
+                // Disable the button while speaking and show force stop
+                button.disabled = true;
+                button.textContent = '🔊 Speaking...';
+                this.forceStopBtn.style.display = 'inline-block';
+
+                // Set up timeout to prevent hanging (30 seconds max)
+                this.speechTimeout = setTimeout(() => {
+                    console.warn('Speech timeout - forcing stop');
+                    this.forceStopSpeech();
+                }, 30000);
+
+                // Re-enable the button when speech ends
+                utterance.onend = () => {
+                    this.resetSpeechState(button, language);
+                };
+
+                utterance.onerror = (event) => {
+                    console.error('Speech error:', event.error);
+                    this.resetSpeechState(button, language);
+                };
+
+                utterance.onstart = () => {
+                    console.log('Speech started');
+                };
+
+                // Speak the text
+                try {
+                    window.speechSynthesis.speak(utterance);
+                } catch (error) {
+                    console.error('Error starting speech:', error);
+                    this.resetSpeechState(button, language);
+                }
+            }
+
+            resetSpeechState(button, language) {
+                // Clear timeout
+                if (this.speechTimeout) {
+                    clearTimeout(this.speechTimeout);
+                    this.speechTimeout = null;
+                }
+
+                // Reset state
+                this.isSpeaking = false;
+                this.currentUtterance = null;
+
+                // Re-enable button and hide force stop
+                button.disabled = false;
+                button.textContent = language === 'french' ? '🔊 Speak French' : '🔊 Speak English';
+                this.forceStopBtn.style.display = 'none';
+            }
+
+            forceStopSpeech() {
+                console.log('Force stopping speech');
+                
+                // Clear timeout
+                if (this.speechTimeout) {
+                    clearTimeout(this.speechTimeout);
+                    this.speechTimeout = null;
+                }
+
+                // Cancel speech synthesis
+                window.speechSynthesis.cancel();
+
+                // Reset all speech buttons
+                this.speakBtn.disabled = false;
+                this.speakBtn.textContent = '🔊 Speak French';
+                this.speakEnglishBtn.disabled = false;
+                this.speakEnglishBtn.textContent = '🔊 Speak English';
+                this.forceStopBtn.style.display = 'none';
+
+                // Reset state
+                this.isSpeaking = false;
+                this.currentUtterance = null;
             }
 
             hideText() {
