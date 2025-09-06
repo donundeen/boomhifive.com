@@ -587,8 +587,7 @@
                 
                 // Speech synthesis state
                 this.isSpeaking = false;
-                this.currentUtterance = null;
-                this.speechTimeout = null;
+                this.speechQueue = [];
 
                 this.initializeElements();
                 this.bindEvents();
@@ -972,12 +971,6 @@
             speakText(language = 'french') {
                 if (this.currentCard === null) return;
 
-                // Prevent multiple simultaneous speech requests
-                if (this.isSpeaking) {
-                    this.forceStopSpeech();
-                    return;
-                }
-
                 const card = this.cards[this.currentCard];
                 let textToSpeak = '';
                 let lang = '';
@@ -1013,107 +1006,181 @@
                 }
 
                 if (textToSpeak && 'speechSynthesis' in window) {
-                    // Cancel any ongoing speech and wait a moment
-                    window.speechSynthesis.cancel();
-                    
-                    // Wait for cancellation to complete
-                    setTimeout(() => {
-                        this.startSpeech(textToSpeak, lang, button, language);
-                    }, 100);
+                    // Add to speech queue
+                    this.addToSpeechQueue(textToSpeak, lang, button, language);
                 } else {
                     // Fallback for browsers without speech synthesis
                     alert('Speech synthesis is not supported in this browser.');
                 }
             }
 
-            startSpeech(textToSpeak, lang, button, language) {
-                // Set speaking state
+            addToSpeechQueue(textToSpeak, lang, button, language) {
+                // Add to queue
+                this.speechQueue.push({ textToSpeak, lang, button, language });
+                
+                // If not currently speaking, start processing queue
+                if (!this.isSpeaking) {
+                    this.processSpeechQueue();
+                }
+            }
+
+            processSpeechQueue() {
+                if (this.speechQueue.length === 0) {
+                    this.isSpeaking = false;
+                    return;
+                }
+
+                const { textToSpeak, lang, button, language } = this.speechQueue.shift();
                 this.isSpeaking = true;
-                this.currentUtterance = null;
-                this.speechTimeout = null;
-
-                // Create speech utterance
-                const utterance = new SpeechSynthesisUtterance(textToSpeak);
-                utterance.lang = lang;
-                utterance.rate = 0.8; // Slightly slower for better pronunciation
-                utterance.pitch = 1.0;
-
-                // Store reference for force stop
-                this.currentUtterance = utterance;
 
                 // Disable the button while speaking and show force stop
                 button.disabled = true;
                 button.textContent = '🔊 Speaking...';
                 this.forceStopBtn.style.display = 'inline-block';
 
-                // Set up timeout to prevent hanging (30 seconds max)
-                this.speechTimeout = setTimeout(() => {
-                    console.warn('Speech timeout - forcing stop');
-                    this.forceStopSpeech();
-                }, 30000);
+                // Wait for voices to be loaded
+                this.waitForVoices(() => {
+                    this.speakWithRetry(textToSpeak, lang, button, language);
+                });
+            }
 
-                // Re-enable the button when speech ends
-                utterance.onend = () => {
-                    this.resetSpeechState(button, language);
-                };
-
-                utterance.onerror = (event) => {
-                    console.error('Speech error:', event.error);
-                    this.resetSpeechState(button, language);
-                };
-
-                utterance.onstart = () => {
-                    console.log('Speech started');
-                };
-
-                // Speak the text
-                try {
-                    window.speechSynthesis.speak(utterance);
-                } catch (error) {
-                    console.error('Error starting speech:', error);
-                    this.resetSpeechState(button, language);
+            waitForVoices(callback) {
+                const voices = window.speechSynthesis.getVoices();
+                if (voices.length > 0) {
+                    callback();
+                } else {
+                    // Wait for voices to load
+                    window.speechSynthesis.onvoiceschanged = () => {
+                        window.speechSynthesis.onvoiceschanged = null;
+                        callback();
+                    };
+                    // Fallback timeout
+                    setTimeout(callback, 1000);
                 }
             }
 
-            resetSpeechState(button, language) {
-                // Clear timeout
-                if (this.speechTimeout) {
-                    clearTimeout(this.speechTimeout);
-                    this.speechTimeout = null;
-                }
+            speakWithRetry(textToSpeak, lang, button, language, retryCount = 0) {
+                const maxRetries = 3;
+                
+                // Cancel any existing speech
+                window.speechSynthesis.cancel();
+                
+                // Wait a moment for cancellation
+                setTimeout(() => {
+                    const utterance = new SpeechSynthesisUtterance(textToSpeak);
+                    utterance.lang = lang;
+                    utterance.rate = 0.8;
+                    utterance.pitch = 1.0;
+                    utterance.volume = 1.0;
 
-                // Reset state
-                this.isSpeaking = false;
-                this.currentUtterance = null;
+                    // Set up timeout
+                    const timeout = setTimeout(() => {
+                        console.warn('Speech timeout - retrying');
+                        if (retryCount < maxRetries) {
+                            this.speakWithRetry(textToSpeak, lang, button, language, retryCount + 1);
+                        } else {
+                            this.handleSpeechError(button, language, 'Timeout after retries');
+                        }
+                    }, 5000);
 
+                    utterance.onstart = () => {
+                        console.log('Speech started successfully');
+                        clearTimeout(timeout);
+                    };
+
+                    utterance.onend = () => {
+                        console.log('Speech ended');
+                        clearTimeout(timeout);
+                        this.handleSpeechEnd(button, language);
+                    };
+
+                    utterance.onerror = (event) => {
+                        console.error('Speech error:', event.error);
+                        clearTimeout(timeout);
+                        
+                        if (retryCount < maxRetries && event.error !== 'not-allowed') {
+                            console.log(`Retrying speech (${retryCount + 1}/${maxRetries})`);
+                            setTimeout(() => {
+                                this.speakWithRetry(textToSpeak, lang, button, language, retryCount + 1);
+                            }, 500);
+                        } else {
+                            this.handleSpeechError(button, language, event.error);
+                        }
+                    };
+
+                    // Try to speak
+                    try {
+                        window.speechSynthesis.speak(utterance);
+                    } catch (error) {
+                        console.error('Error starting speech:', error);
+                        clearTimeout(timeout);
+                        if (retryCount < maxRetries) {
+                            setTimeout(() => {
+                                this.speakWithRetry(textToSpeak, lang, button, language, retryCount + 1);
+                            }, 500);
+                        } else {
+                            this.handleSpeechError(button, language, error.message);
+                        }
+                    }
+                }, 100);
+            }
+
+            handleSpeechEnd(button, language) {
                 // Re-enable button and hide force stop
                 button.disabled = false;
                 button.textContent = language === 'french' ? '🔊 Speak French' : '🔊 Speak English';
                 this.forceStopBtn.style.display = 'none';
+
+                // Process next item in queue
+                setTimeout(() => {
+                    this.processSpeechQueue();
+                }, 100);
+            }
+
+            handleSpeechError(button, language, error) {
+                console.error('Speech failed:', error);
+                
+                // Re-enable button and hide force stop
+                button.disabled = false;
+                button.textContent = language === 'french' ? '🔊 Speak French' : '🔊 Speak English';
+                this.forceStopBtn.style.display = 'none';
+
+                // Show error message
+                const originalText = button.textContent;
+                button.textContent = '❌ Failed';
+                button.style.background = 'linear-gradient(135deg, #dc3545 0%, #c82333 100%)';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '';
+                }, 2000);
+
+                // Process next item in queue
+                setTimeout(() => {
+                    this.processSpeechQueue();
+                }, 100);
             }
 
             forceStopSpeech() {
                 console.log('Force stopping speech');
                 
-                // Clear timeout
-                if (this.speechTimeout) {
-                    clearTimeout(this.speechTimeout);
-                    this.speechTimeout = null;
-                }
-
+                // Clear queue
+                this.speechQueue = [];
+                
                 // Cancel speech synthesis
                 window.speechSynthesis.cancel();
 
                 // Reset all speech buttons
                 this.speakBtn.disabled = false;
                 this.speakBtn.textContent = '🔊 Speak French';
+                this.speakBtn.style.background = '';
                 this.speakEnglishBtn.disabled = false;
                 this.speakEnglishBtn.textContent = '🔊 Speak English';
+                this.speakEnglishBtn.style.background = '';
                 this.forceStopBtn.style.display = 'none';
 
                 // Reset state
                 this.isSpeaking = false;
-                this.currentUtterance = null;
             }
 
             hideText() {
