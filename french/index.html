@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>French Learning Flashcards</title>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=zPY6ttoC"></script>
     <style>
         * {
             margin: 0;
@@ -587,7 +588,6 @@
                 
                 // Speech synthesis state
                 this.isSpeaking = false;
-                this.speechQueue = [];
 
                 this.initializeElements();
                 this.bindEvents();
@@ -973,7 +973,7 @@
 
                 const card = this.cards[this.currentCard];
                 let textToSpeak = '';
-                let lang = '';
+                let voice = '';
                 let button = null;
 
                 // Get the text based on language and card format
@@ -989,7 +989,7 @@
                         // [frenchPhrase, englishPhrase]
                         textToSpeak = card[0]; // Use French phrase
                     }
-                    lang = 'fr-FR';
+                    voice = 'French Female';
                 } else if (language === 'english') {
                     button = this.speakEnglishBtn;
                     if (card.length === 5) {
@@ -1002,153 +1002,67 @@
                         // [frenchPhrase, englishPhrase]
                         textToSpeak = card[1]; // Use English phrase
                     }
-                    lang = 'en-US';
+                    voice = 'US English Female';
                 }
 
-                if (textToSpeak && 'speechSynthesis' in window) {
-                    // Add to speech queue
-                    this.addToSpeechQueue(textToSpeak, lang, button, language);
+                if (textToSpeak && typeof responsiveVoice !== 'undefined') {
+                    this.speakWithResponsiveVoice(textToSpeak, voice, button, language);
                 } else {
-                    // Fallback for browsers without speech synthesis
-                    alert('Speech synthesis is not supported in this browser.');
+                    // Fallback for browsers without ResponsiveVoice
+                    alert('Text-to-speech is not available. Please check your internet connection.');
                 }
             }
 
-            addToSpeechQueue(textToSpeak, lang, button, language) {
-                // Add to queue
-                this.speechQueue.push({ textToSpeak, lang, button, language });
-                
-                // If not currently speaking, start processing queue
-                if (!this.isSpeaking) {
-                    this.processSpeechQueue();
-                }
-            }
-
-            processSpeechQueue() {
-                if (this.speechQueue.length === 0) {
-                    this.isSpeaking = false;
-                    return;
-                }
-
-                const { textToSpeak, lang, button, language } = this.speechQueue.shift();
-                this.isSpeaking = true;
-
+            speakWithResponsiveVoice(textToSpeak, voice, button, language) {
                 // Disable the button while speaking and show force stop
                 button.disabled = true;
                 button.textContent = '🔊 Speaking...';
                 this.forceStopBtn.style.display = 'inline-block';
+                this.isSpeaking = true;
 
-                // Wait for voices to be loaded
-                this.waitForVoices(() => {
-                    this.speakWithRetry(textToSpeak, lang, button, language);
-                });
-            }
+                // Configure ResponsiveVoice options
+                const options = {
+                    onstart: () => {
+                        console.log('ResponsiveVoice speech started');
+                    },
+                    onend: () => {
+                        console.log('ResponsiveVoice speech ended');
+                        this.handleResponsiveVoiceEnd(button, language);
+                    },
+                    onerror: (error) => {
+                        console.error('ResponsiveVoice error:', error);
+                        this.handleResponsiveVoiceError(button, language, error);
+                    },
+                    rate: 0.8,
+                    pitch: 1.0,
+                    volume: 1.0
+                };
 
-            waitForVoices(callback) {
-                const voices = window.speechSynthesis.getVoices();
-                if (voices.length > 0) {
-                    callback();
-                } else {
-                    // Wait for voices to load
-                    window.speechSynthesis.onvoiceschanged = () => {
-                        window.speechSynthesis.onvoiceschanged = null;
-                        callback();
-                    };
-                    // Fallback timeout
-                    setTimeout(callback, 1000);
+                // Speak the text
+                try {
+                    responsiveVoice.speak(textToSpeak, voice, options);
+                } catch (error) {
+                    console.error('Error starting ResponsiveVoice:', error);
+                    this.handleResponsiveVoiceError(button, language, error.message);
                 }
             }
 
-            speakWithRetry(textToSpeak, lang, button, language, retryCount = 0) {
-                const maxRetries = 3;
-                
-                // Cancel any existing speech
-                window.speechSynthesis.cancel();
-                
-                // Wait a moment for cancellation
-                setTimeout(() => {
-                    const utterance = new SpeechSynthesisUtterance(textToSpeak);
-                    utterance.lang = lang;
-                    utterance.rate = 0.8;
-                    utterance.pitch = 1.0;
-                    utterance.volume = 1.0;
-                    
-                    // Use local service for better reliability and privacy
-                    if ('localService' in utterance) {
-                        utterance.localService = true;
-                    }
-
-                    // Set up timeout
-                    const timeout = setTimeout(() => {
-                        console.warn('Speech timeout - retrying');
-                        if (retryCount < maxRetries) {
-                            this.speakWithRetry(textToSpeak, lang, button, language, retryCount + 1);
-                        } else {
-                            this.handleSpeechError(button, language, 'Timeout after retries');
-                        }
-                    }, 5000);
-
-                    utterance.onstart = () => {
-                        console.log('Speech started successfully');
-                        clearTimeout(timeout);
-                    };
-
-                    utterance.onend = () => {
-                        console.log('Speech ended');
-                        clearTimeout(timeout);
-                        this.handleSpeechEnd(button, language);
-                    };
-
-                    utterance.onerror = (event) => {
-                        console.error('Speech error:', event.error);
-                        clearTimeout(timeout);
-                        
-                        if (retryCount < maxRetries && event.error !== 'not-allowed') {
-                            console.log(`Retrying speech (${retryCount + 1}/${maxRetries})`);
-                            setTimeout(() => {
-                                this.speakWithRetry(textToSpeak, lang, button, language, retryCount + 1);
-                            }, 500);
-                        } else {
-                            this.handleSpeechError(button, language, event.error);
-                        }
-                    };
-
-                    // Try to speak
-                    try {
-                        window.speechSynthesis.speak(utterance);
-                    } catch (error) {
-                        console.error('Error starting speech:', error);
-                        clearTimeout(timeout);
-                        if (retryCount < maxRetries) {
-                            setTimeout(() => {
-                                this.speakWithRetry(textToSpeak, lang, button, language, retryCount + 1);
-                            }, 500);
-                        } else {
-                            this.handleSpeechError(button, language, error.message);
-                        }
-                    }
-                }, 100);
-            }
-
-            handleSpeechEnd(button, language) {
+            handleResponsiveVoiceEnd(button, language) {
                 // Re-enable button and hide force stop
                 button.disabled = false;
                 button.textContent = language === 'french' ? '🔊 Speak French' : '🔊 Speak English';
                 this.forceStopBtn.style.display = 'none';
-
-                // Process next item in queue
-                setTimeout(() => {
-                    this.processSpeechQueue();
-                }, 100);
+                this.isSpeaking = false;
             }
 
-            handleSpeechError(button, language, error) {
-                console.error('Speech failed:', error);
+            handleResponsiveVoiceError(button, language, error) {
+                console.error('ResponsiveVoice failed:', error);
                 
                 // Re-enable button and hide force stop
                 button.disabled = false;
                 button.textContent = language === 'french' ? '🔊 Speak French' : '🔊 Speak English';
                 this.forceStopBtn.style.display = 'none';
+                this.isSpeaking = false;
 
                 // Show error message
                 const originalText = button.textContent;
@@ -1159,21 +1073,13 @@
                     button.textContent = originalText;
                     button.style.background = '';
                 }, 2000);
-
-                // Process next item in queue
-                setTimeout(() => {
-                    this.processSpeechQueue();
-                }, 100);
             }
 
             forceStopSpeech() {
-                console.log('Force stopping speech');
+                console.log('Force stopping ResponsiveVoice speech');
                 
-                // Clear queue
-                this.speechQueue = [];
-                
-                // Cancel speech synthesis
-                window.speechSynthesis.cancel();
+                // Stop ResponsiveVoice
+                responsiveVoice.cancel();
 
                 // Reset all speech buttons
                 this.speakBtn.disabled = false;
