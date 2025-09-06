@@ -480,7 +480,10 @@
                 </div>
             </div>
             <div class="learn-more-container">
-                <button id="speakBtn" class="speak-btn">🔊 Speak</button>
+                <button id="speakBtn" class="speak-btn">🔊 Speak French</button>
+                <button id="speakEnglishBtn" class="speak-btn">🔊 Speak English</button>
+                <button id="hideTextBtn" class="speak-btn">👁️ Hide Text</button>
+                <button id="showTextBtn" class="speak-btn" style="display: none;">👁️ Show Text</button>
                 <a href="#" id="learnMoreLink" target="_blank" class="learn-more-link">Learn More</a>
             </div>
         </div>
@@ -601,13 +604,19 @@
                 this.correctCardsEl = document.getElementById('correctCards');
                 this.learnMoreLink = document.getElementById('learnMoreLink');
                 this.speakBtn = document.getElementById('speakBtn');
+                this.speakEnglishBtn = document.getElementById('speakEnglishBtn');
+                this.hideTextBtn = document.getElementById('hideTextBtn');
+                this.showTextBtn = document.getElementById('showTextBtn');
             }
 
             bindEvents() {
                 this.fileSelect.addEventListener('change', () => this.loadCards());
                 this.sideSelect.addEventListener('change', () => this.updateCurrentSide());
                 this.flashcard.addEventListener('click', () => this.flipCard());
-                this.speakBtn.addEventListener('click', () => this.speakText());
+                this.speakBtn.addEventListener('click', () => this.speakText('french'));
+                this.speakEnglishBtn.addEventListener('click', () => this.speakText('english'));
+                this.hideTextBtn.addEventListener('click', () => this.hideText());
+                this.showTextBtn.addEventListener('click', () => this.showText());
                 document.addEventListener('keydown', (e) => this.handleKeyPress(e));
                 document.getElementById('resetScoreBtn').addEventListener('click', () => this.resetScore());
                 
@@ -863,7 +872,7 @@
                     case 's':
                     case 'S':
                         event.preventDefault();
-                        this.speakText();
+                        this.speakText('french');
                         break;
                 }
             }
@@ -886,7 +895,7 @@
                         this.markAsIncorrect();
                         break;
                     case 'speak':
-                        this.speakText();
+                        this.speakText('french');
                         break;
                 }
             }
@@ -952,47 +961,66 @@
                 }
             }
 
-            speakText() {
+            speakText(language = 'french') {
                 if (this.currentCard === null) return;
 
                 const card = this.cards[this.currentCard];
-                let frenchText = '';
+                let textToSpeak = '';
+                let lang = '';
+                let button = null;
 
-                // Get the French text based on card format
-                if (card.length === 5) {
-                    // [frenchWord, englishWord, frenchExample, englishExample, grammarInfo]
-                    frenchText = card[2] || card[0]; // Use French example if available, otherwise French word
-                } else if (card.length === 4) {
-                    // [frenchWord, englishWord, frenchExample, englishExample]
-                    frenchText = card[2] || card[0]; // Use French example if available, otherwise French word
-                } else if (card.length === 2) {
-                    // [frenchPhrase, englishPhrase]
-                    frenchText = card[0]; // Use French phrase
+                // Get the text based on language and card format
+                if (language === 'french') {
+                    button = this.speakBtn;
+                    if (card.length === 5) {
+                        // [frenchWord, englishWord, frenchExample, englishExample, grammarInfo]
+                        textToSpeak = card[2] || card[0]; // Use French example if available, otherwise French word
+                    } else if (card.length === 4) {
+                        // [frenchWord, englishWord, frenchExample, englishExample]
+                        textToSpeak = card[2] || card[0]; // Use French example if available, otherwise French word
+                    } else if (card.length === 2) {
+                        // [frenchPhrase, englishPhrase]
+                        textToSpeak = card[0]; // Use French phrase
+                    }
+                    lang = 'fr-FR';
+                } else if (language === 'english') {
+                    button = this.speakEnglishBtn;
+                    if (card.length === 5) {
+                        // [frenchWord, englishWord, frenchExample, englishExample, grammarInfo]
+                        textToSpeak = card[3] || card[1]; // Use English example if available, otherwise English word
+                    } else if (card.length === 4) {
+                        // [frenchWord, englishWord, frenchExample, englishExample]
+                        textToSpeak = card[3] || card[1]; // Use English example if available, otherwise English word
+                    } else if (card.length === 2) {
+                        // [frenchPhrase, englishPhrase]
+                        textToSpeak = card[1]; // Use English phrase
+                    }
+                    lang = 'en-US';
                 }
 
-                if (frenchText && 'speechSynthesis' in window) {
+                if (textToSpeak && 'speechSynthesis' in window) {
                     // Cancel any ongoing speech
                     window.speechSynthesis.cancel();
 
                     // Create speech utterance
-                    const utterance = new SpeechSynthesisUtterance(frenchText);
-                    utterance.lang = 'fr-FR';
+                    const utterance = new SpeechSynthesisUtterance(textToSpeak);
+                    utterance.lang = lang;
                     utterance.rate = 0.8; // Slightly slower for better pronunciation
                     utterance.pitch = 1.0;
 
                     // Disable the button while speaking
-                    this.speakBtn.disabled = true;
-                    this.speakBtn.textContent = '🔊 Speaking...';
+                    button.disabled = true;
+                    button.textContent = '🔊 Speaking...';
 
                     // Re-enable the button when speech ends
                     utterance.onend = () => {
-                        this.speakBtn.disabled = false;
-                        this.speakBtn.textContent = '🔊 Speak';
+                        button.disabled = false;
+                        button.textContent = language === 'french' ? '🔊 Speak French' : '🔊 Speak English';
                     };
 
                     utterance.onerror = () => {
-                        this.speakBtn.disabled = false;
-                        this.speakBtn.textContent = '🔊 Speak';
+                        button.disabled = false;
+                        button.textContent = language === 'french' ? '🔊 Speak French' : '🔊 Speak English';
                     };
 
                     // Speak the text
@@ -1001,6 +1029,22 @@
                     // Fallback for browsers without speech synthesis
                     alert('Speech synthesis is not supported in this browser.');
                 }
+            }
+
+            hideText() {
+                // Hide the flashcard content
+                this.flashcard.style.display = 'none';
+                // Show the show text button and hide the hide text button
+                this.hideTextBtn.style.display = 'none';
+                this.showTextBtn.style.display = 'inline-block';
+            }
+
+            showText() {
+                // Show the flashcard content
+                this.flashcard.style.display = 'block';
+                // Show the hide text button and hide the show text button
+                this.hideTextBtn.style.display = 'inline-block';
+                this.showTextBtn.style.display = 'none';
             }
         }
 
