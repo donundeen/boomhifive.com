@@ -6,7 +6,7 @@ class CountdownTimer {
         this.totalTime = 0; // in seconds
         this.intervalId = null;
         this.nextIntervalTime = 0; // time until next interval alert
-        this.breakPoints = [15 * 60]; // default break point at 15 minutes (in seconds)
+        this.breakPoints = [15]; // default break point at 15 minutes elapsed
         this.currentBreakIndex = 0;
         this.breakPointsTriggered = new Set(); // track which break points have been triggered
         
@@ -190,8 +190,12 @@ class CountdownTimer {
     
     checkBreakPoints() {
         // Check all break points to see if we've reached any
-        this.breakPoints.forEach((breakTime, index) => {
-            if (!this.breakPointsTriggered.has(index) && this.timeLeft <= breakTime && this.timeLeft > 0) {
+        // Break points are stored as elapsed time (minutes), so we need to check if enough time has passed
+        this.breakPoints.forEach((breakTimeMinutes, index) => {
+            const breakTimeSeconds = breakTimeMinutes * 60;
+            const elapsedTime = this.totalTime - this.timeLeft;
+            
+            if (!this.breakPointsTriggered.has(index) && elapsedTime >= breakTimeSeconds && this.timeLeft > 0) {
                 this.triggerBreakPoint(index);
             }
         });
@@ -263,15 +267,22 @@ class CountdownTimer {
         }
         
         // Update next break display
-        const nextUntriggeredBreak = this.breakPoints.find((breakTime, index) => 
-            !this.breakPointsTriggered.has(index) && this.timeLeft > breakTime
+        const elapsedTime = this.totalTime - this.timeLeft;
+        const nextUntriggeredBreak = this.breakPoints.find((breakTimeMinutes, index) => 
+            !this.breakPointsTriggered.has(index) && elapsedTime < breakTimeMinutes * 60
         );
         
         if (nextUntriggeredBreak !== undefined) {
-            const timeUntilBreak = this.timeLeft - nextUntriggeredBreak;
+            const timeUntilBreak = (nextUntriggeredBreak * 60) - elapsedTime;
             this.nextBreakDisplay.textContent = this.formatTime(timeUntilBreak);
         } else {
             this.nextBreakDisplay.textContent = 'None';
+        }
+        
+        // Debug: Show break points in console
+        if (this.isRunning) {
+            const elapsedTime = this.totalTime - this.timeLeft;
+            console.log(`Elapsed: ${Math.floor(elapsedTime/60)}:${Math.floor(elapsedTime%60).toString().padStart(2, '0')}, Break points: [${this.breakPoints.join(', ')}] min, Triggered: [${Array.from(this.breakPointsTriggered).join(', ')}]`);
         }
     }
     
@@ -285,9 +296,9 @@ class CountdownTimer {
     addBreakPoint() {
         const time = prompt('Enter break point time (minutes):', '15');
         if (time && !isNaN(time) && time > 0) {
-            const breakTime = parseInt(time) * 60;
-            if (breakTime < this.countdownDuration * 60) {
-                this.breakPoints.push(breakTime);
+            const breakTimeMinutes = parseInt(time);
+            if (breakTimeMinutes < this.countdownDuration) {
+                this.breakPoints.push(breakTimeMinutes);
                 this.breakPoints.sort((a, b) => a - b);
                 this.renderBreakPoints();
                 this.saveSettings();
@@ -305,9 +316,9 @@ class CountdownTimer {
     }
     
     updateBreakPoint(index, newTime) {
-        const breakTime = parseInt(newTime) * 60;
-        if (breakTime > 0 && breakTime < this.countdownDuration * 60) {
-            this.breakPoints[index] = breakTime;
+        const breakTimeMinutes = parseInt(newTime);
+        if (breakTimeMinutes > 0 && breakTimeMinutes < this.countdownDuration) {
+            this.breakPoints[index] = breakTimeMinutes;
             this.breakPoints.sort((a, b) => a - b);
             this.renderBreakPoints();
             this.saveSettings();
@@ -318,16 +329,16 @@ class CountdownTimer {
     renderBreakPoints() {
         this.breakPointsList.innerHTML = '';
         
-        this.breakPoints.forEach((breakTime, index) => {
+        this.breakPoints.forEach((breakTimeMinutes, index) => {
             const breakPointItem = document.createElement('div');
             breakPointItem.className = 'break-point-item';
             breakPointItem.innerHTML = `
                 <div class="break-point-time">
-                    <label>Break at:</label>
-                    <input type="number" value="${Math.floor(breakTime / 60)}" 
+                    <label>Break after:</label>
+                    <input type="number" value="${breakTimeMinutes}" 
                            min="1" max="${this.countdownDuration - 1}"
                            onchange="timer.updateBreakPoint(${index}, this.value)">
-                    <span>minutes</span>
+                    <span>minutes elapsed</span>
                 </div>
                 <div class="break-point-actions">
                     <button class="btn btn-small btn-danger" 
