@@ -352,6 +352,77 @@ main {
     }
 }
 
+/* Fullscreen Mode */
+.fullscreen-mode {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+.fullscreen-mode.hidden {
+    display: none;
+}
+
+.fullscreen-timer {
+    text-align: center;
+    color: white;
+    max-width: 1200px;
+    padding: 2rem;
+}
+
+.fullscreen-time {
+    font-size: 24rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    font-variant-numeric: tabular-nums;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.fullscreen-status {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.fullscreen-next-alert {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.fullscreen-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.fullscreen-controls .btn {
+    min-width: 120px;
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.fullscreen-controls .btn-small {
+    min-width: 150px;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+}
+
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
     .phase {

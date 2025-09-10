@@ -39,6 +39,20 @@ class CountdownTimer {
         this.breakPointsList = document.getElementById('breakPointsList');
         this.addBreakBtn = document.getElementById('addBreakBtn');
         
+        // Fullscreen mode elements
+        this.fullscreenMode = document.getElementById('fullscreenMode');
+        this.fullscreenBtn = document.getElementById('fullscreenBtn');
+        this.exitFullscreenBtn = document.getElementById('exitFullscreenBtn');
+        this.fullscreenTimeDisplay = document.getElementById('fullscreenTimeDisplay');
+        this.fullscreenStatusDisplay = document.getElementById('fullscreenStatusDisplay');
+        this.fullscreenNextAlertDisplay = document.getElementById('fullscreenNextAlertDisplay');
+        this.fullscreenStartBtn = document.getElementById('fullscreenStartBtn');
+        this.fullscreenPauseBtn = document.getElementById('fullscreenPauseBtn');
+        this.fullscreenResumeBtn = document.getElementById('fullscreenResumeBtn');
+        this.fullscreenResetBtn = document.getElementById('fullscreenResetBtn');
+        
+        this.isFullscreen = false;
+        
         this.initializeEventListeners();
         this.loadSettings();
         this.updateDisplay();
@@ -51,6 +65,14 @@ class CountdownTimer {
         this.resumeBtn.addEventListener('click', () => this.resume());
         this.resetBtn.addEventListener('click', () => this.reset());
         this.addBreakBtn.addEventListener('click', () => this.addBreakPoint());
+        
+        // Fullscreen mode listeners
+        this.fullscreenBtn.addEventListener('click', () => this.enterFullscreen());
+        this.exitFullscreenBtn.addEventListener('click', () => this.exitFullscreen());
+        this.fullscreenStartBtn.addEventListener('click', () => this.start());
+        this.fullscreenPauseBtn.addEventListener('click', () => this.pause());
+        this.fullscreenResumeBtn.addEventListener('click', () => this.resume());
+        this.fullscreenResetBtn.addEventListener('click', () => this.reset());
         
         // Settings change listeners
         this.countdownDurationInput.addEventListener('change', () => this.updateSettings());
@@ -279,11 +301,41 @@ class CountdownTimer {
             this.nextBreakDisplay.textContent = 'None';
         }
         
+        // Update fullscreen display if in fullscreen mode
+        if (this.isFullscreen) {
+            this.updateFullscreenDisplay();
+        }
+        
         // Debug: Show break points in console
         if (this.isRunning) {
             const elapsedTime = this.totalTime - this.timeLeft;
             console.log(`Elapsed: ${Math.floor(elapsedTime/60)}:${Math.floor(elapsedTime%60).toString().padStart(2, '0')}, Break points: [${this.breakPoints.join(', ')}] min, Triggered: [${Array.from(this.breakPointsTriggered).join(', ')}]`);
         }
+    }
+    
+    updateFullscreenDisplay() {
+        this.fullscreenTimeDisplay.textContent = this.formatTime(this.timeLeft);
+        this.fullscreenStatusDisplay.textContent = this.statusDisplay.textContent;
+        this.fullscreenNextAlertDisplay.textContent = this.nextAlertDisplay.textContent;
+        
+        // Sync button states
+        this.fullscreenStartBtn.disabled = this.startBtn.disabled;
+        this.fullscreenPauseBtn.disabled = this.pauseBtn.disabled;
+        this.fullscreenResumeBtn.disabled = this.resumeBtn.disabled;
+        this.fullscreenResetBtn.disabled = this.resetBtn.disabled;
+    }
+    
+    enterFullscreen() {
+        this.isFullscreen = true;
+        this.fullscreenMode.classList.remove('hidden');
+        this.updateFullscreenDisplay();
+        this.fullscreenBtn.textContent = 'Exit Fullscreen';
+    }
+    
+    exitFullscreen() {
+        this.isFullscreen = false;
+        this.fullscreenMode.classList.add('hidden');
+        this.fullscreenBtn.textContent = 'Enter Fullscreen';
     }
     
     formatTime(seconds) {
@@ -538,5 +590,17 @@ document.addEventListener('keydown', (e) => {
     } else if (e.code === 'KeyR') {
         e.preventDefault();
         document.getElementById('resetBtn').click();
+    } else if (e.code === 'KeyF') {
+        e.preventDefault();
+        if (window.timer) {
+            if (window.timer.isFullscreen) {
+                window.timer.exitFullscreen();
+            } else {
+                window.timer.enterFullscreen();
+            }
+        }
+    } else if (e.code === 'Escape' && window.timer && window.timer.isFullscreen) {
+        e.preventDefault();
+        window.timer.exitFullscreen();
     }
 });

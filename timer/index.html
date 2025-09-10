@@ -12,6 +12,7 @@
         <header>
             <h1>Countdown Timer</h1>
             <p>Customizable countdown with interval alerts and break points</p>
+            <button id="fullscreenBtn" class="btn btn-small">Enter Fullscreen</button>
         </header>
 
         <main>
@@ -87,6 +88,22 @@
                 </div>
             </div>
         </main>
+    </div>
+
+    <!-- Fullscreen Mode -->
+    <div id="fullscreenMode" class="fullscreen-mode hidden">
+        <div class="fullscreen-timer">
+            <div class="fullscreen-time" id="fullscreenTimeDisplay">30:00</div>
+            <div class="fullscreen-status" id="fullscreenStatusDisplay">Ready</div>
+            <div class="fullscreen-next-alert" id="fullscreenNextAlertDisplay">Next alert in 1:00</div>
+            <div class="fullscreen-controls">
+                <button id="fullscreenStartBtn" class="btn btn-primary">Start</button>
+                <button id="fullscreenPauseBtn" class="btn btn-secondary" disabled>Pause</button>
+                <button id="fullscreenResumeBtn" class="btn btn-primary" disabled>Resume</button>
+                <button id="fullscreenResetBtn" class="btn btn-secondary">Reset</button>
+                <button id="exitFullscreenBtn" class="btn btn-small">Exit Fullscreen</button>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
