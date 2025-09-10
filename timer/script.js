@@ -423,8 +423,23 @@ class CountdownTimer {
             case 'gentle':
                 this.playGentleTone(audioContext);
                 break;
+            case 'soft':
+                this.playSoftPing(audioContext);
+                break;
+            case 'uplifting':
+                this.playUplifting(audioContext);
+                break;
+            case 'zen':
+                this.playZenGong(audioContext);
+                break;
             case 'break':
                 this.playBreakTone(audioContext);
+                break;
+            case 'achievement':
+                this.playAchievement(audioContext);
+                break;
+            case 'celebration':
+                this.playCelebration(audioContext);
                 break;
             case 'bell':
                 this.playBellSound(audioContext);
@@ -557,6 +572,123 @@ class CountdownTimer {
             
             oscillator.start(audioContext.currentTime + index * 0.15);
             oscillator.stop(audioContext.currentTime + index * 0.15 + 0.3);
+        });
+    }
+    
+    playSoftPing(audioContext) {
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+        oscillator.frequency.exponentialRampToValueAtTime(1200, audioContext.currentTime + 0.1);
+        oscillator.type = 'sine';
+        
+        gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+        gainNode.gain.linearRampToValueAtTime(0.15, audioContext.currentTime + 0.05);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+        
+        oscillator.start(audioContext.currentTime);
+        oscillator.stop(audioContext.currentTime + 0.3);
+    }
+    
+    playUplifting(audioContext) {
+        // Play a bright, uplifting major chord progression
+        const frequencies = [523.25, 659.25, 783.99]; // C5, E5, G5 (C major)
+        
+        frequencies.forEach((freq, index) => {
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.frequency.setValueAtTime(freq, audioContext.currentTime + index * 0.1);
+            oscillator.type = 'sine';
+            
+            gainNode.gain.setValueAtTime(0, audioContext.currentTime + index * 0.1);
+            gainNode.gain.linearRampToValueAtTime(0.12, audioContext.currentTime + index * 0.1 + 0.05);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + index * 0.1 + 0.6);
+            
+            oscillator.start(audioContext.currentTime + index * 0.1);
+            oscillator.stop(audioContext.currentTime + index * 0.1 + 0.6);
+        });
+    }
+    
+    playZenGong(audioContext) {
+        // Create a zen-like gong with medium decay
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        const filter = audioContext.createBiquadFilter();
+        
+        oscillator.connect(filter);
+        filter.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        // Low frequency for gong-like sound
+        oscillator.frequency.setValueAtTime(110, audioContext.currentTime); // A2
+        oscillator.frequency.exponentialRampToValueAtTime(55, audioContext.currentTime + 0.5); // A1
+        oscillator.type = 'sine';
+        
+        // Low-pass filter for warmth
+        filter.type = 'lowpass';
+        filter.frequency.setValueAtTime(800, audioContext.currentTime);
+        filter.frequency.exponentialRampToValueAtTime(200, audioContext.currentTime + 2);
+        
+        // Medium decay envelope
+        gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+        gainNode.gain.linearRampToValueAtTime(0.3, audioContext.currentTime + 0.1);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 2);
+        
+        oscillator.start(audioContext.currentTime);
+        oscillator.stop(audioContext.currentTime + 2);
+    }
+    
+    playAchievement(audioContext) {
+        // Play an achievement-like sound - exciting but not jarring
+        const frequencies = [440, 554.37, 659.25, 880]; // A4, C#5, E5, A5
+        
+        frequencies.forEach((freq, index) => {
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.frequency.setValueAtTime(freq, audioContext.currentTime + index * 0.08);
+            oscillator.type = 'triangle';
+            
+            gainNode.gain.setValueAtTime(0, audioContext.currentTime + index * 0.08);
+            gainNode.gain.linearRampToValueAtTime(0.15, audioContext.currentTime + index * 0.08 + 0.05);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + index * 0.08 + 0.4);
+            
+            oscillator.start(audioContext.currentTime + index * 0.08);
+            oscillator.stop(audioContext.currentTime + index * 0.08 + 0.4);
+        });
+    }
+    
+    playCelebration(audioContext) {
+        // Play a celebration sound - exciting but pleasant
+        const frequencies = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
+        
+        frequencies.forEach((freq, index) => {
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.frequency.setValueAtTime(freq, audioContext.currentTime + index * 0.06);
+            oscillator.type = 'sine';
+            
+            gainNode.gain.setValueAtTime(0, audioContext.currentTime + index * 0.06);
+            gainNode.gain.linearRampToValueAtTime(0.18, audioContext.currentTime + index * 0.06 + 0.03);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + index * 0.06 + 0.5);
+            
+            oscillator.start(audioContext.currentTime + index * 0.06);
+            oscillator.stop(audioContext.currentTime + index * 0.06 + 0.5);
         });
     }
 }
