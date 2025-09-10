@@ -8,6 +8,7 @@ class CountdownTimer {
         this.nextIntervalTime = 0; // time until next interval alert
         this.breakPoints = [15 * 60]; // default break point at 15 minutes (in seconds)
         this.currentBreakIndex = 0;
+        this.breakPointsTriggered = new Set(); // track which break points have been triggered
         
         // Settings
         this.countdownDuration = 30; // minutes
@@ -110,6 +111,7 @@ class CountdownTimer {
         this.totalTime = this.countdownDuration * 60;
         this.nextIntervalTime = this.intervalDuration * 60;
         this.currentBreakIndex = 0;
+        this.breakPointsTriggered.clear();
         
         this.isRunning = true;
         this.isPaused = false;
@@ -154,6 +156,7 @@ class CountdownTimer {
         this.totalTime = this.countdownDuration * 60;
         this.nextIntervalTime = this.intervalDuration * 60;
         this.currentBreakIndex = 0;
+        this.breakPointsTriggered.clear();
         
         this.statusDisplay.textContent = 'Ready';
         
@@ -186,27 +189,25 @@ class CountdownTimer {
     }
     
     checkBreakPoints() {
-        if (this.currentBreakIndex < this.breakPoints.length) {
-            const nextBreakTime = this.breakPoints[this.currentBreakIndex];
-            const timeUntilBreak = this.timeLeft - nextBreakTime;
-            
-            if (timeUntilBreak <= 0 && this.timeLeft > 0) {
-                this.triggerBreakPoint();
+        // Check all break points to see if we've reached any
+        this.breakPoints.forEach((breakTime, index) => {
+            if (!this.breakPointsTriggered.has(index) && this.timeLeft <= breakTime && this.timeLeft > 0) {
+                this.triggerBreakPoint(index);
             }
-        }
+        });
     }
     
-    triggerBreakPoint() {
+    triggerBreakPoint(index) {
         this.pause();
         this.playBreakSound();
-        this.highlightBreakPoint(this.currentBreakIndex);
+        this.highlightBreakPoint(index);
         this.statusDisplay.textContent = 'Break Point!';
-        this.currentBreakIndex++;
+        this.breakPointsTriggered.add(index);
         
         // Show break point notification
         if (Notification.permission === 'granted') {
             new Notification('Break Point Reached!', {
-                body: `Break point at ${this.formatTime(this.breakPoints[this.currentBreakIndex - 1])}`,
+                body: `Break point at ${this.formatTime(this.breakPoints[index])}`,
                 icon: '/favicon.ico'
             });
         }
@@ -262,14 +263,13 @@ class CountdownTimer {
         }
         
         // Update next break display
-        if (this.currentBreakIndex < this.breakPoints.length) {
-            const nextBreak = this.breakPoints[this.currentBreakIndex];
-            const timeUntilBreak = this.timeLeft - nextBreak;
-            if (timeUntilBreak > 0) {
-                this.nextBreakDisplay.textContent = this.formatTime(timeUntilBreak);
-            } else {
-                this.nextBreakDisplay.textContent = 'Reached';
-            }
+        const nextUntriggeredBreak = this.breakPoints.find((breakTime, index) => 
+            !this.breakPointsTriggered.has(index) && this.timeLeft > breakTime
+        );
+        
+        if (nextUntriggeredBreak !== undefined) {
+            const timeUntilBreak = this.timeLeft - nextUntriggeredBreak;
+            this.nextBreakDisplay.textContent = this.formatTime(timeUntilBreak);
         } else {
             this.nextBreakDisplay.textContent = 'None';
         }
