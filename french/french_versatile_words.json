@@ -1060,5 +1060,503 @@
     "stone (chess)",
     "Une pierre du jeu de go.",
     "A go stone."
+  ],
+  [
+    "valoir",
+    "to be worth",
+    "Cette voiture vaut 20 000 euros.",
+    "This car is worth 20,000 euros."
+  ],
+  [
+    "valoir",
+    "to cost",
+    "Ça vaut le coup d'essayer.",
+    "It's worth trying."
+  ],
+  [
+    "valoir",
+    "to deserve",
+    "Il vaut mieux partir maintenant.",
+    "It's better to leave now."
+  ],
+  [
+    "valoir",
+    "to be equivalent to",
+    "Cela vaut une fortune.",
+    "That's worth a fortune."
+  ],
+  [
+    "valoir",
+    "to be as good as",
+    "Il vaut son pesant d'or.",
+    "He's worth his weight in gold."
+  ],
+  [
+    "valoir",
+    "to be preferable",
+    "Il vaut mieux tard que jamais.",
+    "Better late than never."
+  ],
+  [
+    "valoir",
+    "to be worth the trouble",
+    "Ça ne vaut pas la peine.",
+    "It's not worth the trouble."
+  ],
+  [
+    "valoir",
+    "to be worth it",
+    "Ça vaut le détour.",
+    "It's worth the detour."
+  ],
+  [
+    "valoir",
+    "to be equivalent",
+    "Cela vaut mieux que rien.",
+    "That's better than nothing."
+  ],
+  [
+    "partir",
+    "to leave",
+    "Je pars demain matin.",
+    "I'm leaving tomorrow morning."
+  ],
+  [
+    "partir",
+    "to start from",
+    "D'où partez-vous?",
+    "Where are you starting from?"
+  ],
+  [
+    "partir",
+    "to go away",
+    "Il est parti en vacances.",
+    "He went away on vacation."
+  ],
+  [
+    "partir",
+    "to set off",
+    "Nous partons à l'aube.",
+    "We're setting off at dawn."
+  ],
+  [
+    "partir",
+    "to start (machine)",
+    "La voiture ne part pas.",
+    "The car won't start."
+  ],
+  [
+    "partir",
+    "to begin",
+    "Partons du principe que...",
+    "Let's start from the principle that..."
+  ],
+  [
+    "partir",
+    "to originate",
+    "Cette idée part de toi.",
+    "This idea comes from you."
+  ],
+  [
+    "partir",
+    "to escape",
+    "Le gaz est parti.",
+    "The gas escaped."
+  ],
+  [
+    "partir",
+    "to go off (explode)",
+    "La bombe est partie.",
+    "The bomb went off."
+  ],
+  [
+    "partir",
+    "to be off (running)",
+    "Il est parti comme une flèche.",
+    "He took off like an arrow."
+  ],
+  [
+    "partir",
+    "to be gone",
+    "C'est parti!",
+    "Here we go!"
+  ],
+  [
+    "partir",
+    "to start (process)",
+    "Le processus est parti.",
+    "The process has started."
+  ],
+  [
+    "mettre",
+    "to put on (clothes)",
+    "Je mets ma veste.",
+    "I'm putting on my jacket."
+  ],
+  [
+    "mettre",
+    "to turn on (appliance)",
+    "Mets la télévision.",
+    "Turn on the television."
+  ],
+  [
+    "mettre",
+    "to put in (effort)",
+    "Il met du sien.",
+    "He's doing his part."
+  ],
+  [
+    "mettre",
+    "to put (in writing)",
+    "Mets ça par écrit.",
+    "Put that in writing."
+  ],
+  [
+    "mettre",
+    "to put (in practice)",
+    "Il met ses idées en pratique.",
+    "He's putting his ideas into practice."
+  ],
+  [
+    "mettre",
+    "to put (in danger)",
+    "Il se met en danger.",
+    "He's putting himself in danger."
+  ],
+  [
+    "mettre",
+    "to put (in order)",
+    "Mets de l'ordre dans tes affaires.",
+    "Put your things in order."
+  ],
+  [
+    "mettre",
+    "to put (in touch)",
+    "Je vais te mettre en contact avec lui.",
+    "I'll put you in touch with him."
+  ],
+  [
+    "mettre",
+    "to put (in motion)",
+    "Il met tout en œuvre.",
+    "He's doing everything possible."
+  ],
+  [
+    "mettre",
+    "to put (in place)",
+    "Il met les choses au point.",
+    "He's setting things straight."
+  ],
+  [
+    "mettre",
+    "to put (in perspective)",
+    "Il faut mettre les choses en perspective.",
+    "We need to put things in perspective."
+  ],
+  [
+    "mettre",
+    "to put (in question)",
+    "Il met tout en question.",
+    "He questions everything."
+  ],
+  [
+    "arriver",
+    "to arrive",
+    "J'arrive dans cinq minutes.",
+    "I'll arrive in five minutes."
+  ],
+  [
+    "arriver",
+    "to happen",
+    "Qu'est-ce qui arrive?",
+    "What's happening?"
+  ],
+  [
+    "arriver",
+    "to succeed",
+    "Il arrive à ses fins.",
+    "He achieves his goals."
+  ],
+  [
+    "arriver",
+    "to manage to",
+    "J'arrive à comprendre.",
+    "I manage to understand."
+  ],
+  [
+    "arriver",
+    "to come to pass",
+    "Cela arrive souvent.",
+    "That happens often."
+  ],
+  [
+    "arriver",
+    "to reach",
+    "Nous arrivons au but.",
+    "We're reaching the goal."
+  ],
+  [
+    "arriver",
+    "to come up",
+    "Il arrive toujours en retard.",
+    "He always comes late."
+  ],
+  [
+    "arriver",
+    "to turn up",
+    "Il arrive de nulle part.",
+    "He turns up from nowhere."
+  ],
+  [
+    "arriver",
+    "to come about",
+    "Comment est-ce arrivé?",
+    "How did this come about?"
+  ],
+  [
+    "arriver",
+    "to be able to",
+    "J'arrive à le faire.",
+    "I'm able to do it."
+  ],
+  [
+    "arriver",
+    "to get there",
+    "On y arrive!",
+    "We're getting there!"
+  ],
+  [
+    "arriver",
+    "to come to",
+    "Il arrive à la conclusion que...",
+    "He comes to the conclusion that..."
+  ],
+  [
+    "agiter",
+    "to shake",
+    "Agite le flacon avant usage.",
+    "Shake the bottle before use."
+  ],
+  [
+    "agiter",
+    "to stir",
+    "Il agite la soupe.",
+    "He's stirring the soup."
+  ],
+  [
+    "agiter",
+    "to wave",
+    "Il agite la main.",
+    "He's waving his hand."
+  ],
+  [
+    "agiter",
+    "to agitate",
+    "Cette nouvelle l'agite.",
+    "This news agitates him."
+  ],
+  [
+    "agiter",
+    "to disturb",
+    "Il agite les esprits.",
+    "He's disturbing people's minds."
+  ],
+  [
+    "agiter",
+    "to stir up",
+    "Il agite la foule.",
+    "He's stirring up the crowd."
+  ],
+  [
+    "agiter",
+    "to shake up",
+    "Il faut agiter les choses.",
+    "We need to shake things up."
+  ],
+  [
+    "agiter",
+    "to move around",
+    "Il agite ses bras.",
+    "He's moving his arms around."
+  ],
+  [
+    "agiter",
+    "to worry",
+    "Cette question l'agite.",
+    "This question worries him."
+  ],
+  [
+    "agiter",
+    "to cause trouble",
+    "Il agite le quartier.",
+    "He's causing trouble in the neighborhood."
+  ],
+  [
+    "agiter",
+    "to be restless",
+    "Il s'agite beaucoup.",
+    "He's very restless."
+  ],
+  [
+    "agiter",
+    "to be anxious",
+    "Elle s'agite pour rien.",
+    "She's getting anxious over nothing."
+  ],
+  [
+    "tenir",
+    "to hold tight",
+    "Tiens-moi la main.",
+    "Hold my hand."
+  ],
+  [
+    "tenir",
+    "to keep (promise)",
+    "Je tiens ma parole.",
+    "I keep my word."
+  ],
+  [
+    "tenir",
+    "to depend on",
+    "Cela tient à toi.",
+    "It depends on you."
+  ],
+  [
+    "tenir",
+    "to fit",
+    "Ça ne tient pas dans la valise.",
+    "It doesn't fit in the suitcase."
+  ],
+  [
+    "tenir",
+    "to last",
+    "Cela ne tiendra pas longtemps.",
+    "This won't last long."
+  ],
+  [
+    "tenir",
+    "to hold (position)",
+    "Il tient bon.",
+    "He's holding firm."
+  ],
+  [
+    "tenir",
+    "to keep (secret)",
+    "Je tiens le secret.",
+    "I'm keeping the secret."
+  ],
+  [
+    "tenir",
+    "to hold (meeting)",
+    "Nous tenons une réunion.",
+    "We're holding a meeting."
+  ],
+  [
+    "tenir",
+    "to be held",
+    "La réunion se tient demain.",
+    "The meeting is held tomorrow."
+  ],
+  [
+    "tenir",
+    "to stick to",
+    "Il tient à ses principes.",
+    "He sticks to his principles."
+  ],
+  [
+    "tenir",
+    "to be attached to",
+    "Il tient à sa famille.",
+    "He's attached to his family."
+  ],
+  [
+    "tenir",
+    "to insist on",
+    "Il tient à venir.",
+    "He insists on coming."
+  ],
+  [
+    "tenir",
+    "to be responsible for",
+    "Il tient la comptabilité.",
+    "He's responsible for the accounting."
+  ],
+  [
+    "sauter",
+    "to jump",
+    "Il saute par-dessus la barrière.",
+    "He jumps over the fence."
+  ],
+  [
+    "sauter",
+    "to skip",
+    "Il saute le petit-déjeuner.",
+    "He skips breakfast."
+  ],
+  [
+    "sauter",
+    "to explode",
+    "La bombe a sauté.",
+    "The bomb exploded."
+  ],
+  [
+    "sauter",
+    "to blow up",
+    "Le pont a sauté.",
+    "The bridge blew up."
+  ],
+  [
+    "sauter",
+    "to jump (start)",
+    "La voiture saute au démarrage.",
+    "The car jumps when starting."
+  ],
+  [
+    "sauter",
+    "to leap",
+    "Il saute de joie.",
+    "He leaps with joy."
+  ],
+  [
+    "sauter",
+    "to jump (in line)",
+    "Il a sauté la queue.",
+    "He jumped the line."
+  ],
+  [
+    "sauter",
+    "to skip (pages)",
+    "Il saute des pages.",
+    "He's skipping pages."
+  ],
+  [
+    "sauter",
+    "to be obvious",
+    "Ça saute aux yeux.",
+    "It's obvious."
+  ],
+  [
+    "sauter",
+    "to jump out",
+    "Il saute du lit.",
+    "He jumps out of bed."
+  ],
+  [
+    "sauter",
+    "to be missing",
+    "Il manque une page, elle a sauté.",
+    "A page is missing, it jumped out."
+  ],
+  [
+    "sauter",
+    "to be fired",
+    "Il a sauté de son poste.",
+    "He was fired from his position."
+  ],
+  [
+    "sauter",
+    "to be obvious",
+    "La solution saute aux yeux.",
+    "The solution is obvious."
   ]
 ]
