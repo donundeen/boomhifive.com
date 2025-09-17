@@ -18,20 +18,20 @@
 
 // and remember to SAVE (File->Save or Command+S)
 
-let clockTitle = "Nathan Goodman's Fantastic Clock"; // put a title for your clock here
+let clockTitle = "Paris Jeanty's Cool Clock"; // put a title for your clock here
 
 // change the image names below to match the names of the images you upload for each number
 let numberImages = [
-  "puck.jpg", // image that looks like a 0
-  "football.jpg", // image that looks like a 1
-  "basketball.jpg", // image that looks like a 2
-  "tv.jpg", // image that looks like a 3
-  "consoles.jpg", // image that looks like a 4
-  "5cats.jpg", // image that looks like a 5
-  "baseball.jpg", // image that looks like a 6
-  "candy.jpg", // image that looks like a 7
-  "ovi.jpg", // image that looks like a 8
-  "pizza.jpg"  // image that looks like a 9
+  "0black hole.jpg", // image that looks like a 0
+  "1roblox character.png", // image that looks like a 1
+  "2lando norris.png", // image that looks like a 2
+  "3-point-line.webp", // image that looks like a 3
+  "4saxophone quartet.webp", // image that looks like a 4
+  "5starfish-1.jpg", // image that looks like a 5
+  "6guitar.webp", // image that looks like a 6
+  "7rainbow.jpg", // image that looks like a 7
+  "8ferrari cars.jpg", // image that looks like a 8
+  "9lego block.png"  // image that looks like a 9
 ];
 
 
@@ -39,31 +39,31 @@ let numberImages = [
 
 // the background color of the clock. Note all the different ways you can define colors.
 // try clicking on the colored square...
-let backgroundColor = "rgb(162,162,247)";
+let backgroundColor = "rgb(209,255,189)";
 
 // the width of each number 
 let imageWidth = 200;
 
 // coloring the dots in the colons
 // top dot in first colon
-let dot1fill = "green";
+let dot1fill = "pink";
 let dot1StrokeWeight = 5;
-let dot1Stroke = "red";
+let dot1Stroke = "pink";
 
 // bottom dot in first colon
-let dot2fill = "green";
+let dot2fill = "pink";
 let dot2StrokeWeight = 5;
-let dot2Stroke = "red";
+let dot2Stroke = "pink";
 
 // top dot in second colon
-let dot3fill = "rgb(241,255,0)";
+let dot3fill = "pink";
 let dot3StrokeWeight = 5;
-let dot3Stroke = "red";
+let dot3Stroke = "pink";
 
 // bottom dot in second colon
-let dot4fill = "rgb(241,255,0)";
+let dot4fill = "pink";
 let dot4StrokeWeight = 5;
-let dot4Stroke = "red";
+let dot4Stroke = "pink";
 
 // the width of the colon dot
 let dotWidth = 50;
@@ -73,9 +73,9 @@ let dotMargin = 5;
 let dotVerticalSpacing = 150;
 
 // style information for the clock title
-let textFill = "yellow"; //inside of text
-let textStroke = "red"; // outline of text
-let textStrokeWeight = "3"; // how thick the outline is
+let textFill = "white"; //inside of text
+let textStroke = "white"; // outline of text
+let textStrokeWeight = "2"; // how thick the outline is
 let textX = 20;  // the X position (starting from the left)
 let textY = 40;  // the Y position of the BOTTOM of the text, starting from the TOP of the screen
 let fontSize = 40;  // the text size
