@@ -18,20 +18,20 @@
 
 // and remember to SAVE (File->Save or Command+S)
 
-let clockTitle = "Nathan Goodman's Fantastic Clock"; // put a title for your clock here
+let clockTitle = "Mr. Undeen's Cool Clock"; // put a title for your clock here
 
 // change the image names below to match the names of the images you upload for each number
 let numberImages = [
-  "puck.jpg", // image that looks like a 0
-  "football.jpg", // image that looks like a 1
-  "basketball.jpg", // image that looks like a 2
-  "tv.jpg", // image that looks like a 3
-  "consoles.jpg", // image that looks like a 4
-  "5cats.jpg", // image that looks like a 5
-  "baseball.jpg", // image that looks like a 6
-  "candy.jpg", // image that looks like a 7
-  "ovi.jpg", // image that looks like a 8
-  "pizza.jpg"  // image that looks like a 9
+  "0Donut.jpg", // image that looks like a 0
+  "1Rocket.jpg", // image that looks like a 1
+  "2GuineaPigs.jpg", // image that looks like a 2
+  "3Cats.jpg", // image that looks like a 3
+  "4Pizza.jpeg", // image that looks like a 4
+  "5Saxes.png", // image that looks like a 5
+  "6Honeycomb.jpeg", // image that looks like a 6
+  "7TheSept.webp", // image that looks like a 7
+  "8Octopus.jpg", // image that looks like a 8
+  "9RubixCube.webp"  // image that looks like a 9
 ];
 
 
