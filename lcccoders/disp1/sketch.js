@@ -30,7 +30,7 @@ let numberImages = [
   "5Players.jpg", // image that looks like a 5
   "SheaWeb.jpg", // image that looks like a 6
   "Game7.jpg", // image that looks like a 7
-  "Ovi.jpg", // image that looks like a 8
+  "ovi.jpg", // image that looks like a 8
   "JTMiller.jpg"  // image that looks like a 9
 ];
 
