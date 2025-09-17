@@ -18,7 +18,7 @@
 
 // and remember to SAVE (File->Save or Command+S)
 
-let clockTitle = "Mr. Undeen's Cool Clock"; // put a title for your clock here
+let clockTitle = "The Time Is:"; // put a title for your clock here
 
 // change the image names below to match the names of the images you upload for each number
 let numberImages = [
