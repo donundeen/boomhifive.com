@@ -41,8 +41,7 @@ let numberImages = [
 // try clicking on the colored square...
 let backgroundColor = "rgb(162,162,247)";
 
-// the width of each number 
-let imageWidth = 200;
+
 
 // coloring the dots in the colons
 // top dot in first colon
@@ -82,18 +81,20 @@ let fontSize = 40;  // the text size
 
 // the height of the clock
 // (the width is calculated from the other elements)
-let canvasHeight = 400;
-
-
-
-
-
-
-
+//
+let canvasHeight = 1080;
+// the width of each number 
+let imageWidth = 200;
 // these are calculated values, you definitely don't want to change them.
 
 // calculate the width of the whole thing based on the imageWidth, the dotWidth, and the margins
 let canvasWidth = imageWidth * 6 + (dotWidth+dotMargin ) *2;
+
+canvasWidth = 1920;
+
+
+
+
 
 // set the vertical positioning of the colon dots. Math!
 let upperDotY = (canvasHeight - dotVerticalSpacing + dotWidth) / 2;
