@@ -579,9 +579,9 @@
         class FlashcardApp {
             constructor() {
                 this.cards = [];
-                this.currentCard = null;
+                this.shuffledCards = []; // New: shuffled deck for sequential navigation
+                this.currentIndex = 0; // New: current position in shuffled deck
                 this.correctCards = new Set();
-                this.remainingCards = [];
                 this.isFlipped = false;
                 this.currentSide = 'french';
                 this.cardHistory = [];
@@ -655,6 +655,8 @@
                     })
                     .then(data => {
                         this.cards = data;
+                        // Randomize the deck at load time
+                        this.shuffleDeck();
                         // Load saved progress from localStorage
                         this.loadProgress(selectedFile);
                     })
@@ -662,6 +664,16 @@
                         console.error('Error loading JSON file:', error);
                         this.showError('Error loading file. Please try again.');
                     });
+            }
+
+            shuffleDeck() {
+                // Create a copy of the cards array and shuffle it
+                this.shuffledCards = [...this.cards];
+                for (let i = this.shuffledCards.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [this.shuffledCards[i], this.shuffledCards[j]] = [this.shuffledCards[j], this.shuffledCards[i]];
+                }
+                this.currentIndex = 0;
             }
 
             updateCurrentSide() {
@@ -673,19 +685,18 @@
             }
 
             showNextCard() {
-                if (this.remainingCards.length === 0) {
+                if (this.currentIndex >= this.shuffledCards.length) {
                     this.showCompletionMessage();
                     return;
                 }
 
-                const randomIndex = Math.floor(Math.random() * this.remainingCards.length);
-                const cardIndex = this.remainingCards[randomIndex];
-                this.currentCard = cardIndex;
+                // Get the current card from the shuffled deck
+                this.currentCard = this.currentIndex;
                 this.isFlipped = false;
                 this.flashcard.classList.remove('flipped');
                 
                 // Add to history
-                this.cardHistory.push(cardIndex);
+                this.cardHistory.push(this.currentCard);
                 this.historyIndex = this.cardHistory.length - 1;
                 
                 this.displayCard();
@@ -708,8 +719,9 @@
                 if (!selectedFile) return;
 
                 const progress = {
+                    shuffledCards: this.shuffledCards,
+                    currentIndex: this.currentIndex,
                     correctCards: Array.from(this.correctCards),
-                    remainingCards: this.remainingCards,
                     cardHistory: this.cardHistory,
                     historyIndex: this.historyIndex,
                     currentCard: this.currentCard,
@@ -728,9 +740,10 @@
                         const progress = JSON.parse(savedProgress);
                         
                         // Check if the saved data is still valid (same number of cards)
-                        if (progress.remainingCards && progress.remainingCards.length <= this.cards.length) {
+                        if (progress.shuffledCards && progress.shuffledCards.length === this.cards.length) {
+                            this.shuffledCards = progress.shuffledCards;
+                            this.currentIndex = progress.currentIndex || 0;
                             this.correctCards = new Set(progress.correctCards || []);
-                            this.remainingCards = progress.remainingCards;
                             this.cardHistory = progress.cardHistory || [];
                             this.historyIndex = progress.historyIndex || -1;
                             this.currentCard = progress.currentCard;
@@ -756,9 +769,9 @@
                 
                 // If no valid saved progress, start fresh
                 this.correctCards.clear();
-                this.remainingCards = [...Array(this.cards.length).keys()];
                 this.cardHistory = [];
                 this.historyIndex = -1;
+                this.currentIndex = 0;
                 this.updateStats();
                 this.showNextCard();
             }
@@ -773,7 +786,7 @@
                     
                     // Reset current session
                     this.correctCards.clear();
-                    this.remainingCards = [...Array(this.cards.length).keys()];
+                    this.shuffleDeck(); // Reshuffle the deck
                     this.cardHistory = [];
                     this.historyIndex = -1;
                     this.currentCard = null;
@@ -785,7 +798,7 @@
             displayCard() {
                 if (this.currentCard === null) return;
 
-                const card = this.cards[this.currentCard];
+                const card = this.shuffledCards[this.currentCard];
                 
                 // Handle 2-element, 4-element, and 5-element arrays
                 let frenchWord, englishWord, frenchExample, englishExample, grammarInfo;
@@ -837,8 +850,12 @@
             markAsCorrect() {
                 if (this.currentCard === null) return;
                 
+                // Mark the current card as correct
                 this.correctCards.add(this.currentCard);
-                this.remainingCards = this.remainingCards.filter(index => index !== this.currentCard);
+                
+                // Advance to the next card
+                this.currentIndex++;
+                
                 this.updateStats();
                 this.saveProgress();
                 this.showNextCard();
@@ -847,10 +864,22 @@
             markAsIncorrect() {
                 if (this.currentCard === null) return;
                 
-                // Card stays in remaining cards, just move to next
+                // Move the incorrect card 5-10 positions down in the deck
+                const moveDistance = Math.floor(Math.random() * 6) + 5; // Random 5-10 positions
+                const newPosition = Math.min(this.currentIndex + moveDistance, this.shuffledCards.length - 1);
+                
+                // Remove the card from its current position
+                const incorrectCard = this.shuffledCards.splice(this.currentIndex, 1)[0];
+                
+                // Insert it at the new position
+                this.shuffledCards.splice(newPosition, 0, incorrectCard);
+                
+                // The current card at the current index is now a new card
+                // No need to advance the index - just display the new card
+                
                 this.updateStats();
                 this.saveProgress();
-                this.showNextCard();
+                this.displayCard();
             }
 
             handleKeyPress(event) {
@@ -910,8 +939,8 @@
 
             updateStats() {
                 this.totalCardsEl.textContent = this.cards.length;
-                this.remainingCardsEl.textContent = this.remainingCards.length;
-                this.correctCardsEl.textContent = this.correctCards.size;
+                this.remainingCardsEl.textContent = this.cards.length - this.currentIndex;
+                this.correctCardsEl.textContent = this.currentIndex;
             }
 
             showCompletionMessage() {
@@ -933,7 +962,8 @@
                 resetBtn.style.marginTop = '20px';
                 resetBtn.onclick = () => {
                     this.correctCards.clear();
-                    this.remainingCards = [...Array(this.cards.length).keys()];
+                    this.shuffleDeck();
+                    this.currentIndex = 0;
                     this.updateStats();
                     this.showNextCard();
                     resetBtn.remove();
@@ -994,7 +1024,7 @@
             speakText(language = 'french') {
                 if (this.currentCard === null) return;
 
-                const card = this.cards[this.currentCard];
+                const card = this.shuffledCards[this.currentCard];
                 let textToSpeak = '';
                 let voice = '';
                 let button = null;
