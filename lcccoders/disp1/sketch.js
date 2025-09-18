@@ -120,9 +120,11 @@ function setup() {
 function draw() {
   // fill the whole backgroun with backgroundColor
   background(backgroundColor);
-  stroke(255);
+  stroke(255,0,0);
   strokeWeight(10);
   rect(0,0,canvasWidth,canvasHeight);
+  line(0,0,canvasWidth,canvasHeight);
+  line(0,canvasHeight,canvasWidth,0);
   return;
   // set up some variables that will hold each digit of the hour, minutes, and seconds
   let h0, h1, m0, m1, s0, s1;
