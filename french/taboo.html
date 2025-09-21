@@ -262,6 +262,8 @@
             color: #dc3545;
             margin: 20px 0;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            cursor: pointer;
+            user-select: none;
         }
 
         .timer.warning {
@@ -272,6 +274,14 @@
         .timer.danger {
             color: #dc3545;
             animation: pulse 0.5s infinite;
+        }
+
+        .timer.alert {
+            color: #dc3545;
+            animation: pulse 0.3s infinite;
+            background: rgba(220, 53, 69, 0.1);
+            border-radius: 10px;
+            padding: 10px;
         }
 
         @keyframes pulse {
@@ -450,6 +460,8 @@
                 this.timer = null;
                 this.timeLeft = 0;
                 this.isRevealed = false;
+                this.alertInterval = null;
+                this.audioContext = null;
                 
                 this.initializeElements();
                 this.bindEvents();
@@ -477,6 +489,7 @@
                 this.prevBtn.addEventListener('click', () => this.previousCard());
                 this.nextBtn.addEventListener('click', () => this.nextCard());
                 this.gameCard.addEventListener('click', () => this.revealCard());
+                this.timer.addEventListener('click', () => this.stopAlert());
             }
 
             async loadCards() {
@@ -513,6 +526,7 @@
 
             resetGame() {
                 this.stopTimer();
+                this.stopAlert();
                 this.shuffleCards();
                 this.currentIndex = 0;
                 this.isRevealed = false;
@@ -567,6 +581,7 @@
                     
                     if (this.timeLeft <= 0) {
                         this.stopTimer();
+                        this.startAlert();
                     }
                 }, 1000);
             }
@@ -575,6 +590,58 @@
                 if (this.timerInterval) {
                     clearInterval(this.timerInterval);
                     this.timerInterval = null;
+                }
+            }
+
+            startAlert() {
+                this.timer.classList.add('alert');
+                this.timer.textContent = 'TIME\'S UP! Tap to stop';
+                
+                // Create a not-too-annoying beep sound using Web Audio API
+                this.playAlertSound();
+                
+                // Continue playing the sound every 2 seconds
+                this.alertInterval = setInterval(() => {
+                    this.playAlertSound();
+                }, 2000);
+            }
+
+            stopAlert() {
+                if (this.alertInterval) {
+                    clearInterval(this.alertInterval);
+                    this.alertInterval = null;
+                }
+                this.timer.classList.remove('alert');
+                this.timer.textContent = '0:00';
+            }
+
+            playAlertSound() {
+                try {
+                    // Create audio context if it doesn't exist
+                    if (!this.audioContext) {
+                        this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    }
+                    
+                    // Create a pleasant beep sound (not too annoying)
+                    const oscillator = this.audioContext.createOscillator();
+                    const gainNode = this.audioContext.createGain();
+                    
+                    oscillator.connect(gainNode);
+                    gainNode.connect(this.audioContext.destination);
+                    
+                    // Set frequency to a pleasant tone (A4 = 440Hz)
+                    oscillator.frequency.setValueAtTime(440, this.audioContext.currentTime);
+                    oscillator.type = 'sine';
+                    
+                    // Set volume (not too loud)
+                    gainNode.gain.setValueAtTime(0.1, this.audioContext.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.01, this.audioContext.currentTime + 0.3);
+                    
+                    // Play for 0.3 seconds
+                    oscillator.start(this.audioContext.currentTime);
+                    oscillator.stop(this.audioContext.currentTime + 0.3);
+                } catch (error) {
+                    console.log('Audio not available:', error);
                 }
             }
 
@@ -594,6 +661,7 @@
 
             previousCard() {
                 this.stopTimer();
+                this.stopAlert();
                 if (this.currentIndex > 0) {
                     this.currentIndex--;
                     this.displayCard();
@@ -602,6 +670,7 @@
 
             nextCard() {
                 this.stopTimer();
+                this.stopAlert();
                 if (this.currentIndex < this.shuffledCards.length - 1) {
                     this.currentIndex++;
                     this.displayCard();
