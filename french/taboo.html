@@ -860,11 +860,11 @@
                     this.displayCard();
                     this.isRevealed = false; // Set to blank state
                     
-                    // Wait a moment for content to update, then flip back
+                    // Wait a bit longer for content to fully update, then flip back
                     setTimeout(() => {
                         this.gameCard.classList.remove('flipped');
-                    }, 50);
-                }, 300); // Match the CSS transition duration
+                    }, 100); // Longer delay to ensure content is fully loaded
+                }, 350); // Slightly longer than CSS transition duration (300ms)
             }
 
             updateStats() {
