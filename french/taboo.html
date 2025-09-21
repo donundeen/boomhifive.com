@@ -268,17 +268,14 @@
 
         .timer.warning {
             color: #ffc107;
-            animation: pulse 1s infinite;
         }
 
         .timer.danger {
             color: #dc3545;
-            animation: pulse 0.5s infinite;
         }
 
         .timer.alert {
             color: #dc3545;
-            animation: pulse 0.3s infinite;
             background: rgba(220, 53, 69, 0.1);
             border-radius: 10px;
             padding: 10px;
@@ -622,24 +619,27 @@
                         this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
                     }
                     
-                    // Create a pleasant beep sound (not too annoying)
+                    // Create a more attention-grabbing beep sound
                     const oscillator = this.audioContext.createOscillator();
                     const gainNode = this.audioContext.createGain();
                     
                     oscillator.connect(gainNode);
                     gainNode.connect(this.audioContext.destination);
                     
-                    // Set frequency to a pleasant tone (A4 = 440Hz)
-                    oscillator.frequency.setValueAtTime(440, this.audioContext.currentTime);
-                    oscillator.type = 'sine';
+                    // Use a higher frequency for more attention (C5 = 523Hz)
+                    oscillator.frequency.setValueAtTime(523, this.audioContext.currentTime);
+                    // Add slight frequency variation for more character
+                    oscillator.frequency.setValueAtTime(550, this.audioContext.currentTime + 0.1);
+                    oscillator.frequency.setValueAtTime(523, this.audioContext.currentTime + 0.2);
+                    oscillator.type = 'square'; // Square wave is more attention-grabbing than sine
                     
-                    // Set volume (not too loud)
-                    gainNode.gain.setValueAtTime(0.1, this.audioContext.currentTime);
-                    gainNode.gain.exponentialRampToValueAtTime(0.01, this.audioContext.currentTime + 0.3);
+                    // Increase volume for more attention
+                    gainNode.gain.setValueAtTime(0.2, this.audioContext.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.05, this.audioContext.currentTime + 0.4);
                     
-                    // Play for 0.3 seconds
+                    // Play for 0.4 seconds (slightly longer)
                     oscillator.start(this.audioContext.currentTime);
-                    oscillator.stop(this.audioContext.currentTime + 0.3);
+                    oscillator.stop(this.audioContext.currentTime + 0.4);
                 } catch (error) {
                     console.log('Audio not available:', error);
                 }
