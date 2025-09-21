@@ -842,11 +842,11 @@
             flipToNextCard() {
                 // Start the flip animation
                 this.gameCard.classList.add('flipped');
-                this.isRevealed = false;
                 
                 // Wait for flip animation to complete, then update content
                 setTimeout(() => {
                     this.displayCard();
+                    this.isRevealed = false; // Set to blank after content is updated
                     this.gameCard.classList.remove('flipped');
                 }, 300); // Match the CSS transition duration
             }
