@@ -86,6 +86,185 @@
             border-color: #4facfe;
         }
 
+        /* Hamburger menu styles */
+        .hamburger-menu {
+            display: none;
+            position: relative;
+        }
+
+        .hamburger-btn {
+            background: #4facfe;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hamburger-btn:hover {
+            background: #3a8bfe;
+        }
+
+        .menu-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 15px;
+        }
+
+        .menu-content.show {
+            display: block;
+        }
+
+        .menu-control-group {
+            margin-bottom: 15px;
+        }
+
+        .menu-control-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .menu-control-group label {
+            display: block;
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 5px;
+        }
+
+        .menu-control-group select {
+            width: 100%;
+        }
+
+        .menu-control-group button {
+            width: 100%;
+        }
+
+        /* Action buttons layout */
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .correct-incorrect-buttons {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .correct-btn, .incorrect-btn {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .correct-btn {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+        }
+
+        .correct-btn:hover {
+            background: linear-gradient(135deg, #218838 0%, #1ea085 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+        }
+
+        .incorrect-btn {
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+            color: white;
+        }
+
+        .incorrect-btn:hover {
+            background: linear-gradient(135deg, #c82333 0%, #b21e2b 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+        }
+
+        .navigation-buttons {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .nav-btn {
+            flex: 1;
+            padding: 12px 20px;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            background: white;
+            color: #495057;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: #4facfe;
+            color: white;
+            border-color: #4facfe;
+        }
+
+        /* Speak buttons layout */
+        .speak-buttons {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .speak-btn {
+            flex: 1;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .speak-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+            background: linear-gradient(135deg, #218838 0%, #1ea085 100%);
+        }
+
+        .speak-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 10px rgba(40, 167, 69, 0.3);
+        }
+
+        .speak-btn:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
         .stats {
             display: flex;
             gap: 20px;
@@ -340,13 +519,16 @@
                 font-size: 2em;
             }
             
-            .control-group {
-                flex-direction: column;
-                align-items: stretch;
+            .controls {
+                padding: 15px;
             }
             
-            .control-group label {
-                min-width: auto;
+            .control-group {
+                display: none;
+            }
+            
+            .hamburger-menu {
+                display: block;
             }
             
             .flashcard-container {
@@ -354,19 +536,7 @@
             }
             
             .card-legend {
-                padding: 12px 18px;
-                gap: 15px;
-            }
-            
-            .legend-item {
-                font-size: 0.8em;
-                gap: 6px;
-            }
-            
-            .legend-key {
-                padding: 3px 6px;
-                font-size: 0.7em;
-                min-width: 18px;
+                display: none;
             }
             
             .word {
@@ -395,6 +565,7 @@
         </div>
 
         <div class="controls">
+            <!-- Desktop controls -->
             <div class="control-group">
                 <label for="fileSelect">Select Category:</label>
                 <select id="fileSelect">
@@ -425,6 +596,45 @@
                 <button id="resetScoreBtn" class="reset-btn">Reset Score</button>
             </div>
 
+            <!-- Mobile hamburger menu -->
+            <div class="hamburger-menu">
+                <button class="hamburger-btn" id="hamburgerBtn">
+                    ☰ Menu
+                </button>
+                <div class="menu-content" id="menuContent">
+                    <div class="menu-control-group">
+                        <label for="fileSelectMobile">Select Category:</label>
+                        <select id="fileSelectMobile">
+                            <option value="">Choose a category...</option>
+                            <option value="french_nouns.json">Nouns</option>
+                            <option value="french_adjectives.json">Adjectives</option>
+                            <option value="french_adverbs.json">Adverbs</option>
+                            <option value="french_connecting_words.json">Connecting Words</option>
+                            <option value="french_prepositions.json">Prepositions</option>
+                            <option value="french_irregular_verbs.json">Irregular Verbs</option>
+                            <option value="french_verbs.json">Verbs</option>
+                            <option value="french_versatile_words.json">Versatile Words</option>
+                            <option value="prepositions_with_verbs.json">Prepositions with Verbs</option>
+                            <option value="the_v_verbs.json">V Verbs (Aller, Vouloir, Voir, Avoir)</option>
+                            <option value="tefaq_vocab_final.json">TEFaQ Vocabulary</option>
+                            <option value="phrases_for_learning.json">Learning Phrases</option>
+                            <option value="asking_questions.json">Asking Questions (TEFaQ Part A)</option>
+                        </select>
+                    </div>
+                    <div class="menu-control-group">
+                        <label for="sideSelectMobile">Show First:</label>
+                        <select id="sideSelectMobile">
+                            <option value="french">French</option>
+                            <option value="english">English</option>
+                            <option value="random">Random</option>
+                        </select>
+                    </div>
+                    <div class="menu-control-group">
+                        <button id="resetScoreBtnMobile" class="reset-btn">Reset Score</button>
+                    </div>
+                </div>
+            </div>
+
             <div class="stats">
                 <div class="stat">
                     <div class="stat-number" id="totalCards">0</div>
@@ -442,6 +652,7 @@
         </div>
 
         <div class="flashcard-container">
+            <!-- Desktop legend -->
             <div class="card-legend">
                 <div class="legend-item">
                     <span class="legend-key" data-action="previous">←</span>
@@ -468,6 +679,19 @@
                     <span>Speak</span>
                 </div>
             </div>
+
+            <!-- Mobile action buttons -->
+            <div class="action-buttons">
+                <div class="correct-incorrect-buttons">
+                    <button id="correctBtn" class="correct-btn">✓ Correct</button>
+                    <button id="incorrectBtn" class="incorrect-btn">✗ Incorrect</button>
+                </div>
+                <div class="navigation-buttons">
+                    <button id="previousBtn" class="nav-btn">← Previous</button>
+                    <button id="nextBtn" class="nav-btn">Next →</button>
+                </div>
+            </div>
+
             <div id="flashcard" class="flashcard">
                 <div class="card-inner">
                     <div class="card-front">
@@ -482,9 +706,12 @@
                     </div>
                 </div>
             </div>
+            
             <div class="learn-more-container">
-                <button id="speakBtn" class="speak-btn">🔊 Speak French</button>
-                <button id="speakEnglishBtn" class="speak-btn">🔊 Speak English</button>
+                <div class="speak-buttons">
+                    <button id="speakBtn" class="speak-btn">🔊 Speak French</button>
+                    <button id="speakEnglishBtn" class="speak-btn">🔊 Speak English</button>
+                </div>
                 <button id="forceStopBtn" class="speak-btn" style="display: none; background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);">⏹️ Force Stop</button>
                 <button id="hideTextBtn" class="speak-btn">👁️ Hide Text</button>
                 <button id="showTextBtn" class="speak-btn" style="display: none;">👁️ Show Text</button>
@@ -615,9 +842,21 @@
                 this.forceStopBtn = document.getElementById('forceStopBtn');
                 this.hideTextBtn = document.getElementById('hideTextBtn');
                 this.showTextBtn = document.getElementById('showTextBtn');
+                
+                // Mobile elements
+                this.hamburgerBtn = document.getElementById('hamburgerBtn');
+                this.menuContent = document.getElementById('menuContent');
+                this.fileSelectMobile = document.getElementById('fileSelectMobile');
+                this.sideSelectMobile = document.getElementById('sideSelectMobile');
+                this.resetScoreBtnMobile = document.getElementById('resetScoreBtnMobile');
+                this.correctBtn = document.getElementById('correctBtn');
+                this.incorrectBtn = document.getElementById('incorrectBtn');
+                this.previousBtn = document.getElementById('previousBtn');
+                this.nextBtn = document.getElementById('nextBtn');
             }
 
             bindEvents() {
+                // Desktop events
                 this.fileSelect.addEventListener('change', () => this.loadCards());
                 this.sideSelect.addEventListener('change', () => this.updateCurrentSide());
                 this.flashcard.addEventListener('click', () => this.flipCard());
@@ -626,8 +865,20 @@
                 this.forceStopBtn.addEventListener('click', () => this.forceStopSpeech());
                 this.hideTextBtn.addEventListener('click', () => this.hideText());
                 this.showTextBtn.addEventListener('click', () => this.showText());
-                document.addEventListener('keydown', (e) => this.handleKeyPress(e));
                 document.getElementById('resetScoreBtn').addEventListener('click', () => this.resetScore());
+                
+                // Mobile events
+                this.hamburgerBtn.addEventListener('click', () => this.toggleHamburgerMenu());
+                this.fileSelectMobile.addEventListener('change', () => this.loadCards());
+                this.sideSelectMobile.addEventListener('change', () => this.updateCurrentSide());
+                this.resetScoreBtnMobile.addEventListener('click', () => this.resetScore());
+                this.correctBtn.addEventListener('click', () => this.markAsCorrect());
+                this.incorrectBtn.addEventListener('click', () => this.markAsIncorrect());
+                this.previousBtn.addEventListener('click', () => this.showPreviousCard());
+                this.nextBtn.addEventListener('click', () => this.showNextCard());
+                
+                // Keyboard events
+                document.addEventListener('keydown', (e) => this.handleKeyPress(e));
                 
                 // Add click handlers for legend keys
                 document.querySelectorAll('.legend-key').forEach(key => {
@@ -638,13 +889,28 @@
                     });
                 });
                 
+                // Close hamburger menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!this.hamburgerBtn.contains(e.target) && !this.menuContent.contains(e.target)) {
+                        this.menuContent.classList.remove('show');
+                    }
+                });
+                
                 // Save progress when page is about to unload
                 window.addEventListener('beforeunload', () => this.saveProgress());
             }
 
+            toggleHamburgerMenu() {
+                this.menuContent.classList.toggle('show');
+            }
+
             loadCards() {
-                const selectedFile = this.fileSelect.value;
+                const selectedFile = this.fileSelect.value || this.fileSelectMobile.value;
                 if (!selectedFile) return;
+
+                // Sync both selects
+                this.fileSelect.value = selectedFile;
+                this.fileSelectMobile.value = selectedFile;
 
                 // Load data from external JSON file
                 fetch(selectedFile)
@@ -678,7 +944,10 @@
             }
 
             updateCurrentSide() {
-                this.currentSide = this.sideSelect.value;
+                this.currentSide = this.sideSelect.value || this.sideSelectMobile.value;
+                // Sync both selects
+                this.sideSelect.value = this.currentSide;
+                this.sideSelectMobile.value = this.currentSide;
                 if (this.currentCard !== null) {
                     this.displayCard();
                 }
@@ -752,6 +1021,7 @@
                             
                             // Update the side selector to match saved preference
                             this.sideSelect.value = this.currentSide;
+                            this.sideSelectMobile.value = this.currentSide;
                             
                             this.updateStats();
                             
@@ -907,11 +1177,6 @@
                         event.preventDefault();
                         this.markAsIncorrect();
                         break;
-                    case 's':
-                    case 'S':
-                        event.preventDefault();
-                        this.speakText('french');
-                        break;
                 }
             }
 
@@ -931,9 +1196,6 @@
                         break;
                     case 'incorrect':
                         this.markAsIncorrect();
-                        break;
-                    case 'speak':
-                        this.speakText('french');
                         break;
                 }
             }
