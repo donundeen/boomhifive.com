@@ -824,7 +824,7 @@
                 this.stopAlert();
                 if (this.currentIndex > 0) {
                     this.currentIndex--;
-                    this.flipToNextCard();
+                    this.navigateToCard();
                     this.saveGameState();
                 }
             }
@@ -834,8 +834,19 @@
                 this.stopAlert();
                 if (this.currentIndex < this.shuffledCards.length - 1) {
                     this.currentIndex++;
-                    this.flipToNextCard();
+                    this.navigateToCard();
                     this.saveGameState();
+                }
+            }
+
+            navigateToCard() {
+                if (this.isRevealed) {
+                    // Card is showing text side - do flip animation
+                    this.flipToNextCard();
+                } else {
+                    // Card is showing blank side - just update content directly
+                    this.displayCard();
+                    this.isRevealed = false; // Ensure it stays blank
                 }
             }
 
