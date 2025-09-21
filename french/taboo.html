@@ -81,6 +81,12 @@
             justify-content: center;
         }
 
+        .nav-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
         .timer-controls {
             display: flex;
             align-items: center;
@@ -140,6 +146,19 @@
         .start-btn:hover {
             background: #c82333;
             border-color: #c82333;
+        }
+
+        .reset-btn {
+            background: #6c757d;
+            color: white;
+            border-color: #6c757d;
+            font-size: 14px;
+            padding: 10px 20px;
+        }
+
+        .reset-btn:hover {
+            background: #5a6268;
+            border-color: #5a6268;
         }
 
         .game-area {
@@ -204,31 +223,37 @@
             font-size: 2.5em;
             font-weight: bold;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            color: #ffffff;
         }
 
         .divider {
             width: 80%;
-            height: 3px;
-            background: white;
+            height: 4px;
+            background: #ffffff;
             margin: 20px 0;
             border-radius: 2px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
         .taboo-words {
-            font-size: 1.2em;
-            line-height: 1.8;
-            opacity: 0.9;
+            font-size: 1.4em;
+            line-height: 1.6;
+            opacity: 1;
             max-width: 90%;
+            font-weight: 600;
         }
 
         .taboo-word {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 5px 10px;
-            margin: 5px;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            padding: 8px 15px;
+            margin: 6px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
         }
 
         .timer {
@@ -319,6 +344,16 @@
                 gap: 10px;
             }
             
+            .nav-controls {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .nav-controls button {
+                flex: 1;
+                max-width: 150px;
+            }
+            
             .game-area {
                 padding: 20px;
             }
@@ -328,7 +363,12 @@
             }
             
             .taboo-words {
-                font-size: 1em;
+                font-size: 1.2em;
+            }
+            
+            .taboo-word {
+                font-size: 0.9em;
+                padding: 6px 12px;
             }
             
             .timer {
@@ -354,8 +394,11 @@
                 <input type="number" id="timerInput" value="3" min="1" max="10">
             </div>
             <button id="startBtn" class="start-btn">Start Game</button>
-            <button id="prevBtn" class="nav-btn hidden">← Previous</button>
-            <button id="nextBtn" class="nav-btn hidden">Next →</button>
+            <button id="resetBtn" class="reset-btn hidden">🔄 Reset Game</button>
+            <div class="nav-controls">
+                <button id="prevBtn" class="nav-btn hidden">← Previous</button>
+                <button id="nextBtn" class="nav-btn hidden">Next →</button>
+            </div>
         </div>
 
         <div class="game-area">
@@ -416,6 +459,7 @@
             initializeElements() {
                 this.timerInput = document.getElementById('timerInput');
                 this.startBtn = document.getElementById('startBtn');
+                this.resetBtn = document.getElementById('resetBtn');
                 this.prevBtn = document.getElementById('prevBtn');
                 this.nextBtn = document.getElementById('nextBtn');
                 this.gameCard = document.getElementById('gameCard');
@@ -429,6 +473,7 @@
 
             bindEvents() {
                 this.startBtn.addEventListener('click', () => this.startGame());
+                this.resetBtn.addEventListener('click', () => this.resetGame());
                 this.prevBtn.addEventListener('click', () => this.previousCard());
                 this.nextBtn.addEventListener('click', () => this.nextCard());
                 this.gameCard.addEventListener('click', () => this.revealCard());
@@ -461,7 +506,18 @@
                 this.gameCard.classList.remove('hidden');
                 this.prevBtn.classList.remove('hidden');
                 this.nextBtn.classList.remove('hidden');
+                this.resetBtn.classList.remove('hidden');
                 this.startBtn.textContent = 'Restart Game';
+                this.displayCard();
+            }
+
+            resetGame() {
+                this.stopTimer();
+                this.shuffleCards();
+                this.currentIndex = 0;
+                this.isRevealed = false;
+                this.gameCard.classList.remove('flipped');
+                this.timer.classList.add('hidden');
                 this.displayCard();
             }
 
