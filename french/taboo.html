@@ -490,8 +490,9 @@
                 
                 this.initializeElements();
                 this.bindEvents();
-                this.loadCards();
-                this.loadGameState();
+                this.loadCards().then(() => {
+                    this.loadGameState();
+                });
             }
 
             initializeElements() {
@@ -559,6 +560,7 @@
                     this.cards = data;
                     this.shuffleCards();
                     this.updateStats();
+                    console.log('Cards loaded successfully, shuffledCards length:', this.shuffledCards.length);
                 } catch (error) {
                     console.error('Error loading cards:', error);
                     alert('Error loading game data. Please try again.');
