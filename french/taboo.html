@@ -442,6 +442,7 @@
                 this.shuffledCards = [];
                 this.currentIndex = 0;
                 this.timer = null;
+                this.timerInterval = null;
                 this.timeLeft = 0;
                 this.isRevealed = false;
                 this.alertInterval = null;
@@ -470,14 +471,27 @@
 
             bindEvents() {
                 this.startBtn.addEventListener('click', () => {
+                    this.stopAlert(); // Stop alert if sounding
                     this.initializeAudioContext();
                     this.startGame();
                 });
-                this.prevBtn.addEventListener('click', () => this.previousCard());
-                this.nextBtn.addEventListener('click', () => this.nextCard());
-                this.gameCard.addEventListener('click', () => this.revealCard());
+                this.prevBtn.addEventListener('click', () => {
+                    this.stopAlert(); // Stop alert if sounding
+                    this.previousCard();
+                });
+                this.nextBtn.addEventListener('click', () => {
+                    this.stopAlert(); // Stop alert if sounding
+                    this.nextCard();
+                });
+                this.gameCard.addEventListener('click', () => {
+                    this.stopAlert(); // Stop alert if sounding
+                    this.revealCard();
+                });
                 this.timer.addEventListener('click', () => this.stopAlert());
-                this.timerInput.addEventListener('change', () => this.saveGameState());
+                this.timerInput.addEventListener('change', () => {
+                    this.stopAlert(); // Stop alert if sounding
+                    this.saveGameState();
+                });
                 
                 // Save state when page is about to unload
                 window.addEventListener('beforeunload', () => this.saveGameState());
@@ -571,8 +585,20 @@
             }
 
             startGame() {
-                this.gameStarted = true;
-                this.showGameInterface();
+                // If game is already started, restart it
+                if (this.gameStarted) {
+                    this.stopTimer();
+                    this.stopAlert();
+                    this.shuffleCards();
+                    this.currentIndex = 0;
+                    this.isRevealed = false;
+                    this.gameCard.classList.remove('flipped');
+                    this.timer.classList.add('hidden');
+                    this.displayCard();
+                } else {
+                    this.gameStarted = true;
+                    this.showGameInterface();
+                }
                 this.saveGameState();
             }
 
@@ -613,6 +639,11 @@
             }
 
             startTimer() {
+                // Clear any existing timer
+                if (this.timerInterval) {
+                    clearInterval(this.timerInterval);
+                }
+                
                 this.timeLeft = Math.round(parseFloat(this.timerInput.value) * 60); // Convert to seconds, handle decimals
                 this.timer.classList.remove('hidden');
                 this.updateTimerDisplay();
