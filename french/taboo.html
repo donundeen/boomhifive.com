@@ -489,6 +489,10 @@
                 this.nextBtn.addEventListener('click', () => this.nextCard());
                 this.gameCard.addEventListener('click', () => this.revealCard());
                 this.timer.addEventListener('click', () => this.stopAlert());
+                this.timerInput.addEventListener('change', () => this.saveGameState());
+                
+                // Save state when page is about to unload
+                window.addEventListener('beforeunload', () => this.saveGameState());
             }
 
             async loadCards() {
@@ -670,6 +674,21 @@
                         this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
                     }
                     
+                    // Resume audio context if it's suspended (required for mobile)
+                    if (this.audioContext.state === 'suspended') {
+                        this.audioContext.resume().then(() => {
+                            this.createAndPlaySound();
+                        });
+                    } else {
+                        this.createAndPlaySound();
+                    }
+                } catch (error) {
+                    console.log('Audio not available:', error);
+                }
+            }
+
+            createAndPlaySound() {
+                try {
                     // Create a more attention-grabbing beep sound
                     const oscillator = this.audioContext.createOscillator();
                     const gainNode = this.audioContext.createGain();
@@ -692,7 +711,7 @@
                     oscillator.start(this.audioContext.currentTime);
                     oscillator.stop(this.audioContext.currentTime + 0.4);
                 } catch (error) {
-                    console.log('Audio not available:', error);
+                    console.log('Error creating sound:', error);
                 }
             }
 
