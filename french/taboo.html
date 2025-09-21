@@ -244,14 +244,49 @@
             box-shadow: 0 2px 6px rgba(0,0,0,0.2);
         }
 
+        .timer-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
         .timer {
             font-size: 3em;
             font-weight: bold;
             color: #dc3545;
-            margin: 20px 0;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             cursor: pointer;
             user-select: none;
+        }
+
+        .pause-btn {
+            background: #ffc107;
+            color: #212529;
+            border: 2px solid #ffc107;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .pause-btn:hover {
+            background: #e0a800;
+            border-color: #e0a800;
+        }
+
+        .pause-btn.paused {
+            background: #28a745;
+            border-color: #28a745;
+            color: white;
+        }
+
+        .pause-btn.paused:hover {
+            background: #218838;
+            border-color: #1e7e34;
         }
 
         .timer.warning {
@@ -420,7 +455,10 @@
                 </div>
             </div>
 
-            <div id="timer" class="timer hidden"></div>
+            <div class="timer-container">
+                <div id="timer" class="timer hidden"></div>
+                <button id="pauseBtn" class="pause-btn hidden">⏸️ Pause</button>
+            </div>
 
             <div class="game-stats">
                 <div class="stat">
@@ -448,6 +486,7 @@
                 this.alertInterval = null;
                 this.audioContext = null;
                 this.gameStarted = false;
+                this.isPaused = false;
                 
                 this.initializeElements();
                 this.bindEvents();
@@ -464,6 +503,7 @@
                 this.targetWord = document.getElementById('targetWord');
                 this.tabooWords = document.getElementById('tabooWords');
                 this.timer = document.getElementById('timer');
+                this.pauseBtn = document.getElementById('pauseBtn');
                 this.currentCardEl = document.getElementById('currentCard');
                 this.totalCardsEl = document.getElementById('totalCards');
                 this.instructions = document.getElementById('instructions');
@@ -488,6 +528,7 @@
                     this.revealCard();
                 });
                 this.timer.addEventListener('click', () => this.stopAlert());
+                this.pauseBtn.addEventListener('click', () => this.togglePause());
                 this.timerInput.addEventListener('change', () => {
                     this.stopAlert(); // Stop alert if sounding
                     this.saveGameState();
@@ -594,6 +635,7 @@
                     this.isRevealed = false;
                     this.gameCard.classList.remove('flipped');
                     this.timer.classList.add('hidden');
+                    this.pauseBtn.classList.add('hidden');
                     this.displayCard();
                 } else {
                     this.gameStarted = true;
@@ -646,15 +688,21 @@
                 
                 this.timeLeft = Math.round(parseFloat(this.timerInput.value) * 60); // Convert to seconds, handle decimals
                 this.timer.classList.remove('hidden');
+                this.pauseBtn.classList.remove('hidden');
+                this.isPaused = false;
+                this.pauseBtn.textContent = '⏸️ Pause';
+                this.pauseBtn.classList.remove('paused');
                 this.updateTimerDisplay();
                 
                 this.timerInterval = setInterval(() => {
-                    this.timeLeft--;
-                    this.updateTimerDisplay();
-                    
-                    if (this.timeLeft <= 0) {
-                        this.stopTimer();
-                        this.startAlert();
+                    if (!this.isPaused) {
+                        this.timeLeft--;
+                        this.updateTimerDisplay();
+                        
+                        if (this.timeLeft <= 0) {
+                            this.stopTimer();
+                            this.startAlert();
+                        }
                     }
                 }, 1000);
             }
@@ -663,6 +711,24 @@
                 if (this.timerInterval) {
                     clearInterval(this.timerInterval);
                     this.timerInterval = null;
+                }
+                this.pauseBtn.classList.add('hidden');
+                this.isPaused = false;
+            }
+
+            togglePause() {
+                this.stopAlert(); // Stop alert if sounding
+                
+                if (this.isPaused) {
+                    // Resume timer
+                    this.isPaused = false;
+                    this.pauseBtn.textContent = '⏸️ Pause';
+                    this.pauseBtn.classList.remove('paused');
+                } else {
+                    // Pause timer
+                    this.isPaused = true;
+                    this.pauseBtn.textContent = '▶️ Resume';
+                    this.pauseBtn.classList.add('paused');
                 }
             }
 
