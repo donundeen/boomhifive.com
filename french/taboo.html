@@ -730,6 +730,9 @@
                     this.pauseBtn.textContent = '▶️ Resume';
                     this.pauseBtn.classList.add('paused');
                 }
+                
+                // Update timer display to show current time (not 0:00)
+                this.updateTimerDisplay();
             }
 
             startAlert() {
@@ -821,7 +824,7 @@
                 this.stopAlert();
                 if (this.currentIndex > 0) {
                     this.currentIndex--;
-                    this.displayCard();
+                    this.flipToNextCard();
                     this.saveGameState();
                 }
             }
@@ -831,9 +834,21 @@
                 this.stopAlert();
                 if (this.currentIndex < this.shuffledCards.length - 1) {
                     this.currentIndex++;
-                    this.displayCard();
+                    this.flipToNextCard();
                     this.saveGameState();
                 }
+            }
+
+            flipToNextCard() {
+                // Start the flip animation
+                this.gameCard.classList.add('flipped');
+                this.isRevealed = false;
+                
+                // Wait for flip animation to complete, then update content
+                setTimeout(() => {
+                    this.displayCard();
+                    this.gameCard.classList.remove('flipped');
+                }, 300); // Match the CSS transition duration
             }
 
             updateStats() {
