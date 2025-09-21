@@ -634,9 +634,9 @@
                     this.tabooWords.appendChild(tabooElement);
                 });
                 
-                // For initial card, show it as blank (not revealed)
-                this.gameCard.classList.remove('flipped');
-                this.isRevealed = false;
+                // For initial card, show it as revealed (showing content)
+                this.gameCard.classList.add('flipped');
+                this.isRevealed = true;
                 this.timer.classList.add('hidden');
                 
                 this.updateStats();
