@@ -622,34 +622,32 @@
                 console.log('displayInitialCard called');
                 if (this.shuffledCards.length === 0) return;
                 
-                // For initial card, show it as revealed (showing content)
-                this.gameCard.classList.add('flipped');
-                this.isRevealed = true;
+                const card = this.shuffledCards[this.currentIndex];
+                console.log('Card data:', card);
+                
+                // Set the word content
+                this.targetWord.textContent = card.word;
+                console.log('Target word set to:', this.targetWord.textContent);
+                
+                // Clear previous taboo words
+                this.tabooWords.innerHTML = '';
+                
+                // Add taboo words as individual elements
+                card.taboo.forEach(word => {
+                    const tabooElement = document.createElement('span');
+                    tabooElement.className = 'taboo-word';
+                    tabooElement.textContent = word;
+                    this.tabooWords.appendChild(tabooElement);
+                });
+                
+                console.log('Taboo words added:', this.tabooWords.innerHTML);
+                
+                // For initial card, show it as hidden (blank side)
+                this.gameCard.classList.remove('flipped');
+                this.isRevealed = false;
                 this.timer.classList.add('hidden');
                 
-                // Set content after flipping
-                setTimeout(() => {
-                    const card = this.shuffledCards[this.currentIndex];
-                    console.log('Card data:', card);
-                    
-                    // Set the word content
-                    this.targetWord.textContent = card.word;
-                    console.log('Target word set to:', this.targetWord.textContent);
-                    
-                    // Clear previous taboo words
-                    this.tabooWords.innerHTML = '';
-                    
-                    // Add taboo words as individual elements
-                    card.taboo.forEach(word => {
-                        const tabooElement = document.createElement('span');
-                        tabooElement.className = 'taboo-word';
-                        tabooElement.textContent = word;
-                        this.tabooWords.appendChild(tabooElement);
-                    });
-                    
-                    console.log('Taboo words added:', this.tabooWords.innerHTML);
-                    this.updateStats();
-                }, 50); // Small delay to ensure flip is complete
+                this.updateStats();
             }
 
             shuffleCards() {
