@@ -858,6 +858,7 @@
                 console.log('flipToNextCard called');
                 // Start the flip animation immediately
                 this.gameCard.classList.add('flipped');
+                console.log('Flip class added, waiting for animation...');
                 
                 // Wait for flip animation to complete, then update content
                 setTimeout(() => {
@@ -871,7 +872,7 @@
                         console.log('About to flip back');
                         this.gameCard.classList.remove('flipped');
                     }, 100); // Delay to ensure content is fully loaded
-                }, 1300); // Match the CSS transition duration
+                }, 350); // Wait for CSS transition to complete (300ms + buffer)
             }
 
             updateStats() {
