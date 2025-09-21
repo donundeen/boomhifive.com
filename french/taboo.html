@@ -459,10 +459,12 @@
                 this.isRevealed = false;
                 this.alertInterval = null;
                 this.audioContext = null;
+                this.gameStarted = false;
                 
                 this.initializeElements();
                 this.bindEvents();
                 this.loadCards();
+                this.loadGameState();
             }
 
             initializeElements() {
@@ -502,6 +504,58 @@
                 }
             }
 
+            saveGameState() {
+                const gameState = {
+                    currentIndex: this.currentIndex,
+                    timerDuration: this.timerInput.value,
+                    gameStarted: this.gameStarted,
+                    shuffledCards: this.shuffledCards,
+                    timestamp: Date.now()
+                };
+                localStorage.setItem('tabooGameState', JSON.stringify(gameState));
+            }
+
+            loadGameState() {
+                try {
+                    const savedState = localStorage.getItem('tabooGameState');
+                    if (savedState) {
+                        const gameState = JSON.parse(savedState);
+                        
+                        // Check if saved state is recent (within 24 hours)
+                        const hoursSinceSave = (Date.now() - gameState.timestamp) / (1000 * 60 * 60);
+                        if (hoursSinceSave < 24) {
+                            this.currentIndex = gameState.currentIndex || 0;
+                            this.timerInput.value = gameState.timerDuration || 3;
+                            this.gameStarted = gameState.gameStarted || false;
+                            
+                            // Restore shuffled cards if available
+                            if (gameState.shuffledCards && gameState.shuffledCards.length === this.cards.length) {
+                                this.shuffledCards = gameState.shuffledCards;
+                            }
+                            
+                            this.updateStats();
+                            
+                            // If game was started, show the game interface
+                            if (this.gameStarted) {
+                                this.showGameInterface();
+                            }
+                        }
+                    }
+                } catch (error) {
+                    console.error('Error loading game state:', error);
+                }
+            }
+
+            showGameInterface() {
+                this.instructions.classList.add('hidden');
+                this.gameCard.classList.remove('hidden');
+                this.prevBtn.classList.remove('hidden');
+                this.nextBtn.classList.remove('hidden');
+                this.resetBtn.classList.remove('hidden');
+                this.startBtn.textContent = 'Restart Game';
+                this.displayCard();
+            }
+
             shuffleCards() {
                 this.shuffledCards = [...this.cards];
                 for (let i = this.shuffledCards.length - 1; i > 0; i--) {
@@ -512,13 +566,9 @@
             }
 
             startGame() {
-                this.instructions.classList.add('hidden');
-                this.gameCard.classList.remove('hidden');
-                this.prevBtn.classList.remove('hidden');
-                this.nextBtn.classList.remove('hidden');
-                this.resetBtn.classList.remove('hidden');
-                this.startBtn.textContent = 'Restart Game';
-                this.displayCard();
+                this.gameStarted = true;
+                this.showGameInterface();
+                this.saveGameState();
             }
 
             resetGame() {
@@ -530,6 +580,7 @@
                 this.gameCard.classList.remove('flipped');
                 this.timer.classList.add('hidden');
                 this.displayCard();
+                this.saveGameState();
             }
 
             displayCard() {
@@ -665,6 +716,7 @@
                 if (this.currentIndex > 0) {
                     this.currentIndex--;
                     this.displayCard();
+                    this.saveGameState();
                 }
             }
 
@@ -674,6 +726,7 @@
                 if (this.currentIndex < this.shuffledCards.length - 1) {
                     this.currentIndex++;
                     this.displayCard();
+                    this.saveGameState();
                 }
             }
 
