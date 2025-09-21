@@ -646,6 +646,7 @@
 
 
             displayCard() {
+                console.log('displayCard called');
                 if (this.shuffledCards.length === 0) return;
                 
                 const card = this.shuffledCards[this.currentIndex];
@@ -830,6 +831,7 @@
             }
 
             nextCard() {
+                console.log('Next button clicked');
                 this.stopTimer();
                 this.stopAlert();
                 if (this.currentIndex < this.shuffledCards.length - 1) {
@@ -842,29 +844,34 @@
             navigateToCard() {
                 if (this.isRevealed) {
                     // Card is showing text side - do flip animation
+                    console.log('Card is revealed, calling flipToNextCard');
                     this.flipToNextCard();
                 } else {
                     // Card is showing blank side - just update content directly
+                    console.log('Card is blank, calling displayCard directly');
                     this.displayCard();
                     this.isRevealed = false; // Ensure it stays blank
                 }
             }
 
             flipToNextCard() {
-                // Start the flip animation
+                console.log('flipToNextCard called');
+                // Start the flip animation immediately
                 this.gameCard.classList.add('flipped');
                 
                 // Wait for flip animation to complete, then update content
                 setTimeout(() => {
                     // Update content while card is flipped (hidden)
+                    console.log('About to call displayCard in setTimeout');
                     this.displayCard();
                     this.isRevealed = false; // Set to blank state
                     
                     // Wait a bit longer for content to fully update, then flip back
                     setTimeout(() => {
+                        console.log('About to flip back');
                         this.gameCard.classList.remove('flipped');
-                    }, 100); // Longer delay to ensure content is fully loaded
-                }, 1000); // Slightly longer than CSS transition duration (300ms)
+                    }, 100); // Delay to ensure content is fully loaded
+                }, 300); // Match the CSS transition duration
             }
 
             updateStats() {
