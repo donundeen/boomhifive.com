@@ -613,7 +613,33 @@
                 this.prevBtn.classList.remove('hidden');
                 this.nextBtn.classList.remove('hidden');
                 this.startBtn.textContent = 'Restart Game';
-                this.displayCard();
+                this.displayInitialCard();
+            }
+
+            displayInitialCard() {
+                console.log('displayInitialCard called');
+                if (this.shuffledCards.length === 0) return;
+                
+                const card = this.shuffledCards[this.currentIndex];
+                this.targetWord.textContent = card.word;
+                
+                // Clear previous taboo words
+                this.tabooWords.innerHTML = '';
+                
+                // Add taboo words as individual elements
+                card.taboo.forEach(word => {
+                    const tabooElement = document.createElement('span');
+                    tabooElement.className = 'taboo-word';
+                    tabooElement.textContent = word;
+                    this.tabooWords.appendChild(tabooElement);
+                });
+                
+                // For initial card, show it as blank (not revealed)
+                this.gameCard.classList.remove('flipped');
+                this.isRevealed = false;
+                this.timer.classList.add('hidden');
+                
+                this.updateStats();
             }
 
             shuffleCards() {
@@ -663,7 +689,7 @@
                     this.tabooWords.appendChild(tabooElement);
                 });
                 
-                // Reset card to front (hidden)
+                // Reset card to front (hidden) - only if not in flipToNextCard
                 this.gameCard.classList.remove('flipped');
                 this.isRevealed = false;
                 this.timer.classList.add('hidden');
@@ -857,9 +883,7 @@
             flipToNextCard() {
                 console.log('flipToNextCard called');
                 // Start the flip animation immediately
-//                this.gameCard.classList.add('flipped');
                 this.gameCard.classList.remove('flipped');
-
                 console.log('Flip class added, waiting for animation...');
                 
                 // Wait for flip animation to complete, then update content
