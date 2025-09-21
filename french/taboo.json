@@ -1,0 +1,214 @@
+[
+  {
+    "word": "chien",
+    "taboo": ["animal", "aboyer", "fidèle", "domestique"]
+  },
+  {
+    "word": "voiture",
+    "taboo": ["rouler", "conduire", "moteur", "roues"]
+  },
+  {
+    "word": "maison",
+    "taboo": ["habiter", "toit", "porte", "fenêtre"]
+  },
+  {
+    "word": "eau",
+    "taboo": ["boire", "liquide", "transparent", "pluie"]
+  },
+  {
+    "word": "livre",
+    "taboo": ["lire", "pages", "histoire", "bibliothèque"]
+  },
+  {
+    "word": "soleil",
+    "taboo": ["lumière", "chaud", "jour", "ciel"]
+  },
+  {
+    "word": "manger",
+    "taboo": ["faim", "nourriture", "bouche", "déjeuner"]
+  },
+  {
+    "word": "dormir",
+    "taboo": ["lit", "nuit", "fatigué", "rêver"]
+  },
+  {
+    "word": "marcher",
+    "taboo": ["pieds", "rue", "lentement", "promenade"]
+  },
+  {
+    "word": "parler",
+    "taboo": ["bouche", "mots", "conversation", "voix"]
+  },
+  {
+    "word": "école",
+    "taboo": ["étudier", "professeur", "élèves", "apprendre"]
+  },
+  {
+    "word": "travail",
+    "taboo": ["bureau", "salaire", "employé", "profession"]
+  },
+  {
+    "word": "famille",
+    "taboo": ["parents", "enfants", "mère", "père"]
+  },
+  {
+    "word": "ami",
+    "taboo": ["copain", "relation", "partager", "confiance"]
+  },
+  {
+    "word": "argent",
+    "taboo": ["euros", "payer", "riche", "pauvre"]
+  },
+  {
+    "word": "nourriture",
+    "taboo": ["manger", "goût", "cuisiner", "restaurant"]
+  },
+  {
+    "word": "voyage",
+    "taboo": ["partir", "vacances", "bagages", "avion"]
+  },
+  {
+    "word": "musique",
+    "taboo": ["chanter", "écouter", "instruments", "chanson"]
+  },
+  {
+    "word": "sport",
+    "taboo": ["jouer", "équipe", "entraînement", "compétition"]
+  },
+  {
+    "word": "film",
+    "taboo": ["regarder", "cinéma", "acteurs", "histoire"]
+  },
+  {
+    "word": "couleur",
+    "taboo": ["rouge", "bleu", "vert", "peinture"]
+  },
+  {
+    "word": "temps",
+    "taboo": ["heure", "minute", "seconde", "montre"]
+  },
+  {
+    "word": "saison",
+    "taboo": ["été", "hiver", "printemps", "automne"]
+  },
+  {
+    "word": "vêtement",
+    "taboo": ["porter", "habiller", "chemise", "pantalon"]
+  },
+  {
+    "word": "médecin",
+    "taboo": ["malade", "soigner", "hôpital", "maladie"]
+  },
+  {
+    "word": "cuisine",
+    "taboo": ["cuisiner", "repas", "four", "casserole"]
+  },
+  {
+    "word": "jardin",
+    "taboo": ["fleurs", "plantes", "herbe", "arroser"]
+  },
+  {
+    "word": "plage",
+    "taboo": ["mer", "sable", "vacances", "bain"]
+  },
+  {
+    "word": "montagne",
+    "taboo": ["haut", "escalader", "neige", "sommet"]
+  },
+  {
+    "word": "forêt",
+    "taboo": ["arbres", "nature", "marcher", "oiseaux"]
+  },
+  {
+    "word": "ville",
+    "taboo": ["grande", "habitants", "rues", "bâtiments"]
+  },
+  {
+    "word": "campagne",
+    "taboo": ["village", "nature", "ferme", "calme"]
+  },
+  {
+    "word": "restaurant",
+    "taboo": ["manger", "serveur", "commander", "addition"]
+  },
+  {
+    "word": "hôtel",
+    "taboo": ["dormir", "voyage", "chambre", "réception"]
+  },
+  {
+    "word": "magasin",
+    "taboo": ["acheter", "vendeur", "prix", "client"]
+  },
+  {
+    "word": "banque",
+    "taboo": ["argent", "compte", "retirer", "dépôt"]
+  },
+  {
+    "word": "gare",
+    "taboo": ["train", "voyage", "quai", "billet"]
+  },
+  {
+    "word": "aéroport",
+    "taboo": ["avion", "voyage", "décoller", "atterrir"]
+  },
+  {
+    "word": "marché",
+    "taboo": ["acheter", "légumes", "fruits", "vendeur"]
+  },
+  {
+    "word": "pharmacie",
+    "taboo": ["médicaments", "malade", "ordonnance", "guérir"]
+  },
+  {
+    "word": "boulangerie",
+    "taboo": ["pain", "pâtisserie", "gâteau", "farine"]
+  },
+  {
+    "word": "boucherie",
+    "taboo": ["viande", "bœuf", "porc", "poulet"]
+  },
+  {
+    "word": "poissonnerie",
+    "taboo": ["poisson", "mer", "pêcher", "frais"]
+  },
+  {
+    "word": "fromagerie",
+    "taboo": ["fromage", "lait", "vache", "chèvre"]
+  },
+  {
+    "word": "charcuterie",
+    "taboo": ["charcuterie", "jambon", "saucisson", "porc"]
+  },
+  {
+    "word": "épicerie",
+    "taboo": ["aliments", "acheter", "nourriture", "produits"]
+  },
+  {
+    "word": "supermarché",
+    "taboo": ["courses", "acheter", "caddie", "caissier"]
+  },
+  {
+    "word": "bibliothèque",
+    "taboo": ["livres", "emprunter", "lire", "silence"]
+  },
+  {
+    "word": "musée",
+    "taboo": ["visiter", "œuvres", "art", "exposition"]
+  },
+  {
+    "word": "théâtre",
+    "taboo": ["pièce", "acteurs", "scène", "spectacle"]
+  },
+  {
+    "word": "concert",
+    "taboo": ["musique", "chanter", "instruments", "public"]
+  },
+  {
+    "word": "stade",
+    "taboo": ["sport", "match", "équipe", "spectateurs"]
+  },
+  {
+    "word": "piscine",
+    "taboo": ["nager", "eau", "bain", "sport"]
+  }
+]

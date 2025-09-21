@@ -31,6 +31,33 @@
             overflow: hidden;
         }
 
+        .nav-menu {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .nav-menu a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .nav-menu a.active {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
         .header {
             background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
             color: white;
@@ -560,6 +587,11 @@
 </head>
 <body>
     <div class="container">
+        <div class="nav-menu">
+            <a href="index.html" class="active">📚 Flashcards</a>
+            <a href="taboo.html">🎯 Taboo Game</a>
+        </div>
+        
         <div class="header">
             <h1>🇫🇷 French Learning Flashcards</h1>
         </div>

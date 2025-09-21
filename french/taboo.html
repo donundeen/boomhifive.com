@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>French Taboo Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .nav-menu {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .nav-menu a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .nav-menu a.active {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .controls {
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .timer-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .timer-controls label {
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .timer-controls input {
+            width: 80px;
+            padding: 8px;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            font-size: 14px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        button:hover {
+            background: #4facfe;
+            color: white;
+            border-color: #4facfe;
+        }
+
+        .nav-btn {
+            background: #28a745;
+            color: white;
+            border-color: #28a745;
+        }
+
+        .nav-btn:hover {
+            background: #218838;
+            border-color: #218838;
+        }
+
+        .start-btn {
+            background: #dc3545;
+            color: white;
+            border-color: #dc3545;
+            font-size: 16px;
+            padding: 12px 24px;
+        }
+
+        .start-btn:hover {
+            background: #c82333;
+            border-color: #c82333;
+        }
+
+        .game-area {
+            padding: 40px;
+            text-align: center;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 500px;
+            height: 350px;
+            perspective: 1000px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .card.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .card-front {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .card-back {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .word {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .divider {
+            width: 80%;
+            height: 3px;
+            background: white;
+            margin: 20px 0;
+            border-radius: 2px;
+        }
+
+        .taboo-words {
+            font-size: 1.2em;
+            line-height: 1.8;
+            opacity: 0.9;
+            max-width: 90%;
+        }
+
+        .taboo-word {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 10px;
+            margin: 5px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .timer {
+            font-size: 3em;
+            font-weight: bold;
+            color: #dc3545;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .timer.warning {
+            color: #ffc107;
+            animation: pulse 1s infinite;
+        }
+
+        .timer.danger {
+            color: #dc3545;
+            animation: pulse 0.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .game-stats {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .stat {
+            background: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #4facfe;
+        }
+
+        .stat-label {
+            font-size: 0.8em;
+            color: #6c757d;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .instructions {
+            background: #e9ecef;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .instructions h3 {
+            color: #495057;
+            margin-bottom: 10px;
+        }
+
+        .instructions ul {
+            color: #6c757d;
+            padding-left: 20px;
+        }
+
+        .instructions li {
+            margin-bottom: 5px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .controls {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .game-area {
+                padding: 20px;
+            }
+            
+            .word {
+                font-size: 2em;
+            }
+            
+            .taboo-words {
+                font-size: 1em;
+            }
+            
+            .timer {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-menu">
+            <a href="index.html">📚 Flashcards</a>
+            <a href="taboo.html" class="active">🎯 Taboo Game</a>
+        </div>
+        
+        <div class="header">
+            <h1>🎯 French Taboo Game</h1>
+        </div>
+
+        <div class="controls">
+            <div class="timer-controls">
+                <label for="timerInput">Timer (minutes):</label>
+                <input type="number" id="timerInput" value="3" min="1" max="10">
+            </div>
+            <button id="startBtn" class="start-btn">Start Game</button>
+            <button id="prevBtn" class="nav-btn hidden">← Previous</button>
+            <button id="nextBtn" class="nav-btn hidden">Next →</button>
+        </div>
+
+        <div class="game-area">
+            <div id="instructions" class="instructions">
+                <h3>How to Play:</h3>
+                <ul>
+                    <li>One player describes the word at the top without using the taboo words below</li>
+                    <li>Other players try to guess the word</li>
+                    <li>Tap the card to reveal the word and taboo words</li>
+                    <li>Use the timer to keep track of time</li>
+                    <li>Navigate with Previous/Next buttons</li>
+                </ul>
+            </div>
+
+            <div id="gameCard" class="card hidden">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="word">Tap to reveal</div>
+                    </div>
+                    <div class="card-back">
+                        <div class="word" id="targetWord"></div>
+                        <div class="divider"></div>
+                        <div class="taboo-words" id="tabooWords"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="timer" class="timer hidden"></div>
+
+            <div class="game-stats">
+                <div class="stat">
+                    <div class="stat-number" id="currentCard">0</div>
+                    <div class="stat-label">Current Card</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" id="totalCards">0</div>
+                    <div class="stat-label">Total Cards</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class TabooGame {
+            constructor() {
+                this.cards = [];
+                this.shuffledCards = [];
+                this.currentIndex = 0;
+                this.timer = null;
+                this.timeLeft = 0;
+                this.isRevealed = false;
+                
+                this.initializeElements();
+                this.bindEvents();
+                this.loadCards();
+            }
+
+            initializeElements() {
+                this.timerInput = document.getElementById('timerInput');
+                this.startBtn = document.getElementById('startBtn');
+                this.prevBtn = document.getElementById('prevBtn');
+                this.nextBtn = document.getElementById('nextBtn');
+                this.gameCard = document.getElementById('gameCard');
+                this.targetWord = document.getElementById('targetWord');
+                this.tabooWords = document.getElementById('tabooWords');
+                this.timer = document.getElementById('timer');
+                this.currentCardEl = document.getElementById('currentCard');
+                this.totalCardsEl = document.getElementById('totalCards');
+                this.instructions = document.getElementById('instructions');
+            }
+
+            bindEvents() {
+                this.startBtn.addEventListener('click', () => this.startGame());
+                this.prevBtn.addEventListener('click', () => this.previousCard());
+                this.nextBtn.addEventListener('click', () => this.nextCard());
+                this.gameCard.addEventListener('click', () => this.revealCard());
+            }
+
+            async loadCards() {
+                try {
+                    const response = await fetch('taboo.json');
+                    const data = await response.json();
+                    this.cards = data;
+                    this.shuffleCards();
+                    this.updateStats();
+                } catch (error) {
+                    console.error('Error loading cards:', error);
+                    alert('Error loading game data. Please try again.');
+                }
+            }
+
+            shuffleCards() {
+                this.shuffledCards = [...this.cards];
+                for (let i = this.shuffledCards.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [this.shuffledCards[i], this.shuffledCards[j]] = [this.shuffledCards[j], this.shuffledCards[i]];
+                }
+                this.currentIndex = 0;
+            }
+
+            startGame() {
+                this.instructions.classList.add('hidden');
+                this.gameCard.classList.remove('hidden');
+                this.prevBtn.classList.remove('hidden');
+                this.nextBtn.classList.remove('hidden');
+                this.startBtn.textContent = 'Restart Game';
+                this.displayCard();
+            }
+
+            displayCard() {
+                if (this.shuffledCards.length === 0) return;
+                
+                const card = this.shuffledCards[this.currentIndex];
+                this.targetWord.textContent = card.word;
+                
+                // Clear previous taboo words
+                this.tabooWords.innerHTML = '';
+                
+                // Add taboo words as individual elements
+                card.taboo.forEach(word => {
+                    const tabooElement = document.createElement('span');
+                    tabooElement.className = 'taboo-word';
+                    tabooElement.textContent = word;
+                    this.tabooWords.appendChild(tabooElement);
+                });
+                
+                // Reset card to front (hidden)
+                this.gameCard.classList.remove('flipped');
+                this.isRevealed = false;
+                this.timer.classList.add('hidden');
+                
+                this.updateStats();
+            }
+
+            revealCard() {
+                if (this.isRevealed) return;
+                
+                this.gameCard.classList.add('flipped');
+                this.isRevealed = true;
+                
+                // Start timer
+                this.startTimer();
+            }
+
+            startTimer() {
+                this.timeLeft = parseInt(this.timerInput.value) * 60; // Convert to seconds
+                this.timer.classList.remove('hidden');
+                this.updateTimerDisplay();
+                
+                this.timerInterval = setInterval(() => {
+                    this.timeLeft--;
+                    this.updateTimerDisplay();
+                    
+                    if (this.timeLeft <= 0) {
+                        this.stopTimer();
+                    }
+                }, 1000);
+            }
+
+            stopTimer() {
+                if (this.timerInterval) {
+                    clearInterval(this.timerInterval);
+                    this.timerInterval = null;
+                }
+            }
+
+            updateTimerDisplay() {
+                const minutes = Math.floor(this.timeLeft / 60);
+                const seconds = this.timeLeft % 60;
+                this.timer.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                
+                // Add warning classes
+                this.timer.classList.remove('warning', 'danger');
+                if (this.timeLeft <= 30) {
+                    this.timer.classList.add('danger');
+                } else if (this.timeLeft <= 60) {
+                    this.timer.classList.add('warning');
+                }
+            }
+
+            previousCard() {
+                this.stopTimer();
+                if (this.currentIndex > 0) {
+                    this.currentIndex--;
+                    this.displayCard();
+                }
+            }
+
+            nextCard() {
+                this.stopTimer();
+                if (this.currentIndex < this.shuffledCards.length - 1) {
+                    this.currentIndex++;
+                    this.displayCard();
+                }
+            }
+
+            updateStats() {
+                this.currentCardEl.textContent = this.currentIndex + 1;
+                this.totalCardsEl.textContent = this.shuffledCards.length;
+            }
+        }
+
+        // Initialize the game when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new TabooGame();
+        });
+    </script>
+</body>
+</html>
