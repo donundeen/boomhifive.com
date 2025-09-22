@@ -210,5 +210,213 @@
   {
     "word": "piscine",
     "taboo": ["nager", "eau", "bain", "sport"]
+  },
+  {
+    "word": "bibliothèque",
+    "taboo": ["livres", "lire", "étudier", "silence"]
+  },
+  {
+    "word": "hôpital",
+    "taboo": ["médecin", "malade", "soigner", "urgence"]
+  },
+  {
+    "word": "pharmacie",
+    "taboo": ["médicaments", "maladie", "ordonnance", "guérir"]
+  },
+  {
+    "word": "banque",
+    "taboo": ["argent", "compte", "retirer", "dépôt"]
+  },
+  {
+    "word": "poste",
+    "taboo": ["lettre", "colis", "envoyer", "timbre"]
+  },
+  {
+    "word": "gare",
+    "taboo": ["train", "voyager", "quai", "billet"]
+  },
+  {
+    "word": "aéroport",
+    "taboo": ["avion", "voler", "voyage", "bagages"]
+  },
+  {
+    "word": "marché",
+    "taboo": ["acheter", "fruits", "légumes", "vendeur"]
+  },
+  {
+    "word": "supermarché",
+    "taboo": ["courses", "aliments", "caddie", "caissier"]
+  },
+  {
+    "word": "boulangerie",
+    "taboo": ["pain", "pâtisserie", "croissant", "farine"]
+  },
+  {
+    "word": "boucherie",
+    "taboo": ["viande", "bœuf", "porc", "saignant"]
+  },
+  {
+    "word": "poissonnerie",
+    "taboo": ["poisson", "mer", "frais", "écailles"]
+  },
+  {
+    "word": "fromagerie",
+    "taboo": ["fromage", "lait", "vache", "affiné"]
+  },
+  {
+    "word": "charcuterie",
+    "taboo": ["charcuterie", "jambon", "saucisson", "pâté"]
+  },
+  {
+    "word": "épicerie",
+    "taboo": ["épices", "condiments", "sel", "poivre"]
+  },
+  {
+    "word": "librairie",
+    "taboo": ["livres", "roman", "magazine", "lecture"]
+  },
+  {
+    "word": "papeterie",
+    "taboo": ["papier", "crayon", "écrire", "bureau"]
+  },
+  {
+    "word": "fleuriste",
+    "taboo": ["fleurs", "bouquet", "roses", "jardin"]
+  },
+  {
+    "word": "coiffeur",
+    "taboo": ["cheveux", "couper", "coiffer", "shampooing"]
+  },
+  {
+    "word": "barbier",
+    "taboo": ["barbe", "raser", "moustache", "tondeuse"]
+  },
+  {
+    "word": "nettoyage",
+    "taboo": ["propre", "laver", "sale", "détergent"]
+  },
+  {
+    "word": "réparation",
+    "taboo": ["casser", "réparer", "outils", "panne"]
+  },
+  {
+    "word": "construction",
+    "taboo": ["bâtir", "maçon", "ciment", "échafaudage"]
+  },
+  {
+    "word": "déménagement",
+    "taboo": ["bouger", "cartons", "camion", "nouveau"]
+  },
+  {
+    "word": "plomberie",
+    "taboo": ["eau", "robinet", "fuite", "tuyau"]
+  },
+  {
+    "word": "électricité",
+    "taboo": ["courant", "ampoule", "prise", "fil"]
+  },
+  {
+    "word": "chauffage",
+    "taboo": ["chaud", "froid", "radiateur", "température"]
+  },
+  {
+    "word": "climatisation",
+    "taboo": ["frais", "ventilateur", "air", "refroidir"]
+  },
+  {
+    "word": "isolation",
+    "taboo": ["chaud", "froid", "murs", "doublure"]
+  },
+  {
+    "word": "peinture",
+    "taboo": ["couleur", "pinceau", "mur", "artiste"]
+  },
+  {
+    "word": "décoration",
+    "taboo": ["beau", "meubles", "style", "intérieur"]
+  },
+  {
+    "word": "jardinage",
+    "taboo": ["plantes", "terre", "arroser", "fleurs"]
+  },
+  {
+    "word": "bricolage",
+    "taboo": ["outils", "fabriquer", "réparer", "manuel"]
+  },
+  {
+    "word": "couture",
+    "taboo": ["tissu", "aiguille", "fil", "vêtement"]
+  },
+  {
+    "word": "tricot",
+    "taboo": ["laine", "maille", "pull", "aiguilles"]
+  },
+  {
+    "word": "broderie",
+    "taboo": ["fil", "aiguille", "dessin", "tissu"]
+  },
+  {
+    "word": "poterie",
+    "taboo": ["argile", "tour", "cuire", "vase"]
+  },
+  {
+    "word": "sculpture",
+    "taboo": ["pierre", "marteau", "forme", "artiste"]
+  },
+  {
+    "word": "photographie",
+    "taboo": ["appareil", "photo", "objectif", "cliché"]
+  },
+  {
+    "word": "vidéo",
+    "taboo": ["caméra", "enregistrer", "film", "tourner"]
+  },
+  {
+    "word": "musique",
+    "taboo": ["chanter", "instruments", "mélodie", "rythme"]
+  },
+  {
+    "word": "danse",
+    "taboo": ["bouger", "rythme", "musique", "pas"]
+  },
+  {
+    "word": "théâtre",
+    "taboo": ["acteurs", "scène", "pièce", "spectacle"]
+  },
+  {
+    "word": "cinéma",
+    "taboo": ["film", "écran", "acteurs", "projection"]
+  },
+  {
+    "word": "exposition",
+    "taboo": ["art", "tableaux", "musée", "visiter"]
+  },
+  {
+    "word": "festival",
+    "taboo": ["célébration", "musique", "foule", "événement"]
+  },
+  {
+    "word": "carnaval",
+    "taboo": ["déguisement", "fête", "couleurs", "danser"]
+  },
+  {
+    "word": "mariage",
+    "taboo": ["époux", "cérémonie", "alliance", "fête"]
+  },
+  {
+    "word": "anniversaire",
+    "taboo": ["âge", "gâteau", "bougies", "cadeau"]
+  },
+  {
+    "word": "Noël",
+    "taboo": ["sapin", "cadeaux", "Père Noël", "décembre"]
+  },
+  {
+    "word": "Pâques",
+    "taboo": ["œufs", "chocolat", "lapin", "printemps"]
+  },
+  {
+    "word": "Halloween",
+    "taboo": ["déguisement", "citrouille", "sorcière", "bonbons"]
   }
 ]
