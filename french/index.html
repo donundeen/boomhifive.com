@@ -850,6 +850,9 @@
                 
                 // Speech synthesis state
                 this.isSpeaking = false;
+                
+                // Track which select was last used
+                this.lastUsedSelect = 'desktop'; // 'desktop' or 'mobile'
 
                 this.initializeElements();
                 this.bindEvents();
@@ -891,7 +894,10 @@
             bindEvents() {
                 // Desktop events
                 this.fileSelect.addEventListener('change', () => this.loadCards());
-                this.sideSelect.addEventListener('change', () => this.updateCurrentSide());
+                this.sideSelect.addEventListener('change', () => {
+                    this.lastUsedSelect = 'desktop';
+                    this.updateCurrentSide();
+                });
                 this.flashcard.addEventListener('click', () => this.flipCard());
                 this.speakBtn.addEventListener('click', () => this.speakText('french'));
                 this.speakEnglishBtn.addEventListener('click', () => this.speakText('english'));
@@ -903,7 +909,10 @@
                 // Mobile events
                 this.hamburgerBtn.addEventListener('click', () => this.toggleHamburgerMenu());
                 this.fileSelectMobile.addEventListener('change', () => this.loadCards());
-                this.sideSelectMobile.addEventListener('change', () => this.updateCurrentSide());
+                this.sideSelectMobile.addEventListener('change', () => {
+                    this.lastUsedSelect = 'mobile';
+                    this.updateCurrentSide();
+                });
                 this.resetScoreBtnMobile.addEventListener('click', () => this.resetScore());
                 this.correctBtn.addEventListener('click', () => this.markAsCorrect());
                 this.incorrectBtn.addEventListener('click', () => this.markAsIncorrect());
@@ -977,17 +986,18 @@
             }
 
             updateCurrentSide() {
-                // Get the value from whichever select was changed
-                console.log('sideSelect', this.sideSelect.value);
-                console.log('sideSelectMobile', this.sideSelectMobile.value);
-                const newSide = this.sideSelect.value || this.sideSelectMobile.value;
+                // Get the value from the select that was just used
+                const newSide = this.lastUsedSelect === 'mobile' 
+                    ? this.sideSelectMobile.value 
+                    : this.sideSelect.value;
+                
                 this.currentSide = newSide;
                 
                 // Sync both selects to the same value
                 this.sideSelect.value = newSide;
                 this.sideSelectMobile.value = newSide;
                 
-                console.log('Language setting changed to:', newSide);
+                console.log('Language setting changed to:', newSide, 'via', this.lastUsedSelect);
                 
                 if (this.currentCard !== null && this.currentCard !== undefined) {
                     this.displayCard();
