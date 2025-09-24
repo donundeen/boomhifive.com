@@ -977,10 +977,16 @@
             }
 
             updateCurrentSide() {
-                this.currentSide = this.sideSelect.value || this.sideSelectMobile.value;
-                // Sync both selects
-                this.sideSelect.value = this.currentSide;
-                this.sideSelectMobile.value = this.currentSide;
+                // Get the value from whichever select was changed
+                const newSide = this.sideSelect.value || this.sideSelectMobile.value;
+                this.currentSide = newSide;
+                
+                // Sync both selects to the same value
+                this.sideSelect.value = newSide;
+                this.sideSelectMobile.value = newSide;
+                
+                console.log('Language setting changed to:', newSide);
+                
                 if (this.currentCard !== null && this.currentCard !== undefined) {
                     this.displayCard();
                 }
@@ -1529,6 +1535,10 @@
             const app = new FlashcardApp();
             // Hide Learn More link initially
             app.hideLearnMoreLink();
+            
+            // Initialize select synchronization
+            app.sideSelect.value = app.currentSide;
+            app.sideSelectMobile.value = app.currentSide;
             
             // Check available voices after a short delay to ensure ResponsiveVoice is loaded
             setTimeout(() => {
