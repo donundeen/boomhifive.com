@@ -1099,9 +1099,10 @@
             }
 
             displayCard() {
-                if (this.currentCard === null) return;
+                if (this.currentCard === null || this.currentCard === undefined) return;
 
                 const card = this.shuffledCards[this.currentCard];
+                if (!card) return;
                 
                 // Handle 2-element, 4-element, and 5-element arrays
                 let frenchWord, englishWord, frenchExample, englishExample, grammarInfo;
