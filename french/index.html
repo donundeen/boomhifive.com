@@ -978,6 +978,8 @@
 
             updateCurrentSide() {
                 // Get the value from whichever select was changed
+                console.log('sideSelect', this.sideSelect.value);
+                console.log('sideSelectMobile', this.sideSelectMobile.value);
                 const newSide = this.sideSelect.value || this.sideSelectMobile.value;
                 this.currentSide = newSide;
                 
