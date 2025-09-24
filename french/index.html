@@ -841,6 +841,7 @@
                 this.cards = [];
                 this.shuffledCards = []; // New: shuffled deck for sequential navigation
                 this.currentIndex = 0; // New: current position in shuffled deck
+                this.currentCard = null; // Initialize currentCard
                 this.correctCards = new Set();
                 this.isFlipped = false;
                 this.currentSide = 'french';
@@ -980,7 +981,7 @@
                 // Sync both selects
                 this.sideSelect.value = this.currentSide;
                 this.sideSelectMobile.value = this.currentSide;
-                if (this.currentCard !== null) {
+                if (this.currentCard !== null && this.currentCard !== undefined) {
                     this.displayCard();
                 }
                 this.saveProgress();
