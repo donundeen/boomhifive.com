@@ -82,7 +82,7 @@ let fontSize = 40;  // the text size
 // the height of the clock
 // (the width is calculated from the other elements)
 //
-let canvasHeight = 1080;
+let canvasHeight = 1024;
 // the width of each number 
 let imageWidth = 200;
 // these are calculated values, you definitely don't want to change them.
@@ -90,7 +90,7 @@ let imageWidth = 200;
 // calculate the width of the whole thing based on the imageWidth, the dotWidth, and the margins
 let canvasWidth = imageWidth * 6 + (dotWidth+dotMargin ) *2;
 
-canvasWidth = 1920;
+canvasWidth = 768;
 
 
 
