@@ -125,7 +125,7 @@ function draw() {
   strokeWeight(10);
   rect(0,0,canvasWidth,canvasHeight);
   textAlign(CENTER,CENTER);
-  textSize(50);
+  textSize(40);
   textFont('Courier New');
   textStyle(BOLD);
   strokeWeight(3);
