@@ -120,12 +120,20 @@ function setup() {
 function draw() {
   // fill the whole backgroun with backgroundColor
   background(backgroundColor);
+
   stroke(255,0,0);
   strokeWeight(10);
   rect(0,0,canvasWidth,canvasHeight);
-  line(0,0,canvasWidth,canvasHeight);
-  line(0,canvasHeight,canvasWidth,0);
+  textAlign(CENTER,CENTER);
+  textSize(80);
+  textFont('Courier New');
+  textStyle(BOLD);
+  strokeWeight(3);
+  text("Your Creative Coding Project Here.",canvasWidth/2,canvasHeight/2);
+//  line(0,0,canvasWidth,canvasHeight);
+//  line(0,canvasHeight,canvasWidth,0);
   return;
+  
   // set up some variables that will hold each digit of the hour, minutes, and seconds
   let h0, h1, m0, m1, s0, s1;
   // these variables hold the images themselves
@@ -189,12 +197,12 @@ function draw() {
   fill(dot3fill);
   stroke(dot3Stroke);
   strokeWeight(dot3StrokeWeight);
-  circle(imageX + dotWidth / 2, 150, dotWidth);
+  circle(imageX + dotWidth / 2, lowerDotY, dotWidth);
   
   fill(dot4fill);
   stroke(dot4Stroke);
   strokeWeight(dot4StrokeWeight);
-  circle(imageX + dotWidth / 2, 250, dotWidth);
+  circle(imageX + dotWidth / 2, upperDotY, dotWidth);
   
   imageX += dotWidth + dotMargin; // add the width to get the next image X position
   
