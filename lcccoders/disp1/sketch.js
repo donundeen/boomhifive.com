@@ -1,18 +1,19 @@
-let canvasWidth = 1024; //768;
-let canvasHeight = 768; //1024;
+let canvasWidth;
+let canvasHeight;
 
 let drawFunctionList = [maxDraw, daniellaDraw];
 let drawFunctionIndex = drawFunctionList.length - 1;
 let timingInterval = 20000;
 
 function setup() {
+  canvasWidth = displayWidth; //768;
+  canvasHeight = displayHeight; //1024;  
   createCanvas(canvasWidth, canvasHeight);
   //scale(.5);
   //maxDraw();
   nextProject();
   setInterval(nextProject, timingInterval);
 }
-
 function draw() {
 //  background(220);
 }
