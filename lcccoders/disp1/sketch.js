@@ -1,232 +1,258 @@
-// click the > arrow thing just up and to the left from here.
-// then click the + sign next to "Sketch Files"
-// select "Upload file"
-// drag your images into the box that appears
-// load 10 images, one for each of the number 0-9 
-// something that looks like, or reminds you of, that number, 
-// that also represents something you like, are curious or passionate about
-// then change the image names below to match the name of the images you uploaded
-
-
-// HINT: you can download images from the web, 
-// or use Command+Shift+4 to capture a selection of your screen and save it to the your desktop
-// or use a web app to take a picture w your laptop camera: 
-//     eg https://webcamtoy.com/#google_vignette or https://webcamtoy.com/ 
-
-// make sure to DUPLICATE the file before editing 
-//     (file->Duplicate and change the name to 00_Image_Clock_LastName_FirstName)
-
-// and remember to SAVE (File->Save or Command+S)
-
-let clockTitle = "Marco's NHL Clock"; // put a title for your clock here
-
-// change the image names below to match the names of the images you upload for each number
-let numberImages = [
-  "WillSmith0.jpg", // image that looks like a 0
-  "HockeyPlayerIndex1.jpg", // image that looks like a1
-  "TchachukBrothers2.jpg", // image that looks like a 2
-  "BiuimHatTrick3.jpg", // image that looks like a 3
-  "MatthewsRookieGame4.jpg", // image that looks like 4
-  "5Players.jpg", // image that looks like a 5
-  "SheaWeb.jpg", // image that looks like a 6
-  "Game7.jpg", // image that looks like a 7
-  "ovi.jpg", // image that looks like a 8
-  "JTMiller.jpg"  // image that looks like a 9
-];
-
-
-// these settings below you don't need to change, but you can, to see what happens.
-
-// the background color of the clock. Note all the different ways you can define colors.
-// try clicking on the colored square...
-let backgroundColor = "rgb(162,162,247)";
-
-
-
-// coloring the dots in the colons
-// top dot in first colon
-let dot1fill = "green";
-let dot1StrokeWeight = 5;
-let dot1Stroke = "red";
-
-// bottom dot in first colon
-let dot2fill = "green";
-let dot2StrokeWeight = 5;
-let dot2Stroke = "red";
-
-// top dot in second colon
-let dot3fill = "rgb(241,255,0)";
-let dot3StrokeWeight = 5;
-let dot3Stroke = "red";
-
-// bottom dot in second colon
-let dot4fill = "rgb(241,255,0)";
-let dot4StrokeWeight = 5;
-let dot4Stroke = "red";
-
-// the width of the colon dot
-let dotWidth = 50;
-// the spacing between the dot and the numbers
-let dotMargin = 5;
-// the vertial spacing between the dots
-let dotVerticalSpacing = 150;
-
-// style information for the clock title
-let textFill = "yellow"; //inside of text
-let textStroke = "red"; // outline of text
-let textStrokeWeight = "3"; // how thick the outline is
-let textX = 20;  // the X position (starting from the left)
-let textY = 40;  // the Y position of the BOTTOM of the text, starting from the TOP of the screen
-let fontSize = 40;  // the text size
-
-// the height of the clock
-// (the width is calculated from the other elements)
-//
+let canvasWidth = 1024; //768;
 let canvasHeight = 768; //1024;
-// the width of each number 
-let imageWidth = 200;
-// these are calculated values, you definitely don't want to change them.
 
-// calculate the width of the whole thing based on the imageWidth, the dotWidth, and the margins
-let canvasWidth = imageWidth * 6 + (dotWidth+dotMargin ) *2;
-
-canvasWidth = 1024; //768;
-
-
-
-
-
-// set the vertical positioning of the colon dots. Math!
-let upperDotY = (canvasHeight - dotVerticalSpacing + dotWidth) / 2;
-let lowerDotY = canvasHeight - upperDotY;
-
-let imgs = [];
-
-// Load the image and create a p5.Image object.
-function preload() {
-  console.log("preload", numberImages);
-  for(let i = 0; i < numberImages.length; i++){
-    console.log("loading", numberImages[i]);
-    imgs[i] = loadImage(numberImages[i]);
-  }
-}
-
+let drawFunctionList = [maxDraw, daniellaDraw];
+let drawFunctionIndex = drawFunctionList.length - 1;
+let timingInterval = 20000;
 
 function setup() {
-  // this part runs once, and sets up the screen, aka the "CANVAS" that we're doing to draw onto
   createCanvas(canvasWidth, canvasHeight);
+  //scale(.5);
+  //maxDraw();
+  nextProject();
+  setInterval(nextProject, timingInterval);
 }
 
 function draw() {
-  // fill the whole backgroun with backgroundColor
-  background(backgroundColor);
+//  background(220);
+}
 
-  stroke(255,0,0);
-  strokeWeight(10);
-  rect(0,0,canvasWidth,canvasHeight);
-  textAlign(CENTER,CENTER);
-  textSize(40);
-  textFont('Courier New');
-  textStyle(BOLD);
-  strokeWeight(3);
-  text("Your Creative Coding Project Here.",canvasWidth/2,canvasHeight/2);
-//  line(0,0,canvasWidth,canvasHeight);
-//  line(0,canvasHeight,canvasWidth,0);
-  return;
-  
-  // set up some variables that will hold each digit of the hour, minutes, and seconds
-  let h0, h1, m0, m1, s0, s1;
-  // these variables hold the images themselves
-  let h0img, h1img, m0img, m1img, s0img, s1img;
-  
-  // figure out all the digits of the time and assign them to those variables
-  let h = hour();  // this is by default 24 hour time. How could you change it to 12 hour time? (hint: use Modulo!)
-  let m = minute();
-  let s = second();
-  h0 = floor(h / 10); // divide a number by 10 and round DOWN with floor()
-  h1 = h % 10;
-  m0 = floor(m / 10);
-  m1 = m % 10;
-  s0 = floor(s / 10);
-  s1 = s % 10;
-  
-  console.log(h0,h1,m0,m1,s0,s1);
-  
-  h0img = imgs[h0];
-  h1img = imgs[h1];
-  m0img = imgs[m0];
-  m1img = imgs[m1];
-  s0img = imgs[s0];
-  s1img = imgs[s1];
-  
-  h0img.resize(200,0);
-  h1img.resize(200,0);
-  m0img.resize(200,0);
-  m1img.resize(200,0);
-  s0img.resize(200,0);
-  s1img.resize(200,0);
-  
-  let imageX = 0;
-  
-  
-  // show the hour images
-  image(h0img, imageX,   (canvasHeight - h0img.height)/2);
-  imageX += imageWidth; // add the width to get the next image X position
-  image(h1img, imageX, (canvasHeight - h1img.height)/2);
+function nextProject(){
+  console.log("nextProject", drawFunctionList.length);
+  drawFunctionIndex = (drawFunctionIndex + 1) % drawFunctionList.length;
+  drawFunction = drawFunctionList[drawFunctionIndex];
+  console.log(drawFunctionIndex);
+  drawFunction();
+}
 
-  imageX += imageWidth + dotMargin; // add the width to get the next colon X position
-  
-  // show the colon dots
-  fill(dot2fill);
-  stroke(dot3Stroke);
-  strokeWeight(dot2StrokeWeight);
-  circle(imageX + dotWidth / 2, lowerDotY, dotWidth);
-  circle(imageX + dotWidth / 2, upperDotY, dotWidth);
-  
-  imageX += dotWidth + dotMargin; // add the width to get the next image X position
-  
-  
-  // show the minute images
-  image(m0img, imageX, (canvasHeight - m0img.height)/2);
-  imageX += imageWidth;  // add the width to get the next image X position
-  image(m1img, imageX, (canvasHeight - m1img.height)/2);
-  
-  
-  // show the colons
-  imageX += imageWidth + dotMargin ; // add the width to get the next colon X position
-  fill(dot3fill);
-  stroke(dot3Stroke);
-  strokeWeight(dot3StrokeWeight);
-  circle(imageX + dotWidth / 2, lowerDotY, dotWidth);
-  
-  fill(dot4fill);
-  stroke(dot4Stroke);
-  strokeWeight(dot4StrokeWeight);
-  circle(imageX + dotWidth / 2, upperDotY, dotWidth);
-  
-  imageX += dotWidth + dotMargin; // add the width to get the next image X position
-  
-  // show the second images
-  image(s0img, imageX, (canvasHeight - s0img.height)/2);
-  imageX += imageWidth; // add the width to get the next image X position
-  image(s1img, imageX,(canvasHeight - s1img.height)/2);
-  
-  fill(textFill);
-  stroke(textStroke);
-  strokeWeight(textStrokeWeight);
-  textSize(fontSize);
-  text(clockTitle, textX, textY);
-    
+
+function maxDraw() {
+  background("rgb(190,0,33)");
+  push();
+  stroke("black");
+  fill("black");
+  textAlign(RIGHT, BOTTOM);
+  textSize(20);
+  text("Max Vanier", canvasWidth - 10, canvasHeight - 10);
+  pop();
+
+  //base face
+  strokeWeight(0);
+  fill("rgb(224,202,163)");
+  circle(500, 200, 220);
+  fill("rgb(219,195,154)");
+  beginShape();
+  vertex(400, 200);
+  vertex(600, 200);
+  vertex(610, 310);
+  vertex(580, 350);
+  vertex(420, 350);
+  vertex(390, 310);
+  vertex(400, 200);
+  endShape();
+
+  //mouth and nose
+  fill("rgb(212,188,150)");
+  ellipse(500, 310, 160, 190);
+
+  beginShape();
+  fill("rgb(198,175,142)");
+  vertex(480, 220);
+  vertex(520, 220);
+  vertex(525, 260);
+  vertex(475, 260);
+
+  endShape();
+
+  beginShape();
+  fill("rgb(198,170,129)");
+  vertex(482, 210);
+  vertex(518, 210);
+  vertex(505, 270);
+  vertex(495, 270);
+  endShape();
+
+  //right eye
+  strokeWeight(1);
+  fill("white");
+  ellipse(550, 210, 40, 18);
+  strokeWeight(0);
+  fill("rgb(251,217,30)");
+  circle(550, 212, 15);
+  fill("rgb(93,58,15)");
+  circle(549, 214, 8);
+
+  //hairs left
+  fill("rgb(222,222,222)");
+  triangle(385, 140, 390, 200, 420, 160);
+  fill("rgb(227,227,227)");
+  triangle(370, 160, 395, 200, 420, 180);
+  fill("rgb(220,219,219)");
+  triangle(380, 155, 395, 180, 450, 170);
+
+  //hairs right
+
+  //mouth and teeth
+  fill("black");
+  rect(450, 290, 100, 55);
+
+  fill("white");
+
+  beginShape();
+  vertex(472, 315);
+  vertex(482, 315);
+  vertex(480, 335);
+  vertex(474, 335);
+  endShape();
+
+  beginShape();
+  vertex(482, 314);
+  vertex(492, 314);
+  vertex(490, 334);
+  vertex(484, 334);
+  endShape();
+
+  beginShape();
+  vertex(492, 313);
+  vertex(502, 313);
+  vertex(500, 333);
+  vertex(494, 333);
+  endShape();
+
+  beginShape();
+  vertex(502, 313);
+  vertex(512, 313);
+  vertex(510, 333);
+  vertex(504, 333);
+  endShape();
+
+  beginShape();
+  vertex(512, 314);
+  vertex(522, 314);
+  vertex(520, 334);
+  vertex(514, 334);
+  endShape();
+
+  beginShape();
+  vertex(522, 315);
+  vertex(532, 315);
+  vertex(530, 335);
+  vertex(524, 335);
+  endShape();
+
+  //lips, cheekbones, ears
+  fill("rgb(212,188,150)");
+  ellipse(480, 340, 65, 36);
+  ellipse(520, 340, 65, 36);
+
+  //scar
+  fill("pink");
+  triangle(582, 125, 590, 135, 480, 140);
+  triangle(490, 140, 400, 300, 500, 138);
+
+  //left eye
+  strokeWeight(1);
+  fill("white");
+  ellipse(450, 210, 33, 18);
+
+  //eyebrows
+  strokeWeight(0);
+  triangle(420, 300, 500, 300, 420, 400);
+
+  // blocking off
+  strokeWeight(0);
+  fill("rgb(190,0,33)");
+  square(430, 380, 140);
+
+  //insignia
+  fill("rgb(13,198,239)");
+  circle(100, 105, 150);
+  fill("rgb(190,0,33)");
+  //lightning bolts
+  beginShape();
+  vertex(60, 20);
+  vertex(60, 60);
+  vertex(75, 40);
+  vertex(60, 120);
+  vertex(60, 70);
+  vertex(45, 90);
+  endShape();
+
+  beginShape();
+  vertex(100, 50);
+  vertex(100, 100);
+  vertex(115, 80);
+  vertex(100, 160);
+  vertex(100, 110);
+  vertex(85, 130);
+  endShape();
+
+  beginShape();
+  vertex(140, 90);
+  vertex(140, 140);
+  vertex(155, 120);
+  vertex(140, 200);
+  vertex(140, 150);
+  vertex(125, 170);
+  endShape();
+
+  //letter C
+  fill("rgb(13,198,239)");
+  circle(100, 250, 120);
+  fill("rgb(190,0,33)");
+  circle(100, 250, 80);
+  circle(180, 250, 120);
 }
 
 
 
 
-// If the mouse is pressed,
-// toggle full-screen mode.
-function mousePressed() {
-  if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {
-    let fs = fullscreen();
-    fullscreen(!fs);
-  }
+function daniellaDraw() {
+  background(200, 50, 90); //
+  push();
+  stroke("black");
+  fill("black");
+  textAlign(RIGHT, BOTTOM);
+  textSize(20);
+  text("Daniela Malka", canvasWidth - 10, canvasHeight - 10);
+  pop();
+  fill(57, 255, 20);
+  circle(200, 200, 220); // Circle for my head
+  square(250, 60, 60, 300); // Antenna #1
+  square(95, 60, 60, 300); // Antenna #2
+  fill(255, 255, 255); // Colour for body
+  ellipse(160, 190, 82, 124, 50); // Eye #1
+  ellipse(245, 190, 82, 124, 50); // Eye #2
+  fill(189, 222, 236);
+  ellipse(240, 200, 50, 60, 60); // Iris #1
+  ellipse(165, 200, 50, 60, 60); // Iris #2
+  fill(0, 0, 0);
+  ellipse(240, 200, 30, 30, 0); // Retina #1
+  ellipse(165, 200, 30, 30, 0); // Retina #2
+  circle(203, 250, 40); // Nose
+  ellipse(160, 110, 60, 10); // Eyebrow #1
+  ellipse(245, 110, 60, 10); // Eyebrow #2
+  arc(202.5,283.5,121.5,40.5, 0, 3.14); // Mouth
+  fill(283, 292, 292);
+  arc(202.5,283.5,121.5,40.5, 0, 3.14); // Smile (teeth)
+  circle(50, 40, 50); // For the letter D
+  noStroke();
+  fill(200, 50, 90); // For the letter D
+  square(1, 15, 50); // For the letter D
+  fill(0, 0, 0); // For the inside of the D
+  ellipse(60, 43, 10, 20); // For the inside of the D
+  fill(200, 50, 90); // For the letter M
+  rect(90, 20, 50, 40); // For the letter M
+  fill(255, 255, 255);
+  rect(90, 20, 10, 40); // For the letter M
+  rect(130, 20, 10, 40); // For the letter M
+  rotate(50); // For the letter M
+  rect(90, 47, 9, 40); // For the letter M
+  
+  push(); // To make sure whatever is within the push and pop stays inside.
+  rectMode(CENTER); // For the letter M
+  translate(107, 70); // For the letter M
+  rotate(PI * 0.2); // For the letter M
+  rect(0, 0, 9, 40); // For the letter M
+  pop();
 }
