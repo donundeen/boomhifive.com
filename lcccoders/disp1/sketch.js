@@ -31,6 +31,7 @@ function maxDraw() {
   background("rgb(190,0,33)");
   push();
   stroke("white");
+  strokeWeight(2);
   fill("black");
   textAlign(RIGHT, BOTTOM);
   textSize(40);
@@ -212,6 +213,7 @@ function daniellaDraw() {
   background(200, 50, 90); //
   push();
   stroke("white");
+  strokeWeight(2);
   fill("black");
   textAlign(RIGHT, BOTTOM);
   textSize(40);
