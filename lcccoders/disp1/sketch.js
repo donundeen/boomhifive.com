@@ -33,8 +33,8 @@ function maxDraw() {
   stroke("black");
   fill("black");
   textAlign(RIGHT, BOTTOM);
-  textSize(20);
-  text("Max Vanier", canvasWidth - 10, canvasHeight - 10);
+  textSize(40);
+  text("Max Vanier - Creative Computing", canvasWidth - 10, canvasHeight - 10);
   pop();
 
   //base face
@@ -214,8 +214,8 @@ function daniellaDraw() {
   stroke("black");
   fill("black");
   textAlign(RIGHT, BOTTOM);
-  textSize(20);
-  text("Daniela Malka", canvasWidth - 10, canvasHeight - 10);
+  textSize(40);
+  text("Daniela Malka - Creative Computing", canvasWidth - 10, canvasHeight - 10);
   pop();
   fill(57, 255, 20);
   circle(200, 200, 220); // Circle for my head
