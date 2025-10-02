@@ -30,7 +30,7 @@ function nextProject(){
 function maxDraw() {
   background("rgb(190,0,33)");
   push();
-  stroke("black");
+  stroke("white");
   fill("black");
   textAlign(RIGHT, BOTTOM);
   textSize(40);
@@ -211,7 +211,7 @@ function maxDraw() {
 function daniellaDraw() {
   background(200, 50, 90); //
   push();
-  stroke("black");
+  stroke("white");
   fill("black");
   textAlign(RIGHT, BOTTOM);
   textSize(40);
