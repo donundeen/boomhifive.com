@@ -942,6 +942,9 @@
             }
 
             populateDropdown(selectElement) {
+                // Store the current selection before clearing
+                const currentSelection = selectElement.value;
+                
                 // Clear existing options except the first one
                 selectElement.innerHTML = '<option value="">Choose a category...</option>';
                 
@@ -957,6 +960,11 @@
                     option.textContent = category.name + progressText;
                     selectElement.appendChild(option);
                 });
+                
+                // Restore the previous selection if it still exists
+                if (currentSelection && this.categories.some(cat => cat.value === currentSelection)) {
+                    selectElement.value = currentSelection;
+                }
             }
 
             getCategoryProgress(categoryFile) {
@@ -974,6 +982,28 @@
                 }
                 
                 return { correct: 0, total: 0 };
+            }
+
+            updateCurrentCategoryProgress() {
+                const selectedFile = this.fileSelect.value;
+                if (!selectedFile) return;
+
+                // Find the category name for the selected file
+                const category = this.categories.find(cat => cat.value === selectedFile);
+                if (!category) return;
+
+                // Get current progress
+                const progress = this.getCategoryProgress(selectedFile);
+                const progressText = progress.total > 0 ? ` (${progress.correct}/${progress.total})` : '';
+                const newText = category.name + progressText;
+
+                // Update both desktop and mobile dropdowns
+                [this.fileSelect, this.fileSelectMobile].forEach(select => {
+                    const option = select.querySelector(`option[value="${selectedFile}"]`);
+                    if (option) {
+                        option.textContent = newText;
+                    }
+                });
             }
 
             toggleHamburgerMenu() {
@@ -1088,8 +1118,8 @@
 
                 localStorage.setItem(`flashcard_progress_${selectedFile}`, JSON.stringify(progress));
                 
-                // Refresh dropdowns to show updated progress
-                this.populateDropdowns();
+                // Update the progress display for the currently selected category
+                this.updateCurrentCategoryProgress();
             }
 
             loadProgress(selectedFile) {
@@ -1154,8 +1184,8 @@
                     this.updateStats();
                     this.showNextCard();
                     
-                    // Refresh dropdowns to show updated progress
-                    this.populateDropdowns();
+                    // Update the progress display for the reset category
+                    this.updateCurrentCategoryProgress();
                 }
             }
 
