@@ -602,20 +602,6 @@
                 <label for="fileSelect">Select Category:</label>
                 <select id="fileSelect">
                     <option value="">Choose a category...</option>
-                    <option value="french_nouns.json">Nouns</option>
-                    <option value="french_adjectives.json">Adjectives</option>
-                    <option value="french_adverbs.json">Adverbs</option>
-                    <option value="french_connecting_words.json">Connecting Words</option>
-                    <option value="french_prepositions.json">Prepositions</option>
-                    <option value="french_irregular_verbs.json">Irregular Verbs</option>
-                    <option value="french_verbs.json">Verbs</option>
-                    <option value="french_versatile_words.json">Versatile Words</option>
-                    <option value="prepositions_with_verbs.json">Prepositions with Verbs</option>
-                    <option value="the_v_verbs.json">V Verbs (Aller, Vouloir, Voir, Avoir)</option>
-                    <option value="tefaq_vocab_final.json">TEFaQ Vocabulary</option>
-                    <option value="phrases_for_learning.json">Learning Phrases</option>
-                    <option value="asking_questions.json">Asking Questions (TEFaQ Part A)</option>
-                    <option value="oral_expression_section_b.json">Oral Expression Section B</option>
                 </select>
             </div>
 
@@ -639,20 +625,6 @@
                         <label for="fileSelectMobile">Select Category:</label>
                         <select id="fileSelectMobile">
                             <option value="">Choose a category...</option>
-                            <option value="french_nouns.json">Nouns</option>
-                            <option value="french_adjectives.json">Adjectives</option>
-                            <option value="french_adverbs.json">Adverbs</option>
-                            <option value="french_connecting_words.json">Connecting Words</option>
-                            <option value="french_prepositions.json">Prepositions</option>
-                            <option value="french_irregular_verbs.json">Irregular Verbs</option>
-                            <option value="french_verbs.json">Verbs</option>
-                            <option value="french_versatile_words.json">Versatile Words</option>
-                            <option value="prepositions_with_verbs.json">Prepositions with Verbs</option>
-                            <option value="the_v_verbs.json">V Verbs (Aller, Vouloir, Voir, Avoir)</option>
-                            <option value="tefaq_vocab_final.json">TEFaQ Vocabulary</option>
-                            <option value="phrases_for_learning.json">Learning Phrases</option>
-                            <option value="asking_questions.json">Asking Questions (TEFaQ Part A)</option>
-                            <option value="oral_expression_section_b.json">Oral Expression Section B</option>
                         </select>
                     </div>
                     <div class="menu-control-group">
@@ -856,8 +828,28 @@
                 // Track which select was last used
                 this.lastUsedSelect = 'desktop'; // 'desktop' or 'mobile'
 
+                // Category definitions with display names
+                this.categories = [
+                    { value: 'french_nouns.json', name: 'Nouns' },
+                    { value: 'french_adjectives.json', name: 'Adjectives' },
+                    { value: 'french_adverbs.json', name: 'Adverbs' },
+                    { value: 'french_connecting_words.json', name: 'Connecting Words' },
+                    { value: 'french_prepositions.json', name: 'Prepositions' },
+                    { value: 'french_irregular_verbs.json', name: 'Irregular Verbs' },
+                    { value: 'french_verbs.json', name: 'Verbs' },
+                    { value: 'french_versatile_words.json', name: 'Versatile Words' },
+                    { value: 'prepositions_with_verbs.json', name: 'Prepositions with Verbs' },
+                    { value: 'the_v_verbs.json', name: 'V Verbs (Aller, Vouloir, Voir, Avoir)' },
+                    { value: 'tefaq_vocab_final.json', name: 'TEFaQ Vocabulary' },
+                    { value: 'phrases_for_learning.json', name: 'Learning Phrases' },
+                    { value: 'asking_questions.json', name: 'Asking Questions (TEFaQ Part A)' },
+                    { value: 'oral_expression_section_b.json', name: 'Oral Expression Section B' },
+                    { value: 'chat_review.json', name: 'Chat Review (TEFaQ Part A)' }
+                ];
+
                 this.initializeElements();
                 this.bindEvents();
+                this.populateDropdowns();
                 this.updateStats();
             }
 
@@ -944,6 +936,46 @@
                 window.addEventListener('beforeunload', () => this.saveProgress());
             }
 
+            populateDropdowns() {
+                this.populateDropdown(this.fileSelect);
+                this.populateDropdown(this.fileSelectMobile);
+            }
+
+            populateDropdown(selectElement) {
+                // Clear existing options except the first one
+                selectElement.innerHTML = '<option value="">Choose a category...</option>';
+                
+                // Add options for each category with progress information
+                this.categories.forEach(category => {
+                    const option = document.createElement('option');
+                    option.value = category.value;
+                    
+                    // Get progress for this category
+                    const progress = this.getCategoryProgress(category.value);
+                    const progressText = progress.total > 0 ? ` (${progress.correct}/${progress.total})` : '';
+                    
+                    option.textContent = category.name + progressText;
+                    selectElement.appendChild(option);
+                });
+            }
+
+            getCategoryProgress(categoryFile) {
+                const savedProgress = localStorage.getItem(`flashcard_progress_${categoryFile}`);
+                
+                if (savedProgress) {
+                    try {
+                        const progress = JSON.parse(savedProgress);
+                        const correct = progress.correctCards ? progress.correctCards.length : 0;
+                        const total = progress.shuffledCards ? progress.shuffledCards.length : 0;
+                        return { correct, total };
+                    } catch (error) {
+                        console.error('Error parsing progress for', categoryFile, ':', error);
+                    }
+                }
+                
+                return { correct: 0, total: 0 };
+            }
+
             toggleHamburgerMenu() {
                 this.menuContent.classList.toggle('show');
             }
@@ -970,6 +1002,8 @@
                         this.shuffleDeck();
                         // Load saved progress from localStorage
                         this.loadProgress(selectedFile);
+                        // Refresh dropdowns to show updated progress
+                        this.populateDropdowns();
                     })
                     .catch(error => {
                         console.error('Error loading JSON file:', error);
@@ -1053,6 +1087,9 @@
                 };
 
                 localStorage.setItem(`flashcard_progress_${selectedFile}`, JSON.stringify(progress));
+                
+                // Refresh dropdowns to show updated progress
+                this.populateDropdowns();
             }
 
             loadProgress(selectedFile) {
@@ -1116,6 +1153,9 @@
                     this.currentCard = null;
                     this.updateStats();
                     this.showNextCard();
+                    
+                    // Refresh dropdowns to show updated progress
+                    this.populateDropdowns();
                 }
             }
 
