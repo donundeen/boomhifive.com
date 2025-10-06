@@ -1028,10 +1028,8 @@
                     })
                     .then(data => {
                         this.cards = data;
-                        // Randomize the deck at load time
-                        this.shuffleDeck();
-                        // Load saved progress from localStorage
-                        this.loadProgress(selectedFile);
+                        // Merge with existing progress and handle updates
+                        this.mergeWithExistingProgress(selectedFile);
                         // Refresh dropdowns to show updated progress
                         this.populateDropdowns();
                     })
@@ -1039,6 +1037,110 @@
                         console.error('Error loading JSON file:', error);
                         this.showError('Error loading file. Please try again.');
                     });
+            }
+
+            mergeWithExistingProgress(selectedFile) {
+                const savedProgress = localStorage.getItem(`flashcard_progress_${selectedFile}`);
+                
+                if (savedProgress) {
+                    try {
+                        const progress = JSON.parse(savedProgress);
+                        
+                        // Check if we have existing progress to merge
+                        if (progress.shuffledCards && progress.shuffledCards.length > 0) {
+                            this.mergeCardsWithProgress(progress, selectedFile);
+                            return;
+                        }
+                    } catch (error) {
+                        console.error('Error parsing existing progress:', error);
+                    }
+                }
+                
+                // No existing progress or error parsing, start fresh
+                this.shuffleDeck();
+                this.loadProgress(selectedFile);
+            }
+
+            mergeCardsWithProgress(existingProgress, selectedFile) {
+                const existingCards = existingProgress.shuffledCards || [];
+                const existingCorrectCards = new Set(existingProgress.correctCards || []);
+                const existingCardHistory = existingProgress.cardHistory || [];
+                const existingHistoryIndex = existingProgress.historyIndex || -1;
+                const existingCurrentCard = existingProgress.currentCard;
+                const existingCurrentSide = existingProgress.currentSide || 'french';
+                
+                // Create a map of existing cards by their content (first element - French word)
+                const existingCardsMap = new Map();
+                existingCards.forEach((card, index) => {
+                    if (card && card.length > 0) {
+                        const key = card[0]; // French word
+                        existingCardsMap.set(key, { card, originalIndex: index });
+                    }
+                });
+                
+                // Create a map of new cards by their content
+                const newCardsMap = new Map();
+                this.cards.forEach((card, index) => {
+                    if (card && card.length > 0) {
+                        const key = card[0]; // French word
+                        newCardsMap.set(key, { card, originalIndex: index });
+                    }
+                });
+                
+                // Merge cards: keep existing order, add new cards at the end
+                const mergedCards = [];
+                const newCards = [];
+                
+                // First, add all existing cards in their original order
+                existingCards.forEach(card => {
+                    if (card && card.length > 0) {
+                        mergedCards.push(card);
+                    }
+                });
+                
+                // Then, add new cards that don't already exist
+                this.cards.forEach(card => {
+                    if (card && card.length > 0) {
+                        const key = card[0];
+                        if (!existingCardsMap.has(key)) {
+                            newCards.push(card);
+                        }
+                    }
+                });
+                
+                // Add new cards to the merged deck
+                mergedCards.push(...newCards);
+                
+                // Update the shuffled cards
+                this.shuffledCards = mergedCards;
+                
+                // Preserve the current position and progress
+                this.currentIndex = existingProgress.currentIndex || 0;
+                this.correctCards = existingCorrectCards;
+                this.cardHistory = existingCardHistory;
+                this.historyIndex = existingHistoryIndex;
+                this.currentCard = existingCurrentCard;
+                this.currentSide = existingCurrentSide;
+                
+                // Update the side selectors to match saved preference
+                this.sideSelect.value = this.currentSide;
+                this.sideSelectMobile.value = this.currentSide;
+                
+                // Update stats
+                this.updateStats();
+                
+                // Show the current card if it exists, otherwise show next
+                if (this.currentCard !== null && this.currentCard !== undefined) {
+                    this.displayCard();
+                } else {
+                    this.showNextCard();
+                }
+                
+                // Save the merged progress
+                this.saveProgress();
+                
+                // Log the merge results
+                console.log(`Merged ${existingCards.length} existing cards with ${newCards.length} new cards. Total: ${mergedCards.length}`);
             }
 
             shuffleDeck() {
