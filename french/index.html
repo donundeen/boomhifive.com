@@ -926,7 +926,7 @@
                 this.correctBtn.addEventListener('click', () => this.markAsCorrect());
                 this.incorrectBtn.addEventListener('click', () => this.markAsIncorrect());
                 this.previousBtn.addEventListener('click', () => this.showPreviousCard());
-                this.nextBtn.addEventListener('click', () => this.showNextCard());
+                this.nextBtn.addEventListener('click', () => this.advanceToNextCard());
                 
                 // Keyboard events
                 document.addEventListener('keydown', (e) => this.handleKeyPress(e));
@@ -1246,6 +1246,7 @@
              * Handles end of deck by showing completion message
              */
             showNextCard() {
+                // Check if we're at the end of the deck
                 if (this.currentIndex >= this.shuffledCards.length) {
                     this.showCompletionMessage();
                     return;
@@ -1256,12 +1257,29 @@
                 this.isFlipped = false;
                 this.flashcard.classList.remove('flipped');
                 
-                // Add to history
-                this.cardHistory.push(this.currentCard);
-                this.historyIndex = this.cardHistory.length - 1;
+                // Add to history only if we're not already at the end
+                if (this.currentIndex < this.shuffledCards.length) {
+                    this.cardHistory.push(this.currentCard);
+                    this.historyIndex = this.cardHistory.length - 1;
+                }
                 
                 this.displayCard();
                 this.saveProgress();
+                this.updateNavigationButtons();
+            }
+
+            /**
+             * Advances to the next card in the deck (used by navigation buttons)
+             * Increments currentIndex and shows the next card
+             */
+            advanceToNextCard() {
+                if (this.currentIndex < this.shuffledCards.length - 1) {
+                    this.currentIndex++;
+                    this.showNextCard();
+                } else {
+                    this.showCompletionMessage();
+                }
+                this.updateNavigationButtons();
             }
 
             /**
@@ -1270,14 +1288,24 @@
              * Handles beginning of history by doing nothing
              */
             showPreviousCard() {
-                if (this.historyIndex > 0) {
+                // Check if we have history and can go back
+                if (this.cardHistory.length > 0 && this.historyIndex > 0) {
                     this.historyIndex--;
                     this.currentCard = this.cardHistory[this.historyIndex];
                     this.isFlipped = false;
                     this.flashcard.classList.remove('flipped');
                     this.displayCard();
                     this.saveProgress();
+                } else if (this.cardHistory.length > 0 && this.historyIndex === 0) {
+                    // We're at the first card in history, stay there
+                    this.currentCard = this.cardHistory[0];
+                    this.isFlipped = false;
+                    this.flashcard.classList.remove('flipped');
+                    this.displayCard();
+                    this.saveProgress();
                 }
+                // If no history exists, do nothing (we're at the beginning)
+                this.updateNavigationButtons();
             }
 
             /**
@@ -1341,6 +1369,7 @@
                             } else {
                                 this.showNextCard();
                             }
+                            this.updateNavigationButtons();
                             return;
                         }
                     } catch (error) {
@@ -1355,6 +1384,7 @@
                 this.currentIndex = 0;
                 this.updateStats();
                 this.showNextCard();
+                this.updateNavigationButtons();
             }
 
             /**
@@ -1463,8 +1493,14 @@
                 this.updateStats();
                 this.saveProgress();
                 this.showNextCard();
+                this.updateNavigationButtons();
             }
 
+            /**
+             * Marks the current card as incorrect and moves to the next card
+             * Removes the card from correct cards set if it was previously marked correct
+             * Updates statistics, saves progress, and shows the next card
+             */
             markAsIncorrect() {
                 if (this.currentCard === null) return;
                 
@@ -1484,8 +1520,14 @@
                 this.updateStats();
                 this.saveProgress();
                 this.displayCard();
+                this.updateNavigationButtons();
             }
 
+            /**
+             * Handles keyboard input for navigation and actions
+             * Supports arrow keys for navigation, space/enter for flipping, and number keys for actions
+             * @param {KeyboardEvent} event - The keyboard event to handle
+             */
             handleKeyPress(event) {
                 switch(event.key) {
                     case 'ArrowLeft':
@@ -1494,7 +1536,7 @@
                         break;
                     case 'ArrowRight':
                         event.preventDefault();
-                        this.showNextCard();
+                        this.advanceToNextCard();
                         break;
                     case ' ':
                         event.preventDefault();
@@ -1513,13 +1555,18 @@
                 }
             }
 
+            /**
+             * Handles clicks on the legend buttons for quick actions
+             * Maps legend actions to corresponding methods
+             * @param {string} action - The action to perform ('correct', 'incorrect', 'flip', 'next', 'previous')
+             */
             handleLegendClick(action) {
                 switch(action) {
                     case 'previous':
                         this.showPreviousCard();
                         break;
                     case 'next':
-                        this.showNextCard();
+                        this.advanceToNextCard();
                         break;
                     case 'flip':
                         this.flipCard();
@@ -1533,12 +1580,20 @@
                 }
             }
 
+            /**
+             * Updates the statistics display showing progress
+             * Calculates and displays correct/total counts and percentage
+             */
             updateStats() {
                 this.totalCardsEl.textContent = this.cards.length;
                 this.remainingCardsEl.textContent = this.cards.length - this.currentIndex;
                 this.correctCardsEl.textContent = this.currentIndex;
             }
 
+            /**
+             * Shows a completion message when all cards have been reviewed
+             * Displays statistics and offers options to continue or reset
+             */
             showCompletionMessage() {
                 this.frontWord.textContent = '🎉 Congratulations!';
                 this.frontExample.textContent = `You've completed all ${this.cards.length} cards!`;
@@ -1569,6 +1624,11 @@
                 cardFront.appendChild(resetBtn);
             }
 
+            /**
+             * Displays an error message on the flashcard interface
+             * Shows the error message and clears other content
+             * @param {string} message - The error message to display
+             */
             showError(message) {
                 this.frontWord.textContent = '❌ Error';
                 this.frontExample.textContent = message;
@@ -1581,6 +1641,11 @@
                 this.hideLearnMoreLink();
             }
 
+            /**
+             * Updates the Learn More link with the current French word
+             * Sets the href to search for the word on Reverso Context
+             * @param {string} frenchWord - The French word to search for
+             */
             updateLearnMoreLink(frenchWord) {
                 if (this.learnMoreLink) {
                     const searchQuery = encodeURIComponent(`meaning and use of "${frenchWord}" in French`);
@@ -1589,18 +1654,33 @@
                 }
             }
 
+            /**
+             * Hides the Learn More link
+             * Sets the display style to none to hide the link
+             */
             hideLearnMoreLink() {
                 if (this.learnMoreLink) {
                     this.learnMoreLink.style.display = 'none';
                 }
             }
 
+            /**
+             * Removes parentheses and their contents from text
+             * Used to clean up text for display purposes
+             * @param {string} text - The text to clean
+             * @returns {string} The text with parentheses removed
+             */
             removeParentheses(text) {
                 if (!text) return text;
                 // Remove text within parentheses, including the parentheses themselves
                 return text.replace(/\([^)]*\)/g, '').trim();
             }
 
+            /**
+             * Checks which speech synthesis options are available
+             * Tests for ResponsiveVoice and Web Speech API availability
+             * Logs the results for debugging purposes
+             */
             checkAvailableVoices() {
                 if (typeof responsiveVoice !== 'undefined') {
                     console.log('Available ResponsiveVoice voices:');
@@ -1617,6 +1697,12 @@
                 }
             }
 
+            /**
+             * Initiates text-to-speech for the current card
+             * Determines which text to speak based on the current side and language
+             * Handles both French and English speech synthesis
+             * @param {string} language - The language to speak ('french' or 'english')
+             */
             speakText(language = 'french') {
                 if (this.currentCard === null) return;
 
@@ -1674,6 +1760,14 @@
                 }
             }
 
+            /**
+             * Uses ResponsiveVoice library for text-to-speech
+             * Handles voice selection, speech events, and error handling
+             * @param {string} textToSpeak - The text to be spoken
+             * @param {string} voice - The voice to use for speech
+             * @param {HTMLElement} button - The button that triggered the speech
+             * @param {string} language - The language being spoken
+             */
             speakWithResponsiveVoice(textToSpeak, voice, button, language) {
                 console.log('speakWithResponsiveVoice called with:', { textToSpeak, voice, language });
                 
@@ -1722,6 +1816,13 @@
                 }
             }
 
+            /**
+             * Uses Web Speech API for text-to-speech as a fallback
+             * Handles voice selection, speech events, and error handling
+             * @param {string} textToSpeak - The text to be spoken
+             * @param {HTMLElement} button - The button that triggered the speech
+             * @param {string} language - The language being spoken
+             */
             speakWithWebSpeechAPI(textToSpeak, button, language) {
                 console.log('Using Web Speech API for English:', textToSpeak);
                 
@@ -1759,6 +1860,12 @@
                 }
             }
 
+            /**
+             * Handles the end of ResponsiveVoice speech
+             * Re-enables the button and resets its text
+             * @param {HTMLElement} button - The button that was disabled during speech
+             * @param {string} language - The language that was spoken
+             */
             handleResponsiveVoiceEnd(button, language) {
                 // Re-enable button and hide force stop
                 button.disabled = false;
@@ -1767,6 +1874,13 @@
                 this.isSpeaking = false;
             }
 
+            /**
+             * Handles errors from ResponsiveVoice speech synthesis
+             * Re-enables the button and displays an error message
+             * @param {HTMLElement} button - The button that was disabled during speech
+             * @param {string} language - The language that was being spoken
+             * @param {string} error - The error message
+             */
             handleResponsiveVoiceError(button, language, error) {
                 console.error('ResponsiveVoice failed:', error);
                 
@@ -1787,6 +1901,11 @@
                 }, 2000);
             }
 
+            /**
+             * Forces all speech synthesis to stop
+             * Cancels both ResponsiveVoice and Web Speech API speech
+             * Re-enables buttons and resets the speaking state
+             */
             forceStopSpeech() {
                 console.log('Force stopping ResponsiveVoice speech');
                 
@@ -1806,6 +1925,10 @@
                 this.isSpeaking = false;
             }
 
+            /**
+             * Hides the text content on the flashcard
+             * Adds a CSS class to blur or hide the text for testing purposes
+             */
             hideText() {
                 // Hide the flashcard content
                 this.flashcard.style.display = 'none';
@@ -1814,12 +1937,32 @@
                 this.showTextBtn.style.display = 'inline-block';
             }
 
+            /**
+             * Shows the text content on the flashcard
+             * Removes the CSS class that was hiding the text
+             */
             showText() {
                 // Show the flashcard content
                 this.flashcard.style.display = 'block';
                 // Show the hide text button and hide the show text button
                 this.hideTextBtn.style.display = 'inline-block';
                 this.showTextBtn.style.display = 'none';
+            }
+
+            /**
+             * Updates the state of navigation buttons based on current position
+             * Disables/enables buttons and updates their visual appearance
+             */
+            updateNavigationButtons() {
+                // Update previous button
+                const canGoBack = this.cardHistory.length > 0 && this.historyIndex > 0;
+                this.previousBtn.disabled = !canGoBack;
+                this.previousBtn.style.opacity = canGoBack ? '1' : '0.5';
+                
+                // Update next button
+                const canGoForward = this.currentIndex < this.shuffledCards.length - 1;
+                this.nextBtn.disabled = !canGoForward;
+                this.nextBtn.style.opacity = canGoForward ? '1' : '0.5';
             }
         }
 
