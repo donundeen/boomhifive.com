@@ -811,6 +811,11 @@
 
 
         class FlashcardApp {
+            /**
+             * Constructor - Initializes the FlashcardApp with default values and sets up the application
+             * Sets up all necessary properties, initializes DOM elements, binds event listeners,
+             * populates dropdown menus, and updates statistics display
+             */
             constructor() {
                 this.cards = [];
                 this.shuffledCards = []; // New: shuffled deck for sequential navigation
@@ -853,6 +858,11 @@
                 this.updateStats();
             }
 
+            /**
+             * Initializes all DOM element references needed by the application
+             * Gets references to file selectors, side selectors, flashcard container,
+             * buttons, progress indicators, and other UI elements
+             */
             initializeElements() {
                 this.fileSelect = document.getElementById('fileSelect');
                 this.sideSelect = document.getElementById('sideSelect');
@@ -885,6 +895,11 @@
                 this.nextBtn = document.getElementById('nextBtn');
             }
 
+            /**
+             * Binds all event listeners to DOM elements
+             * Sets up event handlers for file selection, side selection, button clicks,
+             * keyboard navigation, hamburger menu, and other user interactions
+             */
             bindEvents() {
                 // Desktop events
                 this.fileSelect.addEventListener('change', () => this.loadCards());
@@ -936,11 +951,21 @@
                 window.addEventListener('beforeunload', () => this.saveProgress());
             }
 
+            /**
+             * Populates both desktop and mobile dropdown menus with available categories
+             * Calls populateDropdown for both select elements to ensure consistency
+             */
             populateDropdowns() {
                 this.populateDropdown(this.fileSelect);
                 this.populateDropdown(this.fileSelectMobile);
             }
 
+            /**
+             * Populates a dropdown select element with available categories and their progress
+             * Clears existing options, adds categories with progress indicators (correct/total),
+             * and preserves the current selection if it's still valid
+             * @param {HTMLSelectElement} selectElement - The select element to populate
+             */
             populateDropdown(selectElement) {
                 // Store the current selection before clearing
                 const currentSelection = selectElement.value;
@@ -967,6 +992,12 @@
                 }
             }
 
+            /**
+             * Retrieves the progress statistics for a specific category from localStorage
+             * Returns an object with correct and total counts for the category
+             * @param {string} categoryFile - The filename of the category to get progress for
+             * @returns {Object} Object with correct and total properties
+             */
             getCategoryProgress(categoryFile) {
                 const savedProgress = localStorage.getItem(`flashcard_progress_${categoryFile}`);
                 
@@ -984,6 +1015,11 @@
                 return { correct: 0, total: 0 };
             }
 
+            /**
+             * Updates the progress display for the currently selected category in both dropdowns
+             * Gets the current progress and updates the option text to show (correct/total) format
+             * Only updates the currently selected category to avoid unnecessary DOM manipulation
+             */
             updateCurrentCategoryProgress() {
                 const selectedFile = this.fileSelect.value;
                 if (!selectedFile) return;
@@ -1006,10 +1042,19 @@
                 });
             }
 
+            /**
+             * Toggles the mobile hamburger menu visibility
+             * Adds or removes the 'active' class to show/hide the mobile navigation menu
+             */
             toggleHamburgerMenu() {
                 this.menuContent.classList.toggle('show');
             }
 
+            /**
+             * Loads flashcard data from the selected JSON file
+             * Fetches the file, parses the JSON data, and merges with existing progress
+             * Handles errors and updates the UI accordingly
+             */
             loadCards() {
                 const selectedFile = this.fileSelect.value || this.fileSelectMobile.value;
                 if (!selectedFile) return;
@@ -1039,6 +1084,11 @@
                     });
             }
 
+            /**
+             * Determines whether to merge with existing progress or start fresh
+             * Checks if there's saved progress and calls the appropriate method
+             * @param {string} selectedFile - The filename of the selected category
+             */
             mergeWithExistingProgress(selectedFile) {
                 const savedProgress = localStorage.getItem(`flashcard_progress_${selectedFile}`);
                 
@@ -1061,6 +1111,13 @@
                 this.loadProgress(selectedFile);
             }
 
+            /**
+             * Merges new card data with existing user progress
+             * Preserves user's current position, correct cards, and history while adding new cards
+             * Removes duplicates and maintains the shuffled order
+             * @param {Object} existingProgress - The saved progress data from localStorage
+             * @param {string} selectedFile - The filename of the selected category
+             */
             mergeCardsWithProgress(existingProgress, selectedFile) {
                 const existingCards = existingProgress.shuffledCards || [];
                 const existingCorrectCards = new Set(existingProgress.correctCards || []);
@@ -1143,6 +1200,11 @@
                 console.log(`Merged ${existingCards.length} existing cards with ${newCards.length} new cards. Total: ${mergedCards.length}`);
             }
 
+            /**
+             * Shuffles the current deck of cards using Fisher-Yates algorithm
+             * Creates a new shuffled array while preserving the original cards array
+             * Resets the current index to 0
+             */
             shuffleDeck() {
                 // Create a copy of the cards array and shuffle it
                 this.shuffledCards = [...this.cards];
@@ -1153,6 +1215,11 @@
                 this.currentIndex = 0;
             }
 
+            /**
+             * Updates the current side preference based on the selected option
+             * Syncs both desktop and mobile side selectors and updates the current side
+             * Saves progress after updating the side preference
+             */
             updateCurrentSide() {
                 // Get the value from the select that was just used
                 const newSide = this.lastUsedSelect === 'mobile' 
@@ -1173,6 +1240,11 @@
                 this.saveProgress();
             }
 
+            /**
+             * Shows the next card in the shuffled deck
+             * Updates the current index, adds the current card to history, and displays the new card
+             * Handles end of deck by showing completion message
+             */
             showNextCard() {
                 if (this.currentIndex >= this.shuffledCards.length) {
                     this.showCompletionMessage();
@@ -1192,6 +1264,11 @@
                 this.saveProgress();
             }
 
+            /**
+             * Shows the previous card from the history
+             * Decrements the history index and displays the previous card
+             * Handles beginning of history by doing nothing
+             */
             showPreviousCard() {
                 if (this.historyIndex > 0) {
                     this.historyIndex--;
@@ -1203,6 +1280,11 @@
                 }
             }
 
+            /**
+             * Saves the current progress to localStorage
+             * Stores shuffled cards, current position, correct cards, history, and other state
+             * Updates the progress display for the current category
+             */
             saveProgress() {
                 const selectedFile = this.fileSelect.value;
                 if (!selectedFile) return;
@@ -1224,6 +1306,12 @@
                 this.updateCurrentCategoryProgress();
             }
 
+            /**
+             * Loads saved progress from localStorage for a specific category
+             * Restores shuffled cards, current position, correct cards, and history
+             * Validates the saved data and falls back to fresh start if invalid
+             * @param {string} selectedFile - The filename of the category to load progress for
+             */
             loadProgress(selectedFile) {
                 const savedProgress = localStorage.getItem(`flashcard_progress_${selectedFile}`);
                 
@@ -1269,6 +1357,11 @@
                 this.showNextCard();
             }
 
+            /**
+             * Resets the progress for the current category
+             * Clears localStorage, resets all progress tracking, and reshuffles the deck
+             * Shows confirmation dialog before resetting
+             */
             resetScore() {
                 const selectedFile = this.fileSelect.value;
                 if (!selectedFile) return;
@@ -1291,6 +1384,11 @@
                 }
             }
 
+            /**
+             * Displays the current card on the flashcard interface
+             * Shows the appropriate side (French or English) based on user preference
+             * Handles both 4-element and 5-element card formats
+             */
             displayCard() {
                 if (this.currentCard === null || this.currentCard === undefined) return;
 
@@ -1339,11 +1437,20 @@
                 this.updateLearnMoreLink(frenchWord);
             }
 
+            /**
+             * Flips the flashcard to show the opposite side
+             * Toggles the 'flipped' class and updates the isFlipped state
+             */
             flipCard() {
                 this.isFlipped = !this.isFlipped;
                 this.flashcard.classList.toggle('flipped', this.isFlipped);
             }
 
+            /**
+             * Marks the current card as correct and moves to the next card
+             * Adds the card to the correct cards set and updates statistics
+             * Saves progress and shows the next card
+             */
             markAsCorrect() {
                 if (this.currentCard === null) return;
                 
