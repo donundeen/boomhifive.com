@@ -1274,8 +1274,18 @@
              */
             advanceToNextCard() {
                 if (this.currentIndex < this.shuffledCards.length - 1) {
+                    // Add current card to history before advancing
+                    if (this.currentCard !== null) {
+                        this.cardHistory.push(this.currentCard);
+                        this.historyIndex = this.cardHistory.length - 1;
+                    }
+                    
                     this.currentIndex++;
-                    this.showNextCard();
+                    this.currentCard = this.currentIndex;
+                    this.isFlipped = false;
+                    this.flashcard.classList.remove('flipped');
+                    this.displayCard();
+                    this.saveProgress();
                 } else {
                     this.showCompletionMessage();
                 }
@@ -1292,6 +1302,8 @@
                 if (this.cardHistory.length > 0 && this.historyIndex > 0) {
                     this.historyIndex--;
                     this.currentCard = this.cardHistory[this.historyIndex];
+                    // Restore the currentIndex to match the history position
+                    this.currentIndex = this.currentCard;
                     this.isFlipped = false;
                     this.flashcard.classList.remove('flipped');
                     this.displayCard();
@@ -1299,6 +1311,7 @@
                 } else if (this.cardHistory.length > 0 && this.historyIndex === 0) {
                     // We're at the first card in history, stay there
                     this.currentCard = this.cardHistory[0];
+                    this.currentIndex = this.currentCard;
                     this.isFlipped = false;
                     this.flashcard.classList.remove('flipped');
                     this.displayCard();
