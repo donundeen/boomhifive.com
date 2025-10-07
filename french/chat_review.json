@@ -1,301 +1,1634 @@
 [
-  ["atelier", "workshop", "À quelle heure a lieu l'atelier ?", "What time does the workshop take place?"],
-  ["séance", "session (morning/afternoon block)", "La séance de l'après‑midi commence à 14 h.", "The afternoon session starts at 2 p.m."],
-  ["animateur / animatrice", "facilitator", "L'animatrice vous répondra à toutes vos questions.", "The facilitator will answer all your questions."],
-  ["intervenant·e", "instructor / speaker", "Les intervenants sont deux artistes locaux.", "The instructors are two local artists."],
-  ["participant·e", "participant", "Chaque participant l'emporte avec lui.", "Each participant takes it with them."],
-  ["matériel", "materials / equipment", "Le matériel est inclus dans le tarif.", "Materials are included in the fee."],
-  ["capteur", "sensor", "On découvre des capteurs de lumière et de toucher.", "We explore light and touch sensors."],
-  ["microcontrôleur", "microcontroller", "Vous l'apprendrez à brancher correctement.", "You'll learn to connect it properly."],
-  ["impression 3D", "3D printing", "Il y aura une initiation à l'impression 3D.", "There will be an introduction to 3D printing."],
-  ["tarif", "price / fee", "Quel est le tarif pour les résidents ?", "What is the fee for residents?"],
-  ["réduction / rabais", "discount", "Le code donne une réduction de 10 %.", "The code gives a 10% discount."],
-  ["code promo", "promo code", "Puis‑je l'appliquer en ligne ?", "Can I apply it online?"],
-  ["preuve de résidence", "proof of residence", "Une preuve de résidence est demandée.", "Proof of residence is required."],
-  ["carte étudiante", "student card", "La carte étudiante doit être valide.", "The student card must be valid."],
-  ["places disponibles", "available spots", "Reste‑t‑il des places disponibles ?", "Are there spots available?"],
-  ["liste d'attente", "waitlist", "Puis‑je m'y inscrire ?", "Can I join it?"],
-  ["remboursement", "refund", "Le remboursement est de 80 % jusqu'à 72 h avant.", "The refund is 80% up to 72 hours before."],
-  ["annulation", "cancellation", "Quelle est la politique d'annulation ?", "What is the cancellation policy?"],
-  ["délai", "deadline / time limit", "Quel est le délai pour annuler ?", "What is the deadline to cancel?"],
-  ["accessibilité", "accessibility", "Le bâtiment est accessible aux fauteuils roulants.", "The building is wheelchair accessible."],
-  ["stationnement", "parking", "Le stationnement est très limité.", "Parking is very limited."],
-  ["transfert de place", "transfer of a spot to someone else", "Puis‑je la transférer à un ami ?", "Can I transfer it to a friend?"],
-  ["récapitulatif / résumé", "recap / summary", "Y aura‑t‑il un récapitulatif le dimanche matin ?", "Will there be a recap on Sunday morning?"],
-  ["bâtiment", "building (venue)", "Le bâtiment se trouve rue Bélanger.", "The building is on Bélanger Street."],
-  ["se renseigner sur", "to find out about / inquire about", "Je voudrais m'y renseigner.", "I would like to find out about it."],
-  ["s'inscrire à", "to register for", "Comment s'y inscrire ?", "How do I register for it?"],
-  ["avoir lieu", "to take place", "L'atelier a lieu quand exactement ?", "When exactly does the workshop take place?"],
-  ["se dérouler", "to run / take place (over time)", "L'atelier se déroule sur deux jours.", "The workshop runs over two days."],
-  ["participer à", "to take part in", "Je ne peux pas y participer le premier jour.", "I can't take part in it on the first day."],
-  ["assister à", "to attend", "Puis‑je y assister seulement le dimanche ?", "May I attend it only on Sunday?"],
-  ["venir (les deux jours / un seul jour)", "to come (both days / one day)", "Est‑ce possible de venir un seul jour ?", "Is it possible to come just one day?"],
-  ["payer en comptant / en espèces", "to pay in cash", "Puis‑je payer en comptant sur place ?", "Can I pay in cash on site?"],
-  ["payer par carte / Interac", "to pay by card / Interac", "Acceptez‑vous le paiement par carte ?", "Do you accept card payment?"],
-  ["annuler", "to cancel", "Si je dois annuler, comment faire ?", "If I have to cancel, how do I do it?"],
-  ["être remboursé(e)", "to be refunded", "Puis‑je être remboursé si j'annule 3 jours avant ?", "Can I be refunded if I cancel 3 days before?"],
-  ["transférer (une place)", "to transfer (a spot)", "Puis‑je la lui transférer ?", "Can I transfer it to them?"],
-  ["apporter", "to bring (an object toward the venue)", "Dois‑je l'apporter ?", "Do I need to bring it?"],
-  ["emporter", "to take away with you", "On peut l'emporter à la maison.", "You can take it home."],
-  ["amener", "to bring (a person/animal)", "Puis‑je l'amener avec moi ?", "May I bring them with me?"],
-  ["emmener", "to take (a person along)", "Je dois l'emmener dimanche.", "I have to take them along on Sunday."],
-  ["se rendre à", "to get to / go to (a place)", "Comment se rendre depuis le métro Beaubien ?", "How do I get there from Beaubien metro?"],
-  ["fournir", "to provide / supply", "Le fournissez‑vous ?", "Do you provide it?"],
-  ["prévoir", "to plan / allow for", "Il faut prévoir une pause à midi.", "You should plan for a lunch break at noon."],
-  ["être complet / complète", "to be full (no more spots)", "L'atelier de samedi est‑il complet ?", "Is Saturday's workshop full?"],
-  ["À quelle heure a lieu … ?", "What time does … take place?", "À quelle heure a lieu la séance du matin ?", "What time is the morning session?"],
-  ["Est‑ce que je peux … ?", "May I … ?", "Est‑ce que je peux ne venir qu'un seul jour ?", "May I come only one day?"],
-  ["Serait‑il possible de … ?", "Would it be possible to … ?", "Serait‑il possible de payer sur place ?", "Would it be possible to pay on site?"],
-  ["Jusqu'à quand puis‑je … ?", "Until when can I … ?", "Jusqu'à quand puis‑je annuler ?", "Until when can I cancel?"],
-  ["Reste‑t‑il des places disponibles ?", "Are there spots left?", "Reste‑t‑il des places disponibles pour dimanche ?", "Are there spots left for Sunday?"],
-  ["Combien coûte … (avec le code promo) ?", "How much does … cost (with the promo code)?", "Combien coûte l'atelier avec le code promo ?", "How much is the workshop with the promo code?"],
-  ["L'atelier est‑il accessible … ?", "Is the workshop accessible … ?", "L'atelier est‑il accessible aux personnes à mobilité réduite ?", "Is the workshop accessible to people with reduced mobility?"],
-  ["Comment s'inscrire (en ligne / par téléphone) ?", "How to register (online / by phone)?", "Comment s'inscrire par téléphone ?", "How do I register by phone?"],
-  ["Où se trouve … ?", "Where is … located?", "Où se trouve la Maison des Arts de Rosemont ?", "Where is the Maison des Arts de Rosemont?"],
-  ["Comment se rendre depuis … ?", "How to get there from … ?", "Comment se rendre depuis le métro Beaubien ?", "How do I get there from Beaubien metro?"],
-  ["Est‑ce que je peux payer en comptant ?", "Can I pay in cash?", "Est‑ce que je peux payer en comptant le jour même ?", "Can I pay in cash on the day of the event?"],
-  ["Puis‑je transférer ma place à … ?", "Can I transfer my spot to … ?", "Puis‑je la lui transférer ?", "Can I transfer it to them?"],
-  ["apporter", "to bring (an object toward the venue)", "Dois-je l'apporter ?", "Do I need to bring it?"],
-  ["amener", "to bring (a person/animal toward the venue)", "Puis-je l'amener ?", "May I bring them?"],
-  ["emmener", "to take (a person with you to another place)", "Je peux l'emmener dimanche.", "I can take them along on Sunday."],
-  ["emporter", "to take (an object away with you)", "On peut l'emporter à la maison.", "You can take it home."],
-  ["assister à", "to attend as audience", "Puis-je y assister seulement le dimanche ?", "May I attend it only on Sunday?"],
-  ["participer à", "to take part actively", "Je veux y participer.", "I want to take part in it."],
-  ["venir", "to come", "Je ne peux pas venir le samedi.", "I can't come on Saturday."],
-  ["réunion", "meeting", "La réunion commence à 14h.", "The meeting starts at 2 PM."],
-  ["atelier", "hands-on workshop", "L'atelier se déroule sur deux jours.", "The workshop runs over two days."],
-  ["cours", "class (regular teaching)", "Le cours de français a lieu le mardi.", "The French class takes place on Tuesday."],
-  ["télé", "television", "Je regarde la télé le soir.", "I watch TV in the evening."],
-  ["atelier", "workshop", "Je m'y inscris.", "I'm registering for it."],
-  ["payer en comptant", "to pay in cash", "Est-ce que je peux payer en comptant ?", "Can I pay in cash?"],
-  ["payer la moitié", "to pay half", "Puis-je la payer si je viens un seul jour ?", "Can I pay it if I come only one day?"],
-  ["se renseigner sur", "to find out about / inquire about", "Je voudrais m'y renseigner.", "I would like to find out about it."],
-  ["avoir lieu", "to take place (events)", "L'atelier a lieu les 25 et 26.", "The workshop takes place on the 25th and 26th."],
-  ["se dérouler", "to run / take place (over time)", "Il se déroule sur deux jours.", "It runs over two days."],
-  ["être", "to be", "L'atelier est intéressant.", "The workshop is interesting."],
-  ["jusqu'à", "up to / until a limit", "Remboursement possible jusqu'à 72 h avant l'atelier.", "Refund possible up to 72 hours before the workshop."],
-  ["avant", "before (earlier than)", "Il faut s'inscrire avant le 20 mars.", "You must register before March 20th."],
-  ["depuis", "since/for (duration up to now)", "J'habite Montréal depuis 2018.", "I've been living in Montreal since 2018."],
-  ["à partir de", "starting from (future or rule)", "Le code promo est valable à partir de lundi.", "The promo code is valid starting Monday."],
-  ["se rendre à", "to go to (more formal/polite)", "Comment se rendre depuis le métro Beaubien ?", "How do I get there from Beaubien metro?"],
-  ["aller à", "to go to", "Je vais à l'atelier demain.", "I'm going to the workshop tomorrow."],
-  ["participer à", "to participate in", "Je voudrais y participer.", "I would like to participate in it."],
-  ["apporter", "to bring (object)", "Dois-je l'apporter ?", "Do I need to bring it?"],
-  ["amener", "to bring (person)", "Puis-je l'amener ?", "May I bring them?"],
-  ["uniquement", "only (slightly more formal)", "Est-ce possible de venir uniquement le dimanche ?", "Is it possible to come only on Sunday?"],
-  ["seulement", "only", "Je peux venir seulement le samedi.", "I can come only on Saturday."],
-  ["près de", "near (most common for location)", "C'est près du métro Beaubien.", "It's near Beaubien metro."],
-  ["proche de", "near", "L'atelier est proche de chez moi.", "The workshop is near my house."],
-  ["preuve de résidence", "proof of residence", "Une preuve de résidence est demandée.", "Proof of residence is required."],
-  ["politique d'annulation", "cancellation policy", "Avez-vous une politique d'annulation de l'atelier ?", "Do you have a cancellation policy for the workshop?"],
-  ["accès à la salle", "access to the room", "L'accès à la salle est gratuit.", "Access to the room is free."],
-  ["transférer", "to transfer (give your spot to someone)", "Puis-je la lui transférer si j'annule ?", "Can I transfer it to them if I cancel?"],
-  ["reporter", "to postpone", "L'atelier est reporté à la semaine prochaine.", "The workshop is postponed to next week."],
-  ["annuler", "to cancel", "Je dois l'annuler.", "I have to cancel it."],
-  ["accessible à", "accessible to (preferred)", "L'atelier est-il accessible aux personnes à mobilité réduite ?", "Is the workshop accessible to people with reduced mobility?"],
-  ["accessible pour", "accessible for", "Le bâtiment est accessible pour tous.", "The building is accessible for everyone."],
-  ["en ligne", "online", "Puis-je payer en ligne ou sur place ?", "Can I pay online or on site?"],
-  ["sur place", "on site", "Le paiement se fait sur place.", "Payment is made on site."],
-  ["en personne", "in person", "Je préfère m'inscrire en personne.", "I prefer to register in person."],
-  ["il reste", "there are left (impersonal)", "Il reste des places disponibles ?", "Are there spots left?"],
-  ["rester", "to stay/remain", "Je reste à la maison ce soir.", "I'm staying home tonight."],
-  ["combien coûte", "how much does ... cost", "Combien coûte l'atelier avec le code promo ?", "How much does the workshop cost with the promo code?"],
-  ["quel est le tarif", "what is the price", "Quel est le tarif pour les étudiants ?", "What is the price for students?"],
-  ["jour", "day", "Le jour de l'atelier est arrivé.", "The day of the workshop has arrived."],
-  ["journée", "day (emphasizing duration)", "La journée commence à 9 h 30.", "The day begins at 9:30 AM."],
-  ["matin", "morning", "La séance du matin a lieu à 9 h 30.", "The morning session takes place at 9:30 AM."],
-  ["matinée", "morning (emphasizing duration)", "La matinée est consacrée à la théorie.", "The morning is devoted to theory."],
-  ["soir", "evening", "Le soir, on fait un récapitulatif.", "In the evening, we do a recap."],
-  ["soirée", "evening (emphasizing duration)", "La soirée se termine à 16 h.", "The evening ends at 4 PM."],
-  ["ticket", "ticket (often informal/lottery)", "J'ai gagné un ticket de loterie.", "I won a lottery ticket."],
-  ["billet", "ticket (transport, show)", "J'ai acheté un billet pour le spectacle.", "I bought a ticket for the show."],
-  ["reçu", "receipt", "Pourrai-je recevoir un reçu ?", "Could I receive a receipt?"],
-  ["code promo", "promo code (entered online)", "Puis-je appliquer le code promo en ligne ?", "Can I apply the promo code online?"],
-  ["coupon", "coupon (paper/print)", "J'ai un coupon de réduction.", "I have a discount coupon."],
-  ["horaire", "schedule for events/business hours", "Quel est l'horaire de l'atelier ?", "What is the workshop schedule?"],
-  ["emploi du temps", "personal timetable", "Mon emploi du temps est très chargé.", "My schedule is very busy."],
-  ["randonnée", "hike / hiking", "La randonnée est facile, environ 6 km.", "The hike is easy, about 6 km."],
-  ["patrimoine", "heritage", "On découvre le patrimoine du Mont-Royal.", "We discover the heritage of Mount Royal."],
-  ["brunch solidaire", "charity brunch", "Le brunch solidaire est inclus à midi.", "The charity brunch is included at noon."],
-  ["parcours guidé", "guided route", "Le parcours guidé comprend des arrêts panoramiques.", "The guided route includes scenic stops."],
-  ["belvédère", "lookout", "Le rendez-vous est au belvédère Kondiaronk.", "The meeting point is at the Kondiaronk lookout."],
-  ["point de vue", "viewpoint", "Il y a un magnifique point de vue sur la ville.", "There is a beautiful viewpoint over the city."],
-  ["mini-atelier (photo)", "mini-workshop (photo)", "Il y aura un mini-atelier photo au smartphone.", "There will be a smartphone mini photo workshop."],
-  ["jeu d'observation", "observation game", "On fait un petit jeu d'observation pendant la marche.", "We do a small observation game during the walk."],
-  ["horaire", "schedule", "L'horaire: 9 h à 12 h, puis brunch.", "The schedule: 9 a.m. to noon, then brunch."],
-  ["rendez-vous", "meeting point", "Le rendez-vous est à 9 h au belvédère.", "The meeting point is at 9 a.m. at the lookout."],
-  ["tôt", "early", "C'est un peu tôt, mais ça vaut le coup.", "It's a bit early, but it's worth it."],
-  ["faire la grasse matinée", "to sleep in", "Je sais que tu aimes faire la grasse matinée le samedi.", "I know you like to sleep in on Saturdays."],
-  ["être en forme", "to be fit / in shape", "Même si tu n'es pas en forme, le rythme est tranquille.", "Even if you aren't in shape, the pace is relaxed."],
-  ["débutant", "beginner", "Le niveau est débutant, avec des pauses régulières.", "The level is beginner, with regular breaks."],
-  ["pause", "break", "On fait une pause toutes les 30–40 minutes.", "We take a break every 30–40 minutes."],
-  ["météo", "weather", "Ça dépendra un peu de la météo, mais l'activité est maintenue s'il fait frais.", "It will depend a bit on the weather, but the activity goes ahead if it's cool."],
-  ["prévisions", "forecast", "D'après les prévisions, il ne devrait pas pleuvoir.", "According to the forecast, it shouldn't rain."],
-  ["pluie / averse / fortes pluies", "rain / shower / heavy rain", "En cas de fortes pluies, l'événement est reporté.", "In case of heavy rain, the event is postponed."],
-  ["il fait froid / il va faire froid", "it's cold / it will be cold", "S'il fait froid, on s'habille en conséquence.", "If it's cold, we dress accordingly."],
-  ["coupe-vent", "windbreaker", "Prends un coupe-vent si le vent se lève.", "Take a windbreaker if it gets windy."],
-  ["chaussures de marche", "walking shoes", "Mets des chaussures de marche confortables.", "Wear comfortable walking shoes."],
-  ["bouteille d'eau / gourde", "water bottle", "Apporte une gourde remplie.", "Bring a filled water bottle."],
-  ["report / reporter (à)", "postponement / to postpone (to)", "Report au 25 octobre en cas de pluie.", "Postponed to October 25 in case of rain."],
-  ["tarif", "price / fee", "Le tarif régulier est de 20 $.", "The regular price is $20."],
-  ["réduction / remise", "discount", "Il y a une réduction avec le code promo.", "There's a discount with the promo code."],
-  ["offre duo", "two-for-one style offer", "On peut profiter de l'offre duo: 2 pour 30 $.", "We can use the duo offer: 2 for $30."],
-  ["code promo", "promo code", "On applique le code promo AMI10.", "We apply the promo code AMI10."],
-  ["coûter / ça coûte", "to cost / it costs", "Ça coûte 20 $, brunch inclus.", "It costs $20, brunch included."],
-  ["inclus / compris", "included", "Le brunch est inclus dans le tarif.", "Brunch is included in the price."],
-  ["ça vaut le coup", "it's worth it", "Pour le prix, ça vaut vraiment le coup.", "For the price, it's really worth it."],
-  ["convaincre", "to convince", "Je vais essayer de te convaincre d'y venir.", "I'm going to try to convince you to come."],
-  ["hésiter", "to hesitate", "Si tu hésites, on peut prendre l'offre duo.", "If you're hesitating, we can take the duo offer."],
-  ["ça te dirait de… ? / ça te tente… ?", "would you like to… ? / feel like… ?", "Ça te dirait de venir avec moi samedi ?", "Would you like to come with me on Saturday?"],
-  ["et si on… ?", "what if we… ?", "Et si on s'inscrivait ensemble ce soir ?", "What if we signed up together tonight?"],
-  ["au pire / si jamais", "worst case / if ever", "Au pire, si jamais il pleut, c'est reporté.", "Worst case, if it rains, it's postponed."],
-  ["offrir (un café)", "to offer (a coffee)", "Je t'en offre un pour te motiver.", "I'll buy you one to motivate you."],
-  ["se rendre (à)", "to get to / go to", "On peut se rendre en métro puis bus 11.", "We can get there by metro then bus 11."],
-  ["trajet", "route / journey", "Le trajet est simple depuis chez toi.", "The route is simple from your place."],
-  ["apporter", "to bring (an OBJECT toward the venue/person)", "Dois-je l'apporter ?", "Do I need to bring it?"],
-  ["amener", "to bring (a PERSON/animal toward the venue/person)", "Puis-je l'amener dimanche ?", "May I bring them on Sunday?"],
-  ["emporter", "to take (an OBJECT) away with you; to take out", "On peut l'emporter à la maison.", "You can take it home."],
-  ["emmener", "to take (a PERSON/animal) along with you to another place", "Je dois l'emmener dimanche.", "I have to take them along on Sunday."],
-  ["assister à", "to attend (often as audience)", "Puis-je y assister seulement le dimanche ?", "May I attend it only on Sunday?"],
-  ["participer à", "to take part in (actively)", "Je voudrais y participer.", "I would like to take part in it."],
-  ["venir", "to come (neutral movement); different from assister/participer", "Est-ce possible de venir un seul jour ?", "Is it possible to come for just one day?"],
-  ["atelier", "workshop (hands-on session)", "L'atelier se déroule sur deux jours.", "The workshop takes place over two days."],
-  ["réunion", "meeting (discussion, no hands-on)", "Ce n'est pas une réunion, c'est un atelier pratique.", "It's not a meeting; it's a hands-on workshop."],
-  ["cours", "class/course (regular teaching over time)", "Ce n'est pas un cours hebdomadaire, juste un atelier week-end.", "It's not a weekly class, just a weekend workshop."],
-  ["randonnée", "hike", "La randonnée est facile, environ 6 km.", "The hike is easy, around 6 km."],
-  ["ronde", "round/patrol (security, police)", "Le parc organise une ronde de sécurité le soir.", "The park runs a security patrol in the evening."],
-  ["brunch", "brunch (meal)", "Le brunch végétarien est inclus.", "The vegetarian brunch is included."],
-  ["patrimoine", "heritage", "On découvre le patrimoine du Mont-Royal.", "We discover Mount Royal's heritage."],
-  ["se renseigner sur", "to inquire/find out about", "Je voudrais me renseigner sur l'atelier.", "I'd like to find out about the workshop."],
-  ["avoir lieu", "to take place (time/place of an event); better than using être", "L'atelier a lieu les 25 et 26 octobre.", "The workshop takes place on October 25 and 26."],
-  ["jusqu'à", "up to/until (time limit); contrasts with avant = before", "Remboursement possible jusqu'à 48 h avant l'événement.", "Refund available up to 48 hours before the event."],
-  ["avant", "before/earlier than (time); contrasts with jusqu'à", "Il faut annuler avant mercredi.", "You must cancel before Wednesday."],
-  ["depuis", "since/for (duration up to now); contrasts with à partir de (starting from)", "J'habite Montréal depuis 2018.", "I've lived in Montreal since 2018."],
-  ["à partir de", "starting from/as of (beginning point in time)", "Le code promo est valable à partir du 12 octobre.", "The promo code is valid starting October 12."],
-  ["se rendre à", "to get/go to (slightly formal/polite); contrasts with aller à", "Comment se rendre depuis le métro Beaubien ?", "How do you get there from Beaubien metro?"],
-  ["aller à", "to go to (neutral, very common)", "On peut aller au parc en bus.", "We can go to the park by bus."],
-  ["uniquement", "only/solely (slightly more formal than seulement)", "Est-ce possible de venir uniquement le dimanche ?", "Is it possible to come only on Sunday?"],
-  ["seulement", "only/just (neutral register)", "Je peux venir seulement l'après-midi.", "I can come only in the afternoon."],
-  ["près de", "near (most common for location); contrasts with proche de", "C'est près du métro Beaubien.", "It's near Beaubien metro."],
-  ["proche de", "close to/near (slightly more formal/literal)", "La salle est proche de l'entrée.", "The room is close to the entrance."],
-  ["accessible à", "accessible to (preferred preposition with a public)", "L'atelier est accessible aux personnes à mobilité réduite.", "The workshop is accessible to people with reduced mobility."],
-  ["en ligne", "online", "On peut s'inscrire en ligne.", "You can register online."],
-  ["sur place", "on site/at the venue", "On peut payer sur place.", "You can pay on site."],
-  ["en personne", "in person (physically), often similar to sur place but broader", "Je préfère m'inscrire en personne.", "I prefer to register in person."],
-  ["il reste", "there are … left (impersonal)", "Il reste des places disponibles ?", "Are there spots left?"],
-  ["combien coûte … ?", "how much does … cost?", "Combien coûte l'atelier avec le code promo ?", "How much does the workshop cost with the promo code?"],
-  ["jour / journée", "day (date) / daytime (duration)", "La journée commence à 9 h 00, le jour de l'événement est le 18.", "The daytime starts at 9:00; the day of the event is the 18th."],
-  ["matin / matinée", "morning (clock time) / the morning period (duration)", "La séance du matin commence à 9 h; la matinée se termine à midi.", "The morning session starts at 9; the morning period ends at noon."],
-  ["soir / soirée", "evening (clock time) / evening period (event/social time)", "La soirée commence à 19 h.", "The evening event starts at 7 p.m."],
-  ["tarif", "fee/rate (official price category); contrasts with prix (general price)", "Quel est le tarif réduit pour les étudiants ?", "What is the reduced rate for students?"],
-  ["prix", "price (general amount of money)", "Le prix est de 20 $.", "The price is $20."],
-  ["réduction / rabais", "discount (Québec: rabais common); remise also exists (France)", "Il y a un rabais avec le code AMI10.", "There is a discount with the AMI10 code."],
-  ["code promo", "promo code (typed online); contrasts with coupon (paper)", "On applique le code promo à l'achat.", "We apply the promo code at purchase."],
-  ["report", "postponement (noun)", "L'événement est en report au 25 octobre.", "The event is postponed to October 25."],
-  ["reporter", "to postpone; contrasts with rapporter (to bring back/report)", "On va reporter l'activité s'il pleut fort.", "We'll postpone the activity if it rains heavily."],
-  ["rapporter", "to bring back / to report (tell back)", "Peux-tu me le rapporter ?", "Can you report it back to me?"],
-  ["pluie / pleuvoir", "rain (noun) / to rain (verb)", "S'il pleut, l'événement sera reporté.", "If it rains, the event will be postponed."],
-  ["moitié / demi", "half (moitié as a noun; demi as an adjective/compound)", "Puis-je la payer si je viens un seul jour ?", "Can I pay it if I come only one day?"],
-  ["se reposer", "to rest", "Le dimanche, j'aime bien me reposer après une longue semaine.", "On Sunday, I like to rest after a long week."],
-  ["se lever tôt", "to get up early", "Je dois me lever tôt pour participer à la randonnée.", "I have to get up early to participate in the hike."],
-  ["faire une randonnée", "to go hiking", "On va la faire au Mont-Royal dimanche.", "We're going to do it on Mount Royal on Sunday."],
-  ["avoir envie de", "to feel like / want to", "Je n'ai pas envie de sortir quand il fait froid.", "I don't feel like going out when it's cold."],
-  ["il va faire froid", "it's going to be cold", "Il va faire froid à la fin du mois d'octobre.", "It's going to be cold at the end of October."],
-  ["ça vaut la peine", "it's worth it", "Ça vaut la peine d'y aller, c'est pour une bonne cause.", "It's worth going, it's for a good cause."],
-  ["planter un arbre", "to plant a tree", "Chaque kilomètre parcouru permet d'en planter un.", "Every kilometer walked allows us to plant one."],
-  ["une bonne cause", "a good cause", "Je participe pour soutenir une bonne cause.", "I'm participating to support a good cause."],
-  ["convaincre quelqu'un de", "to convince someone to", "J'essaie de la convaincre de venir avec moi.", "I'm trying to convince her to come with me."],
-  ["en plein air", "outdoors", "C'est une activité de plein air très agréable.", "It's a very pleasant outdoor activity."],
-  ["il faut que + subjonctif", "it's necessary that + subjunctive", "Il faut que tu viennes, ce sera amusant.", "You need to come, it will be fun."],
-  ["ça te ferait du bien", "it would do you good", "Ça te ferait du bien de marcher un peu en nature.", "It would do you good to walk a bit in nature."],
-  ["ça ne prend pas beaucoup de temps", "it doesn't take much time", "Ne t'inquiète pas, ça ne prend pas beaucoup de temps.", "Don't worry, it doesn't take much time."],
-  ["même si", "even if", "Même s'il fait froid, on peut bien s'habiller.", "Even if it's cold, we can dress warmly."],
-  ["en plus", "in addition / plus", "En plus, il y aura un concert à la fin de la marche.", "Plus, there will be a concert at the end of the walk."],
-  ["ça dépend de", "it depends on", "Ça dépend du temps, mais je pense qu'il fera beau.", "It depends on the weather, but I think it will be nice."],
-  ["je te promets que", "I promise you that", "Je te promets que tu ne vas pas le regretter.", "I promise you won't regret it."],
-  ["être motivé(e)", "to be motivated", "Je suis motivé pour faire quelque chose de bien ce week-end.", "I'm motivated to do something good this weekend."],
-  ["ça te dit de", "do you feel like / want to", "Ça te dit de venir avec moi dimanche ?", "Do you feel like coming with me on Sunday?"],
-  ["je n'ai pas trop envie", "I don't really feel like", "Je n'ai pas trop envie de marcher aujourd'hui.", "I don't really feel like walking today."],
-  ["au lieu de", "instead of", "Au lieu de rester à la maison, viens marcher avec moi !", "Instead of staying home, come walk with me!"],
-  ["c'est gratuit pour", "it's free for", "C'est gratuit pour les enfants et pas cher pour les adultes.", "It's free for children and not expensive for adults."],
-  ["dans la nature", "in nature", "C'est agréable de passer du temps dans la nature.", "It's pleasant to spend time in nature."],
-  ["profiter de", "to take advantage of / enjoy", "On peut profiter du beau temps ensemble.", "We can enjoy the nice weather together."],
-  ["faire du bien", "to do good / be good for", "Marcher un peu te fera du bien.", "Walking a bit will do you good."],
-  ["être fatigué(e)", "to be tired", "Je serai peut-être fatigué après, mais content d'y aller.", "I might be tired after, but happy to go."],
-  ["soutenir", "to support", "C'est important de soutenir des initiatives écologiques.", "It's important to support ecological initiatives."],
-  ["faire un effort", "to make an effort", "Fais un petit effort, tu verras, ce sera sympa.", "Make a little effort, you'll see, it will be nice."],
-  ["en fait", "actually / in fact", "En fait, la marche est très facile, accessible à tous.", "Actually, the walk is very easy, accessible to everyone."],
-  ["à la fin", "at the end", "À la fin, il y aura un pique-nique et de la musique.", "At the end, there will be a picnic and music."],
-  ["au début", "at the beginning", "Au début, on se retrouve à l'entrée du parc.", "At the beginning, we meet at the park entrance."],
-  ["je trouve que", "I think that", "Je trouve que c'est une super idée pour le dimanche.", "I think it's a great idea for Sunday."],
-  ["c'est dommage que", "it's a shame that", "C'est dommage que tu ne veuilles pas venir.", "It's a shame you don't want to come."],
-  ["grâce à", "thanks to", "Grâce à cette marche, on va financer la reforestation.", "Thanks to this walk, we're going to finance reforestation."],
-  ["parce que", "because", "Je veux y aller parce que j'aime la nature.", "I want to go because I love nature."],
-  ["bien s'habiller", "to dress warmly", "Si tu te couvres bien, tu n'auras pas froid.", "If you dress warmly, you won't be cold."],
-  ["ça ne coûte presque rien", "it costs almost nothing", "La participation ne coûte presque rien.", "Participation costs almost nothing."],
-  ["une occasion de", "an opportunity to", "C'est une belle occasion de se retrouver entre amis.", "It's a great opportunity to get together with friends."],
-  ["avoir raison", "to be right", "Tu as raison, il faut se reposer parfois.", "You're right, we need to rest sometimes."],
-  ["tu n'as qu'à", "you just have to", "Tu n'as qu'à venir et tu décideras sur place.", "You just have to come and you'll decide on the spot."],
-  ["je suis sûr(e) que", "I'm sure that", "Je suis sûr que tu vas adorer l'ambiance.", "I'm sure you're going to love the atmosphere."],
-  ["si jamais", "if ever", "Si jamais tu changes d'avis, dis-le-moi vite.", "If you ever change your mind, tell me quickly."],
-  ["ce serait bien que", "it would be good if", "Ce serait bien que tu viennes avec moi dimanche.", "It would be good if you came with me on Sunday."],
-  ["ça me ferait plaisir", "it would please me", "Ça me ferait plaisir que tu viennes.", "It would please me if you came."],
-  ["ne t'inquiète pas", "don't worry", "Ne t'inquiète pas, on ira doucement.", "Don't worry, we'll go slowly."],
-  ["rater", "to miss", "Ce serait dommage de rater cet événement.", "It would be a shame to miss this event."],
-  ["profiter de l'occasion", "to take advantage of the opportunity", "Profitons de l'occasion pour passer du temps ensemble.", "Let's take advantage of the opportunity to spend time together."],
-  ["faire un don", "to make a donation", "Chaque participant peut faire un don pour les arbres.", "Each participant can make a donation for the trees."],
-  ["être en forme", "to be in shape", "Je marche souvent pour rester en forme.", "I walk often to stay in shape."],
-  ["s'inscrire", "to register", "On doit s'inscrire avant le 20 octobre sur le site.", "We have to register before October 20th on the website."],
-  ["pas à pas", "step by step", "On va faire la randonnée pas à pas.", "We'll do the hike step by step."],
-  ["s'inscrire", "to register", "Je voudrais m'inscrire à l'atelier de peinture.", "I would like to register for the painting workshop."],
-  ["se dérouler", "to take place / unfold", "L'atelier se déroule tous les samedis matin.", "The workshop takes place every Saturday morning."],
-  ["assister à", "to attend", "Je vais assister à toutes les séances.", "I'm going to attend all the sessions."],
-  ["avoir lieu", "to take place", "L'atelier aura lieu dans la salle des Ateliers.", "The workshop will take place in the Ateliers room."],
-  ["c'est possible de", "it's possible to", "C'est possible de payer sur place ou en ligne.", "It's possible to pay on site or online."],
-  ["combien ça coûte", "how much does it cost", "Combien ça coûte pour les quatre séances ?", "How much does it cost for the four sessions?"],
-  ["y a-t-il", "is there / are there", "Y a-t-il des places encore disponibles ?", "Are there still spots available?"],
-  ["est-ce que", "is it that / do you", "Est-ce que le matériel est inclus ?", "Is the material included?"],
-  ["avoir besoin de", "to need", "Est-ce que j'ai besoin d'apporter mes pinceaux ?", "Do I need to bring my brushes?"],
-  ["venir à temps", "to come on time", "Il vaut mieux venir à temps pour ne rien rater.", "It's better to come on time so as not to miss anything."],
-  ["arriver en retard", "to arrive late", "Si j'arrive en retard, est-ce que je peux entrer quand même ?", "If I arrive late, can I still come in?"],
-  ["partir plus tôt", "to leave earlier", "Je dois peut-être partir plus tôt ce jour-là.", "I might have to leave earlier that day."],
-  ["rembourser", "to refund", "Est-ce que c'est possible d'être remboursé ?", "Is it possible to get a refund?"],
-  ["annuler", "to cancel", "Je voudrais savoir si je peux annuler mon inscription.", "I would like to know if I can cancel my registration."],
-  ["une réduction", "a discount", "Est-ce qu'il y a une réduction pour les groupes ?", "Is there a discount for groups?"],
-  ["un tarif", "a rate / price", "Le tarif est-il le même pour tous les participants ?", "Is the rate the same for all participants?"],
-  ["être compris", "to be included", "Le matériel est compris dans le prix.", "The material is included in the price."],
-  ["débutant", "beginner", "Je suis débutant, est-ce que c'est adapté pour moi ?", "I'm a beginner, is it suitable for me?"],
-  ["à partir de", "starting from", "L'atelier est ouvert à partir de 14 ans.", "The workshop is open starting from age 14."],
-  ["accessible à", "accessible to", "C'est accessible à tous les niveaux.", "It's accessible to all levels."],
-  ["l'ambiance", "the atmosphere", "L'ambiance de l'atelier est très conviviale.", "The workshop atmosphere is very friendly."],
-  ["être situé", "to be located", "Le centre est situé près de la station Mont-Royal.", "The center is located near Mont-Royal station."],
-  ["se trouver", "to be located", "Où se trouve exactement la salle des Ateliers ?", "Where exactly is the Ateliers room located?"],
-  ["combien de temps", "how much time", "Combien de temps dure chaque séance ?", "How long does each session last?"],
-  ["chaque", "each", "Chaque séance a un thème différent.", "Each session has a different theme."],
-  ["tout le monde", "everyone", "Tout le monde peut participer, même les débutants.", "Everyone can participate, even beginners."],
-  ["il faut", "it's necessary", "Il faut réserver avant le 20 octobre.", "It's necessary to book before October 20th."],
-  ["je voudrais", "I would like", "Je voudrais obtenir quelques renseignements.", "I would like to get some information."],
-  ["pouvez-vous me dire", "can you tell me", "Pouvez-vous me dire si le matériel est fourni ?", "Can you tell me if the material is provided?"],
-  ["c'est compris dans le prix", "it's included in the price", "C'est compris dans le prix ou il faut payer en plus ?", "Is it included in the price or do you have to pay extra?"],
-  ["je me demande si", "I wonder if", "Je me demande si je peux venir seulement deux fois.", "I wonder if I can come only twice."],
-  ["d'accord", "okay / agreed", "D'accord, je comprends, merci beaucoup.", "Okay, I understand, thank you very much."],
-  ["ça marche", "that works", "Très bien, ça marche pour moi.", "Very well, that works for me."],
-  ["ça dépend", "it depends", "Ça dépend de mon emploi du temps.", "It depends on my schedule."],
-  ["dans ce cas", "in that case", "Dans ce cas, je réserverai en ligne.", "In that case, I'll book online."],
-  ["en revanche", "on the other hand", "En revanche, je ne pourrai pas venir à la première séance.", "On the other hand, I won't be able to come to the first session."],
-  ["par contre", "however", "Par contre, je préfère payer sur place.", "However, I prefer to pay on site."],
-  ["c'est dommage", "it's a shame", "C'est dommage qu'il n'y ait pas de réduction.", "It's a shame there's no discount."],
-  ["profiter de", "to take advantage of", "Je veux profiter de cette activité le week-end.", "I want to take advantage of this activity on the weekend."],
-  ["être intéressé par", "to be interested in", "Je suis intéressé par l'atelier de peinture.", "I'm interested in the painting workshop."],
-  ["participer à", "to participate in", "Je veux participer à l'atelier du samedi matin.", "I want to participate in the Saturday morning workshop."],
-  ["venir avec", "to come with", "Je vais venir avec une amie.", "I'm going to come with a friend."],
-  ["amener", "to bring (person)", "Est-ce que je peux amener mon propre matériel ?", "Can I bring my own material?"],
-  ["apporter", "to bring (object)", "Faut-il apporter quelque chose de spécial ?", "Do I need to bring something special?"],
-  ["je pense que", "I think that", "Je pense que cet atelier serait parfait pour moi.", "I think this workshop would be perfect for me."],
-  ["je crois que", "I believe that", "Je crois que j'ai compris les conditions d'inscription.", "I believe I've understood the registration conditions."],
-  ["il y a", "there is / there are", "Il y a combien de participants en tout ?", "How many participants are there in total?"],
-  ["ce n'est pas grave", "it's not a big deal", "Ce n'est pas grave si j'arrive un peu en retard.", "It's not a big deal if I arrive a bit late."],
-  ["pas de souci", "no problem", "Pas de souci, je viendrai à l'heure.", "No problem, I'll come on time."],
-  ["à bientôt", "see you soon", "Merci pour vos réponses, à bientôt !", "Thank you for your answers, see you soon!"]  
+  [
+    "atelier",
+    "workshop",
+    "À quelle heure a lieu l'atelier ?",
+    "What time does the workshop take place?"
+  ],
+  [
+    "séance",
+    "session (morning/afternoon block)",
+    "La séance de l'après‑midi commence à 14 h.",
+    "The afternoon session starts at 2 p.m."
+  ],
+  [
+    "animateur / animatrice",
+    "facilitator",
+    "L'animatrice vous répondra à toutes vos questions.",
+    "The facilitator will answer all your questions."
+  ],
+  [
+    "intervenant·e",
+    "instructor / speaker",
+    "Les intervenants sont deux artistes locaux.",
+    "The instructors are two local artists."
+  ],
+  [
+    "participant·e",
+    "participant",
+    "Chaque participant l'emporte avec lui.",
+    "Each participant takes it with them."
+  ],
+  [
+    "matériel",
+    "materials / equipment",
+    "Le matériel est inclus dans le tarif.",
+    "Materials are included in the fee."
+  ],
+  [
+    "capteur",
+    "sensor",
+    "On découvre des capteurs de lumière et de toucher.",
+    "We explore light and touch sensors."
+  ],
+  [
+    "microcontrôleur",
+    "microcontroller",
+    "Vous l'apprendrez à brancher correctement.",
+    "You'll learn to connect it properly."
+  ],
+  [
+    "impression 3D",
+    "3D printing",
+    "Il y aura une initiation à l'impression 3D.",
+    "There will be an introduction to 3D printing."
+  ],
+  [
+    "tarif",
+    "price / fee",
+    "Quel est le tarif pour les résidents ?",
+    "What is the fee for residents?"
+  ],
+  [
+    "réduction / rabais",
+    "discount",
+    "Le code donne une réduction de 10 %.",
+    "The code gives a 10% discount."
+  ],
+  [
+    "code promo",
+    "promo code",
+    "Puis‑je l'appliquer en ligne ?",
+    "Can I apply it online?"
+  ],
+  [
+    "preuve de résidence",
+    "proof of residence",
+    "Une preuve de résidence est demandée.",
+    "Proof of residence is required."
+  ],
+  [
+    "carte étudiante",
+    "student card",
+    "La carte étudiante doit être valide.",
+    "The student card must be valid."
+  ],
+  [
+    "places disponibles",
+    "available spots",
+    "Reste‑t‑il des places disponibles ?",
+    "Are there spots available?"
+  ],
+  [
+    "liste d'attente",
+    "waitlist",
+    "Puis‑je m'y inscrire ?",
+    "Can I join it?"
+  ],
+  [
+    "remboursement",
+    "refund",
+    "Le remboursement est de 80 % jusqu'à 72 h avant.",
+    "The refund is 80% up to 72 hours before."
+  ],
+  [
+    "annulation",
+    "cancellation",
+    "Quelle est la politique d'annulation ?",
+    "What is the cancellation policy?"
+  ],
+  [
+    "délai",
+    "deadline / time limit",
+    "Quel est le délai pour annuler ?",
+    "What is the deadline to cancel?"
+  ],
+  [
+    "accessibilité",
+    "accessibility",
+    "Le bâtiment est accessible aux fauteuils roulants.",
+    "The building is wheelchair accessible."
+  ],
+  [
+    "stationnement",
+    "parking",
+    "Le stationnement est très limité.",
+    "Parking is very limited."
+  ],
+  [
+    "transfert de place",
+    "transfer of a spot to someone else",
+    "Puis‑je la transférer à un ami ?",
+    "Can I transfer it to a friend?"
+  ],
+  [
+    "récapitulatif / résumé",
+    "recap / summary",
+    "Y aura‑t‑il un récapitulatif le dimanche matin ?",
+    "Will there be a recap on Sunday morning?"
+  ],
+  [
+    "bâtiment",
+    "building (venue)",
+    "Le bâtiment se trouve rue Bélanger.",
+    "The building is on Bélanger Street."
+  ],
+  [
+    "se renseigner sur",
+    "to find out about / inquire about",
+    "Je voudrais m'y renseigner.",
+    "I would like to find out about it."
+  ],
+  [
+    "s'inscrire à",
+    "to register for",
+    "Comment s'y inscrire ?",
+    "How do I register for it?"
+  ],
+  [
+    "avoir lieu",
+    "to take place",
+    "L'atelier a lieu quand exactement ?",
+    "When exactly does the workshop take place?"
+  ],
+  [
+    "se dérouler",
+    "to run / take place (over time)",
+    "L'atelier se déroule sur deux jours.",
+    "The workshop runs over two days."
+  ],
+  [
+    "participer à",
+    "to take part in",
+    "Je ne peux pas y participer le premier jour.",
+    "I can't take part in it on the first day."
+  ],
+  [
+    "assister à",
+    "to attend",
+    "Puis‑je y assister seulement le dimanche ?",
+    "May I attend it only on Sunday?"
+  ],
+  [
+    "venir (les deux jours / un seul jour)",
+    "to come (both days / one day)",
+    "Est‑ce possible de venir un seul jour ?",
+    "Is it possible to come just one day?"
+  ],
+  [
+    "payer en comptant / en espèces",
+    "to pay in cash",
+    "Puis‑je payer en comptant sur place ?",
+    "Can I pay in cash on site?"
+  ],
+  [
+    "payer par carte / Interac",
+    "to pay by card / Interac",
+    "Acceptez‑vous le paiement par carte ?",
+    "Do you accept card payment?"
+  ],
+  [
+    "annuler",
+    "to cancel",
+    "Si je dois annuler, comment faire ?",
+    "If I have to cancel, how do I do it?"
+  ],
+  [
+    "être remboursé(e)",
+    "to be refunded",
+    "Puis‑je être remboursé si j'annule 3 jours avant ?",
+    "Can I be refunded if I cancel 3 days before?"
+  ],
+  [
+    "transférer (une place)",
+    "to transfer (a spot)",
+    "Puis‑je la lui transférer ?",
+    "Can I transfer it to them?"
+  ],
+  [
+    "apporter",
+    "to bring (an object toward the venue)",
+    "Dois‑je l'apporter ?",
+    "Do I need to bring it?"
+  ],
+  [
+    "emporter",
+    "to take away with you",
+    "On peut l'emporter à la maison.",
+    "You can take it home."
+  ],
+  [
+    "amener",
+    "to bring (a person/animal)",
+    "Puis‑je l'amener avec moi ?",
+    "May I bring them with me?"
+  ],
+  [
+    "emmener",
+    "to take (a person along)",
+    "Je dois l'emmener dimanche.",
+    "I have to take them along on Sunday."
+  ],
+  [
+    "se rendre à",
+    "to get to / go to (a place)",
+    "Comment se rendre depuis le métro Beaubien ?",
+    "How do I get there from Beaubien metro?"
+  ],
+  [
+    "fournir",
+    "to provide / supply",
+    "Le fournissez‑vous ?",
+    "Do you provide it?"
+  ],
+  [
+    "prévoir",
+    "to plan / allow for",
+    "Il faut prévoir une pause à midi.",
+    "You should plan for a lunch break at noon."
+  ],
+  [
+    "être complet / complète",
+    "to be full (no more spots)",
+    "L'atelier de samedi est‑il complet ?",
+    "Is Saturday's workshop full?"
+  ],
+  [
+    "À quelle heure a lieu … ?",
+    "What time does … take place?",
+    "À quelle heure a lieu la séance du matin ?",
+    "What time is the morning session?"
+  ],
+  [
+    "Est‑ce que je peux … ?",
+    "May I … ?",
+    "Est‑ce que je peux ne venir qu'un seul jour ?",
+    "May I come only one day?"
+  ],
+  [
+    "Serait‑il possible de … ?",
+    "Would it be possible to … ?",
+    "Serait‑il possible de payer sur place ?",
+    "Would it be possible to pay on site?"
+  ],
+  [
+    "Jusqu'à quand puis‑je … ?",
+    "Until when can I … ?",
+    "Jusqu'à quand puis‑je annuler ?",
+    "Until when can I cancel?"
+  ],
+  [
+    "Reste‑t‑il des places disponibles ?",
+    "Are there spots left?",
+    "Reste‑t‑il des places disponibles pour dimanche ?",
+    "Are there spots left for Sunday?"
+  ],
+  [
+    "Combien coûte … (avec le code promo) ?",
+    "How much does … cost (with the promo code)?",
+    "Combien coûte l'atelier avec le code promo ?",
+    "How much is the workshop with the promo code?"
+  ],
+  [
+    "L'atelier est‑il accessible … ?",
+    "Is the workshop accessible … ?",
+    "L'atelier est‑il accessible aux personnes à mobilité réduite ?",
+    "Is the workshop accessible to people with reduced mobility?"
+  ],
+  [
+    "Comment s'inscrire (en ligne / par téléphone) ?",
+    "How to register (online / by phone)?",
+    "Comment s'inscrire par téléphone ?",
+    "How do I register by phone?"
+  ],
+  [
+    "Où se trouve … ?",
+    "Where is … located?",
+    "Où se trouve la Maison des Arts de Rosemont ?",
+    "Where is the Maison des Arts de Rosemont?"
+  ],
+  [
+    "Est‑ce que je peux payer en comptant ?",
+    "Can I pay in cash?",
+    "Est‑ce que je peux payer en comptant le jour même ?",
+    "Can I pay in cash on the day of the event?"
+  ],
+  [
+    "apporter",
+    "to bring (an object toward the venue)",
+    "Dois-je l'apporter ?",
+    "Do I need to bring it?"
+  ],
+  [
+    "amener",
+    "to bring (a person/animal toward the venue)",
+    "Puis-je l'amener ?",
+    "May I bring them?"
+  ],
+  [
+    "emmener",
+    "to take (a person with you to another place)",
+    "Je peux l'emmener dimanche.",
+    "I can take them along on Sunday."
+  ],
+  [
+    "assister à",
+    "to attend as audience",
+    "Puis-je y assister seulement le dimanche ?",
+    "May I attend it only on Sunday?"
+  ],
+  [
+    "participer à",
+    "to take part actively",
+    "Je veux y participer.",
+    "I want to take part in it."
+  ],
+  [
+    "venir",
+    "to come",
+    "Je ne peux pas venir le samedi.",
+    "I can't come on Saturday."
+  ],
+  [
+    "réunion",
+    "meeting",
+    "La réunion commence à 14h.",
+    "The meeting starts at 2 PM."
+  ],
+  [
+    "cours",
+    "class (regular teaching)",
+    "Le cours de français a lieu le mardi.",
+    "The French class takes place on Tuesday."
+  ],
+  [
+    "télé",
+    "television",
+    "Je regarde la télé le soir.",
+    "I watch TV in the evening."
+  ],
+  [
+    "atelier",
+    "workshop",
+    "Je m'y inscris.",
+    "I'm registering for it."
+  ],
+  [
+    "payer en comptant",
+    "to pay in cash",
+    "Est-ce que je peux payer en comptant ?",
+    "Can I pay in cash?"
+  ],
+  [
+    "payer la moitié",
+    "to pay half",
+    "Puis-je la payer si je viens un seul jour ?",
+    "Can I pay it if I come only one day?"
+  ],
+  [
+    "avoir lieu",
+    "to take place (events)",
+    "L'atelier a lieu les 25 et 26.",
+    "The workshop takes place on the 25th and 26th."
+  ],
+  [
+    "se dérouler",
+    "to run / take place (over time)",
+    "Il se déroule sur deux jours.",
+    "It runs over two days."
+  ],
+  [
+    "être",
+    "to be",
+    "L'atelier est intéressant.",
+    "The workshop is interesting."
+  ],
+  [
+    "jusqu'à",
+    "up to / until a limit",
+    "Remboursement possible jusqu'à 72 h avant l'atelier.",
+    "Refund possible up to 72 hours before the workshop."
+  ],
+  [
+    "avant",
+    "before (earlier than)",
+    "Il faut s'inscrire avant le 20 mars.",
+    "You must register before March 20th."
+  ],
+  [
+    "depuis",
+    "since/for (duration up to now)",
+    "J'habite Montréal depuis 2018.",
+    "I've been living in Montreal since 2018."
+  ],
+  [
+    "à partir de",
+    "starting from (future or rule)",
+    "Le code promo est valable à partir de lundi.",
+    "The promo code is valid starting Monday."
+  ],
+  [
+    "aller à",
+    "to go to",
+    "Je vais à l'atelier demain.",
+    "I'm going to the workshop tomorrow."
+  ],
+  [
+    "participer à",
+    "to participate in",
+    "Je voudrais y participer.",
+    "I would like to participate in it."
+  ],
+  [
+    "uniquement",
+    "only (slightly more formal)",
+    "Est-ce possible de venir uniquement le dimanche ?",
+    "Is it possible to come only on Sunday?"
+  ],
+  [
+    "seulement",
+    "only",
+    "Je peux venir seulement le samedi.",
+    "I can come only on Saturday."
+  ],
+  [
+    "près de",
+    "near (most common for location)",
+    "C'est près du métro Beaubien.",
+    "It's near Beaubien metro."
+  ],
+  [
+    "proche de",
+    "near",
+    "L'atelier est proche de chez moi.",
+    "The workshop is near my house."
+  ],
+  [
+    "politique d'annulation",
+    "cancellation policy",
+    "Avez-vous une politique d'annulation de l'atelier ?",
+    "Do you have a cancellation policy for the workshop?"
+  ],
+  [
+    "accès à la salle",
+    "access to the room",
+    "L'accès à la salle est gratuit.",
+    "Access to the room is free."
+  ],
+  [
+    "transférer",
+    "to transfer (give your spot to someone)",
+    "Puis-je la lui transférer si j'annule ?",
+    "Can I transfer it to them if I cancel?"
+  ],
+  [
+    "reporter",
+    "to postpone",
+    "L'atelier est reporté à la semaine prochaine.",
+    "The workshop is postponed to next week."
+  ],
+  [
+    "annuler",
+    "to cancel",
+    "Je dois l'annuler.",
+    "I have to cancel it."
+  ],
+  [
+    "accessible à",
+    "accessible to (preferred)",
+    "L'atelier est-il accessible aux personnes à mobilité réduite ?",
+    "Is the workshop accessible to people with reduced mobility?"
+  ],
+  [
+    "accessible pour",
+    "accessible for",
+    "Le bâtiment est accessible pour tous.",
+    "The building is accessible for everyone."
+  ],
+  [
+    "en ligne",
+    "online",
+    "Puis-je payer en ligne ou sur place ?",
+    "Can I pay online or on site?"
+  ],
+  [
+    "sur place",
+    "on site",
+    "Le paiement se fait sur place.",
+    "Payment is made on site."
+  ],
+  [
+    "en personne",
+    "in person",
+    "Je préfère m'inscrire en personne.",
+    "I prefer to register in person."
+  ],
+  [
+    "il reste",
+    "there are left (impersonal)",
+    "Il reste des places disponibles ?",
+    "Are there spots left?"
+  ],
+  [
+    "rester",
+    "to stay/remain",
+    "Je reste à la maison ce soir.",
+    "I'm staying home tonight."
+  ],
+  [
+    "quel est le tarif",
+    "what is the price",
+    "Quel est le tarif pour les étudiants ?",
+    "What is the price for students?"
+  ],
+  [
+    "jour",
+    "day",
+    "Le jour de l'atelier est arrivé.",
+    "The day of the workshop has arrived."
+  ],
+  [
+    "journée",
+    "day (emphasizing duration)",
+    "La journée commence à 9 h 30.",
+    "The day begins at 9:30 AM."
+  ],
+  [
+    "matin",
+    "morning",
+    "La séance du matin a lieu à 9 h 30.",
+    "The morning session takes place at 9:30 AM."
+  ],
+  [
+    "matinée",
+    "morning (emphasizing duration)",
+    "La matinée est consacrée à la théorie.",
+    "The morning is devoted to theory."
+  ],
+  [
+    "soir",
+    "evening",
+    "Le soir, on fait un récapitulatif.",
+    "In the evening, we do a recap."
+  ],
+  [
+    "soirée",
+    "evening (emphasizing duration)",
+    "La soirée se termine à 16 h.",
+    "The evening ends at 4 PM."
+  ],
+  [
+    "ticket",
+    "ticket (often informal/lottery)",
+    "J'ai gagné un ticket de loterie.",
+    "I won a lottery ticket."
+  ],
+  [
+    "billet",
+    "ticket (transport, show)",
+    "J'ai acheté un billet pour le spectacle.",
+    "I bought a ticket for the show."
+  ],
+  [
+    "reçu",
+    "receipt",
+    "Pourrai-je recevoir un reçu ?",
+    "Could I receive a receipt?"
+  ],
+  [
+    "code promo",
+    "promo code (entered online)",
+    "Puis-je appliquer le code promo en ligne ?",
+    "Can I apply the promo code online?"
+  ],
+  [
+    "coupon",
+    "coupon (paper/print)",
+    "J'ai un coupon de réduction.",
+    "I have a discount coupon."
+  ],
+  [
+    "horaire",
+    "schedule for events/business hours",
+    "Quel est l'horaire de l'atelier ?",
+    "What is the workshop schedule?"
+  ],
+  [
+    "emploi du temps",
+    "personal timetable",
+    "Mon emploi du temps est très chargé.",
+    "My schedule is very busy."
+  ],
+  [
+    "randonnée",
+    "hike / hiking",
+    "La randonnée est facile, environ 6 km.",
+    "The hike is easy, about 6 km."
+  ],
+  [
+    "patrimoine",
+    "heritage",
+    "On découvre le patrimoine du Mont‑Royal.",
+    "We discover the heritage of Mount Royal."
+  ],
+  [
+    "brunch solidaire",
+    "charity brunch",
+    "Le brunch solidaire est inclus à midi.",
+    "The charity brunch is included at noon."
+  ],
+  [
+    "parcours guidé",
+    "guided route",
+    "Le parcours guidé comprend des arrêts panoramiques.",
+    "The guided route includes scenic stops."
+  ],
+  [
+    "belvédère",
+    "lookout",
+    "Le rendez‑vous est au belvédère Kondiaronk.",
+    "The meeting point is at the Kondiaronk lookout."
+  ],
+  [
+    "point de vue",
+    "viewpoint",
+    "Il y a un magnifique point de vue sur la ville.",
+    "There is a beautiful viewpoint over the city."
+  ],
+  [
+    "mini‑atelier (photo)",
+    "mini-workshop (photo)",
+    "Il y aura un mini‑atelier photo au smartphone.",
+    "There will be a smartphone mini photo workshop."
+  ],
+  [
+    "jeu d'observation",
+    "observation game",
+    "On fait un petit jeu d'observation pendant la marche.",
+    "We do a small observation game during the walk."
+  ],
+  [
+    "horaire",
+    "schedule",
+    "L'horaire: 9 h à 12 h, puis brunch.",
+    "The schedule: 9 a.m. to noon, then brunch."
+  ],
+  [
+    "rendez‑vous",
+    "meeting point",
+    "Le rendez‑vous est à 9 h au belvédère.",
+    "The meeting point is at 9 a.m. at the lookout."
+  ],
+  [
+    "tôt",
+    "early",
+    "C'est un peu tôt, mais ça vaut le coup.",
+    "It's a bit early, but it's worth it."
+  ],
+  [
+    "faire la grasse matinée",
+    "to sleep in",
+    "Je sais que tu aimes faire la grasse matinée le samedi.",
+    "I know you like to sleep in on Saturdays."
+  ],
+  [
+    "être en forme",
+    "to be fit / in shape",
+    "Même si tu n'es pas en forme, le rythme est tranquille.",
+    "Even if you aren't in shape, the pace is relaxed."
+  ],
+  [
+    "débutant",
+    "beginner",
+    "Le niveau est débutant, avec des pauses régulières.",
+    "The level is beginner, with regular breaks."
+  ],
+  [
+    "pause",
+    "break",
+    "On fait une pause toutes les 30–40 minutes.",
+    "We take a break every 30–40 minutes."
+  ],
+  [
+    "météo",
+    "weather",
+    "Ça dépendra un peu de la météo, mais l'activité est maintenue s'il fait frais.",
+    "It will depend a bit on the weather, but the activity goes ahead if it's cool."
+  ],
+  [
+    "prévisions",
+    "forecast",
+    "D'après les prévisions, il ne devrait pas pleuvoir.",
+    "According to the forecast, it shouldn't rain."
+  ],
+  [
+    "pluie / averse / fortes pluies",
+    "rain / shower / heavy rain",
+    "En cas de fortes pluies, l'événement est reporté.",
+    "In case of heavy rain, the event is postponed."
+  ],
+  [
+    "il fait froid / il va faire froid",
+    "it's cold / it will be cold",
+    "S'il fait froid, on s'habille en conséquence.",
+    "If it's cold, we dress accordingly."
+  ],
+  [
+    "coupe‑vent",
+    "windbreaker",
+    "Prends un coupe‑vent si le vent se lève.",
+    "Take a windbreaker if it gets windy."
+  ],
+  [
+    "chaussures de marche",
+    "walking shoes",
+    "Mets des chaussures de marche confortables.",
+    "Wear comfortable walking shoes."
+  ],
+  [
+    "bouteille d'eau / gourde",
+    "water bottle",
+    "Apporte une gourde remplie.",
+    "Bring a filled water bottle."
+  ],
+  [
+    "report / reporter (à)",
+    "postponement / to postpone (to)",
+    "Report au 25 octobre en cas de pluie.",
+    "Postponed to October 25 in case of rain."
+  ],
+  [
+    "tarif",
+    "price / fee",
+    "Le tarif régulier est de 20 $.",
+    "The regular price is $20."
+  ],
+  [
+    "réduction / remise",
+    "discount",
+    "Il y a une réduction avec le code promo.",
+    "There's a discount with the promo code."
+  ],
+  [
+    "offre duo",
+    "two-for-one style offer",
+    "On peut profiter de l'offre duo: 2 pour 30 $.",
+    "We can use the duo offer: 2 for $30."
+  ],
+  [
+    "code promo",
+    "promo code",
+    "On applique le code promo AMI10.",
+    "We apply the promo code AMI10."
+  ],
+  [
+    "coûter / ça coûte",
+    "to cost / it costs",
+    "Ça coûte 20 $, brunch inclus.",
+    "It costs $20, brunch included."
+  ],
+  [
+    "inclus / compris",
+    "included",
+    "Le brunch est inclus dans le tarif.",
+    "Brunch is included in the price."
+  ],
+  [
+    "ça vaut le coup",
+    "it's worth it",
+    "Pour le prix, ça vaut vraiment le coup.",
+    "For the price, it's really worth it."
+  ],
+  [
+    "convaincre",
+    "to convince",
+    "Je vais essayer de te convaincre d'y venir.",
+    "I'm going to try to convince you to come."
+  ],
+  [
+    "hésiter",
+    "to hesitate",
+    "Si tu hésites, on peut prendre l'offre duo.",
+    "If you're hesitating, we can take the duo offer."
+  ],
+  [
+    "ça te dirait de… ? / ça te tente… ?",
+    "would you like to… ? / feel like… ?",
+    "Ça te dirait de venir avec moi samedi ?",
+    "Would you like to come with me on Saturday?"
+  ],
+  [
+    "et si on… ?",
+    "what if we… ?",
+    "Et si on s'inscrivait ensemble ce soir ?",
+    "What if we signed up together tonight?"
+  ],
+  [
+    "au pire / si jamais",
+    "worst case / if ever",
+    "Au pire, si jamais il pleut, c'est reporté.",
+    "Worst case, if it rains, it's postponed."
+  ],
+  [
+    "offrir (un café)",
+    "to offer (a coffee)",
+    "Je t'en offre un pour te motiver.",
+    "I'll buy you one to motivate you."
+  ],
+  [
+    "se rendre (à)",
+    "to get to / go to",
+    "On peut se rendre en métro puis bus 11.",
+    "We can get there by metro then bus 11."
+  ],
+  [
+    "trajet",
+    "route / journey",
+    "Le trajet est simple depuis chez toi.",
+    "The route is simple from your place."
+  ],
+  [
+    "amener",
+    "to bring (a PERSON/animal toward the venue/person)",
+    "Puis-je l'amener dimanche ?",
+    "May I bring them on Sunday?"
+  ],
+  [
+    "venir",
+    "to come (neutral movement); different from assister/participer",
+    "Est-ce possible de venir un seul jour ?",
+    "Is it possible to come for just one day?"
+  ],
+  [
+    "réunion",
+    "meeting (discussion, no hands-on)",
+    "Ce n'est pas une réunion, c'est un atelier pratique.",
+    "It's not a meeting; it's a hands-on workshop."
+  ],
+  [
+    "cours",
+    "class/course (regular teaching over time)",
+    "Ce n'est pas un cours hebdomadaire, juste un atelier week‑end.",
+    "It's not a weekly class, just a weekend workshop."
+  ],
+  [
+    "ronde",
+    "round/patrol (security, police)",
+    "Le parc organise une ronde de sécurité le soir.",
+    "The park runs a security patrol in the evening."
+  ],
+  [
+    "brunch",
+    "brunch (meal)",
+    "Le brunch végétarien est inclus.",
+    "The vegetarian brunch is included."
+  ],
+  [
+    "se renseigner sur",
+    "to inquire/find out about",
+    "Je voudrais me renseigner sur l'atelier.",
+    "I'd like to find out about the workshop."
+  ],
+  [
+    "avoir lieu",
+    "to take place (time/place of an event); better than using être",
+    "L'atelier a lieu les 25 et 26 octobre.",
+    "The workshop takes place on October 25 and 26."
+  ],
+  [
+    "jusqu'à",
+    "up to/until (time limit); contrasts with avant = before",
+    "Remboursement possible jusqu'à 48 h avant l'événement.",
+    "Refund available up to 48 hours before the event."
+  ],
+  [
+    "avant",
+    "before/earlier than (time); contrasts with jusqu'à",
+    "Il faut annuler avant mercredi.",
+    "You must cancel before Wednesday."
+  ],
+  [
+    "à partir de",
+    "starting from/as of (beginning point in time)",
+    "Le code promo est valable à partir du 12 octobre.",
+    "The promo code is valid starting October 12."
+  ],
+  [
+    "aller à",
+    "to go to (neutral, very common)",
+    "On peut aller au parc en bus.",
+    "We can go to the park by bus."
+  ],
+  [
+    "seulement",
+    "only/just (neutral register)",
+    "Je peux venir seulement l'après‑midi.",
+    "I can come only in the afternoon."
+  ],
+  [
+    "proche de",
+    "close to/near (slightly more formal/literal)",
+    "La salle est proche de l'entrée.",
+    "The room is close to the entrance."
+  ],
+  [
+    "accessible à",
+    "accessible to (preferred preposition with a public)",
+    "L'atelier est accessible aux personnes à mobilité réduite.",
+    "The workshop is accessible to people with reduced mobility."
+  ],
+  [
+    "en ligne",
+    "online",
+    "On peut s'inscrire en ligne.",
+    "You can register online."
+  ],
+  [
+    "sur place",
+    "on site/at the venue",
+    "On peut payer sur place.",
+    "You can pay on site."
+  ],
+  [
+    "jour / journée",
+    "day (date) / daytime (duration)",
+    "La journée commence à 9 h 00, le jour de l'événement est le 18.",
+    "The daytime starts at 9:00; the day of the event is the 18th."
+  ],
+  [
+    "matin / matinée",
+    "morning (clock time) / the morning period (duration)",
+    "La séance du matin commence à 9 h; la matinée se termine à midi.",
+    "The morning session starts at 9; the morning period ends at noon."
+  ],
+  [
+    "soir / soirée",
+    "evening (clock time) / evening period (event/social time)",
+    "La soirée commence à 19 h.",
+    "The evening event starts at 7 p.m."
+  ],
+  [
+    "tarif",
+    "fee/rate (official price category); contrasts with prix (general price)",
+    "Quel est le tarif réduit pour les étudiants ?",
+    "What is the reduced rate for students?"
+  ],
+  [
+    "prix",
+    "price (general amount of money)",
+    "Le prix est de 20 $.",
+    "The price is $20."
+  ],
+  [
+    "réduction / rabais",
+    "discount (Québec: rabais common); remise also exists (France)",
+    "Il y a un rabais avec le code AMI10.",
+    "There is a discount with the AMI10 code."
+  ],
+  [
+    "code promo",
+    "promo code (typed online); contrasts with coupon (paper)",
+    "On applique le code promo à l'achat.",
+    "We apply the promo code at purchase."
+  ],
+  [
+    "report",
+    "postponement (noun)",
+    "L'événement est en report au 25 octobre.",
+    "The event is postponed to October 25."
+  ],
+  [
+    "reporter",
+    "to postpone; contrasts with rapporter (to bring back/report)",
+    "On va reporter l'activité s'il pleut fort.",
+    "We'll postpone the activity if it rains heavily."
+  ],
+  [
+    "rapporter",
+    "to bring back / to report (tell back)",
+    "Peux-tu me le rapporter ?",
+    "Can you report it back to me?"
+  ],
+  [
+    "pluie / pleuvoir",
+    "rain (noun) / to rain (verb)",
+    "S'il pleut, l'événement sera reporté.",
+    "If it rains, the event will be postponed."
+  ],
+  [
+    "se reposer",
+    "to rest",
+    "Le dimanche, j'aime bien me reposer après une longue semaine.",
+    "On Sunday, I like to rest after a long week."
+  ],
+  [
+    "se lever tôt",
+    "to get up early",
+    "Je dois me lever tôt pour participer à la randonnée.",
+    "I have to get up early to participate in the hike."
+  ],
+  [
+    "faire une randonnée",
+    "to go hiking",
+    "On va la faire au Mont‑Royal dimanche.",
+    "We're going to do it on Mount Royal on Sunday."
+  ],
+  [
+    "avoir envie de",
+    "to feel like / want to",
+    "Je n'ai pas envie de sortir quand il fait froid.",
+    "I don't feel like going out when it's cold."
+  ],
+  [
+    "il va faire froid",
+    "it's going to be cold",
+    "Il va faire froid à la fin du mois d'octobre.",
+    "It's going to be cold at the end of October."
+  ],
+  [
+    "ça vaut la peine",
+    "it's worth it",
+    "Ça vaut la peine d'y aller, c'est pour une bonne cause.",
+    "It's worth going, it's for a good cause."
+  ],
+  [
+    "planter un arbre",
+    "to plant a tree",
+    "Chaque kilomètre parcouru permet d'en planter un.",
+    "Every kilometer walked allows us to plant one."
+  ],
+  [
+    "une bonne cause",
+    "a good cause",
+    "Je participe pour soutenir une bonne cause.",
+    "I'm participating to support a good cause."
+  ],
+  [
+    "convaincre quelqu'un de",
+    "to convince someone to",
+    "J'essaie de la convaincre de venir avec moi.",
+    "I'm trying to convince her to come with me."
+  ],
+  [
+    "en plein air",
+    "outdoors",
+    "C'est une activité de plein air très agréable.",
+    "It's a very pleasant outdoor activity."
+  ],
+  [
+    "il faut que + subjonctif",
+    "it's necessary that + subjunctive",
+    "Il faut que tu viennes, ce sera amusant.",
+    "You need to come, it will be fun."
+  ],
+  [
+    "ça te ferait du bien",
+    "it would do you good",
+    "Ça te ferait du bien de marcher un peu en nature.",
+    "It would do you good to walk a bit in nature."
+  ],
+  [
+    "ça ne prend pas beaucoup de temps",
+    "it doesn't take much time",
+    "Ne t'inquiète pas, ça ne prend pas beaucoup de temps.",
+    "Don't worry, it doesn't take much time."
+  ],
+  [
+    "même si",
+    "even if",
+    "Même s'il fait froid, on peut bien s'habiller.",
+    "Even if it's cold, we can dress warmly."
+  ],
+  [
+    "en plus",
+    "in addition / plus",
+    "En plus, il y aura un concert à la fin de la marche.",
+    "Plus, there will be a concert at the end of the walk."
+  ],
+  [
+    "ça dépend de",
+    "it depends on",
+    "Ça dépend du temps, mais je pense qu'il fera beau.",
+    "It depends on the weather, but I think it will be nice."
+  ],
+  [
+    "je te promets que",
+    "I promise you that",
+    "Je te promets que tu ne vas pas le regretter.",
+    "I promise you won't regret it."
+  ],
+  [
+    "être motivé(e)",
+    "to be motivated",
+    "Je suis motivé pour faire quelque chose de bien ce week‑end.",
+    "I'm motivated to do something good this weekend."
+  ],
+  [
+    "ça te dit de",
+    "do you feel like / want to",
+    "Ça te dit de venir avec moi dimanche ?",
+    "Do you feel like coming with me on Sunday?"
+  ],
+  [
+    "je n'ai pas trop envie",
+    "I don't really feel like",
+    "Je n'ai pas trop envie de marcher aujourd'hui.",
+    "I don't really feel like walking today."
+  ],
+  [
+    "au lieu de",
+    "instead of",
+    "Au lieu de rester à la maison, viens marcher avec moi !",
+    "Instead of staying home, come walk with me!"
+  ],
+  [
+    "c'est gratuit pour",
+    "it's free for",
+    "C'est gratuit pour les enfants et pas cher pour les adultes.",
+    "It's free for children and not expensive for adults."
+  ],
+  [
+    "dans la nature",
+    "in nature",
+    "C'est agréable de passer du temps dans la nature.",
+    "It's pleasant to spend time in nature."
+  ],
+  [
+    "profiter de",
+    "to take advantage of / enjoy",
+    "On peut profiter du beau temps ensemble.",
+    "We can enjoy the nice weather together."
+  ],
+  [
+    "faire du bien",
+    "to do good / be good for",
+    "Marcher un peu te fera du bien.",
+    "Walking a bit will do you good."
+  ],
+  [
+    "être fatigué(e)",
+    "to be tired",
+    "Je serai peut-être fatigué après, mais content d'y aller.",
+    "I might be tired after, but happy to go."
+  ],
+  [
+    "soutenir",
+    "to support",
+    "C'est important de soutenir des initiatives écologiques.",
+    "It's important to support ecological initiatives."
+  ],
+  [
+    "faire un effort",
+    "to make an effort",
+    "Fais un petit effort, tu verras, ce sera sympa.",
+    "Make a little effort, you'll see, it will be nice."
+  ],
+  [
+    "en fait",
+    "actually / in fact",
+    "En fait, la marche est très facile, accessible à tous.",
+    "Actually, the walk is very easy, accessible to everyone."
+  ],
+  [
+    "à la fin",
+    "at the end",
+    "À la fin, il y aura un pique‑nique et de la musique.",
+    "At the end, there will be a picnic and music."
+  ],
+  [
+    "au début",
+    "at the beginning",
+    "Au début, on se retrouve à l'entrée du parc.",
+    "At the beginning, we meet at the park entrance."
+  ],
+  [
+    "je trouve que",
+    "I think that",
+    "Je trouve que c'est une super idée pour le dimanche.",
+    "I think it's a great idea for Sunday."
+  ],
+  [
+    "c'est dommage que",
+    "it's a shame that",
+    "C'est dommage que tu ne veuilles pas venir.",
+    "It's a shame you don't want to come."
+  ],
+  [
+    "grâce à",
+    "thanks to",
+    "Grâce à cette marche, on va financer la reforestation.",
+    "Thanks to this walk, we're going to finance reforestation."
+  ],
+  [
+    "parce que",
+    "because",
+    "Je veux y aller parce que j'aime la nature.",
+    "I want to go because I love nature."
+  ],
+  [
+    "bien s'habiller",
+    "to dress warmly",
+    "Si tu te couvres bien, tu n'auras pas froid.",
+    "If you dress warmly, you won't be cold."
+  ],
+  [
+    "ça ne coûte presque rien",
+    "it costs almost nothing",
+    "La participation ne coûte presque rien.",
+    "Participation costs almost nothing."
+  ],
+  [
+    "une occasion de",
+    "an opportunity to",
+    "C'est une belle occasion de se retrouver entre amis.",
+    "It's a great opportunity to get together with friends."
+  ],
+  [
+    "avoir raison",
+    "to be right",
+    "Tu as raison, il faut se reposer parfois.",
+    "You're right, we need to rest sometimes."
+  ],
+  [
+    "tu n'as qu'à",
+    "you just have to",
+    "Tu n'as qu'à venir et tu décideras sur place.",
+    "You just have to come and you'll decide on the spot."
+  ],
+  [
+    "je suis sûr(e) que",
+    "I'm sure that",
+    "Je suis sûr que tu vas adorer l'ambiance.",
+    "I'm sure you're going to love the atmosphere."
+  ],
+  [
+    "si jamais",
+    "if ever",
+    "Si jamais tu changes d'avis, dis-le-moi vite.",
+    "If you ever change your mind, tell me quickly."
+  ],
+  [
+    "ce serait bien que",
+    "it would be good if",
+    "Ce serait bien que tu viennes avec moi dimanche.",
+    "It would be good if you came with me on Sunday."
+  ],
+  [
+    "ça me ferait plaisir",
+    "it would please me",
+    "Ça me ferait plaisir que tu viennes.",
+    "It would please me if you came."
+  ],
+  [
+    "ne t'inquiète pas",
+    "don't worry",
+    "Ne t'inquiète pas, on ira doucement.",
+    "Don't worry, we'll go slowly."
+  ],
+  [
+    "rater",
+    "to miss",
+    "Ce serait dommage de rater cet événement.",
+    "It would be a shame to miss this event."
+  ],
+  [
+    "profiter de l'occasion",
+    "to take advantage of the opportunity",
+    "Profitons de l'occasion pour passer du temps ensemble.",
+    "Let's take advantage of the opportunity to spend time together."
+  ],
+  [
+    "faire un don",
+    "to make a donation",
+    "Chaque participant peut faire un don pour les arbres.",
+    "Each participant can make a donation for the trees."
+  ],
+  [
+    "être en forme",
+    "to be in shape",
+    "Je marche souvent pour rester en forme.",
+    "I walk often to stay in shape."
+  ],
+  [
+    "s'inscrire",
+    "to register",
+    "On doit s'inscrire avant le 20 octobre sur le site.",
+    "We have to register before October 20th on the website."
+  ],
+  [
+    "pas à pas",
+    "step by step",
+    "On va faire la randonnée pas à pas.",
+    "We'll do the hike step by step."
+  ],
+  [
+    "s'inscrire",
+    "to register",
+    "Je voudrais m'inscrire à l'atelier de peinture.",
+    "I would like to register for the painting workshop."
+  ],
+  [
+    "se dérouler",
+    "to take place / unfold",
+    "L'atelier se déroule tous les samedis matin.",
+    "The workshop takes place every Saturday morning."
+  ],
+  [
+    "assister à",
+    "to attend",
+    "Je vais assister à toutes les séances.",
+    "I'm going to attend all the sessions."
+  ],
+  [
+    "avoir lieu",
+    "to take place",
+    "L'atelier aura lieu dans la salle des Ateliers.",
+    "The workshop will take place in the Ateliers room."
+  ],
+  [
+    "c'est possible de",
+    "it's possible to",
+    "C'est possible de payer sur place ou en ligne.",
+    "It's possible to pay on site or online."
+  ],
+  [
+    "combien ça coûte",
+    "how much does it cost",
+    "Combien ça coûte pour les quatre séances ?",
+    "How much does it cost for the four sessions?"
+  ],
+  [
+    "y a-t-il",
+    "is there / are there",
+    "Y a-t-il des places encore disponibles ?",
+    "Are there still spots available?"
+  ],
+  [
+    "est-ce que",
+    "is it that / do you",
+    "Est-ce que le matériel est inclus ?",
+    "Is the material included?"
+  ],
+  [
+    "avoir besoin de",
+    "to need",
+    "Est-ce que j'ai besoin d'apporter mes pinceaux ?",
+    "Do I need to bring my brushes?"
+  ],
+  [
+    "venir à temps",
+    "to come on time",
+    "Il vaut mieux venir à temps pour ne rien rater.",
+    "It's better to come on time so as not to miss anything."
+  ],
+  [
+    "arriver en retard",
+    "to arrive late",
+    "Si j'arrive en retard, est-ce que je peux entrer quand même ?",
+    "If I arrive late, can I still come in?"
+  ],
+  [
+    "partir plus tôt",
+    "to leave earlier",
+    "Je dois peut-être partir plus tôt ce jour-là.",
+    "I might have to leave earlier that day."
+  ],
+  [
+    "rembourser",
+    "to refund",
+    "Est-ce que c'est possible d'être remboursé ?",
+    "Is it possible to get a refund?"
+  ],
+  [
+    "annuler",
+    "to cancel",
+    "Je voudrais savoir si je peux annuler mon inscription.",
+    "I would like to know if I can cancel my registration."
+  ],
+  [
+    "une réduction",
+    "a discount",
+    "Est-ce qu'il y a une réduction pour les groupes ?",
+    "Is there a discount for groups?"
+  ],
+  [
+    "un tarif",
+    "a rate / price",
+    "Le tarif est-il le même pour tous les participants ?",
+    "Is the rate the same for all participants?"
+  ],
+  [
+    "être compris",
+    "to be included",
+    "Le matériel est compris dans le prix.",
+    "The material is included in the price."
+  ],
+  [
+    "débutant",
+    "beginner",
+    "Je suis débutant, est-ce que c'est adapté pour moi ?",
+    "I'm a beginner, is it suitable for me?"
+  ],
+  [
+    "à partir de",
+    "starting from",
+    "L'atelier est ouvert à partir de 14 ans.",
+    "The workshop is open starting from age 14."
+  ],
+  [
+    "accessible à",
+    "accessible to",
+    "C'est accessible à tous les niveaux.",
+    "It's accessible to all levels."
+  ],
+  [
+    "l'ambiance",
+    "the atmosphere",
+    "L'ambiance de l'atelier est très conviviale.",
+    "The workshop atmosphere is very friendly."
+  ],
+  [
+    "être situé",
+    "to be located",
+    "Le centre est situé près de la station Mont‑Royal.",
+    "The center is located near Mont-Royal station."
+  ],
+  [
+    "se trouver",
+    "to be located",
+    "Où se trouve exactement la salle des Ateliers ?",
+    "Where exactly is the Ateliers room located?"
+  ],
+  [
+    "combien de temps",
+    "how much time",
+    "Combien de temps dure chaque séance ?",
+    "How long does each session last?"
+  ],
+  [
+    "chaque",
+    "each",
+    "Chaque séance a un thème différent.",
+    "Each session has a different theme."
+  ],
+  [
+    "tout le monde",
+    "everyone",
+    "Tout le monde peut participer, même les débutants.",
+    "Everyone can participate, even beginners."
+  ],
+  [
+    "il faut",
+    "it's necessary",
+    "Il faut réserver avant le 20 octobre.",
+    "It's necessary to book before October 20th."
+  ],
+  [
+    "je voudrais",
+    "I would like",
+    "Je voudrais obtenir quelques renseignements.",
+    "I would like to get some information."
+  ],
+  [
+    "pouvez-vous me dire",
+    "can you tell me",
+    "Pouvez-vous me dire si le matériel est fourni ?",
+    "Can you tell me if the material is provided?"
+  ],
+  [
+    "c'est compris dans le prix",
+    "it's included in the price",
+    "C'est compris dans le prix ou il faut payer en plus ?",
+    "Is it included in the price or do you have to pay extra?"
+  ],
+  [
+    "je me demande si",
+    "I wonder if",
+    "Je me demande si je peux venir seulement deux fois.",
+    "I wonder if I can come only twice."
+  ],
+  [
+    "d'accord",
+    "okay / agreed",
+    "D'accord, je comprends, merci beaucoup.",
+    "Okay, I understand, thank you very much."
+  ],
+  [
+    "ça marche",
+    "that works",
+    "Très bien, ça marche pour moi.",
+    "Very well, that works for me."
+  ],
+  [
+    "ça dépend",
+    "it depends",
+    "Ça dépend de mon emploi du temps.",
+    "It depends on my schedule."
+  ],
+  [
+    "dans ce cas",
+    "in that case",
+    "Dans ce cas, je réserverai en ligne.",
+    "In that case, I'll book online."
+  ],
+  [
+    "en revanche",
+    "on the other hand",
+    "En revanche, je ne pourrai pas venir à la première séance.",
+    "On the other hand, I won't be able to come to the first session."
+  ],
+  [
+    "par contre",
+    "however",
+    "Par contre, je préfère payer sur place.",
+    "However, I prefer to pay on site."
+  ],
+  [
+    "c'est dommage",
+    "it's a shame",
+    "C'est dommage qu'il n'y ait pas de réduction.",
+    "It's a shame there's no discount."
+  ],
+  [
+    "profiter de",
+    "to take advantage of",
+    "Je veux profiter de cette activité le week‑end.",
+    "I want to take advantage of this activity on the weekend."
+  ],
+  [
+    "être intéressé par",
+    "to be interested in",
+    "Je suis intéressé par l'atelier de peinture.",
+    "I'm interested in the painting workshop."
+  ],
+  [
+    "participer à",
+    "to participate in",
+    "Je veux participer à l'atelier du samedi matin.",
+    "I want to participate in the Saturday morning workshop."
+  ],
+  [
+    "venir avec",
+    "to come with",
+    "Je vais venir avec une amie.",
+    "I'm going to come with a friend."
+  ],
+  [
+    "amener",
+    "to bring (person)",
+    "Est-ce que je peux amener mon propre matériel ?",
+    "Can I bring my own material?"
+  ],
+  [
+    "apporter",
+    "to bring (object)",
+    "Faut-il apporter quelque chose de spécial ?",
+    "Do I need to bring something special?"
+  ],
+  [
+    "je pense que",
+    "I think that",
+    "Je pense que cet atelier serait parfait pour moi.",
+    "I think this workshop would be perfect for me."
+  ],
+  [
+    "je crois que",
+    "I believe that",
+    "Je crois que j'ai compris les conditions d'inscription.",
+    "I believe I've understood the registration conditions."
+  ],
+  [
+    "il y a",
+    "there is / there are",
+    "Il y a combien de participants en tout ?",
+    "How many participants are there in total?"
+  ],
+  [
+    "ce n'est pas grave",
+    "it's not a big deal",
+    "Ce n'est pas grave si j'arrive un peu en retard.",
+    "It's not a big deal if I arrive a bit late."
+  ],
+  [
+    "pas de souci",
+    "no problem",
+    "Pas de souci, je viendrai à l'heure.",
+    "No problem, I'll come on time."
+  ],
+  [
+    "à bientôt",
+    "see you soon",
+    "Merci pour vos réponses, à bientôt !",
+    "Thank you for your answers, see you soon!"
+  ]
 ]
-
