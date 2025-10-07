@@ -1098,7 +1098,7 @@
                         
                         // Check if we have existing progress to merge
                         if (progress.shuffledCards && progress.shuffledCards.length > 0) {
-                            this.mergeCardsWithProgress(progress, selectedFile);
+                            this.mergeCardsWithProgress(progress);
                             return;
                         }
                     } catch (error) {
@@ -1113,71 +1113,95 @@
 
             /**
              * Merges new card data with existing user progress
-             * Preserves user's current position, correct cards, and history while adding new cards
-             * Removes duplicates and maintains the shuffled order
+             * Uses fresh JSON data as source of truth and maps existing progress to new deck
+             * Handles cases where cards have been added, removed, or modified
              * @param {Object} existingProgress - The saved progress data from localStorage
-             * @param {string} selectedFile - The filename of the selected category
              */
-            mergeCardsWithProgress(existingProgress, selectedFile) {
-                const existingCards = existingProgress.shuffledCards || [];
+            mergeCardsWithProgress(existingProgress) {
+                // Extract existing progress data
                 const existingCorrectCards = new Set(existingProgress.correctCards || []);
                 const existingCardHistory = existingProgress.cardHistory || [];
                 const existingHistoryIndex = existingProgress.historyIndex || -1;
                 const existingCurrentCard = existingProgress.currentCard;
                 const existingCurrentSide = existingProgress.currentSide || 'french';
                 
-                // Create a map of existing cards by their content (first element - French word)
-                const existingCardsMap = new Map();
-                existingCards.forEach((card, index) => {
-                    if (card && card.length > 0) {
-                        const key = card[0]; // French word
-                        existingCardsMap.set(key, { card, originalIndex: index });
-                    }
-                });
+                // Create a map of existing correct cards by French word for lookup
+                const existingCorrectCardsMap = new Map();
+                if (existingProgress.shuffledCards) {
+                    existingProgress.shuffledCards.forEach((card, index) => {
+                        if (card && card.length > 0 && existingCorrectCards.has(index)) {
+                            const frenchWord = card[0];
+                            existingCorrectCardsMap.set(frenchWord, card);
+                        }
+                    });
+                }
                 
-                // Create a map of new cards by their content
-                const newCardsMap = new Map();
-                this.cards.forEach((card, index) => {
-                    if (card && card.length > 0) {
-                        const key = card[0]; // French word
-                        newCardsMap.set(key, { card, originalIndex: index });
-                    }
-                });
+                // Create a map of existing history cards by French word
+                const existingHistoryMap = new Map();
+                if (existingProgress.shuffledCards) {
+                    existingCardHistory.forEach(historyIndex => {
+                        const card = existingProgress.shuffledCards[historyIndex];
+                        if (card && card.length > 0) {
+                            const frenchWord = card[0];
+                            existingHistoryMap.set(frenchWord, card);
+                        }
+                    });
+                }
                 
-                // Merge cards: keep existing order, add new cards at the end
-                const mergedCards = [];
-                const newCards = [];
+                // Start fresh with the new JSON data
+                this.shuffleDeck(); // This creates a new shuffled deck from this.cards
                 
-                // First, add all existing cards in their original order
-                existingCards.forEach(card => {
+                // Map existing correct cards to new deck positions
+                const newCorrectCards = new Set();
+                this.shuffledCards.forEach((card, newIndex) => {
                     if (card && card.length > 0) {
-                        mergedCards.push(card);
-                    }
-                });
-                
-                // Then, add new cards that don't already exist
-                this.cards.forEach(card => {
-                    if (card && card.length > 0) {
-                        const key = card[0];
-                        if (!existingCardsMap.has(key)) {
-                            newCards.push(card);
+                        const frenchWord = card[0];
+                        if (existingCorrectCardsMap.has(frenchWord)) {
+                            newCorrectCards.add(newIndex);
                         }
                     }
                 });
                 
-                // Add new cards to the merged deck
-                mergedCards.push(...newCards);
+                // Map existing history to new deck positions
+                const newCardHistory = [];
+                this.shuffledCards.forEach((card, newIndex) => {
+                    if (card && card.length > 0) {
+                        const frenchWord = card[0];
+                        if (existingHistoryMap.has(frenchWord)) {
+                            newCardHistory.push(newIndex);
+                        }
+                    }
+                });
                 
-                // Update the shuffled cards
-                this.shuffledCards = mergedCards;
+                // Find the current card in the new deck
+                let newCurrentCard = null;
+                if (existingCurrentCard !== null && existingCurrentCard !== undefined && existingProgress.shuffledCards) {
+                    const oldCard = existingProgress.shuffledCards[existingCurrentCard];
+                    if (oldCard && oldCard.length > 0) {
+                        const frenchWord = oldCard[0];
+                        const newIndex = this.shuffledCards.findIndex(card => 
+                            card && card.length > 0 && card[0] === frenchWord
+                        );
+                        if (newIndex !== -1) {
+                            newCurrentCard = newIndex;
+                        }
+                    }
+                }
                 
-                // Preserve the current position and progress
-                this.currentIndex = existingProgress.currentIndex || 0;
-                this.correctCards = existingCorrectCards;
-                this.cardHistory = existingCardHistory;
-                this.historyIndex = existingHistoryIndex;
-                this.currentCard = existingCurrentCard;
+                // Update progress with mapped values
+                this.correctCards = newCorrectCards;
+                this.cardHistory = newCardHistory;
+                this.historyIndex = newCardHistory.length - 1;
+                this.currentCard = newCurrentCard;
                 this.currentSide = existingCurrentSide;
+                
+                // If we couldn't find the current card, start from the beginning
+                if (this.currentCard === null) {
+                    this.currentIndex = 0;
+                    this.currentCard = 0;
+                } else {
+                    this.currentIndex = this.currentCard;
+                }
                 
                 // Update the side selectors to match saved preference
                 this.sideSelect.value = this.currentSide;
@@ -1197,7 +1221,7 @@
                 this.saveProgress();
                 
                 // Log the merge results
-                console.log(`Merged ${existingCards.length} existing cards with ${newCards.length} new cards. Total: ${mergedCards.length}`);
+                console.log(`Merged progress: ${newCorrectCards.size} correct cards, ${newCardHistory.length} history entries, current card: ${this.currentCard}`);
             }
 
             /**
