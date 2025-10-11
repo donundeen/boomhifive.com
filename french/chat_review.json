@@ -1049,6 +1049,7 @@
     "Je n'ai pas envie de sortir quand il fait froid.",
     "I don't feel like going out when it's cold."
   ],
+
   [
     "il va faire froid",
     "it's going to be cold",
@@ -1630,5 +1631,13 @@
     "see you soon",
     "Merci pour vos réponses, à bientôt !",
     "Thank you for your answers, see you soon!"
-  ]
+  ],
+  ["se dérouler", "to take place", "Les cours se déroulent tous les jeudis soir.", "The classes take place every Thursday evening."],
+  ["aucun prérequis", "no prerequisite", "Aucun prérequis n’est nécessaire pour participer.", "No prerequisite is needed to participate."],
+  ["être nerveux à l’idée de", "to be nervous about the idea of", "Je suis nerveux à l’idée de parler en public.", "I’m nervous about the idea of speaking in public."],
+  ["rattraper", "to catch up", "Je peux rattraper la séance que j’ai manquée.", "I can catch up on the session I missed."],
+  ["à l’aise", "comfortable / at ease", "Je ne suis pas encore à l’aise pour jouer devant un public.", "I’m not comfortable yet performing in front of an audience."],
+  ["bienveillant", "kind / supportive", "Les professeurs sont très bienveillants avec les débutants.", "The teachers are very kind toward beginners."]
+
+
 ]
