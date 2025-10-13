@@ -1966,5 +1966,191 @@
     "reading",
     "En lisant ce livre, j'ai appris beaucoup.",
     "While reading this book, I learned a lot. (Le participe présent)"
+  ],
+  [
+    "j'agis",
+    "I act",
+    "J'agis selon mes principes dans cette situation difficile.",
+    "I act according to my principles in this difficult situation. (Présent)"
+  ],
+  [
+    "tu agis",
+    "you act (informal)",
+    "Tu agis toujours avec prudence avant de prendre une décision.",
+    "You always act with caution before making a decision. (Présent)"
+  ],
+  [
+    "il/elle/on agit",
+    "he/she acts",
+    "Il agit rapidement pour résoudre le problème.",
+    "He acts quickly to solve the problem. (Présent)"
+  ],
+  [
+    "nous agissons",
+    "we act",
+    "Nous agissons ensemble pour améliorer la situation.",
+    "We act together to improve the situation. (Présent)"
+  ],
+  [
+    "vous agissez",
+    "you act (formal)",
+    "Vous agissez de manière responsable dans votre travail.",
+    "You act responsibly in your work. (Présent)"
+  ],
+  [
+    "ils/elles agissent",
+    "they act",
+    "Ils agissent avec détermination pour atteindre leurs objectifs.",
+    "They act with determination to achieve their goals. (Présent)"
+  ],
+  [
+    "j'agissais",
+    "I was acting",
+    "J'agissais selon mes convictions à cette époque.",
+    "I was acting according to my convictions at that time. (Imparfait)"
+  ],
+  [
+    "tu agissais",
+    "you were acting (informal)",
+    "Tu agissais toujours avec bienveillance envers les autres.",
+    "You were always acting with kindness towards others. (Imparfait)"
+  ],
+  [
+    "il/elle/on agissait",
+    "he/she was acting",
+    "Il agissait avec prudence dans cette affaire délicate.",
+    "He was acting with caution in this delicate matter. (Imparfait)"
+  ],
+  [
+    "nous agissions",
+    "we were acting",
+    "Nous agissions en équipe pour résoudre ce défi.",
+    "We were acting as a team to solve this challenge. (Imparfait)"
+  ],
+  [
+    "vous agissiez",
+    "you were acting (formal)",
+    "Vous agissiez avec professionnalisme dans cette situation.",
+    "You were acting professionally in this situation. (Imparfait)"
+  ],
+  [
+    "ils/elles agissaient",
+    "they were acting",
+    "Ils agissaient avec courage face à l'adversité.",
+    "They were acting with courage in the face of adversity. (Imparfait)"
+  ],
+  [
+    "j'ai agi",
+    "I have acted",
+    "J'ai agi rapidement pour éviter le problème.",
+    "I have acted quickly to avoid the problem. (Passé Composé)"
+  ],
+  [
+    "tu as agi",
+    "you have acted (informal)",
+    "Tu as agi avec sagesse dans cette décision importante.",
+    "You have acted wisely in this important decision. (Passé Composé)"
+  ],
+  [
+    "il/elle/on a agi",
+    "he/she has acted",
+    "Il a agi avec détermination pour réussir.",
+    "He has acted with determination to succeed. (Passé Composé)"
+  ],
+  [
+    "nous avons agi",
+    "we have acted",
+    "Nous avons agi ensemble pour résoudre cette crise.",
+    "We have acted together to resolve this crisis. (Passé Composé)"
+  ],
+  [
+    "vous avez agi",
+    "you have acted (formal)",
+    "Vous avez agi avec intégrité dans cette affaire.",
+    "You have acted with integrity in this matter. (Passé Composé)"
+  ],
+  [
+    "ils/elles ont agi",
+    "they have acted",
+    "Ils ont agi avec courage pour défendre leurs droits.",
+    "They have acted with courage to defend their rights. (Passé Composé)"
+  ],
+  [
+    "j'agirai",
+    "I will act",
+    "J'agirai selon mes principes dans cette situation.",
+    "I will act according to my principles in this situation. (Futur Simple)"
+  ],
+  [
+    "tu agiras",
+    "you will act (informal)",
+    "Tu agiras avec prudence dans cette décision.",
+    "You will act with caution in this decision. (Futur Simple)"
+  ],
+  [
+    "il/elle/on agira",
+    "he/she will act",
+    "Il agira rapidement pour résoudre le problème.",
+    "He will act quickly to solve the problem. (Futur Simple)"
+  ],
+  [
+    "nous agirons",
+    "we will act",
+    "Nous agirons ensemble pour améliorer la situation.",
+    "We will act together to improve the situation. (Futur Simple)"
+  ],
+  [
+    "vous agirez",
+    "you will act (formal)",
+    "Vous agirez avec responsabilité dans votre travail.",
+    "You will act responsibly in your work. (Futur Simple)"
+  ],
+  [
+    "ils/elles agiront",
+    "they will act",
+    "Ils agiront avec détermination pour atteindre leurs objectifs.",
+    "They will act with determination to achieve their goals. (Futur Simple)"
+  ],
+  [
+    "j'agirais",
+    "I would act",
+    "J'agirais différemment si j'avais plus d'informations.",
+    "I would act differently if I had more information. (Conditionnel Présent)"
+  ],
+  [
+    "tu agirais",
+    "you would act (informal)",
+    "Tu agirais avec plus de prudence dans cette situation.",
+    "You would act with more caution in this situation. (Conditionnel Présent)"
+  ],
+  [
+    "il/elle/on agirait",
+    "he/she would act",
+    "Il agirait avec sagesse s'il connaissait tous les détails.",
+    "He would act wisely if he knew all the details. (Conditionnel Présent)"
+  ],
+  [
+    "nous agirions",
+    "we would act",
+    "Nous agirions ensemble si nous avions plus de temps.",
+    "We would act together if we had more time. (Conditionnel Présent)"
+  ],
+  [
+    "vous agiriez",
+    "you would act (formal)",
+    "Vous agiriez avec professionnalisme dans cette circonstance.",
+    "You would act professionally in this circumstance. (Conditionnel Présent)"
+  ],
+  [
+    "ils/elles agiraient",
+    "they would act",
+    "Ils agiraient avec courage s'ils étaient confrontés à ce défi.",
+    "They would act with courage if they were faced with this challenge. (Conditionnel Présent)"
+  ],
+  [
+    "agissant",
+    "acting",
+    "En agissant rapidement, nous avons évité le problème.",
+    "By acting quickly, we avoided the problem. (Le participe présent)"
   ]
 ]
