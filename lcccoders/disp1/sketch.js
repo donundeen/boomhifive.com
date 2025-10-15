@@ -1,7 +1,7 @@
 let canvasWidth;
 let canvasHeight;
 
-let drawFunctionList = [maxDraw, daniellaDraw];
+let drawFunctionList = [maxDraw, daniellaDraw, minaDraw];
 let drawFunctionIndex = drawFunctionList.length - 1;
 let timingInterval = 20000;
 
@@ -258,4 +258,106 @@ function daniellaDraw() {
   rotate(PI * 0.2); // For the letter M
   rect(0, 0, 9, 40); // For the letter M
   pop();
+}
+
+function minaDraw(){
+  background("white"); //
+  push();
+  stroke("white");
+  strokeWeight(2);
+  fill("black");
+  textAlign(RIGHT, BOTTOM);
+  textSize(40);
+  text("Mina Wei - Creative Computing", canvasWidth - 10, canvasHeight - 10);
+  pop();
+  stroke("black");
+  strokeWeight(3);
+  fill("#F14E28");
+  ellipse(490, 270, 150, 400); // left bow
+
+  stroke("black");
+  strokeWeight(3);
+  fill("#F14E28");
+  ellipse(710, 270, 150, 400); // left bow
+
+  stroke("black");
+  strokeWeight(3);
+  fill("#F14E28");
+  circle(600, 355, 100); // center of bow
+
+  stroke("black");
+  strokeWeight(3);
+  fill("#FDDAC6");
+  ellipse(600, 600, 520, 500); // head base
+
+  stroke("black");
+  strokeWeight(3);
+  fill("white");
+  ellipse(450, 610, 220, 250); // eyes on the left
+
+  stroke("#F583B7");
+  strokeWeight(3);
+  fill("#F583B7");
+  ellipse(465, 605, 195, 205); // eye colour
+
+  stroke("black");
+  strokeWeight(3);
+  fill("black");
+  ellipse(475, 599, 175, 190); // pupil
+
+  stroke("white");
+  strokeWeight(3);
+  fill("white");
+  ellipse(520, 600, 45, 45); // white dot
+
+  stroke("black");
+  strokeWeight(3);
+  fill("white");
+  ellipse(750, 610, 220, 250); // eyes on the right
+
+  stroke("#F583B7");
+  strokeWeight(3);
+  fill("#F583B7");
+  ellipse(735, 605, 195, 205); // eye colour
+
+  stroke("black");
+  strokeWeight(3);
+  fill("black");
+  ellipse(720, 599, 175, 190); // pupil
+
+  stroke("white");
+  strokeWeight(3);
+  fill("white");
+  ellipse(680, 600, 45, 45); // white dot
+
+  stroke("black");
+  fill("#F68421");
+  // OPEN fill mode.
+  arc(600, 520, 490, 335, PI, PI - QUARTER_PI - QUARTER_PI - HALF_PI, OPEN); // hair
+
+  stroke("#FDDAC6");
+  strokeWeight(3);
+  fill("#FDDAC6");
+  triangle(620, 520, 600, 480, 580, 520); //cut of bangs
+
+  stroke("black");
+  strokeWeight(3);
+  fill("black");
+  triangle(430, 520, 470, 485, 470, 520); //cut of bangs
+
+  stroke("black");
+  strokeWeight(3);
+  fill("black");
+  triangle(770, 520, 730, 485, 730, 520); //cut of bangs
+
+  fill("#FDDAC6");
+  arc(600, 740, 50, 60, 0, PI, OPEN); // mouth
+
+  line(620, 520, 846, 520); // bangs outline
+
+  line(580, 520, 354, 520); // bangs outline
+
+  line(600, 480, 580, 520); // bangs outline
+
+  line(600, 480, 620, 520); // bangs outline
 }
