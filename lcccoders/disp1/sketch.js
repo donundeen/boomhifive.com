@@ -1,7 +1,7 @@
 let canvasWidth;
 let canvasHeight;
 
-let drawFunctionList = [maxDraw, daniellaDraw, minaDraw];
+let drawFunctionList = [minaDraw, maxDraw, daniellaDraw];
 let drawFunctionIndex = drawFunctionList.length - 1;
 let timingInterval = 20000;
 
