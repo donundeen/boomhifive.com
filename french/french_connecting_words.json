@@ -371,9 +371,9 @@
   ],
   [
     "à la fois",
-    "at the same time",
+    "both",
     "Il est à la fois intelligent et modeste.",
-    "He is both intelligent and modest at the same time.",
+    "He is both intelligent and modest.",
     "adverb phrase"
   ],
   [
@@ -839,9 +839,9 @@
     "adverb phrase"
   ],
   [
-    "dès loisirs",
+    "dès que possible",
     "as soon as possible",
-    "Dès loisirs, je vous enverrai le document.",
+    "Dès que possible, je vous enverrai le document.",
     "As soon as possible, I will send you the document.",
     "adverb phrase"
   ],
@@ -881,9 +881,9 @@
     "conjunction"
   ],
   [
-    "du à",
+    "dû à",
     "due to",
-    "Ce retard est du à la circulation.",
+    "Ce retard est dû à la circulation.",
     "This delay is due to traffic.",
     "prepositional phrase"
   ],
@@ -896,9 +896,9 @@
   ],
   [
     "du moment que",
-    "since",
+    "as long as",
     "Du moment que vous êtes d'accord, nous pouvons commencer.",
-    "Since you agree, we can start.",
+    "As long as you agree, we can start.",
     "conjunction phrase"
   ],
   [
@@ -1167,7 +1167,6 @@
     "Unfortunately, we cannot accept your proposal.",
     "adverb"
   ],
-
   [
     "même si",
     "even if",
@@ -1228,7 +1227,7 @@
     "pour",
     "for",
     "Je travaille pour gagner ma vie.",
-    "I work to earn my living.",
+    "I work to make a living.",
     "preposition"
   ],
   [
