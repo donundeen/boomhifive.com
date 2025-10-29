@@ -1,7 +1,7 @@
 let canvasWidth;
 let canvasHeight;
 
-let drawFunctionList = [danielDraw,minaDraw, maxDraw, daniellaDraw];
+let drawFunctionList = [marcoDraw,danielDraw,minaDraw, maxDraw, daniellaDraw];
 let drawFunctionIndex = drawFunctionList.length - 1;
 let timingInterval = 20000;
 
@@ -30,7 +30,6 @@ function nextProject(){
 
 
 function maxDraw() {
-  background("rgb(190,0,33)");
   push();
   stroke("white");
   strokeWeight(2);
@@ -40,6 +39,17 @@ function maxDraw() {
   text("Max Vanier - Creative Computing", canvasWidth - 10, canvasHeight - 10);
   pop();
   scale(2);
+  //base face
+ 
+  let tooth_point_x = 472;
+  let tooth_point_y = 315;
+  let mustache_left_x = 480;
+  let mustache_left_y = 270;
+  let mustache_right_x = 520;
+  let mustache_right_y = 270;
+  
+  background("rgb(190,0,33)");
+
   //base face
   strokeWeight(0);
   fill("rgb(224,202,163)");
@@ -61,19 +71,19 @@ function maxDraw() {
 
   beginShape();
   fill("rgb(198,175,142)");
-  vertex(480, 220);
-  vertex(520, 220);
-  vertex(525, 260);
-  vertex(475, 260);
+  vertex(480, 225);
+  vertex(520, 225);
+  vertex(525, 265);
+  vertex(475, 265);
 
   endShape();
 
   beginShape();
   fill("rgb(198,170,129)");
-  vertex(482, 210);
-  vertex(518, 210);
-  vertex(505, 270);
-  vertex(495, 270);
+  vertex(482, 215);
+  vertex(518, 215);
+  vertex(505, 275);
+  vertex(495, 275);
   endShape();
 
   //right eye
@@ -98,15 +108,15 @@ function maxDraw() {
 
   //mouth and teeth
   fill("black");
-  rect(450, 290, 100, 55);
+  rect(455, 290, 90, 55);
 
   fill("white");
 
   beginShape();
-  vertex(472, 315);
-  vertex(482, 315);
-  vertex(480, 335);
-  vertex(474, 335);
+  vertex(tooth_point_x, tooth_point_y);
+  vertex(tooth_point_x + 10, tooth_point_y);
+  vertex(tooth_point_x + 8, tooth_point_y + 20);
+  vertex(tooth_point_x + 2, tooth_point_y + 20);
   endShape();
 
   beginShape();
@@ -161,7 +171,27 @@ function maxDraw() {
 
   //eyebrows
   strokeWeight(0);
-  triangle(420, 300, 500, 300, 420, 400);
+  triangle(420, 190, 480, 195, 420, 200);
+
+  //Mustache
+  beginShape();
+  vertex(mustache_left_x, mustache_left_y);
+  vertex(mustache_left_x + 20, mustache_left_y + 30);
+  vertex(mustache_left_x - 20, mustache_left_y + 40);
+  vertex(mustache_left_x - 50, mustache_left_y + 70);
+  vertex(mustache_left_x - 40, mustache_left_y + 20);
+  endShape();
+  
+  beginShape ()
+  vertex(mustache_right_x , mustache_right_y);
+  vertex(mustache_right_x -20 , mustache_right_y + 30 );
+  vertex(mustache_right_x + 20, mustache_right_y + 40);
+  vertex(mustache_right_x + 50, mustache_right_y + 70);
+  vertex(mustache_right_x + 40, mustache_right_y + 20);
+  
+  endShape();
+  
+  triangle (500, 300, 520, 270, 480, 270)
 
   // blocking off
   strokeWeight(0);
@@ -446,4 +476,120 @@ function danielDraw(){
 
   line(145, kmLines, 145, 75); //fourth straight line on the right of M
 
+}
+
+function marcoDraw() {
+  push();
+  stroke("white");
+  strokeWeight(2);
+  fill("black");
+  textAlign(RIGHT, BOTTOM);
+  textSize(40);
+  text("Marco DiFruscia - Creative Computing", canvasWidth - 10, canvasHeight - 10);
+  pop();
+  scale(2);
+
+  let skyColor = [135, 206, 235];
+  let groundColor = [34, 139, 34];
+  let shirtColor = [150, 75, 0];
+  let pantsColor = [0, 0, 200];
+  let skinColor = [210, 160, 100];
+
+  background(skyColor[0], skyColor[1], skyColor[2]); // Sky
+  noStroke();
+
+  // Ground
+  fill(groundColor[0], groundColor[1], groundColor[2]);
+  rect(0,440,500,60);
+
+  // Legs
+  fill(pantsColor[0], pantsColor[1], pantsColor[2]); // Jeans
+  rect(200, 300, 40, 120, 5); // left leg (front)
+  rect(260, 300, 40, 120, 5); // right leg (back)
+
+  // Boots
+  fill(90, 50, 20);
+  rect(195,420,45,20,3);
+  rect(260,420,45,20,3);
+
+  // Body
+  fill(shirtColor[0], shirtColor[1], shirtColor[2]); // brown shirt
+  rect(200,180,100,140,10);
+
+  // Arms
+  fill(shirtColor[0], shirtColor[1], shirtColor[2]);
+  rect(160,200,40,90,10); // left arm
+  rect(300,200,40,90,10); // right arm
+
+  // Hands
+  fill(skinColor[0],skinColor[1],skinColor[2]);
+  circle(180,290,25);
+  circle(320,290,25);
+
+  // Belt
+  fill(0);
+  rect(200,310,100,12);
+  fill(255,215,0);
+  rect(245,310,20,12); // buckle
+
+  // Bandana
+  fill(200,0,0);
+  triangle(200,180,300,180,250,230);
+
+  // Head
+  fill(skinColor[0],skinColor[1],skinColor[2]);
+  ellipse(250,120,120,130);
+
+  // Hat
+  fill(110,70,20);
+  rect(215,45,70,33,6);
+  ellipse(250,85,200,40);
+
+  // Face
+  fill(255);
+  ellipse(230,120,20,18); // left eye
+  ellipse(270,120,20,18); // right eye
+  fill(0);
+  ellipse(230,120,8,8);
+  ellipse(270,120,8,8);
+
+  // Eyebrows
+  stroke(60,30,10);
+  strokeWeight(4);
+  line(220,105,240,110);
+  line(260,110,280,105);
+  noStroke();
+
+  // Mouth
+  stroke(0);
+  strokeWeight(3);
+  line(230,150,270,150);
+  noStroke();
+
+  // Badge
+  fill(255,215,0);
+  circle(280,225,16);
+
+  // Lasso
+  noFill();
+  stroke(180,120,40);
+  strokeWeight(4);
+  ellipse(350,200,80,80);
+  line(350,240,320,290);
+
+  // Initials "C.B" for Cow Boy
+  stroke(0);
+  strokeWeight(3);
+
+  // Letter C
+  line(20, 20, 50, 20); // top
+  line(20, 20, 20, 60); // left
+  line(20, 60, 50, 60); // bottom
+
+  // Letter B
+  line(70, 20, 70, 60); // main spine
+  line(70, 20, 90, 30); // top downwards diagonal
+  line(90, 30, 70, 40); // top upwards diagonal
+  line(70, 40, 90, 50); // bottom downwards diagonal
+  line(90, 50, 70, 60); // bottom upwards diagonal
 }
