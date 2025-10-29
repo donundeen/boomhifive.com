@@ -23,7 +23,9 @@ function nextProject(){
   drawFunctionIndex = (drawFunctionIndex + 1) % drawFunctionList.length;
   drawFunction = drawFunctionList[drawFunctionIndex];
   console.log(drawFunctionIndex);
+  push();
   drawFunction();
+  pop();
 }
 
 
@@ -364,6 +366,7 @@ function minaDraw(){
 
 function danielDraw(){
   background(400); //color of the background
+  
 
   push();
   stroke("white");
@@ -374,6 +377,7 @@ function danielDraw(){
   text("Daniel Kim - Creative Computing", canvasWidth - 10, canvasHeight - 10);
   pop();  
 
+  scale(2);
   let bigEars = 275; //size of ears
   let kmLines = 10; //size of initials
   let eyeballSize = 70; //size of eyeballs
