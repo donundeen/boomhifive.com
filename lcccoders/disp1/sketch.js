@@ -30,6 +30,8 @@ function nextProject(){
 
 
 function maxDraw() {
+  background("rgb(190,0,33)");
+
   push();
   stroke("white");
   strokeWeight(2);
@@ -48,7 +50,6 @@ function maxDraw() {
   let mustache_right_x = 520;
   let mustache_right_y = 270;
   
-  background("rgb(190,0,33)");
 
   //base face
   strokeWeight(0);
@@ -479,6 +480,9 @@ function danielDraw(){
 }
 
 function marcoDraw() {
+  background(skyColor[0], skyColor[1], skyColor[2]); // Sky
+
+
   push();
   stroke("white");
   strokeWeight(2);
@@ -495,7 +499,6 @@ function marcoDraw() {
   let pantsColor = [0, 0, 200];
   let skinColor = [210, 160, 100];
 
-  background(skyColor[0], skyColor[1], skyColor[2]); // Sky
   noStroke();
 
   // Ground
