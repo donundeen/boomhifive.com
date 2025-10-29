@@ -1,7 +1,7 @@
 let canvasWidth;
 let canvasHeight;
 
-let drawFunctionList = [minaDraw, maxDraw, daniellaDraw];
+let drawFunctionList = [danielDraw,minaDraw, maxDraw, daniellaDraw];
 let drawFunctionIndex = drawFunctionList.length - 1;
 let timingInterval = 20000;
 
@@ -360,4 +360,84 @@ function minaDraw(){
   line(600, 480, 580, 520); // bangs outline
 
   line(600, 480, 620, 520); // bangs outline
+}
+
+function danielDraw(){
+  background(400); //color of the background
+
+  push();
+  stroke("white");
+  strokeWeight(2);
+  fill("black");
+  textAlign(RIGHT, BOTTOM);
+  textSize(40);
+  text("Daniel Kim - Creative Computing", canvasWidth - 10, canvasHeight - 10);
+  pop();  
+
+  let bigEars = 275; //size of ears
+  let kmLines = 10; //size of initials
+  let eyeballSize = 70; //size of eyeballs
+  let heightEars = 270; //height level of ears
+  let rightearColor = "gold"; //color of right ear
+  let leftearColor = "gold"; //color of left ear
+  let faceColor = "orange"; //color of face
+  let mouthColor = "black"; //color of mouth
+  let pupilColor = "black"; //color of pupils
+  let noseColor = "black"; //color of nose
+  let nosedroolColor = "lightblue"; //color of nose drool
+
+  strokeWeight(10); //this is my new variable
+
+  fill(rightearColor); //color of the right ear
+
+  circle(570, heightEars, bigEars); //right ear
+
+  fill(leftearColor); //colour of the left ear
+
+  circle(210, heightEars, bigEars); //left ear
+
+  fill(faceColor); //color of the face
+
+  circle(390, 320, 400); //face
+
+  ellipse(310, 290, eyeballSize, 50); //outline of left eye
+
+  ellipse(465, 290, eyeballSize, 50); //outline of right eye
+
+  fill(pupilColor); //color of pupils
+
+  ellipse(310, 290, 40, 35); //pupil of left eye
+
+  ellipse(465, 290, 50, 10); //pupil of right eye
+
+  fill(noseColor); //nose
+
+  ellipse(387, 330, 40, 100); //nose
+
+  fill(mouthColor); //color of mouth
+
+  ellipse(387, 450, 70, 5); //mouth
+
+  fill(nosedroolColor); //color nose drool
+
+  ellipse(395, 385, 20, 70); //nose drool
+
+  strokeWeight(5); //thickness of K, dot, and M
+
+  line(30, kmLines, 30, 75); //straight line of K
+
+  line(60, kmLines, 30, 55); //line facing upper right of K
+
+  line(30, 42, 60, 75); //line facing lower right of K
+
+  point(80, 75); //dot in between initials
+
+  line(100, kmLines, 100, 75); //first line on the left M
+
+  line(100, kmLines, 120, 75); //second line facing the middle point of M
+
+  line(145, kmLines, 120, 75); //third line facing right corner of M
+
+  line(145, kmLines, 145, 75); //fourth straight line on the right of M
+
 }
