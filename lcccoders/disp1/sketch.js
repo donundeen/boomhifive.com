@@ -39,7 +39,7 @@ function maxDraw() {
   textSize(40);
   text("Max Vanier - Creative Computing", canvasWidth - 10, canvasHeight - 10);
   pop();
-
+  scale(2);
   //base face
   strokeWeight(0);
   fill("rgb(224,202,163)");
@@ -221,6 +221,8 @@ function daniellaDraw() {
   textSize(40);
   text("Daniela Malka - Creative Computing", canvasWidth - 10, canvasHeight - 10);
   pop();
+
+  scale(2);
   fill(57, 255, 20);
   circle(200, 200, 220); // Circle for my head
   square(250, 60, 60, 300); // Antenna #1
