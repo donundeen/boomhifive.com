@@ -480,6 +480,13 @@ function danielDraw(){
 }
 
 function marcoDraw() {
+
+  let skyColor = [135, 206, 235];
+  let groundColor = [34, 139, 34];
+  let shirtColor = [150, 75, 0];
+  let pantsColor = [0, 0, 200];
+  let skinColor = [210, 160, 100];
+  
   background(skyColor[0], skyColor[1], skyColor[2]); // Sky
 
 
@@ -493,11 +500,6 @@ function marcoDraw() {
   pop();
   scale(2);
 
-  let skyColor = [135, 206, 235];
-  let groundColor = [34, 139, 34];
-  let shirtColor = [150, 75, 0];
-  let pantsColor = [0, 0, 200];
-  let skinColor = [210, 160, 100];
 
   noStroke();
 
