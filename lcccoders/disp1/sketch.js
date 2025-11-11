@@ -305,9 +305,9 @@ function daniellaDraw() {
   ellipse(245, lowereyebrowY, lowereyebrowL, lowereyebrowW); // Eyebrow #2
   pop();
   push();
-  arc(adjustedWidth*.4, adjustedHeight*.7, adjustedWidth*.2, adjustedHeight*.1, 0, 3.14); // Mouth
+  arc(adjustedWidth*.35, adjustedHeight*.7, adjustedWidth*.2, adjustedHeight*.1, 0, 3.14); // Mouth
   fill(283,292,292);
-  arc(adjustedWidth*.4, adjustedHeight*.7, adjustedWidth*.2, adjustedHeight*.1, 0, 3.14); // Smile (teeth)
+  arc(adjustedWidth*.35, adjustedHeight*.7, adjustedWidth*.2, adjustedHeight*.1, 0, 3.14); // Smile (teeth)
   pop();
   fill(90,10,100);
   let offset = frameCount % rampAplitude;
