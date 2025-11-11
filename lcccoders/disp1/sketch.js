@@ -28,18 +28,23 @@ function nextProject(){
   drawFunctionIndex = (drawFunctionIndex + 1) % drawFunctionList.length;
 }
 
-
-function maxDraw() {
-  background("rgb(190,0,33)");
-
+function showCaption(textString) {
   push();
   stroke("white");
   strokeWeight(2);
   fill("black");
   textAlign(RIGHT, BOTTOM);
   textSize(40);
-  text("Max Vanier - Creative Computing", canvasWidth - 10, canvasHeight - 10);
-  pop();  
+  text(textString, canvasWidth - 10, canvasHeight - 10);
+  pop();
+}
+
+
+function maxDraw() {
+  background("rgb(190,0,33)");
+
+  
+  showCaption("Max Vanier - Creative Computing");
 
   scale(2);
   //base face
@@ -247,14 +252,7 @@ function maxDraw() {
 
 function daniellaDraw() {
   background(200, 50, 90); //
-  push();
-  stroke("white");
-  strokeWeight(2);
-  fill("black");
-  textAlign(RIGHT, BOTTOM);
-  textSize(40);
-  text("Daniela Malka - Creative Computing", canvasWidth - 10, canvasHeight - 10);
-  pop();
+  showCaption("Daniela Malka - Creative Computing");
 
   scale(2);
   fill(57, 255, 20);
@@ -303,14 +301,8 @@ function daniellaDraw() {
 
 function minaDraw(){
   background("white"); //
-  push();
-  stroke("white");
-  strokeWeight(2);
-  fill("black");
-  textAlign(RIGHT, BOTTOM);
-  textSize(40);
-  text("Mina Wei - Creative Computing", canvasWidth - 10, canvasHeight - 10);
-  pop(); 
+
+  showCaption("Mina Wei - Creative Computing");
 
   stroke("black");
   strokeWeight(3);
@@ -409,16 +401,7 @@ function minaDraw(){
 function danielDraw(){
   background(400); //color of the background
   
-
-
-  push();
-  stroke("white");
-  strokeWeight(2);
-  fill("black");
-  textAlign(RIGHT, BOTTOM);
-  textSize(40);
-  text("Daniel Kim - Creative Computing", canvasWidth - 10, canvasHeight - 10);
-  pop();  
+  showCaption("Daniel Kim - Creative Computing");
 
   scale(2);
   let bigEars = 275; //size of ears
@@ -530,15 +513,7 @@ function marcoDraw() {
 
   background(skyR, skyG, skyB)
 
-  push();
-  stroke("white");
-  strokeWeight(2);
-  fill("black");
-  textAlign(RIGHT, BOTTOM);
-  textSize(40);
-  text("Marco DiFruscia - Creative Computing", canvasWidth - 10, canvasHeight - 10);
-  pop(); 
-
+  showCaption("Marco DiFruscia - Creative Computing");
 
   scale(2);
 
@@ -780,15 +755,7 @@ function athanDraw(){
   bgHue = map(sin(frameCount * 0.01), -1, 1, 220, 260);
   background(bgHue, 40, 25);
 
-
-  push();
-  stroke("white");
-  strokeWeight(2);
-  fill("black");
-  textAlign(RIGHT, BOTTOM);
-  textSize(40);
-  text("Athanassios Mavritsakis - Creative Computing", canvasWidth - 10, canvasHeight - 10);
-  pop(); 
+  showCaption("Athanassios Mavritsakis - Creative Computing");
 
 
   scale(2);
@@ -879,15 +846,7 @@ function alvandDraw(){
 
   background('#2C397D');
 
-  push();
-  stroke("white");
-  strokeWeight(2);
-  fill("black");
-  textAlign(RIGHT, BOTTOM);
-  textSize(40);
-  text("Alvand Mohammadpouryazdi - Creative Computing", canvasWidth - 10, canvasHeight - 10);
-  pop();
-
+  showCaption("Alvand Mohammadpouryazdi - Creative Computing");
 
   scale(2);
 
@@ -974,4 +933,121 @@ function alvandDraw(){
   circle(200, 150, 210 + sin(frameCount * 0.03) * 5);
 
 
+}
+
+
+//simple integer variables that change lengths and widths
+let boulderShoulderRadius = 100;
+let faceRadius = 200;
+let abSize = 150; 
+
+//boolean variables
+let happiness = true; //for the smile
+let invertColor = false; //boolean that is sent as a parameter to the invertible color function
+
+//this is a custom fill function that also accepts a boolean to invert the color
+function invertibleColor(boolean, r, g, b) { 
+  if (boolean) {
+    fill(256 - r, 256 - g, 256 - b);
+  } else {
+    fill(r,g,b);
+  }  
+} 
+
+let increasingVal = 0;
+let r = 255;
+let b = 0;
+let g = 0;
+let phase = 0;
+
+function charanDraw(){
+
+  if (phase == 0) {
+    b+= 2
+    r-= 2
+    background(r, g, b)
+    if (b > 254) {
+      b = 255
+      r = 0
+      phase = 1
+    }
+  } else if (phase == 1){
+    g+= 2
+    b-= 2
+    background(r, g, b)
+    if (g > 254) {
+      g = 255
+      b = 0
+      phase = 2
+    }
+  } else if (phase == 2){
+    r+= 2
+    g-= 2
+    background(r, g, b)
+    if (r > 254) {
+      r = 255
+      g = 0
+      phase = 0
+    }
+  }
+
+  showCaption("Charan Veluru - Creative Computing");
+
+  invertibleColor(invertColor, 88,57,39);
+  ellipse(300, 400, 50, 100); //neck
+  faceRadius+=0.03;
+  circle(300, 275, map(sin(faceRadius), -1, 1, 200, 275)); //face
+  
+  if (happiness) {
+    arc(300, 330, 80, 60, 0, PI, PIE, 5);
+  } else {
+    beginShape();
+    vertex(250, 350)
+    vertex(350, 350)
+    vertex(300, 270)
+    endShape(CLOSE);
+  }
+  
+  invertibleColor(invertColor, 256,256,256);
+  ellipse(250, 275, 50, 90); //left eye
+  ellipse(350, 275, 50, 90); //right eye
+  
+  invertibleColor(invertColor, 0,0,0);
+  circle(250, 250, 30); //left iris
+  circle(350, 250, 30); //right iris
+  
+  invertibleColor(invertColor, 256, 256, 256);
+  circle(260, 250, 10); //left eye reflection
+  circle(360, 250, 10); //right eye reflection
+
+
+  invertibleColor(invertColor, 256, 128, 128);
+  triangle(210, 230, 170, 160, 260, 180) //ear1
+  triangle(390, 230, 430, 160, 340, 180) //ear2
+  
+  invertibleColor(invertColor, 250, 180, 20);
+  rect(100, 450, 80, 300) //Left Arm
+  rect(180, 450, 240, 300) //Abdomen
+  rect(420, 450, 80, 300) //Right Arm
+  square(180, 450, 120) //pec1
+  square(300, 450, 120) //pec
+  
+  ellipse(300, 450, 350, 50) //collarbobne
+  
+  let temporaryRadius = (boulderShoulderRadius % 121) + 80;
+  circle(130, 450, temporaryRadius) //shoulder1
+  circle(470, 450, temporaryRadius) //shoulder2
+  console.log(temporaryRadius);
+  boulderShoulderRadius++;
+  //bouldershoulder radius from 80-200
+
+  tempAbSize = map(sin(increasingVal), -1, 1, 150, 250)
+  ellipse(300, 700, tempAbSize, abSize/3) //2pack
+  ellipse(300, 650, tempAbSize, abSize/3) //4pack
+  ellipse(300, 600, tempAbSize, abSize/3) //6pack
+  increasingVal+=0.05;
+//centerline to provide guidance and a mid x value to refer to
+
+
+  scale(2);
 }
