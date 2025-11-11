@@ -480,6 +480,8 @@ function danielDraw(){
 }
 
 
+// My 5 variables
+let skyColor = [135, 206, 235] // starting sky color
 
 let groundColor = [0, 128, 0] // made every variable (groundColor) so that the color changing is syncronised
 let shirtColor = [0, 128, 0]
