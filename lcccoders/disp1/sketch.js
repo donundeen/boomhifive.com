@@ -339,7 +339,7 @@ function daniellaDraw() {
   textSize(50);
   textFont('Times New Roman');
   textAlign(CENTER);
-  text('Gummy Bear', width / 2, height / 2);
+  text('Gummy Bear', width / 4, height / 4);
 
 
 }
