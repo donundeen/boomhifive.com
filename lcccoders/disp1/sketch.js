@@ -1289,3 +1289,132 @@ function parisDraw(){
 
 
 }
+
+let scaleAmount = 0.5;
+function tyDraw(){
+  background("rgb(1,76,1)"); //background
+  showCaption("Ty Lashley Jean-Louis - Creative Computing");
+  scale(2);
+
+  translate(width/2, height/2);
+
+  let maskColor = (paletteLerp([
+    ['rgb(224,106,20)', 0],
+    ['red', 0.05],
+    ['rgb(111,10,156)', 0.25],
+    ['blue', 1]
+  ], millis() / 10000 % 1));// Mask Changing Color and new variable
+  
+  let headBob = sin(frameCount * 0.1) * 5; // Head bobbing
+  let eyeWiggle = sin(frameCount * 0.2) * 3 // eye wiggle 
+  let tongueMove = sin(frameCount * 0.15) * 10// Tongue Movement 
+ 
+  
+  
+  background("rgb(1,76,1)"); //background
+
+  stroke("green"); 
+  fill("green");
+  circle(675, 400 + headBob, 430); //head
+
+  stroke("green");
+  fill("green");
+  rect(450, 325 + headBob, 450, 250, 500); //cheeks
+
+  stroke(maskColor);
+  fill(maskColor );
+  rect(450, 325 + headBob, 450, 100, 40); //mask
+
+  stroke(maskColor);
+  rect(500, 290 + headBob, 140, 120, 300); //shape in mask for left eye
+
+  
+  
+  stroke(maskColor);
+  rect(700, 290 + headBob, 140, 120, 300); //shape in mask for right eye
+
+  stroke("white");
+  fill("white");
+  rect(720 + eyeWiggle, 300 + headBob, 100, 120, 400); //white part in eyes
+
+  fill("white");
+  rect(520 + eyeWiggle, 300 + headBob, 100, 120, 400); //white part in eyes
+
+  fill("black");
+  rect(540 + eyeWiggle, 330 + headBob, 50, 90, 400); //eyes
+
+  fill("black");
+  rect(740 + eyeWiggle, 330 + headBob, 50, 90, 400); //eyes
+
+  stroke("white");
+  fill("white");
+  circle(580 + eyeWiggle, 330 + headBob, 25); //small indent in eyes
+
+  fill("white");
+  circle(780 + eyeWiggle, 330 + headBob, 25); //small indent in eyes
+
+  stroke("black");
+  fill("black");
+  arc(670, 525, 150, 105, 0, PI, PI + QUARTER_PI); //mouth
+
+  stroke("red");
+  fill("red");
+  arc(670, 575 + tongueMove, 65, 90, 100, PI + QUARTER_PI, CHORD); //tongue
+
+  stroke(maskColor);
+  fill(maskColor);
+  circle(890, 330 + headBob, 75); //knot in the head band
+
+  ellipse(927, 590 + headBob, 50, 500); //remainder of the headband
+
+  strokeWeight(5);
+  stroke("black");
+  fill("green");
+  arc(670, 450 + headBob, 240, 60, PI, 0, OPEN);//nose
+
+  arc(670, 510 + headBob, 200, 60, 0, PI, OPEN);//smile
+  
+  stroke("green")
+  rect(40, 60, 150, 55);//top part of left T
+  
+  rect(85, 70, 55, 130);//bottom part of left T
+  
+  
+  rect(200, 60, 35, 135);//left part of the M
+  
+  rect(300, 60, 35, 135);//right part of the M
+  
+  strokeWeight(30)
+  stroke("green")
+  line(310, 76, 270, 120);
+  
+  strokeWeight(30)
+  stroke("green")
+  line(234, 76, 270, 120);
+  
+  strokeWeight(5);
+  fill("green")
+  rect(500, 60, 150, 55);//top part of right T
+  
+  rect(546, 70, 55, 130);//bottom part of right T
+
+  stroke("green")
+  strokeWeight(45);
+
+  line(400, 80, 450, 180);// this is for middle part of the N
+  
+  rect(390, 80, 3, 100);//this is for the left part of the N
+  
+  rect(460, 80, 3, 100);//this is for the right part of the N
+  
+  stroke("green")
+  strokeWeight(5);
+         
+  rect(500, 60, 150, 55);//top part of right T
+  
+  rect(546, 70, 55, 130);//bottom part of right T
+  
+  stroke("black")
+  line(670, 600, 670, 545);//this is for the line in the tongue
+  
+}
