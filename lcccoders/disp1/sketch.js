@@ -1,7 +1,7 @@
 let canvasWidth;
 let canvasHeight;
 
-let drawFunctionList = [tyDraw];//,parisDraw];//,nathanDraw];//,minaDraw];//, daniellaDraw]; //danielDraw];//charanDraw, alvandDraw, athanDraw , marcoDraw, maxDraw];
+let drawFunctionList = [tyDraw, parisDraw, minaDraw, daniellaDraw, danielDraw, charanDraw, alvandDraw, athanDraw , marcoDraw, maxDraw];
 let drawFunctionIndex = drawFunctionList.length - 1;
 let timingInterval = 20000;
 
