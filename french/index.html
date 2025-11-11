@@ -1121,6 +1121,8 @@
                         this.cards = data;
                         // Merge with existing progress and handle updates
                         this.mergeWithExistingProgress(selectedFile);
+                        // Ensure stats are updated after merge (in case merge didn't call updateStats)
+                        this.updateStats();
                         // Refresh dropdowns to show updated progress, explicitly preserving the selected file
                         this.populateDropdowns(selectedFile);
                         // Double-check that both dropdowns have the correct value after repopulation
@@ -1136,6 +1138,8 @@
                                 this.fileSelectMobile.value = selectedFile;
                                 setTimeout(() => { this.isUpdatingDropdowns = false; }, 10);
                             }
+                            // Final stats update to ensure everything is in sync
+                            this.updateStats();
                         }, 100);
                     })
                     .catch(error => {
@@ -1260,14 +1264,16 @@
                     this.currentIndex = 0;
                     this.currentCard = 0;
                 } else {
-                    this.currentIndex = this.currentCard;
+                    // Ensure currentIndex is valid (not beyond deck size)
+                    this.currentIndex = Math.min(this.currentCard, this.shuffledCards.length - 1);
+                    this.currentCard = this.currentIndex;
                 }
                 
                 // Update the side selectors to match saved preference
                 this.sideSelect.value = this.currentSide;
                 this.sideSelectMobile.value = this.currentSide;
                 
-                // Update stats
+                // Update stats - ensure this happens after all state is set
                 this.updateStats();
                 
                 // Show the current card if it exists, otherwise show next
@@ -1445,30 +1451,37 @@
                     try {
                         const progress = JSON.parse(savedProgress);
                         
-                        // Check if the saved data is still valid (same number of cards)
-                        if (progress.shuffledCards && progress.shuffledCards.length === this.cards.length) {
-                            this.shuffledCards = progress.shuffledCards;
-                            this.currentIndex = progress.currentIndex || 0;
-                            this.correctCards = new Set(progress.correctCards || []);
-                            this.cardHistory = progress.cardHistory || [];
-                            this.historyIndex = progress.historyIndex || -1;
-                            this.currentCard = progress.currentCard;
-                            this.currentSide = progress.currentSide || 'french';
-                            
-                            // Update the side selector to match saved preference
-                            this.sideSelect.value = this.currentSide;
-                            this.sideSelectMobile.value = this.currentSide;
-                            
-                            this.updateStats();
-                            
-                            // Show the current card if it exists, otherwise show next
-                            if (this.currentCard !== null && this.currentCard !== undefined) {
-                                this.displayCard();
-                            } else {
-                                this.showNextCard();
+                        // Check if we have saved progress (even if deck size changed, we'll merge it)
+                        if (progress.shuffledCards && progress.shuffledCards.length > 0) {
+                            // If deck size matches, use saved shuffled deck directly
+                            if (progress.shuffledCards.length === this.cards.length) {
+                                this.shuffledCards = progress.shuffledCards;
+                                this.currentIndex = Math.min(progress.currentIndex || 0, this.shuffledCards.length - 1);
+                                this.correctCards = new Set(progress.correctCards || []);
+                                this.cardHistory = progress.cardHistory || [];
+                                this.historyIndex = progress.historyIndex || -1;
+                                this.currentCard = progress.currentCard !== null && progress.currentCard !== undefined 
+                                    ? Math.min(progress.currentCard, this.shuffledCards.length - 1) 
+                                    : null;
+                                this.currentSide = progress.currentSide || 'french';
+                                
+                                // Update the side selector to match saved preference
+                                this.sideSelect.value = this.currentSide;
+                                this.sideSelectMobile.value = this.currentSide;
+                                
+                                this.updateStats();
+                                
+                                // Show the current card if it exists, otherwise show next
+                                if (this.currentCard !== null && this.currentCard !== undefined) {
+                                    this.displayCard();
+                                } else {
+                                    this.showNextCard();
+                                }
+                                this.updateNavigationButtons();
+                                return;
                             }
-                            this.updateNavigationButtons();
-                            return;
+                            // If deck size doesn't match, the merge will be handled by mergeWithExistingProgress
+                            // which calls mergeCardsWithProgress, so we should not reach here
                         }
                     } catch (error) {
                         console.error('Error loading progress:', error);
@@ -1683,9 +1696,20 @@
              * Calculates and displays correct/total counts and percentage
              */
             updateStats() {
-                this.totalCardsEl.textContent = this.cards.length;
-                this.remainingCardsEl.textContent = this.cards.length - this.currentIndex;
-                this.correctCardsEl.textContent = this.correctCards.size; // Use actual count of correct cards, not current index
+                // Ensure we have valid card data
+                const totalCards = this.cards ? this.cards.length : 0;
+                const correctCount = this.correctCards ? this.correctCards.size : 0;
+                
+                // Use the actual total from cards array (source of truth)
+                this.totalCardsEl.textContent = totalCards;
+                
+                // Calculate remaining: cards not yet marked as correct
+                // This ensures Remaining + Correct = Total
+                const remaining = Math.max(0, totalCards - correctCount);
+                this.remainingCardsEl.textContent = remaining;
+                
+                // Show correct count
+                this.correctCardsEl.textContent = correctCount;
             }
 
             /**
