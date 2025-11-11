@@ -684,8 +684,6 @@ let earOffsetX = 140;
 bandHeight = 165;
 let notes = []; //music notes
 
-
-
 // ramp function
 function ramp(period) {
   return (frameCount % period) / period;
