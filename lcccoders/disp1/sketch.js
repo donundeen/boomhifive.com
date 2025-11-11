@@ -1204,7 +1204,7 @@ function charanDraw(){
   scale(2);
 }
 
-nathanDraw(){
+function nathanDraw(){
   background(250, 150, 10); // Orange color of background
 
   showCaption("Nathan Goodman - Creative Computing");
