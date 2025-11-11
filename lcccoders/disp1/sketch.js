@@ -32,7 +32,15 @@ function nextProject(){
 function maxDraw() {
   background("rgb(190,0,33)");
 
-
+  push();
+  stroke("white");
+  strokeWeight(2);
+  fill("black");
+  textAlign(RIGHT, BOTTOM);
+  textSize(40);
+  text("Max Vanier - Creative Computing", canvasWidth - 10, canvasHeight - 10);
+  pop();  
+  
   scale(2);
   //base face
  
@@ -231,14 +239,7 @@ function maxDraw() {
   circle(100, 250, 80);
   circle(180, 250, 120);
 
-  push();
-  stroke("white");
-  strokeWeight(2);
-  fill("black");
-  textAlign(RIGHT, BOTTOM);
-  textSize(40);
-  text("Max Vanier - Creative Computing", canvasWidth - 10, canvasHeight - 10);
-  pop();  
+
 }
 
 
@@ -246,7 +247,14 @@ function maxDraw() {
 
 function daniellaDraw() {
   background(200, 50, 90); //
-
+  push();
+  stroke("white");
+  strokeWeight(2);
+  fill("black");
+  textAlign(RIGHT, BOTTOM);
+  textSize(40);
+  text("Daniela Malka - Creative Computing", canvasWidth - 10, canvasHeight - 10);
+  pop();
 
   scale(2);
   fill(57, 255, 20);
@@ -289,19 +297,20 @@ function daniellaDraw() {
   rect(0, 0, 9, 40); // For the letter M
   pop();
 
+
+
+}
+
+function minaDraw(){
+  background("white"); //
   push();
   stroke("white");
   strokeWeight(2);
   fill("black");
   textAlign(RIGHT, BOTTOM);
   textSize(40);
-  text("Daniela Malka - Creative Computing", canvasWidth - 10, canvasHeight - 10);
-  pop();
-
-}
-
-function minaDraw(){
-  background("white"); //
+  text("Mina Wei - Creative Computing", canvasWidth - 10, canvasHeight - 10);
+  pop(); 
 
   stroke("black");
   strokeWeight(3);
@@ -394,14 +403,7 @@ function minaDraw(){
 
   line(600, 480, 620, 520); // bangs outline
 
-  push();
-  stroke("white");
-  strokeWeight(2);
-  fill("black");
-  textAlign(RIGHT, BOTTOM);
-  textSize(40);
-  text("Mina Wei - Creative Computing", canvasWidth - 10, canvasHeight - 10);
-  pop();  
+ 
 }
 
 function danielDraw(){
@@ -409,6 +411,14 @@ function danielDraw(){
   
 
 
+  push();
+  stroke("white");
+  strokeWeight(2);
+  fill("black");
+  textAlign(RIGHT, BOTTOM);
+  textSize(40);
+  text("Daniel Kim - Creative Computing", canvasWidth - 10, canvasHeight - 10);
+  pop();  
 
   scale(2);
   let bigEars = 275; //size of ears
@@ -478,14 +488,6 @@ function danielDraw(){
   line(145, kmLines, 145, 75); //fourth straight line on the right of M
 
 
-  push();
-  stroke("white");
-  strokeWeight(2);
-  fill("black");
-  textAlign(RIGHT, BOTTOM);
-  textSize(40);
-  text("Daniel Kim - Creative Computing", canvasWidth - 10, canvasHeight - 10);
-  pop();  
 
 }
 
