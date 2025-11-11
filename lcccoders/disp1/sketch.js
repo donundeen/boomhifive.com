@@ -260,6 +260,9 @@ function daniellaDraw() {
   showCaption("Daniela Malka - Creative Computing");
   scale(2);
 
+  let adjustedWidth = width / 2;
+  let adjustedHeight = height / 2;
+
   let eyeColour="rgb(158,101,224)" // Eye colour
   let eyecolour2="rgb(240,133,185)" // Eye colour for the second eye
 
@@ -302,9 +305,9 @@ function daniellaDraw() {
   ellipse(245, lowereyebrowY, lowereyebrowL, lowereyebrowW); // Eyebrow #2
   pop();
   push();
-  arc(width*.5, height*.7, width*.3, height*.1, 0, 3.14); // Mouth
+  arc(adjustedWidth*.5, adjustedHeight*.7, adjustedWidth*.3, adjustedHeight*.1, 0, 3.14); // Mouth
   fill(283,292,292);
-  arc(width*.5, height*.7, width*.3, height*.1, 0, 3.14); // Smile (teeth)
+  arc(adjustedWidth*.5, adjustedHeight*.7, adjustedWidth*.3, adjustedHeight*.1, 0, 3.14); // Smile (teeth)
   pop();
   fill(90,10,100);
   let offset = frameCount % rampAplitude;
@@ -339,7 +342,7 @@ function daniellaDraw() {
   textSize(50);
   textFont('Times New Roman');
   textAlign(CENTER);
-  text('Gummy Bear', width / 4, height / 4);
+  text('Gummy Bear', adjustedWidth / 2, adjustedHeight / 2);
 
 
 }
