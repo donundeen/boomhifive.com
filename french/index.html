@@ -1006,7 +1006,8 @@
                     try {
                         const progress = JSON.parse(savedProgress);
                         const correct = progress.correctCards ? progress.correctCards.length : 0;
-                        const total = progress.shuffledCards ? progress.shuffledCards.length : 0;
+                        // Use stored totalCards if available, otherwise fall back to shuffledCards.length
+                        const total = progress.totalCards || (progress.shuffledCards ? progress.shuffledCards.length : 0);
                         return { correct, total };
                     } catch (error) {
                         console.error('Error parsing progress for', categoryFile, ':', error);
@@ -1363,6 +1364,7 @@
                     historyIndex: this.historyIndex,
                     currentCard: this.currentCard,
                     currentSide: this.currentSide,
+                    totalCards: this.cards.length, // Store the actual total number of cards
                     timestamp: Date.now()
                 };
 
