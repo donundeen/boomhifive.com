@@ -518,7 +518,7 @@ function marcoDraw() {
  
   // Sun position
   let sunY = height / 2 + sin(angle) * amplitude
-
+console.log("height", height);
   // t determines how orange the sky is
   let t = map(sunY, height/2 - amplitude, height/2 + amplitude, 0, 1)
   t = constrain(t, 0, 1)
