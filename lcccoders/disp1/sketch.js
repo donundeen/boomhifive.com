@@ -1307,9 +1307,6 @@ function tyDraw(){
   let tongueMove = sin(frameCount * 0.15) * 10// Tongue Movement 
  
   
-  
-  background("rgb(1,76,1)"); //background
-
   stroke("green"); 
   fill("green");
   circle(675, 400 + headBob, 430); //head
