@@ -1,7 +1,7 @@
 let canvasWidth;
 let canvasHeight;
 
-let drawFunctionList = [marcoDraw,danielDraw,minaDraw, maxDraw, daniellaDraw];
+let drawFunctionList = [marcoDraw];//,danielDraw,minaDraw, maxDraw, daniellaDraw];
 let drawFunctionIndex = drawFunctionList.length - 1;
 let timingInterval = 20000;
 
@@ -40,7 +40,7 @@ function maxDraw() {
   textSize(40);
   text("Max Vanier - Creative Computing", canvasWidth - 10, canvasHeight - 10);
   pop();  
-  
+
   scale(2);
   //base face
  
