@@ -248,53 +248,98 @@ function maxDraw() {
 }
 
 
-
-
+let squareX= 100;
+let squareY= 0.1;
+let squareW= 100;
+let rampAplitude= 60;
+let sinSpeed= 90;
+let sinAmplitude= 90;
 function daniellaDraw() {
-  background(200, 50, 90); //
-  showCaption("Daniela Malka - Creative Computing");
+  background(200,20,100); // Colour of background
 
+  showCaption("Daniela Malka - Creative Computing");
   scale(2);
-  fill(57, 255, 20);
+
+  let eyeColour="rgb(158,101,224)" // Eye colour
+  let eyecolour2="rgb(240,133,185)" // Eye colour for the second eye
+
+  let skinColour="rgb(112,173,100)" // Skin colour
+  let nosesizeX=sin(frameCount*0.01)*203 // Nose size X-axis
+  let nosesizeY=sin(frameCount*0.01)*250 // Nose size Y-axis
+  let nosesizeRadius=sin(frameCount*0.01)*40 // Nose size radius
+  let lowereyebrowX=sin(frameCount*0.05)*125 // To lower the eyebrow on the X-axis
+  let lowereyebrowY=cos(frameCount*0.006)*120 //To lower the eyebrow on the Y-axis
+  let lowereyebrowL=sin(frameCount*0.01)*50 // To lower the eyebrow length
+  let lowereyebrowW=cos(frameCount*0.1)*30 // To lower the eyebrow width
+  let eyesizeX=sin(frameCount*0.01)*160 // Eye size X-axis
+  let eyesizeY=sin(frameCount*0.04)*190 // Eye size Y-axis
+  let eyesizeL=cos(frameCount*0.3)*82 // Eye length
+  let eyesizeW=sin(frameCount*0.1)*120 // Eye width
+  let letterColour="rgb(311,422,353)" // Colour for the letters of my insignia.
+  let eyebrowColour="rgb(0,0,0)" // Eyebrow colour
+  
+  fill(skinColour);
   circle(200, 200, 220); // Circle for my head
-  square(250, 60, 60, 300); // Antenna #1
-  square(95, 60, 60, 300); // Antenna #2
-  fill(255, 255, 255); // Colour for body
-  ellipse(160, 190, 82, 124, 50); // Eye #1
-  ellipse(245, 190, 82, 124, 50); // Eye #2
-  fill(189, 222, 236);
-  ellipse(240, 200, 50, 60, 60); // Iris #1
-  ellipse(165, 200, 50, 60, 60); // Iris #2
-  fill(0, 0, 0);
+  square(250,60,60,300); // Antenna #1
+  square(95, 60,60, 300); // Antenna #2 
+  fill(255,255,255); // Colour for body
+  ellipse(eyesizeX, eyesizeY, eyesizeL, eyesizeW); // Eye #1
+  ellipse(245, 190, 82, 50); // Eye #2
+  fill(eyeColour);
+  ellipse(240, 200, 50, 60); // Iris #1
+  fill(eyecolour2);
+  ellipse(165, 200, 50, 20); // Iris #2
+  fill(0,0,0);
   ellipse(240, 200, 30, 30, 0); // Retina #1
   ellipse(165, 200, 30, 30, 0); // Retina #2
-  circle(203, 250, 40); // Nose
-  ellipse(160, 110, 60, 10); // Eyebrow #1
-  ellipse(245, 110, 60, 10); // Eyebrow #2
-  arc(202.5,283.5,121.5,40.5, 0, 3.14); // Mouth
-  fill(283, 292, 292);
-  arc(202.5,283.5,121.5,40.5, 0, 3.14); // Smile (teeth)
-  circle(50, 40, 50); // For the letter D
-  noStroke();
-  fill(200, 50, 90); // For the letter D
-  square(1, 15, 50); // For the letter D
-  fill(0, 0, 0); // For the inside of the D
-  ellipse(60, 43, 10, 20); // For the inside of the D
-  fill(200, 50, 90); // For the letter M
-  rect(90, 20, 50, 40); // For the letter M
-  fill(255, 255, 255);
-  rect(90, 20, 10, 40); // For the letter M
-  rect(130, 20, 10, 40); // For the letter M
-  rotate(50); // For the letter M
-  rect(90, 47, 9, 40); // For the letter M
-  
-  push(); // To make sure whatever is within the push and pop stays inside.
-  rectMode(CENTER); // For the letter M
-  translate(107, 70); // For the letter M
-  rotate(PI * 0.2); // For the letter M
-  rect(0, 0, 9, 40); // For the letter M
+  push();
+  fill (0,0,0);
+  circle(nosesizeX,nosesizeY,nosesizeRadius); // Nose
   pop();
-
+  push();
+  fill (eyebrowColour);
+  ellipse(lowereyebrowX, lowereyebrowY, lowereyebrowL, lowereyebrowW);// Eyebrow #1
+  ellipse(245, lowereyebrowY, lowereyebrowL, lowereyebrowW); // Eyebrow #2
+  pop();
+  push();
+  arc(width*.5, height*.7, width*.3, height*.1, 0, 3.14); // Mouth
+  fill(283,292,292);
+  arc(width*.5, height*.7, width*.3, height*.1, 0, 3.14); // Smile (teeth)
+  pop();
+  fill(90,10,100);
+  let offset = frameCount % rampAplitude;
+  offset = offset - (rampAplitude / 1);  
+  square(squareX = 200-offset, squareY + 20, squareW+offset /2);
+  fill(letterColour);
+  circle(50,40,50); // For the letter D
+  noStroke(); // To get rid of the outline of the square that hides the rest of the circle to create a "D"-like shape.
+  fill(200,20,100); // For the letter D
+  square(1,15,50); // For the letter D
+  fill(0,0,0); // For the inside of the D
+  ellipse(60,43, 10, 20); // For the inside of the D
+  fill(200,20,100); // For the letter M
+  rect(90,20,50,40); // For the letter M
+  fill(letterColour);
+  rect(90,20,10,40); // For the letter M
+  rect(130,20,10,40); // For the letter M
+  rotate(50); // For the letter M
+  rect(90,47,9,40); // For the letter M
+  push(); // To make sure whatever is within the push and pop stays inside.
+  fill(letterColour);
+  rectMode(CENTER); // For the letter M
+  translate(107,70); // For the letter M
+  rotate(PI*0.2); // For the letter M
+  rect(0,0,9,40); // For the letter M
+  pop();
+  fill(255, 192, 203); // Pink color
+  ellipse(200, 200, 30, 50); // Petals
+  fill(255, 255, 0); // Yellow color
+  ellipse(200, 200, 30 / 3, 60 / 3); // Center
+  fill(0); // Set text color to black
+  textSize(50);
+  textFont('Times New Roman');
+  textAlign(CENTER);
+  text('Gummy Bear', width / 2, height / 2);
 
 
 }
