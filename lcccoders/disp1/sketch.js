@@ -1,7 +1,7 @@
 let canvasWidth;
 let canvasHeight;
 
-let drawFunctionList = [athanDraw];//, marcoDraw, danielDraw, minaDraw, maxDraw, daniellaDraw];
+let drawFunctionList = [alvandDraw];//athanDraw , marcoDraw, danielDraw, minaDraw, maxDraw, daniellaDraw];
 let drawFunctionIndex = drawFunctionList.length - 1;
 let timingInterval = 20000;
 
@@ -862,6 +862,116 @@ function athanDraw(){
 
   // initials
   drawInitials();
+
+
+}
+
+
+// VARIABLES
+let leftEarTipX = 100;
+let rightEarTipX = 300;
+let leftSideNose = 200;
+
+// Track how many blinks have happened
+let blinkCount = 0;
+let eyeColorIsRed = true;
+function alvandDraw(){
+
+  background('#2C397D');
+
+  push();
+  stroke("white");
+  strokeWeight(2);
+  fill("black");
+  textAlign(RIGHT, BOTTOM);
+  textSize(40);
+  text("Alvand Mohammadpouryazdi - Creative Computing", canvasWidth - 10, canvasHeight - 10);
+  pop();
+
+
+  scale(2);
+
+
+  // --- ANIMATION VARIABLES ---
+  let blinkSpeed = frameCount % 50; // resets every 4 seconds
+  let eyeOpen;
+  if (blinkSpeed < 10) {
+    eyeOpen = map(blinkSpeed, 0, 10, 20, 2); // closing
+  } else if (blinkSpeed < 20) {
+    eyeOpen = map(blinkSpeed, 10, 20, 2, 20); // opening
+  } else {
+    eyeOpen = 20; // open
+  }
+
+  // Every time a blink cycle resets, toggle color
+  if (blinkSpeed === 0) {
+    blinkCount++;
+    eyeColorIsRed = blinkCount % 2 === 0; // alternate each blink
+  }
+
+  // Set eye color
+  let eyeColor = eyeColorIsRed ? color(174, 9, 9) : color(255);
+
+  // Helmet metallic shine
+  let helmetShade = 120 + sin(frameCount * 0.03) * 50;
+
+  // Sword floating animation
+  let swordY = 250 + sin(frameCount * 0.04) * 30;
+
+  // --- KNIGHT HEAD ---
+  fill(helmetShade);
+  arc(200, 150, 200, 200, PI, 0); // helmet
+
+  fill('black');
+  circle(200, 150, 200); // face under armour
+
+  fill('grey');
+  triangle(190, leftSideNose, 200, 90, 210, 200); // nose
+  triangle(210, 350, 210, 175, 300, 175); // armour cheek (left)
+  triangle(190, 350, 190, 175, 100, 175); // armour cheek (right)
+  triangle(rightEarTipX, 2, 210, 100, 300, 150); // right ear
+  triangle(leftEarTipX, 2, 190, 100, 100, 150); // left ear
+
+  // --- EYES (Blink + Color Toggle) ---
+  fill(eyeColor);
+  ellipse(150, 163, 20, eyeOpen);
+  ellipse(250, 163, 20, eyeOpen);
+
+  // --- SWORD (Full Design with Handle + Guard) ---
+  push();
+  translate(330, swordY);
+
+  // Blade
+  stroke(200);
+  strokeWeight(5);
+  line(0, -70, 0, 50);
+
+  // Guard
+  strokeWeight(8);
+  stroke('gold');
+  line(-20, 50, 20, 50);
+
+  // Handle
+  strokeWeight(6);
+  stroke('#924C21');
+  line(0, 50, 0, 80);
+
+  // Pommel
+  noStroke();
+  fill('gold');
+  circle(0, 85, 15);
+
+  // Tip
+  fill('silver');
+  ellipse(0, -70, 15, 8);
+  pop();
+
+  // --- Glow around knight ---
+  let glow = abs(sin(frameCount * 0.05)) * 100 + 50;
+  noFill();
+  stroke(255, 255, glow, 120);
+  strokeWeight(2);
+  circle(200, 150, 210 + sin(frameCount * 0.03) * 5);
 
 
 }
