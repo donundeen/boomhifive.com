@@ -682,6 +682,8 @@ let mouthW = 110;
 let earBase = 75;
 let earOffsetX = 140;
 bandHeight = 165;
+let notes = []; //music notes
+
 
 
 // ramp function
