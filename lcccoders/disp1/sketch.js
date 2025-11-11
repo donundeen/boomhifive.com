@@ -1,7 +1,7 @@
 let canvasWidth;
 let canvasHeight;
 
-let drawFunctionList = [marcoDraw];//,danielDraw,minaDraw, maxDraw, daniellaDraw];
+let drawFunctionList = [marcoDraw,danielDraw,minaDraw, maxDraw, daniellaDraw];
 let drawFunctionIndex = drawFunctionList.length - 1;
 let timingInterval = 20000;
 
@@ -17,7 +17,7 @@ function setup() {
 function draw() {
   //  background(220);
   drawFunction = drawFunctionList[drawFunctionIndex];
-  console.log(drawFunctionIndex);
+ // console.log(drawFunctionIndex);
   push();
   drawFunction();
   pop();
