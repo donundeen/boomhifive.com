@@ -769,7 +769,7 @@ function drawInitials() {
 }
 
 function athanDraw(){
-
+  colorMode(HSB);
 
   //time controls
   const slow = ramp(500); // slow  ramp
