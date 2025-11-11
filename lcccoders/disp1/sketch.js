@@ -1204,96 +1204,88 @@ function charanDraw(){
   scale(2);
 }
 
-function nathanDraw(){
-  background(250, 150, 10); // Orange color of background
 
-  showCaption("Nathan Goodman - Creative Computing");
 
+let arcDegree = 1;
+let rotate1 = 1;
+let colourW = "lightblue"; //mask colour
+let colourR = "#ff7518"; //letters and mouth colour
+let X = 200; //common X value between multiple functions
+
+function parisDraw(){
+
+  let offset = 275; //offset for mouth
+  let range = -10; //range for eye
+  let from = color(220, 220, 220); //original background colour as starting point
+  let to = color(200, 230, 275); //new blye background colour as ending point
+  let inter = lerpColor(from, to, sin(frameCount * 0.04)); //function to be able to go through two colours in a nice gradient
+  let from2 = color(0, 0, 0);
+  let to2 = color(255, 255, 255);
+  let inter2 = lerpColor(from2, to2, sin(frameCount * 0.05)); //function to be able to go through two colours in a nice gradient for eyes
+
+  background(inter);
+  showCaption("Paris Jeanty - Creative Computing");
   scale(2);
 
-  let eyeColour = paletteLerp(
-    [
-      ["white", 0],
-      ["red", 0.05],
-      ["green", 0.25],
-      ["blue", 1],
-    ],
-    (millis() / 10000) % 1
-  ); // This is changing the colour of the eyes between 4 differnt colours and mixing them together creating a rainbow kind of feel
-  let pupilSize = sin(frameCount * 0.15) * 60 + 35; //Size of both pupils 
-  let buttonSize = (frameCount * 0.5) % 20; // Controller grey button size
-  let faceColour = paletteLerp(
-    [
-      ["#00BCD4", 0],
-      ["#673AB7", 0.05],
-      ["#F34000", 0.25],
-      ["#86FF8B", 1],
-    ],
-    (millis() / 10000) % 1
-  ); // Changing ccolour of face
-  let eyeballSize = (frameCount * 2) % 450 ; // Size of outer eye shell
-  let mouthX = sin(frameCount * 0.4) * 30; // Moving the mouth left to right over and over again
-  fill(faceColour); // Color of face
-  stroke("#0E0E0D");
-  strokeWeight(1);
-  circle(0, 0, 250); // circle for my head.
-  ellipse(-55, -50, 50, eyeballSize); // Left Eyeball
-  fill(eyeColour); // Blue color for Left pupil
-  circle(-55, -50, pupilSize); // Left Pupil
-  fill(faceColour); // Color for the Right Eyeball
-  ellipse(60, -50, 50, eyeballSize); // Right Eyeball
-  fill(eyeColour); // Color for Right Pupil
-  circle(60, -50, pupilSize); // Right Pupil
-  fill("#F44336"); // Color for the Mouth
-  arc(mouthX, 60, 90, 60, 0, PI); // The mouth
-  fill(" #000000"); // Color For the Controller
-  rect(115, 60, 110, 40); // Middle piece of the controller
-  ellipse(130, 100, 30, 60); // Left handgrip of controller
-  ellipse(210, 100, 30, 60); // Right handgrip of controller
-  ellipse(170, 55, 112, 50); // Top part of controller
-  strokeWeight(8); // Size of the 4 buttons on right side of controller
-  stroke("#8BC34A"); // Colour of Button in top right
-  point(210, 50); // The green button in top right
-  stroke("#F44336"); //Colour of Button in bottom right
-  point(210, 60); // Red button in bottom right
-  stroke("#2196F3"); //Colour of button in bottom left
-  point(200, 60); // Blue button in bottom left
-  stroke("#FFEB3B"); // Colour od button in top left
-  point(200, 50); // Yellow button in top left
-  strokeWeight(1); // size of joysicks
-  fill(" #9E9E9E");
-  push();
-  let twoAxis = [sin(frameCount * 0.1), sin(frameCount * 1), 0]; //Using sin to rotate the joysticks to give them a real-life feeling and assigning a variable to it
-  translate(140, 70);//New functions that moves where the joysicks will rotate around
-  rotate(QUARTER_PI, twoAxis);//Code that's rotating the left joystick
-  circle(10, 20, 20); // Outer part of left joystick
-  circle(10, 20, 15); // Inner part of left joystick
-  pop();
-  push();
-  translate(120, 70);//New functions that moves where the joysicks will rotate around
-  rotate(QUARTER_PI, twoAxis);//Code that's rotating the right joystick
-  circle(70, 20, 20); // Outer part of right joystick
-  circle(70, 20, 15); // Inner part of right joystick
-  pop();
-  circle(125, 50, buttonSize); // Grey button in top left
-  circle(140, 50, buttonSize); // Grey button in top right
-  circle(125, 65, buttonSize); // Grey button in bottom left
-  circle(140, 65, buttonSize); // Grey button in bottom right
-  fill("#795548"); // Hair color
-  rect(-95, -130, 200, 50); // Middle piece of hair
-  rect(-85, -130, -45, 120); // Left piece of hair
-  rect(135, -130, -45, 120); // Right piece of hair
-  fill(250, 150, 10); // Color of background to fill in middle of G and D
-  strokeWeight(10); // Thickness of G
-  arc(-145, -193, 80, 40, 0, PI + HALF_PI); // The main three quarters of a circle part of G
-  line(-140, -195, -100, -195); // Line on the end of circle to make a G
-  point(-90, -175); // Point between initials
-  line(-70, -220, -70, -170); // Back Line part of D
-  arc(-65, -195, 105, 50, -HALF_PI, HALF_PI); // Semi-Circle Part of D
-  // G.D stands for Gamer Dude
-  push();
-  let axis = [sin(frameCount * 0.1), sin(frameCount * 1.25), 0];//Using sin to rotate the Nose and assigning a variable
-  rotate(QUARTER_PI, axis); // Code that is rotating the nose and is a new function
-  box(50, 60); //New Function
-  pop();
+
+  let eyeRadius = sin(frameCount * 0.05) * 75 + range; //changes eye radius in a constant loop
+  let pX = sin(frameCount * 0.05) * 160 - 185; //makes the P move from left to right
+  let pX1 = sin(frameCount * 0.05) * 160 - 195; //makes the P move from left to right
+  let pX2 = sin(frameCount * 0.05) * 160 - 190; //makes the P move from left to right
+  let jX = sin(frameCount * 0.05) * 150 + 203; //makes the J move from right to left
+  let jX1 = sin(frameCount * 0.05) * -150 - 243; //makes the J move from right to left
+  let mouthY = ((frameCount * 1 * 2) % 5) + offset; //makes the mouth vibrate
+
+  fill("#895129"); // colour of circle for my head
+  stroke("#895129");
+
+  circle(X, 200, 300); // circle for my head
+
+  fill(colourW); // colour of mask arc
+  stroke(colourW);
+
+  arc(X, 200, 300, 300, arcDegree * PI, 0); // arc for mask
+  fill(colourW); // colour for outer oval of glasses
+  stroke(colourW);
+
+  ellipse(X, 150, 375, 100); // oval for outer layer of my glasses
+
+  fill(inter2); // colour for inner oval of glasses
+  stroke(inter2);
+  ellipse(X, 150, 300, eyeRadius); // oval for inner layer of my glasses
+
+  fill(colourR); // colour for half circle for mouth
+  stroke(colourR);
+
+  arc(X, mouthY, 80, 80, 0, arcDegree * PI, PIE); // half circle for mouth
+
+  fill(colourR); // colour for rectangle and circle "P"
+  stroke(colourR);
+
+  rotate(rotate1 * QUARTER_PI + rotate1 * QUARTER_PI);
+
+  arc(45, pX2, 60, 85, arcDegree * PI, 0, OPEN); // circle for "P"
+
+  rect(15, pX1, 100, 23); // rectangle for "P"
+
+  fill(inter); //colour for circle for "P"
+  stroke(inter);
+
+  arc(45, pX, 40, 70, arcDegree * PI, 0, OPEN); // circle for "P"
+
+  fill(colourR); //colour for rectangle for "J"
+  stroke(colourR);
+
+  rect(15, jX1, 60, 19); // rectangle for "J"
+
+  rotate(arcDegree * PI + rotate1 * QUARTER_PI + rotate1 * QUARTER_PI);
+
+  arc(jX, 70, 80, 80, 0, arcDegree * PI, OPEN); // half circle for "J"
+
+  fill(inter); //colour for half circle for "J"
+  stroke(inter);
+
+  arc(jX, 70, 40, 40, 0, arcDegree * PI, OPEN); // half circle for "J"
+
+
 }
