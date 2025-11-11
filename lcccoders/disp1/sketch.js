@@ -1293,7 +1293,7 @@ function parisDraw(){
 function tyDraw(){
   background("rgb(1,76,1)"); //background
   showCaption("Ty Lashley Jean-Louis - Creative Computing");
-  scale(1);
+  scale(.75);
 
   let maskColor = (paletteLerp([
     ['rgb(224,106,20)', 0],
