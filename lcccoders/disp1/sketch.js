@@ -528,8 +528,6 @@ function marcoDraw() {
 
   background(skyR, skyG, skyB)
 
-  scale(2);
-
   push();
   stroke("white");
   strokeWeight(2);
@@ -539,6 +537,10 @@ function marcoDraw() {
   text("Marco DiFruscia - Creative Computing", canvasWidth - 10, canvasHeight - 10);
   pop(); 
 
+
+  scale(2);
+
+ 
   // Clouds moving across the sky
   cloudX += cloudSpeed
   if (cloudX > width + cloudSize * 2) cloudX = -cloudSize
