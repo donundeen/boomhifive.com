@@ -398,47 +398,65 @@ function minaDraw(){
  
 }
 
+
+
+let hueValue = 0; //the starting color is red
+
 function danielDraw(){
-  background(400); //color of the background
+  background(hueValue, 100, 100); //color of the background
   
   showCaption("Daniel Kim - Creative Computing");
 
   scale(2);
-  let bigEars = 275; //size of ears
+  let bigEars = 260; //size of ears
   let kmLines = 10; //size of initials
-  let eyeballSize = 70; //size of eyeballs
-  let heightEars = 270; //height level of ears
-  let rightearColor = "gold"; //color of right ear
-  let leftearColor = "gold"; //color of left ear
-  let faceColor = "orange"; //color of face
+  let eyeballSize = 50; //size of eyeballs
+  let heightEars = 260; //height level of ears
+  let rightearColor = "grey"; //color of right ear
+  let leftearColor = "grey"; //color of left ear
+  let faceColor = "darkgrey"; //color of face
   let mouthColor = "black"; //color of mouth
   let pupilColor = "black"; //color of pupils
   let noseColor = "black"; //color of nose
   let nosedroolColor = "lightblue"; //color of nose drool
+  let eyeballOutlineSize = sin(frameCount * 0.03) * 20 + 25; //size of eyeball outline
+  let pupilSize = sin(frameCount * 0.03) * 10 + 15; //pupils blinking
+  let mouthSize = sin(frameCount * 0.0315) * 25 + 30; //mouth opening and closing
+  let noseDroolSize = sin(frameCount * 0.025) * 50 + 60; //nosedrool hanging then going   back into nose
+  let earSize = sin(frameCount * 0.05) * 5 + 220; //ears twitching
+  let rampAmplitude = 200; 
+  
+  let rampOffset = 50; 
+  
+  let rampSpeed = 0.75; 
 
-  strokeWeight(10); //this is my new variable
+  strokeWeight(5); //thickness of lines
 
   fill(rightearColor); //color of the right ear
 
-  circle(570, heightEars, bigEars); //right ear
+  circle(570, heightEars, earSize); //right ear
 
   fill(leftearColor); //colour of the left ear
 
-  circle(210, heightEars, bigEars); //left ear
+  circle(210, heightEars, earSize); //left ear
 
   fill(faceColor); //color of the face
 
   circle(390, 320, 400); //face
 
-  ellipse(310, 290, eyeballSize, 50); //outline of left eye
+  ellipse(310, 290, eyeballSize, eyeballOutlineSize); //outline of left eye
 
-  ellipse(465, 290, eyeballSize, 50); //outline of right eye
+  ellipse(465, 290, eyeballSize, eyeballOutlineSize); //outline of right eye
 
   fill(pupilColor); //color of pupils
 
-  ellipse(310, 290, 40, 35); //pupil of left eye
+  ellipse(310, 290, 25, pupilSize); //pupil of left eye
 
-  ellipse(465, 290, 50, 10); //pupil of right eye
+  ellipse(465, 290, 25, pupilSize); //pupil of right eye
+
+  fill(nosedroolColor); //color nose drool
+
+  ellipse(390, 355, 30, noseDroolSize); //nose drool
 
   fill(noseColor); //nose
 
@@ -446,11 +464,7 @@ function danielDraw(){
 
   fill(mouthColor); //color of mouth
 
-  ellipse(387, 450, 70, 5); //mouth
-
-  fill(nosedroolColor); //color nose drool
-
-  ellipse(395, 385, 20, 70); //nose drool
+  ellipse(387, 450, 70, mouthSize); //mouth
 
   strokeWeight(5); //thickness of K, dot, and M
 
@@ -470,7 +484,7 @@ function danielDraw(){
 
   line(145, kmLines, 145, 75); //fourth straight line on the right of M
 
-
+  hueValue = (hueValue + 1) % 360; //color changing all the way to 360 for all colors of rainbow
 
 }
 
@@ -1051,3 +1065,4 @@ function charanDraw(){
 
   scale(2);
 }
+
