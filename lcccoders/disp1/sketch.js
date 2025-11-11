@@ -15,12 +15,7 @@ function setup() {
   setInterval(nextProject, timingInterval);
 }
 function draw() {
-//  background(220);
-}
-
-function nextProject(){
-  console.log("nextProject", drawFunctionList.length);
-  drawFunctionIndex = (drawFunctionIndex + 1) % drawFunctionList.length;
+  //  background(220);
   drawFunction = drawFunctionList[drawFunctionIndex];
   console.log(drawFunctionIndex);
   push();
@@ -28,18 +23,16 @@ function nextProject(){
   pop();
 }
 
+function nextProject(){
+  console.log("nextProject", drawFunctionList.length);
+  drawFunctionIndex = (drawFunctionIndex + 1) % drawFunctionList.length;
+}
+
 
 function maxDraw() {
   background("rgb(190,0,33)");
 
-  push();
-  stroke("white");
-  strokeWeight(2);
-  fill("black");
-  textAlign(RIGHT, BOTTOM);
-  textSize(40);
-  text("Max Vanier - Creative Computing", canvasWidth - 10, canvasHeight - 10);
-  pop();
+
   scale(2);
   //base face
  
@@ -237,6 +230,15 @@ function maxDraw() {
   fill("rgb(190,0,33)");
   circle(100, 250, 80);
   circle(180, 250, 120);
+
+  push();
+  stroke("white");
+  strokeWeight(2);
+  fill("black");
+  textAlign(RIGHT, BOTTOM);
+  textSize(40);
+  text("Max Vanier - Creative Computing", canvasWidth - 10, canvasHeight - 10);
+  pop();  
 }
 
 
@@ -244,14 +246,7 @@ function maxDraw() {
 
 function daniellaDraw() {
   background(200, 50, 90); //
-  push();
-  stroke("white");
-  strokeWeight(2);
-  fill("black");
-  textAlign(RIGHT, BOTTOM);
-  textSize(40);
-  text("Daniela Malka - Creative Computing", canvasWidth - 10, canvasHeight - 10);
-  pop();
+
 
   scale(2);
   fill(57, 255, 20);
@@ -293,18 +288,21 @@ function daniellaDraw() {
   rotate(PI * 0.2); // For the letter M
   rect(0, 0, 9, 40); // For the letter M
   pop();
-}
 
-function minaDraw(){
-  background("white"); //
   push();
   stroke("white");
   strokeWeight(2);
   fill("black");
   textAlign(RIGHT, BOTTOM);
   textSize(40);
-  text("Mina Wei - Creative Computing", canvasWidth - 10, canvasHeight - 10);
+  text("Daniela Malka - Creative Computing", canvasWidth - 10, canvasHeight - 10);
   pop();
+
+}
+
+function minaDraw(){
+  background("white"); //
+
   stroke("black");
   strokeWeight(3);
   fill("#F14E28");
@@ -395,11 +393,6 @@ function minaDraw(){
   line(600, 480, 580, 520); // bangs outline
 
   line(600, 480, 620, 520); // bangs outline
-}
-
-function danielDraw(){
-  background(400); //color of the background
-  
 
   push();
   stroke("white");
@@ -407,8 +400,15 @@ function danielDraw(){
   fill("black");
   textAlign(RIGHT, BOTTOM);
   textSize(40);
-  text("Daniel Kim - Creative Computing", canvasWidth - 10, canvasHeight - 10);
+  text("Mina Wei - Creative Computing", canvasWidth - 10, canvasHeight - 10);
   pop();  
+}
+
+function danielDraw(){
+  background(400); //color of the background
+  
+
+
 
   scale(2);
   let bigEars = 275; //size of ears
@@ -477,6 +477,16 @@ function danielDraw(){
 
   line(145, kmLines, 145, 75); //fourth straight line on the right of M
 
+
+  push();
+  stroke("white");
+  strokeWeight(2);
+  fill("black");
+  textAlign(RIGHT, BOTTOM);
+  textSize(40);
+  text("Daniel Kim - Creative Computing", canvasWidth - 10, canvasHeight - 10);
+  pop();  
+
 }
 
 
@@ -518,15 +528,6 @@ function marcoDraw() {
 
   background(skyR, skyG, skyB)
 
-
-  push();
-  stroke("white");
-  strokeWeight(2);
-  fill("black");
-  textAlign(RIGHT, BOTTOM);
-  textSize(40);
-  text("Marco DiFruscia - Creative Computing", canvasWidth - 10, canvasHeight - 10);
-  pop();
   scale(2);
 
   // Clouds moving across the sky
@@ -643,4 +644,13 @@ function marcoDraw() {
 
   // Sun movement
   angle += frequency
+
+  push();
+  stroke("white");
+  strokeWeight(2);
+  fill("black");
+  textAlign(RIGHT, BOTTOM);
+  textSize(40);
+  text("Marco DiFruscia - Creative Computing", canvasWidth - 10, canvasHeight - 10);
+  pop();  
 }
