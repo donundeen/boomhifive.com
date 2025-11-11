@@ -407,7 +407,7 @@ function danielDraw(){
   
   showCaption("Daniel Kim - Creative Computing");
 
-  scale(2);
+  scale(1.25);
   let bigEars = 260; //size of ears
   let kmLines = 10; //size of initials
   let eyeballSize = 50; //size of eyeballs
