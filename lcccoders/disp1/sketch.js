@@ -479,15 +479,42 @@ function danielDraw(){
 
 }
 
-function marcoDraw() {
 
-  let skyColor = [135, 206, 235];
-  let groundColor = [34, 139, 34];
-  let shirtColor = [150, 75, 0];
-  let pantsColor = [0, 0, 200];
-  let skinColor = [210, 160, 100];
-  
-  background(skyColor[0], skyColor[1], skyColor[2]); // Sky
+
+let groundColor = [0, 128, 0] // made every variable (groundColor) so that the color changing is syncronised
+let shirtColor = [0, 128, 0]
+let pantsColor = [0, 128, 0]
+let skinColor = [0, 128, 0]
+
+// Sun Variables
+let angle = 0
+let amplitude = 150
+let frequency = 0.01
+let sunRadius = 50
+
+// Clouds
+let cloudX = 0
+let cloudSpeed = 1.5
+let cloudSize = 60
+
+// Lasso
+let lassoAngle = 0
+let lassoSpeed = 0.07
+function marcoDraw() {
+ 
+  // Sun position
+  let sunY = height / 2 + sin(angle) * amplitude
+
+  // t determines how orange the sky is
+  let t = map(sunY, height/2 - amplitude, height/2 + amplitude, 0, 1)
+  t = constrain(t, 0, 1)
+
+  // Interpolate sky color
+  let skyR = lerp(skyColor[0], 255, t)
+  let skyG = lerp(skyColor[1], 165, t)
+  let skyB = lerp(skyColor[2], 0, t)
+
+  background(skyR, skyG, skyB)
 
 
   push();
@@ -500,101 +527,118 @@ function marcoDraw() {
   pop();
   scale(2);
 
+  // Clouds moving across the sky
+  cloudX += cloudSpeed
+  if (cloudX > width + cloudSize * 2) cloudX = -cloudSize
 
-  noStroke();
+  noStroke()
+  fill(255)
+  ellipse(cloudX, 70, cloudSize, cloudSize * 0.8)
+  ellipse(cloudX + 40, 70, cloudSize, cloudSize * 0.8)
+  ellipse(cloudX + 20, 55, cloudSize, cloudSize * 0.8)
+
+  // Sun
+  fill(255, 255, 0)
+  circle(100, sunY, sunRadius * 2)
 
   // Ground
-  fill(groundColor[0], groundColor[1], groundColor[2]);
-  rect(0,440,500,60);
+  fill(groundColor[0] % 300, groundColor[1] % 200, groundColor[2] % 100)
+  rect(0, 440, width, 60)
+  groundColor[0]++
+  groundColor[1]++
+  groundColor[2]++
 
   // Legs
-  fill(pantsColor[0], pantsColor[1], pantsColor[2]); // Jeans
-  rect(200, 300, 40, 120, 5); // left leg (front)
-  rect(260, 300, 40, 120, 5); // right leg (back)
+  fill(groundColor[0] % 300, groundColor[1] % 200, groundColor[2] % 100)
+  rect(200, 300, 40, 120, 5)
+  rect(260, 300, 40, 120, 5)
 
   // Boots
-  fill(90, 50, 20);
-  rect(195,420,45,20,3);
-  rect(260,420,45,20,3);
+  fill(90, 50, 20)
+  rect(195, 420, 45, 20, 3)
+  rect(260, 420, 45, 20, 3)
 
   // Body
-  fill(shirtColor[0], shirtColor[1], shirtColor[2]); // brown shirt
-  rect(200,180,100,140,10);
+  fill(groundColor[0] % 300, groundColor[1] % 200, groundColor[2] % 100)
+  rect(200, 180, 100, 140, 10)
 
-  // Arms
-  fill(shirtColor[0], shirtColor[1], shirtColor[2]);
-  rect(160,200,40,90,10); // left arm
-  rect(300,200,40,90,10); // right arm
+  // Arms 
+  fill(groundColor[0] % 300, groundColor[1] % 200, groundColor[2] % 100)
+  rect(160, 200, 38, 88, 10)
+  rect(302, 200, 38, 88, 10)
 
   // Hands
-  fill(skinColor[0],skinColor[1],skinColor[2]);
-  circle(180,290,25);
-  circle(320,290,25);
+  fill(groundColor[0] % 300, groundColor[1] % 200, groundColor[2] % 100)
+  circle(180, 290, 26)
+  circle(320, 290, 24)
 
   // Belt
-  fill(0);
-  rect(200,310,100,12);
-  fill(255,215,0);
-  rect(245,310,20,12); // buckle
+  fill(0)
+  rect(200, 310, 100, 12)
+  fill(255, 215, 0)
+  rect(245, 310, 20, 12)
 
   // Bandana
-  fill(200,0,0);
-  triangle(200,180,300,180,250,230);
+  fill(200, 0, 0)
+  triangle(200, 180, 300, 180, 250, 230)
 
   // Head
-  fill(skinColor[0],skinColor[1],skinColor[2]);
-  ellipse(250,120,120,130);
+  fill(groundColor[0] % 300, groundColor[1] % 200, groundColor[2] % 100)
+  ellipse(250, 120, 120, 130)
 
   // Hat
-  fill(110,70,20);
-  rect(215,45,70,33,6);
-  ellipse(250,85,200,40);
+  fill(110, 70, 20)
+  rect(215, 45, 70, 33, 6)
+  ellipse(250, 85, 200, 40)
 
   // Face
-  fill(255);
-  ellipse(230,120,20,18); // left eye
-  ellipse(270,120,20,18); // right eye
-  fill(0);
-  ellipse(230,120,8,8);
-  ellipse(270,120,8,8);
+  fill(255)
+  ellipse(230, 120, 20, 18)
+  ellipse(270, 120, 20, 18)
+  fill(0)
+  ellipse(230, 120, 8, 8)
+  ellipse(270, 120, 8, 8)
 
   // Eyebrows
-  stroke(60,30,10);
-  strokeWeight(4);
-  line(220,105,240,110);
-  line(260,110,280,105);
-  noStroke();
+  stroke(60, 30, 10)
+  strokeWeight(4)
+  line(220, 105, 240, 110)
+  line(260, 110, 280, 105)
+  noStroke()
 
   // Mouth
-  stroke(0);
-  strokeWeight(3);
-  line(230,150,270,150);
-  noStroke();
+  stroke(0)
+  strokeWeight(3)
+  line(230, 150, 270, 150)
+  noStroke()
 
   // Badge
-  fill(255,215,0);
-  circle(280,225,16);
+  fill(255, 215, 0)
+  circle(280, 225, 16)
 
   // Lasso
-  noFill();
-  stroke(180,120,40);
-  strokeWeight(4);
-  ellipse(350,200,80,80);
-  line(350,240,320,290);
+  noFill()
+  stroke(180, 120, 40)
+  strokeWeight(4)
+  let loopX = 350 + cos(lassoAngle) * 50
+  let loopY = 240 + sin(lassoAngle) * 50
+  line(350, 240, 320, 290)
+  noFill()
+  circle(loopX, loopY, 100)
+  lassoAngle += lassoSpeed
 
-  // Initials "C.B" for Cow Boy
-  stroke(0);
-  strokeWeight(3);
+  // Initials "C.B"
+  stroke(0)
+  strokeWeight(5)
+  line(20, 20, 50, 20)
+  line(20, 20, 20, 60)
+  line(20, 60, 50, 60)
+  line(70, 20, 70, 60)
+  line(70, 20, 90, 30)
+  line(90, 30, 70, 40)
+  line(70, 40, 90, 50)
+  line(90, 50, 70, 60)
 
-  // Letter C
-  line(20, 20, 50, 20); // top
-  line(20, 20, 20, 60); // left
-  line(20, 60, 50, 60); // bottom
-
-  // Letter B
-  line(70, 20, 70, 60); // main spine
-  line(70, 20, 90, 30); // top downwards diagonal
-  line(90, 30, 70, 40); // top upwards diagonal
-  line(70, 40, 90, 50); // bottom downwards diagonal
-  line(90, 50, 70, 60); // bottom upwards diagonal
+  // Sun movement
+  angle += frequency
 }
