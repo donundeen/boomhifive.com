@@ -32,8 +32,8 @@
   [
     "matériel",
     "materials / equipment",
-    "Le matériel est inclus dans le tarif.",
-    "Materials are included in the fee."
+    "Si vous l'apportez, nous vous le rembourserons.",
+    "If you bring it, we will refund it to you."
   ],
   [
     "capteur",
@@ -56,8 +56,8 @@
   [
     "tarif",
     "price / fee",
-    "Quel est le tarif pour les résidents ?",
-    "What is the fee for residents?"
+    "Si vous étiez résident l'année dernière, le tarif vous serait réduit.",
+    "If you were a resident last year, the fee would be reduced for you."
   ],
   [
     "réduction / rabais",
@@ -86,8 +86,8 @@
   [
     "places disponibles",
     "available spots",
-    "Reste‑t‑il des places disponibles ?",
-    "Are there spots available?"
+    "Si vous vous inscrivez maintenant, il vous en reste encore plusieurs.",
+    "If you register now, there are still several spots left for you."
   ],
   [
     "liste d'attente",
@@ -98,8 +98,8 @@
   [
     "remboursement",
     "refund",
-    "Le remboursement est de 80 % jusqu'à 72 h avant.",
-    "The refund is 80% up to 72 hours before."
+    "Si vous annulez à temps, nous vous le rembourserons intégralement.",
+    "If you cancel on time, we will refund it to you in full."
   ],
   [
     "annulation",
@@ -110,8 +110,8 @@
   [
     "délai",
     "deadline / time limit",
-    "Quel est le délai pour annuler ?",
-    "What is the deadline to cancel?"
+    "Si vous respectez le délai, nous vous rembourserons sans problème.",
+    "If you respect the deadline, we will refund you without any problem."
   ],
   [
     "accessibilité",
@@ -122,8 +122,8 @@
   [
     "stationnement",
     "parking",
-    "Le stationnement est très limité.",
-    "Parking is very limited."
+    "Si vous venez en voiture, nous vous indiquerons où le trouver.",
+    "If you come by car, we will tell you where to find it."
   ],
   [
     "transfert de place",
@@ -140,20 +140,20 @@
   [
     "bâtiment",
     "building (venue)",
-    "Le bâtiment se trouve rue Bélanger.",
-    "The building is on Bélanger Street."
+    "Si vous le cherchez, vous le trouverez facilement rue Bélanger.",
+    "If you're looking for it, you'll find it easily on Bélanger Street."
   ],
   [
     "se renseigner sur",
     "to find out about / inquire about",
-    "Je voudrais m'y renseigner.",
-    "I would like to find out about it."
+    "Je voudrais m'y renseigner et vous en parler ensuite.",
+    "I would like to find out about it and then tell you about it."
   ],
   [
     "s'inscrire à",
     "to register for",
-    "Comment s'y inscrire ?",
-    "How do I register for it?"
+    "Si vous vous y inscrivez maintenant, nous vous enverrons la confirmation.",
+    "If you register for it now, we will send you the confirmation."
   ],
   [
     "avoir lieu",
@@ -170,14 +170,14 @@
   [
     "participer à",
     "to take part in",
-    "Je ne peux pas y participer le premier jour.",
-    "I can't take part in it on the first day."
+    "Si vous y participez, nous vous donnerons tous les documents nécessaires.",
+    "If you take part in it, we will give you all the necessary documents."
   ],
   [
     "assister à",
     "to attend",
-    "Puis‑je y assister seulement le dimanche ?",
-    "May I attend it only on Sunday?"
+    "Si vous y assistez dimanche, nous vous enverrons un résumé du samedi.",
+    "If you attend it on Sunday, we will send you a summary of Saturday."
   ],
   [
     "venir (les deux jours / un seul jour)",
@@ -188,14 +188,14 @@
   [
     "payer en comptant / en espèces",
     "to pay in cash",
-    "Puis‑je payer en comptant sur place ?",
-    "Can I pay in cash on site?"
+    "Si vous payez en comptant, nous vous donnerons un reçu immédiatement.",
+    "If you pay in cash, we will give you a receipt immediately."
   ],
   [
     "payer par carte / Interac",
     "to pay by card / Interac",
-    "Acceptez‑vous le paiement par carte ?",
-    "Do you accept card payment?"
+    "Si vous payez par carte, nous vous enverrons le reçu par email.",
+    "If you pay by card, we will send you the receipt by email."
   ],
   [
     "annuler",
@@ -212,32 +212,32 @@
   [
     "transférer (une place)",
     "to transfer (a spot)",
-    "Puis‑je la lui transférer ?",
-    "Can I transfer it to them?"
+    "Si vous la transférez à un ami, nous leur enverrons les informations.",
+    "If you transfer it to a friend, we will send them the information."
   ],
   [
     "apporter",
     "to bring (an object toward the venue)",
-    "Dois‑je l'apporter ?",
-    "Do I need to bring it?"
+    "Si vous l'apportez, nous vous montrerons comment l'utiliser.",
+    "If you bring it, we will show you how to use it."
   ],
   [
     "emporter",
     "to take away with you",
-    "On peut l'emporter à la maison.",
-    "You can take it home."
+    "Nous vous les donnons pour que vous puissiez les emporter.",
+    "We give them to you so you can take them away."
   ],
   [
     "amener",
     "to bring (a person/animal)",
-    "Puis‑je l'amener avec moi ?",
-    "May I bring them with me?"
+    "Si vous l'amenez, nous leur montrerons toutes les installations.",
+    "If you bring them, we will show them all the facilities."
   ],
   [
     "emmener",
     "to take (a person along)",
-    "Je dois l'emmener dimanche.",
-    "I have to take them along on Sunday."
+    "Je dois les emmener dimanche, donc je leur ai déjà parlé de l'atelier.",
+    "I have to take them along on Sunday, so I already told them about the workshop."
   ],
   [
     "se rendre à",
@@ -248,8 +248,8 @@
   [
     "fournir",
     "to provide / supply",
-    "Le fournissez‑vous ?",
-    "Do you provide it?"
+    "Si vous en avez besoin, nous vous le fournirons gratuitement.",
+    "If you need it, we will provide it to you for free."
   ],
   [
     "prévoir",
@@ -260,8 +260,8 @@
   [
     "être complet / complète",
     "to be full (no more spots)",
-    "L'atelier de samedi est‑il complet ?",
-    "Is Saturday's workshop full?"
+    "Si l'atelier est complet, nous vous mettrons sur la liste d'attente.",
+    "If the workshop is full, we will put you on the waitlist."
   ],
   [
     "À quelle heure a lieu … ?",
@@ -362,20 +362,20 @@
   [
     "réunion",
     "meeting",
-    "La réunion commence à 14h.",
-    "The meeting starts at 2 PM."
+    "Si vous y assistez, nous vous donnerons tous les détails.",
+    "If you attend it, we will give you all the details."
   ],
   [
     "cours",
     "class (regular teaching)",
-    "Le cours de français a lieu le mardi.",
-    "The French class takes place on Tuesday."
+    "Si vous les suivez régulièrement, vous progresserez rapidement.",
+    "If you follow them regularly, you will progress quickly."
   ],
   [
     "télé",
     "television",
-    "Je regarde la télé le soir.",
-    "I watch TV in the evening."
+    "Si je la regarde ce soir, je vous en parlerai demain.",
+    "If I watch it tonight, I will tell you about it tomorrow."
   ],
   [
     "atelier",
@@ -398,20 +398,20 @@
   [
     "avoir lieu",
     "to take place (events)",
-    "L'atelier a lieu les 25 et 26.",
-    "The workshop takes place on the 25th and 26th."
+    "Si l'atelier a lieu comme prévu, nous vous y verrons.",
+    "If the workshop takes place as planned, we will see you there."
   ],
   [
     "se dérouler",
     "to run / take place (over time)",
-    "Il se déroule sur deux jours.",
-    "It runs over two days."
+    "Si l'atelier se déroule bien, nous le répéterons l'année prochaine.",
+    "If the workshop goes well, we will repeat it next year."
   ],
   [
     "être",
     "to be",
-    "L'atelier est intéressant.",
-    "The workshop is interesting."
+    "Si vous y étiez la semaine dernière, vous savez qu'il est très intéressant.",
+    "If you were there last week, you know it's very interesting."
   ],
   [
     "jusqu'à",
@@ -422,8 +422,8 @@
   [
     "avant",
     "before (earlier than)",
-    "Il faut s'inscrire avant le 20 mars.",
-    "You must register before March 20th."
+    "Si vous vous inscrivez avant le 20 mars, vous bénéficierez d'une réduction.",
+    "If you register before March 20th, you will benefit from a discount."
   ],
   [
     "depuis",
@@ -440,26 +440,26 @@
   [
     "aller à",
     "to go to",
-    "Je vais à l'atelier demain.",
-    "I'm going to the workshop tomorrow."
+    "Si j'y vais demain, je vous le dirai.",
+    "If I go there tomorrow, I will tell you."
   ],
   [
     "participer à",
     "to participate in",
-    "Je voudrais y participer.",
-    "I would like to participate in it."
+    "Si vous y participez, nous vous donnerons un certificat à la fin.",
+    "If you participate in it, we will give you a certificate at the end."
   ],
   [
     "uniquement",
     "only (slightly more formal)",
-    "Est-ce possible de venir uniquement le dimanche ?",
-    "Is it possible to come only on Sunday?"
+    "Si vous venez uniquement le dimanche, nous vous expliquerons ce qui s'est passé le samedi.",
+    "If you come only on Sunday, we will explain to you what happened on Saturday."
   ],
   [
     "seulement",
     "only",
-    "Je peux venir seulement le samedi.",
-    "I can come only on Saturday."
+    "Si je viens seulement le samedi, pouvez-vous me donner les documents du dimanche ?",
+    "If I come only on Saturday, can you give me the Sunday documents?"
   ],
   [
     "près de",
@@ -476,116 +476,116 @@
   [
     "politique d'annulation",
     "cancellation policy",
-    "Avez-vous une politique d'annulation de l'atelier ?",
-    "Do you have a cancellation policy for the workshop?"
+    "Si vous l'annulez, nous vous appliquerons notre politique d'annulation.",
+    "If you cancel it, we will apply our cancellation policy to you."
   ],
   [
     "accès à la salle",
     "access to the room",
-    "L'accès à la salle est gratuit.",
-    "Access to the room is free."
+    "Si vous y avez accès, nous vous donnerons le code d'entrée.",
+    "If you have access to it, we will give you the entry code."
   ],
   [
     "transférer",
     "to transfer (give your spot to someone)",
-    "Puis-je la lui transférer si j'annule ?",
-    "Can I transfer it to them if I cancel?"
+    "Si je la transfère à mes amis, nous leur enverrons toutes les informations.",
+    "If I transfer it to my friends, we will send them all the information."
   ],
   [
     "reporter",
     "to postpone",
-    "L'atelier est reporté à la semaine prochaine.",
-    "The workshop is postponed to next week."
+    "Si nous le reportons, nous vous en informerons immédiatement.",
+    "If we postpone it, we will inform you immediately."
   ],
   [
     "annuler",
     "to cancel",
-    "Je dois l'annuler.",
-    "I have to cancel it."
+    "Si je l'annule, je vous le ferai savoir dès que possible.",
+    "If I cancel it, I will let you know as soon as possible."
   ],
   [
     "accessible à",
     "accessible to (preferred)",
-    "L'atelier est-il accessible aux personnes à mobilité réduite ?",
-    "Is the workshop accessible to people with reduced mobility?"
+    "Si l'atelier leur est accessible, nous leur fournirons l'équipement nécessaire.",
+    "If the workshop is accessible to them, we will provide them with the necessary equipment."
   ],
   [
     "accessible pour",
     "accessible for",
-    "Le bâtiment est accessible pour tous.",
-    "The building is accessible for everyone."
+    "Si le bâtiment vous est accessible, nous vous montrerons les meilleures places.",
+    "If the building is accessible for you, we will show you the best spots."
   ],
   [
     "en ligne",
     "online",
-    "Puis-je payer en ligne ou sur place ?",
-    "Can I pay online or on site?"
+    "Si vous payez en ligne, nous vous enverrons le reçu immédiatement.",
+    "If you pay online, we will send you the receipt immediately."
   ],
   [
     "sur place",
     "on site",
-    "Le paiement se fait sur place.",
-    "Payment is made on site."
+    "Si vous payez sur place, nous vous donnerons le reçu tout de suite.",
+    "If you pay on site, we will give you the receipt right away."
   ],
   [
     "en personne",
     "in person",
-    "Je préfère m'inscrire en personne.",
-    "I prefer to register in person."
+    "Si vous vous inscrivez en personne, nous vous expliquerons tout sur place.",
+    "If you register in person, we will explain everything to you on site."
   ],
   [
     "il reste",
     "there are left (impersonal)",
-    "Il reste des places disponibles ?",
-    "Are there spots left?"
+    "S'il en reste, nous vous en réserverons une immédiatement.",
+    "If there are any left, we will reserve one for you immediately."
   ],
   [
     "rester",
     "to stay/remain",
-    "Je reste à la maison ce soir.",
-    "I'm staying home tonight."
+    "Si je reste à la maison, je vous appellerai pour vous expliquer.",
+    "If I stay home, I will call you to explain."
   ],
   [
     "quel est le tarif",
     "what is the price",
-    "Quel est le tarif pour les étudiants ?",
-    "What is the price for students?"
+    "Si vous êtes étudiant, nous vous appliquerons le tarif réduit.",
+    "If you are a student, we will apply the reduced rate to you."
   ],
   [
     "jour",
     "day",
-    "Le jour de l'atelier est arrivé.",
-    "The day of the workshop has arrived."
+    "Si le jour de l'atelier arrive et que vous ne pouvez pas venir, appelez-nous.",
+    "If the day of the workshop arrives and you can't come, call us."
   ],
   [
     "journée",
     "day (emphasizing duration)",
-    "La journée commence à 9 h 30.",
-    "The day begins at 9:30 AM."
+    "Si la journée se passe bien, nous la répéterons le mois prochain.",
+    "If the day goes well, we will repeat it next month."
   ],
   [
     "matin",
     "morning",
-    "La séance du matin a lieu à 9 h 30.",
-    "The morning session takes place at 9:30 AM."
+    "Si vous venez le matin, nous vous offrirons le café et les croissants.",
+    "If you come in the morning, we will offer you coffee and croissants."
   ],
   [
     "matinée",
     "morning (emphasizing duration)",
-    "La matinée est consacrée à la théorie.",
-    "The morning is devoted to theory."
+    "Si la matinée vous intéresse, nous vous enverrons le programme détaillé.",
+    "If the morning interests you, we will send you the detailed program."
   ],
   [
     "soir",
     "evening",
-    "Le soir, on fait un récapitulatif.",
-    "In the evening, we do a recap."
+    "Si vous venez le soir, nous vous donnerons un résumé de la journée.",
+    "If you come in the evening, we will give you a summary of the day."
   ],
   [
     "soirée",
     "evening (emphasizing duration)",
-    "La soirée se termine à 16 h.",
-    "The evening ends at 4 PM."
+    "Si la soirée se termine tôt, nous vous proposerons une activité supplémentaire.",
+    "If the evening ends early, we will offer you an additional activity."
   ],
   [
     "ticket",
@@ -608,26 +608,26 @@
   [
     "code promo",
     "promo code (entered online)",
-    "Puis-je appliquer le code promo en ligne ?",
-    "Can I apply the promo code online?"
+    "Si vous l'appliquez en ligne, nous vous donnerons une réduction supplémentaire.",
+    "If you apply it online, we will give you an additional discount."
   ],
   [
     "coupon",
     "coupon (paper/print)",
-    "J'ai un coupon de réduction.",
-    "I have a discount coupon."
+    "Si vous l'apportez, nous vous l'appliquerons immédiatement.",
+    "If you bring it, we will apply it to you immediately."
   ],
   [
     "horaire",
     "schedule for events/business hours",
-    "Quel est l'horaire de l'atelier ?",
-    "What is the workshop schedule?"
+    "Si l'horaire vous convient, nous vous enverrons une confirmation.",
+    "If the schedule suits you, we will send you a confirmation."
   ],
   [
     "emploi du temps",
     "personal timetable",
-    "Mon emploi du temps est très chargé.",
-    "My schedule is very busy."
+    "Si mon emploi du temps me le permet, je viendrai aux deux séances.",
+    "If my schedule allows it, I will come to both sessions."
   ],
   [
     "randonnée",
@@ -1022,14 +1022,14 @@
   [
     "pluie / pleuvoir",
     "rain (noun) / to rain (verb)",
-    "S'il pleut, l'événement sera reporté.",
-    "If it rains, the event will be postponed."
+    "S'il avait plu hier, nous l'aurions reporté, mais il a fait beau.",
+    "If it had rained yesterday, we would have postponed it, but the weather was nice."
   ],
   [
     "se reposer",
     "to rest",
-    "Le dimanche, j'aime bien me reposer après une longue semaine.",
-    "On Sunday, I like to rest after a long week."
+    "Si vous vous reposiez davantage, vous vous sentiriez mieux.",
+    "If you rested more, you would feel better."
   ],
   [
     "se lever tôt",
@@ -1040,21 +1040,21 @@
   [
     "faire une randonnée",
     "to go hiking",
-    "On va la faire au Mont‑Royal dimanche.",
-    "We're going to do it on Mount Royal on Sunday."
+    "Si nous la faisons dimanche, nous vous enverrons les photos.",
+    "If we do it on Sunday, we will send you the photos."
   ],
   [
     "avoir envie de",
     "to feel like / want to",
-    "Je n'ai pas envie de sortir quand il fait froid.",
-    "I don't feel like going out when it's cold."
+    "Si vous en aviez envie, nous pourrions y aller ensemble.",
+    "If you felt like it, we could go together."
   ],
 
   [
     "il va faire froid",
     "it's going to be cold",
-    "Il va faire froid à la fin du mois d'octobre.",
-    "It's going to be cold at the end of October."
+    "S'il va faire froid, nous vous prêterons des couvertures.",
+    "If it's going to be cold, we will lend you blankets."
   ],
   [
     "ça vaut la peine",
@@ -1065,8 +1065,8 @@
   [
     "planter un arbre",
     "to plant a tree",
-    "Chaque kilomètre parcouru permet d'en planter un.",
-    "Every kilometer walked allows us to plant one."
+    "Si vous en plantez un, nous vous montrerons comment en prendre soin.",
+    "If you plant one, we will show you how to take care of it."
   ],
   [
     "une bonne cause",
@@ -1077,8 +1077,8 @@
   [
     "convaincre quelqu'un de",
     "to convince someone to",
-    "J'essaie de la convaincre de venir avec moi.",
-    "I'm trying to convince her to come with me."
+    "Si je les convaincs de venir, nous serons un groupe de dix.",
+    "If I convince them to come, we will be a group of ten."
   ],
   [
     "en plein air",
@@ -1107,8 +1107,8 @@
   [
     "même si",
     "even if",
-    "Même s'il fait froid, on peut bien s'habiller.",
-    "Even if it's cold, we can dress warmly."
+    "Même si vous les aviez oubliés, nous vous les prêterions.",
+    "Even if you had forgotten them, we would lend them to you."
   ],
   [
     "en plus",
@@ -1131,8 +1131,8 @@
   [
     "être motivé(e)",
     "to be motivated",
-    "Je suis motivé pour faire quelque chose de bien ce week‑end.",
-    "I'm motivated to do something good this weekend."
+    "Si vous étiez plus motivés, vous pourriez participer à tous les ateliers.",
+    "If you were more motivated, you could participate in all the workshops."
   ],
   [
     "ça te dit de",
@@ -1185,8 +1185,8 @@
   [
     "soutenir",
     "to support",
-    "C'est important de soutenir des initiatives écologiques.",
-    "It's important to support ecological initiatives."
+    "Si vous les soutenez, nous vous enverrons un rapport détaillé.",
+    "If you support them, we will send you a detailed report."
   ],
   [
     "faire un effort",
@@ -1569,8 +1569,8 @@
   [
     "être intéressé par",
     "to be interested in",
-    "Je suis intéressé par l'atelier de peinture.",
-    "I'm interested in the painting workshop."
+    "Si vous y êtes intéressés, nous vous donnerons toutes les informations.",
+    "If you're interested in it, we will give you all the information."
   ],
   [
     "participer à",
@@ -1587,20 +1587,20 @@
   [
     "amener",
     "to bring (person)",
-    "Est-ce que je peux amener mon propre matériel ?",
-    "Can I bring my own material?"
+    "Si vous l'amenez, nous lui montrerons comment utiliser l'équipement.",
+    "If you bring them, we will show them how to use the equipment."
   ],
   [
     "apporter",
     "to bring (object)",
-    "Faut-il apporter quelque chose de spécial ?",
-    "Do I need to bring something special?"
+    "Si vous les apportez, nous vous expliquerons comment les utiliser.",
+    "If you bring them, we will explain to you how to use them."
   ],
   [
     "je pense que",
     "I think that",
-    "Je pense que cet atelier serait parfait pour moi.",
-    "I think this workshop would be perfect for me."
+    "Je pense que si vous y participez, vous l'apprécierez beaucoup.",
+    "I think that if you participate in it, you will enjoy it a lot."
   ],
   [
     "je crois que",
@@ -1611,8 +1611,8 @@
   [
     "il y a",
     "there is / there are",
-    "Il y a combien de participants en tout ?",
-    "How many participants are there in total?"
+    "S'il y en a trop, nous ouvrirons une deuxième session.",
+    "If there are too many, we will open a second session."
   ],
   [
     "ce n'est pas grave",
@@ -1642,14 +1642,14 @@
   ["pas de souci","no problem","Pas de souci, je vous inscris tout de suite.","No problem, I’ll register you right away."],
   ["être compréhensif","to be understanding","Le personnel est très compréhensif en cas d’urgence.","The staff is very understanding in case of emergency."],
   ["une date limite","a deadline","La date limite d’inscription est le 3 novembre.","The registration deadline is November 3rd."],
-  ["accueillir","to welcome","Nous accueillons les participants dès 18h15.","We welcome participants starting at 6:15 p.m."],
-  ["être complet / avoir des places limitées","to be full / to have limited spots","Les places sont limitées à douze participants.","Spots are limited to twelve participants."],
+  ["accueillir","to welcome","Si vous arrivez tôt, nous vous accueillerons avec plaisir.","If you arrive early, we will welcome you with pleasure."],
+  ["être complet / avoir des places limitées","to be full / to have limited spots","Si les places sont limitées, nous vous en réserverons une.","If spots are limited, we will reserve one for you."],
   ["en plus","moreover / besides","En plus, tout le matériel est inclus.","Besides, all the equipment is included."],
   ["au lieu de","instead of","Au lieu de rester à la maison, viens avec moi !","Instead of staying home, come with me!"],
   ["c’est dommage","it’s a shame","C’est dommage de manquer une si belle journée.","It’s a shame to miss such a beautiful day."],
   ["profiter de","to take advantage of / enjoy","Profitons du plein air avant l’hiver !","Let’s enjoy the outdoors before winter!"],
   ["réfléchir à","to think about / consider","Tu peux réfléchir à ma proposition tranquillement.","You can think about my proposal calmly."],
-  ["rassurer","to reassure","Je veux te rassurer : c’est très sécurisé.","I want to reassure you: it’s very safe."],
+  ["rassurer","to reassure","Si cela vous inquiète, je veux vous rassurer : tout est sécurisé.","If that worries you, I want to reassure you: everything is safe."],
   ["être motivé(e)","to be motivated","Je suis motivé pour participer à cette activité.","I'm motivated to take part in this activity."],
   ["dont (whose)","whose","C'est l'étudiant dont la mère est professeure.","This is the student whose mother is a teacher."],
   ["dont (of which)","of which","Voici le livre dont je vous ai parlé.","Here is the book of which I spoke to you."],
