@@ -832,6 +832,9 @@
                 
                 // Track which select was last used
                 this.lastUsedSelect = 'desktop'; // 'desktop' or 'mobile'
+                
+                // Flag to prevent recursive calls when programmatically updating dropdowns
+                this.isUpdatingDropdowns = false;
 
                 // Category definitions with display names
                 this.categories = [
@@ -959,8 +962,17 @@
              */
             populateDropdowns(preserveValue = null) {
                 const valueToPreserve = preserveValue || this.fileSelect.value || this.fileSelectMobile.value;
+                
+                // Set flag once for the entire operation
+                this.isUpdatingDropdowns = true;
+                
                 this.populateDropdown(this.fileSelect, valueToPreserve);
                 this.populateDropdown(this.fileSelectMobile, valueToPreserve);
+                
+                // Clear the flag after both dropdowns are updated
+                setTimeout(() => {
+                    this.isUpdatingDropdowns = false;
+                }, 50);
             }
 
             /**
@@ -991,8 +1003,16 @@
                 });
                 
                 // Restore the selection if it still exists
+                // Use setTimeout to ensure DOM is fully updated, especially for mobile dropdowns
                 if (currentSelection && this.categories.some(cat => cat.value === currentSelection)) {
+                    // Set immediately
                     selectElement.value = currentSelection;
+                    // Also set after a brief delay to handle any timing issues with mobile menu
+                    setTimeout(() => {
+                        if (selectElement.value !== currentSelection) {
+                            selectElement.value = currentSelection;
+                        }
+                    }, 0);
                 }
             }
 
@@ -1061,6 +1081,9 @@
              * Handles errors and updates the UI accordingly
              */
             loadCards() {
+                // Prevent recursive calls when programmatically updating dropdowns
+                if (this.isUpdatingDropdowns) return;
+                
                 const selectedFile = this.fileSelect.value || this.fileSelectMobile.value;
                 if (!selectedFile) return;
 
