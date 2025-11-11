@@ -1627,7 +1627,7 @@
             updateStats() {
                 this.totalCardsEl.textContent = this.cards.length;
                 this.remainingCardsEl.textContent = this.cards.length - this.currentIndex;
-                this.correctCardsEl.textContent = this.currentIndex;
+                this.correctCardsEl.textContent = this.correctCards.size; // Use actual count of correct cards, not current index
             }
 
             /**
