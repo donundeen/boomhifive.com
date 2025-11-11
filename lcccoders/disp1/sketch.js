@@ -660,3 +660,208 @@ function marcoDraw() {
 
  
 }
+
+
+
+//Variables
+let faceSize = 250; // size of the head (main circle)
+let earSize = 80; // diameter of the headphone earcups
+let eyeSize = 67; // diameter of eyeballs
+let pupilSize = 35; // diameter of pupils
+let mouthSize = 100; // width/height of the mouth arc
+let faceColor = "#FF539B"; //head/face color
+let earColor = "#4AE6E6"; // headphone earcup color
+let pupilLeft = 60; // left puupil size
+let pupilRight = 60; // right pupil size
+
+// starting values
+let cx = 200;
+let cy = 220;
+faceSize = 230;
+let mouthW = 110;
+let earBase = 75;
+let earOffsetX = 140;
+bandHeight = 165;
+
+
+// ramp function
+function ramp(period) {
+  return (frameCount % period) / period;
+}
+
+// draw a triangle nose
+function drawNose(x, y, w, h, c) {
+  push();
+  fill(c);
+  stroke(0);
+  strokeWeight(2);
+  triangle(x, y - h * 0.6, x - w * 0.5, y + h * 0.4, x + w * 0.5, y + h * 0.4);
+  pop();
+}
+
+//long music note
+function drawNote(x, y, s, hueVal, alphaVal) {
+  push();
+  translate(x, y);
+  noStroke();
+  fill(hueVal, 70, 95, alphaVal);
+
+  // note head
+  ellipse(0, 0, s * 1.1, s * 0.8);
+
+  // stem
+  fill(hueVal, 70, 80, alphaVal);
+  rect(s * 0.45, -s * 2.2, s * 0.15, s * 2.4, 2);
+
+  // small curved flag
+  noFill();
+  stroke(hueVal, 70, 80, alphaVal);
+  strokeWeight(2);
+  arc(s * 0.52, -s * 2.1, s * 0.9, s * 0.9, -PI / 2, 0);
+  pop();
+}
+
+// add a new note near the right side of the head
+function spawnNote() {
+  notes.push({
+    x: cx + 40 + random(-10, 10),
+    y: cy + 10 + random(-6, 6),
+    vy: random(1.0, 1.8), // up speed
+    wob: random(0.02, 0.04), // sideways wiggle
+    s: random(10, 14), // size
+    hue: random(190, 300), // color
+    life: 0, // age (frames)
+  });
+}
+
+// move and draw the notes
+function updateNotes() {
+  for (let i = notes.length - 1; i >= 0; i--) {
+    let n = notes[i];
+    n.y -= n.vy; // go up
+    n.x += 6 * sin(n.life * n.wob); // wiggle
+    n.life++;
+
+    // fade out slowly (longer life)
+    let a = map(n.life, 0, 260, 100, 0); // 260 frames ≈ 4+ sec
+    drawNote(n.x, n.y, n.s, n.hue, a);
+
+    if (n.life > 280 - n.y < -20) notes.splice(i, 1);
+  }
+}
+
+// simple initials (unchanged)
+function drawInitials() {
+  push();
+  stroke(0);
+  strokeWeight(3);
+  noFill();
+  line(20, 40, 20, 10);
+  line(20, 10, 30, 25);
+  line(30, 25, 40, 10);
+  line(40, 10, 40, 40);
+  circle(55, 38, 5);
+  line(70, 40, 70, 10);
+  line(70, 10, 80, 25);
+  line(80, 25, 90, 10);
+  line(90, 10, 90, 40);
+  pop();
+}
+
+function athanDraw(){
+
+
+  //time controls
+  const slow = ramp(500); // slow  ramp
+  const med = ramp(240); // medium ramp
+  const fast = ramp(120); // fast  ramp
+
+  // background (color change with sin)
+  bgHue = map(sin(frameCount * 0.01), -1, 1, 220, 260);
+  background(bgHue, 40, 25);
+
+
+  push();
+  stroke("white");
+  strokeWeight(2);
+  fill("black");
+  textAlign(RIGHT, BOTTOM);
+  textSize(40);
+  text("Athanassios Mavritsakis - Creative Computing", canvasWidth - 10, canvasHeight - 10);
+  pop(); 
+
+
+  scale(2);
+
+
+  // head bop
+  headBop = 0.15 * sin(frameCount * 0.04);
+
+  //variable animations
+  eyeSize = 52 + 8 * sin(frameCount * 0.02); // small range
+  pupilLeft = 18 + 14 * abs(sin(frameCount * 0.07)); // blink
+  pupilRight = 18 + 14 * abs(sin(frameCount * 0.07 + 0.8)); // offset
+  mouthH = 50 + 50 * med; // ramp
+  earLeft = earBase + 18 * fast; // grows (low to high)
+  earRight = earBase + 18 * (1 - fast); // shrinks (high to low)
+
+  // headphone band
+  bandWidth = earOffsetX * 2 + max(earLeft, earRight);
+  bandY = cy - 60 + 3 * sin(frameCount * 0.02);
+
+  // spawn long notes regularly (uses modulo for timing) ----
+  if (frameCount % 14 === 0) spawnNote();
+  updateNotes();
+
+  // HEAD (rotate to bop) ----
+  push();
+  translate(cx, cy);
+  rotate(headBop);
+
+  // headphone band
+  noFill();
+  stroke(0);
+  strokeWeight(8);
+  arc(0, 90, 330, 450, PI + QUARTER_PI, TWO_PI - QUARTER_PI);
+
+  // head
+  fill(315, 70, 85);
+  stroke(0);
+  strokeWeight(4);
+  circle(0, 0, faceSize);
+
+  // earcups (outside + connected)
+  fill(185, 65, 90);
+  stroke(0);
+  strokeWeight(3);
+  circle(-earOffsetX, 0, earLeft);
+  circle(earOffsetX, 0, earRight);
+
+  // eyes
+  fill(270, 60, 70);
+  stroke(0);
+  strokeWeight(2);
+  ellipse(-45, -40, eyeSize, eyeSize);
+  ellipse(45, -40, eyeSize, eyeSize);
+
+  // pupils
+  fill(0, 0, 100);
+  circle(-45, -40, pupilLeft);
+  circle(45, -40, pupilRight);
+
+  // nose (custom function)
+  drawNose(0, 5, 60, 55, color(230, 60, 80));
+
+  // mouth (ramp opens/closes)
+  fill(25, 70, 95);
+  stroke(0);
+  strokeWeight(3);
+  arc(0, 60, mouthW, mouthH, 0, PI + QUARTER_PI);
+
+  pop();
+
+  // initials
+  drawInitials();
+
+
+}
