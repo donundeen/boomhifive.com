@@ -347,101 +347,191 @@ function daniellaDraw() {
 
 }
 
+
+let minaAngle;
+let radius = 225;
+let centerX, centerY;
+let cloudOneX = 100
+x=50
+y=50
 function minaDraw(){
-  background("white"); //
+  background("#B5C6DC");
 
   showCaption("Mina Wei - Creative Computing");
 
-  stroke("black");
-  strokeWeight(3);
-  fill("#F14E28");
-  ellipse(490, 270, 150, 400); // left bow
+  rectMode(CENTER)
 
-  stroke("black");
+  //cloud
   strokeWeight(3);
-  fill("#F14E28");
-  ellipse(710, 270, 150, 400); // left bow
+  fill(255);
+  ellipse(cloudOneX + 10, 40, 90, 50);
+  ellipse(cloudOneX + 40, 85, 60, 30);
+  ellipse(cloudOneX - 20, 75, 70, 20);
+  ellipse(cloudOneX + 500, 200, 100, 50);
+  ellipse(cloudOneX + 550, 230, 60, 25);
+  ellipse(cloudOneX - 200, 220, 70, 25);
+  ellipse(cloudOneX - 250, 175, 100, 50);
+  ellipse(cloudOneX - 280, 200, 80, 20);
+  //sets x coordinate to framecount
+  //resets to left
+  cloudOneX = frameCount % width;
 
-  stroke("black");
-  strokeWeight(3);
-  fill("#F14E28");
-  circle(600, 355, 100); // center of bow
+  //sun
+  push();
+  let x = 300;
+  let y = 400 * sin(frameCount * 0.01) + 50;
+  fill("orange");
+  translate(400, 10);
+  line(300, y, x, y);
+  circle(x, y, 100);
+  pop();
 
-  stroke("black");
-  strokeWeight(3);
-  fill("#FDDAC6");
-  ellipse(600, 600, 520, 500); // head base
+  //grass
+  strokeWeight(1);
+  fill("green");
+  rect(500, 450, 1000, 100);
 
-  stroke("black");
+  //rollercoaster carts
+  let cartX = sin(frameCount * 0.02) * 500;
+  let cartColourA = paletteLerp(
+    [
+      ["#F9BACF)", 0.025],
+      ["#FFE7A1", 0.05],
+      ["#AAD4F6", 0.25],
+    ],
+    (millis() / 10000) % 1
+  );
+  fill(cartColourA);
   strokeWeight(3);
-  fill("white");
-  ellipse(450, 610, 220, 250); // eyes on the left
-
-  stroke("#F583B7");
-  strokeWeight(3);
-  fill("#F583B7");
-  ellipse(465, 605, 195, 205); // eye colour
-
-  stroke("black");
-  strokeWeight(3);
+  rect(cartX, 190, 50, 40);
+  rect(cartX - 60, 190, 50, 40);
+  rect(cartX - 120, 190, 50, 40);
+  rect(cartX - 180, 190, 50, 40);
+  rect(cartX - 240, 190, 50, 40);
   fill("black");
-  ellipse(475, 599, 175, 190); // pupil
+  circle(cartX + 15, 205, 15);
+  circle(cartX - 15, 205, 15);
+  circle(cartX - 45, 205, 15);
+  circle(cartX - 75, 205, 15);
+  circle(cartX - 105, 205, 15);
+  circle(cartX - 135, 205, 15);
+  circle(cartX - 165, 205, 15);
+  circle(cartX - 195, 205, 15);
+  circle(cartX - 225, 205, 15);
+  circle(cartX - 255, 205, 15);
 
-  stroke("white");
-  strokeWeight(3);
-  fill("white");
-  ellipse(520, 600, 45, 45); // white dot
+  //tracks
+  strokeWeight(10);
+  line(1, 210, 520, 210);
+  strokeWeight(5);
+  noFill();
+  triangle(520, 210, 520, 400, 350, 400);
+  triangle(350, 400, 190, 400, 190, 210);
+  triangle(190, 210, 10, 400, 190, 400);
+  triangle(190, 210, 10, 400, 190, 400);
 
-  stroke("black");
-  strokeWeight(3);
-  fill("white");
-  ellipse(750, 610, 220, 250); // eyes on the right
+  //ferris wheel
+  push();
+  translate(800, 230);
+  stroke(0);
+  strokeWeight(5);
+  noFill();
+  circle(0, 0, 300); //outer circle
+  noFill();
+  triangle(0, 18, -80, 170, 80, 170);
+  //lines
+  push();
+  rotate(radians(frameCount));
+  line(0, -150, 0, -15); //up
+  line(0, 150, 0, 15); //down
+  line(-150, 0, -15, 0); //left
+  line(150, 0, 15, 0); //right
+  line(-105, -105, -12, -12); //left up
+  line(105, 105, 12, 12); // right down
+  line(-105, 105, -12, 12); //left down
+  line(105, -105, 12, -12); // right up
+  stroke(0);
+  strokeWeight(5);
+  noFill();
+  circle(0, 0, 30); //inner circle
 
-  stroke("#F583B7");
-  strokeWeight(3);
-  fill("#F583B7");
-  ellipse(735, 605, 195, 205); // eye colour
+  //carts
+  let cartColour = paletteLerp(
+    [
+      ["#E91E63)", 0.025],
+      ["#FFC107", 0.05],
+      ["#2196F3", 0.25],
+    ],
+    (millis() / 10000) % 1
+  );
 
-  stroke("black");
-  strokeWeight(3);
-  fill("black");
-  ellipse(720, 599, 175, 190); // pupil
+  fill(cartColour);
+  push(); //up
+  translate(0, -150);
+  rotate(radians(-frameCount));
+  arc(0, -20, 70, 80, 0, PI, CHORD);
+  // fill(255);
+  // circle(0,0,2);
+  pop();
 
-  stroke("white");
-  strokeWeight(3);
-  fill("white");
-  ellipse(680, 600, 45, 45); // white dot
+  push(); // down
+  translate(0, 150);
+  rotate(radians(-frameCount));
+  arc(0, -20, 70, 80, 0, PI, CHORD);
+  // fill(255);
+  // circle(0,0,2);
+  pop();
 
-  stroke("black");
-  fill("#F68421");
-  // OPEN fill mode.
-  arc(600, 520, 490, 335, PI, PI - QUARTER_PI - QUARTER_PI - HALF_PI, OPEN); // hair
+  fill(cartColour);
+  push(); //left
+  translate(-150, 0);
+  rotate(radians(-frameCount));
+  arc(0, -20, 70, 80, 0, PI, CHORD);
+  // fill(255);
+  // circle(0,0,2);
+  pop();
 
-  stroke("#FDDAC6");
-  strokeWeight(3);
-  fill("#FDDAC6");
-  triangle(620, 520, 600, 480, 580, 520); //cut of bangs
+  push(); //right
+  translate(150, 0);
+  rotate(radians(-frameCount));
+  arc(0, -20, 70, 80, 0, PI, CHORD);
+  // fill(255);
+  // circle(0,0,2);
+  pop();
 
-  stroke("black");
-  strokeWeight(3);
-  fill("black");
-  triangle(430, 520, 470, 485, 470, 520); //cut of bangs
+  fill(cartColour);
+  push(); //left up
+  translate(-106, -106);
+  rotate(radians(-frameCount));
+  arc(0, -20, 70, 80, 0, PI, CHORD);
+  // fill(255);
+  // circle(0,0,2);
+  pop();
 
-  stroke("black");
-  strokeWeight(3);
-  fill("black");
-  triangle(770, 520, 730, 485, 730, 520); //cut of bangs
+  push(); // right down
+  translate(106, 106);
+  rotate(radians(-frameCount));
+  arc(0, -20, 70, 80, 0, PI, CHORD);
+  // fill(255);
+  // circle(0,0,2);
+  pop();
 
-  fill("#FDDAC6");
-  arc(600, 740, 50, 60, 0, PI, OPEN); // mouth
+  fill(cartColour);
+  push(); //left down
+  translate(-106, 106);
+  rotate(radians(-frameCount));
+  arc(0, -20, 70, 80, 0, PI, CHORD);
+  // fill(255);
+  // circle(0,0,2);
+  pop();
 
-  line(620, 520, 846, 520); // bangs outline
-
-  line(580, 520, 354, 520); // bangs outline
-
-  line(600, 480, 580, 520); // bangs outline
-
-  line(600, 480, 620, 520); // bangs outline
+  push(); // right up
+  translate(106, -106);
+  rotate(radians(-frameCount));
+  arc(0, -20, 70, 80, 0, PI, CHORD);
+  //   fill(255);
+  //   circle(0,0,2);
+  pop();
 
  
 }
