@@ -906,7 +906,10 @@
              */
             bindEvents() {
                 // Desktop events
-                this.fileSelect.addEventListener('change', () => this.loadCards());
+                this.fileSelect.addEventListener('change', () => {
+                    this.lastUsedSelect = 'desktop';
+                    this.loadCards();
+                });
                 this.sideSelect.addEventListener('change', () => {
                     this.lastUsedSelect = 'desktop';
                     this.updateCurrentSide();
@@ -921,7 +924,10 @@
                 
                 // Mobile events
                 this.hamburgerBtn.addEventListener('click', () => this.toggleHamburgerMenu());
-                this.fileSelectMobile.addEventListener('change', () => this.loadCards());
+                this.fileSelectMobile.addEventListener('change', () => {
+                    this.lastUsedSelect = 'mobile';
+                    this.loadCards();
+                });
                 this.sideSelectMobile.addEventListener('change', () => {
                     this.lastUsedSelect = 'mobile';
                     this.updateCurrentSide();
@@ -1084,12 +1090,24 @@
                 // Prevent recursive calls when programmatically updating dropdowns
                 if (this.isUpdatingDropdowns) return;
                 
-                const selectedFile = this.fileSelect.value || this.fileSelectMobile.value;
+                // Get the selected file from the dropdown that was actually changed
+                const selectedFile = this.lastUsedSelect === 'mobile' 
+                    ? this.fileSelectMobile.value 
+                    : (this.fileSelect.value || this.fileSelectMobile.value);
+                
                 if (!selectedFile) return;
 
-                // Sync both selects
-                this.fileSelect.value = selectedFile;
-                this.fileSelectMobile.value = selectedFile;
+                // Sync both selects, but only if they're different to avoid triggering events
+                if (this.fileSelect.value !== selectedFile) {
+                    this.isUpdatingDropdowns = true;
+                    this.fileSelect.value = selectedFile;
+                    setTimeout(() => { this.isUpdatingDropdowns = false; }, 10);
+                }
+                if (this.fileSelectMobile.value !== selectedFile) {
+                    this.isUpdatingDropdowns = true;
+                    this.fileSelectMobile.value = selectedFile;
+                    setTimeout(() => { this.isUpdatingDropdowns = false; }, 10);
+                }
 
                 // Load data from external JSON file
                 fetch(selectedFile)
@@ -1105,6 +1123,20 @@
                         this.mergeWithExistingProgress(selectedFile);
                         // Refresh dropdowns to show updated progress, explicitly preserving the selected file
                         this.populateDropdowns(selectedFile);
+                        // Double-check that both dropdowns have the correct value after repopulation
+                        // This is especially important for mobile dropdowns
+                        setTimeout(() => {
+                            if (this.fileSelect.value !== selectedFile) {
+                                this.isUpdatingDropdowns = true;
+                                this.fileSelect.value = selectedFile;
+                                setTimeout(() => { this.isUpdatingDropdowns = false; }, 10);
+                            }
+                            if (this.fileSelectMobile.value !== selectedFile) {
+                                this.isUpdatingDropdowns = true;
+                                this.fileSelectMobile.value = selectedFile;
+                                setTimeout(() => { this.isUpdatingDropdowns = false; }, 10);
+                            }
+                        }, 100);
                     })
                     .catch(error => {
                         console.error('Error loading JSON file:', error);
