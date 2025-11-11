@@ -1,7 +1,7 @@
 let canvasWidth;
 let canvasHeight;
 
-let drawFunctionList = [parisDraw];//,nathanDraw];//,minaDraw];//, daniellaDraw]; //danielDraw];//charanDraw, alvandDraw, athanDraw , marcoDraw, maxDraw];
+let drawFunctionList = [tyDraw];//,parisDraw];//,nathanDraw];//,minaDraw];//, daniellaDraw]; //danielDraw];//charanDraw, alvandDraw, athanDraw , marcoDraw, maxDraw];
 let drawFunctionIndex = drawFunctionList.length - 1;
 let timingInterval = 20000;
 
@@ -1295,8 +1295,6 @@ function tyDraw(){
   background("rgb(1,76,1)"); //background
   showCaption("Ty Lashley Jean-Louis - Creative Computing");
   scale(2);
-
-  translate(width/2, height/2);
 
   let maskColor = (paletteLerp([
     ['rgb(224,106,20)', 0],
