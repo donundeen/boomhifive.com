@@ -1077,8 +1077,11 @@
                         this.cards = data;
                         // Merge with existing progress and handle updates
                         this.mergeWithExistingProgress(selectedFile);
-                        // Refresh dropdowns to show updated progress
+                        // Refresh dropdowns to show updated progress, preserving the current selection
                         this.populateDropdowns();
+                        // Ensure the selection is maintained after repopulation
+                        this.fileSelect.value = selectedFile;
+                        this.fileSelectMobile.value = selectedFile;
                     })
                     .catch(error => {
                         console.error('Error loading JSON file:', error);
