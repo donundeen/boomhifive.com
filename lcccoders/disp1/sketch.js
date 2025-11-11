@@ -515,19 +515,9 @@ let cloudSize = 60
 let lassoAngle = 0
 let lassoSpeed = 0.07
 function marcoDraw() {
- 
-  // Sun position
-  let sunY = height / 2 + sin(angle) * amplitude
-console.log("height", height);
-console.log("sunY", sunY);
-  // t determines how orange the sky is
-  let t = map(sunY, height/2 - amplitude, height/2 + amplitude, 0, 1)
-  t = constrain(t, 0, 1)
 
-  // Interpolate sky color
-  let skyR = lerp(skyColor[0], 255, t)
-  let skyG = lerp(skyColor[1], 165, t)
-  let skyB = lerp(skyColor[2], 0, t)
+
+
 
   background(skyR, skyG, skyB)
 
@@ -543,6 +533,19 @@ console.log("sunY", sunY);
 
   scale(2);
 
+
+  // Sun position
+  let sunY = height / 2 + sin(angle) * amplitude
+console.log("height", height);
+console.log("sunY", sunY);
+  // t determines how orange the sky is
+  let t = map(sunY, height/2 - amplitude, height/2 + amplitude, 0, 1)
+  t = constrain(t, 0, 1)
+
+  // Interpolate sky color
+  let skyR = lerp(skyColor[0], 255, t)
+  let skyG = lerp(skyColor[1], 165, t)
+  let skyB = lerp(skyColor[2], 0, t)  
  
   // Clouds moving across the sky
   cloudX += cloudSpeed
