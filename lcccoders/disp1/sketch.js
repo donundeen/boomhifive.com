@@ -519,10 +519,8 @@ function marcoDraw() {
   
   // Sun position
   let sunY = canvasHeight / 4 + sin(angle) * amplitude
-console.log("height", height);
-console.log("sunY", sunY);
   // t determines how orange the sky is
-  let t = map(sunY, height/2 - amplitude, height/2 + amplitude, 0, 1)
+  let t = map(sunY, height/4 - amplitude, height/4 + amplitude, 0, 1)
   t = constrain(t, 0, 1)
 
   // Interpolate sky color
