@@ -955,10 +955,12 @@
             /**
              * Populates both desktop and mobile dropdown menus with available categories
              * Calls populateDropdown for both select elements to ensure consistency
+             * @param {string} preserveValue - Optional value to preserve in both dropdowns
              */
-            populateDropdowns() {
-                this.populateDropdown(this.fileSelect);
-                this.populateDropdown(this.fileSelectMobile);
+            populateDropdowns(preserveValue = null) {
+                const valueToPreserve = preserveValue || this.fileSelect.value || this.fileSelectMobile.value;
+                this.populateDropdown(this.fileSelect, valueToPreserve);
+                this.populateDropdown(this.fileSelectMobile, valueToPreserve);
             }
 
             /**
@@ -966,10 +968,11 @@
              * Clears existing options, adds categories with progress indicators (correct/total),
              * and preserves the current selection if it's still valid
              * @param {HTMLSelectElement} selectElement - The select element to populate
+             * @param {string} preserveValue - Optional value to preserve (overrides reading from selectElement)
              */
-            populateDropdown(selectElement) {
-                // Store the current selection before clearing
-                const currentSelection = selectElement.value;
+            populateDropdown(selectElement, preserveValue = null) {
+                // Store the selection to preserve - use provided value or read from element
+                const currentSelection = preserveValue !== null ? preserveValue : selectElement.value;
                 
                 // Clear existing options except the first one
                 selectElement.innerHTML = '<option value="">Choose a category...</option>';
@@ -987,7 +990,7 @@
                     selectElement.appendChild(option);
                 });
                 
-                // Restore the previous selection if it still exists
+                // Restore the selection if it still exists
                 if (currentSelection && this.categories.some(cat => cat.value === currentSelection)) {
                     selectElement.value = currentSelection;
                 }
@@ -1077,11 +1080,8 @@
                         this.cards = data;
                         // Merge with existing progress and handle updates
                         this.mergeWithExistingProgress(selectedFile);
-                        // Refresh dropdowns to show updated progress, preserving the current selection
-                        this.populateDropdowns();
-                        // Ensure the selection is maintained after repopulation
-                        this.fileSelect.value = selectedFile;
-                        this.fileSelectMobile.value = selectedFile;
+                        // Refresh dropdowns to show updated progress, explicitly preserving the selected file
+                        this.populateDropdowns(selectedFile);
                     })
                     .catch(error => {
                         console.error('Error loading JSON file:', error);
