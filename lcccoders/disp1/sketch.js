@@ -530,6 +530,15 @@ function marcoDraw() {
 
   scale(2);
 
+  push();
+  stroke("white");
+  strokeWeight(2);
+  fill("black");
+  textAlign(RIGHT, BOTTOM);
+  textSize(40);
+  text("Marco DiFruscia - Creative Computing", canvasWidth - 10, canvasHeight - 10);
+  pop(); 
+
   // Clouds moving across the sky
   cloudX += cloudSpeed
   if (cloudX > width + cloudSize * 2) cloudX = -cloudSize
@@ -645,12 +654,5 @@ function marcoDraw() {
   // Sun movement
   angle += frequency
 
-  push();
-  stroke("white");
-  strokeWeight(2);
-  fill("black");
-  textAlign(RIGHT, BOTTOM);
-  textSize(40);
-  text("Marco DiFruscia - Creative Computing", canvasWidth - 10, canvasHeight - 10);
-  pop();  
+ 
 }
