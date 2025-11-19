@@ -1,7 +1,7 @@
 let canvasWidth;
 let canvasHeight;
 
-let drawFunctionList = [tyDraw, parisDraw, minaDraw, daniellaDraw, danielDraw, charanDraw, alvandDraw, athanDraw , marcoDraw, maxDraw];
+let drawFunctionList = [charanDraw,tyDraw, parisDraw, minaDraw, daniellaDraw, danielDraw, alvandDraw, athanDraw , marcoDraw, maxDraw];
 let drawFunctionIndex = drawFunctionList.length - 1;
 let timingInterval = 20000;
 
@@ -1087,7 +1087,6 @@ function alvandDraw(){
 
 }
 
-
 //simple integer variables that change lengths and widths
 let boulderShoulderRadius = 100;
 let faceRadius = 200;
@@ -1105,25 +1104,33 @@ function invertibleColor(boolean, r, g, b) {
     fill(r,g,b);
   }  
 } 
-
+//variables for a color changing background
 let increasingVal = 0;
 let r = 255;
 let b = 0;
 let g = 0;
 let phase = 0;
 
-function charanDraw(){
+function lightning() {
+}
 
-  if (phase == 0) {
+function charanDraw() {
+  
+  noStroke();
+  
+  // the color changing background, it works by initiating 3 phases by determining when the last phase has finished (the inner if condition). Each of the phases increases 1 of the rgb values and decreases another.
+  
+  if (phase == 0) { //adding blue, decreasing red
     b+= 2
     r-= 2
     background(r, g, b)
-    if (b > 254) {
+    if (b > 254) { 
+    //once phase 0 is over, (i.e. blue has reached full saturation), we initiate     phase 1, same thing with the other phases
       b = 255
       r = 0
       phase = 1
     }
-  } else if (phase == 1){
+  } else if (phase == 1){ //adding green, decreasing blue
     g+= 2
     b-= 2
     background(r, g, b)
@@ -1132,19 +1139,21 @@ function charanDraw(){
       b = 0
       phase = 2
     }
-  } else if (phase == 2){
+  } else if (phase == 2){ //increasing red, decreasing green
     r+= 2
     g-= 2
     background(r, g, b)
     if (r > 254) {
       r = 255
       g = 0
-      phase = 0
+      phase = 0 //looping back to phase 0 to reset color change and go again!
     }
   }
-
+  
   showCaption("Charan Veluru - Creative Computing");
 
+  //Main Drawing Code
+  
   invertibleColor(invertColor, 88,57,39);
   ellipse(300, 400, 50, 100); //neck
   faceRadius+=0.03;
@@ -1192,18 +1201,25 @@ function charanDraw(){
   console.log(temporaryRadius);
   boulderShoulderRadius++;
   //bouldershoulder radius from 80-200
-
+  
+  if (temporaryRadius > 140 && map(sin(faceRadius), -1, 1, 200, 275) > 170) {
+    fill(30, 30, 200);
+    beginShape();
+    vertex(200,0)
+    vertex(250,0)
+    vertex(250, 100);
+    vertex(190, 90);
+    vertex(300, 260);
+    endShape(CLOSE);
+  }
+  
+  fill(100, 60, 30)
   tempAbSize = map(sin(increasingVal), -1, 1, 150, 250)
   ellipse(300, 700, tempAbSize, abSize/3) //2pack
   ellipse(300, 650, tempAbSize, abSize/3) //4pack
   ellipse(300, 600, tempAbSize, abSize/3) //6pack
   increasingVal+=0.05;
-//centerline to provide guidance and a mid x value to refer to
-
-
-  scale(2);
 }
-
 
 
 let arcDegree = 1;
