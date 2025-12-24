@@ -741,6 +741,7 @@
       let TEFAQ_VOCAB_FINAL_DATA = [];
       let PHRASES_FOR_LEARNING_DATA = [];
       let BIEN_DATA = [];
+      let TEFAQ_CONNECTOR_CHEATSHEAT_DATA = [];
       // get from json file
       fetch('french_nouns.json')
         .then(response => response.json())
@@ -814,6 +815,12 @@
           BIEN_DATA = data;
         });
 
+      fetch('tefaq_connector_cheatsheat.json')
+        .then(response => response.json())
+        .then(data => {
+          TEFAQ_CONNECTOR_CHEATSHEAT_DATA = data;
+        });
+
 
 
 
@@ -862,7 +869,8 @@
                     { value: 'oral_expression_section_b.json', name: 'Oral Expression Section B' },
                     { value: 'chat_review.json', name: 'Chat Review (TEFaQ Part A)' },
                     { value: 'class_vocab_flashcards.json', name: 'Class Vocabulary Flashcards' },
-                    { value: 'bien.json', name: 'Bien (All Uses)' }
+                    { value: 'bien.json', name: 'Bien (All Uses)' },
+                    { value: 'tefaq_connector_cheatsheat.json', name: 'TEFaQ Connector Cheat Sheet' }
                 ];
 
                 this.initializeElements();
