@@ -418,5 +418,450 @@
   {
     "word": "Halloween",
     "taboo": ["déguisement", "citrouille", "sorcière", "bonbons"]
+  },
+  {
+    "word": "téléphone",
+    "taboo": ["appeler", "sonner", "portable", "numéro"]
+  },
+  {
+    "word": "ordinateur",
+    "taboo": ["écran", "clavier", "internet", "travailler"]
+  },
+  {
+    "word": "vélo",
+    "taboo": ["pédaler", "roues", "guidon", "cycliste"]
+  },
+  {
+    "word": "avion",
+    "taboo": ["voler", "pilote", "ailes", "voyage"]
+  },
+  {
+    "word": "train",
+    "taboo": ["rails", "gare", "voyageur", "locomotive"]
+  },
+  {
+    "word": "bateau",
+    "taboo": ["naviguer", "mer", "voile", "capitaine"]
+  },
+  {
+    "word": "télévision",
+    "taboo": ["regarder", "écran", "chaîne", "programme"]
+  },
+  {
+    "word": "journal",
+    "taboo": ["lire", "nouvelles", "papier", "reporter"]
+  },
+  {
+    "word": "réfrigérateur",
+    "taboo": ["froid", "conserver", "nourriture", "congélateur"]
+  },
+  {
+    "word": "four",
+    "taboo": ["cuire", "chaud", "gâteau", "température"]
+  },
+  {
+    "word": "lave-linge",
+    "taboo": ["laver", "linge", "eau", "machine"]
+  },
+  {
+    "word": "aspirateur",
+    "taboo": ["nettoyer", "poussière", "aspirer", "sol"]
+  },
+  {
+    "word": "micro-ondes",
+    "taboo": ["réchauffer", "chaud", "plat", "cuire"]
+  },
+  {
+    "word": "café",
+    "taboo": ["boire", "chaud", "caféine", "tasse"]
+  },
+  {
+    "word": "thé",
+    "taboo": ["infusion", "tasse", "chaud", "théière"]
+  },
+  {
+    "word": "chocolat",
+    "taboo": ["sucré", "cacao", "dessert", "gâteau"]
+  },
+  {
+    "word": "gâteau",
+    "taboo": ["sucré", "anniversaire", "bougies", "pâtisserie"]
+  },
+  {
+    "word": "glace",
+    "taboo": ["froid", "dessert", "crème", "été"]
+  },
+  {
+    "word": "parapluie",
+    "taboo": ["pluie", "protéger", "ouvrir", "manche"]
+  },
+  {
+    "word": "montre",
+    "taboo": ["heure", "poignet", "aiguilles", "temps"]
+  },
+  {
+    "word": "lunettes",
+    "taboo": ["voir", "yeux", "verres", "nez"]
+  },
+  {
+    "word": "sac",
+    "taboo": ["porter", "contenir", "poignée", "objets"]
+  },
+  {
+    "word": "chaussures",
+    "taboo": ["pieds", "marcher", "semelles", "lacets"]
+  },
+  {
+    "word": "chapeau",
+    "taboo": ["tête", "porter", "couvrir", "bord"]
+  },
+  {
+    "word": "gants",
+    "taboo": ["mains", "froid", "doigts", "porter"]
+  },
+  {
+    "word": "écharpe",
+    "taboo": ["cou", "froid", "laine", "enrouler"]
+  },
+  {
+    "word": "crayon",
+    "taboo": ["écrire", "dessiner", "mine", "tailler"]
+  },
+  {
+    "word": "stylo",
+    "taboo": ["écrire", "encre", "bille", "papier"]
+  },
+  {
+    "word": "gomme",
+    "taboo": ["effacer", "crayon", "erreur", "caoutchouc"]
+  },
+  {
+    "word": "règle",
+    "taboo": ["mesurer", "ligne", "droite", "centimètres"]
+  },
+  {
+    "word": "ciseaux",
+    "taboo": ["couper", "papier", "lames", "tissu"]
+  },
+  {
+    "word": "colle",
+    "taboo": ["coller", "adhésif", "fixer", "papier"]
+  },
+  {
+    "word": "agrafeuse",
+    "taboo": ["agrafer", "papier", "agrafes", "fixer"]
+  },
+  {
+    "word": "trombone",
+    "taboo": ["attacher", "papier", "métal", "fixer"]
+  },
+  {
+    "word": "calculatrice",
+    "taboo": ["calculer", "chiffres", "boutons", "mathématiques"]
+  },
+  {
+    "word": "lampe",
+    "taboo": ["éclairer", "lumière", "ampoule", "allumer"]
+  },
+  {
+    "word": "miroir",
+    "taboo": ["réfléchir", "voir", "image", "se regarder"]
+  },
+  {
+    "word": "porte",
+    "taboo": ["ouvrir", "fermer", "entrer", "serrure"]
+  },
+  {
+    "word": "fenêtre",
+    "taboo": ["voir", "ouvrir", "vitre", "lumière"]
+  },
+  {
+    "word": "clé",
+    "taboo": ["ouvrir", "serrure", "porte", "fermer"]
+  },
+  {
+    "word": "serrure",
+    "taboo": ["clé", "ouvrir", "fermer", "porte"]
+  },
+  {
+    "word": "escalier",
+    "taboo": ["monter", "descendre", "marches", "étage"]
+  },
+  {
+    "word": "ascenseur",
+    "taboo": ["monter", "descendre", "boutons", "étage"]
+  },
+  {
+    "word": "interrupteur",
+    "taboo": ["allumer", "éteindre", "lumière", "bouton"]
+  },
+  {
+    "word": "prise",
+    "taboo": ["brancher", "électricité", "courant", "fiche"]
+  },
+  {
+    "word": "ampoule",
+    "taboo": ["lumière", "éclairer", "électricité", "griller"]
+  },
+  {
+    "word": "rideau",
+    "taboo": ["fenêtre", "fermer", "ouvrir", "cacher"]
+  },
+  {
+    "word": "tapis",
+    "taboo": ["sol", "marcher", "décorer", "tissu"]
+  },
+  {
+    "word": "oreiller",
+    "taboo": ["dormir", "tête", "lit", "doux"]
+  },
+  {
+    "word": "couverture",
+    "taboo": ["dormir", "chaud", "lit", "couvrir"]
+  },
+  {
+    "word": "draps",
+    "taboo": ["lit", "dormir", "tissu", "changer"]
+  },
+  {
+    "word": "table",
+    "taboo": ["manger", "s'asseoir", "repas", "bois"]
+  },
+  {
+    "word": "chaise",
+    "taboo": ["s'asseoir", "quatre", "pieds", "dos"]
+  },
+  {
+    "word": "canapé",
+    "taboo": ["s'asseoir", "salon", "confortable", "repos"]
+  },
+  {
+    "word": "fauteuil",
+    "taboo": ["s'asseoir", "confortable", "bras", "repos"]
+  },
+  {
+    "word": "étagère",
+    "taboo": ["ranger", "livres", "objets", "mur"]
+  },
+  {
+    "word": "armoire",
+    "taboo": ["ranger", "vêtements", "portes", "fermer"]
+  },
+
+  {
+    "word": "tablette",
+    "taboo": ["écran", "tactile", "applications", "internet"]
+  },
+  {
+    "word": "casque",
+    "taboo": ["écouter", "musique", "oreilles", "audio"]
+  },
+  {
+    "word": "écouteurs",
+    "taboo": ["écouter", "musique", "oreilles", "casque"]
+  },
+  {
+    "word": "haut-parleur",
+    "taboo": ["son", "musique", "volume", "écouter"]
+  },
+  {
+    "word": "caméra",
+    "taboo": ["filmer", "photo", "enregistrer", "vidéo"]
+  },
+  {
+    "word": "appareil photo",
+    "taboo": ["photographier", "photo", "objectif", "cliché"]
+  },
+  {
+    "word": "batterie",
+    "taboo": ["électricité", "recharger", "énergie", "portable"]
+  },
+  {
+    "word": "chargeur",
+    "taboo": ["recharger", "batterie", "brancher", "électricité"]
+  },
+  {
+    "word": "câble",
+    "taboo": ["brancher", "connecter", "électricité", "fil"]
+  },
+  {
+    "word": "disque dur",
+    "taboo": ["stocker", "données", "ordinateur", "mémoire"]
+  },
+  {
+    "word": "imprimante",
+    "taboo": ["imprimer", "papier", "document", "encre"]
+  },
+  {
+    "word": "fax",
+    "taboo": ["envoyer", "document", "téléphone", "papier"]
+  },
+  {
+    "word": "télécommande",
+    "taboo": ["contrôler", "télévision", "boutons", "distance"]
+  },
+  {
+    "word": "réveil",
+    "taboo": ["réveiller", "matin", "sonner", "heure"]
+  },
+  {
+    "word": "médecin",
+    "taboo": ["soigner", "malade", "hôpital", "ordonnance"]
+  },
+  {
+    "word": "infirmier",
+    "taboo": ["soigner", "malade", "hôpital", "seringue"]
+  },
+  {
+    "word": "professeur",
+    "taboo": ["enseigner", "élèves", "école", "cours"]
+  },
+  {
+    "word": "avocat",
+    "taboo": ["défendre", "tribunal", "justice", "client"]
+  },
+  {
+    "word": "policier",
+    "taboo": ["arrêter", "criminel", "uniforme", "ordre"]
+  },
+  {
+    "word": "pompier",
+    "taboo": ["éteindre", "feu", "incendie", "camion"]
+  },
+  {
+    "word": "cuisinier",
+    "taboo": ["cuisiner", "repas", "restaurant", "recette"]
+  },
+  {
+    "word": "serveur",
+    "taboo": ["servir", "restaurant", "client", "commande"]
+  },
+  {
+    "word": "vendeur",
+    "taboo": ["vendre", "magasin", "client", "produit"]
+  },
+  {
+    "word": "plombier",
+    "taboo": ["réparer", "eau", "tuyau", "fuite"]
+  },
+  {
+    "word": "électricien",
+    "taboo": ["réparer", "électricité", "courant", "prise"]
+  },
+  {
+    "word": "mécanicien",
+    "taboo": ["réparer", "voiture", "moteur", "garage"]
+  },
+  {
+    "word": "coiffeur",
+    "taboo": ["couper", "cheveux", "salon", "coiffer"]
+  },
+  {
+    "word": "dentiste",
+    "taboo": ["soigner", "dents", "cabinet", "carie"]
+  },
+  {
+    "word": "vétérinaire",
+    "taboo": ["soigner", "animal", "chien", "chat"]
+  },
+  {
+    "word": "architecte",
+    "taboo": ["dessiner", "bâtiment", "construction", "plan"]
+  },
+  {
+    "word": "ingénieur",
+    "taboo": ["concevoir", "projet", "technique", "construction"]
+  },
+  {
+    "word": "journaliste",
+    "taboo": ["écrire", "article", "nouvelles", "reportage"]
+  },
+  {
+    "word": "photographe",
+    "taboo": ["photographier", "appareil", "photo", "cliché"]
+  },
+  {
+    "word": "musicien",
+    "taboo": ["jouer", "instrument", "musique", "concert"]
+  },
+  {
+    "word": "pomme",
+    "taboo": ["rouge", "fruit", "arbre", "croquer"]
+  },
+  {
+    "word": "poire",
+    "taboo": ["fruit", "vert", "juteux", "arbre"]
+  },
+  {
+    "word": "cerise",
+    "taboo": ["rouge", "fruit", "noyau", "arbre"]
+  },
+  {
+    "word": "fraise",
+    "taboo": ["rouge", "fruit", "jardin", "sucré"]
+  },
+  {
+    "word": "framboise",
+    "taboo": ["rouge", "fruit", "petit", "jardin"]
+  },
+  {
+    "word": "carotte",
+    "taboo": ["orange", "légume", "racine", "lapin"]
+  },
+  {
+    "word": "courgette",
+    "taboo": ["vert", "légume", "long", "cuisiner"]
+  },
+  {
+    "word": "aubergine",
+    "taboo": ["violet", "légume", "long", "cuisiner"]
+  },
+  {
+    "word": "champignon",
+    "taboo": ["forêt", "blanc", "cuisiner", "pousser"]
+  },
+  {
+    "word": "poireau",
+    "taboo": ["vert", "blanc", "légume", "soupe"]
+  },
+  {
+    "word": "bœuf",
+    "taboo": ["viande", "rouge", "griller", "animal"]
+  },
+  {
+    "word": "porc",
+    "taboo": ["viande", "cochon", "rosé", "cuisiner"]
+  },
+  {
+    "word": "agneau",
+    "taboo": ["viande", "mouton", "tendre", "griller"]
+  },
+  {
+    "word": "veau",
+    "taboo": ["viande", "blanc", "tendre", "cuisiner"]
+  },
+  {
+    "word": "saumon",
+    "taboo": ["poisson", "rose", "mer", "griller"]
+  },
+  {
+    "word": "thon",
+    "taboo": ["poisson", "mer", "conserves", "gras"]
+  },
+  {
+    "word": "crevette",
+    "taboo": ["fruit de mer", "petit", "rose", "cuisiner"]
+  },
+  {
+    "word": "huître",
+    "taboo": ["fruit de mer", "coquille", "mer", "ouvrir"]
+  },
+  {
+    "word": "fromage",
+    "taboo": ["lait", "vache", "affiné", "tranche"]
+  },
+  {
+    "word": "yaourt",
+    "taboo": ["lait", "blanc", "froid", "dessert"]
   }
 ]
