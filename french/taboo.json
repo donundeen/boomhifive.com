@@ -1163,5 +1163,41 @@
   {
     "word": "commander",
     "taboo": ["restaurant", "boire", "manger", "serveur"]
+  },
+  {
+    "word": "trottoir",
+    "taboo": ["marcher", "rue", "piétons", "bord"]
+  },
+  {
+    "word": "feu de circulation",
+    "taboo": ["rouge", "vert", "traverser", "voiture"]
+  },
+  {
+    "word": "panneau",
+    "taboo": ["rue", "indiquer", "direction", "affiche"]
+  },
+  {
+    "word": "banc",
+    "taboo": ["s'asseoir", "parc", "bois", "repos"]
+  },
+  {
+    "word": "lampadaire",
+    "taboo": ["lumière", "rue", "nuit", "éclairer"]
+  },
+  {
+    "word": "poubelle",
+    "taboo": ["déchets", "jeter", "rue", "vidage"]
+  },
+  {
+    "word": "kiosque",
+    "taboo": ["journaux", "magazines", "vendre", "rue"]
+  },
+  {
+    "word": "terrasse",
+    "taboo": ["café", "s'asseoir", "extérieur", "restaurant"]
+  },
+  {
+    "word": "vitrine",
+    "taboo": ["magasin", "voir", "vitre", "exposer"]
   }
 ]
