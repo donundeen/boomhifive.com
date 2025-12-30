@@ -863,5 +863,233 @@
   {
     "word": "yaourt",
     "taboo": ["lait", "blanc", "froid", "dessert"]
+  },
+  {
+    "word": "baiser",
+    "taboo": ["bouche", "lèvres", "embrasser", "amour"]
+  },
+  {
+    "word": "embrasser",
+    "taboo": ["baiser", "bouche", "lèvres", "amour"]
+  },
+  {
+    "word": "câlin",
+    "taboo": ["serrer", "bras", "tendre", "affection"]
+  },
+  {
+    "word": "amour",
+    "taboo": ["cœur", "romantique", "sentiment", "amoureux"]
+  },
+  {
+    "word": "amoureux",
+    "taboo": ["amour", "romantique", "cœur", "sentiment"]
+  },
+  {
+    "word": "rendez-vous",
+    "taboo": ["rencontrer", "romantique", "restaurant", "amoureux"]
+  },
+  {
+    "word": "flirter",
+    "taboo": ["séduire", "plaire", "romantique", "attirer"]
+  },
+  {
+    "word": "romantique",
+    "taboo": ["amour", "cœur", "tendre", "sentiment"]
+  },
+  {
+    "word": "fiancé",
+    "taboo": ["mariage", "bague", "promesse", "amour"]
+  },
+  {
+    "word": "mariage",
+    "taboo": ["époux", "cérémonie", "alliance", "fiancé"]
+  },
+  {
+    "word": "bague",
+    "taboo": ["doigt", "mariage", "fiancé", "or"]
+  },
+  {
+    "word": "cœur",
+    "taboo": ["amour", "sentiment", "romantique", "valentine"]
+  },
+  {
+    "word": "bouquet",
+    "taboo": ["fleurs", "offrir", "romantique", "cadeau"]
+  },
+  {
+    "word": "rose",
+    "taboo": ["fleur", "rouge", "romantique", "offrir"]
+  },
+  {
+    "word": "valentine",
+    "taboo": ["février", "amour", "cœur", "romantique"]
+  },
+  {
+    "word": "serrer",
+    "taboo": ["câlin", "bras", "étreindre", "affection"]
+  },
+  {
+    "word": "tendre",
+    "taboo": ["doux", "amour", "affection", "gentil"]
+  },
+  {
+    "word": "séduire",
+    "taboo": ["plaire", "attirer", "charme", "flirter"]
+  },
+  {
+    "word": "charme",
+    "taboo": ["séduire", "plaire", "attirer", "personnalité"]
+  },
+  {
+    "word": "tête",
+    "taboo": ["visage", "cerveau", "cheveux", "cou"]
+  },
+  {
+    "word": "bras",
+    "taboo": ["main", "épaule", "coude", "lever"]
+  },
+  {
+    "word": "jambe",
+    "taboo": ["pied", "genou", "marcher", "cuisse"]
+  },
+  {
+    "word": "main",
+    "taboo": ["doigts", "paume", "toucher", "bras"]
+  },
+  {
+    "word": "pied",
+    "taboo": ["orteils", "chaussure", "marcher", "jambe"]
+  },
+  {
+    "word": "dos",
+    "taboo": ["colonne", "échine", "droit", "douleur"]
+  },
+  {
+    "word": "ventre",
+    "taboo": ["estomac", "manger", "rond", "abdomen"]
+  },
+  {
+    "word": "poitrine",
+    "taboo": ["cœur", "poumons", "respiration", "cage"]
+  },
+  {
+    "word": "épaule",
+    "taboo": ["bras", "cou", "large", "porter"]
+  },
+  {
+    "word": "coude",
+    "taboo": ["bras", "plier", "angle", "articulation"]
+  },
+  {
+    "word": "genou",
+    "taboo": ["jambe", "plier", "articulation", "s'agenouiller"]
+  },
+  {
+    "word": "cheville",
+    "taboo": ["pied", "jambe", "articulation", "tourner"]
+  },
+  {
+    "word": "cou",
+    "taboo": ["tête", "gorge", "long", "tourner"]
+  },
+  {
+    "word": "nuque",
+    "taboo": ["cou", "dos", "tête", "arrière"]
+  },
+  {
+    "word": "front",
+    "taboo": ["tête", "visage", "haut", "ride"]
+  },
+  {
+    "word": "menton",
+    "taboo": ["visage", "bouche", "bas", "barbe"]
+  },
+  {
+    "word": "joues",
+    "taboo": ["visage", "rouge", "rougir", "douces"]
+  },
+  {
+    "word": "poignet",
+    "taboo": ["main", "bras", "montre", "articulation"]
+  },
+  {
+    "word": "hanche",
+    "taboo": ["jambe", "corps", "large", "articulation"]
+  },
+  {
+    "word": "casserole",
+    "taboo": ["cuisiner", "eau", "bouillir", "poignée"]
+  },
+  {
+    "word": "poêle",
+    "taboo": ["frire", "cuisiner", "huile", "manche"]
+  },
+  {
+    "word": "couteau",
+    "taboo": ["couper", "tranchant", "lame", "cuisiner"]
+  },
+  {
+    "word": "fourchette",
+    "taboo": ["manger", "dents", "fourche", "repas"]
+  },
+  {
+    "word": "cuillère",
+    "taboo": ["manger", "soupe", "creux", "mélanger"]
+  },
+  {
+    "word": "assiette",
+    "taboo": ["manger", "repas", "ronde", "poser"]
+  },
+  {
+    "word": "verre",
+    "taboo": ["boire", "liquide", "transparent", "eau"]
+  },
+  {
+    "word": "tasse",
+    "taboo": ["café", "thé", "boire", "anse"]
+  },
+  {
+    "word": "bol",
+    "taboo": ["soupe", "céréales", "creux", "manger"]
+  },
+  {
+    "word": "planche",
+    "taboo": ["couper", "légumes", "bois", "cuisiner"]
+  },
+  {
+    "word": "fouet",
+    "taboo": ["battre", "œufs", "mélanger", "cuisiner"]
+  },
+  {
+    "word": "passoire",
+    "taboo": ["égoutter", "pâtes", "trous", "eau"]
+  },
+  {
+    "word": "ouvre-boîte",
+    "taboo": ["ouvrir", "boîte", "conserves", "roue"]
+  },
+  {
+    "word": "économe",
+    "taboo": ["éplucher", "légumes", "pomme", "peau"]
+  },
+  {
+    "word": "râpe",
+    "taboo": ["fromage", "râper", "trous", "métal"]
+  },
+  {
+    "word": "presse-ail",
+    "taboo": ["ail", "écraser", "cuisiner", "gousses"]
+  },
+  {
+    "word": "louche",
+    "taboo": ["servir", "soupe", "creux", "manche"]
+  },
+  {
+    "word": "saladier",
+    "taboo": ["salade", "mélanger", "grand", "rond"]
+  },
+  {
+    "word": "torchon",
+    "taboo": ["essuyer", "nettoyer", "tissu", "sécher"]
   }
 ]
