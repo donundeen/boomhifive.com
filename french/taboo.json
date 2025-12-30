@@ -1091,5 +1091,77 @@
   {
     "word": "torchon",
     "taboo": ["essuyer", "nettoyer", "tissu", "sécher"]
+  },
+  {
+    "word": "marcher",
+    "taboo": ["pieds", "rue", "promenade", "avancer"]
+  },
+  {
+    "word": "courir",
+    "taboo": ["rapide", "sport", "pieds", "vitesse"]
+  },
+  {
+    "word": "nager",
+    "taboo": ["eau", "piscine", "mer", "bras"]
+  },
+  {
+    "word": "faire du vélo",
+    "taboo": ["pédaler", "roues", "cyclisme", "bicyclette"]
+  },
+  {
+    "word": "pêcher",
+    "taboo": ["poisson", "eau", "canne", "hameçon"]
+  },
+  {
+    "word": "camper",
+    "taboo": ["tente", "nature", "dormir", "feu"]
+  },
+  {
+    "word": "randonner",
+    "taboo": ["marcher", "montagne", "sentier", "sac"]
+  },
+  {
+    "word": "jardinier",
+    "taboo": ["plantes", "fleurs", "terre", "arroser"]
+  },
+  {
+    "word": "skier",
+    "taboo": ["neige", "montagne", "pistes", "hiver"]
+  },
+  {
+    "word": "sortir",
+    "taboo": ["soir", "ville", "amuser", "quitter"]
+  },
+  {
+    "word": "danser",
+    "taboo": ["musique", "rythme", "boîte", "mouvement"]
+  },
+  {
+    "word": "boire",
+    "taboo": ["alcool", "verre", "bar", "liquide"]
+  },
+  {
+    "word": "manger",
+    "taboo": ["restaurant", "repas", "nourriture", "faim"]
+  },
+  {
+    "word": "regarder",
+    "taboo": ["spectacle", "théâtre", "cinéma", "voir"]
+  },
+  {
+    "word": "écouter",
+    "taboo": ["musique", "concert", "oreilles", "son"]
+  },
+  {
+    "word": "rencontrer",
+    "taboo": ["amis", "personnes", "soir", "voir"]
+  },
+  {
+    "word": "fêter",
+    "taboo": ["célébrer", "anniversaire", "soir", "fête"]
+  },
+  {
+    "word": "commander",
+    "taboo": ["restaurant", "boire", "manger", "serveur"]
   }
 ]
