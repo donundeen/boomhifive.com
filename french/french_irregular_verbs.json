@@ -9,7 +9,7 @@
     "tu es",
     "you are",
     "Tu es gentil.",
-    "You are kind. (Présent)"
+    "You are kind. (Présent, informal)"
   ],
   [
     "il/elle/on est",
@@ -27,7 +27,7 @@
     "vous êtes",
     "you are (formal)",
     "Vous êtes très aimables.",
-    "You are very kind. (Présent)"
+    "You are very kind. (Présent, formal)"
   ],
   [
     "ils/elles sont",
@@ -45,7 +45,7 @@
     "tu étais",
     "you were",
     "Tu étais à l'école.",
-    "You were at school. (Imparfait)"
+    "You were at school. (Imparfait, informal)"
   ],
   [
     "il/elle/on était",
@@ -63,49 +63,13 @@
     "vous étiez",
     "you were (formal)",
     "Vous étiez en vacances.",
-    "You were on vacation. (Imparfait)"
+    "You were on vacation. (Imparfait, formal)"
   ],
   [
     "ils/elles étaient",
     "they were",
     "Ils étaient en retard.",
     "They were late. (Imparfait)"
-  ],
-  [
-    "je fus",
-    "I was",
-    "Je fus surpris par cette nouvelle.",
-    "I was surprised by this news. (Passé simple)"
-  ],
-  [
-    "tu fus",
-    "you were",
-    "Tu fus le premier à arriver.",
-    "You were the first to arrive. (Passé simple)"
-  ],
-  [
-    "il/elle/on fut",
-    "he/she was",
-    "Il fut élu président.",
-    "He was elected president. (Passé simple)"
-  ],
-  [
-    "nous fûmes",
-    "we were",
-    "Nous fûmes très heureux de cette décision.",
-    "We were very happy about this decision. (Passé simple)"
-  ],
-  [
-    "vous fûtes",
-    "you were (formal)",
-    "Vous fûtes les seuls à comprendre.",
-    "You were the only ones to understand. (Passé simple)"
-  ],
-  [
-    "ils/elles furent",
-    "they were",
-    "Ils furent choisis pour ce projet.",
-    "They were chosen for this project. (Passé simple)"
   ],
   [
     "j'ai été",
@@ -117,7 +81,7 @@
     "tu as été",
     "you have been",
     "Tu as été très patient avec moi.",
-    "You have been very patient with me. (Passé composé)"
+    "You have been very patient with me. (Passé composé, informal)"
   ],
   [
     "il/elle/on a été",
@@ -135,7 +99,7 @@
     "vous avez été",
     "you have been (formal)",
     "Vous avez été très gentils avec nous.",
-    "You have been very kind to us. (Passé composé)"
+    "You have been very kind to us. (Passé composé, formal)"
   ],
   [
     "ils/elles ont été",
@@ -153,7 +117,7 @@
     "tu seras",
     "you will be",
     "Tu seras le prochain président.",
-    "You will be the next president. (Futur simple)"
+    "You will be the next president. (Futur simple, informal)"
   ],
   [
     "il/elle/on sera",
@@ -171,7 +135,7 @@
     "vous serez",
     "you will be (formal)",
     "Vous serez les bienvenus à notre maison.",
-    "You will be welcome at our house. (Futur simple)"
+    "You will be welcome at our house. (Futur simple, formal)"
   ],
   [
     "ils/elles seront",
@@ -189,7 +153,7 @@
     "tu avais été",
     "you had been",
     "Tu avais été prévenu de l'heure.",
-    "You had been warned about the time. (Plus-que-parfait)"
+    "You had been warned about the time. (Plus-que-parfait, informal)"
   ],
   [
     "il/elle/on avait été",
@@ -207,7 +171,7 @@
     "vous aviez été",
     "you had been (formal)",
     "Vous aviez été choisis pour cette mission.",
-    "You had been chosen for this mission. (Plus-que-parfait)"
+    "You had been chosen for this mission. (Plus-que-parfait, formal)"
   ],
   [
     "ils/elles avaient été",
@@ -225,7 +189,7 @@
     "tu aurais été",
     "you would have been",
     "Tu aurais été fier de ton fils.",
-    "You would have been proud of your son. (Conditionnel passé)"
+    "You would have been proud of your son. (Conditionnel passé, informal)"
   ],
   [
     "il/elle/on aurait été",
@@ -243,7 +207,7 @@
     "vous auriez été",
     "you would have been (formal)",
     "Vous auriez été étonnés par le résultat.",
-    "You would have been amazed by the result. (Conditionnel passé)"
+    "You would have been amazed by the result. (Conditionnel passé, formal)"
   ],
   [
     "ils/elles auraient été",
@@ -257,7 +221,6 @@
     "Étant malade, je ne peux pas sortir.",
     "Being sick, I cannot go out. (Participe présent)"
   ],
-
   [
     "je ai",
     "I have",
@@ -268,7 +231,7 @@
     "tu as",
     "you have",
     "Tu as une belle voiture.",
-    "You have a nice car. (Présent)"
+    "You have a nice car. (Présent, informal)"
   ],
   [
     "il/elle/on a",
@@ -286,7 +249,7 @@
     "vous avez",
     "you have (formal)",
     "Vous avez de la chance.",
-    "You are lucky. (Présent)"
+    "You are lucky. (Présent, formal)"
   ],
   [
     "ils/elles ont",
@@ -304,7 +267,7 @@
     "tu avais",
     "you had",
     "Tu avais beaucoup de jouets.",
-    "You had many toys. (Imparfait)"
+    "You had many toys. (Imparfait, informal)"
   ],
   [
     "il/elle/on avait",
@@ -322,49 +285,13 @@
     "vous aviez",
     "you had (formal)",
     "Vous aviez raison.",
-    "You were right. (Imparfait)"
+    "You were right. (Imparfait, formal)"
   ],
   [
     "ils/elles avaient",
     "they had",
     "Ils avaient peur du noir.",
     "They were afraid of the dark. (Imparfait)"
-  ],
-  [
-    "je eus",
-    "I had",
-    "Je eus l'occasion de le rencontrer.",
-    "I had the opportunity to meet him. (Passé simple)"
-  ],
-  [
-    "tu eus",
-    "you had",
-    "Tu eus raison de partir tôt.",
-    "You had reason to leave early. (Passé simple)"
-  ],
-  [
-    "il/elle/on eut",
-    "he/she had",
-    "Il eut une idée brillante.",
-    "He had a brilliant idea. (Passé simple)"
-  ],
-  [
-    "nous eûmes",
-    "we had",
-    "Nous eûmes beaucoup de chance ce jour-là.",
-    "We had a lot of luck that day. (Passé simple)"
-  ],
-  [
-    "vous eûtes",
-    "you had (formal)",
-    "Vous eûtes le courage de dire la vérité.",
-    "You had the courage to tell the truth. (Passé simple)"
-  ],
-  [
-    "ils/elles eurent",
-    "they had",
-    "Ils eurent le temps de se préparer.",
-    "They had time to prepare. (Passé simple)"
   ],
   [
     "j'ai eu",
@@ -376,7 +303,7 @@
     "tu as eu",
     "you have had",
     "Tu as eu de la chance aujourd'hui.",
-    "You have had luck today. (Passé composé)"
+    "You have had luck today. (Passé composé, informal)"
   ],
   [
     "il/elle/on a eu",
@@ -394,7 +321,7 @@
     "vous avez eu",
     "you have had (formal)",
     "Vous avez eu raison de partir.",
-    "You have had reason to leave. (Passé composé)"
+    "You have had reason to leave. (Passé composé, formal)"
   ],
   [
     "ils/elles ont eu",
@@ -412,7 +339,7 @@
     "tu auras",
     "you will have",
     "Tu auras le temps de réfléchir.",
-    "You will have time to think. (Futur simple)"
+    "You will have time to think. (Futur simple, informal)"
   ],
   [
     "il/elle/on aura",
@@ -430,7 +357,7 @@
     "vous aurez",
     "you will have (formal)",
     "Vous aurez besoin de patience.",
-    "You will have need of patience. (Futur simple)"
+    "You will have need of patience. (Futur simple, formal)"
   ],
   [
     "ils/elles auront",
@@ -448,7 +375,7 @@
     "tu avais eu",
     "you had had",
     "Tu avais eu raison de partir.",
-    "You had had reason to leave. (Plus-que-parfait)"
+    "You had had reason to leave. (Plus-que-parfait, informal)"
   ],
   [
     "il/elle/on avait eu",
@@ -466,7 +393,7 @@
     "vous aviez eu",
     "you had had (formal)",
     "Vous aviez eu cette chance.",
-    "You had had this chance. (Plus-que-parfait)"
+    "You had had this chance. (Plus-que-parfait, formal)"
   ],
   [
     "ils/elles avaient eu",
@@ -484,7 +411,7 @@
     "tu aurais eu",
     "you would have had",
     "Tu aurais eu raison de partir.",
-    "You would have had reason to leave. (Conditionnel passé)"
+    "You would have had reason to leave. (Conditionnel passé, informal)"
   ],
   [
     "il/elle/on aurait eu",
@@ -502,7 +429,7 @@
     "vous auriez eu",
     "you would have had (formal)",
     "Vous auriez eu besoin d'aide.",
-    "You would have had need of help. (Conditionnel passé)"
+    "You would have had need of help. (Conditionnel passé, formal)"
   ],
   [
     "ils/elles auraient eu",
@@ -526,7 +453,7 @@
     "tu vas",
     "you go/you are going",
     "Tu vas à l'école en bus.",
-    "You go to school by bus. (Présent)"
+    "You go to school by bus. (Présent, informal)"
   ],
   [
     "il/elle/on va",
@@ -544,7 +471,7 @@
     "vous allez",
     "you go/you are going (formal)",
     "Vous allez en vacances en été.",
-    "You go on vacation in summer. (Présent)"
+    "You go on vacation in summer. (Présent, formal)"
   ],
   [
     "ils/elles vont",
@@ -562,7 +489,7 @@
     "tu allais",
     "you were going",
     "Tu allais à l'école à pied.",
-    "You were going to school on foot. (Imparfait)"
+    "You were going to school on foot. (Imparfait, informal)"
   ],
   [
     "il/elle/on allait",
@@ -580,49 +507,13 @@
     "vous alliez",
     "you were going (formal)",
     "Vous alliez en ville.",
-    "You were going to town. (Imparfait)"
+    "You were going to town. (Imparfait, formal)"
   ],
   [
     "ils/elles allaient",
     "they were going",
     "Ils allaient au musée.",
     "They were going to the museum. (Imparfait)"
-  ],
-  [
-    "j'allai",
-    "I went",
-    "J'allai à Paris l'année dernière.",
-    "I went to Paris last year. (Passé simple)"
-  ],
-  [
-    "tu allas",
-    "you went",
-    "Tu allas au marché hier.",
-    "You went to the market yesterday. (Passé simple)"
-  ],
-  [
-    "il/elle/on alla",
-    "he/she went",
-    "Il alla chez le médecin.",
-    "He went to the doctor's. (Passé simple)"
-  ],
-  [
-    "nous allâmes",
-    "we went",
-    "Nous allâmes à la plage.",
-    "We went to the beach. (Passé simple)"
-  ],
-  [
-    "vous allâtes",
-    "you went (formal)",
-    "Vous allâtes au théâtre.",
-    "You went to the theater. (Passé simple)"
-  ],
-  [
-    "ils/elles allèrent",
-    "they went",
-    "Ils allèrent au concert.",
-    "They went to the concert. (Passé simple)"
   ],
   [
     "je suis allé(e)",
@@ -634,7 +525,7 @@
     "tu es allé(e)",
     "you have gone/you went",
     "Tu es allé à la bibliothèque.",
-    "You went to the library. (Passé composé)"
+    "You went to the library. (Passé composé, informal)"
   ],
   [
     "il/elle/on est allé(e)",
@@ -652,7 +543,7 @@
     "vous êtes allé(e)s",
     "you have gone/you went (formal)",
     "Vous êtes allés en voyage.",
-    "You went on a trip. (Passé composé)"
+    "You went on a trip. (Passé composé, formal)"
   ],
   [
     "ils/elles sont allé(e)s",
@@ -670,7 +561,7 @@
     "tu iras",
     "you will go",
     "Tu iras à l'université.",
-    "You will go to university. (Futur simple)"
+    "You will go to university. (Futur simple, informal)"
   ],
   [
     "il/elle/on ira",
@@ -688,7 +579,7 @@
     "vous irez",
     "you will go (formal)",
     "Vous irez au concert.",
-    "You will go to the concert. (Futur simple)"
+    "You will go to the concert. (Futur simple, formal)"
   ],
   [
     "ils/elles iront",
@@ -706,7 +597,7 @@
     "tu étais allé(e)",
     "you had gone",
     "Tu étais allé à l'école avant la fermeture.",
-    "You had gone to school before it closed. (Plus-que-parfait)"
+    "You had gone to school before it closed. (Plus-que-parfait, informal)"
   ],
   [
     "il/elle/on était allé(e)",
@@ -724,7 +615,7 @@
     "vous étiez allé(e)s",
     "you had gone (formal)",
     "Vous étiez allés en ville avant la pluie.",
-    "You had gone to town before the rain. (Plus-que-parfait)"
+    "You had gone to town before the rain. (Plus-que-parfait, formal)"
   ],
   [
     "ils/elles étaient allé(e)s",
@@ -742,7 +633,7 @@
     "tu serais allé(e)",
     "you would have gone",
     "Tu serais allé en France si tu avais eu le temps.",
-    "You would have gone to France if you had had time. (Conditionnel passé)"
+    "You would have gone to France if you had had time. (Conditionnel passé, informal)"
   ],
   [
     "il/elle/on serait allé(e)",
@@ -760,7 +651,7 @@
     "vous seriez allé(e)s",
     "you would have gone (formal)",
     "Vous seriez allés en vacances si vous aviez pu.",
-    "You would have gone on vacation if you could have. (Conditionnel passé)"
+    "You would have gone on vacation if you could have. (Conditionnel passé, formal)"
   ],
   [
     "ils/elles seraient allé(e)s",
@@ -784,7 +675,7 @@
     "tu vois",
     "you see/you are seeing",
     "Tu vois le film à la télévision.",
-    "You see the movie on television. (Présent)"
+    "You see the movie on television. (Présent, informal)"
   ],
   [
     "il/elle/on voit",
@@ -802,7 +693,7 @@
     "vous voyez",
     "you see/you are seeing (formal)",
     "Vous voyez le problème maintenant.",
-    "You see the problem now. (Présent)"
+    "You see the problem now. (Présent, formal)"
   ],
   [
     "ils/elles voient",
@@ -820,7 +711,7 @@
     "tu voyais",
     "you were seeing/you used to see",
     "Tu voyais ce film quand tu étais petit.",
-    "You used to see this movie when you were little. (Imparfait)"
+    "You used to see this movie when you were little. (Imparfait, informal)"
   ],
   [
     "il/elle/on voyait",
@@ -838,49 +729,13 @@
     "vous voyiez",
     "you were seeing/you used to see (formal)",
     "Vous voyiez vos enfants tous les jours.",
-    "You used to see your children every day. (Imparfait)"
+    "You used to see your children every day. (Imparfait, formal)"
   ],
   [
     "ils/elles voyaient",
     "they were seeing/they used to see",
     "Ils voyaient les étoiles la nuit.",
     "They used to see the stars at night. (Imparfait)"
-  ],
-  [
-    "je vis",
-    "I saw",
-    "Je vis un accident sur la route.",
-    "I saw an accident on the road. (Passé simple)"
-  ],
-  [
-    "tu vis",
-    "you saw",
-    "Tu vis le spectacle hier soir.",
-    "You saw the show last night. (Passé simple)"
-  ],
-  [
-    "il/elle/on vit",
-    "he/she saw",
-    "Il vit le médecin l'année dernière.",
-    "He saw the doctor last year. (Passé simple)"
-  ],
-  [
-    "nous vîmes",
-    "we saw",
-    "Nous vîmes le film au cinéma.",
-    "We saw the movie at the cinema. (Passé simple)"
-  ],
-  [
-    "vous vîtes",
-    "you saw (formal)",
-    "Vous vîtes l'exposition au musée.",
-    "You saw the exhibition at the museum. (Passé simple)"
-  ],
-  [
-    "ils/elles virent",
-    "they saw",
-    "Ils virent le concert en direct.",
-    "They saw the concert live. (Passé simple)"
   ],
   [
     "j'ai vu",
@@ -892,7 +747,7 @@
     "tu as vu",
     "you have seen/you saw",
     "Tu as vu le nouveau restaurant?",
-    "Have you seen the new restaurant? (Passé composé)"
+    "Have you seen the new restaurant? (Passé composé, informal)"
   ],
   [
     "il/elle/on a vu",
@@ -910,7 +765,7 @@
     "vous avez vu",
     "you have seen/you saw (formal)",
     "Vous avez vu le dernier épisode?",
-    "Have you seen the latest episode? (Passé composé)"
+    "Have you seen the latest episode? (Passé composé, formal)"
   ],
   [
     "ils/elles ont vu",
@@ -928,7 +783,7 @@
     "tu verras",
     "you will see",
     "Tu verras le résultat bientôt.",
-    "You will see the result soon. (Futur simple)"
+    "You will see the result soon. (Futur simple, informal)"
   ],
   [
     "il/elle/on verra",
@@ -946,7 +801,7 @@
     "vous verrez",
     "you will see (formal)",
     "Vous verrez la différence.",
-    "You will see the difference. (Futur simple)"
+    "You will see the difference. (Futur simple, formal)"
   ],
   [
     "ils/elles verront",
@@ -964,7 +819,7 @@
     "tu avais vu",
     "you had seen",
     "Tu avais vu cette exposition.",
-    "You had seen this exhibition. (Plus-que-parfait)"
+    "You had seen this exhibition. (Plus-que-parfait, informal)"
   ],
   [
     "il/elle/on avait vu",
@@ -982,7 +837,7 @@
     "vous aviez vu",
     "you had seen (formal)",
     "Vous aviez vu ce document.",
-    "You had seen this document. (Plus-que-parfait)"
+    "You had seen this document. (Plus-que-parfait, formal)"
   ],
   [
     "ils/elles avaient vu",
@@ -1000,7 +855,7 @@
     "tu aurais vu",
     "you would have seen",
     "Tu aurais vu le spectacle si tu étais venu.",
-    "You would have seen the show if you had come. (Conditionnel passé)"
+    "You would have seen the show if you had come. (Conditionnel passé, informal)"
   ],
   [
     "il/elle/on aurait vu",
@@ -1018,7 +873,7 @@
     "vous auriez vu",
     "you would have seen (formal)",
     "Vous auriez vu la différence si vous aviez regardé attentivement.",
-    "You would have seen the difference if you had looked carefully. (Conditionnel passé)"
+    "You would have seen the difference if you had looked carefully. (Conditionnel passé, formal)"
   ],
   [
     "ils/elles auraient vu",
@@ -1042,7 +897,7 @@
     "tu dois",
     "you must/you have to",
     "Tu dois faire tes devoirs.",
-    "You must do your homework. (Présent)"
+    "You must do your homework. (Présent, informal)"
   ],
   [
     "il/elle/on doit",
@@ -1060,7 +915,7 @@
     "vous devez",
     "you must/you have to (formal)",
     "Vous devez respecter les règles.",
-    "You must respect the rules. (Présent)"
+    "You must respect the rules. (Présent, formal)"
   ],
   [
     "ils/elles doivent",
@@ -1078,7 +933,7 @@
     "tu devais",
     "you had to/you were supposed to",
     "Tu devais finir ce travail.",
-    "You had to finish this work. (Imparfait)"
+    "You had to finish this work. (Imparfait, informal)"
   ],
   [
     "il/elle/on devait",
@@ -1096,49 +951,13 @@
     "vous deviez",
     "you had to/you were supposed to (formal)",
     "Vous deviez appeler votre mère.",
-    "You had to call your mother. (Imparfait)"
+    "You had to call your mother. (Imparfait, formal)"
   ],
   [
     "ils/elles devaient",
     "they had to/they were supposed to",
     "Ils devaient rendre le livre.",
     "They had to return the book. (Imparfait)"
-  ],
-  [
-    "je dus",
-    "I had to",
-    "Je dus partir immédiatement.",
-    "I had to leave immediately. (Passé simple)"
-  ],
-  [
-    "tu dus",
-    "you had to",
-    "Tu dus accepter l'offre.",
-    "You had to accept the offer. (Passé simple)"
-  ],
-  [
-    "il/elle/on dut",
-    "he/she had to",
-    "Il dut annuler le rendez-vous.",
-    "He had to cancel the appointment. (Passé simple)"
-  ],
-  [
-    "nous dûmes",
-    "we had to",
-    "Nous dûmes attendre longtemps.",
-    "We had to wait a long time. (Passé simple)"
-  ],
-  [
-    "vous dûtes",
-    "you had to (formal)",
-    "Vous dûtes expliquer la situation.",
-    "You had to explain the situation. (Passé simple)"
-  ],
-  [
-    "ils/elles durent",
-    "they had to",
-    "Ils durent partir en urgence.",
-    "They had to leave urgently. (Passé simple)"
   ],
   [
     "j'ai dû",
@@ -1150,7 +969,7 @@
     "tu as dû",
     "you have had to/you had to",
     "Tu as dû travailler tard.",
-    "You had to work late. (Passé composé)"
+    "You had to work late. (Passé composé, informal)"
   ],
   [
     "il/elle/on a dû",
@@ -1168,7 +987,7 @@
     "vous avez dû",
     "you have had to/you had to (formal)",
     "Vous avez dû attendre le bus.",
-    "You had to wait for the bus. (Passé composé)"
+    "You had to wait for the bus. (Passé composé, formal)"
   ],
   [
     "ils/elles ont dû",
@@ -1186,7 +1005,7 @@
     "tu devras",
     "you will have to",
     "Tu devras expliquer ton retard.",
-    "You will have to explain your delay. (Futur simple)"
+    "You will have to explain your delay. (Futur simple, informal)"
   ],
   [
     "il/elle/on devra",
@@ -1204,7 +1023,7 @@
     "vous devrez",
     "you will have to (formal)",
     "Vous devrez présenter vos excuses.",
-    "You will have to apologize. (Futur simple)"
+    "You will have to apologize. (Futur simple, formal)"
   ],
   [
     "ils/elles devront",
@@ -1222,7 +1041,7 @@
     "tu avais dû",
     "you had had to",
     "Tu avais dû accepter le compromis.",
-    "You had had to accept the compromise. (Plus-que-parfait)"
+    "You had had to accept the compromise. (Plus-que-parfait, informal)"
   ],
   [
     "il/elle/on avait dû",
@@ -1240,7 +1059,7 @@
     "vous aviez dû",
     "you had had to (formal)",
     "Vous aviez dû faire des concessions.",
-    "You had had to make concessions. (Plus-que-parfait)"
+    "You had had to make concessions. (Plus-que-parfait, formal)"
   ],
   [
     "ils/elles avaient dû",
@@ -1258,7 +1077,7 @@
     "tu aurais dû",
     "you should have/you would have had to",
     "Tu aurais dû l'appeler hier.",
-    "You should have called him yesterday. (Conditionnel passé)"
+    "You should have called him yesterday. (Conditionnel passé, informal)"
   ],
   [
     "il/elle/on aurait dû",
@@ -1276,7 +1095,7 @@
     "vous auriez dû",
     "you should have/you would have had to (formal)",
     "Vous auriez dû vérifier les informations.",
-    "You should have checked the information. (Conditionnel passé)"
+    "You should have checked the information. (Conditionnel passé, formal)"
   ],
   [
     "ils/elles auraient dû",
@@ -1300,7 +1119,7 @@
     "tu veux",
     "you want",
     "Tu veux manger une pizza.",
-    "You want to eat a pizza. (Présent)"
+    "You want to eat a pizza. (Présent, informal)"
   ],
   [
     "il/elle/on veut",
@@ -1318,7 +1137,7 @@
     "vous voulez",
     "you want (formal)",
     "Vous voulez boire un café?",
-    "Do you want to drink a coffee? (Présent)"
+    "Do you want to drink a coffee? (Présent, formal)"
   ],
   [
     "ils/elles veulent",
@@ -1336,7 +1155,7 @@
     "tu voulais",
     "you wanted/you used to want",
     "Tu voulais aller à la plage.",
-    "You wanted to go to the beach. (Imparfait)"
+    "You wanted to go to the beach. (Imparfait, informal)"
   ],
   [
     "il/elle/on voulait",
@@ -1354,49 +1173,13 @@
     "vous vouliez",
     "you wanted/you used to want (formal)",
     "Vous vouliez partir en vacances.",
-    "You wanted to go on vacation. (Imparfait)"
+    "You wanted to go on vacation. (Imparfait, formal)"
   ],
   [
     "ils/elles voulaient",
     "they wanted/they used to want",
     "Ils voulaient voir ce film.",
     "They wanted to see this movie. (Imparfait)"
-  ],
-  [
-    "je voulus",
-    "I wanted",
-    "Je voulus partir immédiatement.",
-    "I wanted to leave immediately. (Passé simple)"
-  ],
-  [
-    "tu voulus",
-    "you wanted",
-    "Tu voulus accepter l'offre.",
-    "You wanted to accept the offer. (Passé simple)"
-  ],
-  [
-    "il/elle/on voulut",
-    "he/she wanted",
-    "Il voulut changer de travail.",
-    "He wanted to change jobs. (Passé simple)"
-  ],
-  [
-    "nous voulûmes",
-    "we wanted",
-    "Nous voulûmes rester à la maison.",
-    "We wanted to stay at home. (Passé simple)"
-  ],
-  [
-    "vous voulûtes",
-    "you wanted (formal)",
-    "Vous voulûtes partir en voyage.",
-    "You wanted to go on a trip. (Passé simple)"
-  ],
-  [
-    "ils/elles voulurent",
-    "they wanted",
-    "Ils voulurent acheter cette maison.",
-    "They wanted to buy this house. (Passé simple)"
   ],
   [
     "j'ai voulu",
@@ -1408,7 +1191,7 @@
     "tu as voulu",
     "you have wanted/you wanted",
     "Tu as voulu partir tôt.",
-    "You wanted to leave early. (Passé composé)"
+    "You wanted to leave early. (Passé composé, informal)"
   ],
   [
     "il/elle/on a voulu",
@@ -1426,7 +1209,7 @@
     "vous avez voulu",
     "you have wanted/you wanted (formal)",
     "Vous avez voulu voir le spectacle.",
-    "You wanted to see the show. (Passé composé)"
+    "You wanted to see the show. (Passé composé, formal)"
   ],
   [
     "ils/elles ont voulu",
@@ -1444,7 +1227,7 @@
     "tu voudras",
     "you will want",
     "Tu voudras changer de carrière.",
-    "You will want to change careers. (Futur simple)"
+    "You will want to change careers. (Futur simple, informal)"
   ],
   [
     "il/elle/on voudra",
@@ -1462,7 +1245,7 @@
     "vous voudrez",
     "you will want (formal)",
     "Vous voudrez prendre des vacances.",
-    "You will want to take a vacation. (Futur simple)"
+    "You will want to take a vacation. (Futur simple, formal)"
   ],
   [
     "ils/elles voudront",
@@ -1480,7 +1263,7 @@
     "tu avais voulu",
     "you had wanted",
     "Tu avais voulu acheter cette voiture.",
-    "You had wanted to buy this car. (Plus-que-parfait)"
+    "You had wanted to buy this car. (Plus-que-parfait, informal)"
   ],
   [
     "il/elle/on avait voulu",
@@ -1498,7 +1281,7 @@
     "vous aviez voulu",
     "you had wanted (formal)",
     "Vous aviez voulu partir en voyage.",
-    "You had wanted to go on a trip. (Plus-que-parfait)"
+    "You had wanted to go on a trip. (Plus-que-parfait, formal)"
   ],
   [
     "ils/elles avaient voulu",
@@ -1516,7 +1299,7 @@
     "tu aurais voulu",
     "you would have wanted/you would like to have",
     "Tu aurais voulu voir ce film.",
-    "You would have liked to see this movie. (Conditionnel passé)"
+    "You would have liked to see this movie. (Conditionnel passé, informal)"
   ],
   [
     "il/elle/on aurait voulu",
@@ -1534,7 +1317,7 @@
     "vous auriez voulu",
     "you would have wanted/you would like to have (formal)",
     "Vous auriez voulu partir en vacances.",
-    "You would have liked to go on vacation. (Conditionnel passé)"
+    "You would have liked to go on vacation. (Conditionnel passé, formal)"
   ],
   [
     "ils/elles auraient voulu",
