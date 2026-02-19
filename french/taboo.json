@@ -1199,5 +1199,69 @@
   {
     "word": "vitrine",
     "taboo": ["magasin", "voir", "vitre", "exposer"]
+  },
+  {
+    "word": "bar",
+    "taboo": ["boire", "alcool", "serveur", "soir"]
+  },
+  {
+    "word": "discothèque",
+    "taboo": ["danser", "musique", "nuit", "boîte"]
+  },
+  {
+    "word": "soirée",
+    "taboo": ["nuit", "amis", "fête", "sortir"]
+  },
+  {
+    "word": "apéritif",
+    "taboo": ["boire", "avant", "dîner", "amuse-gueule"]
+  },
+  {
+    "word": "cocktail",
+    "taboo": ["alcool", "mélanger", "verre", "bar"]
+  },
+  {
+    "word": "bière",
+    "taboo": ["boire", "mousse", "pression", "alcool"]
+  },
+  {
+    "word": "vin",
+    "taboo": ["boire", "rouge", "blanc", "bouteille"]
+  },
+  {
+    "word": "champagne",
+    "taboo": ["bulles", "fêter", "flûte", "alcool"]
+  },
+  {
+    "word": "taxi",
+    "taboo": ["conduire", "rue", "passager", "course"]
+  },
+  {
+    "word": "karaoké",
+    "taboo": ["chanter", "micro", "texte", "bar"]
+  },
+  {
+    "word": "DJ",
+    "taboo": ["musique", "mixer", "disque", "soirée"]
+  },
+  {
+    "word": "piste de danse",
+    "taboo": ["danser", "boîte", "sol", "bouger"]
+  },
+  {
+    "word": "pourboire",
+    "taboo": ["serveur", "donner", "addition", "merci"]
+  },
+  {
+    "word": "dîner",
+    "taboo": ["soir", "manger", "restaurant", "repas"]
+  },
+  {
+    "word": "minuit",
+    "taboo": ["nuit", "heure", "douze", "tard"]
+  },
+  {
+    "word": "ambiance",
+    "taboo": ["soirée", "musique", "atmosphère", "ambiant"]
   }
 ]
