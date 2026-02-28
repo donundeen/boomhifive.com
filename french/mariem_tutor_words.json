@@ -146,5 +146,20 @@
   ["fréquenter les marchés publics", "to frequent / go to public markets", "Je fréquente le marché Jean-Talon chaque samedi pour acheter des produits frais.", "I go to Jean-Talon Market every Saturday to buy fresh produce.", "Marchés locaux — Québec"],
   ["acheter chez les producteurs locaux", "to buy from local producers", "Aux marchés de quartier, on peut acheter directement chez les producteurs locaux.", "At neighborhood markets, you can buy directly from local producers.", "Marchés locaux — Québec"],
   ["s'impliquer dans la vie du quartier", "to get involved in neighborhood life", "Depuis mon arrivée, je m'implique dans la vie du quartier: comités, fêtes de rue.", "Since I arrived, I've been involved in neighborhood life: committees, street festivals.", "Implication communautaire — Québec"],
-  ["prendre part à la vie citoyenne", "to participate in civic life", "Voter et participer aux assemblées, c'est prendre part à la vie citoyenne.", "Voting and attending community meetings is participating in civic life.", "Implication communautaire — Québec"]
+  ["prendre part à la vie citoyenne", "to participate in civic life", "Voter et participer aux assemblées, c'est prendre part à la vie citoyenne.", "Voting and attending community meetings is participating in civic life.", "Implication communautaire — Québec"],
+  ["empirer", "to worsen", "La situation a empiré depuis la dernière réunion.", "The situation has worsened since the last meeting.", "Verbe — souvent utilisé pour la santé, le temps, une situation"],
+  ["meublé", "furnished", "On cherche un appartement meublé pour notre arrivée à Montréal.", "We're looking for a furnished apartment for our arrival in Montreal.", "Adjectif — logement avec meubles inclus"],
+  ["aéré", "airy / well-ventilated", "L'appartement est très aéré grâce aux grandes fenêtres.", "The apartment is very airy thanks to the large windows.", "Adjectif — espace lumineux, bonne circulation d'air"],
+  ["superficie", "surface area / floor space", "La superficie de l'appartement fait 75 mètres carrés.", "The apartment's floor space is 75 square meters.", "Nom fém. — surface, superficie en m²"],
+  ["étiolé", "pale / faded / wan", "La plante est étiolée parce qu'elle manque de lumière.", "The plant is pale because it's lacking light.", "Adjectif — pâle, fané; pour plantes ou teint"],
+  ["bavardage", "chatter / small talk / gossip", "Arrête ton bavardage et concentre-toi sur ton travail!", "Stop chattering and focus on your work!", "Nom masc. — paroles sans importance, potins"],
+  ["détroit", "strait (geographic)", "Le détroit de Gibraltar sépare l'Europe de l'Afrique.", "The Strait of Gibraltar separates Europe from Africa.", "Nom masc. — passage maritime étroit; ≠ étroit (adj.)"],
+  ["avoir la tête ailleurs", "to have one's head elsewhere / to be distracted", "Désolé, j'avais la tête ailleurs, tu peux répéter?", "Sorry, I was distracted; can you repeat that?", "Expression — être préoccupé, ne pas écouter"],
+  ["inédit", "unprecedented / never-before-seen", "C'est une expérience inédite pour notre entreprise.", "It's an unprecedented experience for our company.", "Adjectif — nouveau, jamais vu; aussi: non publié"],
+  ["n'importe quoi", "nonsense / anything / whatever", "Il dit n'importe quoi pour se justifier.", "He's saying nonsense to justify himself.", "Expression — absurdité, ou 'anything' (achète n'importe quoi)"],
+  ["n'importe qui", "anyone", "N'importe qui peut participer à l'atelier.", "Anyone can participate in the workshop.", "Pronom indéfini — n'importe + interrogatif"],
+  ["n'importe où", "anywhere", "On peut se retrouver n'importe où en ville.", "We can meet anywhere in the city.", "n'importe + où"],
+  ["n'importe quand", "anytime", "Tu peux m'appeler n'importe quand.", "You can call me anytime.", "n'importe + quand"],
+  ["n'importe quel / quelle", "any (whichever)", "Je prendrai n'importe quel métro pour rentrer.", "I'll take any metro to get home.", "n'importe quel + nom masc.; n'importe quelle + nom fém."],
+  ["n'importe comment", "anyhow / any which way", "Il a fait le travail n'importe comment.", "He did the work any old way.", "Adverbe — sans soin, sans méthode"]
 ]
