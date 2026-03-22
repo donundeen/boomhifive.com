@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>want_snack</title>
+  <script src="https://unpkg.com/mqtt@5.10.1/dist/mqtt.min.js"></script>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --surface: #1a222d;
+      --border: #2d3848;
+      --text: #e7ecf3;
+      --muted: #8b9bb0;
+      --accent: #3da9fc;
+      --ok: #2ce59b;
+      --warn: #ffc93c;
+      --err: #ff6b6b;
+      --on: #2ce59b;
+      --off: #5c6a7d;
+      --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+    }
+    .card {
+      width: 100%;
+      max-width: 22rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+    h1 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0 0 0.25rem;
+    }
+    .meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--muted);
+    }
+    .status.ok .dot { background: var(--ok); }
+    .status.wait .dot { background: var(--warn); animation: p 1s ease infinite; }
+    .status.bad .dot { background: var(--err); }
+    @keyframes p { 50% { opacity: 0.35; } }
+    button {
+      font: inherit;
+      padding: 0.45rem 0.85rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      cursor: pointer;
+    }
+    button:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+    button:disabled { opacity: 0.45; cursor: not-allowed; }
+    button.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--bg);
+      font-weight: 600;
+    }
+    .toggles {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.65rem;
+      margin-bottom: 0.75rem;
+    }
+    .toggles button {
+      padding: 0.85rem 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .toggles button.on { border-color: var(--on); color: var(--on); }
+    .toggles button.off { border-color: var(--off); color: var(--off); }
+    .toggles button:disabled { opacity: 1; filter: brightness(0.85); }
+    .last {
+      font-size: 0.85rem;
+      color: var(--muted);
+      min-height: 1.25rem;
+    }
+    .last strong { color: var(--text); }
+    .err {
+      font-size: 0.8rem;
+      color: var(--err);
+      margin-top: 0.5rem;
+      min-height: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Want snack</h1>
+    <p class="meta">Feed <code>want_snack</code> · publishes <code>1</code> / <code>0</code></p>
+    <div class="row">
+      <span id="badge" class="status" aria-live="polite"><span class="dot"></span> <span id="badgeText">Off</span></span>
+      <button type="button" id="connect" class="primary">Connect</button>
+      <button type="button" id="disconnect" disabled>Disconnect</button>
+    </div>
+    <div class="toggles">
+      <button type="button" class="on" id="btnOn" disabled>On</button>
+      <button type="button" class="off" id="btnOff" disabled>Off</button>
+    </div>
+    <p class="last">Last from feed: <strong id="lastVal">—</strong></p>
+    <p class="err" id="err"></p>
+  </div>
+
+  <script>
+(function () {
+    const ADAFRUIT_IO_USERNAME = "donundeen";
+    const ADAFRUIT_IO_KEY = "b20aea6d2bdc41beba537705083e094b";
+    const FEED_KEY = "want_snack";
+
+    const MQTT_URL = "wss://io.adafruit.com:443/mqtt";
+    const TOPIC = ADAFRUIT_IO_USERNAME + "/feeds/" + FEED_KEY;
+
+    const badge = document.getElementById("badge");
+    const badgeText = document.getElementById("badgeText");
+    const lastVal = document.getElementById("lastVal");
+    const errEl = document.getElementById("err");
+    const connectBtn = document.getElementById("connect");
+    const disconnectBtn = document.getElementById("disconnect");
+    const btnOn = document.getElementById("btnOn");
+    const btnOff = document.getElementById("btnOff");
+
+    let client = null;
+
+    function setErr(msg) {
+      errEl.textContent = msg || "";
+    }
+
+    function setBadge(mode, text) {
+      badge.className = "status " + mode;
+      badgeText.textContent = text;
+    }
+
+    function parsePayload(raw) {
+      const s = String(raw).trim();
+      try {
+        const j = JSON.parse(s);
+        if (j && typeof j === "object" && "value" in j) return String(j.value).trim().toLowerCase();
+      } catch (_) {}
+      return s.toLowerCase();
+    }
+
+    function isOn(v) {
+      return v === "1" || v === "on" || v === "true" || v === "yes";
+    }
+
+    function applyIncoming(raw) {
+      const v = parsePayload(raw);
+      lastVal.textContent = raw === undefined || raw === "" ? "—" : String(raw);
+      if (v === "") return;
+      setErr("");
+      if (isOn(v)) setBadge("ok", "On");
+      else setBadge("", "Off");
+    }
+
+    function publish(val) {
+      if (!client) return;
+      setErr("");
+      client.publish(TOPIC, val, { qos: 0 }, function (e) {
+        if (e) setErr(String(e));
+      });
+    }
+
+    function shutdownClient() {
+      if (!client) return;
+      const c = client;
+      client = null;
+      try {
+        c.removeAllListeners();
+        c.end(true);
+      } catch (_) {}
+    }
+
+    function onDisconnected() {
+      btnOn.disabled = true;
+      btnOff.disabled = true;
+      disconnectBtn.disabled = true;
+      connectBtn.disabled = false;
+      setBadge("", "Disconnected");
+    }
+
+    connectBtn.addEventListener("click", function () {
+      if (!ADAFRUIT_IO_USERNAME || !ADAFRUIT_IO_KEY) {
+        setErr("Set ADAFRUIT_IO_USERNAME and ADAFRUIT_IO_KEY in the script.");
+        return;
+      }
+      if (typeof mqtt === "undefined" || !mqtt.connect) {
+        setErr("MQTT library failed to load.");
+        return;
+      }
+      shutdownClient();
+      onDisconnected();
+      setBadge("wait", "Connecting…");
+      connectBtn.disabled = true;
+      setErr("");
+
+      client = mqtt.connect(MQTT_URL, {
+        username: ADAFRUIT_IO_USERNAME.trim(),
+        password: ADAFRUIT_IO_KEY,
+        clientId: "snack-" + (crypto.randomUUID ? crypto.randomUUID() : String(Math.random()).slice(2)),
+        reconnectPeriod: 0,
+        protocolVersion: 4,
+        clean: true,
+      });
+
+      client.on("connect", function () {
+        setBadge("ok", "Connected");
+        disconnectBtn.disabled = false;
+        btnOn.disabled = false;
+        btnOff.disabled = false;
+        client.subscribe(TOPIC, { qos: 0 });
+        client.publish(TOPIC + "/get", new Uint8Array([0]), { qos: 0 });
+      });
+
+      client.on("message", function (topic, buf) {
+        if (topic !== TOPIC) return;
+        const text = buf instanceof Uint8Array ? new TextDecoder().decode(buf) : String(buf);
+        applyIncoming(text);
+      });
+
+      client.on("error", function (e) {
+        setErr(e && e.message ? e.message : String(e));
+        setBadge("bad", "Error");
+      });
+
+      client.on("close", function () {
+        client = null;
+        onDisconnected();
+      });
+    });
+
+    disconnectBtn.addEventListener("click", function () {
+      shutdownClient();
+      onDisconnected();
+    });
+
+    btnOn.addEventListener("click", function () { publish("1"); });
+    btnOff.addEventListener("click", function () { publish("0"); });
+
+    window.addEventListener("beforeunload", shutdownClient);
+  })();
+  </script>
+</body>
+</html>

@@ -6,6 +6,10 @@ for each element in this array, create a five-element array where the element ar
 3 the translation of that sentence
 4 the part of speech of the work (noun, very, adjective, etc) and the gender, if appropriate 
 
+if the original french phrases has ... in it, that means the phrase is in two parts, and the example french sentence should have a word or words where the ... is, to create a sentence that makes sense. 
+
+Don't create the outer array brackets, because I'm going to copy this into another file
+
 
 clean up this file, it should just be an array where each element is a 5-element array
 
