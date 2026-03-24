@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>want_snack</title>
+  <title>Don's ESP32 Testing Page</title>
   <script src="https://unpkg.com/mqtt@5.10.1/dist/mqtt.min.js"></script>
   <style>
     :root {
@@ -29,19 +29,40 @@
       color: var(--text);
       line-height: 1.5;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 1.25rem;
     }
-    .card {
+    .page {
       width: 100%;
       max-width: 22rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .page-title {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin: 0;
+      text-align: center;
+      letter-spacing: -0.02em;
+    }
+    .guide-link {
+      margin: 0;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+    .guide-link a { color: var(--accent); }
+    .guide-link a:hover { text-decoration: underline; }
+    .card {
+      width: 100%;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 1.25rem;
     }
-    h1 {
+    .card h2 {
       font-size: 1.2rem;
       font-weight: 600;
       margin: 0 0 0.25rem;
@@ -51,8 +72,6 @@
       color: var(--muted);
       margin-bottom: 1rem;
     }
-    .meta a { color: var(--accent); }
-    .meta a:hover { text-decoration: underline; }
     .row {
       display: flex;
       flex-wrap: wrap;
@@ -126,23 +145,28 @@
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Want snack</h1>
-    <p class="meta">
-      Feed <code>want_snack</code> · publishes <code>1</code> / <code>0</code><br />
-      <a href="https://docs.google.com/document/d/1Hdt83fCiv5cGYoghlm2czEAH8qt7p_mZAj37TIsTBj4/edit?tab=t.0" rel="noopener noreferrer" target="_blank">Workshop guide</a>
-    </p>
-    <div class="row">
-      <span id="badge" class="status" aria-live="polite"><span class="dot"></span> <span id="badgeText">Off</span></span>
-      <button type="button" id="connect" class="primary">Connect</button>
-      <button type="button" id="disconnect" disabled>Disconnect</button>
+  <div class="page">
+    <header>
+      <h1 class="page-title">Don's ESP32 Testing Page</h1>
+      <p class="guide-link">
+        <a href="https://docs.google.com/document/d/1Hdt83fCiv5cGYoghlm2czEAH8qt7p_mZAj37TIsTBj4/edit?tab=t.0" rel="noopener noreferrer" target="_blank">Workshop guide</a>
+      </p>
+    </header>
+    <div class="card">
+      <h2>Want snack</h2>
+      <p class="meta">Feed <code>want_snack</code> · publishes <code>1</code> / <code>0</code></p>
+      <div class="row">
+        <span id="badge" class="status" aria-live="polite"><span class="dot"></span> <span id="badgeText">Off</span></span>
+        <button type="button" id="connect" class="primary">Connect</button>
+        <button type="button" id="disconnect" disabled>Disconnect</button>
+      </div>
+      <div class="toggles">
+        <button type="button" class="on" id="btnOn" disabled>On</button>
+        <button type="button" class="off" id="btnOff" disabled>Off</button>
+      </div>
+      <p class="last">Last from feed: <strong id="lastVal">—</strong></p>
+      <p class="err" id="err"></p>
     </div>
-    <div class="toggles">
-      <button type="button" class="on" id="btnOn" disabled>On</button>
-      <button type="button" class="off" id="btnOff" disabled>Off</button>
-    </div>
-    <p class="last">Last from feed: <strong id="lastVal">—</strong></p>
-    <p class="err" id="err"></p>
   </div>
 
   <script>
