@@ -51,6 +51,8 @@
       color: var(--muted);
       margin-bottom: 1rem;
     }
+    .meta a { color: var(--accent); }
+    .meta a:hover { text-decoration: underline; }
     .row {
       display: flex;
       flex-wrap: wrap;
@@ -126,7 +128,10 @@
 <body>
   <div class="card">
     <h1>Want snack</h1>
-    <p class="meta">Feed <code>want_snack</code> · publishes <code>1</code> / <code>0</code></p>
+    <p class="meta">
+      Feed <code>want_snack</code> · publishes <code>1</code> / <code>0</code><br />
+      <a href="https://docs.google.com/document/d/1Hdt83fCiv5cGYoghlm2czEAH8qt7p_mZAj37TIsTBj4/edit?tab=t.0" rel="noopener noreferrer" target="_blank">Workshop guide</a>
+    </p>
     <div class="row">
       <span id="badge" class="status" aria-live="polite"><span class="dot"></span> <span id="badgeText">Off</span></span>
       <button type="button" id="connect" class="primary">Connect</button>
