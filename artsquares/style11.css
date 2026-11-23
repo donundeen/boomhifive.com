@@ -109,17 +109,16 @@ good ones:
   animation: rotation 41s infinite linear, opacity 30s alternate infinite linear, redred 43s alternate infinite linear;
 }
 
-
 @keyframes rotation {
   from {
 /*    z-index: 0;*/
     -webkit-transform: rotate(0deg) skew(180deg, 180deg);
-    transform: rotate(0deg) skew(180deg, 180deg);
+    transform: rotate(0deg) skew(180deg, 180deg)  /*translate3d(0, 0, 300px) */;
   }
   to {
 /*    z-index: 12;*/
     -webkit-transform: rotate(360deg) skew(0deg, 0deg);
-    transform: rotate(360deg) skew(0deg, 0deg);
+    transform: rotate(360deg) skew(0deg, 0deg) /*translate3d(300px, 300px, 0px) */;
   }
 }
 

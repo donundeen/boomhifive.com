@@ -114,7 +114,7 @@ good ones:
   from {
 /*    z-index: 0;*/
     -webkit-transform: rotate(0deg) skew(180deg, 180deg);
-    transform: rotate(0deg) skew(180deg, 180deg);
+    transform: rotate(0deg) skew(180deg, 180deg) ;
   }
   to {
 /*    z-index: 12;*/
@@ -154,4 +154,14 @@ good ones:
   }
 }
 
-
+/*
+make a keyframe that makes the div orbit around the center of the container, on the Z-axis, at a distance of 100px from the center.
+from {
+  -webkit-transform: rotate(0deg) translate(100px);
+  transform: rotate(0deg) translate(100px);
+}
+to {
+  -webkit-transform: rotate(360deg) translate(100px);
+  transform: rotate(360deg) translate(100px);
+}
+*/
